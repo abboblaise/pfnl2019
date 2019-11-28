@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProduitsPfnl"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="produitspfnl"
+  AliasName="ProduitsPfnl"
+  BindingStyle="JDBC"
+  RowClass="cm.gov.minfof.model.entity.ProduitsPfnlImpl"
+  DefClass="cm.gov.minfof.model.entity.ProduitsPfnlDefImpl"
+  CollClass="cm.gov.minfof.model.entity.ProduitsPfnlCollImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idproduitspfnl"
+    ColumnName="idproduitspfnl"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="produitspfnl"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nomscientifique"
+    Precision="100"
+    ColumnName="nomscientifique"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="produitspfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.ProduitsPfnl.Nomscientifique_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Nomcommercial"
+    Precision="100"
+    ColumnName="nomcommercial"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="produitspfnl"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.ProduitsPfnl.Nomcommercial_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Codeproduit"
+    IsUnique="true"
+    Precision="5"
+    ColumnName="codeproduit"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="produitspfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.ProduitsPfnl.Codeproduit_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idfamillepfnl"
+    ColumnName="idfamillepfnl"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="produitspfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="FAMILLE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Descriptionsommaire"
+    ColumnName="descriptionsommaire"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="LONGTEXT"
+    TableName="produitspfnl">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.ProduitsPfnl.Descriptionsommaire_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Modeattribution"
+    Precision="60"
+    ColumnName="modeattribution"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="produitspfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.ProduitsPfnl.Modeattribution_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idcategorie"
+    ColumnName="idcategorie"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="produitspfnl"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="TYPE_PRODUITS"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="ProduitsPfnl"
+    Association="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc.ProduitsPfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc.IdfamillepfnlProduitsPfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdfamillepfnlProduitsPfnl"
+    Association="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc.IdfamillepfnlProduitsPfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc.ProduitsPfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PartiesProduitsPfnl"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc3.PartiesProduitsPfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc3.ProduitsPfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PartiesProduitsPfnl1"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc3.PartiesProduitsPfnl1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc3.ProduitsPfnl1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="FamillePfnl"
+    Association="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc1.FamillePfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc1.ProduitsPfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PartiesRecoltees"
+    Association="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc2.PartiesRecoltees"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc2.ProduitsPfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PartiesProduitsPfnl2"
+    Association="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc3.PartiesProduitsPfnl2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc3.ProduitsPfnl2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Categorieproduit"
+    Association="cm.gov.minfof.model.entity.CategToProduitAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.CategToProduitAssoc.Categorieproduit"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CategToProduitAssoc.ProduitsPfnl"
+    Type="cm.gov.minfof.model.entity.CategorieproduitImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="AltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="produitspfnl"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.ProduitsPfnl.Codeproduit"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Codeproduit1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="codeproduit"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.ProduitsPfnl.Codeproduit"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.ProduitsPfnl.Idproduitspfnl"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProduitspfnlIdcategorieCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"idcategorie" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PRODUITSPFNL_IDCATEGORIE_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.ProduitsPfnl.Idcategorie"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProduitspfnlIdunitemesureCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"idunitemesure" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Produitspfnl_Idunitemesure_Che"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="ProduitspfnlNomcommercialCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"nomcommercial" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PRODUITSPFNL_NOMCOMMERCIAL_CHE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.ProduitsPfnl.Nomcommercial"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProduitspfnlIbfk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="produitspfnl_ibfk_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.ProduitsPfnl.Idfamillepfnl"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_ProduitsPfnl">
+    <DesignTime>
+      <Attr Name="_isCascadeDelete" Value="true"/>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Produits_Pfnl"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.ProduitsPfnl.Idfamillepfnl"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_ProduitsPfnl1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Produits_Pfnl1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.ProduitsPfnl.Idcategorie"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="ProduitsPfnlRule0"
+    ResId="LE_CODE__0__EXISTE_D_U00E9J_U00E0__LE_CODE_D_UN_PRODUIT_DOIT__U00EATRE_UNIQUE_"
+    KeyName="AltKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Codeproduit"/>
+    </validation:OnAttributes>
+    <validation:ResExpressions
+      Name="ProduitsPfnlRule0_ResExprList">
+      <validation:Expression
+        Name="0"
+        trustMode="untrusted"
+        CodeSourceName="ProduitsPfnlRow"/>
+    </validation:ResExpressions>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

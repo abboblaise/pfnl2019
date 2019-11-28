@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PartieProdToUniteMesureAssoc"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="PartiesProduitsPfnl"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.PartiesProduitsPfnl"
+    LockLevel="NONE"
+    ViewObject="cm.gov.minfof.model.entity.PartiesProduitsPfnlView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="PartiesProduitsPfnl"/>
+      <Attr Name="_foreignKey"
+        Value="cm.gov.minfof.model.entity.PartiesProduitsPfnl.PartiesproduitspfnlIdunitemesureCheck"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idunitemesure"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Unitemesure"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entity.Unitemesure"
+    ViewObject="cm.gov.minfof.model.entityviewobject.UnitemesureView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Unitemesure"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Unitemesure.fk_Unitemesure2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Unitemesure.Idunitemesure"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

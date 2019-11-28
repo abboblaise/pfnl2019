@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkDetailscollectepfnl3Assoc"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="IdorigineDetailscollectepfnl"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.Detailscollectepfnl">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="IdorigineDetailscollectepfnl"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Detailscollectepfnl.Primary1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Detailscollectepfnl.Iddetailscollectepfnl"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Detailscollectepfnl4"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entity.Detailscollectepfnl">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Detailscollectepfnl4"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Detailscollectepfnl.FkDetailscollectepfnl3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Detailscollectepfnl.Idorigine"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

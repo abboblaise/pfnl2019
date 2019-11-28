@@ -1,0 +1,1244 @@
+<wsdl:definitions
+     name="pfnl_wbs"
+     targetNamespace="/cm/gov/minfof/model/entity/common/"
+     xmlns:tns="/cm/gov/minfof/model/entity/common/"
+     xmlns:types="/cm/gov/minfof/model/entity/common/types/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <wsdl:import namespace="http://xmlns.oracle.com/adf/svc/errors/" location="classpath:/META-INF/wsdl/ServiceException.wsdl"/>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="/cm/gov/minfof/model/entity/common/types/" schemaLocation="pfnl_wbs.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="pfnl_wbs_getCategorieproduitView1">
+        <wsdl:part name="parameters" element="types:getCategorieproduitView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getCategorieproduitView1Response">
+        <wsdl:part name="parameters" element="types:getCategorieproduitView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findCategorieproduitView1">
+        <wsdl:part name="parameters" element="types:findCategorieproduitView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findCategorieproduitView1Response">
+        <wsdl:part name="parameters" element="types:findCategorieproduitView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getCategorieunitemesureView1">
+        <wsdl:part name="parameters" element="types:getCategorieunitemesureView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getCategorieunitemesureView1Response">
+        <wsdl:part name="parameters" element="types:getCategorieunitemesureView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findCategorieunitemesureView1">
+        <wsdl:part name="parameters" element="types:findCategorieunitemesureView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findCategorieunitemesureView1Response">
+        <wsdl:part name="parameters" element="types:findCategorieunitemesureView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getCertificatorigineView1">
+        <wsdl:part name="parameters" element="types:getCertificatorigineView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getCertificatorigineView1Response">
+        <wsdl:part name="parameters" element="types:getCertificatorigineView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findCertificatorigineView1">
+        <wsdl:part name="parameters" element="types:findCertificatorigineView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findCertificatorigineView1Response">
+        <wsdl:part name="parameters" element="types:findCertificatorigineView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getCollectepfnlView1">
+        <wsdl:part name="parameters" element="types:getCollectepfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getCollectepfnlView1Response">
+        <wsdl:part name="parameters" element="types:getCollectepfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findCollectepfnlView1">
+        <wsdl:part name="parameters" element="types:findCollectepfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findCollectepfnlView1Response">
+        <wsdl:part name="parameters" element="types:findCollectepfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getCommuneView1">
+        <wsdl:part name="parameters" element="types:getCommuneView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getCommuneView1Response">
+        <wsdl:part name="parameters" element="types:getCommuneView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findCommuneView1">
+        <wsdl:part name="parameters" element="types:findCommuneView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findCommuneView1Response">
+        <wsdl:part name="parameters" element="types:findCommuneView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getDepartementView1">
+        <wsdl:part name="parameters" element="types:getDepartementView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getDepartementView1Response">
+        <wsdl:part name="parameters" element="types:getDepartementView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findDepartementView1">
+        <wsdl:part name="parameters" element="types:findDepartementView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findDepartementView1Response">
+        <wsdl:part name="parameters" element="types:findDepartementView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getDetailpermisView1">
+        <wsdl:part name="parameters" element="types:getDetailpermisView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getDetailpermisView1Response">
+        <wsdl:part name="parameters" element="types:getDetailpermisView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findDetailpermisView1">
+        <wsdl:part name="parameters" element="types:findDetailpermisView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findDetailpermisView1Response">
+        <wsdl:part name="parameters" element="types:findDetailpermisView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getDetailscollectepfnlView1">
+        <wsdl:part name="parameters" element="types:getDetailscollectepfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getDetailscollectepfnlView1Response">
+        <wsdl:part name="parameters" element="types:getDetailscollectepfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findDetailscollectepfnlView1">
+        <wsdl:part name="parameters" element="types:findDetailscollectepfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findDetailscollectepfnlView1Response">
+        <wsdl:part name="parameters" element="types:findDetailscollectepfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getDetailsexportpfnlView1">
+        <wsdl:part name="parameters" element="types:getDetailsexportpfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getDetailsexportpfnlView1Response">
+        <wsdl:part name="parameters" element="types:getDetailsexportpfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findDetailsexportpfnlView1">
+        <wsdl:part name="parameters" element="types:findDetailsexportpfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findDetailsexportpfnlView1Response">
+        <wsdl:part name="parameters" element="types:findDetailsexportpfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getExportpfnlView1">
+        <wsdl:part name="parameters" element="types:getExportpfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getExportpfnlView1Response">
+        <wsdl:part name="parameters" element="types:getExportpfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findExportpfnlView1">
+        <wsdl:part name="parameters" element="types:findExportpfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findExportpfnlView1Response">
+        <wsdl:part name="parameters" element="types:findExportpfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getFamillePfnlView1">
+        <wsdl:part name="parameters" element="types:getFamillePfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getFamillePfnlView1Response">
+        <wsdl:part name="parameters" element="types:getFamillePfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findFamillePfnlView1">
+        <wsdl:part name="parameters" element="types:findFamillePfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findFamillePfnlView1Response">
+        <wsdl:part name="parameters" element="types:findFamillePfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getLettrevoitureView1">
+        <wsdl:part name="parameters" element="types:getLettrevoitureView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getLettrevoitureView1Response">
+        <wsdl:part name="parameters" element="types:getLettrevoitureView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findLettrevoitureView1">
+        <wsdl:part name="parameters" element="types:findLettrevoitureView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findLettrevoitureView1Response">
+        <wsdl:part name="parameters" element="types:findLettrevoitureView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getLocaliteView1">
+        <wsdl:part name="parameters" element="types:getLocaliteView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getLocaliteView1Response">
+        <wsdl:part name="parameters" element="types:getLocaliteView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findLocaliteView1">
+        <wsdl:part name="parameters" element="types:findLocaliteView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findLocaliteView1Response">
+        <wsdl:part name="parameters" element="types:findLocaliteView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getOriginespnflsView1">
+        <wsdl:part name="parameters" element="types:getOriginespnflsView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getOriginespnflsView1Response">
+        <wsdl:part name="parameters" element="types:getOriginespnflsView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findOriginespnflsView1">
+        <wsdl:part name="parameters" element="types:findOriginespnflsView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findOriginespnflsView1Response">
+        <wsdl:part name="parameters" element="types:findOriginespnflsView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPartiesProduitsPfnlView1">
+        <wsdl:part name="parameters" element="types:getPartiesProduitsPfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPartiesProduitsPfnlView1Response">
+        <wsdl:part name="parameters" element="types:getPartiesProduitsPfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPartiesProduitsPfnlView1">
+        <wsdl:part name="parameters" element="types:findPartiesProduitsPfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPartiesProduitsPfnlView1Response">
+        <wsdl:part name="parameters" element="types:findPartiesProduitsPfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPartiesRecolteesView1">
+        <wsdl:part name="parameters" element="types:getPartiesRecolteesView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPartiesRecolteesView1Response">
+        <wsdl:part name="parameters" element="types:getPartiesRecolteesView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPartiesRecolteesView1">
+        <wsdl:part name="parameters" element="types:findPartiesRecolteesView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPartiesRecolteesView1Response">
+        <wsdl:part name="parameters" element="types:findPartiesRecolteesView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPartiproduit1">
+        <wsdl:part name="parameters" element="types:getPartiproduit1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPartiproduit1Response">
+        <wsdl:part name="parameters" element="types:getPartiproduit1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPartiproduit1">
+        <wsdl:part name="parameters" element="types:findPartiproduit1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPartiproduit1Response">
+        <wsdl:part name="parameters" element="types:findPartiproduit1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPaysView1">
+        <wsdl:part name="parameters" element="types:getPaysView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPaysView1Response">
+        <wsdl:part name="parameters" element="types:getPaysView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPaysView1">
+        <wsdl:part name="parameters" element="types:findPaysView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPaysView1Response">
+        <wsdl:part name="parameters" element="types:findPaysView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPermisView1">
+        <wsdl:part name="parameters" element="types:getPermisView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPermisView1Response">
+        <wsdl:part name="parameters" element="types:getPermisView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPermisView1">
+        <wsdl:part name="parameters" element="types:findPermisView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPermisView1Response">
+        <wsdl:part name="parameters" element="types:findPermisView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPermissionnairespnflView1">
+        <wsdl:part name="parameters" element="types:getPermissionnairespnflView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPermissionnairespnflView1Response">
+        <wsdl:part name="parameters" element="types:getPermissionnairespnflView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPermissionnairespnflView1">
+        <wsdl:part name="parameters" element="types:findPermissionnairespnflView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPermissionnairespnflView1Response">
+        <wsdl:part name="parameters" element="types:findPermissionnairespnflView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPostecontroleView1">
+        <wsdl:part name="parameters" element="types:getPostecontroleView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getPostecontroleView1Response">
+        <wsdl:part name="parameters" element="types:getPostecontroleView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPostecontroleView1">
+        <wsdl:part name="parameters" element="types:findPostecontroleView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findPostecontroleView1Response">
+        <wsdl:part name="parameters" element="types:findPostecontroleView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getProduitsPfnlView1">
+        <wsdl:part name="parameters" element="types:getProduitsPfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getProduitsPfnlView1Response">
+        <wsdl:part name="parameters" element="types:getProduitsPfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findProduitsPfnlView1">
+        <wsdl:part name="parameters" element="types:findProduitsPfnlView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findProduitsPfnlView1Response">
+        <wsdl:part name="parameters" element="types:findProduitsPfnlView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getRegionView1">
+        <wsdl:part name="parameters" element="types:getRegionView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getRegionView1Response">
+        <wsdl:part name="parameters" element="types:getRegionView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findRegionView1">
+        <wsdl:part name="parameters" element="types:findRegionView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findRegionView1Response">
+        <wsdl:part name="parameters" element="types:findRegionView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getRegionsView1">
+        <wsdl:part name="parameters" element="types:getRegionsView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getRegionsView1Response">
+        <wsdl:part name="parameters" element="types:getRegionsView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findRegionsView1">
+        <wsdl:part name="parameters" element="types:findRegionsView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findRegionsView1Response">
+        <wsdl:part name="parameters" element="types:findRegionsView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getUnitemesureView1">
+        <wsdl:part name="parameters" element="types:getUnitemesureView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_getUnitemesureView1Response">
+        <wsdl:part name="parameters" element="types:getUnitemesureView1Response"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findUnitemesureView1">
+        <wsdl:part name="parameters" element="types:findUnitemesureView1"/>
+    </wsdl:message>
+    <wsdl:message name="pfnl_wbs_findUnitemesureView1Response">
+        <wsdl:part name="parameters" element="types:findUnitemesureView1Response"/>
+    </wsdl:message>
+    <wsdl:portType name="pfnl_wbs">
+        <wsdl:documentation>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="CategorieproduitView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:CategorieproduitViewSDO"
+                 GetOpName="getCategorieproduitView1" FindOpName="findCategorieproduitView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="CategorieunitemesureView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:CategorieunitemesureViewSDO"
+                 GetOpName="getCategorieunitemesureView1" FindOpName="findCategorieunitemesureView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="CertificatorigineView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:CertificatorigineViewSDO"
+                 GetOpName="getCertificatorigineView1" FindOpName="findCertificatorigineView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="CollectepfnlView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:CollectepfnlViewSDO"
+                 GetOpName="getCollectepfnlView1" FindOpName="findCollectepfnlView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="CommuneView1" xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/"
+                 SDOName="ns0:CommuneViewSDO" GetOpName="getCommuneView1" FindOpName="findCommuneView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="DepartementView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:DepartementViewSDO"
+                 GetOpName="getDepartementView1" FindOpName="findDepartementView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="DetailpermisView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:DetailpermisViewSDO"
+                 GetOpName="getDetailpermisView1" FindOpName="findDetailpermisView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="DetailscollectepfnlView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:DetailscollectepfnlViewSDO"
+                 GetOpName="getDetailscollectepfnlView1" FindOpName="findDetailscollectepfnlView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="DetailsexportpfnlView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:DetailsexportpfnlViewSDO"
+                 GetOpName="getDetailsexportpfnlView1" FindOpName="findDetailsexportpfnlView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="ExportpfnlView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:ExportpfnlViewSDO"
+                 GetOpName="getExportpfnlView1" FindOpName="findExportpfnlView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="FamillePfnlView1"
+                 SDOName="tns:FamillePfnlViewSDO" GetOpName="getFamillePfnlView1" FindOpName="findFamillePfnlView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="LettrevoitureView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:LettrevoitureViewSDO"
+                 GetOpName="getLettrevoitureView1" FindOpName="findLettrevoitureView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="LocaliteView1" xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/"
+                 SDOName="ns0:LocaliteViewSDO" GetOpName="getLocaliteView1" FindOpName="findLocaliteView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="OriginespnflsView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:OriginespnflsViewSDO"
+                 GetOpName="getOriginespnflsView1" FindOpName="findOriginespnflsView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="PartiesProduitsPfnlView1"
+                 SDOName="tns:PartiesProduitsPfnlViewSDO" GetOpName="getPartiesProduitsPfnlView1"
+                 FindOpName="findPartiesProduitsPfnlView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="PartiesRecolteesView1"
+                 SDOName="tns:PartiesRecolteesViewSDO" GetOpName="getPartiesRecolteesView1"
+                 FindOpName="findPartiesRecolteesView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="Partiproduit1" xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/"
+                 SDOName="ns0:PartiproduitSDO" GetOpName="getPartiproduit1" FindOpName="findPartiproduit1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="PaysView1" xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/"
+                 SDOName="ns0:PaysViewSDO" GetOpName="getPaysView1" FindOpName="findPaysView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="PermisView1" xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/"
+                 SDOName="ns0:PermisViewSDO" GetOpName="getPermisView1" FindOpName="findPermisView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="PermissionnairespnflView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:PermissionnairespnflViewSDO"
+                 GetOpName="getPermissionnairespnflView1" FindOpName="findPermissionnairespnflView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="PostecontroleView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:PostecontroleViewSDO"
+                 GetOpName="getPostecontroleView1" FindOpName="findPostecontroleView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="ProduitsPfnlView1"
+                 SDOName="tns:ProduitsPfnlViewSDO" GetOpName="getProduitsPfnlView1" FindOpName="findProduitsPfnlView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="RegionView1" xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/"
+                 SDOName="ns0:RegionViewSDO" GetOpName="getRegionView1" FindOpName="findRegionView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="RegionsView1" xmlns:ns0="/cm/gov/minfof/model/queryviewobject/common/"
+                 SDOName="ns0:RegionsViewSDO" GetOpName="getRegionsView1" FindOpName="findRegionsView1"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="UnitemesureView1"
+                 xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/" SDOName="ns0:UnitemesureViewSDO"
+                 GetOpName="getUnitemesureView1" FindOpName="findUnitemesureView1"/>
+        </wsdl:documentation>
+        <wsdl:operation name="getCategorieproduitView1">
+            <wsdl:input message="tns:pfnl_wbs_getCategorieproduitView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getCategorieproduitView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findCategorieproduitView1">
+            <wsdl:input message="tns:pfnl_wbs_findCategorieproduitView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findCategorieproduitView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCategorieunitemesureView1">
+            <wsdl:input message="tns:pfnl_wbs_getCategorieunitemesureView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getCategorieunitemesureView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findCategorieunitemesureView1">
+            <wsdl:input message="tns:pfnl_wbs_findCategorieunitemesureView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findCategorieunitemesureView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCertificatorigineView1">
+            <wsdl:input message="tns:pfnl_wbs_getCertificatorigineView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getCertificatorigineView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findCertificatorigineView1">
+            <wsdl:input message="tns:pfnl_wbs_findCertificatorigineView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findCertificatorigineView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCollectepfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_getCollectepfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getCollectepfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findCollectepfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_findCollectepfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findCollectepfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCommuneView1">
+            <wsdl:input message="tns:pfnl_wbs_getCommuneView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getCommuneView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findCommuneView1">
+            <wsdl:input message="tns:pfnl_wbs_findCommuneView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findCommuneView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDepartementView1">
+            <wsdl:input message="tns:pfnl_wbs_getDepartementView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getDepartementView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findDepartementView1">
+            <wsdl:input message="tns:pfnl_wbs_findDepartementView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findDepartementView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDetailpermisView1">
+            <wsdl:input message="tns:pfnl_wbs_getDetailpermisView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getDetailpermisView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findDetailpermisView1">
+            <wsdl:input message="tns:pfnl_wbs_findDetailpermisView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findDetailpermisView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDetailscollectepfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_getDetailscollectepfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getDetailscollectepfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findDetailscollectepfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_findDetailscollectepfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findDetailscollectepfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDetailsexportpfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_getDetailsexportpfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getDetailsexportpfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findDetailsexportpfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_findDetailsexportpfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findDetailsexportpfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getExportpfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_getExportpfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getExportpfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findExportpfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_findExportpfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findExportpfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getFamillePfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_getFamillePfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getFamillePfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findFamillePfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_findFamillePfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findFamillePfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getLettrevoitureView1">
+            <wsdl:input message="tns:pfnl_wbs_getLettrevoitureView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getLettrevoitureView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findLettrevoitureView1">
+            <wsdl:input message="tns:pfnl_wbs_findLettrevoitureView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findLettrevoitureView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getLocaliteView1">
+            <wsdl:input message="tns:pfnl_wbs_getLocaliteView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getLocaliteView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findLocaliteView1">
+            <wsdl:input message="tns:pfnl_wbs_findLocaliteView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findLocaliteView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOriginespnflsView1">
+            <wsdl:input message="tns:pfnl_wbs_getOriginespnflsView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getOriginespnflsView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findOriginespnflsView1">
+            <wsdl:input message="tns:pfnl_wbs_findOriginespnflsView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findOriginespnflsView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPartiesProduitsPfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_getPartiesProduitsPfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getPartiesProduitsPfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findPartiesProduitsPfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_findPartiesProduitsPfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findPartiesProduitsPfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPartiesRecolteesView1">
+            <wsdl:input message="tns:pfnl_wbs_getPartiesRecolteesView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getPartiesRecolteesView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findPartiesRecolteesView1">
+            <wsdl:input message="tns:pfnl_wbs_findPartiesRecolteesView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findPartiesRecolteesView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPartiproduit1">
+            <wsdl:input message="tns:pfnl_wbs_getPartiproduit1"/>
+            <wsdl:output message="tns:pfnl_wbs_getPartiproduit1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findPartiproduit1">
+            <wsdl:input message="tns:pfnl_wbs_findPartiproduit1"/>
+            <wsdl:output message="tns:pfnl_wbs_findPartiproduit1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPaysView1">
+            <wsdl:input message="tns:pfnl_wbs_getPaysView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getPaysView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findPaysView1">
+            <wsdl:input message="tns:pfnl_wbs_findPaysView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findPaysView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPermisView1">
+            <wsdl:input message="tns:pfnl_wbs_getPermisView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getPermisView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findPermisView1">
+            <wsdl:input message="tns:pfnl_wbs_findPermisView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findPermisView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPermissionnairespnflView1">
+            <wsdl:input message="tns:pfnl_wbs_getPermissionnairespnflView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getPermissionnairespnflView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findPermissionnairespnflView1">
+            <wsdl:input message="tns:pfnl_wbs_findPermissionnairespnflView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findPermissionnairespnflView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPostecontroleView1">
+            <wsdl:input message="tns:pfnl_wbs_getPostecontroleView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getPostecontroleView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findPostecontroleView1">
+            <wsdl:input message="tns:pfnl_wbs_findPostecontroleView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findPostecontroleView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getProduitsPfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_getProduitsPfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getProduitsPfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findProduitsPfnlView1">
+            <wsdl:input message="tns:pfnl_wbs_findProduitsPfnlView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findProduitsPfnlView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getRegionView1">
+            <wsdl:input message="tns:pfnl_wbs_getRegionView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getRegionView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findRegionView1">
+            <wsdl:input message="tns:pfnl_wbs_findRegionView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findRegionView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getRegionsView1">
+            <wsdl:input message="tns:pfnl_wbs_getRegionsView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getRegionsView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findRegionsView1">
+            <wsdl:input message="tns:pfnl_wbs_findRegionsView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findRegionsView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getUnitemesureView1">
+            <wsdl:input message="tns:pfnl_wbs_getUnitemesureView1"/>
+            <wsdl:output message="tns:pfnl_wbs_getUnitemesureView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findUnitemesureView1">
+            <wsdl:input message="tns:pfnl_wbs_findUnitemesureView1"/>
+            <wsdl:output message="tns:pfnl_wbs_findUnitemesureView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="pfnl_wbsSoapHttp" type="tns:pfnl_wbs">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getCategorieproduitView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getCategorieproduitView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCategorieproduitView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findCategorieproduitView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getCategorieunitemesureView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getCategorieunitemesureView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCategorieunitemesureView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findCategorieunitemesureView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getCertificatorigineView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getCertificatorigineView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCertificatorigineView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findCertificatorigineView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getCollectepfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getCollectepfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCollectepfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findCollectepfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getCommuneView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getCommuneView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findCommuneView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findCommuneView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDepartementView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getDepartementView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findDepartementView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findDepartementView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDetailpermisView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getDetailpermisView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findDetailpermisView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findDetailpermisView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDetailscollectepfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getDetailscollectepfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findDetailscollectepfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findDetailscollectepfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDetailsexportpfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getDetailsexportpfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findDetailsexportpfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findDetailsexportpfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getExportpfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getExportpfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findExportpfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findExportpfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getFamillePfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getFamillePfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findFamillePfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findFamillePfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getLettrevoitureView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getLettrevoitureView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findLettrevoitureView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findLettrevoitureView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getLocaliteView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getLocaliteView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findLocaliteView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findLocaliteView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getOriginespnflsView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getOriginespnflsView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findOriginespnflsView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findOriginespnflsView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getPartiesProduitsPfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getPartiesProduitsPfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findPartiesProduitsPfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findPartiesProduitsPfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getPartiesRecolteesView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getPartiesRecolteesView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findPartiesRecolteesView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findPartiesRecolteesView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getPartiproduit1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getPartiproduit1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findPartiproduit1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findPartiproduit1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getPaysView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getPaysView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findPaysView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findPaysView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getPermisView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getPermisView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findPermisView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findPermisView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getPermissionnairespnflView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getPermissionnairespnflView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findPermissionnairespnflView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findPermissionnairespnflView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getPostecontroleView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getPostecontroleView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findPostecontroleView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findPostecontroleView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getProduitsPfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getProduitsPfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findProduitsPfnlView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findProduitsPfnlView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getRegionView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getRegionView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findRegionView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findRegionView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getRegionsView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getRegionsView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findRegionsView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findRegionsView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getUnitemesureView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/getUnitemesureView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findUnitemesureView1">
+            <soap:operation soapAction="/cm/gov/minfof/model/entity/common/findUnitemesureView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="pfnl_wbs">
+        <wsdl:port name="pfnl_wbsSoapHttpPort" binding="tns:pfnl_wbsSoapHttp">
+            <soap:address location="http://localhost:7101/pfnl_wbs/pfnl_wbs"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

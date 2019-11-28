@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkCeqe1Link"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="cm.gov.minfof.model.entity.FkCeqe1Assoc">
+  <ViewLinkDefEnd
+    Name="IdpermissionnaireCeqeView"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entityviewobject.CeqeView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="IdpermissionnaireCeqeView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entityviewobject.CeqeView.Idceqe"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CeqeView"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entityviewobject.CeqeView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="CeqeView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entityviewobject.CeqeView.Idpermissionnaire"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

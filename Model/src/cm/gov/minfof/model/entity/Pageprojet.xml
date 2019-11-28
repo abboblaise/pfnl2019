@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Pageprojet"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="pageprojet"
+  AliasName="Pageprojet"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Idpageprojet"
+    IsNotNull="true"
+    ColumnName="idpageprojet"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="pageprojet"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Libellepage"
+    Precision="45"
+    ColumnName="libellepage"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="pageprojet">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Pagepargroup"
+    Association="cm.gov.minfof.model.entity.FkPagepargroup1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPagepargroup1Assoc1.Pagepargroup"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPagepargroup1Assoc1.Pageprojet"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Pagepargroup1"
+    Association="cm.gov.minfof.model.entity.FkPagepargroup2Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPagepargroup2Assoc1.Pagepargroup1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPagepargroup2Assoc1.Pageprojet1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Pageprojet.Idpageprojet"/>
+    </AttrArray>
+  </Key>
+</Entity>

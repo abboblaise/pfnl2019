@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Produitspfnlptembarquement"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="Produitspfnlptembarquement"
+  AliasName="Produitspfnlptembarquement"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Idproduitspfnl"
+    ColumnName="IDProduitspfnl"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="Produitspfnlptembarquement">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Iddepartements"
+    ColumnName="IDDepartements"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="Produitspfnlptembarquement">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Idpro"
+    IsNotNull="true"
+    ColumnName="IDPro"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="Produitspfnlptembarquement"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Produitspfnlptembarquement.Idpro"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="test_details_collecte.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelBox text="PanelBox1" id="pb1">
+                        <f:facet name="toolbar"/>
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.Iddetailscollectepfnl.inputValue}"
+                                          label="#{bindings.Iddetailscollectepfnl.hints.label}"
+                                          required="#{bindings.Iddetailscollectepfnl.hints.mandatory}"
+                                          columns="#{bindings.Iddetailscollectepfnl.hints.displayWidth}"
+                                          maximumLength="#{bindings.Iddetailscollectepfnl.hints.precision}"
+                                          shortDesc="#{bindings.Iddetailscollectepfnl.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.Iddetailscollectepfnl.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.Iddetailscollectepfnl.format}"/>
+                            </af:inputText>
+                            <af:selectOneChoice value="#{bindings.Idpermissionnaire.inputValue}"
+                                                label="#{bindings.Idpermissionnaire.label}"
+                                                required="#{bindings.Idpermissionnaire.hints.mandatory}"
+                                                shortDesc="#{bindings.Idpermissionnaire.hints.tooltip}" id="soc1"
+                                                autoSubmit="true">
+                                <f:selectItems value="#{bindings.Idpermissionnaire.items}" id="si1"/>
+                                <f:validator binding="#{bindings.Idpermissionnaire.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.Idorigine.inputValue}"
+                                                label="#{bindings.Idorigine.label}"
+                                                required="#{bindings.Idorigine.hints.mandatory}"
+                                                shortDesc="#{bindings.Idorigine.hints.tooltip}" id="soc2">
+                                <f:selectItems value="#{bindings.Idorigine.items}" id="si2"/>
+                                <f:validator binding="#{bindings.Idorigine.validator}"/>
+                            </af:selectOneChoice>
+                            <af:inputText value="#{bindings.Quantite.inputValue}"
+                                          label="#{bindings.Quantite.hints.label}"
+                                          required="#{bindings.Quantite.hints.mandatory}"
+                                          columns="#{bindings.Quantite.hints.displayWidth}"
+                                          maximumLength="#{bindings.Quantite.hints.precision}"
+                                          shortDesc="#{bindings.Quantite.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.Quantite.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Quantite.format}"/>
+                            </af:inputText>
+                            <af:selectOneChoice value="#{bindings.Idunitemesure.inputValue}"
+                                                label="#{bindings.Idunitemesure.label}"
+                                                required="#{bindings.Idunitemesure.hints.mandatory}"
+                                                shortDesc="#{bindings.Idunitemesure.hints.tooltip}" id="soc3">
+                                <f:selectItems value="#{bindings.Idunitemesure.items}" id="si3"/>
+                                <f:validator binding="#{bindings.Idunitemesure.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.Iddocumentofficiel.inputValue}"
+                                                label="#{bindings.Iddocumentofficiel.label}"
+                                                required="#{bindings.Iddocumentofficiel.hints.mandatory}"
+                                                shortDesc="#{bindings.Iddocumentofficiel.hints.tooltip}" id="soc4"
+                                                partialTriggers="soc1">
+                                <f:selectItems value="#{bindings.Iddocumentofficiel.items}" id="si4"/>
+                                <f:validator binding="#{bindings.Iddocumentofficiel.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.Iddestination.inputValue}"
+                                                label="#{bindings.Iddestination.label}"
+                                                required="#{bindings.Iddestination.hints.mandatory}"
+                                                shortDesc="#{bindings.Iddestination.hints.tooltip}" id="soc5">
+                                <f:selectItems value="#{bindings.Iddestination.items}" id="si5"/>
+                                <f:validator binding="#{bindings.Iddestination.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.Idpartieproduitpfnl.inputValue}"
+                                                label="#{bindings.Idpartieproduitpfnl.label}"
+                                                required="#{bindings.Idpartieproduitpfnl.hints.mandatory}"
+                                                shortDesc="#{bindings.Idpartieproduitpfnl.hints.tooltip}" id="soc6">
+                                <f:selectItems value="#{bindings.Idpartieproduitpfnl.items}" id="si6"/>
+                                <f:validator binding="#{bindings.Idpartieproduitpfnl.validator}"/>
+                            </af:selectOneChoice>
+                            <af:inputText value="#{bindings.Idcollectepfnl.inputValue}"
+                                          label="#{bindings.Idcollectepfnl.hints.label}"
+                                          required="#{bindings.Idcollectepfnl.hints.mandatory}"
+                                          columns="#{bindings.Idcollectepfnl.hints.displayWidth}"
+                                          maximumLength="#{bindings.Idcollectepfnl.hints.precision}"
+                                          shortDesc="#{bindings.Idcollectepfnl.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.Idcollectepfnl.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Idcollectepfnl.format}"/>
+                            </af:inputText>
+                            <f:facet name="footer">
+                                <af:panelGroupLayout layout="vertical" id="pgl1">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                        <af:button actionListener="#{bindings.First.execute}" text="First"
+                                                   disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                        <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                   id="b2"/>
+                                        <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                                   disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                        <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                                   disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                    </af:panelGroupLayout>
+                                    <af:button text="Commit" id="b5"
+                                               disabled="#{!bindings.Commit.enabled}"
+                                               actionListener="#{bindings.Commit.execute}"/>
+                                    <af:button actionListener="#{bindings.Create.execute}" text="Create"
+                                               disabled="#{!bindings.Create.enabled}" id="b6"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelFormLayout>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

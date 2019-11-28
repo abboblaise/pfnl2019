@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_paysPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PaysView1" RangeSize="25" DataControl="AppModuleDataControl" id="PaysView1Iterator"/>
+    <searchRegion Binds="PaysView1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PaysView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PaysView1Iterator" id="Nompays">
+      <AttrNames>
+        <Item Value="Nompays"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="PaysView1Iterator" id="PaysView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PaysView" Name="PaysView10">
+        <AttrNames>
+          <Item Value="Idpays"/>
+          <Item Value="Nompays"/>
+          <Item Value="Codepays"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PaysView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PaysView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="PaysView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <attributeValues IterBinding="PaysView1Iterator" id="Codepays">
+      <AttrNames>
+        <Item Value="Codepays"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PaysView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="PaysView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="PaysView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PaysView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

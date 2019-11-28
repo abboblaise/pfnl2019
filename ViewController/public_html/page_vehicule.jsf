@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="#{viewcontrollerBundle.EDITION_DES_V_U00E9HICULES}" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:spacer width="10" height="10" id="s6"/>
+                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_V_U00E9HICULES}" id="pb1">
+                        <f:facet name="toolbar"/>
+                        <af:panelGroupLayout id="pgl3" halign="center" inlineStyle="width:656px;">
+                            <af:panelFormLayout id="pfl1" rows="3" inlineStyle="width:760px;">
+                                <af:selectOneChoice value="#{bindings.Idtransporteur.inputValue}"
+                                                    label="#{bindings.Idtransporteur.label}"
+                                                    required="#{bindings.Idtransporteur.hints.mandatory}"
+                                                    shortDesc="#{bindings.Idtransporteur.hints.tooltip}" id="soc1">
+                                    <f:selectItems value="#{bindings.Idtransporteur.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.Idtransporteur.validator}"/>
+                                </af:selectOneChoice>
+                                <af:selectOneChoice value="#{bindings.Idregion.inputValue}"
+                                                    label="#{bindings.Idregion.label}"
+                                                    required="#{bindings.Idregion.hints.mandatory}"
+                                                    shortDesc="#{bindings.Idregion.hints.tooltip}" id="soc2">
+                                    <f:selectItems value="#{bindings.Idregion.items}" id="si2"/>
+                                    <f:validator binding="#{bindings.Idregion.validator}"/>
+                                </af:selectOneChoice>
+                                <af:selectOneChoice value="#{bindings.Idtypevehicule.inputValue}"
+                                                    label="#{bindings.Idtypevehicule.label}"
+                                                    required="#{bindings.Idtypevehicule.hints.mandatory}"
+                                                    shortDesc="#{bindings.Idtypevehicule.hints.tooltip}" id="soc3">
+                                    <f:selectItems value="#{bindings.Idtypevehicule.items}" id="si3"/>
+                                    <f:validator binding="#{bindings.Idtypevehicule.validator}"/>
+                                </af:selectOneChoice>
+                                <af:inputText value="#{bindings.Codechiffre.inputValue}"
+                                              label="#{bindings.Codechiffre.hints.label}"
+                                              required="#{bindings.Codechiffre.hints.mandatory}"
+                                              columns="#{bindings.Codechiffre.hints.displayWidth}"
+                                              maximumLength="#{bindings.Codechiffre.hints.precision}"
+                                              shortDesc="#{bindings.Codechiffre.hints.tooltip}" id="it4">
+                                    <f:validator binding="#{bindings.Codechiffre.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Codechiffre.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.SuffixLettre.inputValue}"
+                                              label="#{bindings.SuffixLettre.hints.label}"
+                                              required="#{bindings.SuffixLettre.hints.mandatory}"
+                                              columns="#{bindings.SuffixLettre.hints.displayWidth}"
+                                              maximumLength="#{bindings.SuffixLettre.hints.precision}"
+                                              shortDesc="#{bindings.SuffixLettre.hints.tooltip}" id="it5">
+                                    <f:validator binding="#{bindings.SuffixLettre.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Immatriculation.inputValue}"
+                                              label="#{bindings.Immatriculation.hints.label}"
+                                              required="#{bindings.Immatriculation.hints.mandatory}"
+                                              columns="#{bindings.Immatriculation.hints.displayWidth}"
+                                              maximumLength="#{bindings.Immatriculation.hints.precision}"
+                                              shortDesc="#{bindings.Immatriculation.hints.tooltip}" id="it6"
+                                              partialTriggers="b1 b3 b2" disabled="true">
+                                    <f:validator binding="#{bindings.Immatriculation.validator}"/>
+                                </af:inputText>
+                                <f:facet name="footer">
+                                    <af:spacer width="10" height="20" id="s1"/>
+                                    <af:panelGroupLayout id="pgl1" halign="center">
+                                        <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                   text="#{viewcontrollerBundle.NOUVEAU}"
+                                                   disabled="#{!bindings.CreateInsert.enabled}" id="b1"/>
+                                        <af:spacer width="10" height="10" id="s2"/>
+                                        <af:button actionListener="#{bindings.Commit.execute}"
+                                                   text="#{viewcontrollerBundle.ENREGISTRER}" id="b3"/>
+                                        <af:spacer width="10" height="10" id="s3"/>
+                                        <af:button actionListener="#{bindings.Delete.execute}"
+                                                   text="#{viewcontrollerBundle.SUPPRIMER}"
+                                                   disabled="#{!bindings.Delete.enabled}" id="b2"/>
+                                        <af:spacer width="10" height="10" id="s5"/>
+                                        <af:button actionListener="#{bindings.Rollback.execute}"
+                                                   text="#{viewcontrollerBundle.ANNULER}" immediate="true" id="b4">
+                                            <af:resetActionListener/>
+                                        </af:button>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </af:panelGroupLayout>
+                    </af:panelBox>
+                    <af:panelBox text="#{viewcontrollerBundle.LISTE_DES_V_U00E9HICULES}" id="pb2">
+                        <f:facet name="toolbar"/>
+                        <af:panelGroupLayout id="pgl4" halign="center">
+                            <af:panelCollection id="pc1" inlineStyle="width:900px;">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <af:table value="#{bindings.VehiculeView1.collectionModel}" var="row"
+                                          rows="#{bindings.VehiculeView1.rangeSize}"
+                                          emptyText="#{bindings.VehiculeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.VehiculeView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.VehiculeView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.VehiculeView1.rangeSize}"
+                                          filterModel="#{bindings.VehiculeView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.VehiculeView1Query.processQuery}" varStatus="vs"
+                                          id="t1" partialTriggers=":::b1 :::b2 :::b3 :::b4">
+                                    <af:column sortProperty="#{bindings.VehiculeView1.hints.Idtransporteur.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.VehiculeView1.hints.Idtransporteur.label}"
+                                               id="c1" width="100">
+                                        <af:selectOneChoice value="#{row.bindings.Idtransporteur.inputValue}"
+                                                            label="#{row.bindings.Idtransporteur.label}"
+                                                            required="#{bindings.VehiculeView1.hints.Idtransporteur.mandatory}"
+                                                            shortDesc="#{bindings.VehiculeView1.hints.Idtransporteur.tooltip}"
+                                                            readOnly="true" id="soc4">
+                                            <f:selectItems value="#{row.bindings.Idtransporteur.items}" id="si4"/>
+                                            <f:validator binding="#{row.bindings.Idtransporteur.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.VehiculeView1.hints.Idregion.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.VehiculeView1.hints.Idregion.label}" id="c2"
+                                               width="100">
+                                        <af:selectOneChoice value="#{row.bindings.Idregion.inputValue}"
+                                                            label="#{row.bindings.Idregion.label}"
+                                                            required="#{bindings.VehiculeView1.hints.Idregion.mandatory}"
+                                                            shortDesc="#{bindings.VehiculeView1.hints.Idregion.tooltip}"
+                                                            readOnly="true" id="soc5">
+                                            <f:selectItems value="#{row.bindings.Idregion.items}" id="si5"/>
+                                            <f:validator binding="#{row.bindings.Idregion.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.VehiculeView1.hints.Idtypevehicule.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.VehiculeView1.hints.Idtypevehicule.label}"
+                                               id="c3" width="100">
+                                        <af:selectOneChoice value="#{row.bindings.Idtypevehicule.inputValue}"
+                                                            label="#{row.bindings.Idtypevehicule.label}"
+                                                            required="#{bindings.VehiculeView1.hints.Idtypevehicule.mandatory}"
+                                                            shortDesc="#{bindings.VehiculeView1.hints.Idtypevehicule.tooltip}"
+                                                            readOnly="true" id="soc6">
+                                            <f:selectItems value="#{row.bindings.Idtypevehicule.items}" id="si6"/>
+                                            <f:validator binding="#{row.bindings.Idtypevehicule.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.VehiculeView1.hints.Codechiffre.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.VehiculeView1.hints.Codechiffre.label}" id="c4"
+                                               width="100">
+                                        <af:outputText value="#{row.Codechiffre}"
+                                                       shortDesc="#{bindings.VehiculeView1.hints.Codechiffre.tooltip}"
+                                                       id="ot1">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.VehiculeView1.hints.Codechiffre.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.VehiculeView1.hints.SuffixLettre.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.VehiculeView1.hints.SuffixLettre.label}" id="c5"
+                                               width="100">
+                                        <af:outputText value="#{row.SuffixLettre}"
+                                                       shortDesc="#{bindings.VehiculeView1.hints.SuffixLettre.tooltip}"
+                                                       id="ot2"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.VehiculeView1.hints.Immatriculation.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.VehiculeView1.hints.Immatriculation.label}"
+                                               filterable="true" id="c6" width="226">
+                                        <af:outputText value="#{row.Immatriculation}"
+                                                       shortDesc="#{bindings.VehiculeView1.hints.Immatriculation.tooltip}"
+                                                       id="ot3"/>
+                                    </af:column>
+                                </af:table>
+                                <f:facet name="statusbar"/>
+                            </af:panelCollection>
+                        </af:panelGroupLayout>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

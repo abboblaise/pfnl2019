@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="pae_user.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelBox text="PanelBox1" id="pb1">
+                        <f:facet name="toolbar"/>
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.Loginuser.inputValue}"
+                                          label="#{bindings.Loginuser.hints.label}"
+                                          required="#{bindings.Loginuser.hints.mandatory}"
+                                          columns="#{bindings.Loginuser.hints.displayWidth}"
+                                          maximumLength="#{bindings.Loginuser.hints.precision}"
+                                          shortDesc="#{bindings.Loginuser.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.Loginuser.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Passworduser.inputValue}"
+                                          label="#{bindings.Passworduser.hints.label}"
+                                          required="#{bindings.Passworduser.hints.mandatory}"
+                                          columns="#{bindings.Passworduser.hints.displayWidth}"
+                                          maximumLength="#{bindings.Passworduser.hints.precision}"
+                                          shortDesc="#{bindings.Passworduser.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.Passworduser.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Nomuser.inputValue}" label="#{bindings.Nomuser.hints.label}"
+                                          required="#{bindings.Nomuser.hints.mandatory}"
+                                          columns="#{bindings.Nomuser.hints.displayWidth}"
+                                          maximumLength="#{bindings.Nomuser.hints.precision}"
+                                          shortDesc="#{bindings.Nomuser.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.Nomuser.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Telephone.inputValue}"
+                                          label="#{bindings.Telephone.hints.label}"
+                                          required="#{bindings.Telephone.hints.mandatory}"
+                                          columns="#{bindings.Telephone.hints.displayWidth}"
+                                          maximumLength="#{bindings.Telephone.hints.precision}"
+                                          shortDesc="#{bindings.Telephone.hints.tooltip}" id="it4">
+                                <f:validator binding="#{bindings.Telephone.validator}"/>
+                            </af:inputText>
+                            <af:selectOneChoice value="#{bindings.Niveauintervention.inputValue}"
+                                                label="#{bindings.Niveauintervention.label}"
+                                                required="#{bindings.Niveauintervention.hints.mandatory}"
+                                                shortDesc="#{bindings.Niveauintervention.hints.tooltip}" id="soc1">
+                                <f:selectItems value="#{bindings.Niveauintervention.items}" id="si1"/>
+                                <f:validator binding="#{bindings.Niveauintervention.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.Idregions.inputValue}"
+                                                label="#{bindings.Idregions.label}"
+                                                required="#{bindings.Idregions.hints.mandatory}"
+                                                shortDesc="#{bindings.Idregions.hints.tooltip}" id="soc2">
+                                <f:selectItems value="#{bindings.Idregions.items}" id="si2"/>
+                                <f:validator binding="#{bindings.Idregions.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.Iddepartements.inputValue}"
+                                                label="#{bindings.Iddepartements.label}"
+                                                required="#{bindings.Iddepartements.hints.mandatory}"
+                                                shortDesc="#{bindings.Iddepartements.hints.tooltip}" id="soc3">
+                                <f:selectItems value="#{bindings.Iddepartements.items}" id="si3"/>
+                                <f:validator binding="#{bindings.Iddepartements.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.Idgroupe.inputValue}"
+                                                label="#{bindings.Idgroupe.label}"
+                                                required="#{bindings.Idgroupe.hints.mandatory}"
+                                                shortDesc="#{bindings.Idgroupe.hints.tooltip}" id="soc4">
+                                <f:selectItems value="#{bindings.Idgroupe.items}" id="si4"/>
+                                <f:validator binding="#{bindings.Idgroupe.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectBooleanCheckbox value="#{bindings.Saisiecollecte.inputValue}"
+                                                      label="#{bindings.Saisiecollecte.label}"
+                                                      shortDesc="#{bindings.Saisiecollecte.hints.tooltip}" id="sbc1"/>
+                            <af:selectBooleanCheckbox value="#{bindings.Saisieexport.inputValue}"
+                                                      label="#{bindings.Saisieexport.label}"
+                                                      shortDesc="#{bindings.Saisieexport.hints.tooltip}" id="sbc2"/>
+                            <af:selectBooleanCheckbox value="#{bindings.Saisietransit.inputValue}"
+                                                      label="#{bindings.Saisietransit.label}"
+                                                      shortDesc="#{bindings.Saisietransit.hints.tooltip}" id="sbc3"/>
+                            <f:facet name="footer">
+                                <af:panelGroupLayout id="pgl1">
+                                    <af:button text="Commit" id="b1" actionListener="#{bindings.Commit.execute}"/>
+                                    <af:spacer width="10" height="10" id="s1"/>
+                                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+                                               disabled="#{!bindings.CreateInsert.enabled}" id="b2"/>
+                                    <af:spacer width="10" height="10" id="s2"/>
+                                    <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                               disabled="#{!bindings.Delete.enabled}" id="b3"/>
+                                    <af:spacer width="10" height="10" id="s3"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                                               disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b4">
+                                        <af:resetActionListener/>
+                                    </af:button>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelFormLayout>
+                    </af:panelBox>
+                    <af:panelBox text="PanelBox2" id="pb2">
+                        <f:facet name="toolbar"/>
+                        <af:panelCollection id="pc1" inlineStyle="width:1197px;">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar"/>
+                            <af:table value="#{bindings.UtilisateurView1.collectionModel}" var="row"
+                                      rows="#{bindings.UtilisateurView1.rangeSize}"
+                                      emptyText="#{bindings.UtilisateurView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.UtilisateurView1.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.UtilisateurView1.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.UtilisateurView1.rangeSize}"
+                                      filterModel="#{bindings.UtilisateurView1Query.queryDescriptor}"
+                                      filterVisible="true"
+                                      queryListener="#{bindings.UtilisateurView1Query.processQuery}" varStatus="vs"
+                                      id="t1" partialTriggers=":::b2 :::b3 :::b1 :::b4">
+                                <af:column sortProperty="#{bindings.UtilisateurView1.hints.Loginuser.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.UtilisateurView1.hints.Loginuser.label}" id="c1">
+                                    <af:outputText value="#{row.Loginuser}"
+                                                   shortDesc="#{bindings.UtilisateurView1.hints.Loginuser.tooltip}"
+                                                   id="ot1"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.UtilisateurView1.hints.Nomuser.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.UtilisateurView1.hints.Nomuser.label}" id="c2">
+                                    <af:outputText value="#{row.Nomuser}"
+                                                   shortDesc="#{bindings.UtilisateurView1.hints.Nomuser.tooltip}"
+                                                   id="ot2"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.UtilisateurView1.hints.Telephone.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.UtilisateurView1.hints.Telephone.label}" id="c3">
+                                    <af:outputText value="#{row.Telephone}"
+                                                   shortDesc="#{bindings.UtilisateurView1.hints.Telephone.tooltip}"
+                                                   id="ot3"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.UtilisateurView1.hints.Niveauintervention.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.UtilisateurView1.hints.Niveauintervention.label}"
+                                           id="c4">
+                                    <af:selectOneChoice value="#{row.bindings.Niveauintervention.inputValue}"
+                                                        label="#{row.bindings.Niveauintervention.label}"
+                                                        required="#{bindings.UtilisateurView1.hints.Niveauintervention.mandatory}"
+                                                        shortDesc="#{bindings.UtilisateurView1.hints.Niveauintervention.tooltip}"
+                                                        readOnly="true" id="soc5">
+                                        <f:selectItems value="#{row.bindings.Niveauintervention.items}" id="si5"/>
+                                        <f:validator binding="#{row.bindings.Niveauintervention.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.UtilisateurView1.hints.Idregions.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.UtilisateurView1.hints.Idregions.label}" id="c5">
+                                    <af:selectOneChoice value="#{row.bindings.Idregions.inputValue}"
+                                                        label="#{row.bindings.Idregions.label}"
+                                                        required="#{bindings.UtilisateurView1.hints.Idregions.mandatory}"
+                                                        shortDesc="#{bindings.UtilisateurView1.hints.Idregions.tooltip}"
+                                                        readOnly="true" id="soc6">
+                                        <f:selectItems value="#{row.bindings.Idregions.items}" id="si6"/>
+                                        <f:validator binding="#{row.bindings.Idregions.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.UtilisateurView1.hints.Iddepartements.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.UtilisateurView1.hints.Iddepartements.label}" id="c6">
+                                    <af:selectOneChoice value="#{row.bindings.Iddepartements.inputValue}"
+                                                        label="#{row.bindings.Iddepartements.label}"
+                                                        required="#{bindings.UtilisateurView1.hints.Iddepartements.mandatory}"
+                                                        shortDesc="#{bindings.UtilisateurView1.hints.Iddepartements.tooltip}"
+                                                        readOnly="true" id="soc7">
+                                        <f:selectItems value="#{row.bindings.Iddepartements.items}" id="si7"/>
+                                        <f:validator binding="#{row.bindings.Iddepartements.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.UtilisateurView1.hints.Idgroupe.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.UtilisateurView1.hints.Idgroupe.label}" id="c7">
+                                    <af:selectOneChoice value="#{row.bindings.Idgroupe.inputValue}"
+                                                        label="#{row.bindings.Idgroupe.label}"
+                                                        required="#{bindings.UtilisateurView1.hints.Idgroupe.mandatory}"
+                                                        shortDesc="#{bindings.UtilisateurView1.hints.Idgroupe.tooltip}"
+                                                        readOnly="true" id="soc8">
+                                        <f:selectItems value="#{row.bindings.Idgroupe.items}" id="si8"/>
+                                        <f:validator binding="#{row.bindings.Idgroupe.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.UtilisateurView1.hints.Saisiecollecte.label}" id="c8">
+                                    <af:selectBooleanCheckbox value="#{row.bindings.Saisiecollecte.inputValue}"
+                                                              label="#{row.bindings.Saisiecollecte.label}"
+                                                              shortDesc="#{bindings.UtilisateurView1.hints.Saisiecollecte.tooltip}"
+                                                              id="sbc4" readOnly="true"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.UtilisateurView1.hints.Saisieexport.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.UtilisateurView1.hints.Saisieexport.label}" id="c9">
+                                    <af:selectBooleanCheckbox value="#{row.bindings.Saisieexport.inputValue}"
+                                                              label="#{row.bindings.Saisieexport.label}"
+                                                              shortDesc="#{bindings.UtilisateurView1.hints.Saisieexport.tooltip}"
+                                                              id="sbc5" readOnly="true"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.UtilisateurView1.hints.Saisietransit.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.UtilisateurView1.hints.Saisietransit.label}" id="c10">
+                                    <af:selectBooleanCheckbox value="#{row.bindings.Saisietransit.inputValue}"
+                                                              label="#{row.bindings.Saisietransit.label}"
+                                                              shortDesc="#{bindings.UtilisateurView1.hints.Saisietransit.tooltip}"
+                                                              id="sbc6" readOnly="true"/>
+                                </af:column>
+                            </af:table>
+                            <f:facet name="statusbar"/>
+                        </af:panelCollection>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

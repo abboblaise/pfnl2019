@@ -1,0 +1,15 @@
+//Groovy Scripts for cm.gov.minfof.model.entity.Postecontrole
+
+package cm.gov.minfof.model.entity
+
+import oracle.jbo.script.annotation.MessageParameterExpression;
+
+
+
+
+@MessageParameterExpression(validatorName="PostecontroleRule0", name="ResExpressions_0")
+def PostecontroleRule0_ResExpressions_0_MessageParameterValues()
+{
+Codeposte
+}
+

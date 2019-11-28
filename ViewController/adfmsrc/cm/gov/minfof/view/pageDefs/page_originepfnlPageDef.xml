@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_originepfnlPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="OriginespnflsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="OriginespnflsView1Iterator"/>
+    <searchRegion Binds="OriginespnflsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="OriginespnflsView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="OriginespnflsView1Iterator" id="Nomsource">
+      <AttrNames>
+        <Item Value="Nomsource"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="OriginespnflsView1Iterator" StaticList="false" Uses="LOV_Originepnfl" id="Originepnfl"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="OriginespnflsView1Iterator" id="OriginespnflsView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.OriginespnflsView" Name="OriginespnflsView10">
+        <AttrNames>
+          <Item Value="Idoriginespnfls"/>
+          <Item Value="Nomsource"/>
+          <Item Value="Originepnfl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="OriginespnflsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="OriginespnflsView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="OriginespnflsView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="OriginespnflsView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="OriginespnflsView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="OriginespnflsView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

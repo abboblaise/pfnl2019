@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartementsView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT PfnlDepartements.iddepartements,
+       PfnlDepartements.nomdepartement,
+       PfnlDepartements.codedepartement,
+       PfnlDepartements.idregions,
+       PfnlDepartements.nomcheflieu
+FROM pfnl.departements PfnlDepartements]]></SQLQuery>
+  <ViewAttribute
+    Name="Iddepartements"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="iddepartements"
+    Expression="iddepartements"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomdepartement"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomdepartement"
+    Expression="nomdepartement"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Codedepartement"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="5"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="codedepartement"
+    Expression="codedepartement"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idregions"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idregions"
+    Expression="idregions"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomcheflieu"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomcheflieu"
+    Expression="nomcheflieu"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Iddepartements"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="CommunesView"
+    ViewLink="cm.gov.minfof.model.queryviewobject.CommunesIbfk1Link2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="IdregionsDepartementsView"
+    ViewLink="cm.gov.minfof.model.queryviewobject.DepartementsIbfk1Link2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

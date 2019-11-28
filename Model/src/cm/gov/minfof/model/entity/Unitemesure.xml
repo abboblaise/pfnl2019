@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Unitemesure"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="unitemesure"
+  AliasName="Unitemesure"
+  BindingStyle="JDBC"
+  RowClass="cm.gov.minfof.model.entity.UnitemesureImpl"
+  DefClass="cm.gov.minfof.model.entity.UnitemesureDefImpl"
+  CollClass="cm.gov.minfof.model.entity.UnitemesureCollImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idunitemesure"
+    ColumnName="idunitemesure"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="unitemesure"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Libelleunitemesure"
+    IsNotNull="true"
+    Precision="45"
+    ColumnName="libelleunitemesure"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="unitemesure">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LIBELL_U00E9_DE_L_UNIT_U00E9_DE_MESURE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idcategorie"
+    ColumnName="idcategorie"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="unitemesure"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CAT_U00E9GORIE_DE_L_UNIT_U00E9_DE_MESURE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Ordregrandeur"
+    IsNotNull="true"
+    Precision="45"
+    ColumnName="ordregrandeur"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="unitemesure">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ORDRE_DE_GRANDEUR"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Ratio"
+    IsNotNull="true"
+    ColumnName="ratio"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="unitemesure">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="RATIO"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Actif"
+    ColumnName="actif"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="TINYINT"
+    TableName="unitemesure">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ACTIF"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Arrondi"
+    IsNotNull="true"
+    ColumnName="arrondi"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="unitemesure">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Unitemesure"
+    Association="cm.gov.minfof.model.entity.FkUnitemesure1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkUnitemesure1Assoc.Unitemesure"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkUnitemesure1Assoc.IdcategorieUnitemesure"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdcategorieUnitemesure"
+    Association="cm.gov.minfof.model.entity.FkUnitemesure1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkUnitemesure1Assoc.IdcategorieUnitemesure"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkUnitemesure1Assoc.Unitemesure"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Categorieunitemesure"
+    Association="cm.gov.minfof.model.entity.CategToUnitAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.CategToUnitAssoc.Categorieunitemesure"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CategToUnitAssoc.Unitemesure"
+    Type="cm.gov.minfof.model.entity.CategorieunitemesureImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PartiesProduitsPfnl"
+    Association="cm.gov.minfof.model.entity.PartieProdToUniteMesureAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PartieProdToUniteMesureAssoc.PartiesProduitsPfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PartieProdToUniteMesureAssoc.Unitemesure"
+    Type="cm.gov.minfof.model.entity.PartiesProduitsPfnlImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PartiesProduitsPfnl1"
+    Association="cm.gov.minfof.model.entity.PartieProdToUniteMesureExportAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PartieProdToUniteMesureExportAssoc.PartiesProduitsPfnl1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PartieProdToUniteMesureExportAssoc.Unitemesure1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Detailscollectepfnl"
+    Association="cm.gov.minfof.model.entity.DetailCollecToUnitMesAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.DetailCollecToUnitMesAssoc.Detailscollectepfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DetailCollecToUnitMesAssoc.Unitemesure"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Detailsexportpfnl"
+    Association="cm.gov.minfof.model.entity.DetailExportToUnitMesure"
+    AssociationEnd="cm.gov.minfof.model.entity.DetailExportToUnitMesure.Detailsexportpfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DetailExportToUnitMesure.Unitemesure"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="AltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="unitemesure"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Unitemesure.Libelleunitemesure"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Unitemesure.Idunitemesure"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UnitemesureIdcategorieCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"idcategorie" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Unitemesure_Idcategorie_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Unitemesure.Idcategorie"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UnitemesurePrecisionnCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"precisionn" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Unitemesure_Precisionn_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="FkUnitemesure1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_unitemesure_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Unitemesure.Idcategorie"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Unitemesure">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Unitemesure"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Unitemesure.Idcategorie"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Unitemesure1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Unitemesure1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Unitemesure.Idcategorie"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Unitemesure2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="Partiesproduitspfnl_Idunitemes"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Unitemesure2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Unitemesure.Idunitemesure"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="UnitemesureRule0"
+    ResId="CET_UNIT_U00E9_DE_MESURE_EXISTE_D_U00E9J_U00E0"
+    KeyName="AltKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Libelleunitemesure"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

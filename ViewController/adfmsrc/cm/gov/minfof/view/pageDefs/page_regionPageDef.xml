@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_regionPageDef"
+                Package="cm.gov.minfof.view.pageDefs" SkipValidation="skipDataControls">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RegionView1" DataControl="AppModuleDataControl" id="RegionView1Iterator" RangeSize="25"/>
+    <searchRegion Binds="RegionView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="RegionView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="RegionView1Iterator" id="Coderegion">
+      <AttrNames>
+        <Item Value="Coderegion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RegionView1Iterator" id="Nomregion">
+      <AttrNames>
+        <Item Value="Nomregion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RegionView1Iterator" id="Cheflieuregion">
+      <AttrNames>
+        <Item Value="Cheflieuregion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RegionView1Iterator" id="Descriptionregions">
+      <AttrNames>
+        <Item Value="Descriptionregions"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="RegionView1Iterator" id="RegionView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.RegionView" Name="RegionView10">
+        <AttrNames>
+          <Item Value="Idregions"/>
+          <Item Value="Coderegion"/>
+          <Item Value="Nomregion"/>
+          <Item Value="Cheflieuregion"/>
+          <Item Value="Descriptionregions"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="RegionView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="RegionView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="RegionView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="RegionView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="RegionView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="RegionView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="RegionView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

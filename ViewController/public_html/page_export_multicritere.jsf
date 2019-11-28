@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="#{viewcontrollerBundle.COMPILATION_DES_EXPORTATIONS}" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelGroupLayout layout="vertical" id="pgl1">
+                        <af:panelHeader text="Etat sur les Exportations" id="ph1">
+                            <af:query id="qryId1" headerText="Search" disclosed="true"
+                                      value="#{bindings.ExportMultiCritereCriteriaQuery.queryDescriptor}"
+                                      model="#{bindings.ExportMultiCritereCriteriaQuery.queryModel}"
+                                      queryListener="#{bindings.ExportMultiCritereCriteriaQuery.processQuery}"
+                                      queryOperationListener="#{bindings.ExportMultiCritereCriteriaQuery.processQueryOperation}"
+                                      resultComponentId="::pc1:resId1" rows="4" maxColumns="4"/>
+                            <f:facet name="toolbar">
+                                <af:button actionListener="#{bindings.Rollback.execute}"
+                                           text="#{viewcontrollerBundle.ACTUALISER}" immediate="true" id="b3">
+                                    <af:resetActionListener/>
+                                </af:button>
+                            </f:facet>
+                        </af:panelHeader>
+                        <af:panelTabbed position="above" id="pt2" inlineStyle="width:1184px; height:324px;">
+                            <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.DONN_U00E9ES_BRUTES}"
+                                               disclosed="true">
+                                <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b2">
+                                    <af:exportCollectionActionListener type="excelHTML" exportedId="pc1:resId1"/>
+                                </af:button>
+                                <af:spacer width="10" height="10" id="s4"/>
+                                <af:panelCollection id="pc1" inlineStyle="width:1164px;">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <f:facet name="statusbar"/>
+                                    <af:table value="#{bindings.ExportMultiCritere1.collectionModel}" var="row"
+                                              rows="#{bindings.ExportMultiCritere1.rangeSize}"
+                                              emptyText="#{bindings.ExportMultiCritere1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.ExportMultiCritere1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.ExportMultiCritere1.collectionModel.makeCurrent}"
+                                              rowSelection="single"
+                                              fetchSize="#{bindings.ExportMultiCritere1.rangeSize}"
+                                              filterModel="#{bindings.ExportMultiCritereCriteriaQuery.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.ExportMultiCritereCriteriaQuery.processQuery}"
+                                              varStatus="vs" id="resId1" width="1149">
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Iddetailsexportpfnl.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Iddetailsexportpfnl.label}"
+                                                   id="resId1c1" rowHeader="true" width="48">
+                                            <af:outputText value="#{row.Iddetailsexportpfnl}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Iddetailsexportpfnl.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.ExportMultiCritere1.hints.Iddetailsexportpfnl.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Idpermis.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Idpermis.label}"
+                                                   id="resId1c2" width="96">
+                                            <af:selectOneChoice value="#{row.bindings.Idpermis.inputValue}"
+                                                                label="#{row.bindings.Idpermis.label}"
+                                                                required="#{bindings.ExportMultiCritere1.hints.Idpermis.mandatory}"
+                                                                shortDesc="#{bindings.ExportMultiCritere1.hints.Idpermis.tooltip}"
+                                                                readOnly="true" id="soc1">
+                                                <f:selectItems value="#{row.bindings.Idpermis.items}" id="si1"/>
+                                                <f:validator binding="#{row.bindings.Idpermis.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Idpermissionnairespnfl.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Idpermissionnairespnfl.label}"
+                                                   id="resId1c3" width="124">
+                                            <af:selectOneChoice value="#{row.bindings.Idpermissionnairespnfl.inputValue}"
+                                                                label="#{row.bindings.Idpermissionnairespnfl.label}"
+                                                                required="#{bindings.ExportMultiCritere1.hints.Idpermissionnairespnfl.mandatory}"
+                                                                shortDesc="#{bindings.ExportMultiCritere1.hints.Idpermissionnairespnfl.tooltip}"
+                                                                readOnly="true" id="soc2">
+                                                <f:selectItems value="#{row.bindings.Idpermissionnairespnfl.items}"
+                                                               id="si2"/>
+                                                <f:validator binding="#{row.bindings.Idpermissionnairespnfl.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Idcertificatorigine.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Idcertificatorigine.label}"
+                                                   id="resId1c4" width="90">
+                                            <af:selectOneChoice value="#{row.bindings.Idcertificatorigine.inputValue}"
+                                                                label="#{row.bindings.Idcertificatorigine.label}"
+                                                                required="#{bindings.ExportMultiCritere1.hints.Idcertificatorigine.mandatory}"
+                                                                shortDesc="#{bindings.ExportMultiCritere1.hints.Idcertificatorigine.tooltip}"
+                                                                readOnly="true" id="soc3">
+                                                <f:selectItems value="#{row.bindings.Idcertificatorigine.items}"
+                                                               id="si3"/>
+                                                <f:validator binding="#{row.bindings.Idcertificatorigine.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Idpostecontrole.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Idpostecontrole.label}"
+                                                   id="resId1c5" width="112">
+                                            <af:selectOneChoice value="#{row.bindings.Idpostecontrole.inputValue}"
+                                                                label="#{row.bindings.Idpostecontrole.label}"
+                                                                required="#{bindings.ExportMultiCritere1.hints.Idpostecontrole.mandatory}"
+                                                                shortDesc="#{bindings.ExportMultiCritere1.hints.Idpostecontrole.tooltip}"
+                                                                readOnly="true" id="soc4">
+                                                <f:selectItems value="#{row.bindings.Idpostecontrole.items}" id="si4"/>
+                                                <f:validator binding="#{row.bindings.Idpostecontrole.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Idpays.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Idpays.label}"
+                                                   id="resId1c6" width="130">
+                                            <af:selectOneChoice value="#{row.bindings.Idpays.inputValue}"
+                                                                label="#{row.bindings.Idpays.label}"
+                                                                required="#{bindings.ExportMultiCritere1.hints.Idpays.mandatory}"
+                                                                shortDesc="#{bindings.ExportMultiCritere1.hints.Idpays.tooltip}"
+                                                                readOnly="true" id="soc5">
+                                                <f:selectItems value="#{row.bindings.Idpays.items}" id="si5"/>
+                                                <f:validator binding="#{row.bindings.Idpays.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Idpartiesproduitspfnl.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Idpartiesproduitspfnl.label}"
+                                                   id="resId1c7" width="100">
+                                            <af:selectOneChoice value="#{row.bindings.Idpartiesproduitspfnl.inputValue}"
+                                                                label="#{row.bindings.Idpartiesproduitspfnl.label}"
+                                                                required="#{bindings.ExportMultiCritere1.hints.Idpartiesproduitspfnl.mandatory}"
+                                                                shortDesc="#{bindings.ExportMultiCritere1.hints.Idpartiesproduitspfnl.tooltip}"
+                                                                readOnly="true" id="soc6">
+                                                <f:selectItems value="#{row.bindings.Idpartiesproduitspfnl.items}"
+                                                               id="si6"/>
+                                                <f:validator binding="#{row.bindings.Idpartiesproduitspfnl.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Numeroexport.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Numeroexport.label}"
+                                                   id="resId1c8" width="100">
+                                            <af:outputText value="#{row.Numeroexport}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Numeroexport.tooltip}"
+                                                           id="ot2"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Numeropermis.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Numeropermis.label}"
+                                                   id="resId1c9" width="100">
+                                            <af:outputText value="#{row.Numeropermis}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Numeropermis.tooltip}"
+                                                           id="ot3"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Nomouraisonsociale.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Nomouraisonsociale.label}"
+                                                   id="resId1c10" width="100" visible="false">
+                                            <af:outputText value="#{row.Nomouraisonsociale}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Nomouraisonsociale.tooltip}"
+                                                           id="ot4"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Contact.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Contact.label}"
+                                                   id="resId1c11" width="100" visible="false">
+                                            <af:outputText value="#{row.Contact}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Contact.tooltip}"
+                                                           id="ot5"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Adressep.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Adressep.label}"
+                                                   id="resId1c12" visible="false">
+                                            <af:outputText value="#{row.Adressep}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Adressep.tooltip}"
+                                                           id="ot6"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Quantite.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Quantite.label}"
+                                                   id="resId1c13" visible="false">
+                                            <af:outputText value="#{row.Quantite}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Quantite.tooltip}"
+                                                           id="ot7">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.ExportMultiCritere1.hints.Quantite.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Quantiteconvertie.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Quantiteconvertie.label}"
+                                                   id="resId1c14" visible="false">
+                                            <af:outputText value="#{row.Quantiteconvertie}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Quantiteconvertie.tooltip}"
+                                                           id="ot8">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.ExportMultiCritere1.hints.Quantiteconvertie.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Quantiteconvertiefinal.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Quantiteconvertiefinal.label}"
+                                                   id="resId1c15">
+                                            <af:outputText value="#{row.Quantiteconvertiefinal}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Quantiteconvertiefinal.tooltip}"
+                                                           id="ot9">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.ExportMultiCritere1.hints.Quantiteconvertiefinal.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Observations.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Observations.label}"
+                                                   id="resId1c16" visible="false">
+                                            <af:outputText value="#{row.Observations}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Observations.tooltip}"
+                                                           id="ot10"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Libelleunitemesure.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Libelleunitemesure.label}"
+                                                   id="resId1c17" visible="false">
+                                            <af:outputText value="#{row.Libelleunitemesure}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Libelleunitemesure.tooltip}"
+                                                           id="ot11"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Libelleconverti.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Libelleconverti.label}"
+                                                   id="resId1c18">
+                                            <af:outputText value="#{row.Libelleconverti}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Libelleconverti.tooltip}"
+                                                           id="ot12"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Produit.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Produit.label}"
+                                                   id="resId1c19" visible="false">
+                                            <af:outputText value="#{row.Produit}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Produit.tooltip}"
+                                                           id="ot13"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Numeroco.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Numeroco.label}"
+                                                   id="resId1c20" visible="false">
+                                            <af:outputText value="#{row.Numeroco}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Numeroco.tooltip}"
+                                                           id="ot14"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Dateexport.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Dateexport.label}"
+                                                   id="resId1c21">
+                                            <f:facet name="filter">
+                                                <af:inputDate value="#{bindings.ExportMultiCritereCriteriaQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.Dateexport.value}"
+                                                              id="id1">
+                                                    <af:convertDateTime pattern="#{bindings.ExportMultiCritere1.hints.Dateexport.format}"/>
+                                                </af:inputDate>
+                                            </f:facet>
+                                            <af:outputText value="#{row.Dateexport}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Dateexport.tooltip}"
+                                                           id="ot15">
+                                                <af:convertDateTime pattern="#{bindings.ExportMultiCritere1.hints.Dateexport.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Intituleposte.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Intituleposte.label}"
+                                                   id="resId1c22" visible="false">
+                                            <af:outputText value="#{row.Intituleposte}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Intituleposte.tooltip}"
+                                                           id="ot16"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ExportMultiCritere1.hints.Nompays.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ExportMultiCritere1.hints.Nompays.label}"
+                                                   id="resId1c23" visible="false">
+                                            <af:outputText value="#{row.Nompays}"
+                                                           shortDesc="#{bindings.ExportMultiCritere1.hints.Nompays.tooltip}"
+                                                           id="ot17"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelCollection>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.DONN_U00E9ES_COMPIL_U00E9ES}">
+                                <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b1">
+                                    <dvt:exportPivotTableData exportedId="pt3" type="excelHTML"/>
+                                </af:button>
+                                <af:spacer width="10" height="10" id="s3"/>
+                                <dvt:pivotTable id="pt3" value="#{bindings.ExportMultiCritere11.pivotTableModel}"
+                                                var="cellData" varStatus="cellStatus" splitMode="enabled"
+                                                inlineStyle="width:699px;">
+                                    <dvt:headerCell>
+                                        <af:switcher facetName="#{cellData.layerName}" defaultFacet="Default" id="s1">
+                                            <f:facet name="DataLayer">
+                                                <af:outputText value="#{cellData.label}" id="ot18"/>
+                                            </f:facet>
+                                            <f:facet name="Produit">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot19"/>
+                                            </f:facet>
+                                            <f:facet name="Libelleconverti">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot20"/>
+                                            </f:facet>
+                                            <f:facet name="Nompays">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot21"/>
+                                            </f:facet>
+                                            <f:facet name="Nomouraisonsociale">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot22"/>
+                                            </f:facet>
+                                            <f:facet name="Default">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot23"/>
+                                            </f:facet>
+                                        </af:switcher>
+                                    </dvt:headerCell>
+                                    <dvt:dataCell id="dc1">
+                                        <af:switcher facetName="#{cellStatus.members.DataLayer.value}"
+                                                     defaultFacet="Default" id="s2">
+                                            <f:facet name="Quantiteconvertiefinal">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot24">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.ExportMultiCritere11.hints.Quantiteconvertiefinal.format}"/>
+                                                </af:outputText>
+                                            </f:facet>
+                                            <f:facet name="Default">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot25"/>
+                                            </f:facet>
+                                        </af:switcher>
+                                    </dvt:dataCell>
+                                </dvt:pivotTable>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.GRAPHIQUE}">
+                                <af:button text="#{viewcontrollerBundle.RAFRA_U00EECHIR_LES_GRAPHES}" id="b4"
+                                           action="#{exportPfnlBean.rafraichirGraphe}"/>
+                                <dvt:barChart id="barChart1" var="row"
+                                              value="#{bindings.CompilExportDestination1.collectionModel}">
+                                    <dvt:chartLegend id="cl1"/>
+                                    <f:facet name="dataStamp">
+                                        <dvt:chartDataItem id="di1" series="#{row.Nompays} #{row.Nomouraisonsociale}"
+                                                           value="#{row.Quantiteconvertiefinal}"
+                                                           group="#{row.Produit}"/>
+                                    </f:facet>
+                                </dvt:barChart>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:exportPfnlBean-->
+</f:view>

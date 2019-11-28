@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:mycomps="http://mycompany.com/adf/components">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="#{viewcontrollerBundle.EDITION_DES_CEQE}" id="d1">
+        <af:resource source="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="javascript"/>
+        <af:resource source="js/jquery.growl.js" type="javascript"/>
+        <af:resource source="style/jquery.growl.css" type="css"/>
+        <af:messages id="m1"/>
+        <af:form id="f1" usesUpload="true">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelBox id="pb1" showDisclosure="false" text="#{viewcontrollerBundle.EDITION_DES_CERTIFICATS}">
+                        <f:facet name="toolbar">
+                            <af:panelGroupLayout id="pgl4">
+                                <af:button actionListener="#{bindings.Rollback.execute}"
+                                           text="#{viewcontrollerBundle.ACTUALISER}" immediate="true" id="b8">
+                                    <af:resetActionListener/>
+                                </af:button>
+                                <af:spacer width="10" height="10" id="s9"/>
+                                <af:button
+                                           text="#{viewcontrollerBundle.SUPPRIMER}"
+                                           disabled="#{!bindings.Delete.enabled}" id="b9"
+                                           action="#{CeqeBean.supprimeCeqe}" visible="false"/>
+                                <mycomps:ConfirmButton id="cb1" ButtonText="#{viewcontrollerBundle.SUPPRIMER}"
+                                                       ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}"
+                                                       onDialogReturn="#{CeqeBean.onDelete}">
+                                    <f:facet name="DialogContent"/>
+                                </mycomps:ConfirmButton>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <af:spacer width="10" height="10" id="s8"/>
+                        <af:panelTabbed position="above" id="pt2">
+                            <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}" disclosed="true">
+                                <af:panelCollection id="pc1" inlineStyle="width:855px;">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <af:table value="#{bindings.CeqeView1.collectionModel}" var="row"
+                                              rows="#{bindings.CeqeView1.rangeSize}"
+                                              emptyText="#{bindings.CeqeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.CeqeView1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.CeqeView1.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.CeqeView1.rangeSize}"
+                                              filterModel="#{bindings.CeqeView1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.CeqeView1Query.processQuery}" varStatus="vs"
+                                              id="t1" partialTriggers=":::b1 :::b2 :::b3 :::b4 :::b9">
+                                        <af:column sortProperty="#{bindings.CeqeView1.hints.Idceqe.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CeqeView1.hints.Idceqe.label}" id="c1"
+                                                   rowHeader="true">
+                                            <af:outputText value="#{row.Idceqe}"
+                                                           shortDesc="#{bindings.CeqeView1.hints.Idceqe.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.CeqeView1.hints.Idceqe.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CeqeView1.hints.Numeroceqe.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CeqeView1.hints.Numeroceqe.label}" id="c2">
+                                            <af:outputText value="#{row.Numeroceqe}"
+                                                           shortDesc="#{bindings.CeqeView1.hints.Numeroceqe.tooltip}"
+                                                           id="ot2"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CeqeView1.hints.Datedelivrance.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CeqeView1.hints.Datedelivrance.label}"
+                                                   id="c3">
+                                            <f:facet name="filter">
+                                                <af:inputDate value="#{bindings.CeqeView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datedelivrance.value}"
+                                                              id="id2">
+                                                    <af:convertDateTime pattern="#{bindings.CeqeView1.hints.Datedelivrance.format}"/>
+                                                </af:inputDate>
+                                            </f:facet>
+                                            <af:outputText value="#{row.Datedelivrance}"
+                                                           shortDesc="#{bindings.CeqeView1.hints.Datedelivrance.tooltip}"
+                                                           id="ot3">
+                                                <af:convertDateTime pattern="#{bindings.CeqeView1.hints.Datedelivrance.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CeqeView1.hints.Idpermissionnaire.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CeqeView1.hints.Idpermissionnaire.label}"
+                                                   id="c4">
+                                            <af:selectOneChoice value="#{row.bindings.Idpermissionnaire.inputValue}"
+                                                                label="#{row.bindings.Idpermissionnaire.label}"
+                                                                required="#{bindings.CeqeView1.hints.Idpermissionnaire.mandatory}"
+                                                                shortDesc="#{bindings.CeqeView1.hints.Idpermissionnaire.tooltip}"
+                                                                readOnly="true" id="soc2">
+                                                <f:selectItems value="#{row.bindings.Idpermissionnaire.items}"
+                                                               id="si2"/>
+                                                <f:validator binding="#{row.bindings.Idpermissionnaire.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.CeqeView1.hints.Idpermis.label}" id="c9"
+                                                   filterable="true">
+                                            <af:selectOneChoice value="#{row.bindings.Idpermis.inputValue}"
+                                                                label="#{row.bindings.Idpermis.label}"
+                                                                required="#{bindings.CeqeView1.hints.Idpermis.mandatory}"
+                                                                shortDesc="#{bindings.CeqeView1.hints.Idpermis.tooltip}"
+                                                                id="soc1" readOnly="true">
+                                                <f:selectItems value="#{row.bindings.Idpermis.items}" id="si1"/>
+                                                <f:validator binding="#{row.bindings.Idpermis.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CeqeView1.hints.Observation.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CeqeView1.hints.Observation.label}" id="c5">
+                                            <af:outputText value="#{row.Observation}"
+                                                           shortDesc="#{bindings.CeqeView1.hints.Observation.tooltip}"
+                                                           id="ot4"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CeqeView1.hints.Nomfichier.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CeqeView1.hints.Nomfichier.label}" id="c6"
+                                                   visible="false">
+                                            <af:outputText value="#{row.Nomfichier}"
+                                                           shortDesc="#{bindings.CeqeView1.hints.Nomfichier.tooltip}"
+                                                           id="ot5"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CeqeView1.hints.Cheminfichier.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CeqeView1.hints.Cheminfichier.label}" id="c7"
+                                                   visible="false">
+                                            <af:outputText value="#{row.Cheminfichier}"
+                                                           shortDesc="#{bindings.CeqeView1.hints.Cheminfichier.tooltip}"
+                                                           id="ot6"/>
+                                        </af:column>
+                                        <af:column id="c8">
+                                            <af:link text="#{viewcontrollerBundle.T_U00E9L_U00E9CHARGER_LE_FICHIER}"
+                                                     id="l1" visible="#{not empty row.bindings.Nomfichier.inputValue}">
+                                                <af:fileDownloadActionListener filename="#{not empty bindings.Nomfichier.inputValue}"
+                                                                               method="#{CeqeBean.fileDownloadActionListener}"/>
+                                            </af:link>
+                                        </af:column>
+                                    </af:table>
+                                    <f:facet name="statusbar"/>
+                                </af:panelCollection>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
+                                <af:panelFormLayout id="pfl1">
+                                    <af:inputText value="#{bindings.Idceqe.inputValue}"
+                                                  label="#{bindings.Idceqe.hints.label}"
+                                                  required="#{bindings.Idceqe.hints.mandatory}"
+                                                  columns="#{bindings.Idceqe.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Idceqe.hints.precision}"
+                                                  shortDesc="#{bindings.Idceqe.hints.tooltip}" id="it1" visible="false">
+                                        <f:validator binding="#{bindings.Idceqe.validator}"/>
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Idceqe.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.Numeroceqe.inputValue}"
+                                                  label="#{bindings.Numeroceqe.hints.label}"
+                                                  required="#{bindings.Numeroceqe.hints.mandatory}"
+                                                  columns="#{bindings.Numeroceqe.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Numeroceqe.hints.precision}"
+                                                  shortDesc="#{bindings.Numeroceqe.hints.tooltip}" id="it2">
+                                        <f:validator binding="#{bindings.Numeroceqe.validator}"/>
+                                    </af:inputText>
+                                    <af:inputComboboxListOfValues id="nomouraisonsocialeId"
+                                                                  popupTitle="Search and Select: #{bindings.nomouraisonsociale.hints.label}"
+                                                                  value="#{bindings.nomouraisonsociale.inputValue}"
+                                                                  label="#{bindings.nomouraisonsociale.hints.label}"
+                                                                  model="#{bindings.nomouraisonsociale.listOfValuesModel}"
+                                                                  required="#{bindings.nomouraisonsociale.hints.mandatory}"
+                                                                  columns="#{bindings.nomouraisonsociale.hints.displayWidth}"
+                                                                  shortDesc="#{bindings.nomouraisonsociale.hints.tooltip}"
+                                                                  autoSubmit="true">
+                                        <f:validator binding="#{bindings.nomouraisonsociale.validator}"/>
+                                    </af:inputComboboxListOfValues>
+                                    <af:inputComboboxListOfValues id="numeropermisId"
+                                                                  popupTitle="Search and Select: #{bindings.numeropermis.hints.label}"
+                                                                  value="#{bindings.numeropermis.inputValue}"
+                                                                  label="#{bindings.numeropermis.hints.label}"
+                                                                  model="#{bindings.numeropermis.listOfValuesModel}"
+                                                                  required="#{bindings.numeropermis.hints.mandatory}"
+                                                                  columns="#{bindings.numeropermis.hints.displayWidth}"
+                                                                  shortDesc="#{bindings.numeropermis.hints.tooltip}"
+                                                                  partialTriggers="nomouraisonsocialeId">
+                                        <f:validator binding="#{bindings.numeropermis.validator}"/>
+                                    </af:inputComboboxListOfValues>
+                                    <af:inputDate value="#{bindings.Datedelivrance.inputValue}"
+                                                  label="#{bindings.Datedelivrance.hints.label}"
+                                                  required="#{bindings.Datedelivrance.hints.mandatory}"
+                                                  columns="#{bindings.Datedelivrance.hints.displayWidth}"
+                                                  shortDesc="#{bindings.Datedelivrance.hints.tooltip}" id="id1">
+                                        <f:validator binding="#{bindings.Datedelivrance.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.Datedelivrance.format}"/>
+                                    </af:inputDate>
+                                    <af:inputFile id="if1" valueChangeListener="#{CeqeBean.uploadFileVCE}"/>
+                                    <af:link text="#{viewcontrollerBundle.T_U00E9L_U00E9CHARGER_LE_FICHIER}" id="l2"
+                                             visible="#{not empty bindings.Nomfichier.inputValue}">
+                                        <af:fileDownloadActionListener filename="#{not empty bindings.Nomfichier.inputValue}"
+                                                                       method="#{CeqeBean.fileDownloadActionListener}"/>
+                                    </af:link>
+                                    <af:inputText value="#{bindings.Observation.inputValue}"
+                                                  label="#{bindings.Observation.hints.label}"
+                                                  required="#{bindings.Observation.hints.mandatory}"
+                                                  columns="#{bindings.Observation.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Observation.hints.precision}"
+                                                  shortDesc="#{bindings.Observation.hints.tooltip}" id="it4" rows="4">
+                                        <f:validator binding="#{bindings.Observation.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.Nomfichier.inputValue}"
+                                                  label="#{bindings.Nomfichier.hints.label}"
+                                                  required="#{bindings.Nomfichier.hints.mandatory}"
+                                                  columns="#{bindings.Nomfichier.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Nomfichier.hints.precision}"
+                                                  shortDesc="#{bindings.Nomfichier.hints.tooltip}" id="it5"
+                                                  visible="false">
+                                        <f:validator binding="#{bindings.Nomfichier.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.Cheminfichier.inputValue}"
+                                                  label="#{bindings.Cheminfichier.hints.label}"
+                                                  required="#{bindings.Cheminfichier.hints.mandatory}"
+                                                  columns="#{bindings.Cheminfichier.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Cheminfichier.hints.precision}"
+                                                  shortDesc="#{bindings.Cheminfichier.hints.tooltip}" id="it6"
+                                                  visible="false">
+                                        <f:validator binding="#{bindings.Cheminfichier.validator}"/>
+                                    </af:inputText>
+                                    <f:facet name="footer">
+                                        <af:spacer width="10" height="10" id="s7"/>
+                                        <af:panelGroupLayout layout="vertical" id="pgl1">
+                                            <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                                <af:button actionListener="#{bindings.First.execute}"
+                                                           text="#{viewcontrollerBundle.FIRST}"
+                                                           disabled="#{!bindings.First.enabled}" partialSubmit="true"
+                                                           id="b1"/>
+                                                <af:spacer width="10" height="10" id="s1"/>
+                                                <af:button actionListener="#{bindings.Previous.execute}"
+                                                           text="#{viewcontrollerBundle.PREVIOUS}"
+                                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                           id="b2"/>
+                                                <af:spacer width="10" height="10" id="s2"/>
+                                                <af:button actionListener="#{bindings.Next.execute}"
+                                                           text="#{viewcontrollerBundle.NEXT}"
+                                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                           id="b3"/>
+                                                <af:spacer width="10" height="10" id="s3"/>
+                                                <af:button actionListener="#{bindings.Last.execute}"
+                                                           text="#{viewcontrollerBundle.LAST}"
+                                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                           id="b4"/>
+                                            </af:panelGroupLayout>
+                                            <af:spacer width="10" height="10" id="s6"/>
+                                            <af:panelGroupLayout id="pgl3">
+                                                <af:button
+                                                           text="#{viewcontrollerBundle.NOUVEAU}"
+                                                           disabled="#{!bindings.CreateInsert.enabled}" id="b6"
+                                                           action="#{CeqeBean.creerCeqe}"/>
+                                                <af:spacer width="10" height="10" id="s4"/>
+                                                <af:button text="#{viewcontrollerBundle.ENREGISTRER}" id="b5"
+                                                           action="#{CeqeBean.enregCeqe}"/>
+                                                <af:spacer width="10" height="10" id="s5"/>
+                                                <af:button text="#{viewcontrollerBundle.ANNULER}"
+                                                           id="b7" immediate="true" action="#{CeqeBean.annulerCeqe}">
+                                                    <af:resetActionListener/>
+                                                </af:button>
+                                            </af:panelGroupLayout>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                </af:panelFormLayout>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

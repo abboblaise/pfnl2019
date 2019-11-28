@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>TemplateGlobal</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>
+                    content
+                </afc:facet-name>
+            </afc:facet>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelSplitter splitterPosition="156" orientation="vertical" id="pt_ps1">
+        <f:facet name="first">
+            <af:panelGridLayout id="pt_pgl2"
+                                inlineStyle='background-clip:border-box; background-image:url("arriere.jpg");' landmark="banner">
+                <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc1" halign="center"
+                                 inlineStyle='background-image:none;'>
+                        <af:panelGroupLayout id="pt_pgl3" halign="center" layout="horizontal" valign="middle">
+                            <af:image source="#{resource['images:MINFOF.png']}" id="pt_i1">
+                                <?audit suppress oracle.adf.faces.imgshortdesc?>
+                            </af:image>
+                            <af:image id="pt_i2" source="#{resource['images:texte.png']}">
+                                <?audit suppress oracle.adf.faces.imgshortdesc?>
+                            </af:image>
+                            <af:image id="pt_i3" source="#{resource['images:logo_pfnl.png']}">
+                                <?audit suppress oracle.adf.faces.imgshortdesc?>
+                            </af:image>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </f:facet>
+        <f:facet name="second">
+            <af:panelSplitter splitterPosition="31" orientation="vertical" positionedFromEnd="true" id="pt_ps2">
+                <f:facet name="first">
+                    <af:panelSplitter splitterPosition="212" id="pt_ps3">
+                        <f:facet name="first">
+                            <af:panelAccordion discloseMany="true" id="pt_pa1">
+                                <af:showDetailItem id="pane1" text="#{viewcontrollerBundle.PARAMETRAGE}"
+                                                   rendered="#{RecupUser.ud.estinfo or RecupUser.ud.estadmin}">
+                                    <!--<af:showDetailItem id="pane1" text="#{viewcontrollerBundle.PARAMETRAGE}"
+                                                   rendered="true">-->
+                                    <af:panelAccordion discloseMany="false" id="pt_pa2">
+                                        <af:showDetailItem id="pane2"
+                                                           text="#{viewcontrollerBundle.UNIT_U00E9S_ADMINISTRATIVES}">
+                                            <af:panelGroupLayout id="pt_pgl6" layout="vertical" halign="center">
+                                                <af:button text="#{viewcontrollerBundle.PAYS}" id="pt_b2"
+                                                           destination="page_pays.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s3"/>
+                                                <af:button text="#{viewcontrollerBundle.REGIONS}" id="pt_b1"
+                                                           destination="page_region.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s2"/>
+                                                <af:button text="#{viewcontrollerBundle.DEPARTEMENTS}" id="pt_b3"
+                                                           destination="page_departement.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s4"/>
+                                                <af:button text="#{viewcontrollerBundle.COMMUNES}" id="pt_b4"
+                                                           destination="page_commune.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s13"/>
+                                                <af:button text="#{viewcontrollerBundle.LOCALITES}" id="pt_b14"
+                                                           destination="page_localite.jsf" targetFrame="_parent"/>
+                                                <af:spacer width="10" height="3" id="pt_s14"/>
+                                                <af:button text="#{viewcontrollerBundle.POSTES_DE_CONTROLE}" id="pt_b15"
+                                                           destination="page_pc.jsf"/>
+                                            </af:panelGroupLayout>
+                                        </af:showDetailItem>
+                                        <af:showDetailItem text="#{viewcontrollerBundle.PRODUITS}" id="pt_sdi2">
+                                            <af:panelGroupLayout id="pt_pgl7" layout="vertical" halign="center">
+                                                <af:button text="#{viewcontrollerBundle.FAMILLE_DE_PRODUITS}" id="pt_b5"
+                                                           destination="page_famille_produit.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s5"/>
+                                                <af:button text="#{viewcontrollerBundle.TYPE_DE_PRODUITS}"
+                                                           id="pt_b11" destination="page_type_produit.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s9"/>
+                                                <af:button text="#{viewcontrollerBundle.PARTIES_RECOLTEES}" id="pt_b7"
+                                                           destination="page_parties_recoltees.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s6"/>
+                                                <af:button text="#{viewcontrollerBundle.CATEGORIES_DE_MESURE}"
+                                                           id="pt_b12" destination="page_categorie_unitemesure.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s11"/>
+                                                <af:button text="#{viewcontrollerBundle.UNITE_DE_MESURE}" id="pt_b13"
+                                                           destination="page_unitemesure.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s12"/>
+                                                <af:button text="#{viewcontrollerBundle.ORIGINE_DES_PFNL}" id="pt_b8"
+                                                           destination="page_originepfnl.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s8"/>
+                                                <af:button text="#{viewcontrollerBundle.PRODUITS}" id="pt_b6"
+                                                           destination="page_produit3.jsf"/>
+                                                <af:separator id="pt_s7"/>
+                                            </af:panelGroupLayout>
+                                        </af:showDetailItem>
+                                        <af:showDetailItem text="#{viewcontrollerBundle.ACTEURS}" id="pt_sdi3">
+                                            <af:panelGroupLayout id="pt_pgl1" layout="vertical" halign="center"
+                                                                 valign="middle">
+                                                <af:spacer width="10" height="10" id="pt_s1"/>
+                                                <af:button text="#{viewcontrollerBundle.ACTEURS}" id="pt_b9"
+                                                           destination="page_permissionnaire.jsf"/>
+                                                <af:spacer width="10" height="10" id="pt_s10"/>
+                                                <af:button text="#{viewcontrollerBundle.DOCUMENTS_OFFICIELS}" id="pt_b18"
+                                                           destination="page_permis.jsf"/>
+                                                <af:spacer width="10" height="10" id="pt_s15"/>
+                                                <af:button text="#{viewcontrollerBundle.CEQE}"
+                                                           id="pt_b26" destination="page_ceqe.jsf"/>
+                                                <af:spacer width="10" height="10" id="pt_s24"/>
+                                                <af:button text="#{viewcontrollerBundle.CERTIFICAT_D_ORIGINE}"
+                                                           id="pt_b10" destination="page_certificat.jsf"/>
+                                            </af:panelGroupLayout>
+                                        </af:showDetailItem>
+                                    </af:panelAccordion>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="#{viewcontrollerBundle.TRAITEMENTS}" id="pt_sdi1"
+                                                   visible="#{not RecupUser.ud.estinfo}">
+                                    <af:panelGroupLayout id="pt_pgl8" valign="middle" halign="center" layout="vertical">
+                                       <af:button text="#{viewcontrollerBundle.FICHE_DE_COLLECTE}" id="pt_b19"
+                                                   destination="page_collecte.jsf"
+                                                   rendered="#{RecupUser.ud.saisiecollecte}"/>
+                                        <!-- <af:button text="#{viewcontrollerBundle.FICHE_DE_COLLECTE}" id="pt_b19"
+                                                   destination="page_collecte.jsf"
+                                                   rendered="true"/>-->
+                                        <af:spacer width="10" height="10" id="pt_s18"/>
+                                        <af:button text="#{viewcontrollerBundle.B_S_E}" id="pt_b20"
+                                                   destination="page_export.jsf"
+                                                   rendered="#{RecupUser.ud.saisieexport}"/>
+                                        <!--<af:button text="#{viewcontrollerBundle.B_S_E}" id="pt_b20"
+                                                   destination="page_export.jsf"
+                                                   rendered="true"/>-->
+                                        <af:spacer width="10" height="10" id="pt_s19"/>
+                                        <af:button text="#{viewcontrollerBundle.LETTRE_DE_VOITURE}" id="pt_b21"
+                                                   destination="page_lettrevoiture.jsf"
+                                                   rendered="#{RecupUser.ud.saisietransit}"/>
+                                      <!--<af:button text="#{viewcontrollerBundle.LETTRE_DE_VOITURE}" id="pt_b21"
+                                                   destination="page_lettrevoiture.jsf"
+                                                   rendered="true"/>-->
+                                        <af:spacer width="10" height="10" id="pt_s17"/>
+                                        <af:button text="#{viewcontrollerBundle.COMPILATION_COLLECTES}"
+                                                   id="pt_b17" destination="page_collecte_multicritere.jsf"/>
+                                        <af:spacer width="10" height="10" id="pt_s21"/>
+                                        <af:button text="#{viewcontrollerBundle.COMPILATION_LETTRES_VOITURES}" id="pt_b23"
+                                                   destination="page_lettrevoiture_multicritere.jsf"/>
+                                        <af:spacer width="10" height="10" id="pt_s23"/>
+                                        <af:button text="#{viewcontrollerBundle.COMPILATION_EXPORTATION}"
+                                                   id="pt_b25" destination="page_export_multicritere.jsf"/>
+                                    </af:panelGroupLayout>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="#{viewcontrollerBundle.UTILISATEURS}" id="pt_sdi5"
+                                                   rendered="#{RecupUser.ud.estinfo}">
+                                <!--<af:showDetailItem text="#{viewcontrollerBundle.UTILISATEURS}" id="pt_sdi5"
+                                                   rendered="true">-->
+                                    <af:panelGroupLayout id="pt_pgl10" valign="top" halign="center" layout="vertical">
+                                        <af:button text="#{viewcontrollerBundle.UTILISATEURS}" id="pt_b16"
+                                                   destination="page_utilisateur.jsf"/>
+                                        <af:spacer width="10" height="10" id="pt_s16"/>
+                                        <af:button text="#{viewcontrollerBundle.GESTION_DES_PROFILS}" id="pt_b24"
+                                                   destination="page_configgroupe.jsf"/>
+                                    </af:panelGroupLayout>
+                                </af:showDetailItem>
+                            </af:panelAccordion>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelSplitter id="pt_ps4" orientation="vertical" splitterPosition="35">
+                                <f:facet name="first">
+                                    <af:panelGridLayout id="pt_pgl5"
+                                                        inlineStyle='background-image:url("arriere.jpg");'>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr2">
+                                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc2"
+                                                         inlineStyle='background-image:url("arriere.jpg");'
+                                                         halign="end">
+                                                <af:panelGroupLayout id="pt_pgl9" halign="right">
+                                                    <af:outputText value="#{view.viewId}" id="nompage"
+                                                                   inlineStyle="color:White;" rendered="false"/>
+                                                    <af:outputText value="#{RecupUser.ud.nonuser}" id="pt_ot1"
+                                                                   inlineStyle="color:White;"/>
+                                                       <!--<af:outputText value="Test" id="pt_ot1"
+                                                                   inlineStyle="color:White;"/>-->
+                                                    <af:spacer width="10" height="10" id="pt_s20"/>
+                                                    <af:link text="#{viewcontrollerBundle.MODIFIER_MES_INFO}" id="pt_l1" inlineStyle="color:#fefbff;"
+                                                             destination="page_modifpwd.jsf"/>
+                                                    <af:spacer width="10" height="10" id="pt_s22"/>
+                                                    <af:button text="#{viewcontrollerBundle.D_U00E9CONNEXION}" id="pt_b22"
+                                                               action="#{TemplateBean.Deconnecter}"/>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </f:facet>
+                                <f:facet name="second">
+                                    <af:facetRef facetName="content"/>
+                                </f:facet>
+                            </af:panelSplitter>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:facet name="second">
+                    <af:panelGroupLayout id="pt_pgl4" halign="left" valign="middle"/>
+                </f:facet>
+            </af:panelSplitter>
+        </f:facet>
+    </af:panelSplitter>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:TemplateBean-->
+</af:pageTemplateDef>

@@ -1,0 +1,38 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="/cm/gov/minfof/model/entity/common/"
+     xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns="/cm/gov/minfof/model/entityviewobject/common/" elementFormDefault="qualified"
+     sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:import schemaLocation="../../entity/common/PartiesProduitsPfnlViewSDO.xsd" namespace="/cm/gov/minfof/model/entity/common/"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:include schemaLocation="UnitemesureViewSDO.xsd"/>
+    <xsd:complexType name="DetailsexportpfnlViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Iddetailsexportpfnl</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Iddetailsexportpfnl" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idexportpfnl" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idunitemesure" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Quantite" type="xsd:float" minOccurs="0" nillable="true"/>
+            <xsd:element name="Observations" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpartieproduitpfnl" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idcertificat" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpays" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idcertificat1" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="numeroco" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="DetailsexportpfnlView" type="DetailsexportpfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="DetailsexportpfnlView1" type="DetailsexportpfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="DetailsexportpfnlView2" type="DetailsexportpfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="PartiesProduitsPfnlView" type="ns0:PartiesProduitsPfnlViewSDO" minOccurs="0"/>
+            <xsd:element name="UnitemesureView" type="UnitemesureViewSDO" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="detailsexportpfnlViewSDO" type="DetailsexportpfnlViewSDO"/>
+</xsd:schema>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="getLocaliteUser"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="cm.gov.minfof.model.entityviewobject.getLocaliteUser_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="idregionalbind"
+    Kind="viewcriteria"
+    Type="java.math.BigDecimal"/>
+  <Variable
+    Name="iddepartementalbind"
+    Kind="viewcriteria"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[select localite.idcommune, 
+localite.idlocalite,
+localite.nomlocalite,
+departements.iddepartements,
+regions.idregions
+from localite,communes, departements, regions
+where communes.idcommunes=localite.idcommune
+and departements.iddepartements = communes.iddepartements
+and regions.idregions = departements.idregions
+order by localite.nomlocalite]]></SQLQuery>
+  <ViewAttribute
+    Name="Idcommune"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idcommune"
+    Expression="idcommune"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idlocalite"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idlocalite"
+    Expression="idlocalite"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomlocalite"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="45"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomlocalite"
+    Expression="nomlocalite"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Iddepartements"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="iddepartements"
+    Expression="iddepartements"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idregions"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idregions"
+    Expression="idregions"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="getLocaliteUserCriteria"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getLocaliteUser"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="getLocaliteUserSubCriteria1"
+      ViewObjectName="cm.gov.minfof.model.entityviewobject.getLocaliteUser"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="getLocaliteUserSubCriteria1_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="Idregions"
+          ViewAttribute="Idregions"
+          Operator="="
+          Conjunction="AND"
+          Value=":idregionalbind"
+          Required="Optional"
+          IsBindVarValue="true"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="depCriteria"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getLocaliteUser"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="getLocaliteUserSubCriteria1"
+      ViewObjectName="cm.gov.minfof.model.entityviewobject.getLocaliteUser"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="getLocaliteUserSubCriteria1_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="Iddepartements"
+          ViewAttribute="Iddepartements"
+          Operator="="
+          Conjunction="AND"
+          Value=":iddepartementalbind"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CompilLettreVoiture"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="cm.gov.minfof.model.entityviewobject.CompilLettreVoiture_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[SELECT
+	regions.idregions AS regiondestination,
+	lettrevoiture.iddepartementdestination AS departementdestination,
+    lettrevoiture.idpostechargement AS localitedepart,
+    communes.idcommunes AS idcommunedepart,
+    lesdepartements.iddepartements AS iddepartementdepart,
+    lesdepartements.nomdepartement AS nomdepartementdepart,
+    lesregions.idregions AS idregionsdepart,
+    lesregions.nomregion AS nomregiondepart,
+    communes.nomcommune AS nomcommunedepart,
+    permis.idpermissionnaire AS permissionnaire,
+    lettrevoiture.idpermis AS permis,
+	lettrevoiture.nomconducteur AS nomconducteur,	
+	lettrevoiture.numerolettrevoiture AS numerolettrevoiture,	
+	lettrevoiture.datelettrevoiture AS datelettrevoiture,	
+    lettrevoiture.immatriculation AS immatriculation,
+	detailslettrevoiture.quantite AS quantite,
+    sum(
+	CASE WHEN (lesunites1.ordregrandeur = 'RE') 
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite  
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio )  
+    END  
+    END
+ELSE CASE WHEN(lesunites1.ordregrandeur =  'PP')
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite * lesunites1.ratio 
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite * lesunites1.ratio )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio * lesunites1.ratio)  
+    END  
+    END
+ELSE CASE WHEN(lesunites1.ordregrandeur =  'PG')
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite / lesunites1.ratio 
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite / lesunites1.ratio )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio / lesunites1.ratio)  
+    END  
+    END
+END
+END
+END) AS quantiteconvertie,    
+	CASE WHEN (lesunites1.ordregrandeur = 'RE') 
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite  
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio )  
+    END  
+    END
+ELSE CASE WHEN(lesunites1.ordregrandeur =  'PP')
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite * lesunites1.ratio 
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite * lesunites1.ratio )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio * lesunites1.ratio)  
+    END  
+    END
+ELSE CASE WHEN(lesunites1.ordregrandeur =  'PG')
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite / lesunites1.ratio 
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite / lesunites1.ratio )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio / lesunites1.ratio)  
+    END  
+    END
+END
+END
+END AS qte_total_dep_region,
+
+	detailslettrevoiture.observations AS observations,	
+	detailslettrevoiture.iddetailslettrevoiture AS iddetailslettrevoiture,
+    detailslettrevoiture.idpartieproduitpfnl AS partieproduitpfnl,
+    detailslettrevoiture.idunitemesure AS idunitemesure,
+	unitemesure.libelleunitemesure AS libelleunitemesure,	
+    lesunites1.libelleunitemesure AS libelleconverti,
+	CONCAT(produitspfnl.nomcommercial , '(',partiesrecoltees.nompartierecoltee , ')')  AS Produit,	
+	permissionnairespnfl.Nomouraisonsociale AS Nomouraisonsociale,	
+	departements.nomdepartement AS nomdepartementdestination,	
+        regions.nomregion AS nomregiondestination,
+	permissionnairespnfl.Adressep AS Adressep,	
+	localite.nomlocalite AS nomlocalite
+FROM 
+	partiesrecoltees,	
+	partiesproduitspfnl,	
+	produitspfnl,	
+	detailslettrevoiture,	
+	unitemesure,	
+	lettrevoiture,	
+	permissionnairespnfl,
+	regions,
+	departements,	
+    communes,
+	localite,
+    lesunites,
+    lesunites1,
+    lesdepartements,
+    lesregions,
+    permis
+WHERE 
+	localite.idlocalite = lettrevoiture.idpostechargement
+    AND		localite.idcommune = communes.idcommunes
+    AND		communes.iddepartements = lesdepartements.iddepartements
+    AND		lesdepartements.idregions = lesregions.idregions
+	AND		departements.IDDepartements = lettrevoiture.iddepartementdestination
+    AND		departements.idregions = regions.idregions
+    AND		permis.idpermissionnaire = permissionnairespnfl.IDPermissionnairesPNFL
+	AND		permis.idpermis = lettrevoiture.idpermis
+	AND		lettrevoiture.idlettrevoiture = detailslettrevoiture.idlettrevoiture
+	AND		unitemesure.idunitemesure = detailslettrevoiture.idunitemesure
+	AND		partiesproduitspfnl.idpartiesproduitspfnl = detailslettrevoiture.idpartieproduitpfnl
+	AND		produitspfnl.IDProduitspfnl = partiesproduitspfnl.IDProduitspfnl
+	AND		partiesrecoltees.idpartiesrecoltees = partiesproduitspfnl.idpartiesrecoltees
+    AND		lesunites.idunitemesure = detailslettrevoiture.idunitemesure
+    AND		lesunites1.idunitemesure = partiesproduitspfnl.idunitemesure
+GROUP BY partieproduitpfnl, idregionsdepart, iddepartementdepart, permissionnaire
+order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
+  <ViewAttribute
+    Name="Regiondestination"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="regiondestination"
+    Expression="regiondestination"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Departementdestination"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="departementdestination"
+    Expression="departementdestination"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Localitedepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="localitedepart"
+    Expression="localitedepart"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idcommunedepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idcommunedepart"
+    Expression="idcommunedepart"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Iddepartementdepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="iddepartementdepart"
+    Expression="iddepartementdepart"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomdepartementdepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomdepartementdepart"
+    Expression="nomdepartementdepart"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idregionsdepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idregionsdepart"
+    Expression="idregionsdepart"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomregiondepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomregiondepart"
+    Expression="nomregiondepart"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomcommunedepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomcommunedepart"
+    Expression="nomcommunedepart"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Permissionnaire"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="permissionnaire"
+    Expression="permissionnaire"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Permis"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="permis"
+    Expression="permis"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomconducteur"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="45"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomconducteur"
+    Expression="nomconducteur"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Numerolettrevoiture"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="numerolettrevoiture"
+    Expression="numerolettrevoiture"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Datelettrevoiture"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    AliasName="datelettrevoiture"
+    Expression="datelettrevoiture"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="Immatriculation"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="immatriculation"
+    Expression="immatriculation"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Quantite"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    AliasName="quantite"
+    Expression="quantite"
+    SQLType="FLOAT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Quantiteconvertie"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="DOUBLE"
+    AliasName="quantiteconvertie"
+    Expression="quantiteconvertie"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="QteTotalDepRegion"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="DOUBLE"
+    AliasName="qte_total_dep_region"
+    Expression="qte_total_dep_region"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Observations"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="observations"
+    Expression="observations"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Iddetailslettrevoiture"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="iddetailslettrevoiture"
+    Expression="iddetailslettrevoiture"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Partieproduitpfnl"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="partieproduitpfnl"
+    Expression="partieproduitpfnl"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idunitemesure"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idunitemesure"
+    Expression="idunitemesure"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Libelleunitemesure"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="45"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="libelleunitemesure"
+    Expression="libelleunitemesure"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Libelleconverti"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="45"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="libelleconverti"
+    Expression="libelleconverti"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Produit"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="202"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="Produit"
+    Expression="Produit"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="202"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomouraisonsociale"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="Nomouraisonsociale"
+    Expression="Nomouraisonsociale"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomdepartementdestination"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomdepartementdestination"
+    Expression="nomdepartementdestination"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomregiondestination"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomregiondestination"
+    Expression="nomregiondestination"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Adressep"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="Adressep"
+    Expression="Adressep"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomlocalite"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="45"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomlocalite"
+    Expression="nomlocalite"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Iddetailslettrevoiture"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

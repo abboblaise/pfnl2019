@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OriginespnflsView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.OriginespnflsViewImpl"
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entityviewobject.common.OriginespnflsViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+  </DesignTime>
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entityviewobject.common.OriginespnflsViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/">
+  <ViewAccessor
+    Name="listeOrigine1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.listeOrigine"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Originepnfl"
+    ListVOName="listeOrigine1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Originepnfl"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="idOrigine"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="libelleOrigine"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Originespnfls"
+    Entity="cm.gov.minfof.model.entity.Originespnfls"/>
+  <ViewAttribute
+    Name="Idoriginespnfls"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idoriginespnfls"
+    EntityUsage="Originespnfls"
+    AliasName="IDORIGINESPNFLS"/>
+  <ViewAttribute
+    Name="Nomsource"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Nomsource"
+    EntityUsage="Originespnfls"
+    AliasName="NOMSOURCE"/>
+  <ViewAttribute
+    Name="Originepnfl"
+    PrecisionRule="true"
+    EntityAttrName="Originepnfl"
+    EntityUsage="Originespnfls"
+    AliasName="originepnfl"
+    LOVName="LOV_Originepnfl">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="DetailscollectepfnlView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.DetailCollToOriginePfnlLink"
+    Type="oracle.jbo.RowIterator"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="Idoriginespnfls"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="Idoriginespnfls"
+      Ascending="false"/>
+  </SortCriteria>
+</ViewObject>

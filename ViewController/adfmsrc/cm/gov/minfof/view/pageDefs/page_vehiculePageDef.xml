@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_vehiculePageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="VehiculeView1" RangeSize="25" DataControl="AppModuleDataControl" id="VehiculeView1Iterator"/>
+    <iterator Binds="TransporteurView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="TransporteurView1Iterator" Refresh="default"/>
+    <iterator Binds="RegionsView1" RangeSize="-1" DataControl="AppModuleDataControl" id="RegionsView1Iterator"/>
+    <iterator Binds="TypevehiculeView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="TypevehiculeView1Iterator"/>
+    <searchRegion Binds="VehiculeView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VehiculeView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="VehiculeView1Iterator" id="Codechiffre">
+      <AttrNames>
+        <Item Value="Codechiffre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VehiculeView1Iterator" id="SuffixLettre">
+      <AttrNames>
+        <Item Value="SuffixLettre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VehiculeView1Iterator" id="Immatriculation">
+      <AttrNames>
+        <Item Value="Immatriculation"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="VehiculeView1Iterator" id="Idtransporteur" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="TransporteurView1Iterator">
+      <AttrNames>
+        <Item Value="Idtransporteur"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idtransporteur"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Nom"/>
+        <Item Value="Nui"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="VehiculeView1Iterator" id="Idregion" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="RegionsView1Iterator">
+      <AttrNames>
+        <Item Value="Idregion"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idregions"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Coderegion"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="VehiculeView1Iterator" id="Idtypevehicule" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="TypevehiculeView1Iterator"
+          NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+          NullValueFlag="start">
+      <AttrNames>
+        <Item Value="Idtypevehicule"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idtypevehicule"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Codevehicule"/>
+      </ListDisplayAttrNames>
+    </list>
+    <action IterBinding="VehiculeView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="VehiculeView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="VehiculeView1Iterator" id="VehiculeView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.VehiculeView" Name="VehiculeView10">
+        <AttrNames>
+          <Item Value="Idtransporteur"/>
+          <Item Value="Idregion"/>
+          <Item Value="Idtypevehicule"/>
+          <Item Value="Codechiffre"/>
+          <Item Value="SuffixLettre"/>
+          <Item Value="Immatriculation"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

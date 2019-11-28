@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Permis"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="permis"
+  AliasName="Permis"
+  BindingStyle="JDBC"
+  BatchThreshold="1"
+  DefClass="cm.gov.minfof.model.entity.PermisDefImpl"
+  CollClass="cm.gov.minfof.model.entity.PermisCollImpl"
+  RowClass="cm.gov.minfof.model.entity.PermisImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idpermis"
+    ColumnName="idpermis"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="permis"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Numeropermis"
+    IsNotNull="true"
+    Precision="100"
+    ColumnName="numeropermis"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="NUM_U00E9RO_DE_PERMIS"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Zonecoupe"
+    ColumnName="zonecoupe"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="LONGTEXT"
+    TableName="permis">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="ZONE_D_EXPLOITATION"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Datedelivrance"
+    ColumnName="datedelivrance"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="permis"
+    IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DATE_DE_D_U00E9LIVRANCE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Datefin"
+    ColumnName="datefin"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="permis">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DATE_DE_FIN"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Observation"
+    ColumnName="observation"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="LONGTEXT"
+    TableName="permis">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idagrement"
+    ColumnName="idagrement"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="permis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="AGR_U00E9MENT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idpermissionnaire"
+    ColumnName="idpermissionnaire"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="permis"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PERMISSIONNAIRE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Typedocument"
+    ColumnName="typedocument"
+    SQLType="TINYINT"
+    Type="java.lang.Integer"
+    ColumnType="TINYINT"
+    TableName="permis"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Permis.Typedocument_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Cheminfichier"
+    Precision="500"
+    ColumnName="cheminfichier"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nomfichier"
+    Precision="100"
+    ColumnName="nomfichier"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Permis"
+    Association="cm.gov.minfof.model.entity.FkPermis2Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPermis2Assoc.Permis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPermis2Assoc.IdpermissionnairePermis"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdpermissionnairePermis"
+    Association="cm.gov.minfof.model.entity.FkPermis2Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPermis2Assoc.IdpermissionnairePermis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPermis2Assoc.Permis"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Permis1"
+    Association="cm.gov.minfof.model.entity.FkPermis1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPermis1Assoc.Permis1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPermis1Assoc.IdagrementPermis"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdagrementPermis"
+    Association="cm.gov.minfof.model.entity.FkPermis1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPermis1Assoc.IdagrementPermis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPermis1Assoc.Permis1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Detailpermis"
+    Association="cm.gov.minfof.model.entity.PermisToDetailAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PermisToDetailAssoc.Detailpermis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PermisToDetailAssoc.Permis"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Permissionnairespnfl"
+    Association="cm.gov.minfof.model.entity.PermissionnaireToPermisAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PermissionnaireToPermisAssoc.Permissionnairespnfl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PermissionnaireToPermisAssoc.Permis"
+    Type="cm.gov.minfof.model.entity.PermissionnairespnflImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Exportpfnl"
+    Association="cm.gov.minfof.model.entity.ExportToPermisAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.ExportToPermisAssoc.Exportpfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ExportToPermisAssoc.Permis"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Certificatorigine"
+    Association="cm.gov.minfof.model.entity.PermisToCoAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PermisToCoAssoc.Certificatorigine"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PermisToCoAssoc.Permis"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PermisDatedelivranceCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"datedelivrance" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Permis_Datedelivrance_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Datedelivrance"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PermisIdpermissionnaireCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"idpermissionnaire" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Permis_Idpermissionnaire_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Idpermissionnaire"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PermisTypedocumentCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"typedocument" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Permis_Typedocument_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Typedocument"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Idpermis"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPermis1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_permis_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Idagrement"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPermis2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_permis_2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Idpermissionnaire"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Permis">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Permis"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Idpermissionnaire"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

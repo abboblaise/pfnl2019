@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="listeQualitePermissionnaire"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  RowClass="cm.gov.minfof.model.entityviewobject.listeQualitePermissionnaireRowImpl"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.listeQualitePermissionnaireImpl"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="cm.gov.minfof.model.entityviewobject.listeQualitePermissionnaire_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAttribute
+    Name="idQualitePermissionnaire"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Integer"
+    ColumnType="$none$"/>
+  <ViewAttribute
+    Name="libelleQualitePermissionnaire"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    SQLType="VARCHAR"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="idQualitePermissionnaire"/>
+  </AttrArray>
+  <StaticList
+    Rows="3"
+    Columns="2"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

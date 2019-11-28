@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Detailpermis"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="detailpermis"
+  AliasName="Detailpermis"
+  BindingStyle="JDBC"
+  BatchThreshold="1"
+  DefClass="cm.gov.minfof.model.entity.DetailpermisDefImpl"
+  CollClass="cm.gov.minfof.model.entity.DetailpermisCollImpl"
+  RowClass="cm.gov.minfof.model.entity.DetailpermisImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Iddetailpermis"
+    ColumnName="iddetailpermis"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="detailpermis"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Quantite"
+    IsNotNull="true"
+    ColumnName="quantite"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="detailpermis"
+    DefaultValue="0">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="QUOTAS"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idunitemesure"
+    IsNotNull="true"
+    ColumnName="idunitemesure"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="detailpermis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.ProduitsPfnl.Idunitemesure_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idpermis"
+    ColumnName="idpermis"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="detailpermis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Observation"
+    ColumnName="observation"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="LONGTEXT"
+    TableName="detailpermis"/>
+  <Attribute
+    Name="Idpartieproduitpfnl"
+    ColumnName="idpartieproduitpfnl"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="detailpermis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PRODUITS_AUTORIS_U00E9S"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Detailpermis"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis3Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis3Assoc.Detailpermis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis3Assoc.IdpermisDetailpermis"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdpermisDetailpermis"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis3Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis3Assoc.IdpermisDetailpermis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis3Assoc.Detailpermis"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Detailpermis1"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis2Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis2Assoc.Detailpermis1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis2Assoc.IdpartieproduitpfnlDetailpermis"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdpartieproduitpfnlDetailpermis"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis2Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis2Assoc.IdpartieproduitpfnlDetailpermis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis2Assoc.Detailpermis1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Detailpermis2"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis1Assoc.Detailpermis2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis1Assoc.IdunitemesureDetailpermis"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdunitemesureDetailpermis"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis1Assoc.IdunitemesureDetailpermis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis1Assoc.Detailpermis2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Permis"
+    Association="cm.gov.minfof.model.entity.PermisToDetailAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PermisToDetailAssoc.Permis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PermisToDetailAssoc.Detailpermis"
+    Type="cm.gov.minfof.model.entity.PermisImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Detailpermis.Iddetailpermis"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkDetailpermis1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_detailpermis_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Detailpermis.Idunitemesure"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkDetailpermis2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_detailpermis_2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Detailpermis.Idpartieproduitpfnl"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkDetailpermis3">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_detailpermis_3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Detailpermis.Idpermis"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Detailpermis">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Detailpermis"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Detailpermis.Idpermis"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

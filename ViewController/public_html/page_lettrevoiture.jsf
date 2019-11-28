@@ -1,0 +1,570 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:mycomps="http://mycompany.com/adf/components">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="#{viewcontrollerBundle.LETTRE_DE_VOITURE}" id="d1">
+    <af:resource source="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="javascript"/>
+        <af:resource source="js/jquery.growl.js" type="javascript"/>
+        <af:resource source="style/jquery.growl.css" type="css"/>
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelSplitter id="ps1" splitterPosition="503">
+                        <f:facet name="first">
+                            <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_LETTRES_DE_VOITURE}" id="pb5"
+                                         showDisclosure="false">
+                                <f:facet name="toolbar">
+                                    <af:panelGroupLayout id="pgl5">
+                                        <af:button actionListener="#{bindings.Rollback.execute}"
+                                                   text="#{viewcontrollerBundle.ACTUALISER}" immediate="true" id="b7">
+                                            <af:resetActionListener/>
+                                        </af:button>
+                                        <af:spacer width="10" height="10" id="s2"/>
+                                        <af:button text="#{viewcontrollerBundle.SUPPRIMER}" id="b3"
+                                                   disabled="#{!bindings.Delete.enabled}"
+                                                   action="#{lettreVoitureBean.supprimerLettre}" visible="false"/>
+                                        <mycomps:ConfirmButton id="cb1" ButtonText="#{viewcontrollerBundle.SUPPRIMER}"
+                                                               ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}"
+                                                               onDialogReturn="#{lettreVoitureBean.onDeleteLettre}">
+                                            <f:facet name="DialogContent"/>
+                                        </mycomps:ConfirmButton>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                                <af:spacer width="10" height="10" id="s12"/>
+                                <af:panelTabbed position="above" id="pt3">
+                                    <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.CONSULTATION}"
+                                                       disclosed="true">
+                                        <af:panelCollection id="pc1">
+                                            <f:facet name="menus"/>
+                                            <f:facet name="toolbar"/>
+                                            <af:table value="#{bindings.LettrevoitureView1.collectionModel}" var="row"
+                                                      rows="#{bindings.LettrevoitureView1.rangeSize}"
+                                                      emptyText="#{bindings.LettrevoitureView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      rowBandingInterval="0"
+                                                      selectedRowKeys="#{bindings.LettrevoitureView1.collectionModel.selectedRow}"
+                                                      selectionListener="#{bindings.LettrevoitureView1.collectionModel.makeCurrent}"
+                                                      rowSelection="single"
+                                                      fetchSize="#{bindings.LettrevoitureView1.rangeSize}"
+                                                      filterModel="#{bindings.LettrevoitureView1Query.queryDescriptor}"
+                                                      filterVisible="true"
+                                                      queryListener="#{bindings.LettrevoitureView1Query.processQuery}"
+                                                      varStatus="vs" id="t1"
+                                                      partialTriggers=":::b3 :::b8 :::b9 :::b10 :::b11 :::b14 :::b15 :::b16 :::b17 :::b1"
+                                                      autoHeightRows="15">
+                                                <af:column sortProperty="#{bindings.LettrevoitureView1.hints.Numerolettrevoiture.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.LettrevoitureView1.hints.Numerolettrevoiture.label}"
+                                                           id="c1" rowHeader="true">
+                                                    <af:outputText value="#{row.Numerolettrevoiture}"
+                                                                   shortDesc="#{bindings.LettrevoitureView1.hints.Numerolettrevoiture.tooltip}"
+                                                                   id="ot1"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.LettrevoitureView1.hints.Idpermis.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.LettrevoitureView1.hints.Idpermis.label}"
+                                                           id="c2">
+                                                    <af:selectOneChoice value="#{row.bindings.Idpermis.inputValue}"
+                                                                        label="#{row.bindings.Idpermis.label}"
+                                                                        required="#{bindings.LettrevoitureView1.hints.Idpermis.mandatory}"
+                                                                        shortDesc="#{bindings.LettrevoitureView1.hints.Idpermis.tooltip}"
+                                                                        readOnly="true" id="soc3">
+                                                        <f:selectItems value="#{row.bindings.Idpermis.items}" id="si3"/>
+                                                        <f:validator binding="#{row.bindings.Idpermis.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.LettrevoitureView1.hints.Idpermissionnaire.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.LettrevoitureView1.hints.Idpermissionnaire.label}"
+                                                           id="c3">
+                                                    <af:selectOneChoice value="#{row.bindings.Idpermissionnaire.inputValue}"
+                                                                        label="#{row.bindings.Idpermissionnaire.label}"
+                                                                        required="#{bindings.LettrevoitureView1.hints.Idpermissionnaire.mandatory}"
+                                                                        shortDesc="#{bindings.LettrevoitureView1.hints.Idpermissionnaire.tooltip}"
+                                                                        readOnly="true" id="soc5">
+                                                        <f:selectItems value="#{row.bindings.Idpermissionnaire.items}"
+                                                                       id="si5"/>
+                                                        <f:validator binding="#{row.bindings.Idpermissionnaire.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.LettrevoitureView1.hints.Immatriculation.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.LettrevoitureView1.hints.Immatriculation.label}"
+                                                           id="c4">
+                                                    <af:outputText value="#{row.Immatriculation}"
+                                                                   shortDesc="#{bindings.LettrevoitureView1.hints.Immatriculation.tooltip}"
+                                                                   id="ot2"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.LettrevoitureView1.hints.Nomconducteur.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.LettrevoitureView1.hints.Nomconducteur.label}"
+                                                           id="c5">
+                                                    <af:outputText value="#{row.Nomconducteur}"
+                                                                   shortDesc="#{bindings.LettrevoitureView1.hints.Nomconducteur.tooltip}"
+                                                                   id="ot5"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.LettrevoitureView1.hints.Datelettrevoiture.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.LettrevoitureView1.hints.Datelettrevoiture.label}"
+                                                           id="c6">
+                                                    <f:facet name="filter">
+                                                        <af:inputDate value="#{bindings.LettrevoitureView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datelettrevoiture.value}"
+                                                                      id="id2">
+                                                            <af:convertDateTime pattern="#{bindings.LettrevoitureView1.hints.Datelettrevoiture.format}"/>
+                                                        </af:inputDate>
+                                                    </f:facet>
+                                                    <af:outputText value="#{row.Datelettrevoiture}"
+                                                                   shortDesc="#{bindings.LettrevoitureView1.hints.Datelettrevoiture.tooltip}"
+                                                                   id="ot14">
+                                                        <af:convertDateTime pattern="#{bindings.LettrevoitureView1.hints.Datelettrevoiture.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.LettrevoitureView1.hints.Idpostechargement.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.LettrevoitureView1.hints.Idpostechargement.label}"
+                                                           id="c7">
+                                                    <af:selectOneChoice value="#{row.bindings.Idpostechargement1.inputValue}"
+                                                                        label="#{row.bindings.Idpostechargement1.label}"
+                                                                        required="#{bindings.LettrevoitureView1.hints.Idpostechargement1.mandatory}"
+                                                                        shortDesc="#{bindings.LettrevoitureView1.hints.Idpostechargement1.tooltip}"
+                                                                        id="soc7" readOnly="true">
+                                                        <f:selectItems value="#{row.bindings.Idpostechargement1.items}"
+                                                                       id="si7"/>
+                                                        <f:validator binding="#{row.bindings.Idpostechargement1.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.LettrevoitureView1.hints.Iddepartementdestination.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.LettrevoitureView1.hints.Iddepartementdestination.label}"
+                                                           id="c8">
+                                                    <af:selectOneChoice value="#{row.bindings.Iddepartementdestination.inputValue}"
+                                                                        label="#{row.bindings.Iddepartementdestination.label}"
+                                                                        required="#{bindings.LettrevoitureView1.hints.Iddepartementdestination.mandatory}"
+                                                                        shortDesc="#{bindings.LettrevoitureView1.hints.Iddepartementdestination.tooltip}"
+                                                                        readOnly="true" id="soc8">
+                                                        <f:selectItems value="#{row.bindings.Iddepartementdestination.items}"
+                                                                       id="si8"/>
+                                                        <f:validator binding="#{row.bindings.Iddepartementdestination.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                            </af:table>
+                                            <f:facet name="statusbar"/>
+                                        </af:panelCollection>
+                                    </af:showDetailItem>
+                                    <af:showDetailItem id="tab4" text="#{viewcontrollerBundle.EDITION}">
+                                        <af:panelBox id="pb2" showDisclosure="false">
+                                            <f:facet name="toolbar"/>
+                                            <af:panelGridLayout id="pgl4">
+                                                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc1">
+                                                        <af:outputText value="#{bindings.Numerolettrevoiture.hints.label}" id="ot6"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc2">
+                                                        <af:inputText value="#{bindings.Numerolettrevoiture.inputValue}"
+                                                                      required="#{bindings.Numerolettrevoiture.hints.mandatory}"
+                                                                      columns="#{bindings.Numerolettrevoiture.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Numerolettrevoiture.hints.precision}"
+                                                                      shortDesc="#{bindings.Numerolettrevoiture.hints.tooltip}"
+                                                                      id="it1">
+                                                            <f:validator binding="#{bindings.Numerolettrevoiture.validator}"/>
+                                                        </af:inputText>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc3">
+                                                        <af:outputText value="#{bindings.Idpermis.label}" id="ot7"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc4">
+                                                        <af:inputComboboxListOfValues id="numpermisId"
+                                                                                      popupTitle="Search and Select: #{bindings.numpermis.hints.label}"
+                                                                                      value="#{bindings.numpermis.inputValue}"
+                                                                                      model="#{bindings.numpermis.listOfValuesModel}"
+                                                                                      required="#{bindings.numpermis.hints.mandatory}"
+                                                                                      columns="#{bindings.numpermis.hints.displayWidth}"
+                                                                                      shortDesc="#{bindings.numpermis.hints.tooltip}"
+                                                                                      autoSubmit="false">
+                                                            <f:validator binding="#{bindings.numpermis.validator}"/>
+                                                        </af:inputComboboxListOfValues>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc5">
+                                                        <af:outputText value="#{bindings.Idpermissionnaire.label}" id="ot8"
+                                                                       visible="true"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc6">
+                                                        <af:inputComboboxListOfValues id="nomacteurId"
+                                                                                      popupTitle="Search and Select: #{bindings.nomacteur.hints.label}"
+                                                                                      value="#{bindings.nomacteur.inputValue}"
+                                                                                      model="#{bindings.nomacteur.listOfValuesModel}"
+                                                                                      required="#{bindings.nomacteur.hints.mandatory}"
+                                                                                      columns="#{bindings.nomacteur.hints.displayWidth}"
+                                                                                      shortDesc="#{bindings.nomacteur.hints.tooltip}"
+                                                                                      partialTriggers="numpermisId"
+                                                                                      visible="true">
+                                                            <f:validator binding="#{bindings.nomacteur.validator}"/>
+                                                        </af:inputComboboxListOfValues>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc7">
+                                                        <af:outputText value="#{bindings.Immatriculation.hints.label}" id="ot9"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc8">
+                                                        <af:inputText value="#{bindings.Immatriculation.inputValue}"
+                                                                      required="#{bindings.Immatriculation.hints.mandatory}"
+                                                                      columns="#{bindings.Immatriculation.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Immatriculation.hints.precision}"
+                                                                      shortDesc="#{bindings.Immatriculation.hints.tooltip}"
+                                                                      id="it5">
+                                                            <f:validator binding="#{bindings.Immatriculation.validator}"/>
+                                                        </af:inputText>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" id="gr5">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc9">
+                                                        <af:outputText value="#{bindings.Nomconducteur.hints.label}" id="ot10"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc10">
+                                                        <af:inputText value="#{bindings.Nomconducteur.inputValue}"
+                                                                      label="&nbsp;&nbsp;"
+                                                                      required="#{bindings.Nomconducteur.hints.mandatory}"
+                                                                      columns="#{bindings.Nomconducteur.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Nomconducteur.hints.precision}"
+                                                                      shortDesc="#{bindings.Nomconducteur.hints.tooltip}"
+                                                                      id="it2">
+                                                            <f:validator binding="#{bindings.Nomconducteur.validator}"/>
+                                                        </af:inputText>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" id="gr6">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc11">
+                                                        <af:outputText value="#{bindings.Datelettrevoiture.hints.label}" id="ot11"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc12">
+                                                        <af:inputDate value="#{bindings.Datelettrevoiture.inputValue}"
+                                                                      required="#{bindings.Datelettrevoiture.hints.mandatory}"
+                                                                      columns="#{bindings.Datelettrevoiture.hints.displayWidth}"
+                                                                      shortDesc="#{bindings.Datelettrevoiture.hints.tooltip}"
+                                                                      id="id1">
+                                                            <f:validator binding="#{bindings.Datelettrevoiture.validator}"/>
+                                                            <af:convertDateTime pattern="#{bindings.Datelettrevoiture.format}"/>
+                                                        </af:inputDate>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" id="gr7">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc13">
+                                                        <af:outputText value="#{bindings.Idpostechargement.label}" id="ot12"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc14">
+                                                        <af:inputComboboxListOfValues id="nomdepartId"
+                                                                                      label="&nbsp;&nbsp;"  
+                                                                                      popupTitle="Search and Select: #{bindings.nomdepart.hints.label}"
+                                                                                      value="#{bindings.nomdepart.inputValue}"
+                                                                                      model="#{bindings.nomdepart.listOfValuesModel}"
+                                                                                      required="#{bindings.nomdepart.hints.mandatory}"
+                                                                                      columns="#{bindings.nomdepart.hints.displayWidth}"
+                                                                                      shortDesc="#{bindings.nomdepart.hints.tooltip}">
+                                                            <f:validator binding="#{bindings.nomdepart.validator}"/>
+                                                        </af:inputComboboxListOfValues>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" id="gr8">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc15">
+                                                        <af:outputText value="#{bindings.Iddepartementdestination.label}" id="ot13"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc16">
+                                                        <af:selectOneChoice value="#{bindings.Iddepartementdestination.inputValue}"
+                                                                            required="#{bindings.Iddepartementdestination.hints.mandatory}"
+                                                                            shortDesc="#{bindings.Iddepartementdestination.hints.tooltip}"
+                                                                            id="soc6">
+                                                            <f:selectItems value="#{bindings.Iddepartementdestination.items}"
+                                                                           id="si6"/>
+                                                            <f:validator binding="#{bindings.Iddepartementdestination.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" id="gr9">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc17"/>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc18"/>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" id="gr10">
+                                                    <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px"
+                                                                 id="gc19">
+                                                        <af:panelGroupLayout id="pgl6">
+                                                            <af:button actionListener="#{bindings.First.execute}"
+                                                                       disabled="#{!bindings.First.enabled}"
+                                                                       partialSubmit="true" id="b8"
+                                                                       text="#{viewcontrollerBundle.FIRST}"/>
+                                                            <af:spacer width="10" height="10" id="s5"/>
+                                                            <af:button actionListener="#{bindings.Previous.execute}"
+                                                                       text="#{viewcontrollerBundle.PREVIOUS}"
+                                                                       disabled="#{!bindings.Previous.enabled}"
+                                                                       partialSubmit="true" id="b9"/>
+                                                            <af:spacer width="10" height="10" id="s6"/>
+                                                            <af:button actionListener="#{bindings.Next.execute}"
+                                                                       text="#{viewcontrollerBundle.NEXT}" disabled="#{!bindings.Next.enabled}"
+                                                                       partialSubmit="true" id="b10"/>
+                                                            <af:spacer width="10" height="10" id="s7"/>
+                                                            <af:button actionListener="#{bindings.Last.execute}"
+                                                                       text="#{viewcontrollerBundle.LAST}" disabled="#{!bindings.Last.enabled}"
+                                                                       partialSubmit="true" id="b11"/>
+                                                        </af:panelGroupLayout>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
+                                                    <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px"
+                                                                 id="gc20">
+                                                        <af:panelGroupLayout id="pgl1">
+                                                            <af:button text="#{viewcontrollerBundle.NOUVEAU}" id="b1"
+                                                                       disabled="#{!bindings.CreateInsert.enabled}"
+                                                                       action="#{lettreVoitureBean.creerLettreVoiture}"/>
+                                                            <af:spacer width="10" height="10" id="s1"/>
+                                                            <af:button actionListener="#{bindings.Commit.execute}"
+                                                                       text="#{viewcontrollerBundle.ENREGISTRER}"
+                                                                       id="b4"
+                                                                       action="#{lettreVoitureBean.enregistrerLettre}"/>
+                                                            <af:spacer width="10" height="10" id="s4"/>
+                                                            <af:button
+                                                                       text="#{viewcontrollerBundle.ANNULER}"
+                                                                       immediate="true" id="b6"
+                                                                       action="#{lettreVoitureBean.annulerLettreVoiture}">
+                                                                <af:resetActionListener/>
+                                                            </af:button>
+                                                        </af:panelGroupLayout>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                            </af:panelGridLayout>
+                                        </af:panelBox>
+                                    </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:panelBox>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelBox text="#{viewcontrollerBundle.D_U00E9TAILS_DE_LA_LETTRE_DE_VOITURE}" id="pb1" showDisclosure="false">
+                                <f:facet name="toolbar">
+                                    <af:panelGroupLayout id="pgl8">
+                                        <af:button text="#{viewcontrollerBundle.SUPPRIMER}"
+                                                   disabled="#{!bindings.Delete1.enabled}" id="b5"
+                                                   action="#{lettreVoitureBean.supprimerDetailsLettre}"
+                                                   visible="false"/>
+                                        <mycomps:ConfirmButton id="cb2" ButtonText="#{viewcontrollerBundle.SUPPRIMER}"
+                                                               ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}"
+                                                               onDialogReturn="#{lettreVoitureBean.onDeleteDetailsLettre}">
+                                            <f:facet name="DialogContent"/>
+                                        </mycomps:ConfirmButton>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                                <af:panelTabbed position="above" id="pt4">
+                                    <af:showDetailItem id="tab5" text="#{viewcontrollerBundle.CONSULTATION}"
+                                                       disclosed="true">
+                                        <af:panelCollection id="pc2">
+                                            <f:facet name="menus"/>
+                                            <f:facet name="toolbar"/>
+                                            <f:facet name="statusbar"/>
+                                            <af:table value="#{bindings.DetailslettrevoitureView5.collectionModel}"
+                                                      var="row" rows="#{bindings.DetailslettrevoitureView5.rangeSize}"
+                                                      emptyText="#{bindings.DetailslettrevoitureView5.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      rowBandingInterval="0"
+                                                      selectedRowKeys="#{bindings.DetailslettrevoitureView5.collectionModel.selectedRow}"
+                                                      selectionListener="#{bindings.DetailslettrevoitureView5.collectionModel.makeCurrent}"
+                                                      rowSelection="single"
+                                                      fetchSize="#{bindings.DetailslettrevoitureView5.rangeSize}"
+                                                      filterModel="#{bindings.DetailslettrevoitureView5Query.queryDescriptor}"
+                                                      filterVisible="true"
+                                                      queryListener="#{bindings.DetailslettrevoitureView5Query.processQuery}"
+                                                      varStatus="vs" id="t2"
+                                                      partialTriggers=":::b1 :::b3 :::b2 :::b5 :::b14 :::b17 :::b16 :::b15">
+                                                <af:column sortProperty="#{bindings.DetailslettrevoitureView5.hints.Idpartieproduitpfnl.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.DetailslettrevoitureView5.hints.Idpartieproduitpfnl.label}"
+                                                           id="c9" width="100">
+                                                    <af:selectOneChoice value="#{row.bindings.Idpartieproduitpfnl.inputValue}"
+                                                                        label="#{row.bindings.Idpartieproduitpfnl.label}"
+                                                                        required="#{bindings.DetailslettrevoitureView5.hints.Idpartieproduitpfnl.mandatory}"
+                                                                        shortDesc="#{bindings.DetailslettrevoitureView5.hints.Idpartieproduitpfnl.tooltip}"
+                                                                        readOnly="true" id="soc15">
+                                                        <f:selectItems value="#{row.bindings.Idpartieproduitpfnl.items}"
+                                                                       id="si15"/>
+                                                        <f:validator binding="#{row.bindings.Idpartieproduitpfnl.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.DetailslettrevoitureView5.hints.Idunitemesure.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.DetailslettrevoitureView5.hints.Idunitemesure.label}"
+                                                           id="c10" width="100">
+                                                    <af:selectOneChoice value="#{row.bindings.Idunitemesure.inputValue}"
+                                                                        label="#{row.bindings.Idunitemesure.label}"
+                                                                        required="#{bindings.DetailslettrevoitureView5.hints.Idunitemesure.mandatory}"
+                                                                        shortDesc="#{bindings.DetailslettrevoitureView5.hints.Idunitemesure.tooltip}"
+                                                                        readOnly="true" id="soc16">
+                                                        <f:selectItems value="#{row.bindings.Idunitemesure.items}"
+                                                                       id="si16"/>
+                                                        <f:validator binding="#{row.bindings.Idunitemesure.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.DetailslettrevoitureView5.hints.Quantite.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.DetailslettrevoitureView5.hints.Quantite.label}"
+                                                           id="c11" width="100">
+                                                    <af:outputText value="#{row.Quantite}"
+                                                                   shortDesc="#{bindings.DetailslettrevoitureView5.hints.Quantite.tooltip}"
+                                                                   id="ot3">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.DetailslettrevoitureView5.hints.Quantite.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.DetailslettrevoitureView5.hints.Observations.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.DetailslettrevoitureView5.hints.Observations.label}"
+                                                           id="c12" width="207">
+                                                    <af:outputText value="#{row.Observations}"
+                                                                   shortDesc="#{bindings.DetailslettrevoitureView5.hints.Observations.tooltip}"
+                                                                   id="ot4"/>
+                                                </af:column>
+                                            </af:table>
+                                        </af:panelCollection>
+                                    </af:showDetailItem>
+                                    <af:showDetailItem id="tab6" text="#{viewcontrollerBundle.EDITION}">
+                                        <af:panelGridLayout id="pgl3">
+                                            <af:gridRow marginTop="5px" height="auto" id="gr12">
+                                                <af:gridCell marginStart="5px" width="auto" id="gc21">
+                                                    <af:outputText value="#{bindings.Idpartieproduitpfnl.label}" id="ot15"/>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc22">
+                                                    <af:selectOneChoice value="#{bindings.Idpartieproduitpfnl.inputValue}"
+                                                                        label="&nbsp;&nbsp;&nbsp;"
+                                                                        required="#{bindings.Idpartieproduitpfnl.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Idpartieproduitpfnl.hints.tooltip}"
+                                                                        id="soc13" partialTriggers="soc1">
+                                                        <f:selectItems value="#{bindings.Idpartieproduitpfnl.items}"
+                                                                       id="si13"/>
+                                                        <f:validator binding="#{bindings.Idpartieproduitpfnl.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr13">
+                                                <af:gridCell marginStart="5px" width="auto" id="gc23">
+                                                    <af:outputText value="#{bindings.Idunitemesure.label}" id="ot16"/>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc24">
+                                                    <af:selectOneChoice value="#{bindings.Idunitemesure.inputValue}"
+                                                                        required="#{bindings.Idunitemesure.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Idunitemesure.hints.tooltip}"
+                                                                        id="soc14">
+                                                        <f:selectItems value="#{bindings.Idunitemesure.items}"
+                                                                       id="si14"/>
+                                                        <f:validator binding="#{bindings.Idunitemesure.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr14">
+                                                <af:gridCell marginStart="5px" width="auto" id="gc25">
+                                                    <af:outputText value="#{bindings.Quantite.hints.label}" id="ot17"/>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc26">
+                                                    <af:inputText value="#{bindings.Quantite.inputValue}"
+                                                                  required="#{bindings.Quantite.hints.mandatory}"
+                                                                  columns="5"
+                                                                  maximumLength="#{bindings.Quantite.hints.precision}"
+                                                                  shortDesc="#{bindings.Quantite.hints.tooltip}"
+                                                                  id="it3">
+                                                        <f:validator binding="#{bindings.Quantite.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Quantite.format}"/>
+                                                    </af:inputText>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr15">
+                                                <af:gridCell marginStart="5px" width="auto" id="gc27">
+                                                    <af:outputText value="#{bindings.Observations.hints.label}" id="ot18"/>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc28">
+                                                    <af:inputText value="#{bindings.Observations.inputValue}"
+                                                                  label="&nbsp;&nbsp;&nbsp;"
+                                                                  required="#{bindings.Observations.hints.mandatory}"
+                                                                  columns="#{bindings.Observations.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Observations.hints.precision}"
+                                                                  shortDesc="#{bindings.Observations.hints.tooltip}"
+                                                                  id="it4" rows="4">
+                                                        <f:validator binding="#{bindings.Observations.validator}"/>
+                                                    </af:inputText>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr16">
+                                                <af:gridCell marginStart="5px" width="auto" id="gc29"/>
+                                                <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc30"/>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr17">
+                                                <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px"
+                                                             id="gc31">
+                                                    <af:panelGroupLayout id="pgl7">
+                                                        <af:button
+                                                                   disabled="#{!bindings.First1.enabled}"
+                                                                   partialSubmit="true" id="b14"
+                                                                   text="#{viewcontrollerBundle.FIRST}"
+                                                                   actionListener="#{bindings.First1.execute}"/>
+                                                        <af:spacer width="10" height="10" id="s9"/>
+                                                        <af:button
+                                                                   text="#{viewcontrollerBundle.PREVIOUS}"
+                                                                   disabled="#{!bindings.Previous1.enabled}"
+                                                                   partialSubmit="true" id="b15"
+                                                                   actionListener="#{bindings.Previous1.execute}"/>
+                                                        <af:spacer width="10" height="10" id="s10"/>
+                                                        <af:button
+                                                                   text="#{viewcontrollerBundle.NEXT}"
+                                                                   disabled="#{!bindings.Next1.enabled}"
+                                                                   partialSubmit="true" id="b16"
+                                                                   actionListener="#{bindings.Next1.execute}"/>
+                                                        <af:spacer width="10" height="10" id="s11"/>
+                                                        <af:button
+                                                                   text="#{viewcontrollerBundle.LAST}"
+                                                                   disabled="#{!bindings.Last1.enabled}"
+                                                                   partialSubmit="true" id="b17"
+                                                                   actionListener="#{bindings.Last1.execute}"/>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr18">
+                                                <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px"
+                                                             id="gc32">
+                                                    <af:panelGroupLayout id="pgl2">
+                                                        <af:button text="#{viewcontrollerBundle.NOUVEAU}" id="b2"
+                                                                   disabled="#{!bindings.CreateInsert1.enabled}"
+                                                                   action="#{lettreVoitureBean.creerDetailLV}"/>
+                                                        <af:spacer width="10" height="10" id="s3"/>
+                                                        <af:button
+                                                                   text="#{viewcontrollerBundle.ENREGISTRER}" id="b12"
+                                                                   action="#{lettreVoitureBean.enregistrerLettre}"/>
+                                                        <af:spacer width="10" height="10" id="s8"/>
+                                                        <af:button
+                                                                   text="#{viewcontrollerBundle.ANNULER}"
+                                                                   immediate="true" id="b13"
+                                                                   action="#{lettreVoitureBean.annulerDetailsLettre}">
+                                                            <af:resetActionListener/>
+                                                        </af:button>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:panelBox>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:lettreVoitureBean-->
+</f:view>

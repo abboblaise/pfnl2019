@@ -1,0 +1,27 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns="/cm/gov/minfof/model/entityviewobject/common/" elementFormDefault="qualified"
+     sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:annotation>
+        <xsd:documentation>
+            <name>Partiproduit</name>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:complexType name="PartiproduitSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idpartiesproduitspfnl</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idpartiesproduitspfnl" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpartiesrecoltees" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idproduitspfnl" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idunitemesure" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idunitemesureexport" type="xsd:decimal" minOccurs="0" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="partiproduitSDO" type="PartiproduitSDO"/>
+</xsd:schema>

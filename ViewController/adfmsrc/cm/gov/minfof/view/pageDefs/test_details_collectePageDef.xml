@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="test_details_collectePageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DetailscollectepfnlView17" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DetailscollectepfnlView17Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DetailscollectepfnlView17Iterator" id="Iddetailscollectepfnl">
+      <AttrNames>
+        <Item Value="Iddetailscollectepfnl"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Idpermissionnaire"
+          id="Idpermissionnaire" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Idorigine" id="Idorigine"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="DetailscollectepfnlView17Iterator" id="Quantite">
+      <AttrNames>
+        <Item Value="Quantite"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Idunitemesure"
+          id="Idunitemesure" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Iddocumentofficiel"
+          id="Iddocumentofficiel" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Iddestination"
+          id="Iddestination" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Idpartieproduitpfnl"
+          id="Idpartieproduitpfnl" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="DetailscollectepfnlView17Iterator" id="Idcollectepfnl">
+      <AttrNames>
+        <Item Value="Idcollectepfnl"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+  </bindings>
+</pageDefinition>

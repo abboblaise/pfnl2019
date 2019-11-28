@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PartiesRecoltees"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="partiesrecoltees"
+  AliasName="PartiesRecoltees"
+  BindingStyle="JDBC"
+  DefClass="cm.gov.minfof.model.entity.PartiesRecolteesDefImpl"
+  RowClass="cm.gov.minfof.model.entity.PartiesRecolteesImpl"
+  CollClass="cm.gov.minfof.model.entity.PartiesRecolteesCollImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idpartiesrecoltees"
+    ColumnName="idpartiesrecoltees"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="partiesrecoltees"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nompartierecoltee"
+    IsNotNull="true"
+    Precision="100"
+    ColumnName="nompartierecoltee"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="partiesrecoltees">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.PartiesRecoltees.Nompartierecoltee_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="PartiesProduitsPfnl"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc1.PartiesProduitsPfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc1.PartiesRecoltees"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PartiesProduitsPfnl1"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc1.PartiesProduitsPfnl1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc1.PartiesRecoltees1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ProduitsPfnl"
+    Association="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc2.ProduitsPfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc2.PartiesRecoltees"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="AltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="partiesrecoltees"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesRecoltees.Nompartierecoltee"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesRecoltees.Idpartiesrecoltees"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="PartiesRecolteesRule0"
+    ResId="CETTE_PARTIE_R_U00E9COLT_U00E9E_EXISTE_D_U00E9J_U00E0"
+    KeyName="AltKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Nompartierecoltee"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

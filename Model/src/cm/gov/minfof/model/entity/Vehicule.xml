@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Vehicule"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="vehicule"
+  AliasName="Vehicule"
+  BindingStyle="JDBC"
+  RowClass="cm.gov.minfof.model.entity.VehiculeImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idvehicule"
+    ColumnName="idvehicule"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="vehicule"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Idtransporteur"
+    IsNotNull="true"
+    ColumnName="idtransporteur"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="vehicule"
+    DefaultValue="1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="TRANSPORTEUR"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idregion"
+    IsNotNull="true"
+    ColumnName="idregion"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="vehicule"
+    DefaultValue="38">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="R_U00E9GION"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idtypevehicule"
+    ColumnName="idtypevehicule"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="vehicule"
+    DefaultValue="1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="TYPE_DE_V_U00E9HICULE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Codechiffre"
+    IsNotNull="true"
+    ColumnName="codechiffre"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="vehicule"
+    DefaultValue="0000">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CODE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="SuffixLettre"
+    Precision="4"
+    ColumnName="suffix_lettre"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="vehicule">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SUFFIXE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Immatriculation"
+    Precision="80"
+    ColumnName="Immatriculation"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="IMMATRICULATION"/>
+        <DISPLAYWIDTH
+          Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Vehicule"
+    Association="cm.gov.minfof.model.entity.FkVehicule3Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkVehicule3Assoc.Vehicule"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkVehicule3Assoc.IdtypevehiculeVehicule"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdtypevehiculeVehicule"
+    Association="cm.gov.minfof.model.entity.FkVehicule3Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkVehicule3Assoc.IdtypevehiculeVehicule"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkVehicule3Assoc.Vehicule"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Vehicule1"
+    Association="cm.gov.minfof.model.entity.FkVehicule2Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkVehicule2Assoc.Vehicule1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkVehicule2Assoc.IdregionVehicule"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdregionVehicule"
+    Association="cm.gov.minfof.model.entity.FkVehicule2Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkVehicule2Assoc.IdregionVehicule"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkVehicule2Assoc.Vehicule1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Vehicule2"
+    Association="cm.gov.minfof.model.entity.FkVehicule1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkVehicule1Assoc.Vehicule2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkVehicule1Assoc.IdtransporteurVehicule"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdtransporteurVehicule"
+    Association="cm.gov.minfof.model.entity.FkVehicule1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkVehicule1Assoc.IdtransporteurVehicule"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkVehicule1Assoc.Vehicule2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Transporteur"
+    Association="cm.gov.minfof.model.entity.TransporteurToVehiculeAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.TransporteurToVehiculeAssoc.Transporteur"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.TransporteurToVehiculeAssoc.Vehicule"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Region"
+    Association="cm.gov.minfof.model.entity.RegionToVehiculeAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.RegionToVehiculeAssoc.Region"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.RegionToVehiculeAssoc.Vehicule"
+    Type="cm.gov.minfof.model.entity.RegionImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Typevehicule"
+    Association="cm.gov.minfof.model.entity.TypeVehiculeToVehiculeAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.TypeVehiculeToVehiculeAssoc.Typevehicule"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.TypeVehiculeToVehiculeAssoc.Vehicule"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Vehicule.Idvehicule"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkVehicule1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_vehicule_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Vehicule.Idtransporteur"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkVehicule2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_vehicule_2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Vehicule.Idregion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkVehicule3">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_vehicule_3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Vehicule.Idtypevehicule"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Vehicule">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Vehicule"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Vehicule.Idregion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Vehicule1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Vehicule1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Vehicule.Idtypevehicule"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

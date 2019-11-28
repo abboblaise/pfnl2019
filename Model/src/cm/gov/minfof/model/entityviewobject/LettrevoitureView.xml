@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LettrevoitureView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.LettrevoitureViewImpl"
+  ComponentInterface="cm.gov.minfof.model.entityviewobject.common.LettrevoitureView"
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entityviewobject.common.LettrevoitureViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/"
+  RowClass="cm.gov.minfof.model.entityviewobject.LettrevoitureViewRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="dateFin"
+    Kind="viewcriteria"
+    Type="java.sql.Timestamp"/>
+  <Variable
+    Name="dateDebut"
+    Kind="viewcriteria"
+    Type="java.sql.Timestamp"/>
+  <ViewAccessor
+    Name="PermissionnairespnflView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PermissionnairespnflView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="VehiculeView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.VehiculeView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AgrementsView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.AgrementsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DepartementView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.DepartementView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PostecontroleView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PostecontroleView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PermisView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PermisView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AgrementByPermisView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.AgrementByPermisView"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AgrementByPermisViewCriteria"
+      FullName="cm.gov.minfof.model.entityviewobject.AgrementByPermisView.AgrementByPermisViewCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="PermisBind">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[Idpermis]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="LocaliteView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteView"
+    RowLevelBinds="true"
+    OrderBy="Localite.nomlocalite">
+    <ParameterMap>
+      <PIMap Variable="iddepartementalbind">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[iddepartemental]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="getLocaliteUser1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getLocaliteUser"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="depCriteria"
+      FullName="cm.gov.minfof.model.entityviewobject.getLocaliteUser.depCriteria"/>
+    <ViewCriteriaUsage
+      Name="getLocaliteUserCriteria"
+      FullName="cm.gov.minfof.model.entityviewobject.getLocaliteUser.getLocaliteUserCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="iddepartementalbind">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[iddepartemental]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="idregionalbind">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[idregional]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="permisActifView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.permisActifView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="getPermissionnairePermis1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getPermissionnairePermis"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="IdPermisCriteria"
+      FullName="cm.gov.minfof.model.entityviewobject.getPermissionnairePermis.IdPermisCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="idpermisbind">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[Idpermis]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_Idpermissionnaire"
+    ListVOName="PermissionnairespnflView1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpermissionnaire"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpermissionnairespnfl"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomouraisonsociale"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Iddepartementdestination"
+    ListVOName="DepartementView1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Iddepartementdestination"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Iddepartements"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomcheflieu"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpostechargement"
+    ListVOName="getLocaliteUser1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpostechargement"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idlocalite"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomlocalite"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpermis"
+    ListVOName="PermisView1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Numeropermis"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpostechargement1"
+    ListVOName="LocaliteView1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpostechargement1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idlocalite"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomlocalite"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_nomdepart"
+    ListVOName="getLocaliteUser1"
+    ComboRowCountHint="10"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="nomdepart"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idpostechargement"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Nomlocalite"/>
+      <Item Value="Idlocalite"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomlocalite"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_nomacteur"
+    ListVOName="getPermissionnairePermis1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="nomacteur"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idpermissionnaire"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Nomouraisonsociale"/>
+      <Item Value="Idpermissionnairespnfl"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomouraisonsociale"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_numpermis"
+    ListVOName="permisActifView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="numpermis"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Numeropermis"/>
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Numeropermis"/>
+      <Item Value="Nomouraisonsociale"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Lettrevoiture"
+    Entity="cm.gov.minfof.model.entity.Lettrevoiture"/>
+  <ViewAttribute
+    Name="Idlettrevoiture"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idlettrevoiture"
+    EntityUsage="Lettrevoiture"
+    AliasName="idlettrevoiture"/>
+  <ViewAttribute
+    Name="Idpermissionnaire"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idpermissionnaire"
+    EntityUsage="Lettrevoiture"
+    AliasName="idpermissionnaire"
+    LOVName="LOV_Idpermissionnaire">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Iddepartementdestination"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Iddepartementdestination"
+    EntityUsage="Lettrevoiture"
+    AliasName="iddepartementdestination"
+    LOVName="LOV_Iddepartementdestination">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomconducteur"
+    PrecisionRule="true"
+    EntityAttrName="Nomconducteur"
+    EntityUsage="Lettrevoiture"
+    AliasName="nomconducteur"/>
+  <ViewAttribute
+    Name="Idpostechargement"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idpostechargement"
+    EntityUsage="Lettrevoiture"
+    AliasName="idpostechargement"
+    LOVName="LOV_Idpostechargement">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Numerolettrevoiture"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Numerolettrevoiture"
+    EntityUsage="Lettrevoiture"
+    AliasName="numerolettrevoiture"/>
+  <ViewAttribute
+    Name="Idpermis"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idpermis"
+    EntityUsage="Lettrevoiture"
+    AliasName="idpermis"
+    LOVName="LOV_Idpermis">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Datelettrevoiture"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Datelettrevoiture"
+    EntityUsage="Lettrevoiture"
+    AliasName="datelettrevoiture"/>
+  <ViewAttribute
+    Name="Immatriculation"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Immatriculation"
+    EntityUsage="Lettrevoiture"
+    AliasName="immatriculation"/>
+  <ViewAttribute
+    Name="iddepartemental"
+    PrecisionRule="true"
+    EntityAttrName="iddepartemental"
+    EntityUsage="Lettrevoiture"
+    AliasName="iddepartemental"
+    IsQueriable="false"
+    IsPersistent="false"/>
+  <ViewAttribute
+    Name="idregional"
+    PrecisionRule="true"
+    EntityAttrName="idregional"
+    EntityUsage="Lettrevoiture"
+    AliasName="idregional"
+    IsQueriable="false"
+    IsPersistent="false"/>
+  <ViewAttribute
+    Name="Idpostechargement1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idpostechargement"
+    EntityUsage="Lettrevoiture"
+    AliasName="Idpostechargement1"
+    LOVName="LOV_Idpostechargement1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="nomdepart"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="nomdepart"
+    EntityUsage="Lettrevoiture"
+    AliasName="nomdepart"
+    LOVName="LOV_nomdepart">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="nomacteur"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="nomacteur"
+    EntityUsage="Lettrevoiture"
+    AliasName="NOMACTEUR"
+    LOVName="LOV_nomacteur">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="numpermis"
+    IsQueriable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="numpermis"
+    EntityUsage="Lettrevoiture"
+    AliasName="NUMPERMIS"
+    LOVName="LOV_numpermis">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="LettrevoitureViewCriteria"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LettrevoitureView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="LettrevoitureViewCriteria_row_1"
+      UpperColumns="1">
+      <ViewCriteriaItemCompound
+        Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture"
+        ViewAttribute="Datelettrevoiture">
+        <ViewCriteria
+          Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_itemHolder"
+          ViewObjectName="cm.gov.minfof.model.entityviewobject.LettrevoitureView"
+          Conjunction="OR">
+          <ViewCriteriaRow
+            Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_itemHolder_row_0"
+            Conjunction="AND">
+            <ViewCriteriaItem
+              Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture"
+              ViewAttribute="Datelettrevoiture"
+              Operator="ONORBEFORE"
+              Conjunction="AND"
+              Value=":dateFin"
+              IsBindVarValue="true"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+          <ViewCriteriaRow
+            Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_itemHolder_row_1"
+            Conjunction="AND">
+            <ViewCriteriaItem
+              Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_itemHolder_LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_itemHolder_row_1_Datelettrevoiture"
+              ViewAttribute="Datelettrevoiture"
+              Operator="ONORAFTER"
+              Conjunction="AND"
+              Value=":dateDebut"
+              IsBindVarValue="true"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItemCompound>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewLinkAccessor
+    Name="LettrevoitureView2"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkLettrevoiture3Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LettrevoitureView4"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkLettrevoiture1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="DetailslettrevoitureView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkDetailslettrevoiture1Assoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="DetailslettrevoitureView1"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkDetailslettrevoiture2Assoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="DetailslettrevoitureView2"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkDetailslettrevoiture3Assoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="setdateDebut"
+      MethodName="setdateDebut">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+    <Method
+      Name="setdateFin"
+      MethodName="setdateFin">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+    <Method
+      Name="setdateDebut"
+      MethodName="setdateDebut">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+    <Method
+      Name="setdateFin"
+      MethodName="setdateFin">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+    <Method
+      Name="setdateDebut"
+      MethodName="setdateDebut">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+    <Method
+      Name="setdateFin"
+      MethodName="setdateFin">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+    <Method
+      Name="setdateDebut"
+      MethodName="setdateDebut">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+    <Method
+      Name="setdateFin"
+      MethodName="setdateFin">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+    <Method
+      Name="setdateDebut"
+      MethodName="setdateDebut">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+    <Method
+      Name="setdateFin"
+      MethodName="setdateFin">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+  </ClientInterface>
+</ViewObject>

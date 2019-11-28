@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_transporteurPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TransporteurView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TransporteurView1Iterator"/>
+    <searchRegion Binds="TransporteurView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TransporteurView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="TransporteurView1Iterator" id="Nui">
+      <AttrNames>
+        <Item Value="Nui"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransporteurView1Iterator" id="Nom">
+      <AttrNames>
+        <Item Value="Nom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransporteurView1Iterator" id="Adresse">
+      <AttrNames>
+        <Item Value="Adresse"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TransporteurView1Iterator" id="Telephone">
+      <AttrNames>
+        <Item Value="Telephone"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="TransporteurView1Iterator" id="TransporteurView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.TransporteurView" Name="TransporteurView10">
+        <AttrNames>
+          <Item Value="Idtransporteur"/>
+          <Item Value="Nui"/>
+          <Item Value="Nom"/>
+          <Item Value="Adresse"/>
+          <Item Value="Telephone"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TransporteurView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TransporteurView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

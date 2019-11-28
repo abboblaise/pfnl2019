@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="getPermisExportActif"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="cm.gov.minfof.model.entityviewobject.getPermisExportActif_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="idpermissionnairebind"
+    Kind="viewcriteria"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[select permis.idpermis,
+ceqe.idceqe,
+ceqe.numeroceqe,
+permis.datedelivrance,
+permis.numeropermis,
+permissionnairespnfl.IDPermissionnairesPNFL
+from permis, ceqe, permissionnairespnfl
+where year(permis.datedelivrance)=year(current_date()) and 
+permis.idpermissionnaire = permissionnairespnfl.IDPermissionnairesPNFL and
+permis.idpermis = ceqe.idpermis and
+year(ceqe.datedelivrance)=year(current_date()) and
+permis.typedocument = 1]]></SQLQuery>
+  <ViewAttribute
+    Name="Idpermis"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idpermis"
+    Expression="idpermis"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idceqe"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idceqe"
+    Expression="idceqe"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Numeroceqe"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="numeroceqe"
+    Expression="numeroceqe"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Datedelivrance"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    AliasName="datedelivrance"
+    Expression="datedelivrance"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="Numeropermis"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="numeropermis"
+    Expression="numeropermis"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idpermissionnairespnfl"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="IDPermissionnairesPNFL"
+    Expression="IDPermissionnairesPNFL"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="getPermisExportActifCriteria"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getPermisExportActif"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="getPermisExportActifSubCriteria1"
+      ViewObjectName="cm.gov.minfof.model.entityviewobject.getPermisExportActif"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="getPermisExportActifSubCriteria1_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="Idpermissionnairespnfl"
+          ViewAttribute="Idpermissionnairespnfl"
+          Operator="="
+          Conjunction="AND"
+          Value=":idpermissionnairebind"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

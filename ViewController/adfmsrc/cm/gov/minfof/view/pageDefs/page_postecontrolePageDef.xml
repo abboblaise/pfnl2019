@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_postecontrolePageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PostecontroleView1" RangeSize="10" DataControl="AppModuleDataControl"
+              id="PostecontroleView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="PostecontroleView1Iterator" id="Create" InstanceName="AppModuleDataControl.PostecontroleView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createRow"/>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <action IterBinding="PostecontroleView1Iterator" id="Delete" InstanceName="AppModuleDataControl.PostecontroleView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="PostecontroleView1Iterator" id="PostecontroleView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PostecontroleView" Name="PostecontroleView10">
+        <AttrNames>
+          <Item Value="Idpostecontrole"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PostecontroleView1Iterator" id="Idpostecontrole">
+      <AttrNames>
+        <Item Value="Idpostecontrole"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PostecontroleView1Iterator" id="Codeposte">
+      <AttrNames>
+        <Item Value="Codeposte"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PostecontroleView1Iterator" id="Intituleposte">
+      <AttrNames>
+        <Item Value="Intituleposte"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PostecontroleView1Iterator" id="Posteexport">
+      <AttrNames>
+        <Item Value="Posteexport"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PostecontroleView1Iterator" id="Idcommune">
+      <AttrNames>
+        <Item Value="Idcommune"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

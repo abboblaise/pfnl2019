@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:mycomps="http://mycompany.com/adf/components">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="#{viewcontrollerBundle.EDITION_DES_LOCALITES}" id="d1">
+        <af:resource source="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="javascript"/>
+        <af:resource source="js/jquery.growl.js" type="javascript"/>
+        <af:resource source="style/jquery.growl.css" type="css"/>
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_LOCALITES}" id="pb1" showDisclosure="false">
+                        <f:facet name="toolbar">
+                            <af:panelGroupLayout id="pgl1">
+                                <af:button actionListener="#{bindings.Rollback.execute}"
+                                           text="#{viewcontrollerBundle.ACTUALISER}" immediate="true" id="b9">
+                                    <af:resetActionListener/>
+                                </af:button>
+                                <af:spacer width="10" height="10" id="s3"/>
+                                <af:button actionListener="#{bindings.Delete.execute}"
+                                           text="#{viewcontrollerBundle.SUPPRIMER}" id="b8" visible="false"/>
+                                <mycomps:ConfirmButton id="cb1" ButtonText="#{viewcontrollerBundle.SUPPRIMER}"
+                                                       ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}"
+                                                       onDialogReturn="#{LocaliteBean.onDelete}">
+                                    <f:facet name="DialogContent"/>
+                                </mycomps:ConfirmButton>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <af:spacer width="10" height="10" id="s7"/>
+                        <af:panelTabbed position="above" id="pt2">
+                            <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}" disclosed="true">
+                                <af:panelCollection id="pc1">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <f:facet name="statusbar"/>
+                                    <af:table value="#{bindings.LocaliteView11.collectionModel}" var="row"
+                                              rows="#{bindings.LocaliteView11.rangeSize}"
+                                              emptyText="#{bindings.LocaliteView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.LocaliteView11.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.LocaliteView11.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.LocaliteView11.rangeSize}"
+                                              filterModel="#{bindings.LocaliteView11Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.LocaliteView11Query.processQuery}"
+                                              varStatus="vs" id="t1"
+                                              partialTriggers=":::b1 :::b2 :::b3 :::b4 :::b5 :::b8 :::b6 :::b7">
+                                        <af:column sortProperty="#{bindings.LocaliteView11.hints.Idlocalite.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LocaliteView11.hints.Idlocalite.label}"
+                                                   id="c1" width="100" rowHeader="true">
+                                            <af:outputText value="#{row.Idlocalite}"
+                                                           shortDesc="#{bindings.LocaliteView11.hints.Idlocalite.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.LocaliteView11.hints.Idlocalite.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LocaliteView11.hints.Nomlocalite.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LocaliteView11.hints.Nomlocalite.label}"
+                                                   id="c2" width="169">
+                                            <af:outputText value="#{row.Nomlocalite}"
+                                                           shortDesc="#{bindings.LocaliteView11.hints.Nomlocalite.tooltip}"
+                                                           id="ot2"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LocaliteView11.hints.Idcommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LocaliteView11.hints.Idcommune.label}"
+                                                   id="c3" width="129">
+                                            <af:selectOneChoice value="#{row.bindings.Idcommune.inputValue}"
+                                                                label="#{row.bindings.Idcommune.label}"
+                                                                required="#{bindings.LocaliteView11.hints.Idcommune.mandatory}"
+                                                                shortDesc="#{bindings.LocaliteView11.hints.Idcommune.tooltip}"
+                                                                readOnly="true" id="soc1">
+                                                <f:selectItems value="#{row.bindings.Idcommune.items}" id="si1"/>
+                                                <f:validator binding="#{row.bindings.Idcommune.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelCollection>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
+                                <af:panelBox id="pb2" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl4">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1">
+                                                <af:outputText value="#{bindings.Nomlocalite.hints.label}" id="ot3"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="280px" marginEnd="5px" id="gc2">
+                                                <af:inputText value="#{bindings.Nomlocalite.inputValue}"
+                                                              required="#{bindings.Nomlocalite.hints.mandatory}"
+                                                              columns="#{bindings.Nomlocalite.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Nomlocalite.hints.precision}"
+                                                              shortDesc="#{bindings.Nomlocalite.hints.tooltip}"
+                                                              id="it1">
+                                                    <f:validator binding="#{bindings.Nomlocalite.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc3">
+                                                <af:outputText value="#{bindings.Idcommune.label}" id="ot4"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4">
+                                                <af:selectOneChoice value="#{bindings.Idcommune.inputValue}"
+                                                                    required="#{bindings.Idcommune.hints.mandatory}"
+                                                                    shortDesc="#{bindings.Idcommune.hints.tooltip}"
+                                                                    id="soc2">
+                                                    <f:selectItems value="#{bindings.Idcommune.items}" id="si2"/>
+                                                    <f:validator binding="#{bindings.Idcommune.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc5"/>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc6"/>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc7">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                                    <af:button actionListener="#{bindings.First.execute}"
+                                                               text="#{viewcontrollerBundle.FIRST}"
+                                                               disabled="#{!bindings.First.enabled}"
+                                                               partialSubmit="true" id="b1"/>
+                                                    <af:spacer width="10" height="10" id="s4"/>
+                                                    <af:button actionListener="#{bindings.Previous.execute}"
+                                                               text="#{viewcontrollerBundle.PREVIOUS}"
+                                                               disabled="#{!bindings.Previous.enabled}"
+                                                               partialSubmit="true" id="b2"/>
+                                                    <af:spacer width="10" height="10" id="s5"/>
+                                                    <af:button actionListener="#{bindings.Next.execute}"
+                                                               text="#{viewcontrollerBundle.NEXT}"
+                                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                               id="b3"/>
+                                                    <af:spacer width="10" height="10" id="s6"/>
+                                                    <af:button actionListener="#{bindings.Last.execute}"
+                                                               text="#{viewcontrollerBundle.LAST}"
+                                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                               id="b4"/>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc8">
+                                                <af:panelGroupLayout id="pgl3">
+                                                    <af:button text="#{viewcontrollerBundle.NOUVEAU}" id="b5"
+                                                               action="#{LocaliteBean.CreerLocalite}"/>
+                                                    <af:spacer width="10" height="10" id="s1"/>
+                                                    <af:button
+                                                               text="#{viewcontrollerBundle.ENREGISTRER}" id="b6"
+                                                               action="#{LocaliteBean.EnregistreLocalite}"/>
+                                                    <af:spacer width="10" height="10" id="s2"/>
+                                                    <af:button
+                                                               text="#{viewcontrollerBundle.ANNULER}" immediate="true"
+                                                               id="b7" action="#{LocaliteBean.annulerLocalite}">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelBox>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.EXPORTATION}">
+                            <af:spacer width="10" height="10" id="s15"/>
+                                <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b13">
+                                    <af:exportCollectionActionListener type="excelHTML" filename="localites.xls"
+                                                                     exportedId="pc3:t2"/>
+                                </af:button>
+                                <af:panelCollection id="pc3" inlineStyle="width:637px;">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <af:table value="#{bindings.LocaliteView12.collectionModel}" var="row"
+                                              rows="#{bindings.LocaliteView12.rangeSize}"
+                                              emptyText="#{bindings.LocaliteView12.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0" fetchSize="#{bindings.LocaliteView12.rangeSize}"
+                                              filterModel="#{bindings.LocaliteView11Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.LocaliteView11Query.processQuery}"
+                                              varStatus="vs" id="t2" partialTriggers=":::b8 :::b1 :::b2 :::b3 :::b4">
+                                        <af:column sortProperty="#{bindings.LocaliteView12.hints.Idlocalite.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LocaliteView12.hints.Idlocalite.label}"
+                                                   id="c4">
+                                            <af:outputText value="#{row.Idlocalite}"
+                                                           shortDesc="#{bindings.LocaliteView12.hints.Idlocalite.tooltip}"
+                                                           id="ot5">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.LocaliteView12.hints.Idlocalite.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LocaliteView12.hints.Idcommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LocaliteView12.hints.Idcommune.label}"
+                                                   id="c5">
+                                            <af:selectOneChoice value="#{row.bindings.Idcommune.inputValue}"
+                                                                label="#{row.bindings.Idcommune.label}"
+                                                                required="#{bindings.LocaliteView12.hints.Idcommune.mandatory}"
+                                                                shortDesc="#{bindings.LocaliteView12.hints.Idcommune.tooltip}"
+                                                                readOnly="true" id="soc3">
+                                                <f:selectItems value="#{row.bindings.Idcommune.items}" id="si3"/>
+                                                <f:validator binding="#{row.bindings.Idcommune.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LocaliteView12.hints.Nomlocalite.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LocaliteView12.hints.Nomlocalite.label}"
+                                                   id="c6">
+                                            <af:outputText value="#{row.Nomlocalite}"
+                                                           shortDesc="#{bindings.LocaliteView12.hints.Nomlocalite.tooltip}"
+                                                           id="ot6"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelCollection>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Commune"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="communes"
+  AliasName="Commune"
+  BindingStyle="JDBC"
+  RowClass="cm.gov.minfof.model.entity.CommuneImpl"
+  DefClass="cm.gov.minfof.model.entity.CommuneDefImpl"
+  CollClass="cm.gov.minfof.model.entity.CommuneCollImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idcommunes"
+    ColumnName="idcommunes"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="communes"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nomcommune"
+    IsUnique="true"
+    Precision="80"
+    ColumnName="nomcommune"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="communes"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Commune.Nomcommune_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Iddepartements"
+    ColumnName="iddepartements"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="communes">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="D_U00E9PARTEMENT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Codecommune"
+    Precision="2"
+    ColumnName="codecommune"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="communes"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="6"/>
+    </DesignTime>
+    <validation:RegExpValidationBean
+      Name="CodecommuneRule0"
+      ResId="LE_CODE_DE_LA_COMMUNE_EST_ERRON_U00E9E"
+      OnAttribute="Codecommune"
+      Pattern="\d{2}"
+      Inverse="false"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CODE_DE_LA_COMMUNE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="codesigif"
+    Precision="80"
+    ColumnName="codesigif"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CODE_SIGIF"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Commune"
+    Association="cm.gov.minfof.model.entity.CommunesIbfk1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc.Commune"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc.IddepartementsCommune"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IddepartementsCommune"
+    Association="cm.gov.minfof.model.entity.CommunesIbfk1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc.IddepartementsCommune"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc.Commune"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Departement"
+    Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc2.Departement"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc2.Commune"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Region"
+    Association="cm.gov.minfof.model.entity.CommunesIbfk1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc1.Region"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc1.Commune"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Departement1"
+    Association="cm.gov.minfof.model.entity.CommunesIbfk1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc2.Departement1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc2.Commune1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="AltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="communes"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Commune.Codecommune"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AltKey1"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="communes"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Commune.Iddepartements"/>
+      <Item Value="cm.gov.minfof.model.entity.Commune.Codecommune"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CommunesCodecommuneCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"codecommune" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Communes_Codecommune_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Commune.Codecommune"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CommunesNomcommuneCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"nomcommune" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Communes_Nomcommune_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Commune.Nomcommune"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Nomcommune1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Nomcommune"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Commune.Nomcommune"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Commune.Idcommunes"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CommunesIbfk1">
+    <DesignTime>
+      <Attr Name="_isCascadeDelete" Value="true"/>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="communes_ibfk_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Commune.Iddepartements"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="CommuneRule0"
+    ResId="CE_CODE_EXISTE_D_U00E9J_U00E0__LE_CODE_DE_LA_COMMUNE_DOIT__U00EATRE_UNIQUE"
+    KeyName="AltKey1">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Iddepartements"/>
+      <validation:Item
+        Value="Codecommune"/>
+    </validation:OnAttributes>
+    <validation:ResExpressions
+      Name="CommuneRule0_ResExprList">
+      <validation:Expression
+        Name="0"
+        trustMode="untrusted"
+        CodeSourceName="CommuneRow"/>
+    </validation:ResExpressions>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="page_collecte_multicriterePageDef" Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CollMultiCritere1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="CollMultiCritere1Iterator"/>
+    <iterator Binds="CompilCollecte1" RangeSize="-1" DataControl="AppModuleDataControl" id="CompilCollecte1Iterator"/>
+    <searchRegion Criteria="CollMultiCritereCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CollMultiCritere1Iterator" id="CollMultiCritereCriteriaQuery"/>
+    <searchRegion Criteria="CollMultiCritereCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CompilCollecte1Iterator" id="CollMultiCritereCriteriaQuery1"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CollMultiCritere1Iterator" id="CollMultiCritere1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CollMultiCritere" Name="CollMultiCritere10">
+        <AttrNames>
+          <Item Value="Iddetailscollectepfnl"/>
+          <Item Value="Quantite"/>
+          <Item Value="Quantiteconvertie"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Idorigine"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Iddestination"/>
+          <Item Value="Idprovenance"/>
+          <Item Value="Typeacteur"/>
+          <Item Value="Idpartieproduitpfnl"/>
+          <Item Value="Produit"/>
+          <Item Value="Acteur"/>
+          <Item Value="Nomdepartement"/>
+          <Item Value="Nomlocalite"/>
+          <Item Value="Nomsource"/>
+          <Item Value="Intituleposte"/>
+          <Item Value="Datecollecte"/>
+          <Item Value="Nomuser"/>
+          <Item Value="Libelleunitemesure"/>
+          <Item Value="Libelleconverti"/>
+          <Item Value="Nomcommune"/>
+          <Item Value="Nomregion"/>
+          <Item Value="Iddepartements"/>
+          <Item Value="Idregions"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <pivotTable IterBinding="CollMultiCritere1Iterator" id="CollMultiCritere12"
+                xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <pivotTableDataMap convert="false">
+        <columns>
+          <data aggregateDuplicates="true" defaultAggregateType="SUM">
+            <item value="Quantiteconvertie"/>
+          </data>
+        </columns>
+        <rows>
+          <item value="Produit"/>
+          <item value="Libelleconverti"/>
+        </rows>
+        <pages/>
+        <aggregatedItems>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="Libelleconverti" aggregateLabel="TTL Produit"/>
+          <item aggregateLocation="AFTER" aggregateType="AVERAGE" value="Libelleconverti"
+                aggregateLabel="Moy. Produit"/>
+          <item aggregateLocation="AFTER" aggregateType="STDDEV" value="Libelleconverti"
+                aggregateLabel="Ec. Typ. Produit"/>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="Nomdepartement" aggregateLabel="TTL Région"/>
+          <item aggregateLocation="AFTER" aggregateType="AVERAGE" value="Nomdepartement" aggregateLabel="Moy. Région"/>
+        </aggregatedItems>
+        <drills type="INSERT"/>
+        <hierarchies>
+          <item value="Libelleconverti" location="BEFORE">
+            <child value="Nomregion"/>
+          </item>
+          <item value="Nomregion" location="BEFORE">
+            <child value="Nomdepartement"/>
+          </item>
+        </hierarchies>
+      </pivotTableDataMap>
+    </pivotTable>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="CollMultiCritere1Iterator" id="CollMultiCritere11" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CollMultiCritere" Name="CollMultiCritere11">
+        <AttrNames>
+          <Item Value="Quantiteconvertie"/>
+          <Item Value="Produit"/>
+          <Item Value="Intituleposte"/>
+          <Item Value="Iddetailscollectepfnl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CompilCollecte1Iterator" id="CompilCollecte1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CompilCollecte" Name="CompilCollecte1">
+        <AttrNames>
+          <Item Value="Quantiteconvertie"/>
+          <Item Value="Produit"/>
+          <Item Value="Nomregion"/>
+          <Item Value="Nomdepartement"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

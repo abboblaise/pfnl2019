@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_localitePageDef1"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DepartementView1" RangeSize="25" DataControl="AppModuleDataControl" id="DepartementView1Iterator"/>
+    <iterator Binds="LocaliteView4" RangeSize="25" DataControl="AppModuleDataControl" id="LocaliteView4Iterator"/>
+    <searchRegion Binds="LocaliteView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="LocaliteView4Query"/>
+  </executables>
+  <bindings>
+    <list IterBinding="DepartementView1Iterator" ListOperMode="navigation" ListIter="DepartementView1Iterator"
+          id="DepartementView1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Nomdepartement"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="LocaliteView4Iterator" id="Nomlocalite">
+      <AttrNames>
+        <Item Value="Nomlocalite"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="LocaliteView4Iterator" id="LocaliteView4">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.LocaliteView" Name="LocaliteView40">
+        <AttrNames>
+          <Item Value="Iddepartement"/>
+          <Item Value="Nomlocalite"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

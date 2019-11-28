@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProduitsPfnlView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  ComponentClass="cm.gov.minfof.model.entity.ProduitsPfnlViewImpl"
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entity.common.ProduitsPfnlViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entity/common/">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+  </DesignTime>
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entity.common.ProduitsPfnlViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entity/common/">
+  <ViewAccessor
+    Name="FamillePfnlView1"
+    ViewObjectName="cm.gov.minfof.model.entity.FamillePfnlView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CategorieproduitView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.CategorieproduitView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Idfamillepfnl"
+    ListVOName="FamillePfnlView1"
+    NullValueFlag="end"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idfamillepfnl"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idfamillepfnl"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomfamille"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idcategorie"
+    ListVOName="CategorieproduitView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idcategorie"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idcategorieproduit"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libellecategorie"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ProduitsPfnl"
+    Entity="cm.gov.minfof.model.entity.ProduitsPfnl"/>
+  <ViewAttribute
+    Name="Idproduitspfnl"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idproduitspfnl"
+    EntityUsage="ProduitsPfnl"
+    AliasName="idproduitspfnl"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="Nomscientifique"
+    PrecisionRule="true"
+    EntityAttrName="Nomscientifique"
+    EntityUsage="ProduitsPfnl"
+    AliasName="nomscientifique"/>
+  <ViewAttribute
+    Name="Nomcommercial"
+    PrecisionRule="true"
+    EntityAttrName="Nomcommercial"
+    EntityUsage="ProduitsPfnl"
+    AliasName="nomcommercial"/>
+  <ViewAttribute
+    Name="Codeproduit"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Codeproduit"
+    EntityUsage="ProduitsPfnl"
+    AliasName="codeproduit"/>
+  <ViewAttribute
+    Name="Idfamillepfnl"
+    PrecisionRule="true"
+    EntityAttrName="Idfamillepfnl"
+    EntityUsage="ProduitsPfnl"
+    AliasName="idfamillepfnl"
+    LOVName="LOV_Idfamillepfnl">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Descriptionsommaire"
+    PrecisionRule="true"
+    EntityAttrName="Descriptionsommaire"
+    EntityUsage="ProduitsPfnl"
+    AliasName="descriptionsommaire"/>
+  <ViewAttribute
+    Name="Modeattribution"
+    PrecisionRule="true"
+    EntityAttrName="Modeattribution"
+    EntityUsage="ProduitsPfnl"
+    AliasName="modeattribution"/>
+  <ViewAttribute
+    Name="Idcategorie"
+    PrecisionRule="true"
+    EntityAttrName="Idcategorie"
+    EntityUsage="ProduitsPfnl"
+    AliasName="idcategorie"
+    LOVName="LOV_Idcategorie">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="ProduitsPfnlView"
+    ViewLink="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PartiesProduitsPfnlView"
+    ViewLink="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc3Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PartiesProduitsPfnlView1"
+    ViewLink="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc3Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

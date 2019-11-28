@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelStretchLayout id="pt_psl1" startWidth="150px" topHeight="150px" bottomHeight="24px">
+        <f:facet name="start">
+            <af:panelAccordion discloseMany="false" id="pt_pa1">
+                <af:showDetailItem id="pane1" text="Panel Label 1">
+                    <af:panelGroupLayout id="pt_pgl4" inlineStyle="height:768px;" valign="top" halign="center">
+                        <af:button text="Regions" id="pt_b1" destination="page_region.jsf"/>
+                    </af:panelGroupLayout>
+                </af:showDetailItem>
+                <af:showDetailItem id="pane2" text="Panel Label 2"/>
+            </af:panelAccordion>
+        </f:facet>
+        <f:facet name="top">
+            <af:panelBorderLayout id="pt_pbl1" inlineStyle='background-image:url("arriere.jpg");'>
+                <f:facet name="top">
+                    <af:panelGroupLayout id="pt_pgl1" halign="center" valign="middle">
+                        <af:panelGridLayout id="pt_pgl2">
+                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr1">
+                                <af:gridCell marginStart="5px" width="auto" id="pt_gc1">
+                                    <af:image source="/MINFOF.jpg" id="pt_i1"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="pt_gc2">
+                                    <af:image source="/Titre.png" id="pt_i2"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="bottom"/>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+            </af:panelBorderLayout>
+        </f:facet>
+        <f:facet name="bottom"/>
+        <f:facet name="center">
+            <af:panelSplitter id="pt_ps1" orientation="vertical" splitterPosition="40">
+                <f:facet name="first">
+                    <af:panelGridLayout id="pt_pgl3" inlineStyle='background-image:url("arriere.jpg");'>
+                        <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr2">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc3"
+                                         inlineStyle="border-bottom-left-radius:2px 2px; border-bottom-right-radius:2px;"/>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+                <f:facet name="second">
+                    <af:facetRef facetName="Contenu"/>
+                </f:facet>
+            </af:panelSplitter>
+        </f:facet>
+    </af:panelStretchLayout>
+</af:pageTemplateDef>
+

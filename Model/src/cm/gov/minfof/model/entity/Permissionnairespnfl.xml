@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Permissionnairespnfl"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="permissionnairespnfl"
+  AliasName="Permissionnairespnfl"
+  BindingStyle="JDBC"
+  RowClass="cm.gov.minfof.model.entity.PermissionnairespnflImpl"
+  DefClass="cm.gov.minfof.model.entity.PermissionnairespnflDefImpl"
+  CollClass="cm.gov.minfof.model.entity.PermissionnairespnflCollImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Nomouraisonsociale"
+    Precision="100"
+    ColumnName="Nomouraisonsociale"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permissionnairespnfl"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="NOM_RAISON_SOCIALE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Statut"
+    ColumnName="statut"
+    SQLType="TINYINT"
+    Type="java.lang.Integer"
+    ColumnType="TINYINT"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Siegesocial"
+    Precision="50"
+    ColumnName="siegesocial"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="SI_U00E8GE_SOCIAL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Nbreemploye"
+    Precision="11"
+    ColumnName="nbreemploye"
+    SQLType="VARCHAR"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Permissionnairespnfl.Nbreemploye_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Contact"
+    Precision="50"
+    ColumnName="contact"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Mail"
+    Precision="50"
+    ColumnName="mail"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Codepnfl"
+    Precision="15"
+    ColumnName="CodePNFL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="CODE_PLATEFORME"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Natureactivite"
+    Precision="50"
+    ColumnName="Natureactivite"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="NATURE_DE_L_ACTIVIT_U00E9"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Numceqe"
+    Precision="15"
+    ColumnName="NUMCEQE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="NUM_U00E9RO_CEQE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idpermissionnairespnfl"
+    ColumnName="IDPermissionnairesPNFL"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="permissionnairespnfl"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Permissionnairespnfl.Idpermissionnairespnfl_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Nui"
+    Precision="20"
+    ColumnName="NUI"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="NUM_U00E9RO_CONTRIBUABLE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Profession"
+    ColumnName="Profession"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="LONGTEXT"
+    TableName="permissionnairespnfl">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Typepersonne"
+    ColumnName="typepersonne"
+    SQLType="TINYINT"
+    Type="java.lang.Integer"
+    ColumnType="TINYINT"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STATUT_JURIDIQUE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Adressep"
+    Precision="50"
+    ColumnName="Adressep"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="ADRESSE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Sexe"
+    ColumnName="Sexe"
+    SQLType="TINYINT"
+    Type="java.lang.Integer"
+    ColumnType="TINYINT"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Idcommune"
+    ColumnName="idcommune"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="COMMUNE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="iddepartemental"
+    ColumnName="IDDEPARTEMENTAL"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    IsPersistent="false"
+    IsQueriable="false"/>
+  <Attribute
+    Name="nomcommune"
+    Precision="80"
+    ColumnName="NOMCOMMUNE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="idregional"
+    ColumnName="IDREGIONAL"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="permissionnairespnfl"
+    IsPersistent="false"
+    IsQueriable="false"/>
+  <AccessorAttribute
+    Name="Detailscollectepfnl"
+    Association="cm.gov.minfof.model.entity.DetailCollToPermissionnaireAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.DetailCollToPermissionnaireAssoc.Detailscollectepfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DetailCollToPermissionnaireAssoc.Permissionnairespnfl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Permis"
+    Association="cm.gov.minfof.model.entity.PermissionnaireToPermisAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PermissionnaireToPermisAssoc.Permis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PermissionnaireToPermisAssoc.Permissionnairespnfl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Exportpfnl"
+    Association="cm.gov.minfof.model.entity.ExportToPermissionnaireAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.ExportToPermissionnaireAssoc.Exportpfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ExportToPermissionnaireAssoc.Permissionnairespnfl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PermissionnairespnflNomouraisonsocialeCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"Nomouraisonsociale" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Permissionnairespnfl_Nomourais"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permissionnairespnfl.Nomouraisonsociale"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permissionnairespnfl.Idpermissionnairespnfl"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPermissionnairespnfl1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_PermissionnairesPNFL_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="FkPermissionnairespnfl2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_PermissionnairesPNFL_2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

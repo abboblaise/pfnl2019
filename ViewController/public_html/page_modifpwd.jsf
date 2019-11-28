@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="Modification du mot de passe" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_DONN_U00E9ES_PERSONNELLES}" id="pb2"
+                                 showDisclosure="false">
+                        <f:facet name="toolbar"/>
+                        <af:panelTabbed position="above" id="pt2">
+                            <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.MOT_DE_PASSE}" disclosed="true">
+                                <af:panelBox id="pb1" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc1"
+                                                         halign="center" width="440px">
+                                                <af:inputText label="#{bindings.Loginuser.hints.label}"
+                                                              required="#{bindings.Loginuser.hints.mandatory}"
+                                                              columns="#{bindings.Loginuser.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Loginuser.hints.precision}"
+                                                              shortDesc="#{bindings.Loginuser.hints.tooltip}" id="it1"
+                                                              readOnly="true" value="#{RecupUser.ud.loginuser}">
+                                                    <f:validator binding="#{bindings.Loginuser.validator}"/>
+                                                </af:inputText>
+                                                <af:selectBooleanCheckbox value="#{ModifuserBean.mpwd}"
+                                                                          label="#{viewcontrollerBundle.MODIFIER_LE_MOT_DE_PASSE}"
+                                                                          shortDesc="#{bindings.Premiereconnexion.hints.tooltip}"
+                                                                          id="sbc1" rendered="true"/>
+                                            </af:gridCell>
+                                            <!--<af:gridCell marginStart="5px" width="220px" id="gc1"/>
+                                        <af:gridCell marginStart="5px" width="220px" marginEnd="5px" id="gc2"/>-->
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                            <af:gridCell marginStart="5px" width="220px" id="gc3">
+                                                <af:outputText value="#{viewcontrollerBundle.ANCIEN_MOT_DE_PASSE}"
+                                                               id="ot2"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="180px" marginEnd="5px" id="gc4">
+                                                <af:inputText id="it3" value="#{ModifuserBean.ancienpwd}"
+                                                              validator="#{ModifuserBean.Valideapwd}" secret="true"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                            <af:gridCell marginStart="5px" width="50%" id="gc5">
+                                                <af:outputText value="#{viewcontrollerBundle.NOUVEAU_MOT_DE_PASSE}"
+                                                               id="ot3"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc6">
+                                                <af:inputText required="#{bindings.Passworduser.hints.mandatory}"
+                                                              columns="#{bindings.Passworduser.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Passworduser.hints.precision}"
+                                                              shortDesc="#{bindings.Passworduser.hints.tooltip}"
+                                                              id="it2" secret="true">
+                                                    <f:validator binding="#{bindings.Passworduser.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                            <af:gridCell marginStart="5px" width="50%" id="gc7">
+                                                <af:outputText value="#{viewcontrollerBundle.CONFIRMER}" id="ot4"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc8">
+                                                <af:inputText id="it4" validator="#{ModifuserBean.Validepwd}"
+                                                              value="#{ModifuserBean.confirmepwd}" secret="true"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr5">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc9">
+                                                <af:outputText value="#{RecupUser.ud.passworduser}" id="ot1"
+                                                               rendered="false"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc10">
+                                                <af:button text="#{viewcontrollerBundle.MODIFIER_LE_MOT_DE_PASSE}"
+                                                           id="b1" action="#{ModifuserBean.EnregModif}"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelBox>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.INFORMATIONS}">
+                                <af:panelBox id="pb3" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl1">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr7">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc2">
+                                                <af:outputLabel value="#{bindings.Nomuser.hints.label}" id="ol1"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc11">
+                                                <af:inputText value="#{RecupUser.ud.nonuser}"
+                                                              required="#{bindings.Nomuser.hints.mandatory}"
+                                                              columns="#{bindings.Nomuser.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Nomuser.hints.precision}"
+                                                              shortDesc="#{bindings.Nomuser.hints.tooltip}" id="it5">
+                                                    <f:validator binding="#{bindings.Nomuser.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr8">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc12">
+                                                <af:outputText value="#{bindings.Telephone.hints.label}" id="ot5"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc13">
+                                                <af:inputText value="#{RecupUser.ud.telephone}"
+                                                              required="#{bindings.Telephone.hints.mandatory}"
+                                                              columns="#{bindings.Telephone.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Telephone.hints.precision}"
+                                                              shortDesc="#{bindings.Telephone.hints.tooltip}" id="it6">
+                                                    <f:validator binding="#{bindings.Telephone.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr9">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc14">
+                                                <af:outputText value="#{bindings.Emailuser.hints.label}" id="ot6"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc15">
+                                                <af:inputText value="#{RecupUser.ud.email}"
+                                                              required="#{bindings.Emailuser.hints.mandatory}"
+                                                              columns="#{bindings.Emailuser.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Emailuser.hints.precision}"
+                                                              shortDesc="#{bindings.Emailuser.hints.tooltip}" id="it7">
+                                                    <f:validator binding="#{bindings.Emailuser.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr10">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc16"/>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc17">
+                                                <af:panelGroupLayout id="pgl3">
+                                                    <af:button text="#{viewcontrollerBundle.ENREGISTRER}" id="b2"
+                                                               action="#{ModifuserBean.ModifUsr}"/>
+                                                    <af:spacer width="10" height="10" id="s1"/>
+                                                    <af:button text="#{viewcontrollerBundle.ANNULER}" id="b3"
+                                                               actionListener="#{bindings.Rollback.execute}"
+                                                               disabled="#{!bindings.Rollback.enabled}"
+                                                               immediate="true">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelBox>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:ModifuserBean-->
+</f:view>

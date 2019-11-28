@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:mycomps="http://mycompany.com/adf/components">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="#{viewcontrollerBundle.CAT_U00E9GORIE_DES_UNIT_U00E9S_DE_MESURE}" id="d1">
+        <af:resource source="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="javascript"/>
+        <af:resource source="js/jquery.growl.js" type="javascript"/>
+        <af:resource source="style/jquery.growl.css" type="css"/>
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_CAT_U00E9GORIES_D_UNIT_U00E9_DE_MESURE}"
+                                 id="pb3" showDisclosure="false">
+                        <f:facet name="toolbar">
+                            <af:panelGroupLayout id="pgl3">
+                                <af:button actionListener="#{bindings.Rollback.execute}" immediate="true" id="b5"
+                                           text="#{viewcontrollerBundle.ACTUALISER}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                                <af:spacer width="10" height="10" id="s1"/>
+                                <af:button text="#{viewcontrollerBundle.SUPPRIMER}"
+                                           disabled="#{!bindings.Delete.enabled}" id="b3"
+                                           action="#{categorieUniteMesureBean.supprimeCategUnitMesure}"
+                                           visible="false"/>
+                                <mycomps:ConfirmButton id="cb1" ButtonText="#{viewcontrollerBundle.SUPPRIMER}"
+                                                       ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}"
+                                                       onDialogReturn="#{categorieUniteMesureBean.onDelete}">
+                                    <f:facet name="DialogContent"/>
+                                </mycomps:ConfirmButton>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <af:spacer width="10" height="10" id="s7"/>
+                        <af:panelTabbed position="above" id="pt2">
+                            <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}" disclosed="true">
+                                <af:spacer width="10" height="10" id="s15"/>
+                                <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="bExport">
+                                    <af:exportCollectionActionListener type="excelHTML" filename="CategUniteMesure.xls"
+                                                                       exportedId="pc1:t1"/>
+                                </af:button>
+                                <af:panelCollection id="pc1" inlineStyle="height:233px;">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <af:table value="#{bindings.CategorieunitemesureView1.collectionModel}" var="row"
+                                              rows="#{bindings.CategorieunitemesureView1.rangeSize}"
+                                              emptyText="#{bindings.CategorieunitemesureView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.CategorieunitemesureView1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.CategorieunitemesureView1.collectionModel.makeCurrent}"
+                                              rowSelection="single"
+                                              fetchSize="#{bindings.CategorieunitemesureView1.rangeSize}"
+                                              filterModel="#{bindings.CategorieunitemesureView1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.CategorieunitemesureView1Query.processQuery}"
+                                              varStatus="vs" id="t1"
+                                              partialTriggers=":::b2 :::b3 :::b6 :::b7 :::b8 :::b9">
+                                        <af:column sortProperty="#{bindings.CategorieunitemesureView1.hints.Idcategorieunitemesure.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CategorieunitemesureView1.hints.Idcategorieunitemesure.label}"
+                                                   id="c1" width="100" visible="true" rowHeader="true">
+                                            <af:outputText value="#{row.Idcategorieunitemesure}"
+                                                           shortDesc="#{bindings.CategorieunitemesureView1.hints.Idcategorieunitemesure.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.CategorieunitemesureView1.hints.Idcategorieunitemesure.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CategorieunitemesureView1.hints.Libellecategorie.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.Libellecategorie.label}" id="c2" width="376">
+                                            <af:outputText value="#{row.Libellecategorie}"
+                                                           shortDesc="#{bindings.CategorieunitemesureView1.hints.Libellecategorie.tooltip}"
+                                                           id="ot2"/>
+                                        </af:column>
+                                    </af:table>
+                                    <f:facet name="statusbar"/>
+                                </af:panelCollection>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
+                                <af:panelBox id="pb2" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1">
+                                                <af:outputText value="#{bindings.Libellecategorie.label}" id="ot3"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="310px" marginEnd="5px" id="gc2">
+                                                <af:inputText value="#{bindings.Libellecategorie.inputValue}"
+                                                              required="#{bindings.Libellecategorie.hints.mandatory}"
+                                                              columns="#{bindings.Libellecategorie.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Libellecategorie.hints.precision}"
+                                                              shortDesc="#{bindings.Libellecategorie.hints.tooltip}"
+                                                              id="it2">
+                                                    <f:validator binding="#{bindings.Libellecategorie.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc3"/>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4"/>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc5">
+                                                <af:panelGroupLayout id="pgl4">
+                                                    <af:button actionListener="#{bindings.First.execute}"
+                                                               text="#{viewcontrollerBundle.NEXT}"
+                                                               disabled="#{!bindings.First.enabled}"
+                                                               partialSubmit="true" id="b6"/>
+                                                    <af:spacer width="10" height="10" id="s4"/>
+                                                    <af:button actionListener="#{bindings.Previous.execute}"
+                                                               text="#{viewcontrollerBundle.PREVIOUS}"
+                                                               disabled="#{!bindings.Previous.enabled}"
+                                                               partialSubmit="true" id="b7"/>
+                                                    <af:spacer width="10" height="10" id="s5"/>
+                                                    <af:button actionListener="#{bindings.Next.execute}"
+                                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                               id="b8" text="#{viewcontrollerBundle.NEXT}"/>
+                                                    <af:spacer width="10" height="10" id="s6"/>
+                                                    <af:button actionListener="#{bindings.Last.execute}"
+                                                               text="#{viewcontrollerBundle.LAST}"
+                                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                               id="b9"/>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc6">
+                                                <af:panelGroupLayout id="pgl1">
+                                                    <af:button text="#{viewcontrollerBundle.NOUVEAU}"
+                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b2"
+                                                               action="#{categorieUniteMesureBean.creerCategUniteMesure}"/>
+                                                    <af:spacer width="10" height="10" id="s2"/>
+                                                    <af:button text="#{viewcontrollerBundle.ENREGISTRER}" id="b4"
+                                                               action="#{categorieUniteMesureBean.enregCategUniteMesure}"/>
+                                                    <af:spacer width="10" height="10" id="s3"/>
+                                                    <af:button text="#{viewcontrollerBundle.ANNULER}" immediate="true"
+                                                               id="b1"
+                                                               action="#{categorieUniteMesureBean.annulerCategorie}">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelBox>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

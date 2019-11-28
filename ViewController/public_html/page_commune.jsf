@@ -1,0 +1,309 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:mycomps="http://mycompany.com/adf/components">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="#{viewcontrollerBundle.EDITION_DES_COMMUNES}" id="d1">
+        <af:resource source="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="javascript"/>
+        <af:resource source="js/jquery.growl.js" type="javascript"/>
+        <af:resource source="style/jquery.growl.css" type="css"/>
+        <af:messages id="m1"/>
+        <af:form id="f1">
+        <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+        <f:facet name="content">
+                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_COMMUNES}" id="pb3" showDisclosure="false">
+                        <f:facet name="toolbar">
+                            <af:panelGroupLayout id="pgl3">
+                                <af:button text="#{viewcontrollerBundle.ACTUALISER}" immediate="true" id="b6"
+                                           action="#{communeBean.annuler}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                                <af:spacer width="10" height="10" id="s4"/>
+                                <mycomps:ConfirmButton ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}" ButtonText="#{viewcontrollerBundle.SUPPRIMER}" id="cb1" onDialogReturn="#{communeBean.onDeleteCommune}">
+                                    <f:facet name="DialogContent"/>
+                                </mycomps:ConfirmButton>
+                                <af:button text="#{viewcontrollerBundle.SUPPRIMER}"
+                                           disabled="#{!bindings.Delete.enabled}" id="b4"
+                                           action="#{communeBean.supprimeCommune}" visible="false"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:panelTabbed position="above" id="pt2">
+                            <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}">
+                                <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b11">
+                                    <af:exportCollectionActionListener type="excelHTML" filename="commune.xls"
+                                                                       exportedId="pc1:t1"/>
+                                </af:button>
+                                <af:spacer width="10" height="10" id="s7"/>
+                                <af:selectOneChoice value="#{bindings.RegionView1.inputValue}"
+                                                    label="#{bindings.RegionView1.label}"
+                                                    required="#{bindings.RegionView1.hints.mandatory}"
+                                                    shortDesc="#{bindings.RegionView1.hints.tooltip}" id="soc1"
+                                                    autoSubmit="true">
+                                    <f:selectItems value="#{bindings.RegionView1.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.RegionView1.validator}"/>
+                                </af:selectOneChoice>
+                                <af:spacer width="10" height="10" id="s5"/>
+                                <af:selectOneChoice value="#{bindings.DepartementView3.inputValue}"
+                                                    label="#{bindings.DepartementView3.label}"
+                                                    required="#{bindings.DepartementView3.hints.mandatory}"
+                                                    shortDesc="#{bindings.DepartementView3.hints.tooltip}" id="soc2"
+                                                    autoSubmit="true">
+                                    <f:selectItems value="#{bindings.DepartementView3.items}" id="si2"/>
+                                    <f:validator binding="#{bindings.DepartementView3.validator}"/>
+                                </af:selectOneChoice>
+                                <af:spacer width="10" height="10" id="s6"/>
+                                <af:panelCollection id="pc1">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <af:table value="#{bindings.CommuneView5.collectionModel}" var="row"
+                                              rows="#{bindings.CommuneView5.rangeSize}"
+                                              emptyText="#{bindings.CommuneView5.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.CommuneView5.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.CommuneView5.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.CommuneView5.rangeSize}"
+                                              filterModel="#{bindings.CommuneView5Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.CommuneView5Query.processQuery}" varStatus="vs"
+                                              id="t1" partialTriggers=":::b2 :::b4 :::b7 :::b8 :::b9 :::b10" autoHeightRows="8">
+                                        <af:column sortProperty="#{bindings.CommuneView5.hints.Idcommunes.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CommuneView5.hints.Idcommunes.label}" id="c1"
+                                                   visible="true" rowHeader="true" width="50">
+                                            <af:outputText value="#{row.Idcommunes}"
+                                                           shortDesc="#{bindings.CommuneView5.hints.Idcommunes.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.CommuneView5.hints.Idcommunes.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CommuneView5.hints.Iddepartements.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CommuneView5.hints.Iddepartements.label}"
+                                                   id="c2" width="100" visible="false">
+                                            <af:outputText value="#{row.Iddepartements}"
+                                                           shortDesc="#{bindings.CommuneView5.hints.Iddepartements.tooltip}"
+                                                           id="ot2">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.CommuneView5.hints.Iddepartements.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.CommuneView5.hints.codesigif.label}" id="c5"
+                                                   sortable="true" filterable="true">
+                                            <af:outputText value="#{row.codesigif}"
+                                                           shortDesc="#{bindings.CommuneView5.hints.codesigif.tooltip}"
+                                                           id="ot8"/>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.CommuneView5.hints.Codecommune.label}" id="c4"
+                                                   sortProperty="#{bindings.CommuneView5.hints.Codecommune.name}"
+                                                   filterable="true" sortable="true" visible="false">
+                                            <af:inputText value="#{row.bindings.Codecommune.inputValue}"
+                                                          label="#{bindings.CommuneView5.hints.Codecommune.label}"
+                                                          required="#{bindings.CommuneView5.hints.Codecommune.mandatory}"
+                                                          columns="#{bindings.CommuneView5.hints.Codecommune.displayWidth}"
+                                                          maximumLength="#{bindings.CommuneView5.hints.Codecommune.precision}"
+                                                          shortDesc="#{bindings.CommuneView5.hints.Codecommune.tooltip}"
+                                                          id="it2" readOnly="true">
+                                                <f:validator binding="#{row.bindings.Codecommune.validator}"/>
+                                            </af:inputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CommuneView5.hints.Nomcommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CommuneView5.hints.Nomcommune.label}" id="c3"
+                                                   width="283">
+                                            <af:outputText value="#{row.Nomcommune}"
+                                                           shortDesc="#{bindings.CommuneView5.hints.Nomcommune.tooltip}"
+                                                           id="ot3"/>
+                                        </af:column>
+                                    </af:table>
+                                    <f:facet name="statusbar"/>
+                                </af:panelCollection>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
+                                <af:panelBox id="pb2" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl2">
+                                        <af:gridRow id="gr6" marginTop="5px">
+                                            <af:gridCell id="gc9">
+                                                <af:outputText value="#{bindings.RegionView1.label}" id="ot5"/>
+                                            </af:gridCell>
+                                            <af:gridCell id="gc10">
+                                                <af:selectOneChoice value="#{bindings.RegionView1.inputValue}"
+                                                                    required="#{bindings.RegionView1.hints.mandatory}"
+                                                                    shortDesc="#{bindings.RegionView1.hints.tooltip}"
+                                                                    id="soc3" autoSubmit="true">
+                                                    <f:selectItems value="#{bindings.RegionView1.items}" id="si3"/>
+                                                    <f:validator binding="#{bindings.RegionView1.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow id="gr5" marginTop="5px">
+                                            <af:gridCell id="gc7">
+                                                <af:outputText value="#{bindings.DepartementView3.label}" id="ot6"/>
+                                            </af:gridCell>
+                                            <af:gridCell id="gc8">
+                                                <af:selectOneChoice value="#{bindings.DepartementView3.inputValue}"
+                                                                    required="#{bindings.DepartementView3.hints.mandatory}"
+                                                                    shortDesc="#{bindings.DepartementView3.hints.tooltip}"
+                                                                    id="soc4" autoSubmit="false">
+                                                    <f:selectItems value="#{bindings.DepartementView3.items}" id="si4"/>
+                                                    <f:validator binding="#{bindings.DepartementView3.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1">
+                                                <af:outputText value="#{bindings.Nomcommune.hints.label}" id="ot4"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="310px" marginEnd="5px" id="gc2">
+                                                <af:inputText value="#{bindings.Nomcommune.inputValue}"
+                                                              required="#{bindings.Nomcommune.hints.mandatory}"
+                                                              columns="#{bindings.Nomcommune.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Nomcommune.hints.precision}"
+                                                              shortDesc="#{bindings.Nomcommune.hints.tooltip}" id="it3">
+                                                    <f:validator binding="#{bindings.Nomcommune.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow id="gr7" marginTop="5px">
+                                            <af:gridCell id="gc11">
+                                                <af:outputText value="#{bindings.Codecommune.hints.label}" id="ot7"/>
+                                            </af:gridCell>
+                                            <af:gridCell id="gc12">
+                                                <af:inputText value="#{bindings.Codecommune.inputValue}"
+                                                              required="#{bindings.Codecommune.hints.mandatory}"
+                                                              columns="#{bindings.Codecommune.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Codecommune.hints.precision}"
+                                                              shortDesc="#{bindings.Codecommune.hints.tooltip}"
+                                                              id="it1">
+                                                    <f:validator binding="#{bindings.Codecommune.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc3">
+                                                <af:spacer width="10" height="10" id="s10"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4"/>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc5">
+                                                <af:panelGroupLayout id="pgl4">
+                                                    <af:button actionListener="#{bindings.First.execute}"
+                                                               text="#{viewcontrollerBundle.FIRST}"
+                                                               disabled="#{!bindings.First.enabled}"
+                                                               partialSubmit="true" id="b7"/>
+                                                    <af:spacer width="10" height="10" id="s3"/>
+                                                    <af:button actionListener="#{bindings.Previous.execute}"
+                                                               text="#{viewcontrollerBundle.PREVIOUS}" disabled="#{!bindings.Previous.enabled}"
+                                                               partialSubmit="true" id="b8"/>
+                                                    <af:spacer width="10" height="10" id="s12"/>
+                                                    <af:button actionListener="#{bindings.Next.execute}"
+                                                               text="#{viewcontrollerBundle.NEXT}"
+                                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                               id="b9"/>
+                                                    <af:spacer width="10" height="10" id="s8"/>
+                                                    <af:button actionListener="#{bindings.Last.execute}"
+                                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                               id="b10" text="#{viewcontrollerBundle.LAST}"/>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc6">
+                                                <af:panelGroupLayout id="pgl1">
+                                                    <af:button text="#{viewcontrollerBundle.NOUVEAU}"
+                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b2"
+                                                               action="#{communeBean.creerCommune}"/>
+                                                    <af:spacer width="10" height="10" id="s1"/>
+                                                    <af:button text="Commit" id="b1"
+                                                               disabled="#{!bindings.Commit.enabled}"
+                                                               action="#{communeBean.enregistreCommune}"
+                                                               visible="false"/>
+                                                    <af:button text="#{viewcontrollerBundle.ENREGISTRER}" id="b3"
+                                                               action="#{communeBean.enregistreCommune}"/>
+                                                    <af:spacer width="10" height="10" id="s2"/>
+                                                    <af:button text="#{viewcontrollerBundle.ANNULER}" immediate="true"
+                                                               id="b5" action="#{communeBean.annuler}">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelBox>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.EXPORTATION}">
+                                <af:spacer width="10" height="10" id="s15"/>
+                                <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b13">
+                                    <af:exportCollectionActionListener type="excelHTML" filename="commune.xls"
+                                                                       exportedId="pc2:t2"/>
+                                </af:button>
+                                <af:panelCollection id="pc2" inlineStyle="width:637px;">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <af:table value="#{bindings.CommuneView1.collectionModel}" var="row"
+                                              rows="#{bindings.CommuneView1.rangeSize}"
+                                              emptyText="#{bindings.CommuneView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0" fetchSize="#{bindings.CommuneView1.rangeSize}"
+                                              filterModel="#{bindings.CommuneView1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.CommuneView1Query.processQuery}" varStatus="vs"
+                                              id="t2">
+                                        <af:column sortProperty="#{bindings.CommuneView1.hints.Idcommunes.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CommuneView1.hints.Idcommunes.label}" id="c6">
+                                            <af:outputText value="#{row.Idcommunes}"
+                                                           shortDesc="#{bindings.CommuneView1.hints.Idcommunes.tooltip}"
+                                                           id="ot9">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.CommuneView1.hints.Idcommunes.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CommuneView1.hints.Iddepartements.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CommuneView1.hints.Iddepartements.label}"
+                                                   id="c7">
+                                            <af:outputText value="#{row.Iddepartements}"
+                                                           shortDesc="#{bindings.CommuneView1.hints.Iddepartements.tooltip}"
+                                                           id="ot10">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.CommuneView1.hints.Iddepartements.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CommuneView1.hints.Codecommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CommuneView1.hints.Codecommune.label}"
+                                                   id="c8">
+                                            <af:outputText value="#{row.Codecommune}"
+                                                           shortDesc="#{bindings.CommuneView1.hints.Codecommune.tooltip}"
+                                                           id="ot11"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CommuneView1.hints.codesigif.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.CommuneView1.hints.codesigif.label}"
+                                                   filterable="true" id="c9">
+                                            <af:outputText value="#{row.codesigif}"
+                                                           shortDesc="#{bindings.CommuneView1.hints.codesigif.tooltip}"
+                                                           id="ot12"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.CommuneView1.hints.Nomcommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.CommuneView1.hints.Nomcommune.label}"
+                                                   id="c10">
+                                            <af:outputText value="#{row.Nomcommune}"
+                                                           shortDesc="#{bindings.CommuneView1.hints.Nomcommune.tooltip}"
+                                                           id="ot13"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelCollection>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:communeBean-->
+</f:view>

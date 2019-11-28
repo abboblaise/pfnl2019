@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Exportpfnl"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="exportpfnl"
+  AliasName="Exportpfnl"
+  BindingStyle="JDBC"
+  RowClass="cm.gov.minfof.model.entity.ExportpfnlImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idexportpfnl"
+    ColumnName="idexportpfnl"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="exportpfnl"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Idpermis"
+    ColumnName="idpermis"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="exportpfnl"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.typeDocumentView.SL_0_1"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idpermissionnaire"
+    ColumnName="idpermissionnaire"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="exportpfnl"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PERMISSIONNAIRE"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Numeroexport"
+    IsUnique="true"
+    Precision="100"
+    ColumnName="numeroexport"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="exportpfnl"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="NUM_U00E9RO_D_EXPORTATION"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Numeroco"
+    Precision="100"
+    ColumnName="numeroco"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="exportpfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="NUM_U00E9RO_CO"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Dateexport"
+    IsNotNull="true"
+    ColumnName="dateexport"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="exportpfnl">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DATE_D_EXPORTATION"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idposteexport"
+    ColumnName="idposteexport"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="exportpfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="POSTE_D_EXPORTATION"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="nomouraisonsociale"
+    Precision="80"
+    ColumnName="nomouraisonsociale"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false"
+    IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="numeropermis"
+    Precision="80"
+    ColumnName="numeropermis"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsNotNull="true"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="nompostecontrole"
+    Precision="80"
+    ColumnName="nompostecontrole"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="exportpfnl"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Exportpfnl"
+    Association="cm.gov.minfof.model.entity.FkExportpfnl2Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkExportpfnl2Assoc.Exportpfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkExportpfnl2Assoc.IdpermissionnaireExportpfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdpermissionnaireExportpfnl"
+    Association="cm.gov.minfof.model.entity.FkExportpfnl2Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkExportpfnl2Assoc.IdpermissionnaireExportpfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkExportpfnl2Assoc.Exportpfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Exportpfnl1"
+    Association="cm.gov.minfof.model.entity.FkExportpfnl1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkExportpfnl1Assoc.Exportpfnl1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkExportpfnl1Assoc.IdpermisExportpfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdpermisExportpfnl"
+    Association="cm.gov.minfof.model.entity.FkExportpfnl1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkExportpfnl1Assoc.IdpermisExportpfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkExportpfnl1Assoc.Exportpfnl1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Permis"
+    Association="cm.gov.minfof.model.entity.ExportToPermisAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.ExportToPermisAssoc.Permis"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ExportToPermisAssoc.Exportpfnl"
+    Type="cm.gov.minfof.model.entity.PermisImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Permissionnairespnfl"
+    Association="cm.gov.minfof.model.entity.ExportToPermissionnaireAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.ExportToPermissionnaireAssoc.Permissionnairespnfl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ExportToPermissionnaireAssoc.Exportpfnl"
+    Type="cm.gov.minfof.model.entity.PermissionnairespnflImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Detailsexportpfnl"
+    Association="cm.gov.minfof.model.entity.ExportToDetailExportAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.ExportToDetailExportAssoc.Detailsexportpfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ExportToDetailExportAssoc.Exportpfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ExportpfnlIdpermisCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"idpermis" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Exportpfnl_Idpermis_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Exportpfnl.Idpermis"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ExportpfnlIdpermissionnaireCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"idpermissionnaire" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Exportpfnl_Idpermissionnaire_C"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Exportpfnl.Idpermissionnaire"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ExportpfnlNomouraisonsocialeCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"nomouraisonsociale" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Exportpfnl_Nomouraisonsociale_"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Exportpfnl.nomouraisonsociale"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ExportpfnlNumeroexportCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"numeroexport" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Exportpfnl_Numeroexport_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Exportpfnl.Numeroexport"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ExportpfnlNumeropermisCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"numeropermis" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Exportpfnl_Numeropermis_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Exportpfnl.numeropermis"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="NumeroexportUnique">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="numeroexport_UNIQUE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Exportpfnl.Numeroexport"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Exportpfnl.Idexportpfnl"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkExportpfnl1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_exportpfnl_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Exportpfnl.Idpermis"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkExportpfnl2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_exportpfnl_2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Exportpfnl.Idpermissionnaire"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CategorieproduitView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  PageIterMode="Full"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.CategorieproduitViewImpl"
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entityviewobject.common.CategorieproduitViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/"
+  SelectList="Categorieproduit.idcategorieproduit, 
+       Categorieproduit.libellecategorie, 
+       Categorieproduit.codecategorie, 
+       Categorieproduit.observation, 
+       Categorieproduit.quotas"
+  FromList="categorieproduit Categorieproduit">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Categorieproduit"
+    Entity="cm.gov.minfof.model.entity.Categorieproduit"/>
+  <ViewAttribute
+    Name="Idcategorieproduit"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idcategorieproduit"
+    EntityUsage="Categorieproduit"
+    AliasName="idcategorieproduit"/>
+  <ViewAttribute
+    Name="Libellecategorie"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Libellecategorie"
+    EntityUsage="Categorieproduit"
+    AliasName="libellecategorie"/>
+  <ViewAttribute
+    Name="Codecategorie"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Codecategorie"
+    EntityUsage="Categorieproduit"
+    AliasName="codecategorie"/>
+  <ViewAttribute
+    Name="Observation"
+    PrecisionRule="true"
+    EntityAttrName="Observation"
+    EntityUsage="Categorieproduit"
+    AliasName="observation"/>
+  <ViewAttribute
+    Name="Quotas"
+    PrecisionRule="true"
+    EntityAttrName="Quotas"
+    EntityUsage="Categorieproduit"
+    AliasName="quotas"/>
+  <ViewAttribute
+    Name="QuotasTransient"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="QuotasTransient"
+    EntityUsage="Categorieproduit"
+    AliasName="Quotas_Transient"/>
+  <ViewLinkAccessor
+    Name="ProduitspfnlView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.CategToProduitLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

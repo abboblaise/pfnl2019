@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="getPartieProduit"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="cm.gov.minfof.model.entityviewobject.getPartieProduit_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="Bindlv"
+    Kind="viewcriteria"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[SELECT 
+    CONCAT(produitspfnl.nomcommercial, '(', partiesrecoltees.nompartierecoltee, ')') AS libbelle, 
+    partiesproduitspfnl.idpartiesproduitspfnl, 
+    lettrevoiture.idlettrevoiture AS idlettrevoiture 
+FROM 
+    produitspfnl, 
+    partiesrecoltees, 
+    partiesproduitspfnl, 
+    detailpermis, 
+    lettrevoiture 
+WHERE 
+    produitspfnl.idproduitspfnl = partiesproduitspfnl.idproduitspfnl 
+    AND partiesrecoltees.idpartiesrecoltees = partiesproduitspfnl.idpartiesrecoltees 
+    AND detailpermis.idpartieproduitpfnl = partiesproduitspfnl.idpartiesproduitspfnl 
+    AND lettrevoiture.idpermis = detailpermis.idpermis]]></SQLQuery>
+  <ViewAttribute
+    Name="Libbelle"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="libbelle"
+    Expression="libbelle"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="202"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idpartiesproduitspfnl"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idpartiesproduitspfnl"
+    Expression="idpartiesproduitspfnl"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idlettrevoiture"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idlettrevoiture"
+    Expression="idlettrevoiture"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="getPartieProduitCriteria"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getPartieProduit"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="getPartieProduitSubCriteria1"
+      ViewObjectName="cm.gov.minfof.model.entityviewobject.getPartieProduit"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="getPartieProduitSubCriteria1_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="Idlettrevoiture"
+          ViewAttribute="Idlettrevoiture"
+          Operator="="
+          Conjunction="AND"
+          Value=":Bindlv"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

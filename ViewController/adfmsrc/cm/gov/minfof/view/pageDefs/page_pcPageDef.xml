@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_pcPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PostecontroleView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PostecontroleView1Iterator"/>
+    <searchRegion Binds="PostecontroleView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PostecontroleView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PostecontroleView1Iterator" id="Codeposte">
+      <AttrNames>
+        <Item Value="Codeposte"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PostecontroleView1Iterator" id="Intituleposte">
+      <AttrNames>
+        <Item Value="Intituleposte"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PostecontroleView1Iterator" StaticList="false" Uses="LOV_Idcommune" id="Idcommune"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <action IterBinding="PostecontroleView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="PostecontroleView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="PostecontroleView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PostecontroleView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="PostecontroleView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="PostecontroleView1Iterator" id="PostecontroleView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PostecontroleView" Name="PostecontroleView10">
+        <AttrNames>
+          <Item Value="Idpostecontrole"/>
+          <Item Value="Codeposte"/>
+          <Item Value="Intituleposte"/>
+          <Item Value="Idcommune" Binds="Idcommune"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <listOfValues IterBinding="PostecontroleView1Iterator" StaticList="false" Uses="LOV_Nomcommune" id="Nomcommune"/>
+    <action IterBinding="PostecontroleView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <tree IterBinding="PostecontroleView1Iterator" id="PostecontroleView11">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PostecontroleView" Name="PostecontroleView110">
+        <AttrNames>
+          <Item Value="Idpostecontrole"/>
+          <Item Value="Idcommune"/>
+          <Item Value="Codeposte"/>
+          <Item Value="Intituleposte"/>
+          <Item Value="Posteexport"/>
+          <Item Value="Nomcommune"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

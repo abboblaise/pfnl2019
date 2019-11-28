@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Categorieunitemesure"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="categorieunitemesure"
+  AliasName="Categorieunitemesure"
+  BindingStyle="JDBC"
+  RowClass="cm.gov.minfof.model.entity.CategorieunitemesureImpl"
+  DefClass="cm.gov.minfof.model.entity.CategorieunitemesureDefImpl"
+  CollClass="cm.gov.minfof.model.entity.CategorieunitemesureCollImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idcategorieunitemesure"
+    ColumnName="idcategorieunitemesure"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="categorieunitemesure"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Libellecategorie"
+    IsNotNull="true"
+    Precision="45"
+    ColumnName="libellecategorie"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="categorieunitemesure">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CAT_U00E9GORIE_D_UNIT_U00E9_DE_MESURE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Unitemesure"
+    Association="cm.gov.minfof.model.entity.CategToUnitAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.CategToUnitAssoc.Unitemesure"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CategToUnitAssoc.Categorieunitemesure"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Categorieunitemesure.Idcategorieunitemesure"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

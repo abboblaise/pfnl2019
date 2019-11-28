@@ -1,0 +1,23 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns="/cm/gov/minfof/model/entityviewobject/common/" elementFormDefault="qualified"
+     sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:complexType name="CategorieproduitViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idcategorieproduit</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idcategorieproduit" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Libellecategorie" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Codecategorie" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Observation" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Quotas" type="xsd:boolean" minOccurs="0" nillable="true"/>
+            <xsd:element name="QuotasTransient" type="xsd:boolean" minOccurs="0" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="categorieproduitViewSDO" type="CategorieproduitViewSDO"/>
+</xsd:schema>

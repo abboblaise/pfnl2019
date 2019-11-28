@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkPagepargroup2Assoc1"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Pageprojet1"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.Pageprojet">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Pageprojet1"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Pageprojet.Primary1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Pageprojet.Idpageprojet"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Pagepargroup1"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entity.Pagepargroup">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Pagepargroup1"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Pagepargroup.FkPagepargroup2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Pagepargroup.Idgroupe"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

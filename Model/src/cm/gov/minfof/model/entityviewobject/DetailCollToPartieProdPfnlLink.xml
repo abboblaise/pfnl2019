@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DetailCollToPartieProdPfnlLink"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="cm.gov.minfof.model.entity.DetailCollToPartieProdPfnlAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="cm.gov.minfof.model.entityviewobject.DetailCollToPartieProdPfnlLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="DetailscollectepfnlView"
+    Cardinality="-1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entityviewobject.DetailscollectepfnlView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="DetailscollectepfnlView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entityviewobject.DetailscollectepfnlView.Idpartieproduitpfnl"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="PartiesProduitsPfnlView"
+    Cardinality="1"
+    Owner="cm.gov.minfof.model.entity.PartiesProduitsPfnlView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="PartiesProduitsPfnlView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesProduitsPfnlView.Idpartiesproduitspfnl"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

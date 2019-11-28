@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="page_categorie_unitemesurePageDef" Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CategorieunitemesureView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="CategorieunitemesureView1Iterator"/>
+    <searchRegion Binds="CategorieunitemesureView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CategorieunitemesureView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CategorieunitemesureView1Iterator" id="Libellecategorie">
+      <AttrNames>
+        <Item Value="Libellecategorie"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CategorieunitemesureView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="CategorieunitemesureView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="CategorieunitemesureView1Iterator" id="CategorieunitemesureView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CategorieunitemesureView"
+                      Name="CategorieunitemesureView10">
+        <AttrNames>
+          <Item Value="Idcategorieunitemesure"/>
+          <Item Value="Libellecategorie"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="CategorieunitemesureView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="CategorieunitemesureView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="CategorieunitemesureView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="CategorieunitemesureView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

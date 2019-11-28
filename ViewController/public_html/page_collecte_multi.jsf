@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="page_collecte_multi.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelGroupLayout layout="vertical" id="pgl1">
+                        <af:panelHeader text="CollecteMulti1" id="ph1">
+                            <af:query id="qryId1" headerText="Search" disclosed="true"
+                                      value="#{bindings.CollecteMultiCriteriaQuery.queryDescriptor}"
+                                      model="#{bindings.CollecteMultiCriteriaQuery.queryModel}"
+                                      queryListener="#{bindings.CollecteMultiCriteriaQuery.processQuery}"
+                                      queryOperationListener="#{bindings.CollecteMultiCriteriaQuery.processQueryOperation}"
+                                      resultComponentId="::resId1"/>
+                        </af:panelHeader>
+                        <af:panelTabbed position="above" id="pt2">
+                            <af:showDetailItem id="tab1" text="Liste" disclosed="true">
+                                <af:table value="#{bindings.CollecteMulti1.collectionModel}" var="row"
+                                          rows="#{bindings.CollecteMulti1.rangeSize}"
+                                          emptyText="#{bindings.CollecteMulti1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.CollecteMulti1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.CollecteMulti1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.CollecteMulti1.rangeSize}"
+                                          filterModel="#{bindings.CollecteMultiCriteriaQuery.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.CollecteMultiCriteriaQuery.processQuery}"
+                                          varStatus="vs" id="resId1">
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Iddetailscollectepfnl.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Iddetailscollectepfnl.label}"
+                                               id="resId1c1">
+                                        <af:outputText value="#{row.Iddetailscollectepfnl}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Iddetailscollectepfnl.tooltip}"
+                                                       id="ot1">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CollecteMulti1.hints.Iddetailscollectepfnl.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Quantite.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Quantite.label}"
+                                               id="resId1c2">
+                                        <af:outputText value="#{row.Quantite}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Quantite.tooltip}"
+                                                       id="ot2">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CollecteMulti1.hints.Quantite.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Idpermissionnaire.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Idpermissionnaire.label}"
+                                               id="resId1c3">
+                                        <af:outputText value="#{row.Idpermissionnaire}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Idpermissionnaire.tooltip}"
+                                                       id="ot3">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CollecteMulti1.hints.Idpermissionnaire.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Idorigine.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Idorigine.label}"
+                                               id="resId1c4">
+                                        <af:outputText value="#{row.Idorigine}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Idorigine.tooltip}"
+                                                       id="ot4">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CollecteMulti1.hints.Idorigine.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Idunitemesure.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Idunitemesure.label}"
+                                               id="resId1c5">
+                                        <af:outputText value="#{row.Idunitemesure}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Idunitemesure.tooltip}"
+                                                       id="ot5">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CollecteMulti1.hints.Idunitemesure.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Iddestination.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Iddestination.label}"
+                                               id="resId1c6">
+                                        <af:selectOneChoice value="#{row.bindings.Iddestination.inputValue}"
+                                                            label="#{row.bindings.Iddestination.label}"
+                                                            required="#{bindings.CollecteMulti1.hints.Iddestination.mandatory}"
+                                                            shortDesc="#{bindings.CollecteMulti1.hints.Iddestination.tooltip}"
+                                                            readOnly="true" id="soc1">
+                                            <f:selectItems value="#{row.bindings.Iddestination.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.Iddestination.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Idprovenance.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Idprovenance.label}"
+                                               id="resId1c7">
+                                        <af:selectOneChoice value="#{row.bindings.Idprovenance.inputValue}"
+                                                            label="#{row.bindings.Idprovenance.label}"
+                                                            required="#{bindings.CollecteMulti1.hints.Idprovenance.mandatory}"
+                                                            shortDesc="#{bindings.CollecteMulti1.hints.Idprovenance.tooltip}"
+                                                            readOnly="true" id="soc2">
+                                            <f:selectItems value="#{row.bindings.Idprovenance.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.Idprovenance.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Produit.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Produit.label}"
+                                               id="resId1c8">
+                                        <af:outputText value="#{row.Produit}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Produit.tooltip}"
+                                                       id="ot6"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Acteur.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Acteur.label}" id="resId1c9">
+                                        <af:outputText value="#{row.Acteur}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Acteur.tooltip}"
+                                                       id="ot7"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Nomdepartement.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Nomdepartement.label}"
+                                               id="resId1c10">
+                                        <af:outputText value="#{row.Nomdepartement}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Nomdepartement.tooltip}"
+                                                       id="ot8"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Nomlocalite.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Nomlocalite.label}"
+                                               id="resId1c11">
+                                        <af:outputText value="#{row.Nomlocalite}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Nomlocalite.tooltip}"
+                                                       id="ot9"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Nomsource.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Nomsource.label}"
+                                               id="resId1c12">
+                                        <af:outputText value="#{row.Nomsource}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Nomsource.tooltip}"
+                                                       id="ot10"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Intituleposte.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Intituleposte.label}"
+                                               id="resId1c13">
+                                        <af:outputText value="#{row.Intituleposte}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Intituleposte.tooltip}"
+                                                       id="ot11"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Datecollecte.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Datecollecte.label}"
+                                               id="resId1c14">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.CollecteMultiCriteriaQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.Datecollecte.value}"
+                                                          id="id1">
+                                                <af:convertDateTime pattern="#{bindings.CollecteMulti1.hints.Datecollecte.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:outputText value="#{row.Datecollecte}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Datecollecte.tooltip}"
+                                                       id="ot12">
+                                            <af:convertDateTime pattern="#{bindings.CollecteMulti1.hints.Datecollecte.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Nomuser.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Nomuser.label}"
+                                               id="resId1c15">
+                                        <af:outputText value="#{row.Nomuser}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Nomuser.tooltip}"
+                                                       id="ot13"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CollecteMulti1.hints.Libelleunitemesure.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CollecteMulti1.hints.Libelleunitemesure.label}"
+                                               id="resId1c16">
+                                        <af:outputText value="#{row.Libelleunitemesure}"
+                                                       shortDesc="#{bindings.CollecteMulti1.hints.Libelleunitemesure.tooltip}"
+                                                       id="ot14"/>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2" text="Graphe">
+                                <af:panelBox text="PanelBox1" id="pb1">
+                                    <f:facet name="toolbar"/>
+                                    <dvt:barChart id="barChart1" var="row"
+                                                  value="#{bindings.CollecteMulti11.collectionModel}">
+                                        <dvt:chartLegend id="cl1"/>
+                                        <f:facet name="dataStamp">
+                                            <dvt:chartDataItem id="di1" series="#{row.Datecollecte}"
+                                                               value="#{row.Quantite}" group="#{row.Produit}"/>
+                                        </f:facet>
+                                    </dvt:barChart>
+                                    <dvt:pivotTable id="pt3" value="#{bindings.CollecteMulti12.pivotTableModel}"
+                                                    var="cellData" varStatus="cellStatus" splitMode="enabled">
+                                        <dvt:headerCell>
+                                            <af:switcher facetName="#{cellData.layerName}" defaultFacet="Default"
+                                                         id="s1">
+                                                <f:facet name="DataLayer">
+                                                    <af:outputText value="#{cellData.label}" id="ot15"/>
+                                                </f:facet>
+                                                <f:facet name="Datecollecte">
+                                                    <af:outputText value="#{cellData.dataValue}" id="ot16">
+                                                        <af:convertDateTime pattern="#{bindings.CollecteMulti12.hints.Datecollecte.format}"/>
+                                                    </af:outputText>
+                                                </f:facet>
+                                                <f:facet name="Produit">
+                                                    <af:outputText value="#{cellData.dataValue}" id="ot17"/>
+                                                </f:facet>
+                                                <f:facet name="Default">
+                                                    <af:outputText value="#{cellData.dataValue}" id="ot18"/>
+                                                </f:facet>
+                                            </af:switcher>
+                                        </dvt:headerCell>
+                                        <dvt:dataCell id="dc1">
+                                            <af:switcher facetName="#{cellStatus.members.DataLayer.value}"
+                                                         defaultFacet="Default" id="s2">
+                                                <f:facet name="Quantite">
+                                                    <af:outputText value="#{cellData.dataValue}" id="ot19">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.CollecteMulti12.hints.Quantite.format}"/>
+                                                    </af:outputText>
+                                                </f:facet>
+                                                <f:facet name="Default">
+                                                    <af:outputText value="#{cellData.dataValue}" id="ot20"/>
+                                                </f:facet>
+                                            </af:switcher>
+                                        </dvt:dataCell>
+                                    </dvt:pivotTable>
+                                </af:panelBox>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

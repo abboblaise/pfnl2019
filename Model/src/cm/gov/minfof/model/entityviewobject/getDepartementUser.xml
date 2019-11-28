@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="getDepartementUser"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="cm.gov.minfof.model.entityviewobject.getDepartementUser_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="iddepartementbind"
+    Kind="viewcriteria"
+    Type="java.math.BigDecimal"/>
+  <Variable
+    Name="idregionbind"
+    Kind="viewcriteria"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[SELECT 
+    departements.iddepartements iddepartements, 
+    departements.nomdepartement nomdepartement, 
+    departements.codedepartement codedepartement, 
+    departements.idregions idregions, 
+    departements.nomcheflieu nomcheflieu 
+FROM 
+    departements]]></SQLQuery>
+  <ViewAttribute
+    Name="Iddepartements"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="iddepartements"
+    Expression="iddepartements"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomdepartement"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomdepartement"
+    Expression="nomdepartement"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Codedepartement"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="5"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="codedepartement"
+    Expression="codedepartement"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idregions"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idregions"
+    Expression="idregions"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomcheflieu"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomcheflieu"
+    Expression="nomcheflieu"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="DepartementCriteria"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getDepartementUser"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="getDepartementUserSubCriteria1"
+      ViewObjectName="cm.gov.minfof.model.entityviewobject.getDepartementUser"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="getDepartementUserSubCriteria1_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="getDepartementUserSubCriteria1_getDepartementUserSubCriteria1_row_0_Iddepartements"
+          ViewAttribute="Iddepartements"
+          Operator="="
+          Conjunction="AND"
+          Value=":iddepartementbind"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="RegionCriteria"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getDepartementUser"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="getDepartementUserSubCriteria1"
+      ViewObjectName="cm.gov.minfof.model.entityviewobject.getDepartementUser"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="getDepartementUserSubCriteria1_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="Idregions"
+          ViewAttribute="Idregions"
+          Operator="="
+          Conjunction="AND"
+          Value=":idregionbind"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

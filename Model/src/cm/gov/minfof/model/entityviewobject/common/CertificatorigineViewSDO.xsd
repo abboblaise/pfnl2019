@@ -1,0 +1,32 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoXML="commonj.sdo/xml" xmlns:sdoJava="commonj.sdo/java"
+     targetNamespace="/cm/gov/minfof/model/entityviewobject/common/" xmlns="/cm/gov/minfof/model/entityviewobject/common/"
+     elementFormDefault="qualified" sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:import schemaLocation="classpath:/xml/sdoXML.xsd" namespace="commonj.sdo/xml"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:complexType name="CertificatorigineViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idcertificatorigine</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idcertificatorigine" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Quantite" type="xsd:float" minOccurs="0" sdoXML:dataType="sdoJava:FloatObject"/>
+            <xsd:element name="Idpartieproduitpfnl" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idunitemesure" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Numeroco" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Destinataire" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpermis" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpays" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="CertificatorigineView" type="CertificatorigineViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="CertificatorigineView1" type="CertificatorigineViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="CertificatorigineView2" type="CertificatorigineViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="certificatorigineViewSDO" type="CertificatorigineViewSDO"/>
+</xsd:schema>

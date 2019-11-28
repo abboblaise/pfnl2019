@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Typevehicule"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="typevehicule"
+  AliasName="Typevehicule"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Idtypevehicule"
+    ColumnName="idtypevehicule"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="typevehicule"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Codevehicule"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="codevehicule"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="typevehicule">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Libelletype"
+    Precision="50"
+    ColumnName="libelletype"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="typevehicule">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Vehicule"
+    Association="cm.gov.minfof.model.entity.TypeVehiculeToVehiculeAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.TypeVehiculeToVehiculeAssoc.Vehicule"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.TypeVehiculeToVehiculeAssoc.Typevehicule"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Typevehicule.Idtypevehicule"/>
+    </AttrArray>
+  </Key>
+</Entity>

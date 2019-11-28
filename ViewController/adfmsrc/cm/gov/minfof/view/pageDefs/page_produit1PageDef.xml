@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_produit1PageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProduitsPfnlView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ProduitsPfnlView1Iterator"/>
+    <searchRegion Binds="ProduitsPfnlView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ProduitsPfnlView1Query"/>
+    <iterator Binds="PartiesProduitsPfnlView9" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PartiesProduitsPfnlView9Iterator"/>
+    <searchRegion Binds="PartiesProduitsPfnlView9Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PartiesProduitsPfnlView9Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ProduitsPfnlView1Iterator" id="Idproduitspfnl">
+      <AttrNames>
+        <Item Value="Idproduitspfnl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView1Iterator" id="Nomscientifique">
+      <AttrNames>
+        <Item Value="Nomscientifique"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView1Iterator" id="Nomcommercial">
+      <AttrNames>
+        <Item Value="Nomcommercial"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView1Iterator" id="Codeproduit">
+      <AttrNames>
+        <Item Value="Codeproduit"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ProduitsPfnlView1Iterator" StaticList="false" Uses="LOV_Idfamillepfnl" id="Idfamillepfnl"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ProduitsPfnlView1Iterator" id="Descriptionsommaire">
+      <AttrNames>
+        <Item Value="Descriptionsommaire"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView1Iterator" id="Modeattribution">
+      <AttrNames>
+        <Item Value="Modeattribution"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView1Iterator" id="Idcategorie">
+      <AttrNames>
+        <Item Value="Idcategorie"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ProduitsPfnlView1Iterator" id="ProduitsPfnlView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entity.ProduitsPfnlView" Name="ProduitsPfnlView10">
+        <AttrNames>
+          <Item Value="Idproduitspfnl"/>
+          <Item Value="Nomscientifique"/>
+          <Item Value="Nomcommercial"/>
+          <Item Value="Codeproduit"/>
+          <Item Value="Idfamillepfnl"/>
+          <Item Value="Descriptionsommaire"/>
+          <Item Value="Modeattribution"/>
+          <Item Value="Idcategorie"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PartiesProduitsPfnlView9Iterator" id="PartiesProduitsPfnlView9">
+      <nodeDefinition DefName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView" Name="PartiesProduitsPfnlView90">
+        <AttrNames>
+          <Item Value="Idpartiesproduitspfnl"/>
+          <Item Value="Idpartiesrecoltees"/>
+          <Item Value="Idproduitspfnl"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Idunitemesureexport"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

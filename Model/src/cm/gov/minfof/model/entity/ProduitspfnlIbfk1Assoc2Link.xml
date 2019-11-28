@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProduitspfnlIbfk1Assoc2Link"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc2">
+  <ViewLinkDefEnd
+    Name="PartiesRecolteesView"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.PartiesRecolteesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="PartiesRecolteesView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesRecolteesView.Idpartiesrecoltees"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ProduitsPfnlView"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entity.ProduitsPfnlView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ProduitsPfnlView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.ProduitsPfnlView.Idfamillepfnl"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

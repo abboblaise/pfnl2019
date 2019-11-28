@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Departement"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="departements"
+  AliasName="Departement"
+  BindingStyle="JDBC"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  RowClass="cm.gov.minfof.model.entity.DepartementImpl"
+  DefClass="cm.gov.minfof.model.entity.DepartementDefImpl"
+  CollClass="cm.gov.minfof.model.entity.DepartementCollImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Iddepartements"
+    ColumnName="iddepartements"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="departements"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nomdepartement"
+    Precision="50"
+    ColumnName="nomdepartement"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="departements"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="NOM_DU_D_U00E9PARTEMENT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Codedepartement"
+    IsUnique="true"
+    Precision="2"
+    ColumnName="codedepartement"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="departements"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Departement.Codedepartement_LABEL"/>
+        <DISPLAYWIDTH
+          Value="4"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:PreDefinedValidationBean
+      Name="CodedepartementRule1"
+      Description="Precision : (4)"
+      ValName="Precision : (5)"
+      Subtype="PRECISION_SCALE"/>
+    <validation:RegExpValidationBean
+      Name="CodedepartementRule0"
+      ResId="LE_CODE_DU_D_U00E9PARTEMENT_EST_ERRON_U00E9"
+      OnAttribute="Codedepartement"
+      Pattern="\d{2}"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Idregions"
+    ColumnName="idregions"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="departements">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="R_U00E9GION"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Nomcheflieu"
+    Precision="50"
+    ColumnName="nomcheflieu"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="departements">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Departement.Nomcheflieu_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="codesigif"
+    Precision="80"
+    ColumnName="CODESIGIF"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="departements"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CODE_SIGIF"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Departement"
+    Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc.Departement"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc.IdregionsDepartement"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdregionsDepartement"
+    Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc.IdregionsDepartement"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc.Departement"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Region"
+    Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc1.Region"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc1.Departement"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Commune"
+    Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc2.Commune"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc2.Departement"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Commune1"
+    Association="cm.gov.minfof.model.entity.CommunesIbfk1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc2.Commune1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc2.Departement1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Collectepfnl"
+    Association="cm.gov.minfof.model.entity.DeptToCollecteAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.DeptToCollecteAssoc.Collectepfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DeptToCollecteAssoc.Departement"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Detailscollectepfnl"
+    Association="cm.gov.minfof.model.entity.DetailCollToDeptAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.DetailCollToDeptAssoc.Detailscollectepfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DetailCollToDeptAssoc.Departement"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Agrements1"
+    Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc3.Agrements1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc3.Departement"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="AltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="departements"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Departement.Codedepartement"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AltKey1"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="departements"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Departement.Codedepartement"/>
+      <Item Value="cm.gov.minfof.model.entity.Departement.Idregions"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Codedepartement1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="codedepartement"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Departement.Codedepartement"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DepartementsCodedepartementCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"codedepartement" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DEPARTEMENTS_CODEDEPARTEMENT_C"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Departement.Codedepartement"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DepartementsNomdepartementCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"nomdepartement" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Departements_Nomdepartement_Ch"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Departement.Nomdepartement"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Departement.Iddepartements"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DepartementsIbfk1">
+    <DesignTime>
+      <Attr Name="_isCascadeDelete" Value="true"/>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="departements_ibfk_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Departement.Idregions"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="DepartementRule0"
+    ResId="cm.gov.minfof.model.entity.Departement_Rule_0"
+    KeyName="AltKey1">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Codedepartement"/>
+      <validation:Item
+        Value="Idregions"/>
+    </validation:OnAttributes>
+    <validation:ResExpressions
+      Name="DepartementRule0_ResExprList">
+      <validation:Expression
+        Name="0"
+        trustMode="untrusted"
+        CodeSourceName="DepartementRow"/>
+    </validation:ResExpressions>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

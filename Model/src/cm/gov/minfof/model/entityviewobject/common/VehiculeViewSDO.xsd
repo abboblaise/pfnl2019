@@ -1,0 +1,28 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoXML="commonj.sdo/xml" xmlns:sdoJava="commonj.sdo/java"
+     targetNamespace="/cm/gov/minfof/model/entityviewobject/common/" xmlns="/cm/gov/minfof/model/entityviewobject/common/"
+     elementFormDefault="qualified" sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:import schemaLocation="classpath:/xml/sdoXML.xsd" namespace="commonj.sdo/xml"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:complexType name="VehiculeViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idvehicule</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idvehicule" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idtransporteur" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idregion" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idtypevehicule" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Codechiffre" type="xsd:int" minOccurs="0" sdoXML:dataType="sdoJava:IntObject"/>
+            <xsd:element name="SuffixLettre" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Immatriculation" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="VehiculeView" type="VehiculeViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="VehiculeView1" type="VehiculeViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="VehiculeView2" type="VehiculeViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="vehiculeViewSDO" type="VehiculeViewSDO"/>
+</xsd:schema>

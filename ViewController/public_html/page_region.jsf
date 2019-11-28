@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:mycomps="http://mycompany.com/adf/components">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document id="d1" title="#{viewcontrollerBundle.EDITION_DES_R_U00E9GIONS}">
+        <af:resource source="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="javascript"/>
+        <af:resource source="js/jquery.growl.js" type="javascript"/>
+        <af:resource source="style/jquery.growl.css" type="css"/>
+        <af:messages id="m1"/>
+        <af:form id="f1">
+        <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+        <f:facet name="content">
+                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_R_U00E9GIONS}" id="pb3"
+                                 showDisclosure="false">
+                        <f:facet name="toolbar">
+                            <af:panelGroupLayout id="pgl4">
+                                <af:button actionListener="#{bindings.Rollback.execute}"
+                                           text="#{viewcontrollerBundle.ACTUALISER}" immediate="true" id="b11">
+                                    <af:resetActionListener/>
+                                </af:button>
+                                <af:spacer width="10" height="10" id="s3"/>
+                                <mycomps:ConfirmButton id="cb1" ButtonText="#{viewcontrollerBundle.SUPPRIMER}"
+                                                       ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}"
+                                                       onDialogReturn="#{regionBean.onDelete}">
+                                    <f:facet name="DialogContent"/>
+                                </mycomps:ConfirmButton>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <af:spacer width="10" height="10" id="s4"/>
+                        <af:panelTabbed position="above" id="pt2" inlineStyle="width:706px;">
+                            <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}" disclosed="true">
+                                <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b12">
+                                    <af:exportCollectionActionListener type="excelHTML" exportedId="pc1:t1"
+                                                                       filename="region.xls"/>
+                                </af:button>
+                                <af:panelCollection id="pc1" inlineStyle="width:696px;">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <f:facet name="statusbar"/>
+                                    <af:table value="#{bindings.RegionView1.collectionModel}" var="row"
+                                              rows="#{bindings.RegionView1.rangeSize}"
+                                              emptyText="#{bindings.RegionView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.RegionView1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.RegionView1.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.RegionView1.rangeSize}"
+                                              filterModel="#{bindings.RegionView1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.RegionView1Query.processQuery}" varStatus="vs"
+                                              id="t1" width="696"
+                                              partialTriggers=":::b2 :::b3 :::b4 :::b5 :::b7 :::b8 :::b9 :::b10 :::b6"
+                                              autoHeightRows="14" scrollPolicy="auto"
+                                              binding="#{ResetTableFilterBean.empTable}"
+                                              shortDesc="#{ResetTableFilterBean.shortDescription}">
+                                        <af:column sortProperty="#{bindings.RegionView1.hints.Idregions.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.RegionView1.hints.Idregions.label}" id="c1"
+                                                   visible="true" rowHeader="true" width="100">
+                                            <af:outputText value="#{row.Idregions}"
+                                                           shortDesc="#{bindings.RegionView1.hints.Idregions.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.RegionView1.hints.Idregions.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.RegionView1.hints.Coderegion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.RegionView1.hints.Coderegion.label}" id="c2"
+                                                   filterFeatures="caseInsensitive" width="80">
+                                            <af:outputText value="#{row.Coderegion}"
+                                                           shortDesc="#{bindings.RegionView1.hints.Coderegion.tooltip}"
+                                                           id="ot2"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.RegionView1.hints.Nomregion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.RegionView1.hints.Nomregion.label}" id="c3"
+                                                   filterFeatures="caseInsensitive" width="120">
+                                            <af:outputText value="#{row.Nomregion}"
+                                                           shortDesc="#{bindings.RegionView1.hints.Nomregion.tooltip}"
+                                                           id="ot3"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.RegionView1.hints.Cheflieuregion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.RegionView1.hints.Cheflieuregion.label}"
+                                                   id="c4" filterFeatures="caseInsensitive" width="100">
+                                            <af:outputText value="#{row.Cheflieuregion}"
+                                                           shortDesc="#{bindings.RegionView1.hints.Cheflieuregion.tooltip}"
+                                                           id="ot4"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.RegionView1.hints.Descriptionregions.name}"
+                                                   filterable="true" sortable="true" filterFeatures="caseInsensitive"
+                                                   headerText="#{bindings.RegionView1.hints.Descriptionregions.label}"
+                                                   id="c5" width="261">
+                                            <af:outputText value="#{row.Descriptionregions}"
+                                                           shortDesc="#{bindings.RegionView1.hints.Descriptionregions.tooltip}"
+                                                           id="ot5"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelCollection>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
+                                <af:panelBox id="pb1" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1" marginEnd="5px">
+                                                <af:outputLabel value="#{bindings.Coderegion.hints.label}" id="ol1"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="10px" width="auto" id="gc2">
+                                                <af:inputText value="#{bindings.Coderegion.inputValue}"
+                                                              required="#{bindings.Coderegion.hints.mandatory}"
+                                                              columns="2"
+                                                              maximumLength="#{bindings.Coderegion.hints.precision}"
+                                                              shortDesc="#{bindings.Coderegion.hints.tooltip}" id="it1"
+                                                              partialTriggers="b2 b1 b3">
+                                                    <f:validator binding="#{bindings.Coderegion.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="10px" width="auto" id="gc3">
+                                                <af:outputLabel value="#{bindings.Nomregion.hints.label}" id="ol2"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4">
+                                                <af:inputText value="#{bindings.Nomregion.inputValue}"
+                                                              required="#{bindings.Nomregion.hints.mandatory}"
+                                                              columns="#{bindings.Nomregion.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Nomregion.hints.precision}"
+                                                              shortDesc="#{bindings.Nomregion.hints.tooltip}" id="it2"
+                                                              partialTriggers="b2 b4 b1 b3" immediate="false">
+                                                    <f:validator binding="#{bindings.Nomregion.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc5" marginEnd="5px">
+                                                <af:outputLabel value="#{bindings.Cheflieuregion.hints.label}"
+                                                                id="ol3"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="10px" width="auto" id="gc6">
+                                                <af:inputText value="#{bindings.Cheflieuregion.inputValue}"
+                                                              label="&nbsp;&nbsp;&nbsp;"
+                                                              required="#{bindings.Cheflieuregion.hints.mandatory}"
+                                                              columns="#{bindings.Cheflieuregion.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Cheflieuregion.hints.precision}"
+                                                              shortDesc="#{bindings.Cheflieuregion.hints.tooltip}"
+                                                              id="it3" partialTriggers="b2 b4 b1 b3">
+                                                    <f:validator binding="#{bindings.Cheflieuregion.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="10px" width="auto" id="gc7">
+                                                <af:outputLabel value="#{bindings.Descriptionregions.hints.label}"
+                                                                id="ol4"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc8">
+                                                <af:inputText value="#{bindings.Descriptionregions.inputValue}"
+                                                              label="&nbsp;&nbsp;&nbsp;"
+                                                              required="#{bindings.Descriptionregions.hints.mandatory}"
+                                                              columns="#{bindings.Descriptionregions.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Descriptionregions.hints.precision}"
+                                                              shortDesc="#{bindings.Descriptionregions.hints.tooltip}"
+                                                              id="it4" rows="3" partialTriggers="b2 b4 b1 b3">
+                                                    <f:validator binding="#{bindings.Descriptionregions.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc9" marginEnd="5px"/>
+                                            <af:gridCell marginStart="10px" width="auto" id="gc10"/>
+                                            <af:gridCell marginStart="10px" width="auto" id="gc11"/>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc12"/>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                            <af:gridCell marginStart="5px" columnSpan="4" marginEnd="5px" id="gc13">
+                                                <af:panelGroupLayout id="pgl3" halign="center">
+                                                    <af:button actionListener="#{bindings.First.execute}"
+                                                               text="#{viewcontrollerBundle.FIRST}"
+                                                               disabled="#{!bindings.First.enabled}"
+                                                               partialSubmit="true" id="b7"/>
+                                                    <af:spacer width="10" height="10" id="s5"/>
+                                                    <af:button actionListener="#{bindings.Previous.execute}"
+                                                               text="#{viewcontrollerBundle.PREVIOUS}" disabled="#{!bindings.Previous.enabled}"
+                                                               partialSubmit="true" id="b8"/>
+                                                    <af:spacer width="10" height="10" id="s6"/>
+                                                    <af:button actionListener="#{bindings.Next.execute}"
+                                                               text="#{viewcontrollerBundle.NEXT}"
+                                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                               id="b9"/>
+                                                    <af:spacer width="10" height="10" id="s7"/>
+                                                    <af:button actionListener="#{bindings.Last.execute}"
+                                                               text="#{viewcontrollerBundle.LAST}"
+                                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                               id="b10"/>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                                            <af:gridCell marginStart="5px" columnSpan="4" marginEnd="5px" id="gc14">
+                                                <af:panelGroupLayout id="pgl1" halign="center">
+                                                    <af:button text="#{viewcontrollerBundle.NOUVEAU}"
+                                                               disabled="#{!bindings.Create.enabled}" id="b5"
+                                                               action="#{regionBean.creer}" visible="false"/>
+                                                    <af:button text="#{viewcontrollerBundle.NOUVEAU}"
+                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b2"
+                                                               action="#{regionBean.creerInserer}" visible="true"/>
+                                                    <af:spacer width="10" height="10" id="s1"/>
+                                                    <af:button text="#{viewcontrollerBundle.ENREGISTRER}" id="b4"
+                                                               action="#{regionBean.enregistreRegion}"/>
+                                                    <af:spacer width="10" height="10" id="s2"/>
+                                                    <af:button text="Commit" id="b1"
+                                                               disabled="#{!bindings.Commit.enabled}"
+                                                               action="#{regionBean.enregistreRegion}" visible="false"/>
+                                                    <af:button text="#{viewcontrollerBundle.SUPPRIMER}"
+                                                               disabled="#{!bindings.Delete.enabled}" id="b3"
+                                                               action="#{regionBean.supprimeRegion}" rendered="false"/>
+                                                    <af:button
+                                                               text="#{viewcontrollerBundle.ANNULER}" immediate="true"
+                                                               id="b6" action="#{regionBean.annulerRegion}">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                    
+                                </af:panelBox>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:regionBean-->
+</f:view>

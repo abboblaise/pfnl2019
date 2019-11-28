@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="cm.gov.minfof.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/page_region.jsf" usageId="cm_gov_minfof_view_page_regionPageDef"/>
+    <page path="/page_departement.jsf" usageId="cm_gov_minfof_view_page_departementPageDef"/>
+    <page path="/page_commune.jsf" usageId="cm_gov_minfof_view_page_communePageDef"/>
+    <page path="/page_famille_produit.jsf" usageId="cm_gov_minfof_view_page_famille_produitPageDef"/>
+    <page path="/page_produit.jsf" usageId="cm_gov_minfof_view_page_produitPageDef"/>
+    <page path="/page_parties_recoltees.jsf" usageId="cm_gov_minfof_view_page_parties_recolteesPageDef"/>
+    <page path="/page_pays.jsf" usageId="cm_gov_minfof_view_page_paysPageDef"/>
+    <page path="/page_originepfnl.jsf" usageId="cm_gov_minfof_view_page_originepfnlPageDef"/>
+    <page path="/page_permissionnaire.jsf" usageId="cm_gov_minfof_view_page_permissionnairePageDef"/>
+    <page path="/Template_General.jsf" usageId="cm_gov_minfof_view_Template_GeneralPageDef"/>
+    <page path="/page_categorie_unitemesure.jsf" usageId="cm_gov_minfof_view_page_categorie_unitemesurePageDef"/>
+    <page path="/page_unitemesure.jsf" usageId="cm_gov_minfof_view_page_unitemesurePageDef"/>
+    <page path="/Page_Permis1.jsf" usageId="cm_gov_minfof_view_Page_Permis1PageDef"/>
+    <page path="/Page_Agrement.jsf" usageId="cm_gov_minfof_view_Page_AgrementPageDef"/>
+    <page path="/page_type_produit.jsf" usageId="cm_gov_minfof_view_page_categorie_produitPageDef"/>
+    <page path="/page_transporteur.jsf" usageId="cm_gov_minfof_view_page_transporteurPageDef"/>
+    <page path="/page_vehicule.jsf" usageId="cm_gov_minfof_view_page_vehiculePageDef"/>
+    <page path="/page_postec.jsf" usageId="cm_gov_minfof_view_page_postecPageDef"/>
+    <page path="/page_permis.jsf" usageId="cm_gov_minfof_view_page_permisPageDef"/>
+    <page path="/page_collecte.jsf" usageId="cm_gov_minfof_view_page_collectePageDef"/>
+    <page path="/test_details_collecte.jsf" usageId="cm_gov_minfof_view_test_details_collectePageDef"/>
+    <page path="/page_produit3.jsf" usageId="cm_gov_minfof_view_page_produit3PageDef"/>
+    <page path="/page_export.jsf" usageId="cm_gov_minfof_view_page_exportPageDef"/>
+    <page path="/page_categorie_unitemesure.jsf" usageId="cm_gov_minfof_view_page_categorie_unitemesurePageDef"/>
+    <page path="/page_unitemesure.jsf" usageId="cm_gov_minfof_view_page_unitemesurePageDef"/>
+    <page path="/Page_Permis1.jsf" usageId="cm_gov_minfof_view_Page_Permis1PageDef"/>
+    <page path="/Page_Agrement.jsf" usageId="cm_gov_minfof_view_Page_AgrementPageDef"/>
+    <page path="/page_categorie_produit.jsf" usageId="cm_gov_minfof_view_page_categorie_produitPageDef"/>
+    <page path="/page_transporteur.jsf" usageId="cm_gov_minfof_view_page_transporteurPageDef"/>
+    <page path="/page_vehicule.jsf" usageId="cm_gov_minfof_view_page_vehiculePageDef"/>
+    <page path="/page_postec.jsf" usageId="cm_gov_minfof_view_page_postecPageDef"/>
+    <page path="/page_permis.jsf" usageId="cm_gov_minfof_view_page_permisPageDef"/>
+    <page path="/page_collecte.jsf" usageId="cm_gov_minfof_view_page_collectePageDef"/>
+    <page path="/page_lettrevoiture.jsf" usageId="cm_gov_minfof_view_page_lettrevoiturePageDef1"/>
+    <page path="/login.jsf" usageId="cm_gov_minfof_view_loginPageDef"/>
+    <page path="/page_utilisateur.jsf" usageId="cm_gov_minfof_view_page_utilisateurPageDef"/>
+    <page path="/page_user.jsf" usageId="cm_gov_minfof_view_pae_userPageDef"/>
+    <page path="/page_configgroupe.jsf" usageId="cm_gov_minfof_view_page_configgroupePageDef"/>
+    <page path="/page_modifpwd.jsf" usageId="cm_gov_minfof_view_page_modifpwdPageDef"/>
+    <page path="/page_certificat.jsf" usageId="cm_gov_minfof_view_page_certificatPageDef1"/>
+    <page path="/page_localite.jsf" usageId="cm_gov_minfof_view_page_localitePageDef"/>
+    <page path="/page_postecontrole.jsf" usageId="cm_gov_minfof_view_page_postecontrolePageDef"/>
+    <page path="/page_pc.jsf" usageId="cm_gov_minfof_view_page_pcPageDef"/>
+    <page path="/page_collecte_multi.jsf" usageId="cm_gov_minfof_view_page_collecte_multiPageDef"/>
+    <page path="/page_collecte_multicritere.jsf" usageId="cm_gov_minfof_view_page_collecte_multicriterePageDef"/>
+    <page path="/page_lettrevoiture_multicritere.jsf"
+          usageId="cm_gov_minfof_view_page_lettrevoiture_multicriterePageDef"/>
+    <page path="/page_export_multicritere.jsf" usageId="cm_gov_minfof_view_page_export_multicriterePageDef"/>
+    <page path="/page_ceqe.jsf" usageId="cm_gov_minfof_view_page_ceqePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="cm_gov_minfof_view_page_regionPageDef" path="cm.gov.minfof.view.pageDefs.page_regionPageDef"/>
+    <page id="cm_gov_minfof_view_page_departementPageDef" path="cm.gov.minfof.view.pageDefs.page_departementPageDef"/>
+    <page id="cm_gov_minfof_view_page_communePageDef" path="cm.gov.minfof.view.pageDefs.page_communePageDef"/>
+    <page id="cm_gov_minfof_view_page_famille_produitPageDef"
+          path="cm.gov.minfof.view.pageDefs.page_famille_produitPageDef"/>
+    <page id="cm_gov_minfof_view_page_produitPageDef" path="cm.gov.minfof.view.pageDefs.page_produitPageDef"/>
+    <page id="cm_gov_minfof_view_page_parties_recolteesPageDef"
+          path="cm.gov.minfof.view.pageDefs.page_parties_recolteesPageDef"/>
+    <page id="cm_gov_minfof_view_page_paysPageDef" path="cm.gov.minfof.view.pageDefs.page_paysPageDef"/>
+    <page id="cm_gov_minfof_view_page_originepfnlPageDef" path="cm.gov.minfof.view.pageDefs.page_originepfnlPageDef"/>
+    <page id="cm_gov_minfof_view_page_permissionnairePageDef"
+          path="cm.gov.minfof.view.pageDefs.page_permissionnairePageDef"/>
+    <page id="cm_gov_minfof_view_Template_GeneralPageDef" path="cm.gov.minfof.view.pageDefs.Template_GeneralPageDef"/>
+    <page id="cm_gov_minfof_view_untitled1PageDef" path="cm.gov.minfof.view.pageDefs.untitled1PageDef"/>
+    <page id="cm_gov_minfof_view_templateDef1PageDef" path="cm.gov.minfof.view.pageDefs.templateDef1PageDef"/>
+    <page id="cm_gov_minfof_view_page_categorie_unitemesurePageDef"
+          path="cm.gov.minfof.view.pageDefs.page_categorie_unitemesurePageDef"/>
+    <page id="cm_gov_minfof_view_page_unitemesurePageDef" path="cm.gov.minfof.view.pageDefs.page_unitemesurePageDef"/>
+    <page id="cm_gov_minfof_view_Page_agrementPageDef" path="cm.gov.minfof.view.pageDefs.Page_agrementPageDef"/>
+    <page id="cm_gov_minfof_view_Page_Permis1PageDef" path="cm.gov.minfof.view.pageDefs.Page_Permis1PageDef"/>
+    <page id="cm_gov_minfof_view_Page_AgrementPageDef" path="cm.gov.minfof.view.pageDefs.Page_AgrementPageDef"/>
+    <page id="cm_gov_minfof_view_page_categorie_produitPageDef"
+          path="cm.gov.minfof.view.pageDefs.page_categorie_produitPageDef"/>
+    <page id="cm_gov_minfof_view_page_transporteurPageDef" path="cm.gov.minfof.view.pageDefs.page_transporteurPageDef"/>
+    <page id="cm_gov_minfof_view_page_vehiculePageDef" path="cm.gov.minfof.view.pageDefs.page_vehiculePageDef"/>
+    <page id="cm_gov_minfof_view_page_postecPageDef" path="cm.gov.minfof.view.pageDefs.page_postecPageDef"/>
+    <page id="cm_gov_minfof_view_page_permisPageDef" path="cm.gov.minfof.view.pageDefs.page_permisPageDef"/>
+    <page id="cm_gov_minfof_view_page_collectePageDef" path="cm.gov.minfof.view.pageDefs.page_collectePageDef"/>
+    <page id="cm_gov_minfof_view_test_details_collectePageDef"
+          path="cm.gov.minfof.view.pageDefs.test_details_collectePageDef"/>
+    <page id="cm_gov_minfof_view_page_produit1PageDef" path="cm.gov.minfof.view.pageDefs.page_produit1PageDef"/>
+    <page id="cm_gov_minfof_view_page_produit2PageDef" path="cm.gov.minfof.view.pageDefs.page_produit2PageDef"/>
+    <page id="cm_gov_minfof_view_page_produit3PageDef" path="cm.gov.minfof.view.pageDefs.page_produit3PageDef"/>
+    <page id="cm_gov_minfof_view_page_exportPageDef" path="cm.gov.minfof.view.pageDefs.page_exportPageDef"/>
+    <page id="cm_gov_minfof_view_page_lettrevoiturePageDef"
+          path="cm.gov.minfof.view.pageDefs.page_lettrevoiturePageDef"/>
+    <page id="cm_gov_minfof_view_page_lettrevoiturePageDef1"
+          path="cm.gov.minfof.view.pageDefs.page_lettrevoiturePageDef1"/>
+    <page id="cm_gov_minfof_view_page_loginPageDef" path="cm.gov.minfof.view.pageDefs.page_loginPageDef"/>
+    <page id="cm_gov_minfof_view_loginPageDef" path="cm.gov.minfof.view.pageDefs.loginPageDef"/>
+    <page id="cm_gov_minfof_view_page_utilisateurPageDef" path="cm.gov.minfof.view.pageDefs.page_utilisateurPageDef"/>
+    <page id="cm_gov_minfof_view_pae_userPageDef" path="cm.gov.minfof.view.pageDefs.pae_userPageDef"/>
+    <page id="cm_gov_minfof_view_page_certificatPageDef" path="cm.gov.minfof.view.pageDefs.page_certificatPageDef"/>
+    <page id="cm_gov_minfof_view_page_configgroupePageDef" path="cm.gov.minfof.view.pageDefs.page_configgroupePageDef"/>
+    <page id="cm_gov_minfof_view_page_modifpwdPageDef" path="cm.gov.minfof.view.pageDefs.page_modifpwdPageDef"/>
+    <page id="cm_gov_minfof_view_page_certificatPageDef1" path="cm.gov.minfof.view.pageDefs.page_certificatPageDef1"/>
+    <page id="cm_gov_minfof_view_page_localitePageDef" path="cm.gov.minfof.view.pageDefs.page_localitePageDef"/>
+    <page id="cm_gov_minfof_view_page_postecontrolePageDef"
+          path="cm.gov.minfof.view.pageDefs.page_postecontrolePageDef"/>
+    <page id="cm_gov_minfof_view_page_pcPageDef" path="cm.gov.minfof.view.pageDefs.page_pcPageDef"/>
+    <page id="cm_gov_minfof_view_page_collecte_multiPageDef"
+          path="cm.gov.minfof.view.pageDefs.page_collecte_multiPageDef"/>
+    <page id="cm_gov_minfof_view_page_collecte_multicriterePageDef"
+          path="cm.gov.minfof.view.pageDefs.page_collecte_multicriterePageDef"/>
+    <page id="cm_gov_minfof_view_page_lettrevoiture_multicriterePageDef"
+          path="cm.gov.minfof.view.pageDefs.page_lettrevoiture_multicriterePageDef"/>
+    <page id="cm_gov_minfof_view_page_export_multicriterePageDef"
+          path="cm.gov.minfof.view.pageDefs.page_export_multicriterePageDef"/>
+    <page id="cm_gov_minfof_view_page_ceqePageDef" path="cm.gov.minfof.view.pageDefs.page_ceqePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="cm.gov.minfof.model.entity"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

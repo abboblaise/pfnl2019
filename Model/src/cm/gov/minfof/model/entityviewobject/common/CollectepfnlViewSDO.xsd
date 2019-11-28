@@ -1,0 +1,40 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/"
+     xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns="/cm/gov/minfof/model/entityviewobject/common/" elementFormDefault="qualified"
+     sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:import schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd" namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:include schemaLocation="DetailscollectepfnlViewSDO.xsd"/>
+    <xsd:complexType name="CollectepfnlViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idcollectepfnl</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idcollectepfnl" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Datecollecte" type="ns0:dateTime-Timestamp" minOccurs="0"/>
+            <xsd:element name="Iddepartement" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idlocalite" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idposte" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idutilisateur" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="iddepartmental" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="idregional" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Iddepartement1" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idlocalite1" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idposte1" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="idusr" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="nomdepartement" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="nomlocalite" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="nomposte" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idutilisateur1" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="nomuser" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="CollectepfnlView" type="CollectepfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="DetailscollectepfnlView" type="DetailscollectepfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="collectepfnlViewSDO" type="CollectepfnlViewSDO"/>
+</xsd:schema>

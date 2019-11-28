@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PartiesProduitsPfnl"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="partiesproduitspfnl"
+  AliasName="PartiesProduitsPfnl"
+  BindingStyle="JDBC"
+  DefClass="cm.gov.minfof.model.entity.PartiesProduitsPfnlDefImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  RowClass="cm.gov.minfof.model.entity.PartiesProduitsPfnlImpl"
+  CollClass="cm.gov.minfof.model.entity.PartiesProduitsPfnlCollImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idpartiesproduitspfnl"
+    ColumnName="idpartiesproduitspfnl"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="partiesproduitspfnl"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Idpartiesrecoltees"
+    ColumnName="idpartiesrecoltees"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="partiesproduitspfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idpartiesrecoltees_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idproduitspfnl"
+    ColumnName="idproduitspfnl"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="partiesproduitspfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idproduitspfnl_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idunitemesure"
+    ColumnName="idunitemesure"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="partiesproduitspfnl"
+    IsNotNull="true"
+    DefaultValue="1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="UNIT_U00E9_DE_MESURE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idunitemesureexport"
+    ColumnName="idunitemesureexport"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="partiesproduitspfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="UNIT_U00E9_DE_MESURE_D_EXPORTATION"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="PartiesProduitsPfnl"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc.PartiesProduitsPfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc.IdpartiesrecolteesPartiesProduitsPfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdpartiesrecolteesPartiesProduitsPfnl"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc.IdpartiesrecolteesPartiesProduitsPfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc.PartiesProduitsPfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PartiesProduitsPfnl1"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc.PartiesProduitsPfnl1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc.IdproduitspfnlPartiesProduitsPfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdproduitspfnlPartiesProduitsPfnl"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc.IdproduitspfnlPartiesProduitsPfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc.PartiesProduitsPfnl1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PartiesRecoltees"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc1.PartiesRecoltees"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc1.PartiesProduitsPfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PartiesRecoltees1"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc1.PartiesRecoltees1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc1.PartiesProduitsPfnl1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="FamillePfnl"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc2.FamillePfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc2.PartiesProduitsPfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="FamillePfnl1"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc2.FamillePfnl1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc2.PartiesProduitsPfnl1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProduitsPfnl"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc3.ProduitsPfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc3.PartiesProduitsPfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProduitsPfnl1"
+    Association="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc3.ProduitsPfnl1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc3.PartiesProduitsPfnl1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProduitsPfnl2"
+    Association="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc3.ProduitsPfnl2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc3.PartiesProduitsPfnl2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Unitemesure"
+    Association="cm.gov.minfof.model.entity.PartieProdToUniteMesureAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PartieProdToUniteMesureAssoc.Unitemesure"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PartieProdToUniteMesureAssoc.PartiesProduitsPfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Unitemesure1"
+    Association="cm.gov.minfof.model.entity.PartieProdToUniteMesureExportAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PartieProdToUniteMesureExportAssoc.Unitemesure1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PartieProdToUniteMesureExportAssoc.PartiesProduitsPfnl1"
+    Type="cm.gov.minfof.model.entity.UnitemesureImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Detailscollectepfnl"
+    Association="cm.gov.minfof.model.entity.DetailCollToPartieProdPfnlAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.DetailCollToPartieProdPfnlAssoc.Detailscollectepfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DetailCollToPartieProdPfnlAssoc.PartiesProduitsPfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Detailsexportpfnl"
+    Association="cm.gov.minfof.model.entity.DetailExportToPartieProduit"
+    AssociationEnd="cm.gov.minfof.model.entity.DetailExportToPartieProduit.Detailsexportpfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DetailExportToPartieProduit.PartiesProduitsPfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="AltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="partiesproduitspfnl"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idpartiesrecoltees"/>
+      <Item Value="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idproduitspfnl"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PartiesproduitspfnlIdunitemesureCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"idunitemesure" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Partiesproduitspfnl_Idunitemes"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idunitemesure"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idpartiesproduitspfnl"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPartiesproduitspfnl1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_partiesproduitspfnl_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idproduitspfnl"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkPartiesproduitspfnl2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_partiesproduitspfnl_2"/>
+      <Attr Name="_isCascadeDelete" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idpartiesrecoltees"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_PartiesProduitsPfnl">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Parties_Produits_Pfnl"/>
+      <Attr Name="_isCascadeDelete" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idpartiesrecoltees"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_PartiesProduitsPfnl1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Parties_Produits_Pfnl1"/>
+      <Attr Name="_isCascadeDelete" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesProduitsPfnl.Idproduitspfnl"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="PartiesProduitsPfnlRule0"
+    ResId="cm.gov.minfof.model.entity.PartiesProduitsPfnl_Rule_0"
+    KeyName="AltKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Idpartiesrecoltees"/>
+      <validation:Item
+        Value="Idproduitspfnl"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

@@ -1,0 +1,39 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/"
+     xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns="/cm/gov/minfof/model/entityviewobject/common/" elementFormDefault="qualified"
+     sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:import schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd" namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:include schemaLocation="DetailsexportpfnlViewSDO.xsd"/>
+    <xsd:include schemaLocation="PermisViewSDO.xsd"/>
+    <xsd:include schemaLocation="PermissionnairespnflViewSDO.xsd"/>
+    <xsd:complexType name="ExportpfnlViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idexportpfnl</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idexportpfnl" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idpermis" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpermissionnaire" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Numeroexport" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Numeroco" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Dateexport" type="ns0:dateTime-Timestamp" minOccurs="0"/>
+            <xsd:element name="Idposteexport" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpermis1" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="nomouraisonsociale" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="numeropermis" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="nompostecontrole" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ExportpfnlView" type="ExportpfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="ExportpfnlView1" type="ExportpfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="DetailsexportpfnlView" type="DetailsexportpfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="PermisView" type="PermisViewSDO" minOccurs="0"/>
+            <xsd:element name="PermissionnairespnflView" type="PermissionnairespnflViewSDO" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="exportpfnlViewSDO" type="ExportpfnlViewSDO"/>
+</xsd:schema>

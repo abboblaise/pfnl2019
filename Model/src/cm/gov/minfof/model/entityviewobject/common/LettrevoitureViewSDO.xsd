@@ -1,0 +1,36 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/"
+     xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns="/cm/gov/minfof/model/entityviewobject/common/" elementFormDefault="qualified"
+     sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:import schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd" namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:complexType name="LettrevoitureViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idlettrevoiture</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idlettrevoiture" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idpermissionnaire" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Iddepartementdestination" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Nomconducteur" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpostechargement" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Numerolettrevoiture" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Idpermis" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Datelettrevoiture" type="ns0:dateTime-Timestamp" minOccurs="0"/>
+            <xsd:element name="Immatriculation" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="iddepartemental" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="idregional" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpostechargement1" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="nomdepart" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="nomacteur" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="numpermis" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="LettrevoitureView2" type="LettrevoitureViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="LettrevoitureView4" type="LettrevoitureViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="lettrevoitureViewSDO" type="LettrevoitureViewSDO"/>
+</xsd:schema>

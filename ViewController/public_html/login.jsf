@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+    
+    <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core">
+        <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+        <af:document title="login.jspx" id="d1" 
+                     inlineStyle='background-image:url("arriere-login.jpg"); background-repeat:repeat-x; background-position:inherit; background-size:200pt auto; background-origin:padding-box;'>
+        <af:resource source="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="javascript"/>
+        <af:resource source="js/jquery.growl.js" type="javascript"/>
+        <af:resource source="style/jquery.growl.css" type="css"/>
+            <af:form id="f1" defaultCommand="b1">
+                <af:panelGridLayout id="pgl1">
+                <af:gridRow id="gr4">
+                    <af:gridCell id="gc6" halign="center" valign="middle">
+                        <af:image source="/reports/logo_pfnl.png" id="i1"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow id="gr1">
+                        <af:gridCell width="100%" halign="center" valign="middle" id="gc1">
+                        <af:panelBox text="#{viewcontrollerBundle.CONNEXION}" id="pb1"
+                                     inlineStyle="width:421px; border-width:5px; background-color:Teal;" titleHalign="center"
+                                     showHeader="always" showDisclosure="false">
+                            <f:facet name="toolbar"/>
+                            <af:panelFormLayout id="pfl1" inlineStyle="border-width:5.0px;">
+                                <f:facet name="footer">
+                                    <af:button text="#{viewcontrollerBundle.CONNEXION}" id="b1"
+                                               action="#{backingBeanScope.login.Connexion}"/>
+                                </f:facet>
+                                <af:panelGridLayout id="pgl4">
+                                    <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                        <af:gridCell marginStart="5px" width="140px" id="gc2" halign="start">
+                                            <af:outputLabel value="#{viewcontrollerBundle.LOGIN}" id="ol1"
+                                                            inlineStyle="color:#0000b4; width:92pt;"/>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="220px" marginEnd="5px" id="gc3">
+                                            <af:inputText label="#{viewcontrollerBundle.LOGIN}" id="it1" required="true"
+                                                          showRequired="true"
+                                                          requiredMessageDetail="#{viewcontrollerBundle.VOUS_DEVEZ_SAISIR_UN_LOGIN}"
+                                                          value="#{backingBeanScope.login.loginuser}" simple="true"/>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+                                        <af:gridCell marginStart="5px" width="140px" id="gc4" halign="start">
+                                            <af:outputLabel value="#{viewcontrollerBundle.MOT_DE_PASSE}" id="ol2"
+                                                            inlineStyle="color:#0000c4; width:92pt;"/>
+                                        </af:gridCell>
+                                        <af:gridCell marginStart="5px" width="220px" marginEnd="5px" id="gc5">
+                                            <af:inputText label="#{viewcontrollerBundle.MOT_DE_PASSE}" id="it2"
+                                                          required="true" showRequired="true"
+                                                          requiredMessageDetail="#{viewcontrollerBundle.VOUS_DEVEZ_SAISIR_UN_MOT_DE_PASSE}"
+                                                          value="#{backingBeanScope.login.passwoduser}" simple="true"
+                                                          secret="true"/>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                </af:panelGridLayout>
+                            </af:panelFormLayout>
+                        </af:panelBox>
+                    </af:gridCell>
+                    </af:gridRow>
+                <af:gridRow id="gr5">
+                    <af:gridCell id="gc7" inlineStyle='background-image:url("arriere.jpg");'/>
+                </af:gridRow>
+            </af:panelGridLayout>
+            </af:form>
+        </af:document>
+    </f:view>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PostecontroleView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.PostecontroleViewImpl"
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entityviewobject.common.PostecontroleViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/"
+  RowClass="cm.gov.minfof.model.entityviewobject.PostecontroleViewRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|Prog|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="CommuneView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.CommuneView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Idcommune"
+    ListVOName="CommuneView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idcommune"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idcommunes"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomcommune"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Nomcommune"
+    ListVOName="CommuneView1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Nomcommune"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idcommune"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Nomcommune"/>
+      <Item Value="Idcommunes"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomcommune"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Postecontrole"
+    Entity="cm.gov.minfof.model.entity.Postecontrole"/>
+  <ViewAttribute
+    Name="Idpostecontrole"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idpostecontrole"
+    EntityUsage="Postecontrole"
+    AliasName="idpostecontrole"/>
+  <ViewAttribute
+    Name="Codeposte"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Codeposte"
+    EntityUsage="Postecontrole"
+    AliasName="codeposte">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CODE_DU_POSTE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Intituleposte"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Intituleposte"
+    EntityUsage="Postecontrole"
+    AliasName="intituleposte">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="INTITUL_U00E9_DU_POSTE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Posteexport"
+    PrecisionRule="true"
+    EntityAttrName="Posteexport"
+    EntityUsage="Postecontrole"
+    AliasName="posteexport">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="EST_UN_POSTE_D_EXPORT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idcommune"
+    PrecisionRule="true"
+    IsNotNull="true"
+    EntityAttrName="Idcommune"
+    EntityUsage="Postecontrole"
+    AliasName="idcommune"
+    LOVName="LOV_Idcommune">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomcommune"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_Nomcommune">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

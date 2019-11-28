@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_postecPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DepartementView5" RangeSize="-1" DataControl="AppModuleDataControl" id="DepartementView5Iterator"/>
+    <iterator Binds="PostecontroleView5" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PostecontroleView5Iterator"/>
+    <searchRegion Binds="PostecontroleView5Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PostecontroleView5Query"/>
+  </executables>
+  <bindings>
+    <list IterBinding="DepartementView5Iterator" ListOperMode="navigation" ListIter="DepartementView5Iterator"
+          id="DepartementView5" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Nomdepartement"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="PostecontroleView5Iterator" id="Codeposte">
+      <AttrNames>
+        <Item Value="Codeposte"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PostecontroleView5Iterator" id="Intituleposte">
+      <AttrNames>
+        <Item Value="Intituleposte"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="PostecontroleView5Iterator" id="Posteexport1" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="Posteexport"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="0"/>
+      </ValueList>
+    </button>
+    <tree IterBinding="PostecontroleView5Iterator" id="PostecontroleView5">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PostecontroleView" Name="PostecontroleView50">
+        <AttrNames>
+          <Item Value="Codeposte"/>
+          <Item Value="Intituleposte"/>
+          <Item Value="Posteexport" Binds="Posteexport1"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PostecontroleView5Iterator" id="CreateInsert"
+            InstanceName="AppModuleDataControl.PostecontroleView5" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PostecontroleView5Iterator" id="Delete" InstanceName="AppModuleDataControl.PostecontroleView5"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <list StaticList="false" IterBinding="PostecontroleView5Iterator" ListIter="DepartementView5Iterator"
+          id="Iddepartement">
+      <AttrNames>
+        <Item Value="Iddepartement"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Iddepartements"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Nomdepartement"/>
+      </ListDisplayAttrNames>
+    </list>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

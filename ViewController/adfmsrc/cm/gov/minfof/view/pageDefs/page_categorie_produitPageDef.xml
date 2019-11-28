@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_categorie_produitPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CategorieproduitView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="CategorieproduitView1Iterator"/>
+    <searchRegion Binds="CategorieproduitView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CategorieproduitView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CategorieproduitView1Iterator" id="Libellecategorie">
+      <AttrNames>
+        <Item Value="Libellecategorie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CategorieproduitView1Iterator" id="Observation">
+      <AttrNames>
+        <Item Value="Observation"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="CategorieproduitView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="CategorieproduitView1Iterator" id="CategorieproduitView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CategorieproduitView" Name="CategorieproduitView10">
+        <AttrNames>
+          <Item Value="Idcategorieproduit"/>
+          <Item Value="Codecategorie"/>
+          <Item Value="Libellecategorie"/>
+          <Item Value="Quotas"/>
+          <Item Value="Observation"/>
+          <Item Value="QuotasTransient"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <button IterBinding="CategorieproduitView1Iterator" id="Quotas" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="Quotas"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <button IterBinding="CategorieproduitView1Iterator" id="QuotasTransient" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="QuotasTransient"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <action IterBinding="CategorieproduitView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="CategorieproduitView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="CategorieproduitView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="CategorieproduitView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="CategorieproduitView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:h="http://java.sun.com/jsf/html">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="page_compilcollecte.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelBox text="#{viewcontrollerBundle.IMPRESSION_DES_FICHES_DE_COLLECTE_COMPIL_U00E9E}" id="pb1">
+                        <f:facet name="toolbar"/>
+                        <af:panelGridLayout id="pgl1">
+                            <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                <af:gridCell marginStart="5px" width="auto" id="gc1">
+                                    <h:outputLabel value="#{viewcontrollerBundle.DATE_DE_D_U00E9BUT}" id="ol1"/>
+                                    <h:outputScript id="os1"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2">
+                                    <af:inputDate id="id1" value="#{compilCollecte.dateDeb}" required="true"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+                                <af:gridCell marginStart="5px" width="auto" id="gc3">
+                                    <h:outputLabel value="#{viewcontrollerBundle.DATE_DE_FIN}" id="ol2"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc4">
+                                    <af:inputDate id="id2" value="#{compilCollecte.dateFin}" required="true"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        <af:panelGroupLayout id="pgl2">
+                            <af:button text="#{viewcontrollerBundle.COLLECTES_PAR_LOCALIT_U00E9}" id="b1"
+                                       action="#{compilCollecte.imprimeCompil}"
+                                       actionListener="#{compilCollecte.imprimeHandle}">
+                                <af:fileDownloadActionListener contentType="application/pdf" filename="resultat.pdf"
+                                                               method="#{compilCollecte.imprime}"/>
+                            </af:button>
+                            <af:spacer width="10" height="10" id="s2"/>
+                            <af:button text="#{viewcontrollerBundle.COLLECTE_PAR_PRODUIT}" id="b2"
+                                       actionListener="#{compilCollecte.imprimeParProduitHandle}">
+                                <af:fileDownloadActionListener contentType="application/pdf" filename="resultat.pdf"
+                                                               method="#{compilCollecte.imprime}"/>
+                            </af:button>
+                            <af:spacer width="10" height="10" id="s3"/>
+                            <af:button text="#{viewcontrollerBundle.LETTRE_VOITURE_PAR_POSTE_ET_PERMISSIONNAIRE}" id="b3"
+                                       actionListener="#{compilCollecte.imprimeLettreParPostePermissionnaireHandle}">
+                                <af:fileDownloadActionListener contentType="application/pdf" filename="resultat.pdf"
+                                                               method="#{compilCollecte.imprime}"/>
+                            </af:button>
+                        </af:panelGroupLayout>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:compilCollecte-->
+</f:view>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_departementPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RegionView1" RangeSize="25" DataControl="AppModuleDataControl" id="RegionView1Iterator"/>
+    <iterator Binds="DepartementView3" RangeSize="25" DataControl="AppModuleDataControl" id="DepartementView3Iterator"/>
+    <searchRegion Binds="DepartementView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DepartementView3Query"/>
+    <iterator Binds="DepartementsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DepartementsView1Iterator"/>
+    <searchRegion Binds="DepartementsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DepartementsView1Query"/>
+    <iterator Binds="DepartementView1" RangeSize="25" DataControl="AppModuleDataControl" id="DepartementView1Iterator"/>
+    <searchRegion Binds="DepartementView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DepartementView1Query"/>
+  </executables>
+  <bindings>
+    <list IterBinding="RegionView1Iterator" ListOperMode="navigation" ListIter="RegionView1Iterator" id="RegionView1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Nomregion"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="DepartementView3Iterator" id="Nomdepartement">
+      <AttrNames>
+        <Item Value="Nomdepartement"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartementView3Iterator" id="Codedepartement">
+      <AttrNames>
+        <Item Value="Codedepartement"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartementView3Iterator" id="Nomcheflieu">
+      <AttrNames>
+        <Item Value="Nomcheflieu"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="DepartementView3Iterator" id="DepartementView3">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.DepartementView" Name="DepartementView30">
+        <AttrNames>
+          <Item Value="Iddepartements"/>
+          <Item Value="Idregions"/>
+          <Item Value="Codedepartement"/>
+          <Item Value="codesigif"/>
+          <Item Value="Nomdepartement"/>
+          <Item Value="Nomcheflieu"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="DepartementView3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="DepartementView3Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="DepartementView3Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="DepartementView3Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DepartementView3Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DepartementView3Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DepartementView3Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="DepartementsView1Iterator" id="DepartementsView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.queryviewobject.DepartementsView" Name="DepartementsView10">
+        <AttrNames>
+          <Item Value="Iddepartements"/>
+          <Item Value="Nomdepartement"/>
+          <Item Value="Codedepartement"/>
+          <Item Value="Idregions"/>
+          <Item Value="Nomcheflieu"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="DepartementView1Iterator" id="DepartementView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.DepartementView" Name="DepartementView10">
+        <AttrNames>
+          <Item Value="Iddepartements"/>
+          <Item Value="Idregions"/>
+          <Item Value="Codedepartement"/>
+          <Item Value="codesigif"/>
+          <Item Value="Nomdepartement"/>
+          <Item Value="Nomcheflieu"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_collectePageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="CollectepfnlView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="CollectepfnlView1Iterator"/>
+    <iterator Binds="DetailscollectepfnlView17" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DetailscollectepfnlView17Iterator"/>
+    <searchRegion Binds="DetailscollectepfnlView17Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DetailscollectepfnlView17Query"/>
+    <searchRegion Binds="CollectepfnlView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CollectepfnlView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CollectepfnlView1Iterator" id="Datecollecte">
+      <AttrNames>
+        <Item Value="Datecollecte"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CollectepfnlView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_Iddepartement" id="Iddepartement"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_Idlocalite" id="Idlocalite"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Idpermissionnaire"
+          id="Idpermissionnaire" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Idorigine" id="Idorigine"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="DetailscollectepfnlView17Iterator" id="Quantite">
+      <AttrNames>
+        <Item Value="Quantite"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Idunitemesure"
+          id="Idunitemesure" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Iddestination"
+          id="Iddestination" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Idpartieproduitpfnl"
+          id="Idpartieproduitpfnl" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Idprovenance" id="Idprovenance"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="DetailscollectepfnlView17Iterator" id="DetailscollectepfnlView17">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.DetailscollectepfnlView"
+                      Name="DetailscollectepfnlView170">
+        <AttrNames>
+          <Item Value="Idcollectepfnl"/>
+          <Item Value="Iddetailscollectepfnl"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Idpartieproduitpfnl"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Quantite"/>
+          <Item Value="Idorigine"/>
+          <Item Value="Idprovenance"/>
+          <Item Value="Iddestination"/>
+          <Item Value="Nomacteur"/>
+          <Item Value="Typeacteur"/>
+          <Item Value="Idprovenance1"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="setdateFin" RequiresUpdateModel="true" Action="invokeMethod" MethodName="setdateFin"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.setdateFin.dataControl.CollectepfnlView1">
+      <NamedData NDName="value" NDType="java.sql.Timestamp"/>
+    </methodAction>
+    <methodAction id="setdateDebut" RequiresUpdateModel="true" Action="invokeMethod" MethodName="setdateDebut"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.setdateDebut.dataControl.CollectepfnlView1">
+      <NamedData NDName="value" NDType="java.sql.Timestamp"/>
+    </methodAction>
+    <list IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_Typeacteur" id="Typeacteur"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="DetailscollectepfnlView17Iterator" id="Nomacteur">
+      <AttrNames>
+        <Item Value="Nomacteur"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="CollectepfnlView1Iterator" id="CollectepfnlView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CollectepfnlView" Name="CollectepfnlView10">
+        <AttrNames>
+          <Item Value="Idcollectepfnl"/>
+          <Item Value="Datecollecte"/>
+          <Item Value="Iddepartement"/>
+          <Item Value="Idlocalite"/>
+          <Item Value="Idposte"/>
+          <Item Value="Idutilisateur"/>
+          <Item Value="Iddepartement1"/>
+          <Item Value="Idlocalite1"/>
+          <Item Value="Idposte1"/>
+          <Item Value="Idutilisateur1"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_Idposte" id="Idposte"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_Idutilisateur" id="Idutilisateur"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <action IterBinding="CollectepfnlView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="CollectepfnlView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="CollectepfnlView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="CollectepfnlView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="Previous1" RequiresUpdateModel="true"
+            Action="previous"/>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DetailscollectepfnlView17Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_Idutilisateur"
+                  id="Idutilisateur1"/>
+    <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomdepartement"
+                  id="nomdepartement"/>
+    <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomposte" id="nomposte"/>
+    <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomlocalite" id="nomlocalite"/>
+    <action IterBinding="CollectepfnlView1Iterator" id="Delete1" InstanceName="AppModuleDataControl.CollectepfnlView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomuser" id="nomuser"/>
+    <listOfValues IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_nomprovenance"
+                  id="nomprovenance"/>
+  </bindings>
+</pageDefinition>

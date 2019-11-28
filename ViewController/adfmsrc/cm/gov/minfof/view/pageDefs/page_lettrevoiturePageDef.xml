@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_lettrevoiturePageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LettrevoitureView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="LettrevoitureView1Iterator"/>
+    <searchRegion Binds="LettrevoitureView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="LettrevoitureView1Query"/>
+    <iterator Binds="DetailslettrevoitureView5" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DetailslettrevoitureView5Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="LettrevoitureView1Iterator" id="Numerolettrevoiture">
+      <AttrNames>
+        <Item Value="Numerolettrevoiture"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_Idpermis" id="Idpermis"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_Idpermissionnaire"
+          id="Idpermissionnaire" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="LettrevoitureView1Iterator" id="Nomconducteur">
+      <AttrNames>
+        <Item Value="Nomconducteur"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_Idpostechargement"
+          id="Idpostechargement" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_Iddepartementdestination"
+          id="Iddepartementdestination" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="LettrevoitureView1Iterator" id="LettrevoitureView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.LettrevoitureView" Name="LettrevoitureView10">
+        <AttrNames>
+          <Item Value="Numerolettrevoiture"/>
+          <Item Value="Idpermis"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Nomconducteur"/>
+          <Item Value="Idpostechargement"/>
+          <Item Value="Iddepartementdestination"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="LettrevoitureView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="LettrevoitureView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="DetailslettrevoitureView5Iterator" id="Quantite">
+      <AttrNames>
+        <Item Value="Quantite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailslettrevoitureView5Iterator" id="Observations">
+      <AttrNames>
+        <Item Value="Observations"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DetailslettrevoitureView5Iterator" StaticList="false" Uses="LOV_Idunitemesure"
+          id="Idunitemesure" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

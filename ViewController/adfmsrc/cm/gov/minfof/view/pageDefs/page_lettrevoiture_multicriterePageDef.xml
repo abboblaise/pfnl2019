@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="page_lettrevoiture_multicriterePageDef" Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LettreVoitureMultiCritere1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="LettreVoitureMultiCritere1Iterator"/>
+    <searchRegion Criteria="LettreVoitureMultiCritereCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="LettreVoitureMultiCritere1Iterator" id="LettreVoitureMultiCritereCriteriaQuery"/>
+    <iterator Binds="CompilLettreVoiture1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="CompilLettreVoiture1Iterator"/>
+    <iterator Binds="CompilLettreVoitureDestination1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="CompilLettreVoitureDestination1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="LettreVoitureMultiCritere1Iterator" id="LettreVoitureMultiCritere1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.LettreVoitureMultiCritere"
+                      Name="LettreVoitureMultiCritere10">
+        <AttrNames>
+          <Item Value="Iddetailslettrevoiture"/>
+          <Item Value="Numerolettrevoiture"/>
+          <Item Value="Permis"/>
+          <Item Value="Permissionnaire"/>
+          <Item Value="Nomouraisonsociale"/>
+          <Item Value="Immatriculation"/>
+          <Item Value="Nomconducteur"/>
+          <Item Value="Datelettrevoiture"/>
+          <Item Value="Nomlocalite"/>
+          <Item Value="Localitedepart"/>
+          <Item Value="Nomcommunedepart"/>
+          <Item Value="Idcommunedepart"/>
+          <Item Value="Iddepartementdepart"/>
+          <Item Value="Idregionsdepart"/>
+          <Item Value="Nomdepartementdestination"/>
+          <Item Value="Departementdestination"/>
+          <Item Value="Regiondestination"/>
+          <Item Value="Produit"/>
+          <Item Value="Partieproduitpfnl"/>
+          <Item Value="Quantite"/>
+          <Item Value="Quantiteconvertie"/>
+          <Item Value="Libelleconverti"/>
+          <Item Value="Libelleunitemesure"/>
+          <Item Value="Observations"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Adressep"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <pivotTable IterBinding="LettreVoitureMultiCritere1Iterator" id="LettreVoitureMultiCritere11"
+                xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <pivotTableDataMap convert="false">
+        <columns>
+          <data aggregateDuplicates="true" defaultAggregateType="SUM">
+            <item value="Quantiteconvertie"/>
+          </data>
+        </columns>
+        <rows>
+          <item value="Produit"/>
+          <item value="Libelleconverti"/>
+          <item value="Nomregiondestination"/>
+        </rows>
+        <pages/>
+        <aggregatedItems>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="Libelleconverti" aggregateLabel="TTL Produit"/>
+          <item aggregateLocation="AFTER" aggregateType="AVERAGE" value="Libelleconverti"
+                aggregateLabel="Moy. Produit"/>
+          <item aggregateLocation="AFTER" aggregateType="STDDEV" value="Libelleconverti"
+                aggregateLabel="Ecar Type Produit"/>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="Nomregiondepart"
+                aggregateLabel="TTL Permissionnaire"/>
+          <item aggregateLocation="AFTER" aggregateType="AVERAGE" value="Nomregiondepart"
+                aggregateLabel="Moy. Permissionnaire"/>
+          <item aggregateLocation="AFTER" aggregateType="STDDEV" value="Nomregiondepart"
+                aggregateLabel="Ecar Type Permissionnaire"/>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="Nomdepartementdepart"
+                aggregateLabel="TTL Région départ"/>
+          <item aggregateLocation="AFTER" aggregateType="AVERAGE" value="Nomdepartementdepart"
+                aggregateLabel="Moy. Region départ"/>
+          <item aggregateLocation="AFTER" aggregateType="STDDEV" value="Nomdepartementdepart"
+                aggregateLabel="Ecart Type Région départ"/>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="Nomdepartementdestination"
+                aggregateLabel="TTL Région destination"/>
+          <item aggregateLocation="AFTER" aggregateType="AVERAGE" value="Nomdepartementdestination"
+                aggregateLabel="Moy. Region destination"/>
+          <item aggregateLocation="AFTER" aggregateType="STDDEV" value="Nomdepartementdestination"
+                aggregateLabel="Ecart Type Région destination"/>
+        </aggregatedItems>
+        <drills type="INSERT"/>
+        <hierarchies>
+          <item value="Libelleconverti" location="BEFORE">
+            <child value="Nomouraisonsociale"/>
+          </item>
+          <item value="Nomouraisonsociale" location="BEFORE">
+            <child value="Nomregiondepart"/>
+          </item>
+          <item value="Nomregiondepart" location="BEFORE">
+            <child value="Nomdepartementdepart"/>
+          </item>
+          <item value="Nomregiondestination" location="BEFORE">
+            <child value="Nomdepartementdestination"/>
+          </item>
+        </hierarchies>
+      </pivotTableDataMap>
+    </pivotTable>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="CompilLettreVoiture1Iterator" id="CompilLettreVoiture1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CompilLettreVoiture" Name="CompilLettreVoiture1">
+        <AttrNames>
+          <Item Value="Quantiteconvertie"/>
+          <Item Value="Produit"/>
+          <Item Value="Nomregiondepart"/>
+          <Item Value="Nomdepartementdepart"/>
+          <Item Value="Nomouraisonsociale"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CompilLettreVoitureDestination1Iterator" id="CompilLettreVoitureDestination1"
+          ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CompilLettreVoitureDestination"
+                      Name="CompilLettreVoitureDestination1">
+        <AttrNames>
+          <Item Value="Quantiteconvertie"/>
+          <Item Value="Produit"/>
+          <Item Value="Nomregiondestination"/>
+          <Item Value="Nomdepartementdestination"/>
+          <Item Value="Nomouraisonsociale"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

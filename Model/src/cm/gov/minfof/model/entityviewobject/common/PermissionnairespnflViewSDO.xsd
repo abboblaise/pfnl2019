@@ -1,0 +1,38 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns="/cm/gov/minfof/model/entityviewobject/common/" elementFormDefault="qualified"
+     sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:include schemaLocation="PermisViewSDO.xsd"/>
+    <xsd:complexType name="PermissionnairespnflViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idpermissionnairespnfl</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Nomouraisonsociale" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Statut" type="xsd:int" minOccurs="0" nillable="true"/>
+            <xsd:element name="Siegesocial" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Nbreemploye" type="xsd:int" minOccurs="0" nillable="true"/>
+            <xsd:element name="Contact" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Mail" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Codepnfl" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Natureactivite" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Numceqe" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpermissionnairespnfl" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Nui" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Profession" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Typepersonne" type="xsd:int" minOccurs="0" nillable="true" default="2"/>
+            <xsd:element name="Adressep" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Sexe" type="xsd:int" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idcommune" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="nomcommune" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="idregional" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="iddepartemental" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="PermisView" type="PermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="permissionnairespnflViewSDO" type="PermissionnairespnflViewSDO"/>
+</xsd:schema>

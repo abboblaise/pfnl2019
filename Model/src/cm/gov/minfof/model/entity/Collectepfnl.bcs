@@ -1,0 +1,12 @@
+//Groovy Scripts for cm.gov.minfof.model.entity.Collectepfnl
+
+package cm.gov.minfof.model.entity
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Datecollecte")
+def Datecollecte_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

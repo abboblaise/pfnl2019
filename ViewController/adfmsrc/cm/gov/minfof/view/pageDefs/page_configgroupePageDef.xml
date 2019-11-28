@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_configgroupePageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="GroupeutilisateurView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="GroupeutilisateurView2Iterator"/>
+    <iterator Binds="PagepargroupView6" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PagepargroupView6Iterator"/>
+    <searchRegion Binds="PagepargroupView6Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PagepargroupView6Query"/>
+  </executables>
+  <bindings>
+    <list IterBinding="GroupeutilisateurView2Iterator" ListOperMode="navigation"
+          ListIter="GroupeutilisateurView2Iterator" id="GroupeutilisateurView2" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Nomgroupe"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="PagepargroupView6Iterator" StaticList="false" Uses="LOV_Idpage" id="Idpage"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="PagepargroupView6Iterator" id="PagepargroupView6">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PagepargroupView" Name="PagepargroupView60">
+        <AttrNames>
+          <Item Value="Idpage"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="PagepargroupView6Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="PagepargroupView6Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,31 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/entity/common/"
+     xmlns="/cm/gov/minfof/model/entity/common/" elementFormDefault="qualified" sdoJava:package="cm.gov.minfof.model.entity.common">
+    <xsd:import schemaLocation="../../entityviewobject/common/UnitemesureViewSDO.xsd" namespace="/cm/gov/minfof/model/entityviewobject/common/"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:include schemaLocation="ProduitsPfnlViewSDO.xsd"/>
+    <xsd:complexType name="PartiesProduitsPfnlViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idpartiesproduitspfnl</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idpartiesproduitspfnl" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idpartiesrecoltees" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idproduitspfnl" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idunitemesure" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idunitemesureexport" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="PartiesProduitsPfnlView" type="PartiesProduitsPfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="PartiesProduitsPfnlView1" type="PartiesProduitsPfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="ProduitsPfnlView" type="ProduitsPfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="UnitemesureView1" type="ns0:UnitemesureViewSDO" minOccurs="0"/>
+            <xsd:element name="UnitemesureView" type="ns0:UnitemesureViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="partiesProduitsPfnlViewSDO" type="PartiesProduitsPfnlViewSDO"/>
+</xsd:schema>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="getLibelleProduitComplet"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  RowClass="cm.gov.minfof.model.entityviewobject.getLibelleProduitCompletRowImpl"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.getLibelleProduitCompletImpl"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="cm.gov.minfof.model.entityviewobject.getLibelleProduitComplet_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[SELECT 
+    CONCAT(produitspfnl.nomcommercial,'(',
+    partiesrecoltees.nompartierecoltee,')') as libelle, 
+    partiesproduitspfnl.idpartiesproduitspfnl,
+    categorieunitemesure.idcategorieunitemesure
+FROM 
+    produitspfnl, 
+    partiesrecoltees, 
+    partiesproduitspfnl,
+    unitemesure,
+    categorieunitemesure
+WHERE 
+    produitspfnl.idproduitspfnl = partiesproduitspfnl.idproduitspfnl AND 
+    partiesrecoltees.idpartiesrecoltees = partiesproduitspfnl.idpartiesrecoltees AND
+    partiesproduitspfnl.idunitemesure = unitemesure.idunitemesure AND
+    categorieunitemesure.idcategorieunitemesure = unitemesure.idcategorie]]></SQLQuery>
+  <ViewAttribute
+    Name="Libelle"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="202"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="libelle"
+    Expression="libelle"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="202"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idpartiesproduitspfnl"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idpartiesproduitspfnl"
+    Expression="idpartiesproduitspfnl"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idcategorieunitemesure"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idcategorieunitemesure"
+    Expression="idcategorieunitemesure"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

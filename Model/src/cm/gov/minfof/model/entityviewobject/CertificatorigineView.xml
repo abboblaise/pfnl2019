@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CertificatorigineView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entityviewobject.common.CertificatorigineViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/">
+  <ViewAccessor
+    Name="getLibelleProduitPfnl1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getLibelleProduitPfnl"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="UnitemesureView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.UnitemesureView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PermisView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PermisView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PaysView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PaysView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Idpartieproduitpfnl"
+    ListVOName="getLibelleProduitPfnl1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpartieproduitpfnl"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpartiesproduitspfnl"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libbelle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idunitemesure"
+    ListVOName="UnitemesureView1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idunitemesure"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idunitemesure"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libelleunitemesure"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpermis"
+    ListVOName="PermisView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Numeropermis"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpays"
+    ListVOName="PaysView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpays"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpays"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nompays"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Certificatorigine"
+    Entity="cm.gov.minfof.model.entity.Certificatorigine"/>
+  <ViewAttribute
+    Name="Idcertificatorigine"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idcertificatorigine"
+    EntityUsage="Certificatorigine"
+    AliasName="idcertificatorigine"/>
+  <ViewAttribute
+    Name="Quantite"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Quantite"
+    EntityUsage="Certificatorigine"
+    AliasName="quantite"/>
+  <ViewAttribute
+    Name="Idpartieproduitpfnl"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idpartieproduitpfnl"
+    EntityUsage="Certificatorigine"
+    AliasName="idpartieproduitpfnl"
+    LOVName="LOV_Idpartieproduitpfnl">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idunitemesure"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idunitemesure"
+    EntityUsage="Certificatorigine"
+    AliasName="idunitemesure"
+    LOVName="LOV_Idunitemesure">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Numeroco"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Numeroco"
+    EntityUsage="Certificatorigine"
+    AliasName="numeroco"/>
+  <ViewAttribute
+    Name="Destinataire"
+    PrecisionRule="true"
+    EntityAttrName="Destinataire"
+    EntityUsage="Certificatorigine"
+    AliasName="destinataire"/>
+  <ViewAttribute
+    Name="Idpermis"
+    PrecisionRule="true"
+    EntityAttrName="Idpermis"
+    EntityUsage="Certificatorigine"
+    AliasName="idpermis"
+    LOVName="LOV_Idpermis">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idpays"
+    PrecisionRule="true"
+    EntityAttrName="Idpays"
+    EntityUsage="Certificatorigine"
+    AliasName="idpays"
+    LOVName="LOV_Idpays">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="CertificatorigineView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkDetailco3Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CertificatorigineView1"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkDetailco2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CertificatorigineView2"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkCerticifcatorigine1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PermisView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.PermisToCoLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+</ViewObject>

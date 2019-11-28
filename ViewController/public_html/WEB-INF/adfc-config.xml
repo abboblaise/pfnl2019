@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+
+  <managed-bean id="__1">
+    <managed-bean-name>regionBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.RegionBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>departementBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.DepartementBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>communeBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.CommuneBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name>famillePfnl</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.FamillePfnl</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name>produitPfnl</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.ProduitPfnl</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>partiesRecoltees</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.PartiesRecoltees</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name>paysBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.PaysBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name>originePfnlBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.OriginePfnlBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__9">
+    <managed-bean-name>permissionnaireBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.PermissionnaireBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__10">
+    <managed-bean-name>categorieUniteMesureBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.CategorieUniteMesureBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__11">
+    <managed-bean-name>AgrementBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.agrementBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__12">
+    <managed-bean-name>PermisBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.PermisBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__13">
+    <managed-bean-name>transporteurBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.TransporteurBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__14">
+    <managed-bean-name>LocaliteBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.LocaliteBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__15">
+    <managed-bean-name>PostecBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.PostecBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__16">
+    <managed-bean-name>collecteBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.CollecteBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__17">
+    <managed-bean-name>produitPfnl3</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.ProduitPfnl3</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__18">
+    <managed-bean-name>exportPfnlBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.ExportPfnlBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__19">
+    <managed-bean-name>login</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.login</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1page_login.jsf-->
+  </managed-bean>
+  <managed-bean id="__20">
+    <managed-bean-name>TemplateBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.TemplateBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__21">
+    <managed-bean-name>RecupUser</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.RecupUser</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__22">
+    <managed-bean-name>compilCollecte</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.CompilCollecte</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__23">
+    <managed-bean-name>lettreVoitureBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.LettreVoitureBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__24">
+    <managed-bean-name>connectBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.ConnectBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__25">
+    <managed-bean-name>PagegroupeBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.PagegroupeBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__26">
+    <managed-bean-name>ModifuserBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.ModifuserBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__27">
+    <managed-bean-name>certificatBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.certificatBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__28">
+    <managed-bean-name>categorieproduitBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.categorieproduitBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__30">
+    <managed-bean-name>uniteMesureBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.uniteMesure</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__31">
+    <managed-bean-name>ResetTableFilterBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.ResetTableFilterBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__29">
+    <managed-bean-name>CeqeBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.Ceqe</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

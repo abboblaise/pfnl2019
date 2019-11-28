@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ExportpfnlView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.ExportpfnlViewImpl"
+  ComponentInterface="cm.gov.minfof.model.entityviewobject.common.ExportpfnlView"
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entityviewobject.common.ExportpfnlViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/"
+  RowClass="cm.gov.minfof.model.entityviewobject.ExportpfnlViewRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="dateFin"
+    Kind="viewcriteria"
+    Type="java.sql.Timestamp"/>
+  <Variable
+    Name="dateDebut"
+    Kind="viewcriteria"
+    Type="java.sql.Timestamp"/>
+  <ViewAccessor
+    Name="PermisView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PermisView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PermissionnairespnflView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PermissionnairespnflView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PostecontroleView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PostecontroleView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="getPermisExportActif1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getPermisExportActif"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="getPermisExportActifCriteria"
+      FullName="cm.gov.minfof.model.entityviewobject.getPermisExportActif.getPermisExportActifCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="idpermissionnairebind">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[Idpermissionnaire]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_Idpermissionnaire"
+    ListVOName="PermissionnairespnflView1"
+    NullValueFlag="end"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpermissionnaire"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpermissionnairespnfl"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomouraisonsociale"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idposteexport"
+    ListVOName="PostecontroleView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idposteexport"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpostecontrole"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Intituleposte"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpermis"
+    ListVOName="getPermisExportActif1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Numeropermis"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpermis1"
+    ListVOName="PermisView1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpermis1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Numeropermis"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_nomouraisonsociale"
+    ListVOName="PermissionnairespnflView1"
+    ComboRowCountHint="10"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="nomouraisonsociale"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idpermissionnaire"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Nomouraisonsociale"/>
+      <Item Value="Idpermissionnairespnfl"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomouraisonsociale"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_numeropermis"
+    ListVOName="getPermisExportActif1"
+    ComboRowCountHint="10"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="numeropermis"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Numeropermis"/>
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Numeropermis"/>
+      <Item Value="Numeroceqe"/>
+      <Item Value="Idpermissionnairespnfl"/>
+      <Item Value="Datedelivrance"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_nompostecontrole"
+    ListVOName="PostecontroleView1"
+    ComboRowCountHint="10"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="nompostecontrole"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idposteexport"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Intituleposte"/>
+      <Item Value="Idpostecontrole"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Codeposte"/>
+      <Item Value="Intituleposte"/>
+      <Item Value="Nomcommune"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Exportpfnl"
+    Entity="cm.gov.minfof.model.entity.Exportpfnl"/>
+  <ViewAttribute
+    Name="Idexportpfnl"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idexportpfnl"
+    EntityUsage="Exportpfnl"
+    AliasName="idexportpfnl"/>
+  <ViewAttribute
+    Name="Idpermis"
+    PrecisionRule="true"
+    EntityAttrName="Idpermis"
+    EntityUsage="Exportpfnl"
+    AliasName="idpermis"
+    LOVName="LOV_Idpermis">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idpermissionnaire"
+    PrecisionRule="true"
+    EntityAttrName="Idpermissionnaire"
+    EntityUsage="Exportpfnl"
+    AliasName="idpermissionnaire"
+    LOVName="LOV_Idpermissionnaire">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Numeroexport"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Numeroexport"
+    EntityUsage="Exportpfnl"
+    AliasName="numeroexport"/>
+  <ViewAttribute
+    Name="Numeroco"
+    PrecisionRule="true"
+    EntityAttrName="Numeroco"
+    EntityUsage="Exportpfnl"
+    AliasName="numeroco"/>
+  <ViewAttribute
+    Name="Dateexport"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Dateexport"
+    EntityUsage="Exportpfnl"
+    AliasName="dateexport"/>
+  <ViewAttribute
+    Name="Idposteexport"
+    PrecisionRule="true"
+    EntityAttrName="Idposteexport"
+    EntityUsage="Exportpfnl"
+    AliasName="idposteexport"
+    LOVName="LOV_Idposteexport">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idpermis1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idpermis"
+    EntityUsage="Exportpfnl"
+    AliasName="Idpermis1"
+    LOVName="LOV_Idpermis1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="nomouraisonsociale"
+    IsQueriable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="nomouraisonsociale"
+    EntityUsage="Exportpfnl"
+    AliasName="nomouraisonsociale"
+    LOVName="LOV_nomouraisonsociale">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="numeropermis"
+    IsQueriable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="numeropermis"
+    EntityUsage="Exportpfnl"
+    AliasName="numeropermis"
+    LOVName="LOV_numeropermis">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="nompostecontrole"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="nompostecontrole"
+    EntityUsage="Exportpfnl"
+    AliasName="nompostecontrole"
+    LOVName="LOV_nompostecontrole">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="ExportpfnlViewCriteria"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.ExportpfnlView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="ExportpfnlViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItemCompound
+        Name="ExportpfnlViewCriteria_ExportpfnlViewCriteria_row_0_Dateexport"
+        ViewAttribute="Dateexport">
+        <ViewCriteria
+          Name="ExportpfnlViewCriteria_ExportpfnlViewCriteria_row_0_Dateexport_itemHolder"
+          ViewObjectName="cm.gov.minfof.model.entityviewobject.ExportpfnlView"
+          Conjunction="OR">
+          <ViewCriteriaRow
+            Name="ExportpfnlViewCriteria_ExportpfnlViewCriteria_row_0_Dateexport_itemHolder_row_0"
+            Conjunction="AND">
+            <ViewCriteriaItem
+              Name="ExportpfnlViewCriteria_ExportpfnlViewCriteria_row_0_Dateexport"
+              ViewAttribute="Dateexport"
+              Operator="ONORBEFORE"
+              Conjunction="AND"
+              Value=":dateFin"
+              IsBindVarValue="true"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+          <ViewCriteriaRow
+            Name="ExportpfnlViewCriteria_ExportpfnlViewCriteria_row_0_Dateexport_itemHolder_row_1"
+            Conjunction="AND">
+            <ViewCriteriaItem
+              Name="ExportpfnlViewCriteria_ExportpfnlViewCriteria_row_0_Dateexport_ExportpfnlViewCriteria_ExportpfnlViewCriteria_row_0_Dateexport_itemHolder_ExportpfnlViewCriteria_ExportpfnlViewCriteria_row_0_Dateexport_itemHolder_row_1_Dateexport"
+              ViewAttribute="Dateexport"
+              Operator="ONORAFTER"
+              Conjunction="AND"
+              Value=":dateDebut"
+              IsBindVarValue="true"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItemCompound>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewLinkAccessor
+    Name="ExportpfnlView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkExportpfnl2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ExportpfnlView1"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkExportpfnl1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="DetailsexportpfnlView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.ExportToDetailExportLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PermisView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.ExportToPermisLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PermissionnairespnflView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.ExportToPermissionnaireLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="setdateDebut"
+      MethodName="setdateDebut">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+    <Method
+      Name="setdateFin"
+      MethodName="setdateFin">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="java.sql.Timestamp"/>
+    </Method>
+  </ClientInterface>
+</ViewObject>

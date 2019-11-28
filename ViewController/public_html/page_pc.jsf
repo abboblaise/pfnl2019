@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:mycomps="http://mycompany.com/adf/components">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="#{viewcontrollerBundle.EDITION_DES_POSTE_DE_CONTR_U00F4LE}" id="d1">
+        <af:resource source="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="javascript"/>
+        <af:resource source="js/jquery.growl.js" type="javascript"/>
+        <af:resource source="style/jquery.growl.css" type="css"/>
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_POSTES_DE_CONTROLE}" id="pb1"
+                                 showDisclosure="false">
+                        <f:facet name="toolbar">
+                            <af:panelGroupLayout id="pgl4">
+                                <af:button actionListener="#{bindings.Rollback.execute}" immediate="true" id="b9"
+                                           text="#{viewcontrollerBundle.ACTUALISER}">
+                                    <af:resetActionListener/>
+                                </af:button>
+                                <af:spacer width="10" height="10" id="s6"/>
+                                <af:button actionListener="#{bindings.Delete.execute}"
+                                           text="#{viewcontrollerBundle.SUPPRIMER}" id="b8" visible="false"/>
+                                <mycomps:ConfirmButton id="cb1" ButtonText="#{viewcontrollerBundle.SUPPRIMER}"
+                                                       ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}"
+                                                       onDialogReturn="#{PostecBean.onDelete}">
+                                    <f:facet name="DialogContent"/>
+                                </mycomps:ConfirmButton>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <af:spacer width="10" height="10" id="s7"/>
+                        <af:panelTabbed position="above" id="pt2">
+                            <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}" disclosed="true">
+                                <af:panelCollection id="pc1">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <f:facet name="statusbar"/>
+                                    <af:table value="#{bindings.PostecontroleView1.collectionModel}" var="row"
+                                              rows="#{bindings.PostecontroleView1.rangeSize}"
+                                              emptyText="#{bindings.PostecontroleView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.PostecontroleView1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.PostecontroleView1.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.PostecontroleView1.rangeSize}"
+                                              filterModel="#{bindings.PostecontroleView1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.PostecontroleView1Query.processQuery}"
+                                              varStatus="vs" id="t1"
+                                              partialTriggers="::b1 ::b2 ::b3 ::b4 ::b5 ::b8 :::b1 :::b2 :::b3 :::b4 :::b5 :::b8 :::b6 :::b7">
+                                        <af:column sortProperty="#{bindings.PostecontroleView1.hints.Idpostecontrole.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PostecontroleView1.hints.Idpostecontrole.label}"
+                                                   id="c1" rowHeader="true" width="65">
+                                            <af:outputText value="#{row.Idpostecontrole}"
+                                                           shortDesc="#{bindings.PostecontroleView1.hints.Idpostecontrole.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.PostecontroleView1.hints.Idpostecontrole.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PostecontroleView1.hints.Codeposte.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PostecontroleView1.hints.Codeposte.label}"
+                                                   id="c2" width="135">
+                                            <af:outputText value="#{row.Codeposte}"
+                                                           shortDesc="#{bindings.PostecontroleView1.hints.Codeposte.tooltip}"
+                                                           id="ot2"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PostecontroleView1.hints.Intituleposte.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PostecontroleView1.hints.Intituleposte.label}"
+                                                   id="c3" width="100">
+                                            <af:outputText value="#{row.Intituleposte}"
+                                                           shortDesc="#{bindings.PostecontroleView1.hints.Intituleposte.tooltip}"
+                                                           id="ot3"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PostecontroleView1.hints.Idcommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PostecontroleView1.hints.Idcommune.label}"
+                                                   id="c4">
+                                            <af:selectOneChoice value="#{row.bindings.Idcommune.inputValue}"
+                                                                label="#{row.bindings.Idcommune.label}"
+                                                                required="#{bindings.PostecontroleView1.hints.Idcommune.mandatory}"
+                                                                shortDesc="#{bindings.PostecontroleView1.hints.Idcommune.tooltip}"
+                                                                readOnly="true" id="soc2">
+                                                <f:selectItems value="#{row.bindings.Idcommune.items}" id="si2"/>
+                                                <f:validator binding="#{row.bindings.Idcommune.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelCollection>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
+                                <af:panelBox id="pb2" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl5">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1">
+                                                <af:outputText value="#{bindings.Codeposte.hints.label}" id="ot4"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="280px" marginEnd="5px" id="gc2">
+                                                <af:inputText value="#{bindings.Codeposte.inputValue}"
+                                                              required="#{bindings.Codeposte.hints.mandatory}"
+                                                              columns="#{bindings.Codeposte.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Codeposte.hints.precision}"
+                                                              shortDesc="#{bindings.Codeposte.hints.tooltip}" id="it2">
+                                                    <f:validator binding="#{bindings.Codeposte.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc3">
+                                                <af:outputText value="#{bindings.Intituleposte.hints.label}" id="ot5"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4">
+                                                <af:inputText value="#{bindings.Intituleposte.inputValue}"
+                                                              required="#{bindings.Intituleposte.hints.mandatory}"
+                                                              columns="#{bindings.Intituleposte.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Intituleposte.hints.precision}"
+                                                              shortDesc="#{bindings.Intituleposte.hints.tooltip}"
+                                                              id="it3">
+                                                    <f:validator binding="#{bindings.Intituleposte.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc5">
+                                                <af:outputText value="#{bindings.Idcommune.label}" id="ot6"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc6">
+                                                <af:inputComboboxListOfValues popupTitle="Search and Select: #{bindings.Nomcommune.hints.label}"
+                                                                              value="#{bindings.Nomcommune.inputValue}"
+                                                                              model="#{bindings.Nomcommune.listOfValuesModel}"
+                                                                              required="true"
+                                                                              columns="#{bindings.Nomcommune.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.Nomcommune.hints.tooltip}"
+                                                                              id="iclov1">
+                                                    <f:validator binding="#{bindings.Nomcommune.validator}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc7"/>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc8">
+                                                <af:spacer width="10" height="10" id="s8"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr5">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc9">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                                    <af:button actionListener="#{bindings.First.execute}"
+                                                               text="#{viewcontrollerBundle.FIRST}"
+                                                               disabled="#{!bindings.First.enabled}"
+                                                               partialSubmit="true" id="b1"/>
+                                                    <af:spacer width="10" height="10" id="s1"/>
+                                                    <af:button actionListener="#{bindings.Previous.execute}"
+                                                               text="#{viewcontrollerBundle.PREVIOUS}"
+                                                               disabled="#{!bindings.Previous.enabled}"
+                                                               partialSubmit="true" id="b2"/>
+                                                    <af:spacer width="10" height="10" id="s2"/>
+                                                    <af:button actionListener="#{bindings.Next.execute}"
+                                                               text="#{viewcontrollerBundle.NEXT}"
+                                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                               id="b3"/>
+                                                    <af:spacer width="10" height="10" id="s3"/>
+                                                    <af:button actionListener="#{bindings.Last.execute}"
+                                                               text="#{viewcontrollerBundle.LAST}"
+                                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                               id="b4"/>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+                                            <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc10">
+                                                <af:panelGroupLayout id="pgl3">
+                                                    <af:button text="#{viewcontrollerBundle.NOUVEAU}" id="b5"
+                                                               disabled="#{!bindings.CreateInsert.enabled}"
+                                                               action="#{PostecBean.CreerPoste}"/>
+                                                    <af:spacer width="10" height="10" id="s4"/>
+                                                    <af:button actionListener="#{bindings.Commit.execute}"
+                                                               text="#{viewcontrollerBundle.ENREGISTRER}" id="b6"
+                                                               action="#{PostecBean.EnregistrerPoste}"/>
+                                                    <af:spacer width="10" height="10" id="s5"/>
+                                                    <af:button immediate="true"
+                                                               id="b7" text="#{viewcontrollerBundle.ANNULER}"
+                                                               action="#{PostecBean.annulerPoste}">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelBox>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.EXPORTATION}">
+                            <af:spacer width="10" height="10" id="s15"/>
+                                <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b13">
+                                    <af:exportCollectionActionListener type="excelHTML" filename="posteControles.xls"
+                                                                     exportedId="pc3:t2"/>
+                                </af:button>
+                                <af:panelCollection id="pc3" inlineStyle="width:637px;">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <af:table value="#{bindings.PostecontroleView11.collectionModel}" var="row"
+                                              rows="#{bindings.PostecontroleView11.rangeSize}"
+                                              emptyText="#{bindings.PostecontroleView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              fetchSize="#{bindings.PostecontroleView11.rangeSize}"
+                                              filterModel="#{bindings.PostecontroleView1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.PostecontroleView1Query.processQuery}"
+                                              varStatus="vs" id="t2" partialTriggers=":::b8 :::b1 :::b2 :::b3 :::b4">
+                                        <af:column sortProperty="#{bindings.PostecontroleView11.hints.Idpostecontrole.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PostecontroleView11.hints.Idpostecontrole.label}"
+                                                   id="c5">
+                                            <af:outputText value="#{row.Idpostecontrole}"
+                                                           shortDesc="#{bindings.PostecontroleView11.hints.Idpostecontrole.tooltip}"
+                                                           id="ot7">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.PostecontroleView11.hints.Idpostecontrole.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PostecontroleView11.hints.Idcommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PostecontroleView11.hints.Idcommune.label}"
+                                                   id="c6">
+                                            <af:selectOneChoice value="#{row.bindings.Idcommune.inputValue}"
+                                                                label="#{row.bindings.Idcommune.label}"
+                                                                required="#{bindings.PostecontroleView11.hints.Idcommune.mandatory}"
+                                                                shortDesc="#{bindings.PostecontroleView11.hints.Idcommune.tooltip}"
+                                                                readOnly="true" id="soc1">
+                                                <f:selectItems value="#{row.bindings.Idcommune.items}" id="si1"/>
+                                                <f:validator binding="#{row.bindings.Idcommune.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PostecontroleView11.hints.Codeposte.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PostecontroleView11.hints.Codeposte.label}"
+                                                   id="c7">
+                                            <af:outputText value="#{row.Codeposte}"
+                                                           shortDesc="#{bindings.PostecontroleView11.hints.Codeposte.tooltip}"
+                                                           id="ot8"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PostecontroleView11.hints.Intituleposte.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PostecontroleView11.hints.Intituleposte.label}"
+                                                   id="c8">
+                                            <af:outputText value="#{row.Intituleposte}"
+                                                           shortDesc="#{bindings.PostecontroleView11.hints.Intituleposte.tooltip}"
+                                                           id="ot9"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PostecontroleView11.hints.Posteexport.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PostecontroleView11.hints.Posteexport.label}"
+                                                   id="c9">
+                                            <af:outputText value="#{row.Posteexport}"
+                                                           shortDesc="#{bindings.PostecontroleView11.hints.Posteexport.tooltip}"
+                                                           id="ot10">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.PostecontroleView11.hints.Posteexport.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PostecontroleView11.hints.Nomcommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PostecontroleView11.hints.Nomcommune.label}"
+                                                   id="c10">
+                                            <af:selectOneChoice value="#{row.bindings.Nomcommune.inputValue}"
+                                                                label="#{row.bindings.Nomcommune.label}"
+                                                                required="#{bindings.PostecontroleView11.hints.Nomcommune.mandatory}"
+                                                                shortDesc="#{bindings.PostecontroleView11.hints.Nomcommune.tooltip}"
+                                                                readOnly="true" id="soc3">
+                                                <f:selectItems value="#{row.bindings.Nomcommune.items}" id="si3"/>
+                                                <f:validator binding="#{row.bindings.Nomcommune.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelCollection>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:panelBox>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
