@@ -188,8 +188,31 @@ public class ModifuserBean {
         if (!operationBinding.getErrors().isEmpty()) {
             return null;
         }
-        FacesContext fc = FacesContext.getCurrentInstance();
-        fc.getExternalContext().redirect("index.jsf");
+        Deconnecter();
+        
+        /*FacesContext fc = FacesContext.getCurrentInstance();
+        fc.getExternalContext().redirect("login.jsf");*/
         return null;
     }
+    
+    /*public String Deconnecter1() {
+        // Add event code here...
+        FacesContext ctx = FacesContext.getCurrentInstance();
+        HttpSession session = (HttpSession) ctx.getExternalContext().getSession(false);
+        //UserData u1 = (UserData) session.getAttribute("user");
+        //System.out.println(u1.getLoginuser()+" "+u1.getNonuser()+" "+u1.getIdgroupe()+" "+u1.getNiveauintervention());
+        UserData u = null;
+        
+        ctx.getExternalContext().getSessionMap().put("user",u);
+        
+        
+        try {
+            session.invalidate();
+            ctx.getExternalContext().redirect("login.jsf");
+            ctx.responseComplete();
+        } catch (IOException e) {
+            ctx.responseComplete();
+        }
+        return null;
+    }*/
 }

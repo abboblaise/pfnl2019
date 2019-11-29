@@ -39,7 +39,7 @@
         <f:facet name="second">
             <af:panelSplitter splitterPosition="31" orientation="vertical" positionedFromEnd="true" id="pt_ps2">
                 <f:facet name="first">
-                    <af:panelSplitter splitterPosition="212" id="pt_ps3">
+                    <af:panelSplitter splitterPosition="216" id="pt_ps3">
                         <f:facet name="first">
                             <af:panelAccordion discloseMany="true" id="pt_pa1">
                                 <af:showDetailItem id="pane1" text="#{viewcontrollerBundle.PARAMETRAGE}"
@@ -138,13 +138,16 @@
                                                    rendered="true"/>-->
                                         <af:spacer width="10" height="10" id="pt_s17"/>
                                         <af:button text="#{viewcontrollerBundle.COMPILATION_COLLECTES}"
-                                                   id="pt_b17" destination="page_collecte_multicritere.jsf"/>
+                                                   id="pt_b17" destination="page_collecte_multicritere.jsf"
+                                                   rendered="#{RecupUser.ud.estadmin}"/>
                                         <af:spacer width="10" height="10" id="pt_s21"/>
                                         <af:button text="#{viewcontrollerBundle.COMPILATION_LETTRES_VOITURES}" id="pt_b23"
-                                                   destination="page_lettrevoiture_multicritere.jsf"/>
+                                                   destination="page_lettrevoiture_multicritere.jsf"
+                                                   rendered="#{RecupUser.ud.estadmin}"/>
                                         <af:spacer width="10" height="10" id="pt_s23"/>
                                         <af:button text="#{viewcontrollerBundle.COMPILATION_EXPORTATION}"
-                                                   id="pt_b25" destination="page_export_multicritere.jsf"/>
+                                                   id="pt_b25" destination="page_export_multicritere.jsf"
+                                                   rendered="#{RecupUser.ud.estadmin}"/>
                                     </af:panelGroupLayout>
                                 </af:showDetailItem>
                                 <af:showDetailItem text="#{viewcontrollerBundle.UTILISATEURS}" id="pt_sdi5"
