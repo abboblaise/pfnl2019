@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="cm.gov.minfof.model.queryviewobject.AppModule">
+    <AppModuleConfig name="AppModuleLocal" jbo.project="cm.gov.minfof.model.Model"
+                     ApplicationName="cm.gov.minfof.model.queryviewobject.AppModule" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="Java" jbo.sql92.JdbcDriverClass="com.mysql.jdbc.Driver"
+                JDBCDataSource="java:comp/env/jdbc/Connection1DS" jbo.SQLBuilder="SQL92"/>
+      <Security AppModuleJndiName="cm.gov.minfof.model.queryviewobject.AppModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="AppModuleShared" jbo.project="cm.gov.minfof.model.Model"
+                     ApplicationName="cm.gov.minfof.model.queryviewobject.AppModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="Java" jbo.sql92.JdbcDriverClass="com.mysql.jdbc.Driver"
+                JDBCDataSource="java:comp/env/jdbc/Connection1DS" jbo.SQLBuilder="SQL92"/>
+      <Security AppModuleJndiName="cm.gov.minfof.model.queryviewobject.AppModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+  <AppModuleConfigBag ApplicationName="cm.gov.minfof.model.entity.AppModule">
+    <AppModuleConfig name="AppModuleLocal" jbo.project="cm.gov.minfof.model.Model"
+                     ApplicationName="cm.gov.minfof.model.entity.AppModule" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="Java" jbo.sql92.JdbcDriverClass="com.mysql.jdbc.Driver"
+                JDBCDataSource="java:comp/env/jdbc/Connection1DS" jbo.SQLBuilder="SQL92"/>
+      <Security AppModuleJndiName="cm.gov.minfof.model.entity.AppModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="AppModuleShared" jbo.project="cm.gov.minfof.model.Model"
+                     ApplicationName="cm.gov.minfof.model.entity.AppModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="Java" jbo.sql92.JdbcDriverClass="com.mysql.jdbc.Driver"
+                JDBCDataSource="java:comp/env/jdbc/Connection1DS" jbo.SQLBuilder="SQL92"/>
+      <Security AppModuleJndiName="cm.gov.minfof.model.entity.AppModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

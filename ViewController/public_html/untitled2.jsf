@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="untitled2.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:selectOneChoice autoSubmit="true" value="#{bindings.RegionView1.inputValue}" label="#{bindings.RegionView1.label}"
+                                required="#{bindings.RegionView1.hints.mandatory}"
+                                shortDesc="#{bindings.RegionView1.hints.tooltip}" id="soc1">
+                <f:selectItems value="#{bindings.RegionView1.items}" id="si1"/>
+                <f:validator binding="#{bindings.RegionView1.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice autoSubmit="true" value="#{bindings.DepartementView3.inputValue}"
+                                label="#{bindings.DepartementView3.label}"
+                                required="#{bindings.DepartementView3.hints.mandatory}"
+                                shortDesc="#{bindings.DepartementView3.hints.tooltip}" id="soc2">
+                <f:selectItems value="#{bindings.DepartementView3.items}" id="si2"/>
+                <f:validator binding="#{bindings.DepartementView3.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice autoSubmit="true" value="#{bindings.CommuneView5.inputValue}" label="#{bindings.CommuneView5.label}"
+                                required="#{bindings.CommuneView5.hints.mandatory}"
+                                shortDesc="#{bindings.CommuneView5.hints.tooltip}" id="soc3">
+                <f:selectItems value="#{bindings.CommuneView5.items}" id="si3"/>
+                <f:validator binding="#{bindings.CommuneView5.validator}"/>
+            </af:selectOneChoice>
+            <af:panelFormLayout id="pfl1">
+                <af:inputText value="#{bindings.Nomlocalite.inputValue}" label="#{bindings.Nomlocalite.hints.label}"
+                              required="#{bindings.Nomlocalite.hints.mandatory}"
+                              columns="#{bindings.Nomlocalite.hints.displayWidth}"
+                              maximumLength="#{bindings.Nomlocalite.hints.precision}"
+                              shortDesc="#{bindings.Nomlocalite.hints.tooltip}" id="it1">
+                    <f:validator binding="#{bindings.Nomlocalite.validator}"/>
+                </af:inputText>
+            </af:panelFormLayout>
+        </af:form>
+    </af:document>
+</f:view>
