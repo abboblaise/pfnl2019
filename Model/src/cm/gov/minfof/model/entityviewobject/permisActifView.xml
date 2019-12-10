@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="permisActifView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="true"
@@ -26,19 +26,19 @@
     Name="permissionnaireIdBind"
     Kind="viewcriteria"
     Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[SELECT 
-    permis.idpermis idpermis, 
-    permis.numeropermis numeropermis, 
-    permis.datedelivrance datedelivrance, 
-    permis.datefin datefin, 
-    permis.idpermissionnaire idpermissionnaire, 
-    permis.typedocument typedocument,
-    permissionnairespnfl.Nomouraisonsociale
-FROM
-    permis,
-    permissionnairespnfl
-where permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire
-and year(permis.datedelivrance)=year(current_date())]]></SQLQuery>
+  <SQLQuery><![CDATA[SELECT   
+    permis.idpermis idpermis,   
+    permis.numeropermis numeropermis,   
+    permis.datedelivrance datedelivrance,   
+    permis.datefin datefin,   
+    permis.idpermissionnaire idpermissionnaire,   
+    permis.typedocument typedocument,  
+    permissionnairespnfl.Nomouraisonsociale  
+FROM  
+    permis,  
+    permissionnairespnfl  
+where permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire  
+and permis.datefin >= current_date()]]></SQLQuery>
   <ViewAttribute
     Name="Idpermis"
     IsUpdateable="false"
@@ -111,7 +111,7 @@ and year(permis.datedelivrance)=year(current_date())]]></SQLQuery>
     ColumnType="TINYINT"
     AliasName="typedocument"
     Expression="typedocument"
-    SQLType="TINYINT">
+    SQLType="INTEGER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>

@@ -7,7 +7,7 @@ public class PermisViewSDOImpl extends SDODataObject implements PermisViewSDO {
 
    public static final int START_PROPERTY_INDEX = 0;
 
-   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 14;
+   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 15;
 
    public PermisViewSDOImpl() {}
 
@@ -99,36 +99,44 @@ public class PermisViewSDOImpl extends SDODataObject implements PermisViewSDO {
       set(START_PROPERTY_INDEX + 10 , value);
    }
 
-   public java.util.List getPermisView() {
-      return getList(START_PROPERTY_INDEX + 11);
+   public java.lang.String getNumpermiscomplet() {
+      return getString(START_PROPERTY_INDEX + 11);
    }
 
-   public void setPermisView(java.util.List value) {
+   public void setNumpermiscomplet(java.lang.String value) {
       set(START_PROPERTY_INDEX + 11 , value);
    }
 
-   public java.util.List getPermisView1() {
+   public java.util.List getPermisView() {
       return getList(START_PROPERTY_INDEX + 12);
    }
 
-   public void setPermisView1(java.util.List value) {
+   public void setPermisView(java.util.List value) {
       set(START_PROPERTY_INDEX + 12 , value);
    }
 
-   public java.util.List getDetailpermisView() {
+   public java.util.List getPermisView1() {
       return getList(START_PROPERTY_INDEX + 13);
    }
 
-   public void setDetailpermisView(java.util.List value) {
+   public void setPermisView1(java.util.List value) {
       set(START_PROPERTY_INDEX + 13 , value);
    }
 
-   public java.util.List getCertificatorigineView() {
+   public java.util.List getDetailpermisView() {
       return getList(START_PROPERTY_INDEX + 14);
    }
 
-   public void setCertificatorigineView(java.util.List value) {
+   public void setDetailpermisView(java.util.List value) {
       set(START_PROPERTY_INDEX + 14 , value);
+   }
+
+   public java.util.List getCertificatorigineView() {
+      return getList(START_PROPERTY_INDEX + 15);
+   }
+
+   public void setCertificatorigineView(java.util.List value) {
+      set(START_PROPERTY_INDEX + 15 , value);
    }
 
 

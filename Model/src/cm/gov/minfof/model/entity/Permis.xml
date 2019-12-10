@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Permis"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="permis"
@@ -13,7 +13,8 @@
   BatchThreshold="1"
   DefClass="cm.gov.minfof.model.entity.PermisDefImpl"
   CollClass="cm.gov.minfof.model.entity.PermisCollImpl"
-  RowClass="cm.gov.minfof.model.entity.PermisImpl">
+  RowClass="cm.gov.minfof.model.entity.PermisImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -50,6 +51,12 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:RegExpValidationBean
+      Name="NumeropermisRule0"
+      ResId="CENUMERO_DOIT__U00EATRE_COMPOS_U00E9_DE_QUATRE__4__CHIFFRES"
+      OnAttribute="Numeropermis"
+      Pattern="^(\d{4})(\S*)(\d{4})$"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="Zonecoupe"
@@ -88,7 +95,8 @@
     SQLType="DATE"
     Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="permis">
+    TableName="permis"
+    IsNotNull="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -253,6 +261,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Permis.Datedelivrance"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PermisDatefinCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"datefin" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Permis_Datefin_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Datefin"/>
     </AttrArray>
   </Key>
   <Key

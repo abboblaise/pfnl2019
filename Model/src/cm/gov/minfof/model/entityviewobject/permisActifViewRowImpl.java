@@ -47,6 +47,8 @@ public class permisActifViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
+
     public static final int IDPERMIS = AttributesEnum.Idpermis.index();
     public static final int NUMEROPERMIS = AttributesEnum.Numeropermis.index();
     public static final int DATEDELIVRANCE = AttributesEnum.Datedelivrance.index();

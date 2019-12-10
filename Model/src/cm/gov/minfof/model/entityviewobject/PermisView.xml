@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="PermisView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -152,7 +152,16 @@
     PrecisionRule="true"
     EntityAttrName="Datefin"
     EntityUsage="Permis"
-    AliasName="datefin"/>
+    AliasName="datefin">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="cm.gov.minfof.model.entityviewobject.PermisView.Datefin_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="cm.gov.minfof.model.entityviewobject.PermisView.Datefin_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Observation"
     PrecisionRule="true"
@@ -213,6 +222,16 @@
     EntityAttrName="Nomfichier"
     EntityUsage="Permis"
     AliasName="nomfichier"/>
+  <ViewAttribute
+    Name="Numpermiscomplet"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
   <ViewCriteria
     Name="PermisViewCriteria"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.PermisView"
@@ -389,4 +408,8 @@
         Type="java.sql.Timestamp"/>
     </Method>
   </ClientInterface>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

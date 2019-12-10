@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="LettrevoitureView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -190,7 +190,7 @@
       <Item Value="Idpermis"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Numeropermis"/>
+      <Item Value="Numpermiscomplet"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -288,7 +288,8 @@
     PrecisionRule="true"
     EntityAttrName="Idlettrevoiture"
     EntityUsage="Lettrevoiture"
-    AliasName="idlettrevoiture"/>
+    AliasName="idlettrevoiture"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="Idpermissionnaire"
     IsNotNull="true"

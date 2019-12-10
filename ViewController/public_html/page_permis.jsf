@@ -12,7 +12,7 @@
         <af:form id="f1" usesUpload="true">
             <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
                 <f:facet name="content">
-                    <af:panelSplitter id="ps1" splitterPosition="600">
+                    <af:panelSplitter id="ps1" splitterPosition="600" collapsed="false">
                         <f:facet name="first">
                             <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_PERMIS}" id="pb5"
                                          showDisclosure="false">
@@ -57,13 +57,12 @@
                                                       editingMode="readOnly" varStatus="vs" id="t1"
                                                       columnSelection="single" width="571"
                                                       partialTriggers=":::b15 :::b16 :::b17 :::b18">
-                                                <af:column sortProperty="#{bindings.PermisView1.hints.Numeropermis.name}"
-                                                           filterable="false" sortable="true"
-                                                           headerText="#{bindings.PermisView1.hints.Numeropermis.label}"
-                                                           id="c1" width="92" rowHeader="false">
-                                                    <af:outputText value="#{row.Numeropermis}"
-                                                                   shortDesc="#{bindings.PermisView1.hints.Numeropermis.tooltip}"
-                                                                   id="ot1"/>
+                                                <af:column headerText="#{bindings.PermisView1.hints.Numpermiscomplet.label}"
+                                                           filterable="false" sortable="true" 
+                                                           id="c15" width="92" rowHeader="false">
+                                                    <af:outputText value="#{row.Numpermiscomplet}"
+                                                                   shortDesc="#{bindings.PermisView1.hints.Numpermiscomplet.tooltip}"
+                                                                   id="ot5"/>
                                                 </af:column>
                                                 <af:column sortProperty="#{bindings.PermisView1.hints.Typedocument.name}"
                                                            filterable="true" sortable="true"
@@ -191,7 +190,8 @@
                                             </af:table>
                                         </af:panelCollection>
                                     </af:showDetailItem>
-                                    <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
+                                    <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}"
+                                                       disclosed="false">
                                         <af:panelGridLayout id="pgl4">
                                             <af:gridRow marginTop="5px" height="auto" id="gr1">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc1">
@@ -269,6 +269,23 @@
                                                     </af:inputDate>
                                                 </af:gridCell>
                                             </af:gridRow>
+                                            <af:gridRow id="gr18">
+                                                <af:gridCell marginStart="5px" width="auto" id="gc33">
+                                                    <af:outputLabel value="#{bindings.Datefin.hints.label}"
+                                                                    id="ol12"/>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc30">
+                                                    <af:inputDate value="#{bindings.Datefin.inputValue}"
+                                                                  required="#{bindings.Datefin.hints.mandatory}"
+                                                                  columns="#{bindings.Datefin.hints.displayWidth}"
+                                                                  shortDesc="#{bindings.Datefin.hints.tooltip}"
+                                                                  id="id6">
+                                                        <f:validator binding="#{bindings.Datefin.validator}"/>
+                                                        <af:convertDateTime pattern="#{bindings.Datefin.format}"/>
+                                                    </af:inputDate>
+                                                </af:gridCell>
+                                                
+                                            </af:gridRow>
                                             <af:gridRow marginTop="5px" height="auto" id="gr3">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc11">
                                                     <af:outputLabel value="#{bindings.Zonecoupe.hints.label}" id="ol5"/>
@@ -303,14 +320,14 @@
                                             </af:gridRow>
                                             <af:gridRow marginTop="5px" height="auto" id="gr4">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc15">
-                                                    <af:outputLabel value="#{bindings.Datefin.hints.label}" id="ol7"
+                                                    <af:outputLabel value="#{bindings.Datefin.hints.label}" id="o20"
                                                                     visible="false"/>
                                                 </af:gridCell>
                                                 <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc16">
                                                     <af:inputDate value="#{bindings.Datefin.inputValue}"
                                                                   required="#{bindings.Datefin.hints.mandatory}"
                                                                   columns="#{bindings.Datefin.hints.displayWidth}"
-                                                                  shortDesc="#{bindings.Datefin.hints.tooltip}" id="id2"
+                                                                  shortDesc="#{bindings.Datefin.hints.tooltip}" id="id20"
                                                                   visible="false">
                                                         <f:validator binding="#{bindings.Datefin.validator}"/>
                                                         <af:convertDateTime pattern="#{bindings.Datefin.format}"/>
@@ -540,12 +557,12 @@
                                                     </af:gridCell>
                                                 </af:gridRow>
                                                 <af:gridRow marginTop="5px" height="auto" id="gr13">
-                                                    <af:gridCell marginStart="5px" width="auto" id="gc9">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc29">
                                                         <af:outputLabel value="#{bindings.Quantite.hints.label}"
                                                                         id="ol10"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
-                                                                 id="gc10">
+                                                                 id="gc25">
                                                         <af:inputText value="#{bindings.Quantite.inputValue}"
                                                                       required="#{bindings.Quantite.hints.mandatory}"
                                                                       columns="#{bindings.Quantite.hints.displayWidth}"

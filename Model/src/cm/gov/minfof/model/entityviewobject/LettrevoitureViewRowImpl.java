@@ -388,7 +388,7 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         voimp.executeQuery();
         if(voimp.hasNext()){
             Row r = voimp.next();
-            Resultat = r.getAttribute("Numeropermis").toString();
+            Resultat = r.getAttribute("Numpermiscomplet").toString();
         }
         voimp.setWhereClause(null);
         voimp.executeQuery();

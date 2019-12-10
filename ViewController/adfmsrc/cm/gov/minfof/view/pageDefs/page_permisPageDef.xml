@@ -58,6 +58,7 @@
           <Item Value="Observation"/>
           <Item Value="Idpermis"/>
           <Item Value="Typedocument"/>
+          <Item Value="Numpermiscomplet"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -131,5 +132,10 @@
     <action IterBinding="PermisView1Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="PermisView1Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="PermisView1Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="PermisView1Iterator" id="Numpermiscomplet">
+      <AttrNames>
+        <Item Value="Numpermiscomplet"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

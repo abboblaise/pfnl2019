@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 
 import java.sql.Date;
 
+import java.util.Calendar;
+
 import oracle.jbo.Row;
 import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
@@ -39,6 +41,7 @@ public class PermisViewRowImpl extends ViewRowImpl {
         Typedocument,
         Cheminfichier,
         Nomfichier,
+        Numpermiscomplet,
         PermisView,
         PermisView1,
         DetailpermisView,
@@ -86,6 +89,7 @@ public class PermisViewRowImpl extends ViewRowImpl {
     public static final int TYPEDOCUMENT = AttributesEnum.Typedocument.index();
     public static final int CHEMINFICHIER = AttributesEnum.Cheminfichier.index();
     public static final int NOMFICHIER = AttributesEnum.Nomfichier.index();
+    public static final int NUMPERMISCOMPLET = AttributesEnum.Numpermiscomplet.index();
     public static final int PERMISVIEW = AttributesEnum.PermisView.index();
     public static final int PERMISVIEW1 = AttributesEnum.PermisView1.index();
     public static final int DETAILPERMISVIEW = AttributesEnum.DetailpermisView.index();
@@ -133,7 +137,16 @@ public class PermisViewRowImpl extends ViewRowImpl {
      * @return the numeropermis
      */
     public String getNumeropermis() {
-        return (String) getAttributeInternal(NUMEROPERMIS);
+        String val = (String) getAttributeInternal(NUMEROPERMIS);
+        int tdoc = getTypedocument();
+        
+        if (tdoc == 1){
+            return val.substring(8);
+        }else{
+            return val.substring(0, 4);
+        }
+        
+        
     }
 
     /**
@@ -141,6 +154,17 @@ public class PermisViewRowImpl extends ViewRowImpl {
      * @param value value to set the numeropermis
      */
     public void setNumeropermis(String value) {
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int tdoc = getTypedocument();
+        String value1 ;
+        if (tdoc == 1){
+            value1 = Integer.toString(year)+"/CM/"+value;
+        }else{
+            value1 = value+"/ACPFNL/"+Integer.toString(year);    
+        }
+        
+        value = value1;
         setAttributeInternal(NUMEROPERMIS, value);
     }
 
@@ -288,6 +312,14 @@ public class PermisViewRowImpl extends ViewRowImpl {
         setAttributeInternal(NOMFICHIER, value);
     }
 
+
+    /**
+     * Gets the attribute value for the calculated attribute Numpermiscomplet.
+     * @return the Numpermiscomplet
+     */
+    public String getNumpermiscomplet() {
+        return (String) getAttributeInternal(NUMEROPERMIS);
+    }
 
     /**
      * Gets the associated <code>RowIterator</code> using master-detail link PermisView.
