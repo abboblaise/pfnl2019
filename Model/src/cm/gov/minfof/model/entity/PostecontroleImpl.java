@@ -28,7 +28,9 @@ public class PostecontroleImpl extends EntityImpl {
         Codeposte,
         Intituleposte,
         Posteexport,
-        Idcommune;
+        Idcommune,
+        Commune,
+        Localite;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -58,6 +60,8 @@ public class PostecontroleImpl extends EntityImpl {
     public static final int INTITULEPOSTE = AttributesEnum.Intituleposte.index();
     public static final int POSTEEXPORT = AttributesEnum.Posteexport.index();
     public static final int IDCOMMUNE = AttributesEnum.Idcommune.index();
+    public static final int COMMUNE = AttributesEnum.Commune.index();
+    public static final int LOCALITE = AttributesEnum.Localite.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -153,6 +157,29 @@ public class PostecontroleImpl extends EntityImpl {
      */
     public void setIdcommune(BigDecimal value) {
         setAttributeInternal(IDCOMMUNE, value);
+    }
+
+
+    /**
+     * @return the associated entity CommuneImpl.
+     */
+    public CommuneImpl getCommune() {
+        return (CommuneImpl) getAttributeInternal(COMMUNE);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity CommuneImpl.
+     */
+    public void setCommune(CommuneImpl value) {
+        setAttributeInternal(COMMUNE, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLocalite() {
+        return (RowIterator) getAttributeInternal(LOCALITE);
     }
 
 

@@ -987,6 +987,27 @@
   <ViewUsage
     Name="PermissionnaireEtPermisFinal1"
     ViewObjectName="cm.gov.minfof.model.entity.PermissionnaireEtPermisFinal"/>
+  <ViewUsage
+    Name="LocaliteView6"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteView"/>
+  <ViewUsage
+    Name="CommuneView9"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.CommuneView"/>
+  <ViewUsage
+    Name="LocaliteView7"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteView"/>
+  <ViewUsage
+    Name="PostecontroleView2"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PostecontroleView"/>
+  <ViewUsage
+    Name="PostecontroleView3"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PostecontroleView"/>
+  <ViewUsage
+    Name="LocaliteView8"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteView"/>
+  <ViewUsage
+    Name="LocaliteView9"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteView"/>
   <ViewLinkUsage
     Name="PermissionnaireToPermisLink"
     ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermissionnaireToPermisLink"
@@ -1755,6 +1776,36 @@
     ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.FkCeqe1Link"
     SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.CeqeView1"
     DstViewUsageName="cm.gov.minfof.model.entity.AppModule.CeqeView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CommuneToLocaliteLinkPlus1"
+    ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.CommuneToLocaliteLinkPlus"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LocaliteView1"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.CommuneView9"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CommuneToLocaliteLinkPlus2"
+    ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.CommuneToLocaliteLinkPlus"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.CommuneView5"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LocaliteView7"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="communeToPosteControleLink1"
+    ViewLinkObjectName="cm.gov.minfof.model.queryviewobject.communeToPosteControleLink"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.CommuneView5"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.PostecontroleView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="PosteControleToLocaliteLink1"
+    ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PosteControleToLocaliteLink"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LocaliteView1"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.PostecontroleView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="PosteControleToLocaliteLink2"
+    ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PosteControleToLocaliteLink"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.PostecontroleView2"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LocaliteView9"
     Reversed="false"/>
   <Remote
     Name="ServiceInterface"

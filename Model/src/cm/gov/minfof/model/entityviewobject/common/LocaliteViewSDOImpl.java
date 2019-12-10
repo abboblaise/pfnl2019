@@ -7,7 +7,7 @@ public class LocaliteViewSDOImpl extends SDODataObject implements LocaliteViewSD
 
    public static final int START_PROPERTY_INDEX = 0;
 
-   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 3;
+   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 4;
 
    public LocaliteViewSDOImpl() {}
 
@@ -35,12 +35,20 @@ public class LocaliteViewSDOImpl extends SDODataObject implements LocaliteViewSD
       set(START_PROPERTY_INDEX + 2 , value);
    }
 
+   public java.math.BigDecimal getIdpostecontrole() {
+      return getBigDecimal(START_PROPERTY_INDEX + 3);
+   }
+
+   public void setIdpostecontrole(java.math.BigDecimal value) {
+      set(START_PROPERTY_INDEX + 3 , value);
+   }
+
    public java.util.List getLocaliteView() {
-      return getList(START_PROPERTY_INDEX + 3);
+      return getList(START_PROPERTY_INDEX + 4);
    }
 
    public void setLocaliteView(java.util.List value) {
-      set(START_PROPERTY_INDEX + 3 , value);
+      set(START_PROPERTY_INDEX + 4 , value);
    }
 
 

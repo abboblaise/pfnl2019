@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="LocaliteView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -24,6 +24,10 @@
     Name="CommuneView1"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.CommuneView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PostecontroleView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PostecontroleView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Idcommune"
     ListVOName="CommuneView1"
@@ -36,6 +40,24 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="Idcommunes"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomcommune"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpostecontrole"
+    ListVOName="PostecontroleView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpostecontrole"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpostecontrole"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Nomcommune"/>
@@ -73,6 +95,20 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Idpostecontrole"
+    PrecisionRule="true"
+    EntityAttrName="Idpostecontrole"
+    EntityUsage="Localite"
+    AliasName="idpostecontrole"
+    LOVName="LOV_Idpostecontrole">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="LocaliteView"
     ViewLink="cm.gov.minfof.model.entityviewobject.FkLocalite1Link"
@@ -82,6 +118,18 @@
     Name="CommuneView"
     ViewLink="cm.gov.minfof.model.entityviewobject.CommuneToLocaliteLink"
     Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CommuneView2"
+    ViewLink="cm.gov.minfof.model.entityviewobject.CommuneToLocaliteLinkPlus"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PostecontroleView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.PosteControleToLocaliteLink"
+    Type="cm.gov.minfof.model.entityviewobject.PostecontroleViewRowImpl"
     Reversed="true"
     IsUpdateable="false"/>
 </ViewObject>

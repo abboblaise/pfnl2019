@@ -37,6 +37,7 @@
           <Item Value="Nomregion"/>
           <Item Value="Cheflieuregion"/>
           <Item Value="Descriptionregions"/>
+          <Item Value="Abreviationregion"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -49,5 +50,10 @@
     <action IterBinding="RegionView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="RegionView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="RegionView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="RegionView1Iterator" id="Abreviationregion">
+      <AttrNames>
+        <Item Value="Abreviationregion"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

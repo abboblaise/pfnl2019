@@ -2,6 +2,7 @@
      xmlns="/cm/gov/minfof/model/entityviewobject/common/" elementFormDefault="qualified"
      sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
     <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:include schemaLocation="LocaliteViewSDO.xsd"/>
     <xsd:complexType name="PostecontroleViewSDO">
         <xsd:annotation>
             <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
@@ -15,8 +16,9 @@
             <xsd:element name="Codeposte" type="xsd:string" minOccurs="0"/>
             <xsd:element name="Intituleposte" type="xsd:string" minOccurs="0"/>
             <xsd:element name="Posteexport" type="xsd:int" minOccurs="0" nillable="true"/>
-            <xsd:element name="Idcommune" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idcommune" type="xsd:decimal" minOccurs="0"/>
             <xsd:element name="Nomcommune" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="LocaliteView" type="LocaliteViewSDO" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:element name="postecontroleViewSDO" type="PostecontroleViewSDO"/>

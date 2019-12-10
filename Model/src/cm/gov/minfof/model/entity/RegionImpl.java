@@ -78,6 +78,7 @@ public class RegionImpl extends EntityImpl {
         Coderegion,
         Descriptionregions,
         Cheflieuregion,
+        Abreviationregion,
         Departement,
         Commune,
         Vehicule;
@@ -110,6 +111,7 @@ public class RegionImpl extends EntityImpl {
     public static final int CODEREGION = AttributesEnum.Coderegion.index();
     public static final int DESCRIPTIONREGIONS = AttributesEnum.Descriptionregions.index();
     public static final int CHEFLIEUREGION = AttributesEnum.Cheflieuregion.index();
+    public static final int ABREVIATIONREGION = AttributesEnum.Abreviationregion.index();
     public static final int DEPARTEMENT = AttributesEnum.Departement.index();
     public static final int COMMUNE = AttributesEnum.Commune.index();
     public static final int VEHICULE = AttributesEnum.Vehicule.index();
@@ -206,6 +208,22 @@ public class RegionImpl extends EntityImpl {
      */
     public void setCheflieuregion(String value) {
         setAttributeInternal(CHEFLIEUREGION, value);
+    }
+
+    /**
+     * Gets the attribute value for Abreviationregion, using the alias name Abreviationregion.
+     * @return the value of Abreviationregion
+     */
+    public String getAbreviationregion() {
+        return (String) getAttributeInternal(ABREVIATIONREGION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Abreviationregion.
+     * @param value value to set the Abreviationregion
+     */
+    public void setAbreviationregion(String value) {
+        setAttributeInternal(ABREVIATIONREGION, value);
     }
 
     /**

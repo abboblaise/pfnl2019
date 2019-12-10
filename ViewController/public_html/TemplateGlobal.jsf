@@ -59,20 +59,20 @@
                                                 <af:button text="#{viewcontrollerBundle.DEPARTEMENTS}" id="pt_b3"
                                                            destination="page_departement.jsf"/>
                                                 <af:spacer width="10" height="3" id="pt_s4"/>
-                                                <af:button text="#{viewcontrollerBundle.COMMUNES}" id="pt_b4"
+                                                <af:button text="#{viewcontrollerBundle.ARRONDISSEMENT}" id="pt_b4"
                                                            destination="page_commune.jsf"/>
                                                 <af:spacer width="10" height="3" id="pt_s13"/>
+                                                <af:button text="#{viewcontrollerBundle.POSTES_DE_CONTROLE}" id="pt_b15"
+                                                           destination="page_postecontrole.jsf"/>
+                                                <af:spacer width="10" height="3" id="pt_s14"/>
                                                 <af:button text="#{viewcontrollerBundle.LOCALITES}" id="pt_b14"
                                                            destination="page_localite.jsf" targetFrame="_parent"/>
-                                                <af:spacer width="10" height="3" id="pt_s14"/>
-                                                <af:button text="#{viewcontrollerBundle.POSTES_DE_CONTROLE}" id="pt_b15"
-                                                           destination="page_pc.jsf"/>
                                             </af:panelGroupLayout>
                                         </af:showDetailItem>
                                         <af:showDetailItem text="#{viewcontrollerBundle.PRODUITS}" id="pt_sdi2">
                                             <af:panelGroupLayout id="pt_pgl7" layout="vertical" halign="center">
                                                 <af:button text="#{viewcontrollerBundle.FAMILLE_DE_PRODUITS}" id="pt_b5"
-                                                           destination="page_famille_produit.jsf"/>
+                                                           destination="page_famille_produit.jsf" rendered="false"/>
                                                 <af:spacer width="10" height="3" id="pt_s5"/>
                                                 <af:button text="#{viewcontrollerBundle.TYPE_DE_PRODUITS}"
                                                            id="pt_b11" destination="page_type_produit.jsf"/>

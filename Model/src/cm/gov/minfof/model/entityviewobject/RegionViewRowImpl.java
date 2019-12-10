@@ -28,6 +28,7 @@ public class RegionViewRowImpl extends ViewRowImpl implements RegionViewRow {
         Coderegion,
         Descriptionregions,
         Cheflieuregion,
+        Abreviationregion,
         DepartementView,
         CommuneView,
         VehiculeView,
@@ -62,6 +63,7 @@ public class RegionViewRowImpl extends ViewRowImpl implements RegionViewRow {
     public static final int CODEREGION = AttributesEnum.Coderegion.index();
     public static final int DESCRIPTIONREGIONS = AttributesEnum.Descriptionregions.index();
     public static final int CHEFLIEUREGION = AttributesEnum.Cheflieuregion.index();
+    public static final int ABREVIATIONREGION = AttributesEnum.Abreviationregion.index();
     public static final int DEPARTEMENTVIEW = AttributesEnum.DepartementView.index();
     public static final int COMMUNEVIEW = AttributesEnum.CommuneView.index();
     public static final int VEHICULEVIEW = AttributesEnum.VehiculeView.index();
@@ -159,6 +161,22 @@ public class RegionViewRowImpl extends ViewRowImpl implements RegionViewRow {
      */
     public void setCheflieuregion(String value) {
         setAttributeInternal(CHEFLIEUREGION, value);
+    }
+
+    /**
+     * Gets the attribute value for abreviationregion using the alias name Abreviationregion.
+     * @return the abreviationregion
+     */
+    public String getAbreviationregion() {
+        return (String) getAttributeInternal(ABREVIATIONREGION);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for abreviationregion using the alias name Abreviationregion.
+     * @param value value to set the abreviationregion
+     */
+    public void setAbreviationregion(String value) {
+        setAttributeInternal(ABREVIATIONREGION, value);
     }
 
     /**

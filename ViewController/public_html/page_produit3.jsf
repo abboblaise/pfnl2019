@@ -86,7 +86,7 @@
                                                                    shortDesc="#{bindings.ProduitsPfnlView12.hints.Codeproduit.tooltip}"
                                                                    id="ot4"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.ProduitsPfnlView12.hints.Idfamillepfnl.name}"
+                                                <af:column rendered="false" sortProperty="#{bindings.ProduitsPfnlView12.hints.Idfamillepfnl.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.ProduitsPfnlView12.hints.Idfamillepfnl.label}"
                                                            id="c5">
@@ -171,7 +171,7 @@
                                                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc5">
                                                         <af:outputText value="#{bindings.Idfamillepfnl.label}"
-                                                                       id="ot12"/>
+                                                                       id="ot12" rendered="false"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc6">
@@ -179,7 +179,7 @@
                                                                             label="&nbsp;&nbsp;&nbsp;"
                                                                             required="#{bindings.Idfamillepfnl.hints.mandatory}"
                                                                             shortDesc="#{bindings.Idfamillepfnl.hints.tooltip}"
-                                                                            id="soc1">
+                                                                            id="soc1" rendered="false">
                                                             <f:selectItems value="#{bindings.Idfamillepfnl.items}"
                                                                            id="si1"/>
                                                             <f:validator binding="#{bindings.Idfamillepfnl.validator}"/>

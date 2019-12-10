@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="CommuneView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -74,6 +74,21 @@
   <ViewLinkAccessor
     Name="DepartementView"
     ViewLink="cm.gov.minfof.model.entityviewobject.DepartementsIbfk1Assoc2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LocaliteView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.CommuneToLocaliteLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LocaliteView1"
+    ViewLink="cm.gov.minfof.model.entityviewobject.CommuneToLocaliteLinkPlus"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PostecontroleView"
+    ViewLink="cm.gov.minfof.model.queryviewobject.communeToPosteControleLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

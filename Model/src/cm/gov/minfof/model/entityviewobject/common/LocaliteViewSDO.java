@@ -14,6 +14,10 @@ public interface LocaliteViewSDO extends java.io.Serializable {
 
    public void setIdcommune(java.math.BigDecimal value);
 
+   public java.math.BigDecimal getIdpostecontrole();
+
+   public void setIdpostecontrole(java.math.BigDecimal value);
+
    public java.util.List getLocaliteView();
 
    public void setLocaliteView(java.util.List value);

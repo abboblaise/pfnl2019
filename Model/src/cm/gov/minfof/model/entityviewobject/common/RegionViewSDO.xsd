@@ -19,10 +19,11 @@
             <xsd:element name="Coderegion" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Descriptionregions" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Cheflieuregion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Abreviationregion" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="DepartementView1" type="DepartementViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="DepartementView" type="DepartementViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="CommuneView" type="CommuneViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="VehiculeView" type="VehiculeViewSDO" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="DepartementView1" type="DepartementViewSDO" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:element name="regionViewSDO" type="RegionViewSDO"/>

@@ -45,7 +45,7 @@ public class LocaliteBean {
         if (!operationBinding.getErrors().isEmpty()) {
             return null;
         }
-        String nomLocalite = notifObj.getValueOfField("LocaliteView1Iterator", "Nomlocalite");
+        String nomLocalite = notifObj.getValueOfField("LocaliteView9Iterator", "Nomlocalite");
         notifObj.showNoticeMessageAction("Enregistrement effectué! La localité <b>"+ nomLocalite +" </b>a été enregistrée avec succès");
         return null;
     }

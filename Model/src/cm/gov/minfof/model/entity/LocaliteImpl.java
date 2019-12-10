@@ -23,8 +23,11 @@ public class LocaliteImpl extends EntityImpl {
         Idlocalite,
         Nomlocalite,
         Idcommune,
+        Idpostecontrole,
         Localite,
-        IdcommuneLocalite;
+        IdcommuneLocalite,
+        Commune,
+        Postecontrole;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -47,17 +50,30 @@ public class LocaliteImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int IDLOCALITE = AttributesEnum.Idlocalite.index();
     public static final int NOMLOCALITE = AttributesEnum.Nomlocalite.index();
     public static final int IDCOMMUNE = AttributesEnum.Idcommune.index();
+    public static final int IDPOSTECONTROLE = AttributesEnum.Idpostecontrole.index();
     public static final int LOCALITE = AttributesEnum.Localite.index();
     public static final int IDCOMMUNELOCALITE = AttributesEnum.IdcommuneLocalite.index();
+    public static final int COMMUNE = AttributesEnum.Commune.index();
+    public static final int POSTECONTROLE = AttributesEnum.Postecontrole.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public LocaliteImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("cm.gov.minfof.model.entity.Localite");
+    }
+
 
     /**
      * Gets the attribute value for Idlocalite, using the alias name Idlocalite.
@@ -108,6 +124,22 @@ public class LocaliteImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for Idpostecontrole, using the alias name Idpostecontrole.
+     * @return the value of Idpostecontrole
+     */
+    public BigDecimal getIdpostecontrole() {
+        return (BigDecimal) getAttributeInternal(IDPOSTECONTROLE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Idpostecontrole.
+     * @param value value to set the Idpostecontrole
+     */
+    public void setIdpostecontrole(BigDecimal value) {
+        setAttributeInternal(IDPOSTECONTROLE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getLocalite() {
@@ -129,19 +161,42 @@ public class LocaliteImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity CommuneImpl.
+     */
+    public CommuneImpl getCommune() {
+        return (CommuneImpl) getAttributeInternal(COMMUNE);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity CommuneImpl.
+     */
+    public void setCommune(CommuneImpl value) {
+        setAttributeInternal(COMMUNE, value);
+    }
+
+
+    /**
+     * @return the associated entity PostecontroleImpl.
+     */
+    public PostecontroleImpl getPostecontrole() {
+        return (PostecontroleImpl) getAttributeInternal(POSTECONTROLE);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity PostecontroleImpl.
+     */
+    public void setPostecontrole(PostecontroleImpl value) {
+        setAttributeInternal(POSTECONTROLE, value);
+    }
+
+
+    /**
      * @param idlocalite key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal idlocalite) {
         return new Key(new Object[] { idlocalite });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("cm.gov.minfof.model.entity.Localite");
     }
 
     /**
