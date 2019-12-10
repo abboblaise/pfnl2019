@@ -178,7 +178,7 @@
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc4">
-                                                        <af:inputComboboxListOfValues id="numpermisId"
+                                                        <af:inputComboboxListOfValues id="soc1"
                                                                                       popupTitle="Search and Select: #{bindings.numpermis.hints.label}"
                                                                                       value="#{bindings.numpermis.inputValue}"
                                                                                       model="#{bindings.numpermis.listOfValuesModel}"
@@ -204,7 +204,7 @@
                                                                                       required="#{bindings.nomacteur.hints.mandatory}"
                                                                                       columns="#{bindings.nomacteur.hints.displayWidth}"
                                                                                       shortDesc="#{bindings.nomacteur.hints.tooltip}"
-                                                                                      partialTriggers="numpermisId"
+                                                                                      partialTriggers="soc1"
                                                                                       visible="true">
                                                             <f:validator binding="#{bindings.nomacteur.validator}"/>
                                                         </af:inputComboboxListOfValues>
