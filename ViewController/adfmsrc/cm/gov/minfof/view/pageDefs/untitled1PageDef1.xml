@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="untitled1PageDef1"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CommuneView5" RangeSize="25" DataControl="AppModuleDataControl" id="CommuneView5Iterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="LocaliteView7" RangeSize="25" DataControl="AppModuleDataControl" id="LocaliteView7Iterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <action IterBinding="CommuneView5Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="CommuneView5Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="CommuneView5Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="CommuneView5Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="CommuneView5Iterator" id="Idcommunes">
+      <AttrNames>
+        <Item Value="Idcommunes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CommuneView5Iterator" id="Nomcommune">
+      <AttrNames>
+        <Item Value="Nomcommune"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CommuneView5Iterator" id="Iddepartements">
+      <AttrNames>
+        <Item Value="Iddepartements"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CommuneView5Iterator" id="Codecommune">
+      <AttrNames>
+        <Item Value="Codecommune"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CommuneView5Iterator" id="codesigif">
+      <AttrNames>
+        <Item Value="codesigif"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="LocaliteView7Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="LocaliteView7Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="LocaliteView7Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="LocaliteView7Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="LocaliteView7Iterator" id="Idlocalite">
+      <AttrNames>
+        <Item Value="Idlocalite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LocaliteView7Iterator" id="Nomlocalite">
+      <AttrNames>
+        <Item Value="Nomlocalite"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="LocaliteView7Iterator" StaticList="false" Uses="LOV_Idcommune" id="Idcommune"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>
