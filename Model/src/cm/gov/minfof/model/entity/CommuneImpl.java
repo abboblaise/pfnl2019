@@ -30,7 +30,10 @@ public class CommuneImpl extends EntityImpl {
         IddepartementsCommune,
         Departement,
         Region,
-        Departement1;
+        Departement1,
+        Agrements1,
+        Localite,
+        Postecontrole;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -65,6 +68,9 @@ public class CommuneImpl extends EntityImpl {
     public static final int DEPARTEMENT = AttributesEnum.Departement.index();
     public static final int REGION = AttributesEnum.Region.index();
     public static final int DEPARTEMENT1 = AttributesEnum.Departement1.index();
+    public static final int AGREMENTS1 = AttributesEnum.Agrements1.index();
+    public static final int LOCALITE = AttributesEnum.Localite.index();
+    public static final int POSTECONTROLE = AttributesEnum.Postecontrole.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -234,6 +240,35 @@ public class CommuneImpl extends EntityImpl {
      */
     public void setDepartement1(DepartementImpl value) {
         setAttributeInternal(DEPARTEMENT1, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getAgrements1() {
+        return (EntityImpl) getAttributeInternal(AGREMENTS1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setAgrements1(EntityImpl value) {
+        setAttributeInternal(AGREMENTS1, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLocalite() {
+        return (RowIterator) getAttributeInternal(LOCALITE);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getPostecontrole() {
+        return (RowIterator) getAttributeInternal(POSTECONTROLE);
     }
 
 

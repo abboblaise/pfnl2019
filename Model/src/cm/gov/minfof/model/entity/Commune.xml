@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Commune"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="communes"
@@ -146,6 +146,27 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc2.Commune1"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Agrements1"
+    Association="cm.gov.minfof.model.entity.CommunesIbfk1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc3.Agrements1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc3.Commune"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Localite"
+    Association="cm.gov.minfof.model.entity.CommuneToLocaliteassoc"
+    AssociationEnd="cm.gov.minfof.model.entity.CommuneToLocaliteassoc.Localite"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommuneToLocaliteassoc.Commune"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Postecontrole"
+    Association="cm.gov.minfof.model.entity.CommuneToPosteControleAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.CommuneToPosteControleAssoc.Postecontrole"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommuneToPosteControleAssoc.Commune"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="AltKey"
     AltKey="true">
@@ -235,13 +256,6 @@
       <validation:Item
         Value="Codecommune"/>
     </validation:OnAttributes>
-    <validation:ResExpressions
-      Name="CommuneRule0_ResExprList">
-      <validation:Expression
-        Name="0"
-        trustMode="untrusted"
-        CodeSourceName="CommuneRow"/>
-    </validation:ResExpressions>
   </validation:UniqueKeyValidationBean>
   <ResourceBundle>
     <PropertiesBundle

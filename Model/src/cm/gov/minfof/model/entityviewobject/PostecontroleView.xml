@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="PostecontroleView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -151,6 +151,17 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewLinkAccessor
+    Name="CommuneView"
+    ViewLink="cm.gov.minfof.model.queryviewobject.communeToPosteControleLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LocaliteView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.PosteControleToLocaliteLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="cm.gov.minfof.model.ModelBundle"/>

@@ -5,6 +5,7 @@ import cm.gov.minfof.model.entity.PostecontroleImpl;
 import java.math.BigDecimal;
 
 import oracle.jbo.Row;
+import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
 import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
@@ -14,6 +15,8 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class PostecontroleViewRowImpl extends ViewRowImpl {
+
+
     public static final int ENTITY_POSTECONTROLE = 0;
 
     /**
@@ -26,8 +29,11 @@ public class PostecontroleViewRowImpl extends ViewRowImpl {
         Posteexport,
         Idcommune,
         Nomcommune,
+        CommuneView,
+        LocaliteView,
         CommuneView1;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -49,12 +55,16 @@ public class PostecontroleViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
+
     public static final int IDPOSTECONTROLE = AttributesEnum.Idpostecontrole.index();
     public static final int CODEPOSTE = AttributesEnum.Codeposte.index();
     public static final int INTITULEPOSTE = AttributesEnum.Intituleposte.index();
     public static final int POSTEEXPORT = AttributesEnum.Posteexport.index();
     public static final int IDCOMMUNE = AttributesEnum.Idcommune.index();
     public static final int NOMCOMMUNE = AttributesEnum.Nomcommune.index();
+    public static final int COMMUNEVIEW = AttributesEnum.CommuneView.index();
+    public static final int LOCALITEVIEW = AttributesEnum.LocaliteView.index();
     public static final int COMMUNEVIEW1 = AttributesEnum.CommuneView1.index();
 
     /**
@@ -182,6 +192,27 @@ public class PostecontroleViewRowImpl extends ViewRowImpl {
      */
     public void setNomcommune(String value) {
         setAttributeInternal(NOMCOMMUNE, value);
+    }
+
+    /**
+     * Gets the associated <code>ViewRowImpl</code> using master-detail link CommuneView.
+     */
+    public ViewRowImpl getCommuneView() {
+        return (ViewRowImpl) getAttributeInternal(COMMUNEVIEW);
+    }
+
+    /**
+     * Sets the master-detail link CommuneView between this object and <code>value</code>.
+     */
+    public void setCommuneView(ViewRowImpl value) {
+        setAttributeInternal(COMMUNEVIEW, value);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link LocaliteView.
+     */
+    public RowIterator getLocaliteView() {
+        return (RowIterator) getAttributeInternal(LOCALITEVIEW);
     }
 
     /**

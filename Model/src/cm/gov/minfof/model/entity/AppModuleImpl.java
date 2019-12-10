@@ -4047,6 +4047,102 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
     public PermissionnaireEtPermisFinalImpl getPermissionnaireEtPermisFinal1() {
         return (PermissionnaireEtPermisFinalImpl) findViewObject("PermissionnaireEtPermisFinal1");
     }
+
+    /**
+     * Container's getter for LocaliteView6.
+     * @return LocaliteView6
+     */
+    public ViewObjectImpl getLocaliteView6() {
+        return (ViewObjectImpl) findViewObject("LocaliteView6");
+    }
+
+    /**
+     * Container's getter for CommuneView9.
+     * @return CommuneView9
+     */
+    public CommuneViewImpl getCommuneView9() {
+        return (CommuneViewImpl) findViewObject("CommuneView9");
+    }
+
+    /**
+     * Container's getter for CommuneToLocaliteLinkPlus1.
+     * @return CommuneToLocaliteLinkPlus1
+     */
+    public ViewLinkImpl getCommuneToLocaliteLinkPlus1() {
+        return (ViewLinkImpl) findViewLink("CommuneToLocaliteLinkPlus1");
+    }
+
+    /**
+     * Container's getter for LocaliteView7.
+     * @return LocaliteView7
+     */
+    public ViewObjectImpl getLocaliteView7() {
+        return (ViewObjectImpl) findViewObject("LocaliteView7");
+    }
+
+    /**
+     * Container's getter for CommuneToLocaliteLinkPlus2.
+     * @return CommuneToLocaliteLinkPlus2
+     */
+    public ViewLinkImpl getCommuneToLocaliteLinkPlus2() {
+        return (ViewLinkImpl) findViewLink("CommuneToLocaliteLinkPlus2");
+    }
+
+    /**
+     * Container's getter for PostecontroleView2.
+     * @return PostecontroleView2
+     */
+    public PostecontroleViewImpl getPostecontroleView2() {
+        return (PostecontroleViewImpl) findViewObject("PostecontroleView2");
+    }
+
+    /**
+     * Container's getter for communeToPosteControleLink1.
+     * @return communeToPosteControleLink1
+     */
+    public ViewLinkImpl getcommuneToPosteControleLink1() {
+        return (ViewLinkImpl) findViewLink("communeToPosteControleLink1");
+    }
+
+    /**
+     * Container's getter for PostecontroleView3.
+     * @return PostecontroleView3
+     */
+    public PostecontroleViewImpl getPostecontroleView3() {
+        return (PostecontroleViewImpl) findViewObject("PostecontroleView3");
+    }
+
+    /**
+     * Container's getter for PosteControleToLocaliteLink1.
+     * @return PosteControleToLocaliteLink1
+     */
+    public ViewLinkImpl getPosteControleToLocaliteLink1() {
+        return (ViewLinkImpl) findViewLink("PosteControleToLocaliteLink1");
+    }
+
+    /**
+     * Container's getter for LocaliteView8.
+     * @return LocaliteView8
+     */
+    public ViewObjectImpl getLocaliteView8() {
+        return (ViewObjectImpl) findViewObject("LocaliteView8");
+    }
+
+    /**
+     * Container's getter for LocaliteView9.
+     * @return LocaliteView9
+     */
+    public ViewObjectImpl getLocaliteView9() {
+        return (ViewObjectImpl) findViewObject("LocaliteView9");
+    }
+
+    /**
+     * Container's getter for PosteControleToLocaliteLink2.
+     * @return PosteControleToLocaliteLink2
+     */
+    public ViewLinkImpl getPosteControleToLocaliteLink2() {
+        return (ViewLinkImpl) findViewLink("PosteControleToLocaliteLink2");
+    }
 }
 
 

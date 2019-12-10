@@ -7,7 +7,7 @@ public class RegionViewSDOImpl extends SDODataObject implements RegionViewSDO {
 
    public static final int START_PROPERTY_INDEX = 0;
 
-   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 8;
+   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 9;
 
    public RegionViewSDOImpl() {}
 
@@ -51,36 +51,44 @@ public class RegionViewSDOImpl extends SDODataObject implements RegionViewSDO {
       set(START_PROPERTY_INDEX + 4 , value);
    }
 
-   public java.util.List getDepartementView() {
-      return getList(START_PROPERTY_INDEX + 5);
+   public java.lang.String getAbreviationregion() {
+      return getString(START_PROPERTY_INDEX + 5);
    }
 
-   public void setDepartementView(java.util.List value) {
+   public void setAbreviationregion(java.lang.String value) {
       set(START_PROPERTY_INDEX + 5 , value);
    }
 
-   public java.util.List getCommuneView() {
+   public java.util.List getDepartementView1() {
       return getList(START_PROPERTY_INDEX + 6);
    }
 
-   public void setCommuneView(java.util.List value) {
+   public void setDepartementView1(java.util.List value) {
       set(START_PROPERTY_INDEX + 6 , value);
    }
 
-   public java.util.List getVehiculeView() {
+   public java.util.List getDepartementView() {
       return getList(START_PROPERTY_INDEX + 7);
    }
 
-   public void setVehiculeView(java.util.List value) {
+   public void setDepartementView(java.util.List value) {
       set(START_PROPERTY_INDEX + 7 , value);
    }
 
-   public java.util.List getDepartementView1() {
+   public java.util.List getCommuneView() {
       return getList(START_PROPERTY_INDEX + 8);
    }
 
-   public void setDepartementView1(java.util.List value) {
+   public void setCommuneView(java.util.List value) {
       set(START_PROPERTY_INDEX + 8 , value);
+   }
+
+   public java.util.List getVehiculeView() {
+      return getList(START_PROPERTY_INDEX + 9);
+   }
+
+   public void setVehiculeView(java.util.List value) {
+      set(START_PROPERTY_INDEX + 9 , value);
    }
 
 

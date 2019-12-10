@@ -7,7 +7,7 @@ public class PostecontroleViewSDOImpl extends SDODataObject implements Postecont
 
    public static final int START_PROPERTY_INDEX = 0;
 
-   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 5;
+   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 6;
 
    public PostecontroleViewSDOImpl() {}
 
@@ -57,6 +57,14 @@ public class PostecontroleViewSDOImpl extends SDODataObject implements Postecont
 
    public void setNomcommune(java.lang.String value) {
       set(START_PROPERTY_INDEX + 5 , value);
+   }
+
+   public java.util.List getLocaliteView() {
+      return getList(START_PROPERTY_INDEX + 6);
+   }
+
+   public void setLocaliteView(java.util.List value) {
+      set(START_PROPERTY_INDEX + 6 , value);
    }
 
 

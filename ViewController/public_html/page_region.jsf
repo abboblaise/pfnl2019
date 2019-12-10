@@ -56,13 +56,21 @@
                                         <af:column sortProperty="#{bindings.RegionView1.hints.Idregions.name}"
                                                    filterable="true" sortable="true"
                                                    headerText="#{bindings.RegionView1.hints.Idregions.label}" id="c1"
-                                                   visible="true" rowHeader="true" width="100">
+                                                   visible="true" rowHeader="true" width="20">
                                             <af:outputText value="#{row.Idregions}"
                                                            shortDesc="#{bindings.RegionView1.hints.Idregions.tooltip}"
                                                            id="ot1">
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.RegionView1.hints.Idregions.format}"/>
                                             </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.RegionView1.hints.Abreviationregion.name}" 
+                                            headerText="#{bindings.RegionView1.hints.Abreviationregion.label}"
+                                            filterable="true" sortable="true" filterFeatures="caseInsensitive" width="40"
+                                                   id="c6">
+                                            <af:outputText value="#{row.Abreviationregion}"
+                                                           shortDesc="#{bindings.RegionView1.hints.Abreviationregion.tooltip}"
+                                                           id="ot6"/>
                                         </af:column>
                                         <af:column sortProperty="#{bindings.RegionView1.hints.Coderegion.name}"
                                                    filterable="true" sortable="true"
@@ -117,7 +125,27 @@
                                                     <f:validator binding="#{bindings.Coderegion.validator}"/>
                                                 </af:inputText>
                                             </af:gridCell>
-                                            <af:gridCell marginStart="10px" width="auto" id="gc3">
+                                            
+                                            
+                                            <af:gridCell marginStart="10px" width="auto" id="gc10">
+                                                <af:outputLabel value="#{bindings.Abreviationregion.hints.label}" id="ol10"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc12">
+                                                <af:inputText value="#{bindings.Abreviationregion.inputValue}"
+                                                              required="#{bindings.Abreviationregion.hints.mandatory}"
+                                                              columns="#{bindings.Abreviationregion.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Abreviationregion.hints.precision}"
+                                                              shortDesc="#{bindings.Abreviationregion.hints.tooltip}" id="it10"
+                                                              partialTriggers="b2 b4 b1 b3" immediate="false">
+                                                    <f:validator binding="#{bindings.Abreviationregion.validator}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                            
+                                            
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                        
+                                        <af:gridCell marginStart="10px" width="auto" id="gc3">
                                                 <af:outputLabel value="#{bindings.Nomregion.hints.label}" id="ol2"/>
                                             </af:gridCell>
                                             <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4">
@@ -130,8 +158,7 @@
                                                     <f:validator binding="#{bindings.Nomregion.validator}"/>
                                                 </af:inputText>
                                             </af:gridCell>
-                                        </af:gridRow>
-                                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                        
                                             <af:gridCell marginStart="5px" width="auto" id="gc5" marginEnd="5px">
                                                 <af:outputLabel value="#{bindings.Cheflieuregion.hints.label}"
                                                                 id="ol3"/>
@@ -147,6 +174,9 @@
                                                     <f:validator binding="#{bindings.Cheflieuregion.validator}"/>
                                                 </af:inputText>
                                             </af:gridCell>
+                                            
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr8">
                                             <af:gridCell marginStart="10px" width="auto" id="gc7">
                                                 <af:outputLabel value="#{bindings.Descriptionregions.hints.label}"
                                                                 id="ol4"/>
@@ -165,9 +195,9 @@
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr3">
                                             <af:gridCell marginStart="5px" width="auto" id="gc9" marginEnd="5px"/>
-                                            <af:gridCell marginStart="10px" width="auto" id="gc10"/>
+                                            <af:gridCell marginStart="10px" width="auto" id="gc20"/>
                                             <af:gridCell marginStart="10px" width="auto" id="gc11"/>
-                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc12"/>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc22"/>
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr4">
                                             <af:gridCell marginStart="5px" columnSpan="4" marginEnd="5px" id="gc13">

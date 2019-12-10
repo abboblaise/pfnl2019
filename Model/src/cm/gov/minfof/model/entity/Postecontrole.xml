@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Postecontrole"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="postecontrole"
@@ -106,6 +106,20 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <AccessorAttribute
+    Name="Commune"
+    Association="cm.gov.minfof.model.entity.CommuneToPosteControleAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.CommuneToPosteControleAssoc.Commune"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommuneToPosteControleAssoc.Postecontrole"
+    Type="cm.gov.minfof.model.entity.CommuneImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Localite"
+    Association="cm.gov.minfof.model.entity.PosteControleToLocaliteAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PosteControleToLocaliteAssoc.Localite"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PosteControleToLocaliteAssoc.Postecontrole"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="AltKey"
     AltKey="true">
@@ -176,6 +190,17 @@
       <Attr Name="_DBObjectName" Value="fk_Postecontrole"/>
     </DesignTime>
     <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="fk_Postecontrole1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Postecontrole1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Postecontrole.Idcommune"/>
+    </AttrArray>
   </Key>
   <validation:UniqueKeyValidationBean
     Name="PostecontroleRule0"

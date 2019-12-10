@@ -45,7 +45,7 @@ public class PostecBean {
         if (!operationBinding.getErrors().isEmpty()) {
             return null;
         }
-        String nomPoste = notifObj.getValueOfField("PostecontroleView1Iterator", "Intituleposte");
+        String nomPoste = notifObj.getValueOfField("PostecontroleView2Iterator", "Intituleposte");
         notifObj.showNoticeMessageAction("Enregistrement effectué! Le poste <b>"+ nomPoste +" </b>a été enregistré avec succès");
         return null;
     }
