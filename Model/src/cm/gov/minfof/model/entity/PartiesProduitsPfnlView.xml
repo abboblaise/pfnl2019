@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="PartiesProduitsPfnlView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -15,9 +15,6 @@
   PageIterMode="Full"
   RowClass="cm.gov.minfof.model.entity.PartiesProduitsPfnlViewRowImpl"
   ComponentClass="cm.gov.minfof.model.entity.PartiesProduitsPfnlViewImpl"
-  SdoGen="true"
-  SdoName="cm.gov.minfof.model.entity.common.PartiesProduitsPfnlViewSDO"
-  SdoNameSpace="/cm/gov/minfof/model/entity/common/">
   SdoGen="true"
   SdoName="cm.gov.minfof.model.entity.common.PartiesProduitsPfnlViewSDO"
   SdoNameSpace="/cm/gov/minfof/model/entity/common/">
@@ -187,5 +184,20 @@
     ViewLink="cm.gov.minfof.model.entityviewobject.DetailsExportToPartieProduitLink"
     Type="oracle.jbo.RowIterator"
     Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LettreVoiturePcView"
+    ViewLink="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc35Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LettreVoiturePcView1"
+    ViewLink="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc35Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LettreVoiturePcView2"
+    ViewLink="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc35Link"
+    Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

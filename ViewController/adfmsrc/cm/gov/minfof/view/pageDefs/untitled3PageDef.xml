@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="untitled3PageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PermisView1" RangeSize="25" DataControl="AppModuleDataControl" id="PermisView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PermisView1Iterator" id="Idpermis">
+      <AttrNames>
+        <Item Value="Idpermis"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Numeropermis">
+      <AttrNames>
+        <Item Value="Numeropermis"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Zonecoupe">
+      <AttrNames>
+        <Item Value="Zonecoupe"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Datedelivrance">
+      <AttrNames>
+        <Item Value="Datedelivrance"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Datefin">
+      <AttrNames>
+        <Item Value="Datefin"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Observation">
+      <AttrNames>
+        <Item Value="Observation"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PermisView1Iterator" StaticList="false" Uses="LOV_Idagrement" id="Idagrement"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PermisView1Iterator" StaticList="false" Uses="LOV_Idpermissionnaire" id="Idpermissionnaire"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PermisView1Iterator" StaticList="false" Uses="LOV_Typedocument" id="Typedocument"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PermisView1Iterator" id="Cheminfichier">
+      <AttrNames>
+        <Item Value="Cheminfichier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Nomfichier">
+      <AttrNames>
+        <Item Value="Nomfichier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Numpermiscomplet">
+      <AttrNames>
+        <Item Value="Numpermiscomplet"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PermisView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="PermisView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="PermisView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PermisView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="PermisView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="PermisView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

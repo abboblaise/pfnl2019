@@ -1,11 +1,15 @@
 package cm.gov.minfof.view;
 
+import cm.gov.minfof.model.entity.PartiesProduitsPfnlViewRowImpl;
+import cm.gov.minfof.model.entityviewobject.getLibelleProduitCompletRowImpl;
+
 import javax.el.ELContext;
 import javax.el.ExpressionFactory;
 import javax.el.MethodExpression;
 
 import javax.faces.context.FacesContext;
 
+import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 
 import oracle.adf.model.BindingContext;
@@ -31,6 +35,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import java.math.BigDecimal;
+
 import java.util.Iterator;
 
 import javax.faces.application.Application;
@@ -47,6 +53,13 @@ import oracle.adf.view.rich.util.ResetUtils;
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
+import oracle.jbo.ApplicationModule;
+import oracle.jbo.Row;
+import oracle.jbo.ViewCriteriaManager;
+import oracle.jbo.ViewObject;
+import oracle.jbo.uicli.binding.JUCtrlListBinding;
+
+import org.apache.myfaces.trinidad.event.DisclosureEvent;
 import org.apache.myfaces.trinidad.model.UploadedFile;
 
 public class PermisBean {
@@ -71,11 +84,13 @@ public class PermisBean {
     }
 
     public String CreerPermis() {
+        System.out.println("Je crée un nouveau permis");
         BindingContainer bindings = getBindings();
         OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
         Object result = operationBinding.execute();
         executemethode("Commit"); //pour permettre de g??n??rer les ids facilement
         if (!operationBinding.getErrors().isEmpty()) {
+            System.out.println("Erreur " + operationBinding.getErrors());
             return null;
         }
         return null;
@@ -94,6 +109,7 @@ public class PermisBean {
     }
 
     public String EnregistrePermis() {
+        System.out.println("Je suis plutot ici");
         BindingContainer bindings = getBindings();
         OperationBinding operationBinding = bindings.getOperationBinding("Commit");
         Object result = operationBinding.execute();
@@ -115,8 +131,8 @@ public class PermisBean {
         }
         try {
             f.delete();
+        } catch (Exception e) {
         }
-        catch(Exception e){}
         notifObj.showNoticeMessageAction("Suppression effectué! Le permis <b>" + numPermis +
                                          " </b>a été supprimé avec succès");
         return null;
@@ -146,6 +162,7 @@ public class PermisBean {
     }
 
     public void onPermisQuery(QueryEvent queryEvent) {
+        System.out.println("Je suis dans la méthode onPermisQuery");
         BindingContext bctx = BindingContext.getCurrent();
         DCBindingContainer bindings = (DCBindingContainer) bctx.getCurrentBindingsEntry();
 
@@ -195,10 +212,17 @@ public class PermisBean {
     }
 
     public String enregistrePermis() {
+        System.out.println("Vous avez appuyez sur enregistrer");
+
         BindingContainer bindings = getBindings();
         OperationBinding operationBinding = bindings.getOperationBinding("Commit");
         Object result = operationBinding.execute();
         if (!operationBinding.getErrors().isEmpty()) {
+            System.out.println("Il y a des erreurs");
+            for (int i = 0; i < operationBinding.getErrors().size(); i++) {
+                System.out.println("erreur = " + operationBinding.getErrors().get(i));
+            }
+
             return null;
         }
         String numPermis = notifObj.getValueOfField("PermisView1Iterator", "Numeropermis");
@@ -206,9 +230,8 @@ public class PermisBean {
                                          " </b>a été enregistré avec succès");
         return null;
     }
-    
-    private String numeroPermis()
-    {
+
+    private String numeroPermis() {
         String numPermis = "";
         return numPermis;
     }
@@ -228,8 +251,7 @@ public class PermisBean {
             System.out.println("Sans extension = " + nomSansExtension);
             String numPermis = notifObj.getValueOfField("PermisView1Iterator", "Numeropermis");
             System.out.println("numero permis = " + numPermis);
-            if(numPermis == null)
-            {
+            if (numPermis == null) {
                 FacesContext fc = FacesContext.getCurrentInstance();
                 UIViewRoot root = fc.getViewRoot();
                 RichInputText numPermisInputText = (RichInputText) findComponent(root, "it1");
@@ -312,7 +334,7 @@ public class PermisBean {
             nomFichierInputText.setValue(fileVal.getFilename());
             cheminFichierInputText.setValue(path);
             // Reset inputFile component after upload
-          //  ResetUtils.reset(valueChangeEvent.getComponent());
+            //  ResetUtils.reset(valueChangeEvent.getComponent());
         }
     }
 
@@ -355,7 +377,7 @@ public class PermisBean {
     }
 
 
-    public void downloadFileListener(FacesContext facesContext, OutputStream outputStream) throws IOException{
+    public void downloadFileListener(FacesContext facesContext, OutputStream outputStream) throws IOException {
         String pathFichier = notifObj.getValueOfField("PermisView1Iterator", "Cheminfichier");
         File filed = new File(pathFichier);
         FileInputStream fis;
@@ -386,5 +408,149 @@ public class PermisBean {
     public String annulerDetailsPermis() {
         notifObj.annulerParentEtDetails("PermisView1Iterator", "DetailpermisView6Iterator");
         return null;
+    }
+
+    public void changedUnitMesure(ValueChangeEvent valueChangeEvent) {
+        System.out.println("Je suis ici et je marche");
+        Object v = valueChangeEvent.getNewValue();
+        System.out.println("v= " + v);
+        BigDecimal bd = new BigDecimal(v.toString());
+        filtrerLesPartiesProduitsParId(bd);
+        
+        /*   DCBindingContainer bindings = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
+        ApplicationModule am = bindings.getDataControl().getApplicationModule();
+        ViewObject vue = am.findViewObject("UniteMesureWithPartieProduitPfnl1");
+        ViewCriteriaManager vcm = vue.getViewCriteriaManager();
+        ViewCriteria vcr = vcm.getViewCriteria("UniteMesureWithPartieProduitPfnlCriteria");
+        VariableValueManager vvm = vcr.ensureVariableManager();
+        vvm.setVariableValue("idpartieproduitpfnlbind", v.toString());
+        vue.applyViewCriteria(vcr);
+        System.out.println("v= " + v);
+        BigDecimal bd = new BigDecimal(v.toString());
+        System.out.println("valeur = " + bd.longValue());
+        vue.executeQuery(); */
+    }
+    
+    public void filtrerLesPartiesProduitsParId(BigDecimal bd)
+    {
+        System.out.println("Entree dans la methode filtrerLesPartiesProduitsParId");
+        DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("UniteMesureWithPartieProduitPfnl1Iterator");
+        ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
+        System.out.println("vo name = " + vo.getName() + "vo = " + vo);
+        
+        DCBindingContainer bindings = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
+        ApplicationModule am = bindings.getDataControl().getApplicationModule();
+        ViewObject vue = am.findViewObject("UniteMesureWithPartieProduitPfnl1");
+        
+        boolean egalite = vo == vue;
+        System.out.println("Egalite = " + egalite);
+        
+        String requete;
+        
+        if (bd == null)
+        {
+            requete = "select distinct idunitemesure as Idunitemesure, libelleunitemesure as Libelleunitemesure, idcategorie as Idcategorie, \n" + 
+        "  arrondi as Arrondi, ordregrandeur as Ordregrandeur, ratio as Ratio, actif as Actif\n" + 
+        "from unitemesure";
+        }
+        else
+        {
+            requete = "select idunitemesure as Idunitemesure, libelleunitemesure as Libelleunitemesure, idcategorie as Idcategorie, \n" + 
+        "  arrondi as Arrondi, ordregrandeur as Ordregrandeur, ratio as Ratio, actif as Actif\n" + 
+        "from unitemesure where unitemesure.idcategorie in (\n" + 
+        "select unitemesure.idcategorie from unitemesure, partiesproduitspfnl\n" + 
+        "where partiesproduitspfnl.idunitemesure=unitemesure.idunitemesure and partiesproduitspfnl.idpartiesproduitspfnl="+ bd.toString() +")";
+        }
+        vo.remove();
+        //vo.executeEmptyRowSet();
+        vo = (ViewObjectImpl) am.createViewObjectFromQueryStmt("UniteMesureWithPartieProduitPfnl1", requete);
+        
+        vo.executeQuery();
+
+        
+ /*       vo.applyViewCriteria(null);
+        vo.executeQuery();
+        ViewCriteria vc = vo.getViewCriteria("UniteMesureWithPartieProduitPfnlCriteria");
+        vo.applyViewCriteria(vc);
+        vo.setNamedWhereClauseParam("idpartieproduitpfnlbind", bd);
+        vo.executeQuery();
+        System.out.println("Après l'execution avec bd = " + bd.longValue());
+        
+             while (vo.hasNext()) {
+            System.out.println("entree dans la condition hasNext");
+            Row r = vo.next();
+            System.out.println("row = " + r + " idcategorie = " + r.getAttribute("idcategorie"));
+            
+        }*/
+        System.out.println("Fin de l'execution");
+    }
+    
+    public BigDecimal getIdPartieProduitPfnlCourant()
+    {
+        // Get the binding
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+
+        // Get the sepecific list binding
+        JUCtrlListBinding listBinding = (JUCtrlListBinding) bindings.get("Idpartieproduitpfnl");
+
+        // Get the value which is currently selected
+        Object selectedValue = listBinding.getSelectedValue();
+        getLibelleProduitCompletRowImpl viewRow = (getLibelleProduitCompletRowImpl) selectedValue;
+        Object idResultat = viewRow.getAttribute(("Idpartiesproduitspfnl"));
+        BigDecimal bd = new BigDecimal(idResultat.toString());
+        return bd;
+    }
+    
+    public void onConsultationTabDisclose(DisclosureEvent disclosureEvent) {
+        boolean bool = disclosureEvent.isExpanded();
+
+        if (!bool) 
+        {
+            try 
+            {
+                BigDecimal bd = getIdPartieProduitPfnlCourant();
+                filtrerLesPartiesProduitsParId(bd);
+            } catch (NullPointerException ex) {}
+        }
+        else
+        {
+            filtrerLesPartiesProduitsParId(null);
+        }
+    }
+
+    public void detailPermisSuivant(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Next.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void detailPermisPrecedent(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Previous.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void detailPermisPremier(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.First.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void detailPermisDernier(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Last.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
     }
 }

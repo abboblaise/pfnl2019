@@ -30,7 +30,16 @@ public class PagepargroupImpl extends EntityImpl {
         IdpagePagepargroup,
         Pageprojet,
         Pageprojet1,
-        Groupeutilisateur;
+        Groupeutilisateur,
+        LettreVoiturePc,
+        LettreVoiturePc1,
+        LettreVoiturePc2,
+        LettreVoiturePc3,
+        LettreVoiturePc4,
+        LettreVoiturePc5,
+        TypeDocument,
+        TypeDocument1,
+        TypeDocument2;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -53,6 +62,8 @@ public class PagepargroupImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int IDPAGEPARGROUP = AttributesEnum.Idpagepargroup.index();
     public static final int IDPAGE = AttributesEnum.Idpage.index();
     public static final int IDGROUPE = AttributesEnum.Idgroupe.index();
@@ -63,12 +74,29 @@ public class PagepargroupImpl extends EntityImpl {
     public static final int PAGEPROJET = AttributesEnum.Pageprojet.index();
     public static final int PAGEPROJET1 = AttributesEnum.Pageprojet1.index();
     public static final int GROUPEUTILISATEUR = AttributesEnum.Groupeutilisateur.index();
+    public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
+    public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
+    public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
+    public static final int LETTREVOITUREPC3 = AttributesEnum.LettreVoiturePc3.index();
+    public static final int LETTREVOITUREPC4 = AttributesEnum.LettreVoiturePc4.index();
+    public static final int LETTREVOITUREPC5 = AttributesEnum.LettreVoiturePc5.index();
+    public static final int TYPEDOCUMENT = AttributesEnum.TypeDocument.index();
+    public static final int TYPEDOCUMENT1 = AttributesEnum.TypeDocument1.index();
+    public static final int TYPEDOCUMENT2 = AttributesEnum.TypeDocument2.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public PagepargroupImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("cm.gov.minfof.model.entity.Pagepargroup");
+    }
+
 
     /**
      * Gets the attribute value for Idpagepargroup, using the alias name Idpagepargroup.
@@ -203,19 +231,118 @@ public class PagepargroupImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC, value);
+    }
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc1() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc1(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC1, value);
+    }
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc2() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC2);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc2(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC2, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc3() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC3);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc4() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC4);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc5() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC5);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument1() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument1(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT1, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument2() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT2);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument2(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT2, value);
+    }
+
+    /**
      * @param idpagepargroup key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal idpagepargroup) {
         return new Key(new Object[] { idpagepargroup });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("cm.gov.minfof.model.entity.Pagepargroup");
     }
 
     /**

@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Detailslettrevoiture"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="detailslettrevoiture"
@@ -184,6 +184,69 @@
     Association="cm.gov.minfof.model.entity.FkDetailslettrevoiture3Assoc1"
     AssociationEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture3Assoc1.Lettrevoiture7"
     AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture3Assoc1.Detailslettrevoiture7"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.FkDetailslettrevoiture3Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture3Assoc2.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture3Assoc2.Detailslettrevoiture"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkDetailslettrevoiture2Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture2Assoc2.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture2Assoc2.Detailslettrevoiture1"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkDetailslettrevoiture1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture1Assoc2.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture1Assoc2.Detailslettrevoiture2"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc22"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc22.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc22.Detailslettrevoiture3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc4"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc22"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc22.LettreVoiturePc4"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc22.Detailslettrevoiture4"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc5"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc22"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc22.LettreVoiturePc5"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc22.Detailslettrevoiture5"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.FkDetailslettrevoiture3Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture3Assoc3.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture3Assoc3.Detailslettrevoiture"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument1"
+    Association="cm.gov.minfof.model.entity.FkDetailslettrevoiture2Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture2Assoc3.TypeDocument1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture2Assoc3.Detailslettrevoiture1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument2"
+    Association="cm.gov.minfof.model.entity.FkDetailslettrevoiture1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture1Assoc3.TypeDocument2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailslettrevoiture1Assoc3.Detailslettrevoiture2"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key

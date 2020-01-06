@@ -109,7 +109,6 @@
           <Item Value="Numeropermis"/>
           <Item Value="Datedelivrance"/>
           <Item Value="Datefin"/>
-          <Item Value="Typedocument"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -134,7 +133,6 @@
           <Item Value="Datedelivrance"/>
           <Item Value="Datefin"/>
           <Item Value="Observation"/>
-          <Item Value="Typedocument"/>
           <Item Value="Nomfichier"/>
           <Item Value="Cheminfichier"/>
           <Item Value="Typefichier"/>

@@ -24,7 +24,10 @@ public class OriginespnflsImpl extends EntityImpl {
         Idoriginespnfls,
         Nomsource,
         Originepnfl,
-        Detailscollectepfnl;
+        Detailscollectepfnl,
+        LettreVoiturePc,
+        LettreVoiturePc1,
+        LettreVoiturePc2;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -53,6 +56,9 @@ public class OriginespnflsImpl extends EntityImpl {
     public static final int NOMSOURCE = AttributesEnum.Nomsource.index();
     public static final int ORIGINEPNFL = AttributesEnum.Originepnfl.index();
     public static final int DETAILSCOLLECTEPFNL = AttributesEnum.Detailscollectepfnl.index();
+    public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
+    public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
+    public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -124,6 +130,27 @@ public class OriginespnflsImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(DETAILSCOLLECTEPFNL);
     }
 
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc1() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC1);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc2() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC2);
+    }
 
     /**
      * @param idoriginespnfls key constituent

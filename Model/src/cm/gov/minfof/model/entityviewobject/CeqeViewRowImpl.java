@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 
 import java.sql.Date;
 
+import java.util.Calendar;
+
 import oracle.jbo.Row;
 import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
@@ -37,7 +39,9 @@ public class CeqeViewRowImpl extends ViewRowImpl {
         nomouraisonsociale,
         Idpermis,
         numeropermis,
+        numComplet,
         CeqeView,
+        LettreVoiturePcView,
         PermissionnairespnflView1,
         PermisView1,
         getPermisActifParPermissionnaire1,
@@ -77,7 +81,9 @@ public class CeqeViewRowImpl extends ViewRowImpl {
     public static final int NOMOURAISONSOCIALE = AttributesEnum.nomouraisonsociale.index();
     public static final int IDPERMIS = AttributesEnum.Idpermis.index();
     public static final int NUMEROPERMIS = AttributesEnum.numeropermis.index();
+    public static final int NUMCOMPLET = AttributesEnum.numComplet.index();
     public static final int CEQEVIEW = AttributesEnum.CeqeView.index();
+    public static final int LETTREVOITUREPCVIEW = AttributesEnum.LettreVoiturePcView.index();
     public static final int PERMISSIONNAIRESPNFLVIEW1 = AttributesEnum.PermissionnairespnflView1.index();
     public static final int PERMISVIEW1 = AttributesEnum.PermisView1.index();
     public static final int GETPERMISACTIFPARPERMISSIONNAIRE1 =
@@ -119,7 +125,12 @@ public class CeqeViewRowImpl extends ViewRowImpl {
      * @return the numeroceqe
      */
     public String getNumeroceqe() {
-        return (String) getAttributeInternal(NUMEROCEQE);
+        //return (String) getAttributeInternal(NUMEROCEQE);
+        String val = (String) getAttributeInternal(NUMEROCEQE);
+        if(val != null)
+            return val.substring(11);
+        else
+            return "";
     }
 
     /**
@@ -127,7 +138,15 @@ public class CeqeViewRowImpl extends ViewRowImpl {
      * @param value value to set the numeroceqe
      */
     public void setNumeroceqe(String value) {
+     //   setAttributeInternal(NUMEROCEQE, value);
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        String value1;
+        
+        value1 = Integer.toString(year) + "/CEQPC/" + value;
+        value = value1;
         setAttributeInternal(NUMEROCEQE, value);
+        
     }
 
     /**
@@ -283,10 +302,25 @@ public class CeqeViewRowImpl extends ViewRowImpl {
     }
 
     /**
+     * Gets the attribute value for the calculated attribute numComplet.
+     * @return the numComplet
+     */
+    public String getnumComplet() {
+        return (String) getAttributeInternal(NUMEROCEQE);
+    }
+
+    /**
      * Gets the associated <code>RowIterator</code> using master-detail link CeqeView.
      */
     public RowIterator getCeqeView() {
         return (RowIterator) getAttributeInternal(CEQEVIEW);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link LettreVoiturePcView.
+     */
+    public RowIterator getLettreVoiturePcView() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPCVIEW);
     }
 
     /**

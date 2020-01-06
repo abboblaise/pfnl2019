@@ -40,7 +40,14 @@ public class ExportpfnlImpl extends EntityImpl {
         IdpermisExportpfnl,
         Permis,
         Permissionnairespnfl,
-        Detailsexportpfnl;
+        Detailsexportpfnl,
+        LettreVoiturePc,
+        LettreVoiturePc1,
+        LettreVoiturePc2,
+        LettreVoiturePc3,
+        LettreVoiturePc4,
+        TypeDocument,
+        TypeDocument1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -82,6 +89,13 @@ public class ExportpfnlImpl extends EntityImpl {
     public static final int PERMIS = AttributesEnum.Permis.index();
     public static final int PERMISSIONNAIRESPNFL = AttributesEnum.Permissionnairespnfl.index();
     public static final int DETAILSEXPORTPFNL = AttributesEnum.Detailsexportpfnl.index();
+    public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
+    public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
+    public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
+    public static final int LETTREVOITUREPC3 = AttributesEnum.LettreVoiturePc3.index();
+    public static final int LETTREVOITUREPC4 = AttributesEnum.LettreVoiturePc4.index();
+    public static final int TYPEDOCUMENT = AttributesEnum.TypeDocument.index();
+    public static final int TYPEDOCUMENT1 = AttributesEnum.TypeDocument1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -334,6 +348,83 @@ public class ExportpfnlImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(DETAILSEXPORTPFNL);
     }
 
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC, value);
+    }
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc1() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc1(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC1, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc2() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC2);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc3() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC3);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc4() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC4);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument1() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument1(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT1, value);
+    }
 
     /**
      * @param idexportpfnl key constituent

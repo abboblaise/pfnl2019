@@ -25,6 +25,7 @@ import cm.gov.minfof.model.entityviewobject.PostecontroleViewImpl;
 import cm.gov.minfof.model.entityviewobject.RegionViewImpl;
 import cm.gov.minfof.model.entityviewobject.TransporteurViewImpl;
 import cm.gov.minfof.model.entityviewobject.TypeacteurViewImpl;
+import cm.gov.minfof.model.entityviewobject.UniteMesureWithPartieProduitPfnlImpl;
 import cm.gov.minfof.model.entityviewobject.UnitemesureViewImpl;
 import cm.gov.minfof.model.entityviewobject.UtilisateurViewImpl;
 import cm.gov.minfof.model.entityviewobject.VehiculeViewImpl;
@@ -51,6 +52,7 @@ import cm.gov.minfof.model.entityviewobject.listeSexeImpl;
 import cm.gov.minfof.model.entityviewobject.listeStatutPermissionnaireImpl;
 import cm.gov.minfof.model.entityviewobject.listeTypePersonneImpl;
 import cm.gov.minfof.model.entityviewobject.permisActifViewImpl;
+import cm.gov.minfof.model.entityviewobject.typeDocViewFinalImpl;
 import cm.gov.minfof.model.entityviewobject.typeDocumentViewImpl;
 
 import oracle.jbo.server.ApplicationModuleImpl;
@@ -4142,6 +4144,846 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public ViewLinkImpl getPosteControleToLocaliteLink2() {
         return (ViewLinkImpl) findViewLink("PosteControleToLocaliteLink2");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView1.
+     * @return LettreVoiturePcView1
+     */
+    public ViewObjectImpl getLettreVoiturePcView1() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView1");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView2.
+     * @return LettreVoiturePcView2
+     */
+    public ViewObjectImpl getLettreVoiturePcView2() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView2");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView3.
+     * @return LettreVoiturePcView3
+     */
+    public ViewObjectImpl getLettreVoiturePcView3() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView3");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView4.
+     * @return LettreVoiturePcView4
+     */
+    public ViewObjectImpl getLettreVoiturePcView4() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView4");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView5.
+     * @return LettreVoiturePcView5
+     */
+    public ViewObjectImpl getLettreVoiturePcView5() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView5");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView6.
+     * @return LettreVoiturePcView6
+     */
+    public ViewObjectImpl getLettreVoiturePcView6() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView6");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView7.
+     * @return LettreVoiturePcView7
+     */
+    public ViewObjectImpl getLettreVoiturePcView7() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView7");
+    }
+
+    /**
+     * Container's getter for ProduitsPfnlView13.
+     * @return ProduitsPfnlView13
+     */
+    public ProduitsPfnlViewImpl getProduitsPfnlView13() {
+        return (ProduitsPfnlViewImpl) findViewObject("ProduitsPfnlView13");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView8.
+     * @return LettreVoiturePcView8
+     */
+    public ViewObjectImpl getLettreVoiturePcView8() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView8");
+    }
+
+    /**
+     * Container's getter for ProduitsPfnlView14.
+     * @return ProduitsPfnlView14
+     */
+    public ProduitsPfnlViewImpl getProduitsPfnlView14() {
+        return (ProduitsPfnlViewImpl) findViewObject("ProduitsPfnlView14");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView9.
+     * @return LettreVoiturePcView9
+     */
+    public ViewObjectImpl getLettreVoiturePcView9() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView9");
+    }
+
+    /**
+     * Container's getter for ProduitsPfnlView15.
+     * @return ProduitsPfnlView15
+     */
+    public ProduitsPfnlViewImpl getProduitsPfnlView15() {
+        return (ProduitsPfnlViewImpl) findViewObject("ProduitsPfnlView15");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView10.
+     * @return LettreVoiturePcView10
+     */
+    public ViewObjectImpl getLettreVoiturePcView10() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView10");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView28.
+     * @return PartiesProduitsPfnlView28
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView28() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView28");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView11.
+     * @return LettreVoiturePcView11
+     */
+    public ViewObjectImpl getLettreVoiturePcView11() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView11");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView29.
+     * @return PartiesProduitsPfnlView29
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView29() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView29");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView12.
+     * @return LettreVoiturePcView12
+     */
+    public ViewObjectImpl getLettreVoiturePcView12() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView12");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView30.
+     * @return PartiesProduitsPfnlView30
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView30() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView30");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView13.
+     * @return LettreVoiturePcView13
+     */
+    public ViewObjectImpl getLettreVoiturePcView13() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView13");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView31.
+     * @return PartiesProduitsPfnlView31
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView31() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView31");
+    }
+
+    /**
+     * Container's getter for PartiesRecolteesView3.
+     * @return PartiesRecolteesView3
+     */
+    public PartiesRecolteesViewImpl getPartiesRecolteesView3() {
+        return (PartiesRecolteesViewImpl) findViewObject("PartiesRecolteesView3");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView14.
+     * @return LettreVoiturePcView14
+     */
+    public ViewObjectImpl getLettreVoiturePcView14() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView14");
+    }
+
+    /**
+     * Container's getter for ProduitsPfnlView16.
+     * @return ProduitsPfnlView16
+     */
+    public ProduitsPfnlViewImpl getProduitsPfnlView16() {
+        return (ProduitsPfnlViewImpl) findViewObject("ProduitsPfnlView16");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView15.
+     * @return LettreVoiturePcView15
+     */
+    public ViewObjectImpl getLettreVoiturePcView15() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView15");
+    }
+
+    /**
+     * Container's getter for FamillePfnlView3.
+     * @return FamillePfnlView3
+     */
+    public FamillePfnlViewImpl getFamillePfnlView3() {
+        return (FamillePfnlViewImpl) findViewObject("FamillePfnlView3");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView16.
+     * @return LettreVoiturePcView16
+     */
+    public ViewObjectImpl getLettreVoiturePcView16() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView16");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView32.
+     * @return PartiesProduitsPfnlView32
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView32() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView32");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView17.
+     * @return LettreVoiturePcView17
+     */
+    public ViewObjectImpl getLettreVoiturePcView17() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView17");
+    }
+
+    /**
+     * Container's getter for PartiesRecolteesView4.
+     * @return PartiesRecolteesView4
+     */
+    public PartiesRecolteesViewImpl getPartiesRecolteesView4() {
+        return (PartiesRecolteesViewImpl) findViewObject("PartiesRecolteesView4");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView18.
+     * @return LettreVoiturePcView18
+     */
+    public ViewObjectImpl getLettreVoiturePcView18() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView18");
+    }
+
+    /**
+     * Container's getter for ProduitsPfnlView17.
+     * @return ProduitsPfnlView17
+     */
+    public ProduitsPfnlViewImpl getProduitsPfnlView17() {
+        return (ProduitsPfnlViewImpl) findViewObject("ProduitsPfnlView17");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView19.
+     * @return LettreVoiturePcView19
+     */
+    public ViewObjectImpl getLettreVoiturePcView19() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView19");
+    }
+
+    /**
+     * Container's getter for FamillePfnlView4.
+     * @return FamillePfnlView4
+     */
+    public FamillePfnlViewImpl getFamillePfnlView4() {
+        return (FamillePfnlViewImpl) findViewObject("FamillePfnlView4");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView20.
+     * @return LettreVoiturePcView20
+     */
+    public ViewObjectImpl getLettreVoiturePcView20() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView20");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView33.
+     * @return PartiesProduitsPfnlView33
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView33() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView33");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView21.
+     * @return LettreVoiturePcView21
+     */
+    public ViewObjectImpl getLettreVoiturePcView21() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView21");
+    }
+
+    /**
+     * Container's getter for PartiesRecolteesView5.
+     * @return PartiesRecolteesView5
+     */
+    public PartiesRecolteesViewImpl getPartiesRecolteesView5() {
+        return (PartiesRecolteesViewImpl) findViewObject("PartiesRecolteesView5");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView22.
+     * @return LettreVoiturePcView22
+     */
+    public ViewObjectImpl getLettreVoiturePcView22() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView22");
+    }
+
+    /**
+     * Container's getter for ProduitsPfnlView18.
+     * @return ProduitsPfnlView18
+     */
+    public ProduitsPfnlViewImpl getProduitsPfnlView18() {
+        return (ProduitsPfnlViewImpl) findViewObject("ProduitsPfnlView18");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView23.
+     * @return LettreVoiturePcView23
+     */
+    public ViewObjectImpl getLettreVoiturePcView23() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView23");
+    }
+
+    /**
+     * Container's getter for FamillePfnlView5.
+     * @return FamillePfnlView5
+     */
+    public FamillePfnlViewImpl getFamillePfnlView5() {
+        return (FamillePfnlViewImpl) findViewObject("FamillePfnlView5");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView24.
+     * @return LettreVoiturePcView24
+     */
+    public ViewObjectImpl getLettreVoiturePcView24() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView24");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView34.
+     * @return PartiesProduitsPfnlView34
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView34() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView34");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView25.
+     * @return LettreVoiturePcView25
+     */
+    public ViewObjectImpl getLettreVoiturePcView25() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView25");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc4Link.
+     * @return FkLettrevoiturepc4Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc4Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc4Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc1Link.
+     * @return FkLettrevoiturepc1Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc1Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc1Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc3Link.
+     * @return FkLettrevoiturepc3Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc3Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc3Link");
+    }
+
+    /**
+     * Container's getter for fk_ProduitsPfnl1Assoc1Link.
+     * @return fk_ProduitsPfnl1Assoc1Link
+     */
+    public ViewLinkImpl getfk_ProduitsPfnl1Assoc1Link() {
+        return (ViewLinkImpl) findViewLink("fk_ProduitsPfnl1Assoc1Link");
+    }
+
+    /**
+     * Container's getter for fk_ProduitsPfnlAssoc1Link.
+     * @return fk_ProduitsPfnlAssoc1Link
+     */
+    public ViewLinkImpl getfk_ProduitsPfnlAssoc1Link() {
+        return (ViewLinkImpl) findViewLink("fk_ProduitsPfnlAssoc1Link");
+    }
+
+    /**
+     * Container's getter for ProduitspfnlIbfk1Assoc5Link.
+     * @return ProduitspfnlIbfk1Assoc5Link
+     */
+    public ViewLinkImpl getProduitspfnlIbfk1Assoc5Link() {
+        return (ViewLinkImpl) findViewLink("ProduitspfnlIbfk1Assoc5Link");
+    }
+
+    /**
+     * Container's getter for fk_PartiesProduitsPfnl1Assoc1Link.
+     * @return fk_PartiesProduitsPfnl1Assoc1Link
+     */
+    public ViewLinkImpl getfk_PartiesProduitsPfnl1Assoc1Link() {
+        return (ViewLinkImpl) findViewLink("fk_PartiesProduitsPfnl1Assoc1Link");
+    }
+
+    /**
+     * Container's getter for fk_PartiesProduitsPfnlAssoc1Link.
+     * @return fk_PartiesProduitsPfnlAssoc1Link
+     */
+    public ViewLinkImpl getfk_PartiesProduitsPfnlAssoc1Link() {
+        return (ViewLinkImpl) findViewLink("fk_PartiesProduitsPfnlAssoc1Link");
+    }
+
+    /**
+     * Container's getter for FkPartiesproduitspfnl2Assoc5Link.
+     * @return FkPartiesproduitspfnl2Assoc5Link
+     */
+    public ViewLinkImpl getFkPartiesproduitspfnl2Assoc5Link() {
+        return (ViewLinkImpl) findViewLink("FkPartiesproduitspfnl2Assoc5Link");
+    }
+
+    /**
+     * Container's getter for FkPartiesproduitspfnl1Assoc5Link.
+     * @return FkPartiesproduitspfnl1Assoc5Link
+     */
+    public ViewLinkImpl getFkPartiesproduitspfnl1Assoc5Link() {
+        return (ViewLinkImpl) findViewLink("FkPartiesproduitspfnl1Assoc5Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc3Assoc11Link.
+     * @return FkLettrevoiturepc3Assoc11Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc3Assoc11Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc3Assoc11Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc3Assoc19Link.
+     * @return FkLettrevoiturepc3Assoc19Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc3Assoc19Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc3Assoc19Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc3Assoc32Link.
+     * @return FkLettrevoiturepc3Assoc32Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc3Assoc32Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc3Assoc32Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc3Assoc35Link.
+     * @return FkLettrevoiturepc3Assoc35Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc3Assoc35Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc3Assoc35Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc1Assoc11Link.
+     * @return FkLettrevoiturepc1Assoc11Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc1Assoc11Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc1Assoc11Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc1Assoc19Link.
+     * @return FkLettrevoiturepc1Assoc19Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc1Assoc19Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc1Assoc19Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc1Assoc32Link.
+     * @return FkLettrevoiturepc1Assoc32Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc1Assoc32Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc1Assoc32Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc1Assoc35Link.
+     * @return FkLettrevoiturepc1Assoc35Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc1Assoc35Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc1Assoc35Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc4Assoc11Link.
+     * @return FkLettrevoiturepc4Assoc11Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc4Assoc11Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc4Assoc11Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc4Assoc19Link.
+     * @return FkLettrevoiturepc4Assoc19Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc4Assoc19Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc4Assoc19Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc4Assoc32Link.
+     * @return FkLettrevoiturepc4Assoc32Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc4Assoc32Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc4Assoc32Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc4Assoc35Link.
+     * @return FkLettrevoiturepc4Assoc35Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc4Assoc35Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc4Assoc35Link");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView26.
+     * @return LettreVoiturePcView26
+     */
+    public ViewObjectImpl getLettreVoiturePcView26() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView26");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView27.
+     * @return LettreVoiturePcView27
+     */
+    public ViewObjectImpl getLettreVoiturePcView27() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView27");
+    }
+
+    /**
+     * Container's getter for CeqpcToLettreVoiturePcLink1.
+     * @return CeqpcToLettreVoiturePcLink1
+     */
+    public ViewLinkImpl getCeqpcToLettreVoiturePcLink1() {
+        return (ViewLinkImpl) findViewLink("CeqpcToLettreVoiturePcLink1");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView2.
+     * @return TypeDocumentView2
+     */
+    public ViewObjectImpl getTypeDocumentView2() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView2");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView28.
+     * @return LettreVoiturePcView28
+     */
+    public ViewObjectImpl getLettreVoiturePcView28() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView28");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView3.
+     * @return TypeDocumentView3
+     */
+    public ViewObjectImpl getTypeDocumentView3() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView3");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView29.
+     * @return LettreVoiturePcView29
+     */
+    public ViewObjectImpl getLettreVoiturePcView29() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView29");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView4.
+     * @return TypeDocumentView4
+     */
+    public ViewObjectImpl getTypeDocumentView4() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView4");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView30.
+     * @return LettreVoiturePcView30
+     */
+    public ViewObjectImpl getLettreVoiturePcView30() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView30");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView5.
+     * @return TypeDocumentView5
+     */
+    public ViewObjectImpl getTypeDocumentView5() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView5");
+    }
+
+    /**
+     * Container's getter for LettreVoiturePcView31.
+     * @return LettreVoiturePcView31
+     */
+    public ViewObjectImpl getLettreVoiturePcView31() {
+        return (ViewObjectImpl) findViewObject("LettreVoiturePcView31");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView6.
+     * @return TypeDocumentView6
+     */
+    public ViewObjectImpl getTypeDocumentView6() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView6");
+    }
+
+    /**
+     * Container's getter for ProduitsPfnlView19.
+     * @return ProduitsPfnlView19
+     */
+    public ProduitsPfnlViewImpl getProduitsPfnlView19() {
+        return (ProduitsPfnlViewImpl) findViewObject("ProduitsPfnlView19");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView7.
+     * @return TypeDocumentView7
+     */
+    public ViewObjectImpl getTypeDocumentView7() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView7");
+    }
+
+    /**
+     * Container's getter for ProduitsPfnlView20.
+     * @return ProduitsPfnlView20
+     */
+    public ProduitsPfnlViewImpl getProduitsPfnlView20() {
+        return (ProduitsPfnlViewImpl) findViewObject("ProduitsPfnlView20");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView8.
+     * @return TypeDocumentView8
+     */
+    public ViewObjectImpl getTypeDocumentView8() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView8");
+    }
+
+    /**
+     * Container's getter for ProduitsPfnlView21.
+     * @return ProduitsPfnlView21
+     */
+    public ProduitsPfnlViewImpl getProduitsPfnlView21() {
+        return (ProduitsPfnlViewImpl) findViewObject("ProduitsPfnlView21");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView9.
+     * @return TypeDocumentView9
+     */
+    public ViewObjectImpl getTypeDocumentView9() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView9");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView35.
+     * @return PartiesProduitsPfnlView35
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView35() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView35");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView10.
+     * @return TypeDocumentView10
+     */
+    public ViewObjectImpl getTypeDocumentView10() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView10");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView36.
+     * @return PartiesProduitsPfnlView36
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView36() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView36");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView11.
+     * @return TypeDocumentView11
+     */
+    public ViewObjectImpl getTypeDocumentView11() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView11");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView37.
+     * @return PartiesProduitsPfnlView37
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView37() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView37");
+    }
+
+    /**
+     * Container's getter for TypeDocumentView12.
+     * @return TypeDocumentView12
+     */
+    public ViewObjectImpl getTypeDocumentView12() {
+        return (ViewObjectImpl) findViewObject("TypeDocumentView12");
+    }
+
+    /**
+     * Container's getter for PartiesProduitsPfnlView38.
+     * @return PartiesProduitsPfnlView38
+     */
+    public PartiesProduitsPfnlViewImpl getPartiesProduitsPfnlView38() {
+        return (PartiesProduitsPfnlViewImpl) findViewObject("PartiesProduitsPfnlView38");
+    }
+
+    /**
+     * Container's getter for fk_LettreVoiturePcLink.
+     * @return fk_LettreVoiturePcLink
+     */
+    public ViewLinkImpl getfk_LettreVoiturePcLink() {
+        return (ViewLinkImpl) findViewLink("fk_LettreVoiturePcLink");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc4Assoc36Link.
+     * @return FkLettrevoiturepc4Assoc36Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc4Assoc36Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc4Assoc36Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc3Assoc36Link.
+     * @return FkLettrevoiturepc3Assoc36Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc3Assoc36Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc3Assoc36Link");
+    }
+
+    /**
+     * Container's getter for FkLettrevoiturepc1Assoc36Link.
+     * @return FkLettrevoiturepc1Assoc36Link
+     */
+    public ViewLinkImpl getFkLettrevoiturepc1Assoc36Link() {
+        return (ViewLinkImpl) findViewLink("FkLettrevoiturepc1Assoc36Link");
+    }
+
+    /**
+     * Container's getter for fk_ProduitsPfnl1Assoc2Link.
+     * @return fk_ProduitsPfnl1Assoc2Link
+     */
+    public ViewLinkImpl getfk_ProduitsPfnl1Assoc2Link() {
+        return (ViewLinkImpl) findViewLink("fk_ProduitsPfnl1Assoc2Link");
+    }
+
+    /**
+     * Container's getter for fk_ProduitsPfnlAssoc2Link.
+     * @return fk_ProduitsPfnlAssoc2Link
+     */
+    public ViewLinkImpl getfk_ProduitsPfnlAssoc2Link() {
+        return (ViewLinkImpl) findViewLink("fk_ProduitsPfnlAssoc2Link");
+    }
+
+    /**
+     * Container's getter for ProduitspfnlIbfk1Assoc6Link.
+     * @return ProduitspfnlIbfk1Assoc6Link
+     */
+    public ViewLinkImpl getProduitspfnlIbfk1Assoc6Link() {
+        return (ViewLinkImpl) findViewLink("ProduitspfnlIbfk1Assoc6Link");
+    }
+
+    /**
+     * Container's getter for fk_PartiesProduitsPfnl1Assoc2Link.
+     * @return fk_PartiesProduitsPfnl1Assoc2Link
+     */
+    public ViewLinkImpl getfk_PartiesProduitsPfnl1Assoc2Link() {
+        return (ViewLinkImpl) findViewLink("fk_PartiesProduitsPfnl1Assoc2Link");
+    }
+
+    /**
+     * Container's getter for fk_PartiesProduitsPfnlAssoc2Link.
+     * @return fk_PartiesProduitsPfnlAssoc2Link
+     */
+    public ViewLinkImpl getfk_PartiesProduitsPfnlAssoc2Link() {
+        return (ViewLinkImpl) findViewLink("fk_PartiesProduitsPfnlAssoc2Link");
+    }
+
+    /**
+     * Container's getter for FkPartiesproduitspfnl2Assoc6Link.
+     * @return FkPartiesproduitspfnl2Assoc6Link
+     */
+    public ViewLinkImpl getFkPartiesproduitspfnl2Assoc6Link() {
+        return (ViewLinkImpl) findViewLink("FkPartiesproduitspfnl2Assoc6Link");
+    }
+
+    /**
+     * Container's getter for FkPartiesproduitspfnl1Assoc6Link.
+     * @return FkPartiesproduitspfnl1Assoc6Link
+     */
+    public ViewLinkImpl getFkPartiesproduitspfnl1Assoc6Link() {
+        return (ViewLinkImpl) findViewLink("FkPartiesproduitspfnl1Assoc6Link");
+    }
+
+    /**
+     * Container's getter for typeDocViewFinal1.
+     * @return typeDocViewFinal1
+     */
+    public typeDocViewFinalImpl gettypeDocViewFinal1() {
+        return (typeDocViewFinalImpl) findViewObject("typeDocViewFinal1");
+    }
+
+    /**
+     * Container's getter for UniteMesureWithPartieProduitPfnl1.
+     * @return UniteMesureWithPartieProduitPfnl1
+     */
+    public UniteMesureWithPartieProduitPfnlImpl getUniteMesureWithPartieProduitPfnl1() {
+        return (UniteMesureWithPartieProduitPfnlImpl) findViewObject("UniteMesureWithPartieProduitPfnl1");
+    }
+
+    /**
+     * Container's getter for UniteMesureWithPartieProduitPfnl2.
+     * @return UniteMesureWithPartieProduitPfnl2
+     */
+    public UniteMesureWithPartieProduitPfnlImpl getUniteMesureWithPartieProduitPfnl2() {
+        return (UniteMesureWithPartieProduitPfnlImpl) findViewObject("UniteMesureWithPartieProduitPfnl2");
     }
 }
 

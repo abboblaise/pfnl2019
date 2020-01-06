@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Detailsexportpfnl"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="detailsexportpfnl"
@@ -220,6 +220,83 @@
     Association="cm.gov.minfof.model.entity.ExportToDetailExportAssoc"
     AssociationEnd="cm.gov.minfof.model.entity.ExportToDetailExportAssoc.Exportpfnl"
     AssociationOtherEnd="cm.gov.minfof.model.entity.ExportToDetailExportAssoc.Detailsexportpfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.fk_DetailsexportpfnlAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_DetailsexportpfnlAssoc.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_DetailsexportpfnlAssoc.Detailsexportpfnl"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkDetailsexportpfnl3Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl3Assoc1.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl3Assoc1.Detailsexportpfnl1"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkDetailsexportpfnl2Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl2Assoc1.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl2Assoc1.Detailsexportpfnl2"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkDetailsexportpfnl1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl1Assoc1.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl1Assoc1.Detailsexportpfnl3"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc4"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc10"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc10.LettreVoiturePc4"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc10.Detailsexportpfnl4"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc5"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc10"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc10.LettreVoiturePc5"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc10.Detailsexportpfnl5"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc6"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc10"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc10.LettreVoiturePc6"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc10.Detailsexportpfnl6"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.fk_DetailsexportpfnlAssoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_DetailsexportpfnlAssoc1.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_DetailsexportpfnlAssoc1.Detailsexportpfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument1"
+    Association="cm.gov.minfof.model.entity.FkDetailsexportpfnl3Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl3Assoc2.TypeDocument1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl3Assoc2.Detailsexportpfnl1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument2"
+    Association="cm.gov.minfof.model.entity.FkDetailsexportpfnl2Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl2Assoc2.TypeDocument2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl2Assoc2.Detailsexportpfnl2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument3"
+    Association="cm.gov.minfof.model.entity.FkDetailsexportpfnl1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl1Assoc2.TypeDocument3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailsexportpfnl1Assoc2.Detailsexportpfnl3"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key

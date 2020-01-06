@@ -34,10 +34,6 @@ public interface PermisViewSDO extends java.io.Serializable {
 
    public void setIdpermissionnaire(java.math.BigDecimal value);
 
-   public java.lang.Integer getTypedocument();
-
-   public void setTypedocument(java.lang.Integer value);
-
    public java.lang.String getCheminfichier();
 
    public void setCheminfichier(java.lang.String value);
@@ -49,6 +45,10 @@ public interface PermisViewSDO extends java.io.Serializable {
    public java.lang.String getNumpermiscomplet();
 
    public void setNumpermiscomplet(java.lang.String value);
+
+   public java.math.BigDecimal getIdtypedocument();
+
+   public void setIdtypedocument(java.math.BigDecimal value);
 
    public java.util.List getPermisView();
 

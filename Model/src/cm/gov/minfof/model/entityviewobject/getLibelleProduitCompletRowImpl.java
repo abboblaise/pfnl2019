@@ -18,7 +18,6 @@ public class getLibelleProduitCompletRowImpl extends ViewRowImpl {
         Idpartiesproduitspfnl,
         Idcategorieunitemesure;
         private static AttributesEnum[] vals = null;
-        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -50,6 +49,30 @@ public class getLibelleProduitCompletRowImpl extends ViewRowImpl {
      * This is the default constructor (do not remove).
      */
     public getLibelleProduitCompletRowImpl() {
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute Libelle.
+     * @return the Libelle
+     */
+    public String getLibelle() {
+        return (String) getAttributeInternal(LIBELLE);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute Idpartiesproduitspfnl.
+     * @return the Idpartiesproduitspfnl
+     */
+    public BigDecimal getIdpartiesproduitspfnl() {
+        return (BigDecimal) getAttributeInternal(IDPARTIESPRODUITSPFNL);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute Idcategorieunitemesure.
+     * @return the Idcategorieunitemesure
+     */
+    public BigDecimal getIdcategorieunitemesure() {
+        return (BigDecimal) getAttributeInternal(IDCATEGORIEUNITEMESURE);
     }
 }
 

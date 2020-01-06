@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Detailpermis"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="detailpermis"
@@ -51,7 +51,6 @@
   </Attribute>
   <Attribute
     Name="Idunitemesure"
-    IsNotNull="true"
     ColumnName="idunitemesure"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -102,6 +101,17 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="Idregions"
+    ColumnName="idregions"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="detailpermis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="Detailpermis"
     Association="cm.gov.minfof.model.entity.FkDetailpermis3Assoc"
@@ -150,6 +160,83 @@
     AssociationEnd="cm.gov.minfof.model.entity.PermisToDetailAssoc.Permis"
     AssociationOtherEnd="cm.gov.minfof.model.entity.PermisToDetailAssoc.Detailpermis"
     Type="cm.gov.minfof.model.entity.PermisImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.fk_DetailpermisAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_DetailpermisAssoc.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_DetailpermisAssoc.Detailpermis"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis3Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis3Assoc1.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis3Assoc1.Detailpermis1"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis2Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis2Assoc1.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis2Assoc1.Detailpermis2"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis1Assoc1.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis1Assoc1.Detailpermis3"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc4"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc23"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc23.LettreVoiturePc4"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc23.Detailpermis4"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc5"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc23"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc23.LettreVoiturePc5"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc23.Detailpermis5"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc6"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc23"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc23.LettreVoiturePc6"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc23.Detailpermis6"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.fk_DetailpermisAssoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_DetailpermisAssoc1.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_DetailpermisAssoc1.Detailpermis"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument1"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis3Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis3Assoc2.TypeDocument1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis3Assoc2.Detailpermis1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument2"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis2Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis2Assoc2.TypeDocument2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis2Assoc2.Detailpermis2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument3"
+    Association="cm.gov.minfof.model.entity.FkDetailpermis1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkDetailpermis1Assoc2.TypeDocument3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis1Assoc2.Detailpermis3"
+    Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key
     Name="Primary1"

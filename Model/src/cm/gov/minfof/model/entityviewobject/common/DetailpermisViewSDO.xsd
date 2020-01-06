@@ -14,10 +14,12 @@
         <xsd:sequence>
             <xsd:element name="Iddetailpermis" type="xsd:decimal" minOccurs="0"/>
             <xsd:element name="Quantite" type="xsd:float" minOccurs="0" sdoXML:dataType="sdoJava:FloatObject"/>
-            <xsd:element name="Idunitemesure" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idunitemesure" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="Idpermis" type="xsd:decimal" minOccurs="0"/>
             <xsd:element name="Observation" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Idpartieproduitpfnl" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idregions" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="idunitemesureconsultation" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="DetailpermisView" type="DetailpermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="DetailpermisView1" type="DetailpermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="DetailpermisView2" type="DetailpermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>

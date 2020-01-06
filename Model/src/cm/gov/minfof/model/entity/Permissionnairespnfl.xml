@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Permissionnairespnfl"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="permissionnairespnfl"
@@ -332,7 +332,6 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    TableName="permissionnairespnfl"
     IsPersistent="false"
     IsQueriable="false"/>
   <AccessorAttribute
@@ -354,6 +353,27 @@
     Association="cm.gov.minfof.model.entity.ExportToPermissionnaireAssoc"
     AssociationEnd="cm.gov.minfof.model.entity.ExportToPermissionnaireAssoc.Exportpfnl"
     AssociationOtherEnd="cm.gov.minfof.model.entity.ExportToPermissionnaireAssoc.Permissionnairespnfl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc3.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc3.Permissionnairespnfl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc3.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc3.Permissionnairespnfl1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc3.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc3.Permissionnairespnfl2"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

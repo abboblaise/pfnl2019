@@ -26,7 +26,10 @@ public class TransporteurImpl extends EntityImpl {
         Nom,
         Adresse,
         Telephone,
-        Vehicule;
+        Vehicule,
+        LettreVoiturePc,
+        LettreVoiturePc1,
+        LettreVoiturePc2;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -57,6 +60,9 @@ public class TransporteurImpl extends EntityImpl {
     public static final int ADRESSE = AttributesEnum.Adresse.index();
     public static final int TELEPHONE = AttributesEnum.Telephone.index();
     public static final int VEHICULE = AttributesEnum.Vehicule.index();
+    public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
+    public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
+    public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -159,6 +165,27 @@ public class TransporteurImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(VEHICULE);
     }
 
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc1() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC1);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc2() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC2);
+    }
 
     /**
      * @param idtransporteur key constituent

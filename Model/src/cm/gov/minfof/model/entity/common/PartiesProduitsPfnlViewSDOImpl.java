@@ -75,19 +75,19 @@ public class PartiesProduitsPfnlViewSDOImpl extends SDODataObject implements Par
       set(START_PROPERTY_INDEX + 7 , value);
    }
 
-   public cm.gov.minfof.model.entityviewobject.common.UnitemesureViewSDO getUnitemesureView1() {
-      return (cm.gov.minfof.model.entityviewobject.common.UnitemesureViewSDO)get(START_PROPERTY_INDEX + 8);
-   }
-
-   public void setUnitemesureView1(cm.gov.minfof.model.entityviewobject.common.UnitemesureViewSDO value) {
-      set(START_PROPERTY_INDEX + 8 , value);
-   }
-
    public java.util.List getUnitemesureView() {
-      return getList(START_PROPERTY_INDEX + 9);
+      return getList(START_PROPERTY_INDEX + 8);
    }
 
    public void setUnitemesureView(java.util.List value) {
+      set(START_PROPERTY_INDEX + 8 , value);
+   }
+
+   public cm.gov.minfof.model.entityviewobject.common.UnitemesureViewSDO getUnitemesureView1() {
+      return (cm.gov.minfof.model.entityviewobject.common.UnitemesureViewSDO)get(START_PROPERTY_INDEX + 9);
+   }
+
+   public void setUnitemesureView1(cm.gov.minfof.model.entityviewobject.common.UnitemesureViewSDO value) {
       set(START_PROPERTY_INDEX + 9 , value);
    }
 

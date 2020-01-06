@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Collectepfnl"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="collectepfnl"
@@ -195,8 +195,7 @@
     Type="java.lang.String"
     ColumnType="CHAR"
     IsPersistent="false"
-    IsQueriable="false"
-    IsNotNull="true">
+    IsQueriable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -205,6 +204,42 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+  </Attribute>
+  <Attribute
+    Name="Identificateur"
+    Precision="50"
+    ColumnName="identificateur"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="collectepfnl"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Idregion"
+    ColumnName="idregion"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="collectepfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Numerocollecte"
+    Precision="45"
+    ColumnName="numerocollecte"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="collectepfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
   </Attribute>
   <AccessorAttribute
     Name="Collectepfnl"
@@ -234,6 +269,67 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.DeptToCollecteAssoc.Collectepfnl"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.fk_CollectepfnlAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_CollectepfnlAssoc.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_CollectepfnlAssoc.Collectepfnl"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkCollectepfnl1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkCollectepfnl1Assoc1.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkCollectepfnl1Assoc1.Collectepfnl1"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc5"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc5.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc5.Collectepfnl2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc5"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc5.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc5.Collectepfnl3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc4"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc5"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc5.LettreVoiturePc4"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc5.Collectepfnl4"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.fk_CollectepfnlAssoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_CollectepfnlAssoc1.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_CollectepfnlAssoc1.Collectepfnl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument1"
+    Association="cm.gov.minfof.model.entity.FkCollectepfnl1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkCollectepfnl1Assoc2.TypeDocument1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkCollectepfnl1Assoc2.Collectepfnl1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="CollectepfnlIdentificateurCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"identificateur" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Collectepfnl_Identificateur_Ch"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Collectepfnl.Identificateur"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="CollectepfnlNomdepartementCheck">
     <DesignTime>
@@ -268,18 +364,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Collectepfnl.nomposte"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="CollectepfnlNomuserCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"nomuser" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="COLLECTEPFNL_NOMUSER_CHECK"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="cm.gov.minfof.model.entity.Collectepfnl.nomuser"/>
     </AttrArray>
   </Key>
   <Key

@@ -127,20 +127,6 @@
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="Typedocument"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.lang.Integer"
-    ColumnType="TINYINT"
-    AliasName="typedocument"
-    Expression="typedocument"
-    SQLType="TINYINT">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="2"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
     Name="Nomfichier"
     IsUpdateable="false"
     IsPersistent="false"

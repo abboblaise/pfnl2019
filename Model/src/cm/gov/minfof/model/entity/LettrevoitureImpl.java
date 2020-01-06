@@ -39,6 +39,7 @@ public class LettrevoitureImpl extends EntityImpl {
         nomdepart,
         numpermis,
         nomacteur,
+        Idtypedocument,
         Lettrevoiture2,
         IddepartementdestinationLettrevoiture,
         Lettrevoiture4,
@@ -47,7 +48,16 @@ public class LettrevoitureImpl extends EntityImpl {
         Detailslettrevoiture4,
         Detailslettrevoiture5,
         Detailslettrevoiture6,
-        Detailslettrevoiture7;
+        Detailslettrevoiture7,
+        LettreVoiturePc,
+        LettreVoiturePc1,
+        LettreVoiturePc2,
+        LettreVoiturePc3,
+        LettreVoiturePc4,
+        LettreVoiturePc5,
+        TypeDocument,
+        TypeDocument1,
+        TypeDocument2;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -86,6 +96,7 @@ public class LettrevoitureImpl extends EntityImpl {
     public static final int NOMDEPART = AttributesEnum.nomdepart.index();
     public static final int NUMPERMIS = AttributesEnum.numpermis.index();
     public static final int NOMACTEUR = AttributesEnum.nomacteur.index();
+    public static final int IDTYPEDOCUMENT = AttributesEnum.Idtypedocument.index();
     public static final int LETTREVOITURE2 = AttributesEnum.Lettrevoiture2.index();
     public static final int IDDEPARTEMENTDESTINATIONLETTREVOITURE =
         AttributesEnum.IddepartementdestinationLettrevoiture.index();
@@ -96,6 +107,15 @@ public class LettrevoitureImpl extends EntityImpl {
     public static final int DETAILSLETTREVOITURE5 = AttributesEnum.Detailslettrevoiture5.index();
     public static final int DETAILSLETTREVOITURE6 = AttributesEnum.Detailslettrevoiture6.index();
     public static final int DETAILSLETTREVOITURE7 = AttributesEnum.Detailslettrevoiture7.index();
+    public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
+    public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
+    public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
+    public static final int LETTREVOITUREPC3 = AttributesEnum.LettreVoiturePc3.index();
+    public static final int LETTREVOITUREPC4 = AttributesEnum.LettreVoiturePc4.index();
+    public static final int LETTREVOITUREPC5 = AttributesEnum.LettreVoiturePc5.index();
+    public static final int TYPEDOCUMENT = AttributesEnum.TypeDocument.index();
+    public static final int TYPEDOCUMENT1 = AttributesEnum.TypeDocument1.index();
+    public static final int TYPEDOCUMENT2 = AttributesEnum.TypeDocument2.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -346,6 +366,22 @@ public class LettrevoitureImpl extends EntityImpl {
         setAttributeInternal(NOMACTEUR, value);
     }
 
+    /**
+     * Gets the attribute value for Idtypedocument, using the alias name Idtypedocument.
+     * @return the value of Idtypedocument
+     */
+    public BigDecimal getIdtypedocument() {
+        return (BigDecimal) getAttributeInternal(IDTYPEDOCUMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Idtypedocument.
+     * @param value value to set the Idtypedocument
+     */
+    public void setIdtypedocument(BigDecimal value) {
+        setAttributeInternal(IDTYPEDOCUMENT, value);
+    }
+
     @Override
     protected void doDML(int operation, TransactionEvent transactionEvent) {
         if (operation == DML_INSERT) {
@@ -417,28 +453,28 @@ public class LettrevoitureImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getDetailslettrevoiture2() {
-        return (EntityImpl) getAttributeInternal(DETAILSLETTREVOITURE2);
+    public DetailslettrevoitureImpl getDetailslettrevoiture2() {
+        return (DetailslettrevoitureImpl) getAttributeInternal(DETAILSLETTREVOITURE2);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setDetailslettrevoiture2(EntityImpl value) {
+    public void setDetailslettrevoiture2(DetailslettrevoitureImpl value) {
         setAttributeInternal(DETAILSLETTREVOITURE2, value);
     }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getDetailslettrevoiture4() {
-        return (EntityImpl) getAttributeInternal(DETAILSLETTREVOITURE4);
+    public DetailslettrevoitureImpl getDetailslettrevoiture4() {
+        return (DetailslettrevoitureImpl) getAttributeInternal(DETAILSLETTREVOITURE4);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setDetailslettrevoiture4(EntityImpl value) {
+    public void setDetailslettrevoiture4(DetailslettrevoitureImpl value) {
         setAttributeInternal(DETAILSLETTREVOITURE4, value);
     }
 
@@ -461,6 +497,111 @@ public class LettrevoitureImpl extends EntityImpl {
      */
     public RowIterator getDetailslettrevoiture7() {
         return (RowIterator) getAttributeInternal(DETAILSLETTREVOITURE7);
+    }
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC, value);
+    }
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc1() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc1(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC1, value);
+    }
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc2() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC2);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc2(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC2, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc3() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC3);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc4() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC4);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc5() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC5);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument1() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument1(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT1, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument2() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT2);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument2(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT2, value);
     }
 
     /**

@@ -57,6 +57,9 @@
     <page path="/page_ceqe.jsf" usageId="cm_gov_minfof_view_page_ceqePageDef"/>
     <page path="/untitled1.jsf" usageId="cm_gov_minfof_view_untitled1PageDef1"/>
     <page path="/untitled2.jsf" usageId="cm_gov_minfof_view_untitled2PageDef"/>
+    <page path="/page_lettrevoiturepc.jsf" usageId="cm_gov_minfof_view_page_lettrevoiturepcPageDef"/>
+    <page path="/a_supprimer.jsf" usageId="cm_gov_minfof_view_a_supprimerPageDef"/>
+    <page path="/untitled3.jsf" usageId="cm_gov_minfof_view_untitled3PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="cm_gov_minfof_view_page_regionPageDef" path="cm.gov.minfof.view.pageDefs.page_regionPageDef"/>
@@ -120,6 +123,10 @@
     <page id="cm_gov_minfof_view_page_ceqePageDef" path="cm.gov.minfof.view.pageDefs.page_ceqePageDef"/>
     <page id="cm_gov_minfof_view_untitled1PageDef1" path="cm.gov.minfof.view.pageDefs.untitled1PageDef1"/>
     <page id="cm_gov_minfof_view_untitled2PageDef" path="cm.gov.minfof.view.pageDefs.untitled2PageDef"/>
+    <page id="cm_gov_minfof_view_page_lettrevoiturepcPageDef"
+          path="cm.gov.minfof.view.pageDefs.page_lettrevoiturepcPageDef"/>
+    <page id="cm_gov_minfof_view_a_supprimerPageDef" path="cm.gov.minfof.view.pageDefs.a_supprimerPageDef"/>
+    <page id="cm_gov_minfof_view_untitled3PageDef" path="cm.gov.minfof.view.pageDefs.untitled3PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="cm.gov.minfof.model.entity"

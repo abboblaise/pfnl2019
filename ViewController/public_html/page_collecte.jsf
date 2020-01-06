@@ -140,6 +140,44 @@
                                         <af:panelBox id="pb1" showDisclosure="false">
                                             <f:facet name="toolbar"/>
                                             <af:panelGridLayout id="pgl3">
+                                            
+                                                <af:gridRow marginTop="5px" height="auto" id="gr1id">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc1id">
+                                                        <af:outputLabel value="#{bindings.Identificateur.hints.label}"
+                                                                        id="ol1"/>
+                                                    </af:gridCell>
+                                                    
+                                                     <af:gridCell marginStart="5px" width="320pt" marginEnd="5px"
+                                                                 id="gc2id">
+                                                        <af:inputText simple="true"
+                                                                      required="#{bindings.Identificateur.hints.mandatory}"
+                                                                      columns="#{bindings.Identificateur.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Identificateur.hints.precision}"
+                                                                      shortDesc="#{bindings.Identificateur.hints.tooltip}"
+                                                                      id="it1">
+                                                            <f:validator binding="#{bindings.Identificateur.validator}"/>
+                                                        </af:inputText>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                
+                                                 <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc1">
+                                                        <af:outputLabel value="#{bindings.Numerocollecte.hints.label}"
+                                                                        id="ol2"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc2">
+                                                        <af:inputText simple="true"
+                                                                      required="#{bindings.Numerocollecte.hints.mandatory}"
+                                                                      columns="#{bindings.Numerocollecte.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Numerocollecte.hints.precision}"
+                                                                      shortDesc="#{bindings.Numerocollecte.hints.tooltip}"
+                                                                      id="it2">
+                                                            <f:validator binding="#{bindings.Numerocollecte.validator}"/>
+                                                        </af:inputText>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                               
+                                            <!--
                                                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc1">
                                                         <af:outputText value="#{bindings.Idutilisateur.label}"
@@ -157,7 +195,9 @@
                                                             <f:validator binding="#{bindings.nomuser.validator}"/>
                                                         </af:inputComboboxListOfValues>
                                                     </af:gridCell>
-                                                </af:gridRow>
+                                                </af:gridRow> -->
+                                                
+                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc3">
                                                         <af:outputText value="#{bindings.Iddepartement.label}"

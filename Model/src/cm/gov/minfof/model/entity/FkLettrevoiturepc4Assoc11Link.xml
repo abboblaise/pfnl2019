@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkLettrevoiturepc4Assoc11Link"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc11">
+  <ViewLinkDefEnd
+    Name="PartiesRecolteesView"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.PartiesRecolteesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="PartiesRecolteesView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.PartiesRecolteesView.Idpartiesrecoltees"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="LettreVoiturePcView2"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entity.LettreVoiturePcView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="LettreVoiturePcView2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.LettreVoiturePcView.Idpostechargement"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

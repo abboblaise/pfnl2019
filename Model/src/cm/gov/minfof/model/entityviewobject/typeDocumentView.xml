@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="typeDocumentView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="true"
@@ -25,6 +25,10 @@
         ResId="cm.gov.minfof.model.entityviewobject.typeDocumentView_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="PermisView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PermisView"
+    RowLevelBinds="true"/>
   <ViewAttribute
     Name="idtypedoc"
     IsUpdateable="false"
@@ -32,7 +36,8 @@
     PrecisionRule="true"
     Type="java.lang.Integer"
     ColumnType="$none$"
-    SQLType="INTEGER"/>
+    SQLType="INTEGER"
+    IsNotNull="true"/>
   <ViewAttribute
     Name="libelleTypeDocument"
     IsUpdateable="false"
@@ -41,7 +46,8 @@
     PrecisionRule="true"
     Type="java.lang.String"
     ColumnType="CHAR"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    IsNotNull="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -52,6 +58,15 @@
   <AttrArray Name="KeyAttributes">
     <Item Value="idtypedoc"/>
   </AttrArray>
+  <LOVUIHints
+    ListType="105"
+    MRUCount="0"
+    NullValueFlag="none">
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="libelleTypeDocument"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </LOVUIHints>
   <StaticList
     Rows="2"
     Columns="2"/>

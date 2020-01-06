@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="FamillePfnlView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -49,6 +49,21 @@
   <ViewLinkAccessor
     Name="PartiesProduitsPfnlView1"
     ViewLink="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LettreVoiturePcView"
+    ViewLink="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc32Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LettreVoiturePcView1"
+    ViewLink="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc32Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LettreVoiturePcView2"
+    ViewLink="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc32Link"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ViewLinkAccessor

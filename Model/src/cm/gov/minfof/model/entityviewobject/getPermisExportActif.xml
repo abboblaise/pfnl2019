@@ -33,7 +33,7 @@ where year(permis.datedelivrance)=year(current_date()) and
 permis.idpermissionnaire = permissionnairespnfl.IDPermissionnairesPNFL and
 permis.idpermis = ceqe.idpermis and
 year(ceqe.datedelivrance)=year(current_date()) and
-permis.typedocument = 1]]></SQLQuery>
+permis.idtypedocument = 1]]></SQLQuery>
   <ViewAttribute
     Name="Idpermis"
     IsUpdateable="false"

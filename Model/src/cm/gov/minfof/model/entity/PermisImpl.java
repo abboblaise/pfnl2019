@@ -2,6 +2,8 @@ package cm.gov.minfof.model.entity;
 
 import cm.gov.minfof.model.entity.common.Longtext4;
 
+import cm.gov.minfof.model.entityviewobject.typeDocumentViewRowImpl;
+
 import java.math.BigDecimal;
 
 import java.sql.Date;
@@ -34,9 +36,9 @@ public class PermisImpl extends EntityImpl {
         Observation,
         Idagrement,
         Idpermissionnaire,
-        Typedocument,
         Cheminfichier,
         Nomfichier,
+        Idtypedocument,
         Permis,
         IdpermissionnairePermis,
         Permis1,
@@ -44,7 +46,16 @@ public class PermisImpl extends EntityImpl {
         Detailpermis,
         Permissionnairespnfl,
         Exportpfnl,
-        Certificatorigine;
+        Certificatorigine,
+        LettreVoiturePc,
+        LettreVoiturePc1,
+        LettreVoiturePc2,
+        LettreVoiturePc3,
+        LettreVoiturePc4,
+        LettreVoiturePc5,
+        TypeDocument,
+        TypeDocument1,
+        TypeDocument2;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -77,9 +88,9 @@ public class PermisImpl extends EntityImpl {
     public static final int OBSERVATION = AttributesEnum.Observation.index();
     public static final int IDAGREMENT = AttributesEnum.Idagrement.index();
     public static final int IDPERMISSIONNAIRE = AttributesEnum.Idpermissionnaire.index();
-    public static final int TYPEDOCUMENT = AttributesEnum.Typedocument.index();
     public static final int CHEMINFICHIER = AttributesEnum.Cheminfichier.index();
     public static final int NOMFICHIER = AttributesEnum.Nomfichier.index();
+    public static final int IDTYPEDOCUMENT = AttributesEnum.Idtypedocument.index();
     public static final int PERMIS = AttributesEnum.Permis.index();
     public static final int IDPERMISSIONNAIREPERMIS = AttributesEnum.IdpermissionnairePermis.index();
     public static final int PERMIS1 = AttributesEnum.Permis1.index();
@@ -88,6 +99,15 @@ public class PermisImpl extends EntityImpl {
     public static final int PERMISSIONNAIRESPNFL = AttributesEnum.Permissionnairespnfl.index();
     public static final int EXPORTPFNL = AttributesEnum.Exportpfnl.index();
     public static final int CERTIFICATORIGINE = AttributesEnum.Certificatorigine.index();
+    public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
+    public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
+    public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
+    public static final int LETTREVOITUREPC3 = AttributesEnum.LettreVoiturePc3.index();
+    public static final int LETTREVOITUREPC4 = AttributesEnum.LettreVoiturePc4.index();
+    public static final int LETTREVOITUREPC5 = AttributesEnum.LettreVoiturePc5.index();
+    public static final int TYPEDOCUMENT = AttributesEnum.TypeDocument.index();
+    public static final int TYPEDOCUMENT1 = AttributesEnum.TypeDocument1.index();
+    public static final int TYPEDOCUMENT2 = AttributesEnum.TypeDocument2.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -155,15 +175,15 @@ public class PermisImpl extends EntityImpl {
      * Gets the attribute value for Datedelivrance, using the alias name Datedelivrance.
      * @return the value of Datedelivrance
      */
-    public Timestamp getDatedelivrance() {
-        return (Timestamp) getAttributeInternal(DATEDELIVRANCE);
+    public Date getDatedelivrance() {
+        return (Date) getAttributeInternal(DATEDELIVRANCE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Datedelivrance.
      * @param value value to set the Datedelivrance
      */
-    public void setDatedelivrance(Timestamp value) {
+    public void setDatedelivrance(Date value) {
         setAttributeInternal(DATEDELIVRANCE, value);
     }
 
@@ -231,21 +251,6 @@ public class PermisImpl extends EntityImpl {
         setAttributeInternal(IDPERMISSIONNAIRE, value);
     }
 
-    /**
-     * Gets the attribute value for Typedocument, using the alias name Typedocument.
-     * @return the value of Typedocument
-     */
-    public Integer getTypedocument() {
-        return (Integer) getAttributeInternal(TYPEDOCUMENT);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for Typedocument.
-     * @param value value to set the Typedocument
-     */
-    public void setTypedocument(Integer value) {
-        setAttributeInternal(TYPEDOCUMENT, value);
-    }
 
     /**
      * Gets the attribute value for Cheminfichier, using the alias name Cheminfichier.
@@ -279,6 +284,22 @@ public class PermisImpl extends EntityImpl {
         setAttributeInternal(NOMFICHIER, value);
     }
 
+
+    /**
+     * Gets the attribute value for Idtypedocument, using the alias name Idtypedocument.
+     * @return the value of Idtypedocument
+     */
+    public BigDecimal getIdtypedocument() {
+        return (BigDecimal) getAttributeInternal(IDTYPEDOCUMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Idtypedocument.
+     * @param value value to set the Idtypedocument
+     */
+    public void setIdtypedocument(BigDecimal value) {
+        setAttributeInternal(IDTYPEDOCUMENT, value);
+    }
 
     /**
      * @return the associated entity oracle.jbo.RowIterator.
@@ -362,6 +383,112 @@ public class PermisImpl extends EntityImpl {
 
 
     /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC, value);
+    }
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc1() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc1(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC1, value);
+    }
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc2() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC2);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc2(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC2, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc3() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC3);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc4() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC4);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc5() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC5);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument1() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument1(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT1, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument2() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT2);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument2(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT2, value);
+    }
+
+
+    /**
      * @param idpermis key constituent
 
      * @return a Key object based on given key constituents.
@@ -400,12 +527,14 @@ public class PermisImpl extends EntityImpl {
     protected void doDML(int operation, TransactionEvent e) {
         if (operation == DML_INSERT) {
             BigDecimal id = getLastId("getLastidPermis1");
+            System.out.println("id = " + id.longValue());
             this.setIdpermis(id);
         }
         super.doDML(operation, e);
     }
     
     public BigDecimal getLastId(String viewName) {
+        System.out.println("je suis dans la methode qui cherche les ids");
         BigDecimal lastId = new BigDecimal(0);
         ViewObject vo = this.getDBTransaction()
                             .getRootApplicationModule()

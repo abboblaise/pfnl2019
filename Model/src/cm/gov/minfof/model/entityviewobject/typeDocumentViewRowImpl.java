@@ -13,8 +13,10 @@ public class typeDocumentViewRowImpl extends ViewRowImpl {
      */
     protected enum AttributesEnum {
         idtypedoc,
-        libelleTypeDocument;
+        libelleTypeDocument,
+        PermisView1;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -36,8 +38,11 @@ public class typeDocumentViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
+
     public static final int IDTYPEDOC = AttributesEnum.idtypedoc.index();
     public static final int LIBELLETYPEDOCUMENT = AttributesEnum.libelleTypeDocument.index();
+    public static final int PERMISVIEW1 = AttributesEnum.PermisView1.index();
 
     /**
      * This is the default constructor (do not remove).

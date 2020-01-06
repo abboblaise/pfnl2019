@@ -86,6 +86,7 @@
           <Item Value="Idpostechargement"/>
           <Item Value="Iddepartementdestination"/>
           <Item Value="Idpostechargement1"/>
+          <Item Value="Idtypedocument"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -106,5 +107,12 @@
     <listOfValues IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_nomdepart" id="nomdepart"/>
     <listOfValues IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_numpermis" id="numpermis"/>
     <listOfValues IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_nomacteur" id="nomacteur"/>
+    <attributeValues IterBinding="LettrevoitureView1Iterator" id="Idtypedocument">
+      <AttrNames>
+        <Item Value="Idtypedocument"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_Idtypedocument" id="Idtypedocument1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

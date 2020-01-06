@@ -23,7 +23,10 @@ public class CategorieunitemesureImpl extends EntityImpl {
     protected enum AttributesEnum {
         Idcategorieunitemesure,
         Libellecategorie,
-        Unitemesure;
+        Unitemesure,
+        LettreVoiturePc,
+        LettreVoiturePc1,
+        LettreVoiturePc2;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -51,6 +54,9 @@ public class CategorieunitemesureImpl extends EntityImpl {
     public static final int IDCATEGORIEUNITEMESURE = AttributesEnum.Idcategorieunitemesure.index();
     public static final int LIBELLECATEGORIE = AttributesEnum.Libellecategorie.index();
     public static final int UNITEMESURE = AttributesEnum.Unitemesure.index();
+    public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
+    public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
+    public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -106,6 +112,27 @@ public class CategorieunitemesureImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(UNITEMESURE);
     }
 
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc1() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC1);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc2() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC2);
+    }
 
     /**
      * @param idcategorieunitemesure key constituent

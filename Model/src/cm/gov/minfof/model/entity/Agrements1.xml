@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Agrements1"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="agrements"
@@ -184,20 +184,6 @@
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <AccessorAttribute
-    Name="Commune"
-    Association="CommunesIbfk1Assoc"
-    AssociationEnd="CommunesIbfk1Assoc.Commune"
-    AssociationOtherEnd="CommunesIbfk1Assoc.Agrements1"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <AccessorAttribute
-    Name="Departement"
-    Association="DepartementsIbfk1Assoc"
-    AssociationEnd="DepartementsIbfk1Assoc.Departement"
-    AssociationOtherEnd="DepartementsIbfk1Assoc.Agrements1"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <AccessorAttribute
     Name="Unitemesure"
     Association="fk_Unitemesure1Assoc"
     AssociationEnd="fk_Unitemesure1Assoc.Unitemesure"
@@ -246,6 +232,45 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.fk_PartiesProduitsPfnl1Assoc.Agrements1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc27"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc27.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc27.Agrements1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc27"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc27.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc27.Agrements11"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc27"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc27.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc27.Agrements12"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Commune"
+    Association="cm.gov.minfof.model.entity.CommunesIbfk1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc3.Commune"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc3.Agrements1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+  <AccessorAttribute
+    Name="Departement"
+    Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc3.Departement"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc3.Agrements1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="AgrementsNumagreementCheck">
     <DesignTime>
@@ -268,8 +293,4 @@
       <Item Value="cm.gov.minfof.model.entity.Agrements1.Idagrements"/>
     </AttrArray>
   </Key>
-  <ResourceBundle>
-    <PropertiesBundle
-      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
-  </ResourceBundle>
 </Entity>

@@ -23,10 +23,10 @@
             <xsd:element name="Observation" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Idagrement" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="Idpermissionnaire" type="xsd:decimal" minOccurs="0" nillable="true"/>
-            <xsd:element name="Typedocument" type="xsd:int" minOccurs="0" nillable="true"/>
             <xsd:element name="Cheminfichier" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Nomfichier" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Numpermiscomplet" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idtypedocument" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="PermisView" type="PermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="PermisView1" type="PermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="DetailpermisView" type="DetailpermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>

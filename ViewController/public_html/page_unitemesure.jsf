@@ -216,7 +216,6 @@
                                             </af:gridCell>
                                             <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc15">
                                                 <af:selectBooleanCheckbox value="#{bindings.Actif.inputValue}"
-                                                                          label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
                                                                           shortDesc="#{bindings.Actif.hints.tooltip}"
                                                                           id="sbc1"/>
                                             </af:gridCell>

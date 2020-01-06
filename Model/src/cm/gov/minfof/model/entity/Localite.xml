@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Localite"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="localite"
@@ -101,6 +101,55 @@
     AssociationEnd="cm.gov.minfof.model.entity.PosteControleToLocaliteAssoc.Postecontrole"
     AssociationOtherEnd="cm.gov.minfof.model.entity.PosteControleToLocaliteAssoc.Localite"
     Type="cm.gov.minfof.model.entity.PostecontroleImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.fk_LocaliteAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_LocaliteAssoc.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_LocaliteAssoc.Localite"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLocalite1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc1.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc1.Localite1"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc17"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc17.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc17.Localite2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc17"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc17.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc17.Localite3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc4"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc17"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc17.LettreVoiturePc4"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc17.Localite4"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.fk_LocaliteAssoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_LocaliteAssoc1.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_LocaliteAssoc1.Localite"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument1"
+    Association="cm.gov.minfof.model.entity.FkLocalite1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc2.TypeDocument1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc2.Localite1"
+    Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key
     Name="Primary1"

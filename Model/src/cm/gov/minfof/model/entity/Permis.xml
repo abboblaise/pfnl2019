@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Permis"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="permis"
@@ -51,12 +51,6 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
-    <validation:RegExpValidationBean
-      Name="NumeropermisRule0"
-      ResId="CENUMERO_DOIT__U00EATRE_COMPOS_U00E9_DE_QUATRE__4__CHIFFRES"
-      OnAttribute="Numeropermis"
-      Pattern="^(\d{4})(\S*)(\d{4})$"
-      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="Zonecoupe"
@@ -78,10 +72,9 @@
     Name="Datedelivrance"
     ColumnName="datedelivrance"
     SQLType="DATE"
-    Type="oracle.jbo.domain.Timestamp"
+    Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="permis"
-    IsNotNull="true">
+    TableName="permis">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -95,8 +88,7 @@
     SQLType="DATE"
     Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="permis"
-    IsNotNull="true">
+    TableName="permis">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -154,24 +146,6 @@
     </Properties>
   </Attribute>
   <Attribute
-    Name="Typedocument"
-    ColumnName="typedocument"
-    SQLType="TINYINT"
-    Type="java.lang.Integer"
-    ColumnType="TINYINT"
-    TableName="permis"
-    IsNotNull="true">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="3"/>
-    </DesignTime>
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="cm.gov.minfof.model.entity.Permis.Typedocument_LABEL"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Attribute>
-  <Attribute
     Name="Cheminfichier"
     Precision="500"
     ColumnName="cheminfichier"
@@ -193,6 +167,17 @@
     TableName="permis">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Idtypedocument"
+    ColumnName="idtypedocument"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="permis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
     </DesignTime>
   </Attribute>
   <AccessorAttribute
@@ -251,30 +236,69 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.PermisToCoAssoc.Permis"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
-  <Key
-    Name="PermisDatedelivranceCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"datedelivrance" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="Permis_Datedelivrance_Check"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="cm.gov.minfof.model.entity.Permis.Datedelivrance"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="PermisDatefinCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"datefin" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="Permis_Datefin_Check"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="cm.gov.minfof.model.entity.Permis.Datefin"/>
-    </AttrArray>
-  </Key>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.fk_PermisAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_PermisAssoc.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_PermisAssoc.Permis"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkPermis2Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPermis2Assoc2.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPermis2Assoc2.Permis1"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkPermis1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPermis1Assoc2.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPermis1Assoc2.Permis2"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc21"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc21.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc21.Permis3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc4"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc21"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc21.LettreVoiturePc4"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc21.Permis4"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc5"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc21"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc21.LettreVoiturePc5"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc21.Permis5"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.fk_PermisAssoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_PermisAssoc1.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_PermisAssoc1.Permis"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument1"
+    Association="cm.gov.minfof.model.entity.FkPermis2Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPermis2Assoc3.TypeDocument1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPermis2Assoc3.Permis1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument2"
+    Association="cm.gov.minfof.model.entity.FkPermis1Assoc3"
+    AssociationEnd="cm.gov.minfof.model.entity.FkPermis1Assoc3.TypeDocument2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkPermis1Assoc3.Permis2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PermisIdpermissionnaireCheck">
     <DesignTime>
@@ -285,18 +309,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Permis.Idpermissionnaire"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="PermisTypedocumentCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"typedocument" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="Permis_Typedocument_Check"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="cm.gov.minfof.model.entity.Permis.Typedocument"/>
     </AttrArray>
   </Key>
   <Key

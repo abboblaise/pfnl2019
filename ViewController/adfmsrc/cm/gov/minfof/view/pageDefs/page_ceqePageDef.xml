@@ -58,6 +58,7 @@
           <Item Value="Nomfichier"/>
           <Item Value="Cheminfichier"/>
           <Item Value="Idpermis"/>
+          <Item Value="numComplet"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -66,5 +67,10 @@
     <action IterBinding="CeqeView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <listOfValues IterBinding="CeqeView1Iterator" StaticList="false" Uses="LOV_numeropermis" id="numeropermis"/>
+    <attributeValues IterBinding="CeqeView1Iterator" id="numComplet">
+      <AttrNames>
+        <Item Value="numComplet"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

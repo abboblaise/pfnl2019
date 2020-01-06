@@ -11,7 +11,7 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
                 <f:facet name="content">
-                    <af:panelSplitter id="ps1" splitterPosition="503" collapsed="true">
+                    <af:panelSplitter id="ps1" splitterPosition="503" collapsed="false">
                         <f:facet name="first">
                             <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_LETTRES_DE_VOITURE}" id="pb5"
                                          showDisclosure="false">
@@ -53,6 +53,18 @@
                                                       varStatus="vs" id="t1"
                                                       partialTriggers=":::b3 :::b8 :::b9 :::b10 :::b11 :::b14 :::b15 :::b16 :::b17 :::b1"
                                                       autoHeightRows="15">
+                                                <af:column headerText="#{bindings.LettrevoitureView1.hints.Idtypedocument.label}"
+                                                           id="c13">
+                                                    <af:selectOneChoice value="#{row.bindings.Idtypedocument.inputValue}"
+                                                                        label="#{row.bindings.Idtypedocument.label}"
+                                                                        required="#{bindings.LettrevoitureView1.hints.Idtypedocument.mandatory}"
+                                                                        shortDesc="#{bindings.LettrevoitureView1.hints.Idtypedocument.tooltip}"
+                                                                        id="soc2">
+                                                        <f:selectItems value="#{row.bindings.Idtypedocument.items}"
+                                                                       id="si1"/>
+                                                        <f:validator binding="#{row.bindings.Idtypedocument.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
                                                 <af:column sortProperty="#{bindings.LettrevoitureView1.hints.Numerolettrevoiture.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.LettrevoitureView1.hints.Numerolettrevoiture.label}"
@@ -156,6 +168,23 @@
                                         <af:panelBox id="pb2" showDisclosure="false">
                                             <f:facet name="toolbar"/>
                                             <af:panelGridLayout id="pgl4">
+                                            
+                                                <af:gridRow marginTop="5px" height="auto" id="grtype">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gctype1">
+                                                        <af:outputText value="#{bindings.Idtypedocument1.hints.label}" id="ottype1"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" id="gctype">
+                                                        <af:selectOneChoice value="#{bindings.Idtypedocument1.inputValue}"
+                                                                            required="#{bindings.Idtypedocument1.hints.mandatory}"
+                                                                            shortDesc="#{bindings.Idtypedocument1.hints.tooltip}"
+                                                                            id="soc4">
+                                                            <f:selectItems value="#{bindings.Idtypedocument1.items}"
+                                                                           id="si2"/>
+                                                            <f:validator binding="#{bindings.Idtypedocument1.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                            
                                                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc1">
                                                         <af:outputText value="#{bindings.Numerolettrevoiture.hints.label}" id="ot6"/>
@@ -367,7 +396,7 @@
                                 </f:facet>
                                 <af:panelTabbed position="above" id="pt4">
                                     <af:showDetailItem id="tab5" text="#{viewcontrollerBundle.CONSULTATION}"
-                                                       disclosed="true">
+                                                       disclosed="false">
                                         <af:panelCollection id="pc2">
                                             <f:facet name="menus"/>
                                             <f:facet name="toolbar"/>

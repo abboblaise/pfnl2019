@@ -112,6 +112,7 @@ public class RegionViewRowImpl extends ViewRowImpl implements RegionViewRow {
      * @param value value to set the nomregion
      */
     public void setNomregion(String value) {
+        System.out.println("SetNomregion = " + value);
         setAttributeInternal(NOMREGION, value);
     }
 
@@ -128,6 +129,7 @@ public class RegionViewRowImpl extends ViewRowImpl implements RegionViewRow {
      * @param value value to set the coderegion
      */
     public void setCoderegion(String value) {
+        System.out.println("setCodeRegion = " + value);
         setAttributeInternal(CODEREGION, value);
     }
 
@@ -144,6 +146,7 @@ public class RegionViewRowImpl extends ViewRowImpl implements RegionViewRow {
      * @param value value to set the descriptionregions
      */
     public void setDescriptionregions(String value) {
+        
         setAttributeInternal(DESCRIPTIONREGIONS, value);
     }
 
@@ -160,6 +163,7 @@ public class RegionViewRowImpl extends ViewRowImpl implements RegionViewRow {
      * @param value value to set the cheflieuregion
      */
     public void setCheflieuregion(String value) {
+        System.out.println("setChefLieuregion = " + value);
         setAttributeInternal(CHEFLIEUREGION, value);
     }
 

@@ -1,9 +1,9 @@
 package cm.gov.minfof.model.entityviewobject.common;
-/*
+
 import org.eclipse.persistence.sdo.SDODataObject;
 
 @SuppressWarnings("serial")
-public class TypeDocumentViewSDOImpl extends SDODataObject implements TypeDocumentViewSDO {
+public class TypeDocumentViewSDOImpl extends SDODataObject implements typeDocumentViewSDO {
 
    public static final int START_PROPERTY_INDEX = 0;
 
@@ -28,5 +28,5 @@ public class TypeDocumentViewSDOImpl extends SDODataObject implements TypeDocume
    }
 
 
-}*/
+}
 

@@ -12,6 +12,8 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class PermissionnaireEtPermisFinalRowImpl extends ViewRowImpl {
+
+
     /**
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
@@ -24,7 +26,6 @@ public class PermissionnaireEtPermisFinalRowImpl extends ViewRowImpl {
         Observation,
         Idagrement,
         Idpermissionnaire,
-        Typedocument,
         Nomfichier,
         Cheminfichier,
         Typefichier,
@@ -76,7 +77,6 @@ public class PermissionnaireEtPermisFinalRowImpl extends ViewRowImpl {
     public static final int OBSERVATION = AttributesEnum.Observation.index();
     public static final int IDAGREMENT = AttributesEnum.Idagrement.index();
     public static final int IDPERMISSIONNAIRE = AttributesEnum.Idpermissionnaire.index();
-    public static final int TYPEDOCUMENT = AttributesEnum.Typedocument.index();
     public static final int NOMFICHIER = AttributesEnum.Nomfichier.index();
     public static final int CHEMINFICHIER = AttributesEnum.Cheminfichier.index();
     public static final int TYPEFICHIER = AttributesEnum.Typefichier.index();
@@ -103,6 +103,14 @@ public class PermissionnaireEtPermisFinalRowImpl extends ViewRowImpl {
      * This is the default constructor (do not remove).
      */
     public PermissionnaireEtPermisFinalRowImpl() {
+    }
+    
+    /**
+     * Gets the attribute value for numeropermis using the alias name Numeropermis.
+     * @return the numeropermis
+     */
+    public String getNumeropermis() {
+        return (String) getAttributeInternal(NUMEROPERMIS);
     }
 }
 

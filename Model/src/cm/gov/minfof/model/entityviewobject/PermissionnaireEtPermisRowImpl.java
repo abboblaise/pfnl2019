@@ -24,7 +24,6 @@ public class PermissionnaireEtPermisRowImpl extends ViewRowImpl {
         Observation,
         Idagrement,
         Idpermissionnaire,
-        Typedocument,
         Nomfichier,
         Cheminfichier,
         Typefichier,
@@ -77,7 +76,6 @@ public class PermissionnaireEtPermisRowImpl extends ViewRowImpl {
     public static final int OBSERVATION = AttributesEnum.Observation.index();
     public static final int IDAGREMENT = AttributesEnum.Idagrement.index();
     public static final int IDPERMISSIONNAIRE = AttributesEnum.Idpermissionnaire.index();
-    public static final int TYPEDOCUMENT = AttributesEnum.Typedocument.index();
     public static final int NOMFICHIER = AttributesEnum.Nomfichier.index();
     public static final int CHEMINFICHIER = AttributesEnum.Cheminfichier.index();
     public static final int TYPEFICHIER = AttributesEnum.Typefichier.index();

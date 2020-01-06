@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Ceqe"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="ceqe"
@@ -143,8 +143,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    TableName="ceqe"
-    IsNotNull="true">
+    TableName="ceqe">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="19"/>
     </DesignTime>
@@ -157,8 +156,7 @@
     Type="java.lang.String"
     ColumnType="CHAR"
     IsPersistent="false"
-    IsQueriable="false"
-    IsNotNull="true">
+    IsQueriable="false">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -180,18 +178,48 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc.Ceqe"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
-  <Key
-    Name="CeqeIdpermisCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"idpermis" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="Ceqe_Idpermis_Check"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="cm.gov.minfof.model.entity.Ceqe.Idpermis"/>
-    </AttrArray>
-  </Key>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.FkCeqe1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc1.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc1.Ceqe"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc20"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc20.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc20.Ceqe1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc20"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc20.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc20.Ceqe2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc20"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc20.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc20.Ceqe3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc4"
+    Association="cm.gov.minfof.model.entity.CeqpcToLettreVoiturePc"
+    AssociationEnd="cm.gov.minfof.model.entity.CeqpcToLettreVoiturePc.LettreVoiturePc4"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CeqpcToLettreVoiturePc.Ceqe4"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.FkCeqe1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc2.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc2.Ceqe"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="CeqeNomouraisonsocialeCheck">
     <DesignTime>
@@ -202,18 +230,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Ceqe.nomouraisonsociale"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="CeqeNumeropermisCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"numeropermis" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="CEQE_NUMEROPERMIS_CHECK"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="cm.gov.minfof.model.entity.Ceqe.numeropermis"/>
     </AttrArray>
   </Key>
   <Key

@@ -223,7 +223,9 @@
                                                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc1">
                                                         <af:outputText value="#{bindings.Codepnfl.hints.label}"
-                                                                       id="ot16"/>
+                                                                       id="ot16" rendered="false"/>
+                                                        <af:outputText value="#{bindings.Nomouraisonsociale.hints.label}"
+                                                                       id="ot24"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" id="gc2">
                                                         <af:inputText value="#{bindings.Codepnfl.inputValue}"
@@ -231,16 +233,9 @@
                                                                       columns="#{bindings.Codepnfl.hints.displayWidth}"
                                                                       maximumLength="#{bindings.Codepnfl.hints.precision}"
                                                                       shortDesc="#{bindings.Codepnfl.hints.tooltip}"
-                                                                      id="it1">
+                                                                      id="it1" rendered="false">
                                                             <f:validator binding="#{bindings.Codepnfl.validator}"/>
                                                         </af:inputText>
-                                                    </af:gridCell>
-                                                    <af:gridCell marginStart="5px" width="auto" id="gc3">
-                                                        <af:outputText value="#{bindings.Nomouraisonsociale.hints.label}"
-                                                                       id="ot24"/>
-                                                    </af:gridCell>
-                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
-                                                                 id="gc4">
                                                         <af:inputText value="#{bindings.Nomouraisonsociale.inputValue}"
                                                                       required="#{bindings.Nomouraisonsociale.hints.mandatory}"
                                                                       columns="#{bindings.Nomouraisonsociale.hints.displayWidth}"
@@ -250,6 +245,9 @@
                                                             <f:validator binding="#{bindings.Nomouraisonsociale.validator}"/>
                                                         </af:inputText>
                                                     </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc3"/>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc4"/>
                                                 </af:gridRow>
                                                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc5">
@@ -274,7 +272,6 @@
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc8">
                                                         <af:selectOneChoice value="#{bindings.Statut.inputValue}"
-                                                                            label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
                                                                             required="#{bindings.Statut.hints.mandatory}"
                                                                             shortDesc="#{bindings.Statut.hints.tooltip}"
                                                                             id="soc1" partialTriggers="soc4"
@@ -309,7 +306,6 @@
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc12">
                                                         <af:inputText value="#{bindings.Nbreemploye.inputValue}"
-                                                                      label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
                                                                       required="#{bindings.Nbreemploye.hints.mandatory}"
                                                                       columns="#{bindings.Nbreemploye.hints.displayWidth}"
                                                                       maximumLength="#{bindings.Nbreemploye.hints.precision}"
@@ -342,7 +338,6 @@
                                                                  id="gc16">
                                                         <af:inputComboboxListOfValues id="nomcommuneId"
                                                                                       popupTitle="Search and Select: #{bindings.nomcommune.hints.label}"
-                                                                                      label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
                                                                                       value="#{bindings.nomcommune.inputValue}"
                                                                                       model="#{bindings.nomcommune.listOfValuesModel}"
                                                                                       required="#{bindings.nomcommune.hints.mandatory}"
@@ -374,7 +369,6 @@
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc20">
                                                         <af:inputText value="#{bindings.Natureactivite.inputValue}"
-                                                                      label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
                                                                       required="#{bindings.Natureactivite.hints.mandatory}"
                                                                       columns="#{bindings.Natureactivite.hints.displayWidth}"
                                                                       maximumLength="#{bindings.Natureactivite.hints.precision}"
@@ -591,17 +585,7 @@
                                                                    shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Observation.tooltip}"
                                                                    id="ot35"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Typedocument.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Typedocument.label}"
-                                                           id="c27">
-                                                    <af:outputText value="#{row.Typedocument}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Typedocument.tooltip}"
-                                                                   id="ot36">
-                                                        <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Typedocument.format}"/>
-                                                    </af:outputText>
-                                                </af:column>
+                                    
                                                 <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Nomfichier.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Nomfichier.label}"
@@ -802,17 +786,6 @@
                                         <af:outputText value="#{row.Numeropermis}"
                                                        shortDesc="#{bindings.PermisView8.hints.Numeropermis.tooltip}"
                                                        id="ot10"/>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.PermisView8.hints.Typedocument.label}" id="c21"
-                                               width="111">
-                                        <af:selectOneChoice value="#{row.bindings.Typedocument.inputValue}"
-                                                            label="#{row.bindings.Typedocument.label}"
-                                                            required="#{bindings.PermisView8.hints.Typedocument.mandatory}"
-                                                            shortDesc="#{bindings.PermisView8.hints.Typedocument.tooltip}"
-                                                            readOnly="true" id="soc6">
-                                            <f:selectItems value="#{row.bindings.Typedocument.items}" id="si6"/>
-                                            <f:validator binding="#{row.bindings.Typedocument.validator}"/>
-                                        </af:selectOneChoice>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.PermisView8.hints.Datedelivrance.name}"
                                                filterable="true" sortable="true"

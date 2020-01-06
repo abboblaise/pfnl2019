@@ -75,35 +75,35 @@ public class PermisViewSDOImpl extends SDODataObject implements PermisViewSDO {
       set(START_PROPERTY_INDEX + 7 , value);
    }
 
-   public java.lang.Integer getTypedocument() {
-      return getInt(START_PROPERTY_INDEX + 8);
-   }
-
-   public void setTypedocument(java.lang.Integer value) {
-      set(START_PROPERTY_INDEX + 8 , value);
-   }
-
    public java.lang.String getCheminfichier() {
-      return getString(START_PROPERTY_INDEX + 9);
+      return getString(START_PROPERTY_INDEX + 8);
    }
 
    public void setCheminfichier(java.lang.String value) {
-      set(START_PROPERTY_INDEX + 9 , value);
+      set(START_PROPERTY_INDEX + 8 , value);
    }
 
    public java.lang.String getNomfichier() {
-      return getString(START_PROPERTY_INDEX + 10);
+      return getString(START_PROPERTY_INDEX + 9);
    }
 
    public void setNomfichier(java.lang.String value) {
-      set(START_PROPERTY_INDEX + 10 , value);
+      set(START_PROPERTY_INDEX + 9 , value);
    }
 
    public java.lang.String getNumpermiscomplet() {
-      return getString(START_PROPERTY_INDEX + 11);
+      return getString(START_PROPERTY_INDEX + 10);
    }
 
    public void setNumpermiscomplet(java.lang.String value) {
+      set(START_PROPERTY_INDEX + 10 , value);
+   }
+
+   public java.math.BigDecimal getIdtypedocument() {
+      return getBigDecimal(START_PROPERTY_INDEX + 11);
+   }
+
+   public void setIdtypedocument(java.math.BigDecimal value) {
       set(START_PROPERTY_INDEX + 11 , value);
    }
 

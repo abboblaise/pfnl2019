@@ -54,7 +54,13 @@ public class CeqeImpl extends EntityImpl {
         Idpermis,
         numeropermis,
         Ceqe,
-        IdpermissionnaireCeqe;
+        IdpermissionnaireCeqe,
+        LettreVoiturePc,
+        LettreVoiturePc1,
+        LettreVoiturePc2,
+        LettreVoiturePc3,
+        LettreVoiturePc4,
+        TypeDocument;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -91,6 +97,12 @@ public class CeqeImpl extends EntityImpl {
     public static final int NUMEROPERMIS = AttributesEnum.numeropermis.index();
     public static final int CEQE = AttributesEnum.Ceqe.index();
     public static final int IDPERMISSIONNAIRECEQE = AttributesEnum.IdpermissionnaireCeqe.index();
+    public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
+    public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
+    public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
+    public static final int LETTREVOITUREPC3 = AttributesEnum.LettreVoiturePc3.index();
+    public static final int LETTREVOITUREPC4 = AttributesEnum.LettreVoiturePc4.index();
+    public static final int TYPEDOCUMENT = AttributesEnum.TypeDocument.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -287,6 +299,63 @@ public class CeqeImpl extends EntityImpl {
         setAttributeInternal(IDPERMISSIONNAIRECEQE, value);
     }
 
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc1() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC1);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc2() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC2);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc3() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC3);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc4() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC4);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT, value);
+    }
 
     /**
      * @param idceqe key constituent

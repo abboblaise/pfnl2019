@@ -43,6 +43,38 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
     }
 
     /**
+     * Gets the attribute value for idregion using the alias name Idregion.
+     * @return the idregion
+     */
+    public BigDecimal getIdregion() {
+        return (BigDecimal) getAttributeInternal(IDREGION);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for idregion using the alias name Idregion.
+     * @param value value to set the idregion
+     */
+    public void setIdregion(BigDecimal value) {
+        setAttributeInternal(IDREGION, value);
+    }
+
+    /**
+     * Gets the attribute value for numerocollecte using the alias name Numerocollecte.
+     * @return the numerocollecte
+     */
+    public String getNumerocollecte() {
+        return (String) getAttributeInternal(NUMEROCOLLECTE);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for numerocollecte using the alias name Numerocollecte.
+     * @param value value to set the numerocollecte
+     */
+    public void setNumerocollecte(String value) {
+        setAttributeInternal(NUMEROCOLLECTE, value);
+    }
+
+    /**
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
     protected enum AttributesEnum {
@@ -63,6 +95,9 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
         nomposte,
         Idutilisateur1,
         nomuser,
+        Identificateur,
+        Idregion,
+        Numerocollecte,
         CollectepfnlView,
         DetailscollectepfnlView,
         DepartementView1,
@@ -115,6 +150,9 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
     public static final int NOMPOSTE = AttributesEnum.nomposte.index();
     public static final int IDUTILISATEUR1 = AttributesEnum.Idutilisateur1.index();
     public static final int NOMUSER = AttributesEnum.nomuser.index();
+    public static final int IDENTIFICATEUR = AttributesEnum.Identificateur.index();
+    public static final int IDREGION = AttributesEnum.Idregion.index();
+    public static final int NUMEROCOLLECTE = AttributesEnum.Numerocollecte.index();
     public static final int COLLECTEPFNLVIEW = AttributesEnum.CollectepfnlView.index();
     public static final int DETAILSCOLLECTEPFNLVIEW = AttributesEnum.DetailscollectepfnlView.index();
     public static final int DEPARTEMENTVIEW1 = AttributesEnum.DepartementView1.index();

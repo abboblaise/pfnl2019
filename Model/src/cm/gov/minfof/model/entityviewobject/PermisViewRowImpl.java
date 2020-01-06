@@ -38,10 +38,10 @@ public class PermisViewRowImpl extends ViewRowImpl {
         Observation,
         Idagrement,
         Idpermissionnaire,
-        Typedocument,
         Cheminfichier,
         Nomfichier,
         Numpermiscomplet,
+        Idtypedocument,
         PermisView,
         PermisView1,
         DetailpermisView,
@@ -52,7 +52,9 @@ public class PermisViewRowImpl extends ViewRowImpl {
         AgrementsView1,
         typeDocumentView1,
         CeqeView1,
-        getCeqeParPermissionnaire1;
+        getCeqeParPermissionnaire1,
+        typeDocumentView2,
+        AppModule_typeDocViewFinal1_1;
         private static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -86,10 +88,10 @@ public class PermisViewRowImpl extends ViewRowImpl {
     public static final int OBSERVATION = AttributesEnum.Observation.index();
     public static final int IDAGREMENT = AttributesEnum.Idagrement.index();
     public static final int IDPERMISSIONNAIRE = AttributesEnum.Idpermissionnaire.index();
-    public static final int TYPEDOCUMENT = AttributesEnum.Typedocument.index();
     public static final int CHEMINFICHIER = AttributesEnum.Cheminfichier.index();
     public static final int NOMFICHIER = AttributesEnum.Nomfichier.index();
     public static final int NUMPERMISCOMPLET = AttributesEnum.Numpermiscomplet.index();
+    public static final int IDTYPEDOCUMENT = AttributesEnum.Idtypedocument.index();
     public static final int PERMISVIEW = AttributesEnum.PermisView.index();
     public static final int PERMISVIEW1 = AttributesEnum.PermisView1.index();
     public static final int DETAILPERMISVIEW = AttributesEnum.DetailpermisView.index();
@@ -101,6 +103,8 @@ public class PermisViewRowImpl extends ViewRowImpl {
     public static final int TYPEDOCUMENTVIEW1 = AttributesEnum.typeDocumentView1.index();
     public static final int CEQEVIEW1 = AttributesEnum.CeqeView1.index();
     public static final int GETCEQEPARPERMISSIONNAIRE1 = AttributesEnum.getCeqeParPermissionnaire1.index();
+    public static final int TYPEDOCUMENTVIEW2 = AttributesEnum.typeDocumentView2.index();
+    public static final int APPMODULE_TYPEDOCVIEWFINAL1_1 = AttributesEnum.AppModule_typeDocViewFinal1_1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -138,15 +142,24 @@ public class PermisViewRowImpl extends ViewRowImpl {
      */
     public String getNumeropermis() {
         String val = (String) getAttributeInternal(NUMEROPERMIS);
-        int tdoc = getTypedocument();
+        return val;
+//        int tdoc = getTypedocument();
         
-        if (tdoc == 1){
-            return val.substring(8);
-        }else{
-            return val.substring(0, 4);
-        }
-        
-        
+ //       if(val != null)
+ //       {
+       // try {
+ //           if (tdoc == 1) {
+  //              return val.substring(8);
+  //          } else {
+  //              return val.substring(0, 4);
+  //          }
+        //} catch (StringIndexOutOfBoundsException ex) {
+         //   return "";
+   //         }//}
+   //     else
+   //         return "";
+
+
     }
 
     /**
@@ -154,17 +167,18 @@ public class PermisViewRowImpl extends ViewRowImpl {
      * @param value value to set the numeropermis
      */
     public void setNumeropermis(String value) {
-        Calendar c = Calendar.getInstance();
+  /*      Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
         int tdoc = getTypedocument();
-        String value1 ;
-        if (tdoc == 1){
-            value1 = Integer.toString(year)+"/CM/"+value;
-        }else{
-            value1 = value+"/ACPFNL/"+Integer.toString(year);    
+        String value1;
+        if (tdoc == 1) {
+            value1 = Integer.toString(year) + "/CM/" + value;
+        } else {
+            value1 = value + "/ACPFNL/" + Integer.toString(year);
         }
-        
-        value = value1;
+
+        value = value1;*/
+  System.out.println("Setter setNumeroPermis = " + value);
         setAttributeInternal(NUMEROPERMIS, value);
     }
 
@@ -188,15 +202,15 @@ public class PermisViewRowImpl extends ViewRowImpl {
      * Gets the attribute value for datedelivrance using the alias name Datedelivrance.
      * @return the datedelivrance
      */
-    public Timestamp getDatedelivrance() {
-        return (Timestamp) getAttributeInternal(DATEDELIVRANCE);
+    public Date getDatedelivrance() {
+        return (Date) getAttributeInternal(DATEDELIVRANCE);
     }
 
     /**
      * Sets <code>value</code> as attribute value for datedelivrance using the alias name Datedelivrance.
      * @param value value to set the datedelivrance
      */
-    public void setDatedelivrance(Timestamp value) {
+    public void setDatedelivrance(Date value) {
         setAttributeInternal(DATEDELIVRANCE, value);
     }
 
@@ -264,27 +278,13 @@ public class PermisViewRowImpl extends ViewRowImpl {
         setAttributeInternal(IDPERMISSIONNAIRE, value);
     }
 
-    /**
-     * Gets the attribute value for typedocument using the alias name Typedocument.
-     * @return the typedocument
-     */
-    public Integer getTypedocument() {
-        return (Integer) getAttributeInternal(TYPEDOCUMENT);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for typedocument using the alias name Typedocument.
-     * @param value value to set the typedocument
-     */
-    public void setTypedocument(Integer value) {
-        setAttributeInternal(TYPEDOCUMENT, value);
-    }
 
     /**
      * Gets the attribute value for cheminfichier using the alias name Cheminfichier.
      * @return the cheminfichier
      */
     public String getCheminfichier() {
+        System.out.println("Getter GetCheminFichier = " + getAttributeInternal(CHEMINFICHIER));
         return (String) getAttributeInternal(CHEMINFICHIER);
     }
 
@@ -301,6 +301,7 @@ public class PermisViewRowImpl extends ViewRowImpl {
      * @return the nomfichier
      */
     public String getNomfichier() {
+        System.out.println("Getter GetNomFichier = " + getAttributeInternal(NOMFICHIER));
         return (String) getAttributeInternal(NOMFICHIER);
     }
 
@@ -319,6 +320,22 @@ public class PermisViewRowImpl extends ViewRowImpl {
      */
     public String getNumpermiscomplet() {
         return (String) getAttributeInternal(NUMEROPERMIS);
+    }
+
+    /**
+     * Gets the attribute value for idtypedocument using the alias name Idtypedocument.
+     * @return the idtypedocument
+     */
+    public BigDecimal getIdtypedocument() {
+        return (BigDecimal) getAttributeInternal(IDTYPEDOCUMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for idtypedocument using the alias name Idtypedocument.
+     * @param value value to set the idtypedocument
+     */
+    public void setIdtypedocument(BigDecimal value) {
+        setAttributeInternal(IDTYPEDOCUMENT, value);
     }
 
     /**
@@ -370,6 +387,7 @@ public class PermisViewRowImpl extends ViewRowImpl {
         return (RowIterator) getAttributeInternal(CERTIFICATORIGINEVIEW);
     }
 
+
     /**
      * Gets the view accessor <code>RowSet</code> PermissionnairespnflView1.
      */
@@ -403,6 +421,20 @@ public class PermisViewRowImpl extends ViewRowImpl {
      */
     public RowSet getgetCeqeParPermissionnaire1() {
         return (RowSet) getAttributeInternal(GETCEQEPARPERMISSIONNAIRE1);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> typeDocumentView2.
+     */
+    public RowSet gettypeDocumentView2() {
+        return (RowSet) getAttributeInternal(TYPEDOCUMENTVIEW2);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AppModule_typeDocViewFinal1_1.
+     */
+    public RowSet getAppModule_typeDocViewFinal1_1() {
+        return (RowSet) getAttributeInternal(APPMODULE_TYPEDOCVIEWFINAL1_1);
     }
 }
 

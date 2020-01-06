@@ -62,6 +62,10 @@ public interface LettrevoitureViewSDO extends java.io.Serializable {
 
    public void setNumpermis(java.lang.String value);
 
+   public java.math.BigDecimal getIdtypedocument();
+
+   public void setIdtypedocument(java.math.BigDecimal value);
+
    public java.util.List getLettrevoitureView2();
 
    public void setLettrevoitureView2(java.util.List value);

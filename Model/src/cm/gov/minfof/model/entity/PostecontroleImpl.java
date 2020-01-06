@@ -30,7 +30,12 @@ public class PostecontroleImpl extends EntityImpl {
         Posteexport,
         Idcommune,
         Commune,
-        Localite;
+        Localite,
+        LettreVoiturePc,
+        LettreVoiturePc1,
+        LettreVoiturePc2,
+        LettreVoiturePc3,
+        TypeDocument;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -62,6 +67,11 @@ public class PostecontroleImpl extends EntityImpl {
     public static final int IDCOMMUNE = AttributesEnum.Idcommune.index();
     public static final int COMMUNE = AttributesEnum.Commune.index();
     public static final int LOCALITE = AttributesEnum.Localite.index();
+    public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
+    public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
+    public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
+    public static final int LETTREVOITUREPC3 = AttributesEnum.LettreVoiturePc3.index();
+    public static final int TYPEDOCUMENT = AttributesEnum.TypeDocument.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -182,6 +192,55 @@ public class PostecontroleImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(LOCALITE);
     }
 
+
+    /**
+     * @return the associated entity LettreVoiturePcImpl.
+     */
+    public LettreVoiturePcImpl getLettreVoiturePc() {
+        return (LettreVoiturePcImpl) getAttributeInternal(LETTREVOITUREPC);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity LettreVoiturePcImpl.
+     */
+    public void setLettreVoiturePc(LettreVoiturePcImpl value) {
+        setAttributeInternal(LETTREVOITUREPC, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc1() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC1);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc2() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC2);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc3() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC3);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTypeDocument() {
+        return (EntityImpl) getAttributeInternal(TYPEDOCUMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTypeDocument(EntityImpl value) {
+        setAttributeInternal(TYPEDOCUMENT, value);
+    }
 
     /**
      * @param idpostecontrole key constituent

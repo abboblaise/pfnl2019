@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="CollectepfnlView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -579,6 +579,39 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Identificateur"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Identificateur"
+    EntityUsage="Collectepfnl"
+    AliasName="identificateur">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idregion"
+    PrecisionRule="true"
+    EntityAttrName="Idregion"
+    EntityUsage="Collectepfnl"
+    AliasName="idregion"/>
+  <ViewAttribute
+    Name="Numerocollecte"
+    PrecisionRule="true"
+    EntityAttrName="Numerocollecte"
+    EntityUsage="Collectepfnl"
+    AliasName="numerocollecte">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="CollectepfnlViewCriteria"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.CollectepfnlView"
@@ -674,26 +707,6 @@
         Type="java.sql.Timestamp"/>
     </Method>
   </ClientInterface>
-  <ClientRowInterface
-    Name="__rowClientInterface">
-    <Method
-      Name="getIdentificateur"
-      MethodName="getIdentificateur">
-      <Return
-        Name="_return_type_"
-        Type="java.lang.String"/>
-    </Method>
-    <Method
-      Name="setIdentificateur"
-      MethodName="setIdentificateur">
-      <Return
-        Name="_return_type_"
-        Type="void"/>
-      <Parameter
-        Name="value"
-        Type="java.lang.String"/>
-    </Method>
-  </ClientRowInterface>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="cm.gov.minfof.model.ModelBundle"/>

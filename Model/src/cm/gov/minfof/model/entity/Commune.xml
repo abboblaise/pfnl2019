@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Commune"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="communes"
@@ -77,8 +77,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    TableName="communes"
-    IsNotNull="true">
+    TableName="communes">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="6"/>
     </DesignTime>
@@ -167,6 +166,41 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.CommuneToPosteControleAssoc.Commune"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.CommunesIbfk1Assoc4"
+    AssociationEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc4.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc4.Commune"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc30"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc30.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc30.Commune1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc30"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc30.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc30.Commune2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc30"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc30.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc30.Commune3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.CommunesIbfk1Assoc5"
+    AssociationEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc5.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc5.Commune"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="AltKey"
     AltKey="true">
@@ -187,18 +221,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Commune.Iddepartements"/>
-      <Item Value="cm.gov.minfof.model.entity.Commune.Codecommune"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="CommunesCodecommuneCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"codecommune" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="Communes_Codecommune_Check"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Commune.Codecommune"/>
     </AttrArray>
   </Key>

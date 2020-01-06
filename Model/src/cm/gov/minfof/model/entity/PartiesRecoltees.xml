@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="PartiesRecoltees"
-  Version="12.2.1.20.47"
+  Version="12.2.1.12.24"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="partiesrecoltees"
@@ -71,6 +71,27 @@
     Association="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc2"
     AssociationEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc2.ProduitsPfnl"
     AssociationOtherEnd="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc2.PartiesRecoltees"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc11"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc11.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc11.PartiesRecoltees"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc11"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc11.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc11.PartiesRecoltees1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc11"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc11.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc11.PartiesRecoltees2"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

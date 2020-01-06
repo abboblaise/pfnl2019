@@ -3,7 +3,7 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
         xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:mycomps="http://mycompany.com/adf/components">
     <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
-    <af:document title="#{viewcontrollerBundle.EDITION_DES_COMMUNES}" id="d1">
+    <af:document title="#{viewcontrollerBundle.EDITION_DES_ARRONDISSEMENTS}" id="d1">
         <af:resource source="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="javascript"/>
         <af:resource source="js/jquery.growl.js" type="javascript"/>
         <af:resource source="style/jquery.growl.css" type="css"/>
@@ -11,7 +11,7 @@
         <af:form id="f1">
         <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
         <f:facet name="content">
-                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_COMMUNES}" id="pb3" showDisclosure="false">
+                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_ARRONDISSEMENTS}" id="pb3" showDisclosure="false">
                         <f:facet name="toolbar">
                             <af:panelGroupLayout id="pgl3">
                                 <af:button text="#{viewcontrollerBundle.ACTUALISER}" immediate="true" id="b6"

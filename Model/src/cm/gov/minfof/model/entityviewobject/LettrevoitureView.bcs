@@ -1,0 +1,12 @@
+//Groovy Scripts for cm.gov.minfof.model.entityviewobject.LettrevoitureView
+
+package cm.gov.minfof.model.entityviewobject
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="AgrementByPermisView1", name="PermisBind")
+def PermisBind_AgrementByPermisView1_BindVariable_BoundParameter()
+{
+Idpermis
+}
+

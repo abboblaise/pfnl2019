@@ -41,6 +41,7 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         nomdepart,
         nomacteur,
         numpermis,
+        Idtypedocument,
         LettrevoitureView2,
         LettrevoitureView4,
         DetailslettrevoitureView,
@@ -56,7 +57,8 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         LocaliteView1,
         getLocaliteUser1,
         permisActifView1,
-        getPermissionnairePermis1;
+        getPermissionnairePermis1,
+        AppModule_typeDocViewFinal1_1;
         private static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -97,6 +99,7 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     public static final int NOMDEPART = AttributesEnum.nomdepart.index();
     public static final int NOMACTEUR = AttributesEnum.nomacteur.index();
     public static final int NUMPERMIS = AttributesEnum.numpermis.index();
+    public static final int IDTYPEDOCUMENT = AttributesEnum.Idtypedocument.index();
     public static final int LETTREVOITUREVIEW2 = AttributesEnum.LettrevoitureView2.index();
     public static final int LETTREVOITUREVIEW4 = AttributesEnum.LettrevoitureView4.index();
     public static final int DETAILSLETTREVOITUREVIEW = AttributesEnum.DetailslettrevoitureView.index();
@@ -113,6 +116,7 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     public static final int GETLOCALITEUSER1 = AttributesEnum.getLocaliteUser1.index();
     public static final int PERMISACTIFVIEW1 = AttributesEnum.permisActifView1.index();
     public static final int GETPERMISSIONNAIREPERMIS1 = AttributesEnum.getPermissionnairePermis1.index();
+    public static final int APPMODULE_TYPEDOCVIEWFINAL1_1 = AttributesEnum.AppModule_typeDocViewFinal1_1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -405,6 +409,22 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     }
 
     /**
+     * Gets the attribute value for idtypedocument using the alias name Idtypedocument.
+     * @return the idtypedocument
+     */
+    public BigDecimal getIdtypedocument() {
+        return (BigDecimal) getAttributeInternal(IDTYPEDOCUMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for idtypedocument using the alias name Idtypedocument.
+     * @param value value to set the idtypedocument
+     */
+    public void setIdtypedocument(BigDecimal value) {
+        setAttributeInternal(IDTYPEDOCUMENT, value);
+    }
+
+    /**
      * Gets the associated <code>RowIterator</code> using master-detail link LettrevoitureView2.
      */
     public RowIterator getLettrevoitureView2() {
@@ -514,6 +534,13 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
      */
     public RowSet getgetPermissionnairePermis1() {
         return (RowSet) getAttributeInternal(GETPERMISSIONNAIREPERMIS1);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AppModule_typeDocViewFinal1_1.
+     */
+    public RowSet getAppModule_typeDocViewFinal1_1() {
+        return (RowSet) getAttributeInternal(APPMODULE_TYPEDOCVIEWFINAL1_1);
     }
 }
 

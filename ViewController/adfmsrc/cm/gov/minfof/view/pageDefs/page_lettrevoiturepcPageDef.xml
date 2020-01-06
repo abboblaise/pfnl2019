@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="page_lettrevoiturepcPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LettreVoiturePcView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="LettreVoiturePcView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="LettreVoiturePcView1Iterator" id="Numerolettrevoiture">
+      <AttrNames>
+        <Item Value="Numerolettrevoiture"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="LettreVoiturePcView1Iterator" StaticList="false" Uses="LOV_Idceqe" id="Idceqe"/>
+  </bindings>
+</pageDefinition>

@@ -33,6 +33,9 @@ public class PartiesProduitsPfnlViewRowImpl extends ViewRowImpl {
         UnitemesureView1,
         DetailscollectepfnlView,
         DetailsexportpfnlView,
+        LettreVoiturePcView,
+        LettreVoiturePcView1,
+        LettreVoiturePcView2,
         UnitemesureView2,
         UnitemesureView3,
         PartiesrecolteesView1;
@@ -73,6 +76,9 @@ public class PartiesProduitsPfnlViewRowImpl extends ViewRowImpl {
     public static final int UNITEMESUREVIEW1 = AttributesEnum.UnitemesureView1.index();
     public static final int DETAILSCOLLECTEPFNLVIEW = AttributesEnum.DetailscollectepfnlView.index();
     public static final int DETAILSEXPORTPFNLVIEW = AttributesEnum.DetailsexportpfnlView.index();
+    public static final int LETTREVOITUREPCVIEW = AttributesEnum.LettreVoiturePcView.index();
+    public static final int LETTREVOITUREPCVIEW1 = AttributesEnum.LettreVoiturePcView1.index();
+    public static final int LETTREVOITUREPCVIEW2 = AttributesEnum.LettreVoiturePcView2.index();
     public static final int UNITEMESUREVIEW2 = AttributesEnum.UnitemesureView2.index();
     public static final int UNITEMESUREVIEW3 = AttributesEnum.UnitemesureView3.index();
     public static final int PARTIESRECOLTEESVIEW1 = AttributesEnum.PartiesrecolteesView1.index();
@@ -226,6 +232,27 @@ public class PartiesProduitsPfnlViewRowImpl extends ViewRowImpl {
      */
     public RowIterator getDetailsexportpfnlView() {
         return (RowIterator) getAttributeInternal(DETAILSEXPORTPFNLVIEW);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link LettreVoiturePcView.
+     */
+    public RowIterator getLettreVoiturePcView() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPCVIEW);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link LettreVoiturePcView1.
+     */
+    public RowIterator getLettreVoiturePcView1() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPCVIEW1);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link LettreVoiturePcView2.
+     */
+    public RowIterator getLettreVoiturePcView2() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPCVIEW2);
     }
 
     /**

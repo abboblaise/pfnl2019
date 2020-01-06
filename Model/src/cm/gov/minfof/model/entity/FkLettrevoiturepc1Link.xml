@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkLettrevoiturepc1Link"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc">
+  <ViewLinkDefEnd
+    Name="IdpermissionnaireLettreVoiturePcView"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.LettreVoiturePcView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="IdpermissionnaireLettreVoiturePcView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.LettreVoiturePcView.Idlettrevoiturepc"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="LettreVoiturePcView1"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entity.LettreVoiturePcView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="LettreVoiturePcView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.LettreVoiturePcView.Idpermissionnaire"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

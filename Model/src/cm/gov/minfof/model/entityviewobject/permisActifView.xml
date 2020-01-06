@@ -32,7 +32,6 @@
     permis.datedelivrance datedelivrance,   
     permis.datefin datefin,   
     permis.idpermissionnaire idpermissionnaire,   
-    permis.typedocument typedocument,  
     permissionnairespnfl.Nomouraisonsociale  
 FROM  
     permis,  
@@ -100,20 +99,6 @@ and permis.datefin >= current_date()]]></SQLQuery>
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="Typedocument"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.lang.Integer"
-    ColumnType="TINYINT"
-    AliasName="typedocument"
-    Expression="typedocument"
-    SQLType="INTEGER">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute

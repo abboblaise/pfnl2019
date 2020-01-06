@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Postecontrole"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="postecontrole"
@@ -120,6 +120,41 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.PosteControleToLocaliteAssoc.Postecontrole"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.fk_Postecontrole1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_Postecontrole1Assoc.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_Postecontrole1Assoc.Postecontrole"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc6"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc6.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc6.Postecontrole1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc6"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc6.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc6.Postecontrole2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc6"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc6.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc6.Postecontrole3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.fk_Postecontrole1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_Postecontrole1Assoc1.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_Postecontrole1Assoc1.Postecontrole"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="AltKey"
     AltKey="true">

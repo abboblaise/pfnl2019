@@ -4,7 +4,7 @@
 <AppModule
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="AppModule"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   ClearCacheOnRollback="true"
   ComponentClass="cm.gov.minfof.model.entity.AppModuleImpl"
@@ -1008,6 +1008,219 @@
   <ViewUsage
     Name="LocaliteView9"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView1"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView2"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView3"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView4"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView5"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView6"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView7"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="ProduitsPfnlView13"
+    ViewObjectName="cm.gov.minfof.model.entity.ProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView8"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="ProduitsPfnlView14"
+    ViewObjectName="cm.gov.minfof.model.entity.ProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView9"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="ProduitsPfnlView15"
+    ViewObjectName="cm.gov.minfof.model.entity.ProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView10"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView28"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView11"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView29"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView12"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView30"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView13"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView31"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="PartiesRecolteesView3"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesRecolteesView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView14"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="ProduitsPfnlView16"
+    ViewObjectName="cm.gov.minfof.model.entity.ProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView15"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="FamillePfnlView3"
+    ViewObjectName="cm.gov.minfof.model.entity.FamillePfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView16"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView32"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView17"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="PartiesRecolteesView4"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesRecolteesView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView18"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="ProduitsPfnlView17"
+    ViewObjectName="cm.gov.minfof.model.entity.ProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView19"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="FamillePfnlView4"
+    ViewObjectName="cm.gov.minfof.model.entity.FamillePfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView20"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView33"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView21"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="PartiesRecolteesView5"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesRecolteesView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView22"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="ProduitsPfnlView18"
+    ViewObjectName="cm.gov.minfof.model.entity.ProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView23"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="FamillePfnlView5"
+    ViewObjectName="cm.gov.minfof.model.entity.FamillePfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView24"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView34"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView25"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView26"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView27"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="TypeDocumentView2"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView28"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="TypeDocumentView3"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView29"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="TypeDocumentView4"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView30"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="TypeDocumentView5"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="LettreVoiturePcView31"
+    ViewObjectName="cm.gov.minfof.model.entity.LettreVoiturePcView"/>
+  <ViewUsage
+    Name="TypeDocumentView6"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="ProduitsPfnlView19"
+    ViewObjectName="cm.gov.minfof.model.entity.ProduitsPfnlView"/>
+  <ViewUsage
+    Name="TypeDocumentView7"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="ProduitsPfnlView20"
+    ViewObjectName="cm.gov.minfof.model.entity.ProduitsPfnlView"/>
+  <ViewUsage
+    Name="TypeDocumentView8"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="ProduitsPfnlView21"
+    ViewObjectName="cm.gov.minfof.model.entity.ProduitsPfnlView"/>
+  <ViewUsage
+    Name="TypeDocumentView9"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView35"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="TypeDocumentView10"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView36"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="TypeDocumentView11"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView37"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="TypeDocumentView12"
+    ViewObjectName="cm.gov.minfof.model.entity.TypeDocumentView"/>
+  <ViewUsage
+    Name="PartiesProduitsPfnlView38"
+    ViewObjectName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView"/>
+  <ViewUsage
+    Name="typeDocViewFinal1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.typeDocViewFinal"/>
+  <ViewUsage
+    Name="UniteMesureWithPartieProduitPfnl1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.UniteMesureWithPartieProduitPfnl"/>
+  <ViewUsage
+    Name="UniteMesureWithPartieProduitPfnl2"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.UniteMesureWithPartieProduitPfnl"/>
   <ViewLinkUsage
     Name="PermissionnaireToPermisLink"
     ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermissionnaireToPermisLink"
@@ -1807,6 +2020,210 @@
     SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.PostecontroleView2"
     DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LocaliteView9"
     Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc4Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc4Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView1"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc1Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc1Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView3"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc3Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc3Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView5"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView6"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="fk_ProduitsPfnl1Assoc1Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.fk_ProduitsPfnl1Assoc1Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView7"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.ProduitsPfnlView13"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="fk_ProduitsPfnlAssoc1Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.fk_ProduitsPfnlAssoc1Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView8"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.ProduitsPfnlView14"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ProduitspfnlIbfk1Assoc5Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc5Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView9"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.ProduitsPfnlView15"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="fk_PartiesProduitsPfnl1Assoc1Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.fk_PartiesProduitsPfnl1Assoc1Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView10"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView28"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="fk_PartiesProduitsPfnlAssoc1Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.fk_PartiesProduitsPfnlAssoc1Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView11"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView29"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPartiesproduitspfnl2Assoc5Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc5Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView12"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView30"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPartiesproduitspfnl1Assoc5Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc5Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView13"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView31"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc3Assoc11Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc11Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesRecolteesView3"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView14"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc3Assoc19Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc19Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.ProduitsPfnlView16"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView15"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc3Assoc32Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc32Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.FamillePfnlView3"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView16"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc3Assoc35Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc35Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView32"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView17"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc1Assoc11Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc11Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesRecolteesView4"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView18"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc1Assoc19Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc19Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.ProduitsPfnlView17"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView19"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc1Assoc32Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc32Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.FamillePfnlView4"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView20"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc1Assoc35Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc35Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView33"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView21"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc4Assoc11Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc11Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesRecolteesView5"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView22"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc4Assoc19Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc19Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.ProduitsPfnlView18"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView23"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc4Assoc32Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc32Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.FamillePfnlView5"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView24"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc4Assoc35Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc35Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView34"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView25"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CeqpcToLettreVoiturePcLink1"
+    ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.CeqpcToLettreVoiturePcLink"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.CeqeView1"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView27"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="fk_LettreVoiturePcLink"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.fk_LettreVoiturePcLink"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView2"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView28"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc4Assoc36Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc36Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView3"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView29"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc3Assoc36Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc36Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView4"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView30"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkLettrevoiturepc1Assoc36Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc36Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView5"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.LettreVoiturePcView31"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="fk_ProduitsPfnl1Assoc2Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.fk_ProduitsPfnl1Assoc2Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView6"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.ProduitsPfnlView19"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="fk_ProduitsPfnlAssoc2Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.fk_ProduitsPfnlAssoc2Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView7"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.ProduitsPfnlView20"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ProduitspfnlIbfk1Assoc6Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.ProduitspfnlIbfk1Assoc6Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView8"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.ProduitsPfnlView21"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="fk_PartiesProduitsPfnl1Assoc2Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.fk_PartiesProduitsPfnl1Assoc2Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView9"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView35"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="fk_PartiesProduitsPfnlAssoc2Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.fk_PartiesProduitsPfnlAssoc2Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView10"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView36"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPartiesproduitspfnl2Assoc6Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkPartiesproduitspfnl2Assoc6Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView11"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView37"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPartiesproduitspfnl1Assoc6Link"
+    ViewLinkObjectName="cm.gov.minfof.model.entity.FkPartiesproduitspfnl1Assoc6Link"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.TypeDocumentView12"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.PartiesProduitsPfnlView38"
+    Reversed="false"/>
   <Remote
     Name="ServiceInterface"
     ServerClassName="cm.gov.minfof.model.entity.server.serviceinterface.pfnl_wbsImpl"
@@ -1946,7 +2363,1121 @@
         Name="muser"
         Type="java.lang.String"/>
     </Method>
+    <Method
+      Name="changepwd"
+      MethodName="changepwd">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="bd"
+        Type="java.math.BigDecimal"/>
+      <Parameter
+        Name="pwd"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="modifuser"
+      MethodName="modifuser">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="bd"
+        Type="java.math.BigDecimal"/>
+      <Parameter
+        Name="nuser"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="puser"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="muser"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="changepwd"
+      MethodName="changepwd">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="bd"
+        Type="java.math.BigDecimal"/>
+      <Parameter
+        Name="pwd"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="modifuser"
+      MethodName="modifuser">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="bd"
+        Type="java.math.BigDecimal"/>
+      <Parameter
+        Name="nuser"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="puser"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="muser"
+        Type="java.lang.String"/>
+    </Method>
   </ClientInterface>
+  <ServiceViewUsage
+    ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
   <ServiceViewUsage
     ViewUsageName="CategorieproduitView1">
     <DesignTime>

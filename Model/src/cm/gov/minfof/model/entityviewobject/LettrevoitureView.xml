@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="LettrevoitureView"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -67,7 +67,8 @@
       <PIMap Variable="PermisBind">
         <TransientExpression
           trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[Idpermis]]></TransientExpression>
+          Name="ExpressionScript"
+          CodeSourceName="LettrevoitureView"/>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -80,7 +81,7 @@
       <PIMap Variable="iddepartementalbind">
         <TransientExpression
           trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[iddepartemental]]></TransientExpression>
+          Name="ExpressionScript"><?audit suppress oracle.jbo.groovy-codesource-rule?><![CDATA[iddepartemental]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -98,12 +99,12 @@
       <PIMap Variable="iddepartementalbind">
         <TransientExpression
           trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[iddepartemental]]></TransientExpression>
+          Name="ExpressionScript"><?audit suppress oracle.jbo.groovy-codesource-rule?><![CDATA[iddepartemental]]></TransientExpression>
       </PIMap>
       <PIMap Variable="idregionalbind">
         <TransientExpression
           trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[idregional]]></TransientExpression>
+          Name="ExpressionScript"><?audit suppress oracle.jbo.groovy-codesource-rule?><![CDATA[idregional]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -126,6 +127,12 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AppModule_typeDocViewFinal1_1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.typeDocViewFinal"
+    AMUsageName="AppModule"
+    ViewInstanceName="typeDocViewFinal1"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Idpermissionnaire"
     ListVOName="PermissionnairespnflView1"
@@ -276,6 +283,23 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Numeropermis"/>
       <Item Value="Nomouraisonsociale"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idtypedocument"
+    ListVOName="AppModule_typeDocViewFinal1_1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idtypedocument"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idtypedocument"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libelletypedocument"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -451,6 +475,20 @@
     EntityUsage="Lettrevoiture"
     AliasName="NUMPERMIS"
     LOVName="LOV_numpermis">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idtypedocument"
+    PrecisionRule="true"
+    EntityAttrName="Idtypedocument"
+    EntityUsage="Lettrevoiture"
+    AliasName="idtypedocument"
+    LOVName="LOV_Idtypedocument">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

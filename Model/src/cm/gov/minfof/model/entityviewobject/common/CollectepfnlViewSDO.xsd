@@ -31,6 +31,9 @@
             <xsd:element name="nomposte" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Idutilisateur1" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="nomuser" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Identificateur" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Idregion" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Numerocollecte" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="CollectepfnlView" type="CollectepfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="DetailscollectepfnlView" type="DetailscollectepfnlViewSDO" minOccurs="0"
                  maxOccurs="unbounded"/>

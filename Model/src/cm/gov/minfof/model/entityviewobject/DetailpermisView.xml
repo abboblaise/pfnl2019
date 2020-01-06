@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="DetailpermisView"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -17,9 +17,12 @@
   ComponentClass="cm.gov.minfof.model.entityviewobject.DetailpermisViewImpl"
   SdoGen="true"
   SdoName="cm.gov.minfof.model.entityviewobject.common.DetailpermisViewSDO"
-  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/">
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/"
+  RowClass="cm.gov.minfof.model.entityviewobject.DetailpermisViewRowImpl"
+  DefClass="cm.gov.minfof.model.entityviewobject.DetailpermisViewDefImpl">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewAccessor
     Name="UnitemesureView1"
@@ -37,28 +40,28 @@
     Name="getLibelleProduitComplet1"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.getLibelleProduitComplet"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_Idunitemesure"
-    ListVOName="UnitemesureView1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Idunitemesure"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Idunitemesure"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Libelleunitemesure"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="AppModule_RegionView1_1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.RegionView"
+    AMUsageName="AppModule"
+    ViewInstanceName="RegionView1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AppModule_UniteMesureWithPartieProduitPfnl1_1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.UniteMesureWithPartieProduitPfnl"
+    AMUsageName="AppModule"
+    ViewInstanceName="UniteMesureWithPartieProduitPfnl1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="UniteMesureWithPartieProduitPfnl1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.UniteMesureWithPartieProduitPfnl"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Idpermis"
     ListVOName="PermisView1"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="Idpermis"/>
     </AttrArray>
@@ -89,6 +92,60 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_Idregions"
+    ListVOName="AppModule_RegionView1_1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idregions"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idregions"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idunitemesure"
+    ListVOName="UniteMesureWithPartieProduitPfnl1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idunitemesure"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idunitemesure"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libelleunitemesure"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_idunitemesureconsultation"
+    ListVOName="UnitemesureView1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="idunitemesureconsultation"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idunitemesure"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libelleunitemesure"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Detailpermis"
     Entity="cm.gov.minfof.model.entity.Detailpermis"/>
@@ -108,7 +165,6 @@
     AliasName="quantite"/>
   <ViewAttribute
     Name="Idunitemesure"
-    IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Idunitemesure"
     EntityUsage="Detailpermis"
@@ -153,6 +209,41 @@
     LOVName="LOV_Idpartieproduitpfnl">
     <Properties>
       <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idregions"
+    PrecisionRule="true"
+    EntityAttrName="Idregions"
+    EntityUsage="Detailpermis"
+    AliasName="idregions"
+    LOVName="LOV_Idregions">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.DetailpermisView.Idregions_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="idunitemesureconsultation"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    LOVName="LOV_idunitemesureconsultation">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.DetailpermisView.idunitemesureconsultation_LABEL"/>
         <CONTROLTYPE
           Value="choice"/>
       </SchemaBasedProperties>

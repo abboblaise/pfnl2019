@@ -25,9 +25,11 @@ public class FamillePfnlImpl extends EntityImpl {
         Nomfamille,
         PartiesProduitsPfnl,
         PartiesProduitsPfnl1,
-        ProduitsPfnl;
+        ProduitsPfnl,
+        LettreVoiturePc,
+        LettreVoiturePc1,
+        LettreVoiturePc2;
         private static AttributesEnum[] vals = null;
-        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -56,6 +58,9 @@ public class FamillePfnlImpl extends EntityImpl {
     public static final int PARTIESPRODUITSPFNL = AttributesEnum.PartiesProduitsPfnl.index();
     public static final int PARTIESPRODUITSPFNL1 = AttributesEnum.PartiesProduitsPfnl1.index();
     public static final int PRODUITSPFNL = AttributesEnum.ProduitsPfnl.index();
+    public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
+    public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
+    public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -122,6 +127,28 @@ public class FamillePfnlImpl extends EntityImpl {
      */
     public RowIterator getProduitsPfnl() {
         return (RowIterator) getAttributeInternal(PRODUITSPFNL);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc1() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC1);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getLettreVoiturePc2() {
+        return (RowIterator) getAttributeInternal(LETTREVOITUREPC2);
     }
 
 

@@ -157,4 +157,9 @@
     <managed-bean-class>cm.gov.minfof.view.Ceqe</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__32">
+    <managed-bean-name>lettreVoiturePcBean</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.lettreVoiturePcBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

@@ -7,7 +7,7 @@ public class DetailpermisViewSDOImpl extends SDODataObject implements Detailperm
 
    public static final int START_PROPERTY_INDEX = 0;
 
-   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 8;
+   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 10;
 
    public DetailpermisViewSDOImpl() {}
 
@@ -59,28 +59,44 @@ public class DetailpermisViewSDOImpl extends SDODataObject implements Detailperm
       set(START_PROPERTY_INDEX + 5 , value);
    }
 
-   public java.util.List getDetailpermisView() {
-      return getList(START_PROPERTY_INDEX + 6);
+   public java.math.BigDecimal getIdregions() {
+      return getBigDecimal(START_PROPERTY_INDEX + 6);
    }
 
-   public void setDetailpermisView(java.util.List value) {
+   public void setIdregions(java.math.BigDecimal value) {
       set(START_PROPERTY_INDEX + 6 , value);
    }
 
-   public java.util.List getDetailpermisView1() {
-      return getList(START_PROPERTY_INDEX + 7);
+   public java.math.BigDecimal getIdunitemesureconsultation() {
+      return getBigDecimal(START_PROPERTY_INDEX + 7);
    }
 
-   public void setDetailpermisView1(java.util.List value) {
+   public void setIdunitemesureconsultation(java.math.BigDecimal value) {
       set(START_PROPERTY_INDEX + 7 , value);
    }
 
-   public java.util.List getDetailpermisView2() {
+   public java.util.List getDetailpermisView() {
       return getList(START_PROPERTY_INDEX + 8);
    }
 
-   public void setDetailpermisView2(java.util.List value) {
+   public void setDetailpermisView(java.util.List value) {
       set(START_PROPERTY_INDEX + 8 , value);
+   }
+
+   public java.util.List getDetailpermisView1() {
+      return getList(START_PROPERTY_INDEX + 9);
+   }
+
+   public void setDetailpermisView1(java.util.List value) {
+      set(START_PROPERTY_INDEX + 9 , value);
+   }
+
+   public java.util.List getDetailpermisView2() {
+      return getList(START_PROPERTY_INDEX + 10);
+   }
+
+   public void setDetailpermisView2(java.util.List value) {
+      set(START_PROPERTY_INDEX + 10 , value);
    }
 
 

@@ -28,6 +28,7 @@
             <xsd:element name="nomdepart" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="nomacteur" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="numpermis" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Idtypedocument" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="LettrevoitureView2" type="LettrevoitureViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="LettrevoitureView4" type="LettrevoitureViewSDO" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>

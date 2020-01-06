@@ -4,7 +4,7 @@
 <JboProject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Model"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   SeparateXMLFiles="true"
   PackageName="cm.gov.minfof.model">
   <DesignTime>
@@ -56,4 +56,9 @@
       <Attr Name="_AM" Value="true"/>
     </DesignTime>
   </Containee>
+  <AppModuleUsage
+    Name="AppModule"
+    FullName="cm.gov.minfof.model.entity.AppModule"
+    ConfigurationName="cm.gov.minfof.model.entity.AppModuleShared"
+    SharedScope="2"/>
 </JboProject>

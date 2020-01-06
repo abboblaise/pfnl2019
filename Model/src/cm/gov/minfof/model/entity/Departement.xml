@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Departement"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="departements"
@@ -129,7 +129,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="departements"
     IsPersistent="false"
     IsQueriable="false">
     <Properties>
@@ -193,6 +192,41 @@
     Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc3"
     AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc3.Agrements1"
     AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc3.Departement"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc4"
+    AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc4.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc4.Departement"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc14"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc14.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc14.Departement1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc14"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc14.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc14.Departement2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc14"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc14.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc14.Departement3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc5"
+    AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc5.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc5.Departement"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key

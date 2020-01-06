@@ -58,11 +58,9 @@
                                                                   pattern="#{bindings.CeqeView1.hints.Idceqe.format}"/>
                                             </af:outputText>
                                         </af:column>
-                                        <af:column sortProperty="#{bindings.CeqeView1.hints.Numeroceqe.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.CeqeView1.hints.Numeroceqe.label}" id="c2">
-                                            <af:outputText value="#{row.Numeroceqe}"
-                                                           shortDesc="#{bindings.CeqeView1.hints.Numeroceqe.tooltip}"
+                                        <af:column filterable="true" sortable="true" rowHeader="true" headerText="#{bindings.CeqeView1.hints.numComplet.label}" id="c2">
+                                            <af:outputText value="#{row.numComplet}"
+                                                           shortDesc="#{bindings.CeqeView1.hints.numComplet.tooltip}"
                                                            id="ot2"/>
                                         </af:column>
                                         <af:column sortProperty="#{bindings.CeqeView1.hints.Datedelivrance.name}"
@@ -170,7 +168,7 @@
                                                                   autoSubmit="true">
                                         <f:validator binding="#{bindings.nomouraisonsociale.validator}"/>
                                     </af:inputComboboxListOfValues>
-                                    <af:inputComboboxListOfValues id="numeropermisId"
+                    <!--                <af:inputComboboxListOfValues id="numeropermisId"
                                                                   popupTitle="Search and Select: #{bindings.numeropermis.hints.label}"
                                                                   value="#{bindings.numeropermis.inputValue}"
                                                                   label="#{bindings.numeropermis.hints.label}"
@@ -180,7 +178,7 @@
                                                                   shortDesc="#{bindings.numeropermis.hints.tooltip}"
                                                                   partialTriggers="nomouraisonsocialeId">
                                         <f:validator binding="#{bindings.numeropermis.validator}"/>
-                                    </af:inputComboboxListOfValues>
+                                    </af:inputComboboxListOfValues> -->
                                     <af:inputDate value="#{bindings.Datedelivrance.inputValue}"
                                                   label="#{bindings.Datedelivrance.hints.label}"
                                                   required="#{bindings.Datedelivrance.hints.mandatory}"
