@@ -432,7 +432,7 @@
                                                 </af:gridCell>
                                                 
                                             </af:gridRow>
-                                            <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                   <!--         <af:gridRow marginTop="5px" height="auto" id="gr3">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc11">
                                                     <af:outputLabel value="#{bindings.Zonecoupe.hints.label}" id="ol5"/>
                                                 </af:gridCell>
@@ -446,7 +446,7 @@
                                                         <f:validator binding="#{bindings.Zonecoupe.validator}"/>
                                                     </af:inputText>
                                                 </af:gridCell>
-                                            </af:gridRow>
+                                            </af:gridRow> -->
                                             <af:gridRow id="gr10" rendered="false" marginTop="5px">
                                                 <af:gridCell id="gc31" width="auto">
                                                     <af:outputLabel value="#{bindings.Observation.hints.label}"

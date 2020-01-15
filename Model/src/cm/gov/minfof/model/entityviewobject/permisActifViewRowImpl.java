@@ -23,7 +23,8 @@ public class permisActifViewRowImpl extends ViewRowImpl {
         Datedelivrance,
         Datefin,
         Idpermissionnaire,
-        Nomouraisonsociale;
+        Nomouraisonsociale,
+        Idtypedocument;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -54,6 +55,7 @@ public class permisActifViewRowImpl extends ViewRowImpl {
     public static final int DATEFIN = AttributesEnum.Datefin.index();
     public static final int IDPERMISSIONNAIRE = AttributesEnum.Idpermissionnaire.index();
     public static final int NOMOURAISONSOCIALE = AttributesEnum.Nomouraisonsociale.index();
+    public static final int IDTYPEDOCUMENT = AttributesEnum.Idtypedocument.index();
 
     /**
      * This is the default constructor (do not remove).

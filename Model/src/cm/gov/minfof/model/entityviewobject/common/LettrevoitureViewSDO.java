@@ -30,10 +30,6 @@ public interface LettrevoitureViewSDO extends java.io.Serializable {
 
    public void setIdpermis(java.math.BigDecimal value);
 
-   public java.sql.Timestamp getDatelettrevoiture();
-
-   public void setDatelettrevoiture(java.sql.Timestamp value);
-
    public java.lang.String getImmatriculation();
 
    public void setImmatriculation(java.lang.String value);
@@ -65,6 +61,10 @@ public interface LettrevoitureViewSDO extends java.io.Serializable {
    public java.math.BigDecimal getIdtypedocument();
 
    public void setIdtypedocument(java.math.BigDecimal value);
+
+   public java.sql.Date getDatelettrevoiture();
+
+   public void setDatelettrevoiture(java.sql.Date value);
 
    public java.util.List getLettrevoitureView2();
 

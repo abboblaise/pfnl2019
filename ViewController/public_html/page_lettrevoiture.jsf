@@ -53,9 +53,9 @@
                                                       varStatus="vs" id="t1"
                                                       partialTriggers=":::b3 :::b8 :::b9 :::b10 :::b11 :::b14 :::b15 :::b16 :::b17 :::b1"
                                                       autoHeightRows="15">
-                                                <af:column headerText="#{bindings.LettrevoitureView1.hints.Idtypedocument.label}"
+                                                <af:column filterable="true" sortable="true" headerText="#{bindings.LettrevoitureView1.hints.Idtypedocument.label}"
                                                            id="c13">
-                                                    <af:selectOneChoice value="#{row.bindings.Idtypedocument.inputValue}"
+                                                    <af:selectOneChoice readOnly="true" value="#{row.bindings.Idtypedocument.inputValue}"
                                                                         label="#{row.bindings.Idtypedocument.label}"
                                                                         required="#{bindings.LettrevoitureView1.hints.Idtypedocument.mandatory}"
                                                                         shortDesc="#{bindings.LettrevoitureView1.hints.Idtypedocument.tooltip}"
@@ -174,7 +174,8 @@
                                                         <af:outputText value="#{bindings.Idtypedocument1.hints.label}" id="ottype1"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" id="gctype">
-                                                        <af:selectOneChoice value="#{bindings.Idtypedocument1.inputValue}"
+                                                        <af:selectOneChoice autoSubmit="true"
+                                                                            valueChangeListener="#{lettreVoitureBean.typeDocChange}" value="#{bindings.Idtypedocument1.inputValue}"
                                                                             required="#{bindings.Idtypedocument1.hints.mandatory}"
                                                                             shortDesc="#{bindings.Idtypedocument1.hints.tooltip}"
                                                                             id="soc4">
@@ -201,24 +202,47 @@
                                                         </af:inputText>
                                                     </af:gridCell>
                                                 </af:gridRow>
+                                                
+                                        
+                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc3">
                                                         <af:outputText value="#{bindings.Idpermis.label}" id="ot7"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc4">
-                                                        <af:inputComboboxListOfValues id="soc1"
+                                                    <!--    <af:inputComboboxListOfValues partialTriggers="soc4" id="soc1"
                                                                                       popupTitle="Search and Select: #{bindings.numpermis.hints.label}"
                                                                                       value="#{bindings.numpermis.inputValue}"
                                                                                       model="#{bindings.numpermis.listOfValuesModel}"
+                                                                                      
                                                                                       required="#{bindings.numpermis.hints.mandatory}"
                                                                                       columns="#{bindings.numpermis.hints.displayWidth}"
                                                                                       shortDesc="#{bindings.numpermis.hints.tooltip}"
                                                                                       autoSubmit="false">
                                                             <f:validator binding="#{bindings.numpermis.validator}"/>
                                                         </af:inputComboboxListOfValues>
+                                                        
+                                                        <af:selectOneChoice value="#{bindings.numpermis1.inputValue}"
+                                                                            partialTriggers="soc4" label="#{bindings.numpermis1.label}"
+                                                                            required="#{bindings.numpermis1.hints.mandatory}"
+                                                                            shortDesc="#{bindings.numpermis1.hints.tooltip}"
+                                                                            id="soc9">
+                                                            <f:selectItems value="#{bindings.numpermis1.items}"
+                                                                           id="si4"/>
+                                                            <f:validator binding="#{bindings.numpermis1.validator}"/>
+                                                        </af:selectOneChoice> -->
+                                                        <af:selectOneChoice valueChangeListener="#{lettreVoitureBean.permisChange}" partialTriggers="soc4" value="#{bindings.Idpermis1.inputValue}"
+                                                                            required="#{bindings.Idpermis1.hints.mandatory}"
+                                                                            shortDesc="#{bindings.Idpermis1.hints.tooltip}"
+                                                                            autoSubmit="true"
+                                                                            id="soc10">
+                                                            <f:selectItems value="#{bindings.Idpermis1.items}" id="si9"/>
+                                                            <f:validator binding="#{bindings.Idpermis1.validator}"/>
+                                                        </af:selectOneChoice>
                                                     </af:gridCell>
                                                 </af:gridRow>
+                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc5">
                                                         <af:outputText value="#{bindings.Idpermissionnaire.label}" id="ot8"
@@ -233,12 +257,14 @@
                                                                                       required="#{bindings.nomacteur.hints.mandatory}"
                                                                                       columns="#{bindings.nomacteur.hints.displayWidth}"
                                                                                       shortDesc="#{bindings.nomacteur.hints.tooltip}"
-                                                                                      partialTriggers="soc1"
+                                                                                      partialTriggers="soc10"
                                                                                       visible="true">
                                                             <f:validator binding="#{bindings.nomacteur.validator}"/>
                                                         </af:inputComboboxListOfValues>
+                                                        
                                                     </af:gridCell>
                                                 </af:gridRow>
+                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="gr4">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc7">
                                                         <af:outputText value="#{bindings.Immatriculation.hints.label}" id="ot9"/>
@@ -294,8 +320,17 @@
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc14">
-                                                        <af:inputComboboxListOfValues id="nomdepartId"
+                                                    <!--    <af:inputComboboxListOfValues id="nomdepartId"
                                                                                       label="&nbsp;&nbsp;"  
+                                                                                      popupTitle="Search and Select: #{bindings.nomdepart1.hints.label}"
+                                                                                      value="#{bindings.nomdepart1.inputValue}"
+                                                                                      model="#{bindings.nomdepart1.listOfValuesModel}"
+                                                                                      required="#{bindings.nomdepart1.hints.mandatory}"
+                                                                                      columns="#{bindings.nomdepart1.hints.displayWidth}"
+                                                                                      shortDesc="#{bindings.nomdepart1.hints.tooltip}">
+                                                            <f:validator binding="#{bindings.nomdepart1.validator}"/>
+                                                        </af:inputComboboxListOfValues> -->
+                                                        <af:inputComboboxListOfValues id="iclov1"
                                                                                       popupTitle="Search and Select: #{bindings.nomdepart.hints.label}"
                                                                                       value="#{bindings.nomdepart.inputValue}"
                                                                                       model="#{bindings.nomdepart.listOfValuesModel}"

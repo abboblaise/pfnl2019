@@ -157,7 +157,7 @@
     IsNotNull="true"
     ColumnName="datelettrevoiture"
     SQLType="DATE"
-    Type="oracle.jbo.domain.Timestamp"
+    Type="java.sql.Date"
     ColumnType="DATE"
     TableName="lettrevoiture">
     <TransientExpression
@@ -229,8 +229,7 @@
     Type="java.lang.String"
     ColumnType="CHAR"
     IsPersistent="false"
-    IsQueriable="false"
-    IsNotNull="true">
+    IsQueriable="false">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -391,18 +390,6 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiture1Assoc3.Lettrevoiture2"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
-  <Key
-    Name="LettrevoitureNumpermisCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"NUMPERMIS" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="LETTREVOITURE_NUMPERMIS_CHECK"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="cm.gov.minfof.model.entity.Lettrevoiture.numpermis"/>
-    </AttrArray>
-  </Key>
   <Key
     Name="NumerolettrevoitureUnique">
     <DesignTime>

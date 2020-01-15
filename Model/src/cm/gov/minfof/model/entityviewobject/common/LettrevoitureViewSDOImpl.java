@@ -67,75 +67,75 @@ public class LettrevoitureViewSDOImpl extends SDODataObject implements Lettrevoi
       set(START_PROPERTY_INDEX + 6 , value);
    }
 
-   public java.sql.Timestamp getDatelettrevoiture() {
-      return (java.sql.Timestamp)get(START_PROPERTY_INDEX + 7);
-   }
-
-   public void setDatelettrevoiture(java.sql.Timestamp value) {
-      set(START_PROPERTY_INDEX + 7 , value);
-   }
-
    public java.lang.String getImmatriculation() {
-      return getString(START_PROPERTY_INDEX + 8);
+      return getString(START_PROPERTY_INDEX + 7);
    }
 
    public void setImmatriculation(java.lang.String value) {
-      set(START_PROPERTY_INDEX + 8 , value);
+      set(START_PROPERTY_INDEX + 7 , value);
    }
 
    public java.math.BigDecimal getIddepartemental() {
-      return getBigDecimal(START_PROPERTY_INDEX + 9);
+      return getBigDecimal(START_PROPERTY_INDEX + 8);
    }
 
    public void setIddepartemental(java.math.BigDecimal value) {
-      set(START_PROPERTY_INDEX + 9 , value);
+      set(START_PROPERTY_INDEX + 8 , value);
    }
 
    public java.math.BigDecimal getIdregional() {
-      return getBigDecimal(START_PROPERTY_INDEX + 10);
+      return getBigDecimal(START_PROPERTY_INDEX + 9);
    }
 
    public void setIdregional(java.math.BigDecimal value) {
-      set(START_PROPERTY_INDEX + 10 , value);
+      set(START_PROPERTY_INDEX + 9 , value);
    }
 
    public java.math.BigDecimal getIdpostechargement1() {
-      return getBigDecimal(START_PROPERTY_INDEX + 11);
+      return getBigDecimal(START_PROPERTY_INDEX + 10);
    }
 
    public void setIdpostechargement1(java.math.BigDecimal value) {
-      set(START_PROPERTY_INDEX + 11 , value);
+      set(START_PROPERTY_INDEX + 10 , value);
    }
 
    public java.lang.String getNomdepart() {
-      return getString(START_PROPERTY_INDEX + 12);
+      return getString(START_PROPERTY_INDEX + 11);
    }
 
    public void setNomdepart(java.lang.String value) {
-      set(START_PROPERTY_INDEX + 12 , value);
+      set(START_PROPERTY_INDEX + 11 , value);
    }
 
    public java.lang.String getNomacteur() {
-      return getString(START_PROPERTY_INDEX + 13);
+      return getString(START_PROPERTY_INDEX + 12);
    }
 
    public void setNomacteur(java.lang.String value) {
-      set(START_PROPERTY_INDEX + 13 , value);
+      set(START_PROPERTY_INDEX + 12 , value);
    }
 
    public java.lang.String getNumpermis() {
-      return getString(START_PROPERTY_INDEX + 14);
+      return getString(START_PROPERTY_INDEX + 13);
    }
 
    public void setNumpermis(java.lang.String value) {
-      set(START_PROPERTY_INDEX + 14 , value);
+      set(START_PROPERTY_INDEX + 13 , value);
    }
 
    public java.math.BigDecimal getIdtypedocument() {
-      return getBigDecimal(START_PROPERTY_INDEX + 15);
+      return getBigDecimal(START_PROPERTY_INDEX + 14);
    }
 
    public void setIdtypedocument(java.math.BigDecimal value) {
+      set(START_PROPERTY_INDEX + 14 , value);
+   }
+
+   public java.sql.Date getDatelettrevoiture() {
+      return (java.sql.Date)get(START_PROPERTY_INDEX + 15);
+   }
+
+   public void setDatelettrevoiture(java.sql.Date value) {
       set(START_PROPERTY_INDEX + 15 , value);
    }
 

@@ -5,6 +5,8 @@ import cm.gov.minfof.model.entity.LettrevoitureImpl;
 
 import java.math.BigDecimal;
 
+import java.sql.Date;
+
 import oracle.jbo.Row;
 import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
@@ -33,7 +35,6 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         Idpostechargement,
         Numerolettrevoiture,
         Idpermis,
-        Datelettrevoiture,
         Immatriculation,
         iddepartemental,
         idregional,
@@ -42,6 +43,7 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         nomacteur,
         numpermis,
         Idtypedocument,
+        Datelettrevoiture,
         LettrevoitureView2,
         LettrevoitureView4,
         DetailslettrevoitureView,
@@ -58,7 +60,10 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         getLocaliteUser1,
         permisActifView1,
         getPermissionnairePermis1,
-        AppModule_typeDocViewFinal1_1;
+        AppModule_typeDocViewFinal1_1,
+        AppModule_LocaliteLettreVoiture1_1,
+        LocaliteLettreVoiture1,
+        LocaliteLettreVoiture2;
         private static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -91,7 +96,6 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     public static final int IDPOSTECHARGEMENT = AttributesEnum.Idpostechargement.index();
     public static final int NUMEROLETTREVOITURE = AttributesEnum.Numerolettrevoiture.index();
     public static final int IDPERMIS = AttributesEnum.Idpermis.index();
-    public static final int DATELETTREVOITURE = AttributesEnum.Datelettrevoiture.index();
     public static final int IMMATRICULATION = AttributesEnum.Immatriculation.index();
     public static final int IDDEPARTEMENTAL = AttributesEnum.iddepartemental.index();
     public static final int IDREGIONAL = AttributesEnum.idregional.index();
@@ -100,6 +104,7 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     public static final int NOMACTEUR = AttributesEnum.nomacteur.index();
     public static final int NUMPERMIS = AttributesEnum.numpermis.index();
     public static final int IDTYPEDOCUMENT = AttributesEnum.Idtypedocument.index();
+    public static final int DATELETTREVOITURE = AttributesEnum.Datelettrevoiture.index();
     public static final int LETTREVOITUREVIEW2 = AttributesEnum.LettrevoitureView2.index();
     public static final int LETTREVOITUREVIEW4 = AttributesEnum.LettrevoitureView4.index();
     public static final int DETAILSLETTREVOITUREVIEW = AttributesEnum.DetailslettrevoitureView.index();
@@ -117,6 +122,10 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     public static final int PERMISACTIFVIEW1 = AttributesEnum.permisActifView1.index();
     public static final int GETPERMISSIONNAIREPERMIS1 = AttributesEnum.getPermissionnairePermis1.index();
     public static final int APPMODULE_TYPEDOCVIEWFINAL1_1 = AttributesEnum.AppModule_typeDocViewFinal1_1.index();
+    public static final int APPMODULE_LOCALITELETTREVOITURE1_1 =
+        AttributesEnum.AppModule_LocaliteLettreVoiture1_1.index();
+    public static final int LOCALITELETTREVOITURE1 = AttributesEnum.LocaliteLettreVoiture1.index();
+    public static final int LOCALITELETTREVOITURE2 = AttributesEnum.LocaliteLettreVoiture2.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -244,21 +253,6 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         setAttributeInternal(IDPERMIS, value);
     }
 
-    /**
-     * Gets the attribute value for datelettrevoiture using the alias name Datelettrevoiture.
-     * @return the datelettrevoiture
-     */
-    public Timestamp getDatelettrevoiture() {
-        return (Timestamp) getAttributeInternal(DATELETTREVOITURE);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for datelettrevoiture using the alias name Datelettrevoiture.
-     * @param value value to set the datelettrevoiture
-     */
-    public void setDatelettrevoiture(Timestamp value) {
-        setAttributeInternal(DATELETTREVOITURE, value);
-    }
 
     /**
      * Gets the attribute value for immatriculation using the alias name Immatriculation.
@@ -425,6 +419,22 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     }
 
     /**
+     * Gets the attribute value for datelettrevoiture using the alias name Datelettrevoiture.
+     * @return the datelettrevoiture
+     */
+    public Date getDatelettrevoiture() {
+        return (Date) getAttributeInternal(DATELETTREVOITURE);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for datelettrevoiture using the alias name Datelettrevoiture.
+     * @param value value to set the datelettrevoiture
+     */
+    public void setDatelettrevoiture(Date value) {
+        setAttributeInternal(DATELETTREVOITURE, value);
+    }
+
+    /**
      * Gets the associated <code>RowIterator</code> using master-detail link LettrevoitureView2.
      */
     public RowIterator getLettrevoitureView2() {
@@ -541,6 +551,27 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAppModule_typeDocViewFinal1_1() {
         return (RowSet) getAttributeInternal(APPMODULE_TYPEDOCVIEWFINAL1_1);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AppModule_LocaliteLettreVoiture1_1.
+     */
+    public RowSet getAppModule_LocaliteLettreVoiture1_1() {
+        return (RowSet) getAttributeInternal(APPMODULE_LOCALITELETTREVOITURE1_1);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> LocaliteLettreVoiture1.
+     */
+    public RowSet getLocaliteLettreVoiture1() {
+        return (RowSet) getAttributeInternal(LOCALITELETTREVOITURE1);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> LocaliteLettreVoiture2.
+     */
+    public RowSet getLocaliteLettreVoiture2() {
+        return (RowSet) getAttributeInternal(LOCALITELETTREVOITURE2);
     }
 }
 

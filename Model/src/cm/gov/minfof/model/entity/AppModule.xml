@@ -1221,6 +1221,9 @@
   <ViewUsage
     Name="UniteMesureWithPartieProduitPfnl2"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.UniteMesureWithPartieProduitPfnl"/>
+  <ViewUsage
+    Name="LocaliteLettreVoiture1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture"/>
   <ViewLinkUsage
     Name="PermissionnaireToPermisLink"
     ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermissionnaireToPermisLink"

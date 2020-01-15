@@ -103,8 +103,8 @@
                                                 <af:spacer width="10" height="10" id="pt_s10"/>
                                                 <af:button text="#{viewcontrollerBundle.DOCUMENTS_OFFICIELS}" id="pt_b18"
                                                            destination="page_permis.jsf"/>
-                                                <af:spacer width="10" height="10" id="pt_s15"/>
-                                                <af:button text="#{viewcontrollerBundle.CERTIFICAT_D_ORIGINE}"
+                                                <af:spacer visible="false" width="10" height="10" id="pt_s15"/>
+                                                <af:button visible="false" text="#{viewcontrollerBundle.CERTIFICAT_D_ORIGINE}"
                                                            id="pt_b10" destination="page_certificat.jsf"/>
                                             </af:panelGroupLayout>
                                         </af:showDetailItem>

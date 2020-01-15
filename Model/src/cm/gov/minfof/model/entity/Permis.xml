@@ -74,7 +74,8 @@
     SQLType="DATE"
     Type="java.sql.Date"
     ColumnType="DATE"
-    TableName="permis">
+    TableName="permis"
+    IsNotNull="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -299,6 +300,18 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.FkPermis1Assoc3.Permis2"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="PermisDatedelivranceCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"datedelivrance" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Permis_Datedelivrance_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Datedelivrance"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="PermisIdpermissionnaireCheck">
     <DesignTime>

@@ -2,6 +2,8 @@ package cm.gov.minfof.model.entity;
 
 import java.math.BigDecimal;
 
+import java.sql.Date;
+
 import javax.faces.context.FacesContext;
 
 import javax.servlet.http.HttpSession;
@@ -249,15 +251,15 @@ public class LettrevoitureImpl extends EntityImpl {
      * Gets the attribute value for Datelettrevoiture, using the alias name Datelettrevoiture.
      * @return the value of Datelettrevoiture
      */
-    public Timestamp getDatelettrevoiture() {
-        return (Timestamp) getAttributeInternal(DATELETTREVOITURE);
+    public Date getDatelettrevoiture() {
+        return (Date) getAttributeInternal(DATELETTREVOITURE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Datelettrevoiture.
      * @param value value to set the Datelettrevoiture
      */
-    public void setDatelettrevoiture(Timestamp value) {
+    public void setDatelettrevoiture(Date value) {
         setAttributeInternal(DATELETTREVOITURE, value);
     }
 

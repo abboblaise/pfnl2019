@@ -4,6 +4,7 @@ import cm.gov.minfof.model.entity.common.*;
 import cm.gov.minfof.model.entityviewobject.CategorieunitemesureViewImpl;
 import cm.gov.minfof.model.entityviewobject.CollMultiCritereImpl;
 import cm.gov.minfof.model.entityviewobject.CollecteMultiImpl;
+import cm.gov.minfof.model.entityviewobject.LocaliteLettreVoitureImpl;
 import cm.gov.minfof.model.entityviewobject.NiveauValidationViewImpl;
 import cm.gov.minfof.model.entityviewobject.AgrementsViewImpl;
 import cm.gov.minfof.model.entityviewobject.CategorieproduitViewImpl;
@@ -4984,6 +4985,14 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public UniteMesureWithPartieProduitPfnlImpl getUniteMesureWithPartieProduitPfnl2() {
         return (UniteMesureWithPartieProduitPfnlImpl) findViewObject("UniteMesureWithPartieProduitPfnl2");
+    }
+
+    /**
+     * Container's getter for LocaliteLettreVoiture1.
+     * @return LocaliteLettreVoiture1
+     */
+    public LocaliteLettreVoitureImpl getLocaliteLettreVoiture1() {
+        return (LocaliteLettreVoitureImpl) findViewObject("LocaliteLettreVoiture1");
     }
 }
 

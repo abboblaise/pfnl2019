@@ -133,6 +133,20 @@
     AMUsageName="AppModule"
     ViewInstanceName="typeDocViewFinal1"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AppModule_LocaliteLettreVoiture1_1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture"
+    AMUsageName="AppModule"
+    ViewInstanceName="LocaliteLettreVoiture1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="LocaliteLettreVoiture1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="LocaliteLettreVoiture2"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Idpermissionnaire"
     ListVOName="PermissionnairespnflView1"
@@ -168,23 +182,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_Idpostechargement"
-    ListVOName="getLocaliteUser1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Idpostechargement"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Idlocalite"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Nomlocalite"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_Idpermis"
     ListVOName="PermisView1"
     NullValueFlag="none"
@@ -211,29 +208,6 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="Idlocalite"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Nomlocalite"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_nomdepart"
-    ListVOName="getLocaliteUser1"
-    ComboRowCountHint="10"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="nomdepart"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="Idpostechargement"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Nomlocalite"/>
       <Item Value="Idlocalite"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
@@ -303,6 +277,48 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_nomdepart"
+    ListVOName="LocaliteLettreVoiture1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="nomdepart"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idpostechargement"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Nomlocalite"/>
+      <Item Value="Idlocalite"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomlocalite"/>
+      <Item Value="Idregions"/>
+      <Item Value="Iddepartements"/>
+      <Item Value="Idcommune"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpostechargement"
+    ListVOName="LocaliteLettreVoiture2"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpostechargement"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idlocalite"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomlocalite"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Lettrevoiture"
     Entity="cm.gov.minfof.model.entity.Lettrevoiture"/>
@@ -326,6 +342,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LettrevoitureView.Idpermissionnaire_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -372,7 +390,14 @@
     PrecisionRule="true"
     EntityAttrName="Numerolettrevoiture"
     EntityUsage="Lettrevoiture"
-    AliasName="numerolettrevoiture"/>
+    AliasName="numerolettrevoiture">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LettrevoitureView.Numerolettrevoiture_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Idpermis"
     IsNotNull="true"
@@ -385,16 +410,11 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LettrevoitureView.Idpermis_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewAttribute
-    Name="Datelettrevoiture"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Datelettrevoiture"
-    EntityUsage="Lettrevoiture"
-    AliasName="datelettrevoiture"/>
   <ViewAttribute
     Name="Immatriculation"
     IsNotNull="true"
@@ -493,9 +513,18 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LettrevoitureView.Idtypedocument_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Datelettrevoiture"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Datelettrevoiture"
+    EntityUsage="Lettrevoiture"
+    AliasName="datelettrevoiture"/>
   <ViewCriteria
     Name="LettrevoitureViewCriteria"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.LettrevoitureView"
@@ -519,43 +548,6 @@
           Value="InAdvancedMode"/>
       </CustomProperties>
     </Properties>
-    <ViewCriteriaRow
-      Name="LettrevoitureViewCriteria_row_1"
-      UpperColumns="1">
-      <ViewCriteriaItemCompound
-        Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture"
-        ViewAttribute="Datelettrevoiture">
-        <ViewCriteria
-          Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_itemHolder"
-          ViewObjectName="cm.gov.minfof.model.entityviewobject.LettrevoitureView"
-          Conjunction="OR">
-          <ViewCriteriaRow
-            Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_itemHolder_row_0"
-            Conjunction="AND">
-            <ViewCriteriaItem
-              Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture"
-              ViewAttribute="Datelettrevoiture"
-              Operator="ONORBEFORE"
-              Conjunction="AND"
-              Value=":dateFin"
-              IsBindVarValue="true"
-              Required="Optional"/>
-          </ViewCriteriaRow>
-          <ViewCriteriaRow
-            Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_itemHolder_row_1"
-            Conjunction="AND">
-            <ViewCriteriaItem
-              Name="LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_itemHolder_LettrevoitureViewCriteria_LettrevoitureViewCriteria_row_1_Datelettrevoiture_itemHolder_row_1_Datelettrevoiture"
-              ViewAttribute="Datelettrevoiture"
-              Operator="ONORAFTER"
-              Conjunction="AND"
-              Value=":dateDebut"
-              IsBindVarValue="true"
-              Required="Optional"/>
-          </ViewCriteriaRow>
-        </ViewCriteria>
-      </ViewCriteriaItemCompound>
-    </ViewCriteriaRow>
   </ViewCriteria>
   <ViewLinkAccessor
     Name="LettrevoitureView2"
@@ -685,4 +677,8 @@
         Type="java.sql.Timestamp"/>
     </Method>
   </ClientInterface>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

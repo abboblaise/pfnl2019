@@ -13,6 +13,9 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="LettrevoitureView1Query"/>
     <iterator id="getLocaliteUser1Iterator" Binds="getLocaliteUser1" DataControl="AppModuleDataControl" RangeSize="25"
               Refresh="always"/>
+    <iterator Binds="permisActifView1" RangeSize="-1" DataControl="AppModuleDataControl" id="permisActifView1Iterator"/>
+    <iterator Binds="LocaliteLettreVoiture1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="LocaliteLettreVoiture1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="LettrevoitureView1Iterator" id="Numerolettrevoiture">
@@ -21,7 +24,7 @@
       </AttrNames>
     </attributeValues>
     <list IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_Idpermis" id="Idpermis"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_Idpermissionnaire"
           id="Idpermissionnaire" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="LettrevoitureView1Iterator" id="Nomconducteur">
@@ -114,5 +117,41 @@
     </attributeValues>
     <list IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_Idtypedocument" id="Idtypedocument1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="LettrevoitureView1Iterator" StaticList="false" Uses="LOV_numpermis" id="numpermis1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list StaticList="false" IterBinding="LettrevoitureView1Iterator" ListIter="permisActifView1Iterator"
+          id="Idpermis1">
+      <AttrNames>
+        <Item Value="Idpermis"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idpermis"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Numeropermis"/>
+      </ListDisplayAttrNames>
+    </list>
+    <attributeValues IterBinding="LettrevoitureView1Iterator" id="Idpermissionnaire1">
+      <AttrNames>
+        <Item Value="Idpermissionnaire"/>
+      </AttrNames>
+    </attributeValues>
+    <list StaticList="false" IterBinding="LettrevoitureView1Iterator" ListIter="LocaliteLettreVoiture1Iterator"
+          id="nomdepart1">
+      <AttrNames>
+        <Item Value="nomdepart"/>
+        <Item Value="Idpostechargement"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Nomlocalite"/>
+        <Item Value="Idlocalite"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Nomlocalite"/>
+        <Item Value="Idregions"/>
+        <Item Value="Iddepartements"/>
+        <Item Value="Idcommune"/>
+      </ListDisplayAttrNames>
+    </list>
   </bindings>
 </pageDefinition>
