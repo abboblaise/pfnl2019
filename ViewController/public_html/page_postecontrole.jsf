@@ -28,7 +28,7 @@
                                                        onDialogReturn="#{LocaliteBean.onDelete}">
                                     <f:facet name="DialogContent"/>
                                 </mycomps:ConfirmButton>
-                            </af:panelGroupLayout>
+                            </af:panelGroupLayout> 
                         </f:facet>
                         <af:spacer width="10" height="10" id="s7"/>
                         <af:panelTabbed position="above" id="pt2">

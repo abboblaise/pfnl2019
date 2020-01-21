@@ -35,7 +35,7 @@
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
-        </f:facet>
+        </f:facet> 
         <f:facet name="second">
             <af:panelSplitter splitterPosition="31" orientation="vertical" positionedFromEnd="true" id="pt_ps2">
                 <f:facet name="first">
