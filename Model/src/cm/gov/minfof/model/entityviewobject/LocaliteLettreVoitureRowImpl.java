@@ -18,7 +18,9 @@ public class LocaliteLettreVoitureRowImpl extends ViewRowImpl {
         Idlocalite,
         Nomlocalite,
         Iddepartements,
-        Idregions;
+        Idregions,
+        Nomdepartement,
+        Nomregion;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -41,11 +43,14 @@ public class LocaliteLettreVoitureRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
     public static final int IDCOMMUNE = AttributesEnum.Idcommune.index();
     public static final int IDLOCALITE = AttributesEnum.Idlocalite.index();
     public static final int NOMLOCALITE = AttributesEnum.Nomlocalite.index();
     public static final int IDDEPARTEMENTS = AttributesEnum.Iddepartements.index();
     public static final int IDREGIONS = AttributesEnum.Idregions.index();
+    public static final int NOMDEPARTEMENT = AttributesEnum.Nomdepartement.index();
+    public static final int NOMREGION = AttributesEnum.Nomregion.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -91,6 +96,22 @@ public class LocaliteLettreVoitureRowImpl extends ViewRowImpl {
      */
     public BigDecimal getIdregions() {
         return (BigDecimal) getAttributeInternal(IDREGIONS);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute Nomdepartement.
+     * @return the Nomdepartement
+     */
+    public String getNomdepartement() {
+        return (String) getAttributeInternal(NOMDEPARTEMENT);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute Nomregion.
+     * @return the Nomregion
+     */
+    public String getNomregion() {
+        return (String) getAttributeInternal(NOMREGION);
     }
 }
 

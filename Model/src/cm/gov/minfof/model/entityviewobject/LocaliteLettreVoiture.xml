@@ -23,7 +23,7 @@
         ResId="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[select communes.idcommunes as Idcommune, localite.idlocalite as Idlocalite, localite.nomlocalite as Nomlocalite, departements.iddepartements as Iddepartements, regions.idregions as Idregions
+  <SQLQuery><![CDATA[select communes.idcommunes as Idcommune, localite.idlocalite as Idlocalite, localite.nomlocalite as Nomlocalite, departements.iddepartements as Iddepartements, regions.idregions as Idregions, departements.nomdepartement as nomdepartement, regions.nomregion as nomregion
 from regions, departements, communes, localite, postecontrole
 where (regions.idregions in (select detailpermis.idregions 
 							from permis, detailpermis 
@@ -100,6 +100,36 @@ where (regions.idregions in (select detailpermis.idregions
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomdepartement"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomdepartement"
+    Expression="nomdepartement"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomregion"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomregion"
+    Expression="nomregion"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </ViewAttribute>
   <ResourceBundle>

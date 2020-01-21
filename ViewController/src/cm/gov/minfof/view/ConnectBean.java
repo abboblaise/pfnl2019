@@ -240,8 +240,8 @@ public class ConnectBean {
      public static Session setSessionAuthentication()
        throws Exception
      {
-       final String username = "infopfnl2016@gmail.com";
-       final String password = "lespfnl2016";
+       final String username = "minfofpfnl@gmail.com";
+       final String password = "SYSADMIN@2019";
        //Using SSL
        //Properties props = new Properties();
        //props.put("mail.smtp.host", "smtp.gmail.com");

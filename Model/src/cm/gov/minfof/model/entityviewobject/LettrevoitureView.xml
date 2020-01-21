@@ -296,9 +296,8 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Nomlocalite"/>
-      <Item Value="Idregions"/>
-      <Item Value="Iddepartements"/>
-      <Item Value="Idcommune"/>
+      <Item Value="Nomdepartement"/>
+      <Item Value="Nomregion"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

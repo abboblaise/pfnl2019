@@ -306,8 +306,8 @@ public class LettreVoitureBean {
         "    permis,  \n" + 
         "    permissionnairespnfl  \n" + 
         "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire  \n" + 
-        "and permis.datefin >= current_date() and permis.idtypedocument="+bd.toString()+")";
-        
+        "and permis.idtypedocument="+bd.toString()+")";
+        //and permis.datefin >= current_date() 
         
         }
         else
@@ -364,6 +364,6 @@ public class LettreVoitureBean {
         Object v = valueChangeEvent.getNewValue();
         System.out.println("v= " + v);
         BigDecimal bd = new BigDecimal(v.toString());
-        
+    //    BigDecimal idType = getIdTypeDocumentCourant();
     }
 }
