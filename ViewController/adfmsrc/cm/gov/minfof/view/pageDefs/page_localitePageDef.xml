@@ -25,10 +25,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="LocaliteView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
-    <action IterBinding="LocaliteView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="LocaliteView9Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="LocaliteView9Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <tree IterBinding="LocaliteView1Iterator" id="LocaliteView11">
+    <tree IterBinding="LocaliteView9Iterator" id="LocaliteView11">
       <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.LocaliteView" Name="LocaliteView110">
         <AttrNames>
           <Item Value="Idlocalite"/>

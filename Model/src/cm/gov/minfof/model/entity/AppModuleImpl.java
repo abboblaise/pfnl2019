@@ -31,6 +31,7 @@ import cm.gov.minfof.model.entityviewobject.UnitemesureViewImpl;
 import cm.gov.minfof.model.entityviewobject.UtilisateurViewImpl;
 import cm.gov.minfof.model.entityviewobject.VehiculeViewImpl;
 import cm.gov.minfof.model.entityviewobject.gestLastIdUnitMesureImpl;
+import cm.gov.minfof.model.entityviewobject.getCodeSigifPosteControleImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIcCollecteImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIdCategorieUniteMesureImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIdCommunesImpl;
@@ -4993,6 +4994,14 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public LocaliteLettreVoitureImpl getLocaliteLettreVoiture1() {
         return (LocaliteLettreVoitureImpl) findViewObject("LocaliteLettreVoiture1");
+    }
+
+    /**
+     * Container's getter for getCodeSigifPosteControle1.
+     * @return getCodeSigifPosteControle1
+     */
+    public getCodeSigifPosteControleImpl getgetCodeSigifPosteControle1() {
+        return (getCodeSigifPosteControleImpl) findViewObject("getCodeSigifPosteControle1");
     }
 }
 

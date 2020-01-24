@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="PostecontroleView"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -151,6 +151,14 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CodeSigif"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="CodeSigif"
+    EntityUsage="Postecontrole"
+    AliasName="Code_Sigif"/>
   <ViewLinkAccessor
     Name="CommuneView"
     ViewLink="cm.gov.minfof.model.queryviewobject.communeToPosteControleLink"

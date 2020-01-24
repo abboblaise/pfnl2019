@@ -29,6 +29,7 @@ public class PostecontroleViewRowImpl extends ViewRowImpl {
         Posteexport,
         Idcommune,
         Nomcommune,
+        CodeSigif,
         CommuneView,
         LocaliteView,
         CommuneView1;
@@ -63,6 +64,7 @@ public class PostecontroleViewRowImpl extends ViewRowImpl {
     public static final int POSTEEXPORT = AttributesEnum.Posteexport.index();
     public static final int IDCOMMUNE = AttributesEnum.Idcommune.index();
     public static final int NOMCOMMUNE = AttributesEnum.Nomcommune.index();
+    public static final int CODESIGIF = AttributesEnum.CodeSigif.index();
     public static final int COMMUNEVIEW = AttributesEnum.CommuneView.index();
     public static final int LOCALITEVIEW = AttributesEnum.LocaliteView.index();
     public static final int COMMUNEVIEW1 = AttributesEnum.CommuneView1.index();
@@ -192,6 +194,22 @@ public class PostecontroleViewRowImpl extends ViewRowImpl {
      */
     public void setNomcommune(String value) {
         setAttributeInternal(NOMCOMMUNE, value);
+    }
+
+    /**
+     * Gets the attribute value for Code_Sigif using the alias name CodeSigif.
+     * @return the Code_Sigif
+     */
+    public String getCodeSigif() {
+        return (String) getAttributeInternal(CODESIGIF);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for Code_Sigif using the alias name CodeSigif.
+     * @param value value to set the Code_Sigif
+     */
+    public void setCodeSigif(String value) {
+        setAttributeInternal(CODESIGIF, value);
     }
 
     /**

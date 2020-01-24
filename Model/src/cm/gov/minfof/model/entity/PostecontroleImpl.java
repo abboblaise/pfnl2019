@@ -29,6 +29,7 @@ public class PostecontroleImpl extends EntityImpl {
         Intituleposte,
         Posteexport,
         Idcommune,
+        CodeSigif,
         Commune,
         Localite,
         LettreVoiturePc,
@@ -65,6 +66,7 @@ public class PostecontroleImpl extends EntityImpl {
     public static final int INTITULEPOSTE = AttributesEnum.Intituleposte.index();
     public static final int POSTEEXPORT = AttributesEnum.Posteexport.index();
     public static final int IDCOMMUNE = AttributesEnum.Idcommune.index();
+    public static final int CODESIGIF = AttributesEnum.CodeSigif.index();
     public static final int COMMUNE = AttributesEnum.Commune.index();
     public static final int LOCALITE = AttributesEnum.Localite.index();
     public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
@@ -171,6 +173,43 @@ public class PostecontroleImpl extends EntityImpl {
 
 
     /**
+     * Gets the attribute value for CodeSigif, using the alias name CodeSigif.
+     * @return the value of CodeSigif
+     */
+    public String getCodeSigif() {
+        String codeSigif = "";
+        if(getIdpostecontrole() != null)
+        {
+            ViewObject vo = rechercherVue("getCodeSigifPosteControle1");
+            vo.setWhereClause(null);
+            vo.setWhereClauseParams(null);
+            vo.setWhereClause("Idpostecontrole = ?");
+            vo.setWhereClauseParam(0, getIdpostecontrole());
+            vo.executeQuery();
+            if (vo.hasNext()) {
+                Row r = vo.next();
+                String result = (String) r.getAttribute("Codesigif");
+                if(result != null)
+                    codeSigif = result;
+            }
+            vo.setWhereClause(null);
+            vo.setWhereClauseParams(null);
+            vo.executeQuery();
+        }
+        return codeSigif;
+        
+        //return (String) getAttributeInternal(CODESIGIF);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CodeSigif.
+     * @param value value to set the CodeSigif
+     */
+    public void setCodeSigif(String value) {
+        setAttributeInternal(CODESIGIF, value);
+    }
+
+    /**
      * @return the associated entity CommuneImpl.
      */
     public CommuneImpl getCommune() {
@@ -242,6 +281,7 @@ public class PostecontroleImpl extends EntityImpl {
         setAttributeInternal(TYPEDOCUMENT, value);
     }
 
+
     /**
      * @param idpostecontrole key constituent
 
@@ -302,5 +342,12 @@ public class PostecontroleImpl extends EntityImpl {
         lastId = lastId.add(un);
         return lastId; 
     }
+    
+    public ViewObject rechercherVue(String viewName) {
+        ViewObject vo = this.getDBTransaction()
+                            .getRootApplicationModule()
+                            .findViewObject(viewName);
+        return vo; 
+        }
 }
 

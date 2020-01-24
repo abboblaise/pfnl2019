@@ -50,6 +50,25 @@
           ResId="CODE_DU_POSTE"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:PreDefinedValidationBean
+      Name="CodeposteRule0"
+      Description="Precision : (2)"
+      ValName="Precision : (10)"
+      Subtype="PRECISION_SCALE"/>
+    <validation:LengthValidationBean
+      Name="CodeposteRule1"
+      ResId="cm.gov.minfof.model.entity.Postecontrole.Codeposte_Rule_1"
+      OnAttribute="Codeposte"
+      CompareType="EQUALTO"
+      DataType="CHARACTER"
+      CompareLength="2"
+      Inverse="false"/>
+    <validation:RegExpValidationBean
+      Name="CodeposteRule2"
+      ResId="cm.gov.minfof.model.entity.Postecontrole.Codeposte_Rule_2"
+      OnAttribute="Codeposte"
+      Pattern="\d{2}"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="Intituleposte"
@@ -106,6 +125,15 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="CodeSigif"
+    Precision="80"
+    ColumnName="Code_Sigif"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false"/>
   <AccessorAttribute
     Name="Commune"
     Association="cm.gov.minfof.model.entity.CommuneToPosteControleAssoc"
@@ -237,22 +265,6 @@
       <Item Value="cm.gov.minfof.model.entity.Postecontrole.Idcommune"/>
     </AttrArray>
   </Key>
-  <validation:UniqueKeyValidationBean
-    Name="PostecontroleRule0"
-    ResId="UN_POSTE_DE_CODE__0__EXISTE_D_U00E9J_U00E0"
-    KeyName="AltKey">
-    <validation:OnAttributes>
-      <validation:Item
-        Value="Codeposte"/>
-    </validation:OnAttributes>
-    <validation:ResExpressions
-      Name="PostecontroleRule0_ResExprList">
-      <validation:Expression
-        Name="0"
-        trustMode="untrusted"
-        CodeSourceName="PostecontroleRow"/>
-    </validation:ResExpressions>
-  </validation:UniqueKeyValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="cm.gov.minfof.model.ModelBundle"/>

@@ -26,6 +26,10 @@ public interface PostecontroleViewSDO extends java.io.Serializable {
 
    public void setNomcommune(java.lang.String value);
 
+   public java.lang.String getCodeSigif();
+
+   public void setCodeSigif(java.lang.String value);
+
    public java.util.List getLocaliteView();
 
    public void setLocaliteView(java.util.List value);

@@ -1224,6 +1224,9 @@
   <ViewUsage
     Name="LocaliteLettreVoiture1"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture"/>
+  <ViewUsage
+    Name="getCodeSigifPosteControle1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getCodeSigifPosteControle"/>
   <ViewLinkUsage
     Name="PermissionnaireToPermisLink"
     ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermissionnaireToPermisLink"

@@ -18,6 +18,7 @@
             <xsd:element name="Posteexport" type="xsd:int" minOccurs="0" nillable="true"/>
             <xsd:element name="Idcommune" type="xsd:decimal" minOccurs="0"/>
             <xsd:element name="Nomcommune" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="CodeSigif" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="LocaliteView" type="LocaliteViewSDO" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
     </xsd:complexType>

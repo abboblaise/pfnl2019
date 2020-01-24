@@ -51,7 +51,7 @@ public class PostecBean {
     }
 
     public String SupprimerPoste() {
-        String nomPoste = notifObj.getValueOfField("PostecontroleView1Iterator", "Intituleposte");
+        String nomPoste = notifObj.getValueOfField("PostecontroleView2Iterator", "Intituleposte");
         BindingContainer bindings = getBindings();
         OperationBinding operationBinding = bindings.getOperationBinding("Delete");
         Object result = operationBinding.execute();
@@ -70,7 +70,7 @@ public class PostecBean {
     }
 
     public String annulerPoste() {
-        notifObj.annulerParent("PostecontroleView1Iterator");
+        notifObj.annulerParent("PostecontroleView2Iterator");
         return null;
     }
 }

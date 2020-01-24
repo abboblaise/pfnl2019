@@ -51,7 +51,7 @@ public class LocaliteBean {
     }
 
     public String SupprimerLocalite() {
-        String nomLocalite = notifObj.getValueOfField("LocaliteView1Iterator", "Nomlocalite");
+        String nomLocalite = notifObj.getValueOfField("LocaliteView9Iterator", "Nomlocalite");
         BindingContainer bindings = getBindings();
         OperationBinding operationBinding = bindings.getOperationBinding("Delete");
         Object result = operationBinding.execute();
@@ -70,7 +70,7 @@ public class LocaliteBean {
     }
 
     public String annulerLocalite() {
-        notifObj.annulerParent("LocaliteView1Iterator");
+        notifObj.annulerParent("LocaliteView9Iterator");
         return null;
     }
 }

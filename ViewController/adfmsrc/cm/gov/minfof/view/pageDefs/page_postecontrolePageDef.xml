@@ -15,11 +15,11 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PostecontroleView11Query"/>
   </executables>
   <bindings>
-    <action IterBinding="PostecontroleView1Iterator" id="Create" InstanceName="AppModuleDataControl.PostecontroleView1"
+    <action IterBinding="PostecontroleView2Iterator" id="Create" InstanceName="AppModuleDataControl.PostecontroleView1"
             DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createRow"/>
     <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
     <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
-    <action IterBinding="PostecontroleView1Iterator" id="Delete" InstanceName="AppModuleDataControl.PostecontroleView1"
+    <action IterBinding="PostecontroleView2Iterator" id="Delete" InstanceName="AppModuleDataControl.PostecontroleView1"
             DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <tree IterBinding="PostecontroleView1Iterator" id="PostecontroleView1">
       <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PostecontroleView" Name="PostecontroleView10">
@@ -81,7 +81,7 @@
         <Item Value="Intituleposte"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="PostecontroleView1Iterator" id="PostecontroleView11">
+    <tree IterBinding="PostecontroleView2Iterator" id="PostecontroleView11">
       <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PostecontroleView" Name="PostecontroleView110">
         <AttrNames>
           <Item Value="Idpostecontrole"/>
@@ -89,6 +89,7 @@
           <Item Value="Intituleposte"/>
           <Item Value="Posteexport"/>
           <Item Value="Nomcommune"/>
+          <Item Value="CodeSigif"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -99,5 +100,10 @@
     <action IterBinding="PostecontroleView2Iterator" id="CreateInsert"
             InstanceName="AppModuleDataControl.PostecontroleView2" DataControl="AppModuleDataControl"
             RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="PostecontroleView1Iterator" id="CodeSigif">
+      <AttrNames>
+        <Item Value="CodeSigif"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

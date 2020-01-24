@@ -11,7 +11,7 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
                 <f:facet name="content">
-                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_LOCALITES}" id="pb1" showDisclosure="false">
+                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_POSTES_DE_CONTROLE}" id="pb1" showDisclosure="false">
                         <f:facet name="toolbar">
                             <af:panelGroupLayout id="pgl1">
                                 <af:button actionListener="#{bindings.Rollback.execute}"
@@ -25,7 +25,7 @@
                                            action="#{PostecBean.SupprimerPoste}"/>
                                 <mycomps:ConfirmButton id="cb1" ButtonText="#{viewcontrollerBundle.SUPPRIMER}"
                                                        ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}"
-                                                       onDialogReturn="#{LocaliteBean.onDelete}">
+                                                       onDialogReturn="#{PostecBean.onDelete}">
                                     <f:facet name="DialogContent"/>
                                 </mycomps:ConfirmButton>
                             </af:panelGroupLayout> 
@@ -33,6 +33,36 @@
                         <af:spacer width="10" height="10" id="s7"/>
                         <af:panelTabbed position="above" id="pt2">
                             <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}" disclosed="true">
+                            <af:spacer width="10" height="10" id="s8"/>
+                                <af:selectOneChoice value="#{bindings.RegionView1.inputValue}"
+                                                    label="#{bindings.RegionView1.label}"
+                                                    required="#{bindings.RegionView1.hints.mandatory}"
+                                                    shortDesc="#{bindings.RegionView1.hints.tooltip}" id="soc1"
+                                                    autoSubmit="true">
+                                    <f:selectItems value="#{bindings.RegionView1.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.RegionView1.validator}"/>
+                                </af:selectOneChoice>
+                                <af:spacer width="10" height="10" id="s5"/>
+                                <af:selectOneChoice value="#{bindings.DepartementView3.inputValue}"
+                                                    label="#{bindings.DepartementView3.label}"
+                                                    required="#{bindings.DepartementView3.hints.mandatory}"
+                                                    shortDesc="#{bindings.DepartementView3.hints.tooltip}" id="soc2"
+                                                    autoSubmit="true">
+                                    <f:selectItems value="#{bindings.DepartementView3.items}" id="si2"/>
+                                    <f:validator binding="#{bindings.DepartementView3.validator}"/>
+                                </af:selectOneChoice>
+                                
+                                <af:spacer width="10" height="10" id="s9"/>
+                                <af:selectOneChoice value="#{bindings.CommuneView5.inputValue}"
+                                                    label="#{bindings.CommuneView5.label}"
+                                                    required="#{bindings.CommuneView5.hints.mandatory}"
+                                                    shortDesc="#{bindings.CommuneView5.hints.tooltip}" id="soc6"
+                                                    autoSubmit="true">
+                                    <f:selectItems value="#{bindings.CommuneView5.items}" id="si6"/>
+                                    <f:validator binding="#{bindings.CommuneView5.validator}"/>
+                                </af:selectOneChoice>
+                                <af:spacer width="10" height="10" id="s10"/>
+                                
                                 <af:table value="#{bindings.PostecontroleView11.collectionModel}" var="row"
                                           rows="#{bindings.PostecontroleView11.rangeSize}"
                                           emptyText="#{bindings.PostecontroleView11.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -63,6 +93,16 @@
                                                        shortDesc="#{bindings.PostecontroleView11.hints.Codeposte.tooltip}"
                                                        id="ot2"/>
                                     </af:column>
+                                    
+                                     <af:column sortProperty="#{bindings.PostecontroleView11.hints.CodeSigif.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.PostecontroleView11.hints.CodeSigif.label}"
+                                               id="c7">
+                                        <af:outputText value="#{row.CodeSigif}"
+                                                       shortDesc="#{bindings.PostecontroleView11.hints.CodeSigif.tooltip}"
+                                                       id="ot4"/>
+                                    </af:column>
+                                    
                                     <af:column sortProperty="#{bindings.PostecontroleView11.hints.Intituleposte.name}"
                                                filterable="true" sortable="true"
                                                headerText="#{bindings.PostecontroleView11.hints.Intituleposte.label}"
@@ -79,8 +119,8 @@
                                                             label="#{row.bindings.Nomcommune.label}"
                                                             required="#{bindings.PostecontroleView11.hints.Nomcommune.mandatory}"
                                                             shortDesc="#{bindings.PostecontroleView11.hints.Nomcommune.tooltip}"
-                                                            readOnly="true" id="soc1">
-                                            <f:selectItems value="#{row.bindings.Nomcommune.items}" id="si1"/>
+                                                            readOnly="true" id="soc8">
+                                            <f:selectItems value="#{row.bindings.Nomcommune.items}" id="si8"/>
                                             <f:validator binding="#{row.bindings.Nomcommune.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
@@ -112,8 +152,8 @@
                                                                     label="#{bindings.RegionView1.label}"
                                                                     required="#{bindings.RegionView1.hints.mandatory}"
                                                                     shortDesc="#{bindings.RegionView1.hints.tooltip}"
-                                                                    id="soc2" autoSubmit="true">
-                                                    <f:selectItems value="#{bindings.RegionView1.items}" id="si2"/>
+                                                                    id="soc7" autoSubmit="true">
+                                                    <f:selectItems value="#{bindings.RegionView1.items}" id="si7"/>
                                                     <f:validator binding="#{bindings.RegionView1.validator}"/>
                                                 </af:selectOneChoice>
                                             </af:gridCell>
@@ -202,7 +242,7 @@
                                                                disabled="#{!bindings.Previous.enabled}"
                                                                partialSubmit="true" id="b2"
                                                                actionListener="#{bindings.Previous.execute}"/>
-                                                    <af:spacer width="10" height="10" id="s5"/>
+                                                    <af:spacer width="10" height="10" id="s11"/>
                                                     <af:button
                                                                text="#{viewcontrollerBundle.NEXT}"
                                                                disabled="#{!bindings.Next.enabled}" partialSubmit="true"
