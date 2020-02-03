@@ -251,6 +251,7 @@ public class PermisBean {
             return null;
         }
         masquerDesChamps();
+        masquerLesChampsDates(null);
         String numPermis = notifObj.getValueOfField("PermisView1Iterator", "Numeropermis");
         notifObj.showNoticeMessageAction("Enregistrement effectué! Le permis <b>" + numPermis +
                                          " </b>a été enregistré avec succès");
@@ -604,6 +605,8 @@ public class PermisBean {
     
     private void masquerLesChampsDates(BigDecimal idTypeDocCourant)
     {
+        if(idTypeDocCourant == null)
+            idTypeDocCourant = getIdTypeDocumentCourant();  
         System.out.println("Type document = " + idTypeDocCourant.longValue());
         if(idTypeDocCourant.longValue() == 1 || idTypeDocCourant.longValue() == 2)
         {
@@ -681,6 +684,7 @@ public class PermisBean {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
             masquerDesChamps();
+            masquerLesChampsDates(null);
         } catch (NullPointerException ex) {}
     }
     
@@ -691,6 +695,7 @@ public class PermisBean {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
             masquerDesChamps();
+            masquerLesChampsDates(null);
         } catch (NullPointerException ex) {}
     }
     
@@ -701,6 +706,7 @@ public class PermisBean {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
             masquerDesChamps();
+            masquerLesChampsDates(null);
         } catch (NullPointerException ex) {}
     }
     
@@ -711,6 +717,7 @@ public class PermisBean {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
             masquerDesChamps();
+            masquerLesChampsDates(null);
         } catch (NullPointerException ex) {}
     }
     
