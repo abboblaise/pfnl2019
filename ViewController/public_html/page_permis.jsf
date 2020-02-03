@@ -14,7 +14,7 @@
                 <f:facet name="content">
                     <af:panelSplitter id="ps1" splitterPosition="600" collapsed="false">
                         <f:facet name="first">
-                            <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_PERMIS}" id="pb5"
+                            <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_PERMIS}" id="pb5" 
                                          showDisclosure="false">
                                 <f:facet name="toolbar">
                                     <af:panelGroupLayout id="pgl6">
@@ -52,7 +52,7 @@
                                                       emptyText="#{bindings.PermisView11.viewable ? 'No data to display.' : 'Access Denied.'}"
                                                       rowBandingInterval="0"
                                                       selectedRowKeys="#{bindings.PermisView11.collectionModel.selectedRow}"
-                                                      selectionListener="#{bindings.PermisView11.collectionModel.makeCurrent}"
+                                                      selectionListener="#{PermisBean.makeCurrentPermis}"
                                                       rowSelection="single"
                                                       fetchSize="#{bindings.PermisView11.rangeSize}"
                                                       filterModel="#{bindings.PermisView1Query.queryDescriptor}"
@@ -60,7 +60,7 @@
                                                       queryListener="#{bindings.PermisView1Query.processQuery}"
                                                       varStatus="vs" id="t2"
                                                       partialTriggers=":::b15 :::b16 :::b17 :::b18">
-                                                <af:column sortProperty="#{bindings.PermisView11.hints.Idpermis.name}"
+                                                <af:column width="25px" sortProperty="#{bindings.PermisView11.hints.Idpermis.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.PermisView11.hints.Idpermis.label}"
                                                            id="c1">
@@ -342,9 +342,11 @@
                                                 </af:gridCell>
                                                 <af:gridCell id="gc20" width="auto">
                                                     <af:selectOneChoice value="#{bindings.Idtypedocument.inputValue}"
+                                                                        autoSubmit="true"
                                                                         required="#{bindings.Idtypedocument.hints.mandatory}"
                                                                         shortDesc="#{bindings.Idtypedocument.hints.tooltip}"
-                                                                        id="soc3">
+                                                                        id="soc3"
+                                                                        valueChangeListener="#{PermisBean.typeDocumentChange}">
                                                         <f:selectItems value="#{bindings.Idtypedocument.items}"
                                                                        id="si3"/>
                                                         <f:validator binding="#{bindings.Idtypedocument.validator}"/>
@@ -402,11 +404,14 @@
                                             <af:gridRow marginTop="5px" height="auto" id="gr2">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc7">
                                                     <af:outputLabel value="#{bindings.Datedelivrance.hints.label}"
+                                                    visible="#{PermisBean.dateDebutVisible}" partialTriggers="soc3"
                                                                     id="ol4"/>
                                                 </af:gridCell>
                                                 <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc8">
                                                     <af:inputDate value="#{bindings.Datedelivrance.inputValue}"
-                                                                  required="#{bindings.Datedelivrance.hints.mandatory}"
+                                                                partialTriggers="soc3"
+                                                                  visible="#{PermisBean.dateDebutVisible}"
+                                                                  required="#{PermisBean.dateDebutObligatoire}"
                                                                   columns="#{bindings.Datedelivrance.hints.displayWidth}"
                                                                   shortDesc="#{bindings.Datedelivrance.hints.tooltip}"
                                                                   id="id1">
@@ -417,13 +422,16 @@
                                             </af:gridRow>
                                             <af:gridRow id="gr18">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc33">
-                                                    <af:outputLabel value="#{bindings.Datefin.hints.label}"
+                                                    <af:outputLabel value="#{bindings.Datefin.hints.label}" visible="#{PermisBean.dateFinVisible}"
+                                                    partialTriggers="soc3"
                                                                     id="ol12"/>
                                                 </af:gridCell>
                                                 <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc30">
                                                     <af:inputDate value="#{bindings.Datefin.inputValue}"
-                                                                  required="#{bindings.Datefin.hints.mandatory}"
+                                                                  required="#{PermisBean.dateFinObligatoire}"
+                                                                  visible="#{PermisBean.dateFinVisible}"
                                                                   columns="#{bindings.Datefin.hints.displayWidth}"
+                                                                  partialTriggers="soc3"
                                                                   shortDesc="#{bindings.Datefin.hints.tooltip}"
                                                                   id="id6">
                                                         <f:validator binding="#{bindings.Datefin.validator}"/>
@@ -511,22 +519,22 @@
                                             </af:gridRow>
                                             <af:gridRow id="gr17" marginTop="5px">
                                                 <af:gridCell id="gc26" columnSpan="2">
-                                                    <af:button actionListener="#{bindings.First1.execute}"
+                                                    <af:button actionListener="#{PermisBean.permisPremier}"
                                                                text="#{viewcontrollerBundle.FIRST}"
                                                                disabled="#{!bindings.First1.enabled}"
                                                                partialSubmit="true" id="b15"/>
                                                     <af:spacer width="10" height="10" id="s5"/>
-                                                    <af:button actionListener="#{bindings.Previous1.execute}"
+                                                    <af:button actionListener="#{PermisBean.permisPrecedent}"
                                                                text="#{viewcontrollerBundle.PREVIOUS}"
                                                                disabled="#{!bindings.Previous1.enabled}"
                                                                partialSubmit="true" id="b16"/>
                                                     <af:spacer width="10" height="10" id="s6"/>
-                                                    <af:button actionListener="#{bindings.Next1.execute}"
+                                                    <af:button actionListener="#{PermisBean.permisSuivant}"
                                                                text="#{viewcontrollerBundle.NEXT}"
                                                                disabled="#{!bindings.Next1.enabled}"
                                                                partialSubmit="true" id="b17"/>
                                                     <af:spacer width="10" height="10" id="s7"/>
-                                                    <af:button actionListener="#{bindings.Last1.execute}"
+                                                    <af:button actionListener="#{PermisBean.permisDernier}"
                                                                text="#{viewcontrollerBundle.LAST}"
                                                                disabled="#{!bindings.Last1.enabled}"
                                                                partialSubmit="true" id="b18"/>
@@ -792,6 +800,7 @@
                                                     <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
                                                                  id="gc4">
                                                         <af:selectOneChoice value="#{bindings.Idpartieproduitpfnl.inputValue}"
+                                                                            partialTriggers="tab3 b5"
                                                                             autoSubmit="true"
                                                                             required="#{bindings.Idpartieproduitpfnl.hints.mandatory}"
                                                                             shortDesc="#{bindings.Idpartieproduitpfnl.hints.tooltip}"
@@ -804,15 +813,19 @@
                                                     </af:gridCell>
                                                 </af:gridRow>
                                                 
-                                                <af:gridRow marginTop="5px" height="auto">
-                                                    <af:gridCell marginStart="5px" width="300px" marginEnd="5px">
-                                                        <af:outputLabel value="#{bindings.Idunitemesure.hints.label}"
+                                                <af:gridRow marginTop="5px" height="auto" id="gr12">
+                                                    <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
+                                                                 id="gc10">
+                                                        <af:outputLabel value="#{bindings.Idunitemesure.hints.label}" visible="#{PermisBean.uniteMesure}"
+                                                        partialTriggers="soc8 b5"
                                                                         id="ol9"/>
                                                     </af:gridCell>
-                                                    <af:gridCell marginStart="5px" width="300px" marginEnd="5px">
+                                                    <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
+                                                                 id="gc11">
                                                         <af:selectOneChoice partialTriggers="soc8" value="#{bindings.Idunitemesure.inputValue}"
-                                                                            required="#{bindings.Idunitemesure.hints.mandatory}"
                                                                             shortDesc="#{bindings.Idunitemesure.hints.tooltip}"
+                                                                            required="#{PermisBean.uniteMesure}"
+                                                                            visible="#{PermisBean.uniteMesure}"
                                                                             id="soc7">
                                                             <f:selectItems value="#{bindings.Idunitemesure.items}"
                                                                            id="si7"/>
@@ -840,15 +853,19 @@
                                                 <af:gridRow marginTop="5px" height="auto" id="gr13">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc29">
                                                         <af:outputLabel value="#{bindings.Quantite.hints.label}"
+                                                        partialTriggers="soc8 b5"
+                                                                            visible="#{PermisBean.quotas}"
                                                                         id="ol10"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
                                                                  id="gc25">
                                                         <af:inputText value="#{bindings.Quantite.inputValue}"
-                                                                      required="#{bindings.Quantite.hints.mandatory}"
                                                                       columns="#{bindings.Quantite.hints.displayWidth}"
                                                                       maximumLength="#{bindings.Quantite.hints.precision}"
+                                                                      partialTriggers="soc8 b5"
                                                                       shortDesc="#{bindings.Quantite.hints.tooltip}"
+                                                                      required="#{PermisBean.quotas}"
+                                                                      visible="#{PermisBean.quotas}"
                                                                       id="it3">
                                                             <f:validator binding="#{bindings.Quantite.validator}"/>
                                                             <af:convertNumber groupingUsed="false"
@@ -859,12 +876,15 @@
                                                 
                                                 <af:gridRow marginTop="5px" height="auto" id="grreg">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc9">
-                                                        <af:outputLabel value="#{bindings.Idregions.label}"
+                                                        <af:outputLabel value="#{bindings.Idregions.label}" visible="#{PermisBean.region}"
+                                                        partialTriggers="soc8 b5"
                                                                         id="ol7"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" id="gclblreg">
                                                         <af:selectOneChoice value="#{bindings.Idregions.inputValue}"
-                                                                            required="#{bindings.Idregions.hints.mandatory}"
+                                                                            required="#{PermisBean.region}"
+                                                                            partialTriggers="soc8 b5"
+                                                                            visible="#{PermisBean.region}"
                                                                             shortDesc="#{bindings.Idregions.hints.tooltip}"
                                                                             id="soc6">
                                                             <f:selectItems value="#{bindings.Idregions.items}"
@@ -872,6 +892,39 @@
                                                             <f:validator binding="#{bindings.Idregions.validator}"/>
                                                         </af:selectOneChoice>
                                                     </af:gridCell>
+                                                </af:gridRow>
+                                                
+                                                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc5">
+                                                        <af:outputLabel value="#{bindings.Iddepartements.label}" visible="#{PermisBean.departement}"
+                                                        partialTriggers="soc8 b5"
+                                                                        id="ol5"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc6">
+                                                        <af:inputComboboxListOfValues id="nomdudepartementId"
+                                                                                      popupTitle="Search and Select: #{bindings.nomdudepartement.hints.label}"
+                                                                                      value="#{bindings.nomdudepartement.inputValue}"
+                                                                                      model="#{bindings.nomdudepartement.listOfValuesModel}"
+                                                                                      required="#{PermisBean.departement}"
+                                                                                      visible="#{PermisBean.departement}"
+                                                                                      columns="#{bindings.nomdudepartement.hints.displayWidth}"
+                                                                                      shortDesc="#{bindings.nomdudepartement.hints.tooltip}"
+                                                                                      partialTriggers="soc8 b5"
+                                                                                      valueChangeListener="#{PermisBean.changedNomDepartement}">
+                                                            <f:validator binding="#{bindings.nomdudepartement.validator}"/>
+                                                        </af:inputComboboxListOfValues>
+                                                        <!--    <af:selectOneChoice partialTriggers="soc6" value="#{bindings.Iddepartements.inputValue}"
+                                                                            required="#{bindings.Iddepartements.hints.mandatory}"
+                                                                            shortDesc="#{bindings.Iddepartements.hints.tooltip}"
+                                                                            id="soc13">
+                                                            <f:selectItems value="#{bindings.Iddepartements.items}"
+                                                                           id="si13"/>
+                                                            <f:validator binding="#{bindings.Iddepartements.validator}"/>
+                                                        </af:selectOneChoice> -->
+                                                    </af:gridCell>
+                                                    
+                                                    
+                                                    
                                                 </af:gridRow>
                                                 
                                                 <af:gridRow marginTop="5px" height="auto" id="gr14">
@@ -882,7 +935,6 @@
                                                     <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
                                                                  id="gc14">
                                                         <af:inputText value="#{bindings.Observation1.inputValue}"
-                                                                      required="#{bindings.Observation1.hints.mandatory}"
                                                                       columns="#{bindings.Observation1.hints.displayWidth}"
                                                                       maximumLength="#{bindings.Observation1.hints.precision}"
                                                                       shortDesc="#{bindings.Observation1.hints.tooltip}"
@@ -919,9 +971,11 @@
                                                     <af:gridCell id="gc22" columnSpan="2">
                                                         <af:button text="#{viewcontrollerBundle.NOUVEAU}"
                                                                    disabled="#{!bindings.CreateInsert1.enabled}" id="b5"
+                                                                   partialSubmit="true"
                                                                    action="#{PermisBean.creerDetailsPermis1}"/>
                                                         <af:spacer width="10" height="10" id="s11"/>
                                                         <af:button text="#{viewcontrollerBundle.ENREGISTRER}" id="b13"
+                                                        partialSubmit="true"
                                                                    action="#{PermisBean.enregistrePermis}"/>
                                                         <af:spacer width="10" height="10" id="s12"/>
                                                         <af:button text="#{viewcontrollerBundle.ANNULER}"

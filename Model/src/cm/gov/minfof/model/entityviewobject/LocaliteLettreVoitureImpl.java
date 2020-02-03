@@ -24,6 +24,7 @@ public class LocaliteLettreVoitureImpl extends ViewObjectImpl {
      */
     @Override
     protected void executeQueryForCollection(Object qc, Object[] params, int noUserParams) {
+        
         super.executeQueryForCollection(qc, params, noUserParams);
     }
 

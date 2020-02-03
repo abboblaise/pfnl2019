@@ -44,7 +44,7 @@
                                                       emptyText="#{bindings.LettrevoitureView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                                       rowBandingInterval="0"
                                                       selectedRowKeys="#{bindings.LettrevoitureView1.collectionModel.selectedRow}"
-                                                      selectionListener="#{bindings.LettrevoitureView1.collectionModel.makeCurrent}"
+                                                      selectionListener="#{lettreVoitureBean.makeCurrentLettre}"
                                                       rowSelection="single"
                                                       fetchSize="#{bindings.LettrevoitureView1.rangeSize}"
                                                       filterModel="#{bindings.LettrevoitureView1Query.queryDescriptor}"
@@ -366,21 +366,21 @@
                                                     <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px"
                                                                  id="gc19">
                                                         <af:panelGroupLayout id="pgl6">
-                                                            <af:button actionListener="#{bindings.First.execute}"
+                                                            <af:button actionListener="#{lettreVoitureBean.lettrePremier}"
                                                                        disabled="#{!bindings.First.enabled}"
                                                                        partialSubmit="true" id="b8"
                                                                        text="#{viewcontrollerBundle.FIRST}"/>
                                                             <af:spacer width="10" height="10" id="s5"/>
-                                                            <af:button actionListener="#{bindings.Previous.execute}"
+                                                            <af:button actionListener="#{lettreVoitureBean.lettrePrecedent}"
                                                                        text="#{viewcontrollerBundle.PREVIOUS}"
                                                                        disabled="#{!bindings.Previous.enabled}"
                                                                        partialSubmit="true" id="b9"/>
                                                             <af:spacer width="10" height="10" id="s6"/>
-                                                            <af:button actionListener="#{bindings.Next.execute}"
+                                                            <af:button actionListener="#{lettreVoitureBean.lettreSuivant}"
                                                                        text="#{viewcontrollerBundle.NEXT}" disabled="#{!bindings.Next.enabled}"
                                                                        partialSubmit="true" id="b10"/>
                                                             <af:spacer width="10" height="10" id="s7"/>
-                                                            <af:button actionListener="#{bindings.Last.execute}"
+                                                            <af:button actionListener="#{lettreVoitureBean.lettreDernier}"
                                                                        text="#{viewcontrollerBundle.LAST}" disabled="#{!bindings.Last.enabled}"
                                                                        partialSubmit="true" id="b11"/>
                                                         </af:panelGroupLayout>
@@ -430,8 +430,8 @@
                                     </af:panelGroupLayout>
                                 </f:facet>
                                 <af:panelTabbed position="above" id="pt4">
-                                    <af:showDetailItem id="tab5" text="#{viewcontrollerBundle.CONSULTATION}"
-                                                       disclosed="false">
+                                    <af:showDetailItem disclosureListener="#{lettreVoitureBean.onConsultationTabDisclose}" id="tab5" text="#{viewcontrollerBundle.CONSULTATION}"
+                                                       disclosed="true">
                                         <af:panelCollection id="pc2">
                                             <f:facet name="menus"/>
                                             <f:facet name="toolbar"/>
@@ -508,9 +508,11 @@
                                                 <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc22">
                                                     <af:selectOneChoice value="#{bindings.Idpartieproduitpfnl.inputValue}"
                                                                         label="&nbsp;&nbsp;&nbsp;"
+                                                                        autoSubmit="true"
                                                                         required="#{bindings.Idpartieproduitpfnl.hints.mandatory}"
                                                                         shortDesc="#{bindings.Idpartieproduitpfnl.hints.tooltip}"
-                                                                        id="soc13" partialTriggers="soc1">
+                                                                        id="soc13" partialTriggers="tab5"
+                                                                        valueChangeListener="#{lettreVoitureBean.partieProduitChange}">
                                                         <f:selectItems value="#{bindings.Idpartieproduitpfnl.items}"
                                                                        id="si13"/>
                                                         <f:validator binding="#{bindings.Idpartieproduitpfnl.validator}"/>
@@ -525,6 +527,7 @@
                                                     <af:selectOneChoice value="#{bindings.Idunitemesure.inputValue}"
                                                                         required="#{bindings.Idunitemesure.hints.mandatory}"
                                                                         shortDesc="#{bindings.Idunitemesure.hints.tooltip}"
+                                                                        partialTriggers="soc13"
                                                                         id="soc14">
                                                         <f:selectItems value="#{bindings.Idunitemesure.items}"
                                                                        id="si14"/>
@@ -577,25 +580,25 @@
                                                                    disabled="#{!bindings.First1.enabled}"
                                                                    partialSubmit="true" id="b14"
                                                                    text="#{viewcontrollerBundle.FIRST}"
-                                                                   actionListener="#{bindings.First1.execute}"/>
+                                                                   actionListener="#{lettreVoitureBean.detailLettrePremier}"/> 
                                                         <af:spacer width="10" height="10" id="s9"/>
                                                         <af:button
                                                                    text="#{viewcontrollerBundle.PREVIOUS}"
                                                                    disabled="#{!bindings.Previous1.enabled}"
                                                                    partialSubmit="true" id="b15"
-                                                                   actionListener="#{bindings.Previous1.execute}"/>
+                                                                   actionListener="#{lettreVoitureBean.detailLettrePrecedent}"/>
                                                         <af:spacer width="10" height="10" id="s10"/>
                                                         <af:button
                                                                    text="#{viewcontrollerBundle.NEXT}"
                                                                    disabled="#{!bindings.Next1.enabled}"
                                                                    partialSubmit="true" id="b16"
-                                                                   actionListener="#{bindings.Next1.execute}"/>
+                                                                   actionListener="#{lettreVoitureBean.detailLettreSuivant}"/>
                                                         <af:spacer width="10" height="10" id="s11"/>
                                                         <af:button
                                                                    text="#{viewcontrollerBundle.LAST}"
                                                                    disabled="#{!bindings.Last1.enabled}"
                                                                    partialSubmit="true" id="b17"
-                                                                   actionListener="#{bindings.Last1.execute}"/>
+                                                                   actionListener="#{lettreVoitureBean.detailLettreDernier}"/>
                                                     </af:panelGroupLayout>
                                                 </af:gridCell>
                                             </af:gridRow>

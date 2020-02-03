@@ -20,6 +20,9 @@
             <xsd:element name="Idpartieproduitpfnl" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="Idregions" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="idunitemesureconsultation" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Iddepartements" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="nomdudepartement" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpartieproduitpfnlconsultation" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="DetailpermisView" type="DetailpermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="DetailpermisView1" type="DetailpermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="DetailpermisView2" type="DetailpermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>

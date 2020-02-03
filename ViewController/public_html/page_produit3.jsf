@@ -51,7 +51,7 @@
                                                       queryListener="#{bindings.ProduitsPfnlView12Query.processQuery}"
                                                       varStatus="vs" id="t1"
                                                       partialTriggers=":::b2 :::b3 :::b8 :::b9 :::b10 :::b11 :::b1 :::b6 :::b13 :::b14 :::b15 :::b16">
-                                                <af:column sortProperty="#{bindings.ProduitsPfnlView12.hints.Idproduitspfnl.name}"
+                                                <af:column width="25px" sortProperty="#{bindings.ProduitsPfnlView12.hints.Idproduitspfnl.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.ProduitsPfnlView12.hints.Idproduitspfnl.label}"
                                                            id="c1" visible="true" rowHeader="true">
@@ -62,14 +62,29 @@
                                                                           pattern="#{bindings.ProduitsPfnlView12.hints.Idproduitspfnl.format}"/>
                                                     </af:outputText>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.ProduitsPfnlView12.hints.Nomscientifique.name}"
+                                                <af:column sortProperty="#{bindings.ProduitsPfnlView12.hints.Idcategorie.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.ProduitsPfnlView12.hints.Idcategorie.label}"
+                                                           id="c5">
+                                                    <af:selectOneChoice readOnly="true"
+                                                                        value="#{row.bindings.Idcategorie.inputValue}"
+                                                                        label="#{row.bindings.Idcategorie.label}"
+                                                                        required="#{bindings.ProduitsPfnlView12.hints.Idcategorie.mandatory}"
+                                                                        shortDesc="#{bindings.ProduitsPfnlView12.hints.Idcategorie.tooltip}"
+                                                                        id="soc2">
+                                                        <f:selectItems value="#{row.bindings.Idcategorie.items}"
+                                                                       id="si2"/>
+                                                        <f:validator binding="#{row.bindings.Idcategorie.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                         <!--       <af:column sortProperty="#{bindings.ProduitsPfnlView12.hints.Nomscientifique.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.ProduitsPfnlView12.hints.Nomscientifique.label}"
                                                            id="c2">
                                                     <af:outputText value="#{row.Nomscientifique}"
                                                                    shortDesc="#{bindings.ProduitsPfnlView12.hints.Nomscientifique.tooltip}"
                                                                    id="ot2"/>
-                                                </af:column>
+                                                </af:column> -->
                                                 <af:column sortProperty="#{bindings.ProduitsPfnlView12.hints.Nomcommercial.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.ProduitsPfnlView12.hints.Nomcommercial.label}"
@@ -86,28 +101,14 @@
                                                                    shortDesc="#{bindings.ProduitsPfnlView12.hints.Codeproduit.tooltip}"
                                                                    id="ot4"/>
                                                 </af:column>
-                                                <af:column rendered="false" sortProperty="#{bindings.ProduitsPfnlView12.hints.Idfamillepfnl.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.ProduitsPfnlView12.hints.Idfamillepfnl.label}"
-                                                           id="c5">
-                                                    <af:selectOneChoice value="#{row.bindings.Idfamillepfnl.inputValue}"
-                                                                        label="#{row.bindings.Idfamillepfnl.label}"
-                                                                        required="#{bindings.ProduitsPfnlView12.hints.Idfamillepfnl.mandatory}"
-                                                                        shortDesc="#{bindings.ProduitsPfnlView12.hints.Idfamillepfnl.tooltip}"
-                                                                        readOnly="true" id="soc2">
-                                                        <f:selectItems value="#{row.bindings.Idfamillepfnl.items}"
-                                                                       id="si2"/>
-                                                        <f:validator binding="#{row.bindings.Idfamillepfnl.validator}"/>
-                                                    </af:selectOneChoice>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.ProduitsPfnlView12.hints.Descriptionsommaire.name}"
+                                         <!--       <af:column sortProperty="#{bindings.ProduitsPfnlView12.hints.Descriptionsommaire.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.ProduitsPfnlView12.hints.Descriptionsommaire.label}"
                                                            id="c6">
                                                     <af:outputText value="#{row.Descriptionsommaire}"
                                                                    shortDesc="#{bindings.ProduitsPfnlView12.hints.Descriptionsommaire.tooltip}"
                                                                    id="ot5"/>
-                                                </af:column>
+                                                </af:column> -->
                                                 <af:column sortProperty="#{bindings.ProduitsPfnlView12.hints.Modeattribution.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.ProduitsPfnlView12.hints.Modeattribution.label}"
@@ -115,17 +116,6 @@
                                                     <af:outputText value="#{row.Modeattribution}"
                                                                    shortDesc="#{bindings.ProduitsPfnlView12.hints.Modeattribution.tooltip}"
                                                                    id="ot6"/>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.ProduitsPfnlView12.hints.Idcategorie.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.ProduitsPfnlView12.hints.Idcategorie.label}"
-                                                           id="c8">
-                                                    <af:outputText value="#{row.Idcategorie}"
-                                                                   shortDesc="#{bindings.ProduitsPfnlView12.hints.Idcategorie.tooltip}"
-                                                                   id="ot7">
-                                                        <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.ProduitsPfnlView12.hints.Idcategorie.format}"/>
-                                                    </af:outputText>
                                                 </af:column>
                                             </af:table>
                                             <f:facet name="statusbar"/>

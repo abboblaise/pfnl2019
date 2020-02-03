@@ -44,6 +44,12 @@ where (regions.idregions in (select detailpermis.idregions
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture.Idcommune_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Idlocalite"
@@ -58,6 +64,12 @@ where (regions.idregions in (select detailpermis.idregions
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture.Idlocalite_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Nomlocalite"
@@ -73,6 +85,12 @@ where (regions.idregions in (select detailpermis.idregions
     <DesignTime>
       <Attr Name="_DisplaySize" Value="45"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture.Nomlocalite_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Iddepartements"
@@ -87,6 +105,12 @@ where (regions.idregions in (select detailpermis.idregions
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture.Iddepartements_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Idregions"
@@ -101,6 +125,12 @@ where (regions.idregions in (select detailpermis.idregions
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture.Idregions_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Nomdepartement"
@@ -116,6 +146,12 @@ where (regions.idregions in (select detailpermis.idregions
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture.Nomdepartement_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Nomregion"
@@ -131,6 +167,12 @@ where (regions.idregions in (select detailpermis.idregions
     <DesignTime>
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.LocaliteLettreVoiture.Nomregion_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle

@@ -38,7 +38,8 @@
     AliasName="libelletypedocument"/>
   <LOVUIHints
     ListType="105"
-    MRUCount="0">
+    MRUCount="0"
+    NullValueFlag="none">
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Libelletypedocument"/>
     </AttrArray>

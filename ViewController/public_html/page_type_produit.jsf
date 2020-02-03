@@ -113,7 +113,7 @@
                                         </af:gridCell>
                                         <af:gridCell marginStart="5px" width="500px" marginEnd="5px" id="gc4">
                                             <af:selectBooleanCheckbox value="#{bindings.Quotas.inputValue}"
-                                                                      label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+                                                                      label=""
                                                                       shortDesc="#{bindings.Quotas.hints.tooltip}"
                                                                       id="sbc1"/>
                                         </af:gridCell>
@@ -124,7 +124,7 @@
                                         </af:gridCell>
                                         <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc6">
                                             <af:inputText value="#{bindings.Observation.inputValue}"
-                                                          label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+                                                          label=""
                                                           required="#{bindings.Observation.hints.mandatory}"
                                                           columns="#{bindings.Observation.hints.displayWidth}"
                                                           shortDesc="#{bindings.Observation.hints.tooltip}" id="it4"

@@ -15,6 +15,7 @@ import javax.el.MethodExpression;
 
 import javax.faces.context.FacesContext;
 
+import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 
 import javax.servlet.http.HttpSession;
@@ -37,7 +38,11 @@ import oracle.jbo.ViewCriteriaManager;
 import oracle.jbo.ViewObject;
 import oracle.jbo.domain.Timestamp;
 import oracle.jbo.server.ViewObjectImpl;
+import oracle.jbo.server.ViewRowImpl;
 import oracle.jbo.uicli.binding.JUCtrlListBinding;
+
+import org.apache.myfaces.trinidad.event.DisclosureEvent;
+import org.apache.myfaces.trinidad.event.SelectionEvent;
 
 public class LettreVoitureBean {
     ShowJqNotification notifObj = new ShowJqNotification();
@@ -341,6 +346,42 @@ public class LettreVoitureBean {
         vue.executeQuery();*/
     }
     
+    public void lettrePremier(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.First.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void lettreDernier(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Last.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void lettreSuivant(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Next.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void lettrePrecedent(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Previous.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+    
     public BigDecimal getIdTypeDocumentCourant()
     {
         // Get the binding
@@ -365,5 +406,125 @@ public class LettreVoitureBean {
         System.out.println("v= " + v);
         BigDecimal bd = new BigDecimal(v.toString());
     //    BigDecimal idType = getIdTypeDocumentCourant();
+    }
+
+    public void partieProduitChange(ValueChangeEvent valueChangeEvent) {
+        Object v = valueChangeEvent.getNewValue();
+        System.out.println("v= " + v);
+        BigDecimal bd = new BigDecimal(v.toString());
+        filtrerLesPartiesProduitsParId(bd);
+    }
+    
+    public void filtrerLesPartiesProduitsParId(BigDecimal bd)
+    {
+        System.out.println("Entree dans la methode filtrerLesPartiesProduitsParId");
+        DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("UniteMesureWithPartieProduitPfnl1Iterator");
+        ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
+        System.out.println("vo name = " + vo.getName() + "vo = " + vo);
+        
+        DCBindingContainer bindings = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
+        ApplicationModule am = bindings.getDataControl().getApplicationModule();
+        
+        String requete;
+        
+        if (bd == null)
+        {
+            requete = "select distinct idunitemesure as Idunitemesure, libelleunitemesure as Libelleunitemesure, idcategorie as Idcategorie, \n" + 
+        "  arrondi as Arrondi, ordregrandeur as Ordregrandeur, ratio as Ratio, actif as Actif\n" + 
+        "from unitemesure";
+        }
+        else
+        {
+            requete = "select idunitemesure as Idunitemesure, libelleunitemesure as Libelleunitemesure, idcategorie as Idcategorie, \n" + 
+        "  arrondi as Arrondi, ordregrandeur as Ordregrandeur, ratio as Ratio, actif as Actif\n" + 
+        "from unitemesure where unitemesure.idcategorie in (\n" + 
+        "select unitemesure.idcategorie from unitemesure, partiesproduitspfnl\n" + 
+        "where partiesproduitspfnl.idunitemesure=unitemesure.idunitemesure and partiesproduitspfnl.idpartiesproduitspfnl="+ bd.toString() +")";
+        }
+        vo.remove();
+        vo = (ViewObjectImpl) am.createViewObjectFromQueryStmt("UniteMesureWithPartieProduitPfnl1", requete);
+        vo.executeQuery();
+        System.out.println("Fin de l'execution");
+    }
+    
+    public BigDecimal getIdPartieProduitPfnlCourant()
+    {
+        // Get the binding
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+
+        // Get the sepecific list binding
+        JUCtrlListBinding listBinding = (JUCtrlListBinding) bindings.get("Idpartieproduitpfnl");
+
+        // Get the value which is currently selected
+        Object selectedValue = listBinding.getSelectedValue();
+        ViewRowImpl viewRow = (ViewRowImpl) selectedValue;
+        Object idResultat = viewRow.getAttribute(("Idpartiesproduitspfnl"));
+        BigDecimal bd = new BigDecimal(idResultat.toString());
+        return bd;
+    }
+
+    public void onConsultationTabDisclose(DisclosureEvent disclosureEvent) {
+        System.out.println("Je suis dans la methode qui va faire les derniers filtres");
+        boolean bool = disclosureEvent.isExpanded();
+        
+        System.out.println("bool = " + bool);
+
+        if (!bool) 
+        {
+            try 
+            {
+                BigDecimal bd = getIdPartieProduitPfnlCourant();
+                filtrerLesPartiesProduitsParId(bd);
+            } catch (NullPointerException ex) {}
+        }
+        else
+        {
+            filtrerLesPartiesProduitsParId(null);
+        } 
+    }
+    
+    public void detailLettrePremier(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.First1.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void detailLettreDernier(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Last1.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void detailLettreSuivant(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Next1.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void detailLettrePrecedent(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Previous1.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
+    }
+
+    public void makeCurrentLettre(SelectionEvent selectionEvent) {
+        invokeMethodExpression("#{bindings.LettrevoitureView1.collectionModel.makeCurrent}", Object.class, ActionEvent.class, selectionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+        } catch (NullPointerException ex) {}
     }
 }

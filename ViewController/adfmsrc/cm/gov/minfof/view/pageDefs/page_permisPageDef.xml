@@ -23,6 +23,19 @@
     <iterator Binds="UniteMesureWithPartieProduitPfnl1" RangeSize="-1" DataControl="AppModuleDataControl"
               id="UniteMesureWithPartieProduitPfnl1Iterator"/>
     <iterator Binds="PermisView11" RangeSize="25" DataControl="AppModuleDataControl" id="PermisView11Iterator"/>
+    <iterator Binds="RegionView1" RangeSize="-1" DataControl="AppModuleDataControl" id="RegionView1Iterator"/>
+    <iterator Binds="DepartementView3" RangeSize="-1" DataControl="AppModuleDataControl" id="DepartementView3Iterator"/>
+    <iterator Binds="DepartementView3" RangeSize="10" DataControl="AppModuleDataControl"
+              id="DepartementView3Iterator1"/>
+    <iterator Binds="DepartementView1" RangeSize="10" DataControl="AppModuleDataControl" id="DepartementView1Iterator"/>
+    <iterator Binds="DetailpermisView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DetailpermisView1Iterator"/>
+    <iterator Binds="DepartementEtRegionView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="DepartementEtRegionView1Iterator1"/>
+    <iterator Binds="DetailpermisView6" RangeSize="10" DataControl="AppModuleDataControl"
+              id="DetailpermisView6Iterator1"/>
+    <iterator Binds="getLibelleProduitComplet1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="getLibelleProduitComplet1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PermisView1Iterator" id="Numeropermis">
@@ -93,8 +106,6 @@
     <action IterBinding="DetailpermisView6Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   <!--  <list IterBinding="PermisView1Iterator" StaticList="false" Uses="LOV_Typedocument" id="Typedocument"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/> -->
-    <list IterBinding="DetailpermisView6Iterator" StaticList="false" Uses="LOV_Idpartieproduitpfnl"
-          id="Idpartieproduitpfnl" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="DetailpermisView6Iterator" id="Quantite">
       <AttrNames>
         <Item Value="Quantite"/>
@@ -180,7 +191,7 @@
     <tree IterBinding="PermisView1Iterator" id="PermisView11">
       <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PermisView" Name="PermisView110">
         <AttrNames>
-          <Item Value="Idpermis"/>
+          <Item Value="Numeropermis"/>
           <Item Value="Idtypedocument"/>
           <Item Value="Numpermiscomplet"/>
           <Item Value="Idpermissionnaire"/>
@@ -191,8 +202,18 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <list IterBinding="DetailpermisView6Iterator" StaticList="false" Uses="LOV_Idregions" id="Idregions"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailpermisView6Iterator" StaticList="false" id="Idregions"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject" ListIter="RegionView1Iterator">
+      <AttrNames>
+        <Item Value="Idregions"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idregions"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Nomregion"/>
+      </ListDisplayAttrNames>
+    </list>
     <list StaticList="false" IterBinding="DetailpermisView6Iterator"
           ListIter="UniteMesureWithPartieProduitPfnl1Iterator" id="Idunitemesure">
       <AttrNames>
@@ -235,9 +256,28 @@
     </tree>
     <list IterBinding="PermisView11Iterator" StaticList="false" Uses="LOV_Idtypedocument" id="Idtypedocument1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list Uses="LOV_Iddepartements" StaticList="false" IterBinding="DetailpermisView6Iterator"
+                  id="Iddepartements" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="DetailpermisView6Iterator" StaticList="false" Uses="LOV_nomdudepartement"
+                  id="nomdudepartement"/>
+    <list Uses="LOV_Idpart" StaticList="false"  IterBinding="DetailpermisView6Iterator"
+                  id="Idpartieproduitpfnl1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list StaticList="false" IterBinding="DetailpermisView6Iterator" ListIter="getLibelleProduitComplet1Iterator"
+          id="Idpartieproduitpfnl" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Idpartieproduitpfnl"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idpartiesproduitspfnl"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Libelle"/>
+      </ListDisplayAttrNames>
+    </list>
+    <attributeValues IterBinding="DetailpermisView6Iterator" id="Idpartieproduitpfnlconsultation">
+      <AttrNames>
+        <Item Value="Idpartieproduitpfnlconsultation"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
-  <ResourceBundle>
-    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
-                      PropertiesFile="cm.gov.minfof.view.ViewControllerBundle"/>
-  </ResourceBundle>
 </pageDefinition>

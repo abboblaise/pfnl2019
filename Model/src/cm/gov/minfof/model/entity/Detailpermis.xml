@@ -32,7 +32,6 @@
   </Attribute>
   <Attribute
     Name="Quantite"
-    IsNotNull="true"
     ColumnName="quantite"
     SQLType="FLOAT"
     Type="java.lang.Float"
@@ -107,12 +106,31 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    TableName="detailpermis"
-    IsNotNull="true">
+    TableName="detailpermis">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="19"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="Iddepartements"
+    ColumnName="iddepartements"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="detailpermis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="nomdudepartement"
+    Precision="80"
+    ColumnName="nomdudepartement"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false"/>
   <AccessorAttribute
     Name="Detailpermis"
     Association="cm.gov.minfof.model.entity.FkDetailpermis3Assoc"
@@ -239,18 +257,6 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis1Assoc2.Detailpermis3"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
-  <Key
-    Name="DetailpermisIdregionsCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"idregions" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="Detailpermis_Idregions_Check"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="cm.gov.minfof.model.entity.Detailpermis.Idregions"/>
-    </AttrArray>
-  </Key>
   <Key
     Name="Primary1"
     PrimaryKey="true">

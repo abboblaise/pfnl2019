@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="CompilLettreVoiture"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="true"
@@ -19,22 +19,22 @@
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery><![CDATA[SELECT
-	regions.idregions AS regiondestination,
-	lettrevoiture.iddepartementdestination AS departementdestination,
-    lettrevoiture.idpostechargement AS localitedepart,
-    communes.idcommunes AS idcommunedepart,
-    lesdepartements.iddepartements AS iddepartementdepart,
-    lesdepartements.nomdepartement AS nomdepartementdepart,
-    lesregions.idregions AS idregionsdepart,
-    lesregions.nomregion AS nomregiondepart,
-    communes.nomcommune AS nomcommunedepart,
-    permis.idpermissionnaire AS permissionnaire,
-    lettrevoiture.idpermis AS permis,
-	lettrevoiture.nomconducteur AS nomconducteur,	
-	lettrevoiture.numerolettrevoiture AS numerolettrevoiture,	
-	lettrevoiture.datelettrevoiture AS datelettrevoiture,	
-    lettrevoiture.immatriculation AS immatriculation,
-	detailslettrevoiture.quantite AS quantite,
+	regions.idregions AS Regiondestination,
+	lettrevoiture.iddepartementdestination AS Departementdestination,
+    lettrevoiture.idpostechargement AS Localitedepart,
+    communes.idcommunes AS Idcommunedepart,
+    lesdepartements.iddepartements AS Iddepartementdepart,
+    lesdepartements.nomdepartement AS Nomdepartementdepart,
+    lesregions.idregions AS Idregionsdepart,
+    lesregions.nomregion AS Nomregiondepart,
+    communes.nomcommune AS Nomcommunedepart,
+    permis.idpermissionnaire AS Permissionnaire,
+    lettrevoiture.idpermis AS Permis,
+	lettrevoiture.nomconducteur AS Nomconducteur,	
+	lettrevoiture.numerolettrevoiture AS Numerolettrevoiture,	
+	lettrevoiture.datelettrevoiture AS Datelettrevoiture,	
+    lettrevoiture.immatriculation AS Immatriculation,
+	detailslettrevoiture.quantite AS Quantite,
     sum(
 	CASE WHEN (lesunites1.ordregrandeur = 'RE') 
     THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
@@ -62,7 +62,7 @@ ELSE CASE WHEN(lesunites1.ordregrandeur =  'PG')
     END
 END
 END
-END) AS quantiteconvertie,    
+END) AS Quantiteconvertie,    
 	CASE WHEN (lesunites1.ordregrandeur = 'RE') 
     THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
         THEN detailslettrevoiture.quantite  
@@ -89,20 +89,20 @@ ELSE CASE WHEN(lesunites1.ordregrandeur =  'PG')
     END
 END
 END
-END AS qte_total_dep_region,
+END AS Qte_total_dep_region,
 
-	detailslettrevoiture.observations AS observations,	
-	detailslettrevoiture.iddetailslettrevoiture AS iddetailslettrevoiture,
-    detailslettrevoiture.idpartieproduitpfnl AS partieproduitpfnl,
-    detailslettrevoiture.idunitemesure AS idunitemesure,
-	unitemesure.libelleunitemesure AS libelleunitemesure,	
-    lesunites1.libelleunitemesure AS libelleconverti,
+	detailslettrevoiture.observations AS Observations,	
+	detailslettrevoiture.iddetailslettrevoiture AS Iddetailslettrevoiture,
+    detailslettrevoiture.idpartieproduitpfnl AS Partieproduitpfnl,
+    detailslettrevoiture.idunitemesure AS Idunitemesure,
+	unitemesure.libelleunitemesure AS Libelleunitemesure,	
+    lesunites1.libelleunitemesure AS Libelleconverti,
 	CONCAT(produitspfnl.nomcommercial , '(',partiesrecoltees.nompartierecoltee , ')')  AS Produit,	
 	permissionnairespnfl.Nomouraisonsociale AS Nomouraisonsociale,	
-	departements.nomdepartement AS nomdepartementdestination,	
-        regions.nomregion AS nomregiondestination,
+	departements.nomdepartement AS Nomdepartementdestination,	
+        regions.nomregion AS Nomregiondestination,
 	permissionnairespnfl.Adressep AS Adressep,	
-	localite.nomlocalite AS nomlocalite
+	localite.nomlocalite AS Nomlocalite
 FROM 
 	partiesrecoltees,	
 	partiesproduitspfnl,	
@@ -119,10 +119,12 @@ FROM
     lesunites1,
     lesdepartements,
     lesregions,
-    permis
+    permis,
+    postecontrole
 WHERE 
 	localite.idlocalite = lettrevoiture.idpostechargement
-    AND		localite.idcommune = communes.idcommunes
+    AND		localite.idpostecontrole = postecontrole.idpostecontrole
+    AND     postecontrole.idcommune = communes.idcommunes
     AND		communes.iddepartements = lesdepartements.iddepartements
     AND		lesdepartements.idregions = lesregions.idregions
 	AND		departements.IDDepartements = lettrevoiture.iddepartementdestination
@@ -145,8 +147,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="regiondestination"
-    Expression="regiondestination"
+    AliasName="Regiondestination"
+    Expression="Regiondestination"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -159,8 +161,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="departementdestination"
-    Expression="departementdestination"
+    AliasName="Departementdestination"
+    Expression="Departementdestination"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -173,8 +175,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="localitedepart"
-    Expression="localitedepart"
+    AliasName="Localitedepart"
+    Expression="Localitedepart"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -187,8 +189,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="idcommunedepart"
-    Expression="idcommunedepart"
+    AliasName="Idcommunedepart"
+    Expression="Idcommunedepart"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -201,8 +203,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="iddepartementdepart"
-    Expression="iddepartementdepart"
+    AliasName="Iddepartementdepart"
+    Expression="Iddepartementdepart"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -216,8 +218,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="50"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="nomdepartementdepart"
-    Expression="nomdepartementdepart"
+    AliasName="Nomdepartementdepart"
+    Expression="Nomdepartementdepart"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
@@ -230,8 +232,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="idregionsdepart"
-    Expression="idregionsdepart"
+    AliasName="Idregionsdepart"
+    Expression="Idregionsdepart"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -245,8 +247,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="80"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="nomregiondepart"
-    Expression="nomregiondepart"
+    AliasName="Nomregiondepart"
+    Expression="Nomregiondepart"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="80"/>
@@ -260,8 +262,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="80"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="nomcommunedepart"
-    Expression="nomcommunedepart"
+    AliasName="Nomcommunedepart"
+    Expression="Nomcommunedepart"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="80"/>
@@ -274,8 +276,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="permissionnaire"
-    Expression="permissionnaire"
+    AliasName="Permissionnaire"
+    Expression="Permissionnaire"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -288,8 +290,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="permis"
-    Expression="permis"
+    AliasName="Permis"
+    Expression="Permis"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -303,8 +305,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="45"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="nomconducteur"
-    Expression="nomconducteur"
+    AliasName="Nomconducteur"
+    Expression="Nomconducteur"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="45"/>
@@ -318,8 +320,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="10"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="numerolettrevoiture"
-    Expression="numerolettrevoiture"
+    AliasName="Numerolettrevoiture"
+    Expression="Numerolettrevoiture"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
@@ -332,8 +334,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.sql.Date"
     ColumnType="DATE"
-    AliasName="datelettrevoiture"
-    Expression="datelettrevoiture"
+    AliasName="Datelettrevoiture"
+    Expression="Datelettrevoiture"
     SQLType="DATE"/>
   <ViewAttribute
     Name="Immatriculation"
@@ -343,8 +345,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="50"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="immatriculation"
-    Expression="immatriculation"
+    AliasName="Immatriculation"
+    Expression="Immatriculation"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
@@ -357,8 +359,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.lang.Float"
     ColumnType="FLOAT"
-    AliasName="quantite"
-    Expression="quantite"
+    AliasName="Quantite"
+    Expression="Quantite"
     SQLType="FLOAT">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="12"/>
@@ -371,9 +373,9 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="DOUBLE"
-    AliasName="quantiteconvertie"
+    AliasName="Quantiteconvertie"
     Expression="quantiteconvertie"
-    SQLType="NUMERIC">
+    SQLType="DOUBLE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="23"/>
     </DesignTime>
@@ -385,9 +387,9 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="DOUBLE"
-    AliasName="qte_total_dep_region"
-    Expression="qte_total_dep_region"
-    SQLType="NUMERIC">
+    AliasName="Qte_total_dep_region"
+    Expression="Qte_total_dep_region"
+    SQLType="DOUBLE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="23"/>
     </DesignTime>
@@ -400,8 +402,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="150"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="observations"
-    Expression="observations"
+    AliasName="Observations"
+    Expression="Observations"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="150"/>
@@ -414,8 +416,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="iddetailslettrevoiture"
-    Expression="iddetailslettrevoiture"
+    AliasName="Iddetailslettrevoiture"
+    Expression="Iddetailslettrevoiture"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -428,8 +430,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="partieproduitpfnl"
-    Expression="partieproduitpfnl"
+    AliasName="Partieproduitpfnl"
+    Expression="Partieproduitpfnl"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -442,8 +444,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
-    AliasName="idunitemesure"
-    Expression="idunitemesure"
+    AliasName="Idunitemesure"
+    Expression="Idunitemesure"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -457,8 +459,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="45"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="libelleunitemesure"
-    Expression="libelleunitemesure"
+    AliasName="Libelleunitemesure"
+    Expression="Libelleunitemesure"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="45"/>
@@ -472,8 +474,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="45"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="libelleconverti"
-    Expression="libelleconverti"
+    AliasName="Libelleconverti"
+    Expression="Libelleconverti"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="45"/>
@@ -517,8 +519,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="50"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="nomdepartementdestination"
-    Expression="nomdepartementdestination"
+    AliasName="Nomdepartementdestination"
+    Expression="Nomdepartementdestination"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
@@ -532,8 +534,8 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="80"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="nomregiondestination"
-    Expression="nomregiondestination"
+    AliasName="Nomregiondestination"
+    Expression="Nomregiondestination"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="80"/>
@@ -562,16 +564,13 @@ order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
     Precision="45"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    AliasName="nomlocalite"
-    Expression="nomlocalite"
+    AliasName="Nomlocalite"
+    Expression="Nomlocalite"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="45"/>
     </DesignTime>
   </ViewAttribute>
-  <AttrArray Name="KeyAttributes">
-    <Item Value="Iddetailslettrevoiture"/>
-  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="cm.gov.minfof.model.ModelBundle"/>

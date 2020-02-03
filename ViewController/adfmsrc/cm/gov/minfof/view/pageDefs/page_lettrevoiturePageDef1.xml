@@ -16,6 +16,8 @@
     <iterator Binds="permisActifView1" RangeSize="-1" DataControl="AppModuleDataControl" id="permisActifView1Iterator"/>
     <iterator Binds="LocaliteLettreVoiture1" RangeSize="-1" DataControl="AppModuleDataControl"
               id="LocaliteLettreVoiture1Iterator"/>
+    <iterator id="UniteMesureWithPartieProduitPfnl1Iterator" Binds="UniteMesureWithPartieProduitPfnl1"
+              DataControl="AppModuleDataControl" RangeSize="-1"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="LettrevoitureView1Iterator" id="Numerolettrevoiture">
@@ -36,8 +38,19 @@
           id="Iddepartementdestination" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="DetailslettrevoitureView5Iterator" StaticList="false" Uses="LOV_Idpartieproduitpfnl"
           id="Idpartieproduitpfnl" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="DetailslettrevoitureView5Iterator" StaticList="false" Uses="LOV_Idunitemesure"
-          id="Idunitemesure" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailslettrevoitureView5Iterator" StaticList="false"
+          id="Idunitemesure" DTSupportsMRU="false" SelectItemValueMode="ListObject"
+          ListIter="UniteMesureWithPartieProduitPfnl1Iterator">
+      <AttrNames>
+        <Item Value="Idunitemesure"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idunitemesure"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Libelleunitemesure"/>
+      </ListDisplayAttrNames>
+    </list>
     <attributeValues IterBinding="DetailslettrevoitureView5Iterator" id="Quantite">
       <AttrNames>
         <Item Value="Quantite"/>

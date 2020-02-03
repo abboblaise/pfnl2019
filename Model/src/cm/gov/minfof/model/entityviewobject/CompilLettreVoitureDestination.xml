@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="CompilLettreVoitureDestination"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="true"
@@ -119,10 +119,12 @@ FROM
     lesunites1,
     lesdepartements,
     lesregions,
-    permis
+    permis,
+    postecontrole
 WHERE 
 	localite.idlocalite = lettrevoiture.idpostechargement
-    AND		localite.idcommune = communes.idcommunes
+    AND		localite.idpostecontrole = postecontrole.idpostecontrole
+    AND     postecontrole.idcommune = communes.idcommunes
     AND		communes.iddepartements = lesdepartements.iddepartements
     AND		lesdepartements.idregions = lesregions.idregions
 	AND		departements.IDDepartements = lettrevoiture.iddepartementdestination

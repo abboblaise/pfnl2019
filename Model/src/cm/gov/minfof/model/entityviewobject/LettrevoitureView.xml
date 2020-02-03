@@ -299,7 +299,8 @@
       <Item Value="Nomdepartement"/>
       <Item Value="Nomregion"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
   </ListBinding>
   <ListBinding
     Name="LOV_Idpostechargement"

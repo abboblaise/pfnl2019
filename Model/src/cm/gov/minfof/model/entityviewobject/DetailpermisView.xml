@@ -56,6 +56,28 @@
     Name="UniteMesureWithPartieProduitPfnl1"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.UniteMesureWithPartieProduitPfnl"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AppModule_DepartementView3_1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.DepartementView"
+    AMUsageName="AppModule"
+    ViewInstanceName="DepartementView3"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AppModule_DepartementView1_1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.DepartementView"
+    AMUsageName="AppModule"
+    ViewInstanceName="DepartementView1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DepartementEtRegionView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.DepartementEtRegionView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AppModule_getLibelleFixe1_1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getLibelleFixe"
+    AMUsageName="AppModule"
+    ViewInstanceName="getLibelleFixe1"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Idpermis"
     ListVOName="PermisView1"
@@ -71,42 +93,6 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Numpermiscomplet"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Idpartieproduitpfnl"
-    ListVOName="getLibelleProduitComplet1"
-    NullValueFlag="end"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Idpartieproduitpfnl"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Idpartiesproduitspfnl"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Libelle"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Idregions"
-    ListVOName="AppModule_RegionView1_1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Idregions"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Idregions"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Nomregion"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -143,6 +129,92 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Libelleunitemesure"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Iddepartements"
+    ListVOName="DepartementEtRegionView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="Iddepartements"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="nomdudepartement"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Iddepartements"/>
+      <Item Value="Nomdepartement"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomdepartement"/>
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_nomdudepartement"
+    ListVOName="DepartementEtRegionView1"
+    ComboRowCountHint="10"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="nomdudepartement"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Iddepartements"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Nomdepartement"/>
+      <Item Value="Iddepartements"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomdepartement"/>
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpart"
+    ListVOName="getLibelleProduitComplet1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpartieproduitpfnl"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpartiesproduitspfnl"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libelle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idpartieproduitpfnlconsultation"
+    ListVOName="getLibelleProduitComplet1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpartieproduitpfnlconsultation"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpartiesproduitspfnl"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libelle"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -206,7 +278,7 @@
     EntityAttrName="Idpartieproduitpfnl"
     EntityUsage="Detailpermis"
     AliasName="idpartieproduitpfnl"
-    LOVName="LOV_Idpartieproduitpfnl">
+    LOVName="LOV_Idpart">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -219,14 +291,11 @@
     PrecisionRule="true"
     EntityAttrName="Idregions"
     EntityUsage="Detailpermis"
-    AliasName="idregions"
-    LOVName="LOV_Idregions">
+    AliasName="idregions">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="cm.gov.minfof.model.entityviewobject.DetailpermisView.Idregions_LABEL"/>
-        <CONTROLTYPE
-          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -244,6 +313,57 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="cm.gov.minfof.model.entityviewobject.DetailpermisView.idunitemesureconsultation_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Iddepartements"
+    PrecisionRule="true"
+    EntityAttrName="Iddepartements"
+    EntityUsage="Detailpermis"
+    AliasName="iddepartements"
+    LOVName="LOV_Iddepartements">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.DetailpermisView.Iddepartements_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="nomdudepartement"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="nomdudepartement"
+    EntityUsage="Detailpermis"
+    AliasName="nomdudepartement"
+    LOVName="LOV_nomdudepartement">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+        <DISPLAYWIDTH
+          Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idpartieproduitpfnlconsultation"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    LOVName="LOV_Idpartieproduitpfnlconsultation">
+    <Properties>
+      <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
       </SchemaBasedProperties>

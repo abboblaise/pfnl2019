@@ -1,7 +1,11 @@
 package cm.gov.minfof.view;
 
 import cm.gov.minfof.model.entity.PartiesProduitsPfnlViewRowImpl;
+import cm.gov.minfof.model.entityviewobject.PermisViewRowImpl;
+import cm.gov.minfof.model.entityviewobject.getLibelleProduitCompletImpl;
 import cm.gov.minfof.model.entityviewobject.getLibelleProduitCompletRowImpl;
+
+import cm.gov.minfof.model.entityviewobject.typeDocViewFinalRowImpl;
 
 import javax.el.ELContext;
 import javax.el.ExpressionFactory;
@@ -57,13 +61,30 @@ import oracle.jbo.ApplicationModule;
 import oracle.jbo.Row;
 import oracle.jbo.ViewCriteriaManager;
 import oracle.jbo.ViewObject;
+import oracle.jbo.server.ViewRowImpl;
 import oracle.jbo.uicli.binding.JUCtrlListBinding;
 
 import org.apache.myfaces.trinidad.event.DisclosureEvent;
+import org.apache.myfaces.trinidad.event.SelectionEvent;
 import org.apache.myfaces.trinidad.model.UploadedFile;
 
 public class PermisBean {
     ShowJqNotification notifObj = new ShowJqNotification();
+    private boolean observation;
+    private boolean departement;
+    private boolean region;
+    private boolean quotas;
+    private boolean uniteMesure;
+    private boolean dateDebutVisible;
+    private boolean dateFinVisible;
+    private boolean dateDebutObligatoire;
+    private boolean dateFinObligatoire;
+    
+/*    private boolean departementObligatoire;
+    private boolean regionObligatoire;
+    private boolean quotasObligatoire;
+    private boolean uniteMesureObligatoire; */
+    
 
     public PermisBean() {
     }
@@ -89,6 +110,7 @@ public class PermisBean {
         OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
         Object result = operationBinding.execute();
         executemethode("Commit"); //pour permettre de g??n??rer les ids facilement
+       // masquerDesChamps();
         if (!operationBinding.getErrors().isEmpty()) {
             System.out.println("Erreur " + operationBinding.getErrors());
             return null;
@@ -102,6 +124,7 @@ public class PermisBean {
         OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert1");
         Object result = operationBinding.execute();
         executemethode("Commit"); //pour permettre de g??n??rer les ids facilement
+        masquerDesChamps();
         if (!operationBinding.getErrors().isEmpty()) {
             return null;
         }
@@ -143,6 +166,7 @@ public class PermisBean {
         OperationBinding operationBinding = bindings.getOperationBinding("Delete1");
         Object result = operationBinding.execute();
         executemethode("Commit");
+        masquerDesChamps();
         if (!operationBinding.getErrors().isEmpty()) {
             return null;
         }
@@ -155,6 +179,7 @@ public class PermisBean {
         OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert1");
         Object result = operationBinding.execute();
         executemethode("Commit"); //pour permettre de g??n??rer les ids facilement
+        masquerDesChamps();
         if (!operationBinding.getErrors().isEmpty()) {
             return null;
         }
@@ -225,6 +250,7 @@ public class PermisBean {
 
             return null;
         }
+        masquerDesChamps();
         String numPermis = notifObj.getValueOfField("PermisView1Iterator", "Numeropermis");
         notifObj.showNoticeMessageAction("Enregistrement effectué! Le permis <b>" + numPermis +
                                          " </b>a été enregistré avec succès");
@@ -416,6 +442,7 @@ public class PermisBean {
         System.out.println("v= " + v);
         BigDecimal bd = new BigDecimal(v.toString());
         filtrerLesPartiesProduitsParId(bd);
+        masquerDesChamps();
         
         /*   DCBindingContainer bindings = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
         ApplicationModule am = bindings.getDataControl().getApplicationModule();
@@ -429,6 +456,69 @@ public class PermisBean {
         BigDecimal bd = new BigDecimal(v.toString());
         System.out.println("valeur = " + bd.longValue());
         vue.executeQuery(); */
+    }
+    
+    private void chargerLesProduits(BigDecimal typeDocument)
+    {
+        DCBindingContainer bindings = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
+        ApplicationModule am = bindings.getDataControl().getApplicationModule();
+        DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("getLibelleProduitComplet1Iterator");
+        ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
+        
+        String requete = "SELECT \n" + 
+        "    CONCAT(produitspfnl.nomcommercial,'(',\n" + 
+        "    partiesrecoltees.nompartierecoltee,')') as Libelle, \n" + 
+        "    partiesproduitspfnl.idpartiesproduitspfnl as Idpartiesproduitspfnl,\n" + 
+        "    categorieunitemesure.idcategorieunitemesure as Idcategorieunitemesure\n" + 
+        "FROM \n" + 
+        "    produitspfnl, \n" + 
+        "    partiesrecoltees, \n" + 
+        "    partiesproduitspfnl,\n" + 
+        "    unitemesure,\n" + 
+        "    categorieunitemesure,\n" + 
+        "    categorieproduit\n" + 
+        "WHERE \n" + 
+        "    produitspfnl.idproduitspfnl = partiesproduitspfnl.idproduitspfnl AND \n" + 
+        "    partiesrecoltees.idpartiesrecoltees = partiesproduitspfnl.idpartiesrecoltees AND\n" + 
+        "    partiesproduitspfnl.idunitemesure = unitemesure.idunitemesure AND\n" + 
+        "    categorieunitemesure.idcategorieunitemesure = unitemesure.idcategorie AND\n" + 
+        "    categorieproduit.idcategorieproduit=produitspfnl.idcategorie";
+        
+        if (typeDocument.longValue() == 1 || typeDocument.longValue() == 2)
+        {
+            
+        }
+        
+        if (typeDocument.longValue() == 3)
+        {
+            requete = "SELECT \n" + 
+            "    CONCAT(produitspfnl.nomcommercial,'(',\n" + 
+            "    partiesrecoltees.nompartierecoltee,')') as Libelle, \n" + 
+            "    partiesproduitspfnl.idpartiesproduitspfnl as Idpartiesproduitspfnl,\n" + 
+            "    categorieunitemesure.idcategorieunitemesure as Idcategorieunitemesure\n" + 
+            "FROM \n" + 
+            "    produitspfnl, \n" + 
+            "    partiesrecoltees, \n" + 
+            "    partiesproduitspfnl,\n" + 
+            "    unitemesure,\n" + 
+            "    categorieunitemesure,\n" + 
+            "    categorieproduit\n" + 
+            "WHERE \n" + 
+            "    produitspfnl.idproduitspfnl = partiesproduitspfnl.idproduitspfnl AND \n" + 
+            "    partiesrecoltees.idpartiesrecoltees = partiesproduitspfnl.idpartiesrecoltees AND\n" + 
+            "    partiesproduitspfnl.idunitemesure = unitemesure.idunitemesure AND\n" + 
+            "    categorieunitemesure.idcategorieunitemesure = unitemesure.idcategorie AND\n" + 
+            "    categorieproduit.idcategorieproduit=produitspfnl.idcategorie AND\n" + 
+            "    categorieproduit.quotas=0";
+        }
+        
+        System.out.println("EXECUTION " + typeDocument.longValue());
+        vo.remove();
+      //  vo.setQuery(requete);
+        vo = (ViewObjectImpl) am.createViewObjectFromQueryStmt("getLibelleProduitComplet1", requete, "cm.gov.minfof.model.entityviewobject.getLibelleProduitCompletImpl");
+        vo.executeQuery();
+        vo.clearCache();
+        System.out.println("FIN DE L'EXECUTION");
     }
     
     public void filtrerLesPartiesProduitsParId(BigDecimal bd)
@@ -495,13 +585,77 @@ public class PermisBean {
 
         // Get the value which is currently selected
         Object selectedValue = listBinding.getSelectedValue();
-        getLibelleProduitCompletRowImpl viewRow = (getLibelleProduitCompletRowImpl) selectedValue;
+        ViewRowImpl viewRow = (ViewRowImpl) selectedValue;
         Object idResultat = viewRow.getAttribute(("Idpartiesproduitspfnl"));
         BigDecimal bd = new BigDecimal(idResultat.toString());
         return bd;
     }
     
+    public BigDecimal getIdTypeDocumentCourant()
+    {
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+        JUCtrlListBinding listBinding = (JUCtrlListBinding) bindings.get("Idtypedocument");
+        Object selectedValue = listBinding.getSelectedValue();
+        typeDocViewFinalRowImpl viewRow = (typeDocViewFinalRowImpl) selectedValue;
+        Object idResultat = viewRow.getAttribute(("Idtypedocument"));
+        BigDecimal bd = new BigDecimal(idResultat.toString());
+        return bd;
+    }
+    
+    private void masquerLesChampsDates(BigDecimal idTypeDocCourant)
+    {
+        System.out.println("Type document = " + idTypeDocCourant.longValue());
+        if(idTypeDocCourant.longValue() == 1 || idTypeDocCourant.longValue() == 2)
+        {
+            dateDebutObligatoire = true;
+            dateDebutVisible = true;
+            dateFinVisible = true;
+            dateFinObligatoire = true;
+        }
+        
+        if(idTypeDocCourant.longValue() == 3)
+        {
+            dateDebutObligatoire = false;
+            dateDebutVisible = true;
+            dateFinVisible = false;
+            dateFinObligatoire = false;
+        }
+        
+    }
+    
+    private void masquerDesChamps(){
+        BigDecimal idTypeDocCourant = getIdTypeDocumentCourant();
+        chargerLesProduits(idTypeDocCourant);
+        if(idTypeDocCourant.longValue() == 1)
+        {
+            observation = true;
+            departement = false;
+            region = true;
+            quotas = true;
+            uniteMesure = true;
+        }
+        
+        if(idTypeDocCourant.longValue() == 2)
+        {
+            observation = true;
+            departement = true;
+            region = false;
+            quotas = true;
+            uniteMesure = true;
+        }
+        
+        if(idTypeDocCourant.longValue() == 3)
+        {
+            observation = true;
+            departement = false;
+            region = false;
+            quotas = false;
+            uniteMesure = false;
+        }
+    }
+    
     public void onConsultationTabDisclose(DisclosureEvent disclosureEvent) {
+        masquerDesChamps();
         boolean bool = disclosureEvent.isExpanded();
 
         if (!bool) 
@@ -515,8 +669,52 @@ public class PermisBean {
         else
         {
             filtrerLesPartiesProduitsParId(null);
-        }
+        } 
     }
+    
+    //#####################################################
+    
+    public void permisSuivant(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Next1.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+            masquerDesChamps();
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void permisPrecedent(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Previous1.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+            masquerDesChamps();
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void permisPremier(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.First1.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+            masquerDesChamps();
+        } catch (NullPointerException ex) {}
+    }
+    
+    public void permisDernier(ActionEvent actionEvent) {
+        invokeMethodExpression("#{bindings.Last1.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+            masquerDesChamps();
+        } catch (NullPointerException ex) {}
+    }
+    
+    //#######################################################
 
     public void detailPermisSuivant(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.Next.execute}", Object.class, ActionEvent.class, actionEvent);
@@ -524,6 +722,7 @@ public class PermisBean {
         {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
+            masquerDesChamps();
         } catch (NullPointerException ex) {}
     }
     
@@ -533,6 +732,7 @@ public class PermisBean {
         {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
+            masquerDesChamps();
         } catch (NullPointerException ex) {}
     }
     
@@ -542,11 +742,108 @@ public class PermisBean {
         {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
+            masquerDesChamps();
         } catch (NullPointerException ex) {}
     }
     
     public void detailPermisDernier(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.Last.execute}", Object.class, ActionEvent.class, actionEvent);
+        try 
+        {
+            BigDecimal bd = getIdPartieProduitPfnlCourant();
+            filtrerLesPartiesProduitsParId(bd);
+            masquerDesChamps();
+        } catch (NullPointerException ex) {}
+    }
+
+
+    public void setObservation(boolean observation) {
+        this.observation = observation;
+    }
+
+    public boolean isObservation() {
+        return observation;
+    }
+
+    public void setDepartement(boolean departement) {
+        this.departement = departement;
+    }
+
+    public boolean isDepartement() {
+        return departement;
+    }
+
+    public void setRegion(boolean region) {
+        this.region = region;
+    }
+
+    public boolean isRegion() {
+        return region;
+    }
+
+    public void setQuotas(boolean quotas) {
+        this.quotas = quotas;
+    }
+
+    public boolean isQuotas() {
+        return quotas;
+    }
+    
+    public boolean isUniteMesure(){
+        return uniteMesure;
+    }
+    
+    public void setUniteMesure(boolean uniteMesure){
+        this.uniteMesure = uniteMesure;
+    }
+
+
+    public void setDateDebutVisible(boolean dateDebutVisible) {
+        this.dateDebutVisible = dateDebutVisible;
+    }
+
+    public boolean isDateDebutVisible() {
+        return dateDebutVisible;
+    }
+
+    public void setDateFinVisible(boolean dateFinVisible) {
+        this.dateFinVisible = dateFinVisible;
+    }
+
+    public boolean isDateFinVisible() {
+        return dateFinVisible;
+    }
+
+    public void setDateDebutObligatoire(boolean dateDebutObligatoire) {
+        this.dateDebutObligatoire = dateDebutObligatoire;
+    }
+
+    public boolean isDateDebutObligatoire() {
+        return dateDebutObligatoire;
+    }
+
+    public void setDateFinObligatoire(boolean dateFinObligatoire) {
+        this.dateFinObligatoire = dateFinObligatoire;
+    }
+
+    public boolean isDateFinObligatoire() {
+        return dateFinObligatoire;
+    }
+
+    public void changedNomDepartement(ValueChangeEvent valueChangeEvent) {
+        masquerDesChamps();
+    }
+
+    public void typeDocumentChange(ValueChangeEvent valueChangeEvent) {
+        Object v = valueChangeEvent.getNewValue();
+        System.out.println("v= " + v);
+        BigDecimal bd = new BigDecimal(v.toString());
+        masquerLesChampsDates(bd);
+        chargerLesProduits(bd);
+    }
+    
+    public void makeCurrentPermis(SelectionEvent selectionEvent) {
+        invokeMethodExpression("#{bindings.PermisView11.collectionModel.makeCurrent}", Object.class, ActionEvent.class, selectionEvent);
         try 
         {
             BigDecimal bd = getIdPartieProduitPfnlCourant();

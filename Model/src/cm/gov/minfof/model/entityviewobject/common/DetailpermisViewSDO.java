@@ -34,6 +34,18 @@ public interface DetailpermisViewSDO extends java.io.Serializable {
 
    public void setIdunitemesureconsultation(java.math.BigDecimal value);
 
+   public java.math.BigDecimal getIddepartements();
+
+   public void setIddepartements(java.math.BigDecimal value);
+
+   public java.lang.String getNomdudepartement();
+
+   public void setNomdudepartement(java.lang.String value);
+
+   public java.math.BigDecimal getIdpartieproduitpfnlconsultation();
+
+   public void setIdpartieproduitpfnlconsultation(java.math.BigDecimal value);
+
    public java.util.List getDetailpermisView();
 
    public void setDetailpermisView(java.util.List value);

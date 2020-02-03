@@ -3,24 +3,23 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="getLibelleProduitComplet"
+  Name="getLibelleFixe"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="true"
-  RowClass="cm.gov.minfof.model.entityviewobject.getLibelleProduitCompletRowImpl"
-  ComponentClass="cm.gov.minfof.model.entityviewobject.getLibelleProduitCompletImpl"
-  PageIterMode="Full"
-  DefClass="cm.gov.minfof.model.entityviewobject.getLibelleProduitCompletDefImpl">
+  RowClass="cm.gov.minfof.model.entityviewobject.getLibelleFixeRowImpl"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.getLibelleFixeImpl"
+  PageIterMode="Full">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Access|Def|Coll"/>
+    <Attr Name="_codeGenFlag2" Value="Coll"/>
     <Attr Name="_isExpertMode" Value="true"/>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="cm.gov.minfof.model.entityviewobject.getLibelleProduitComplet_LABEL"/>
+        ResId="cm.gov.minfof.model.entityviewobject.getLibelleFixe_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery><![CDATA[SELECT 
@@ -43,43 +42,42 @@ WHERE
     categorieproduit.idcategorieproduit=produitspfnl.idcategorie]]></SQLQuery>
   <ViewAttribute
     Name="Libelle"
+    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Precision="202"
     Type="java.lang.String"
-    ColumnType="VARCHAR"
+    ColumnType="CHAR"
     AliasName="Libelle"
     Expression="Libelle"
-    SQLType="VARCHAR"
-    IsUpdateable="false">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="202"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
     Name="Idpartiesproduitspfnl"
+    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
     AliasName="Idpartiesproduitspfnl"
     Expression="Idpartiesproduitspfnl"
-    SQLType="NUMERIC"
-    IsUpdateable="false">
+    SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
     Name="Idcategorieunitemesure"
+    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
     AliasName="Idcategorieunitemesure"
-    Expression="idcategorieunitemesure"
-    SQLType="NUMERIC"
-    IsUpdateable="false">
+    Expression="Idcategorieunitemesure"
+    SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>

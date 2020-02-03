@@ -7,7 +7,7 @@ public class DetailpermisViewSDOImpl extends SDODataObject implements Detailperm
 
    public static final int START_PROPERTY_INDEX = 0;
 
-   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 10;
+   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 13;
 
    public DetailpermisViewSDOImpl() {}
 
@@ -75,28 +75,52 @@ public class DetailpermisViewSDOImpl extends SDODataObject implements Detailperm
       set(START_PROPERTY_INDEX + 7 , value);
    }
 
-   public java.util.List getDetailpermisView() {
-      return getList(START_PROPERTY_INDEX + 8);
+   public java.math.BigDecimal getIddepartements() {
+      return getBigDecimal(START_PROPERTY_INDEX + 8);
    }
 
-   public void setDetailpermisView(java.util.List value) {
+   public void setIddepartements(java.math.BigDecimal value) {
       set(START_PROPERTY_INDEX + 8 , value);
    }
 
-   public java.util.List getDetailpermisView1() {
-      return getList(START_PROPERTY_INDEX + 9);
+   public java.lang.String getNomdudepartement() {
+      return getString(START_PROPERTY_INDEX + 9);
    }
 
-   public void setDetailpermisView1(java.util.List value) {
+   public void setNomdudepartement(java.lang.String value) {
       set(START_PROPERTY_INDEX + 9 , value);
    }
 
+   public java.math.BigDecimal getIdpartieproduitpfnlconsultation() {
+      return getBigDecimal(START_PROPERTY_INDEX + 10);
+   }
+
+   public void setIdpartieproduitpfnlconsultation(java.math.BigDecimal value) {
+      set(START_PROPERTY_INDEX + 10 , value);
+   }
+
+   public java.util.List getDetailpermisView() {
+      return getList(START_PROPERTY_INDEX + 11);
+   }
+
+   public void setDetailpermisView(java.util.List value) {
+      set(START_PROPERTY_INDEX + 11 , value);
+   }
+
+   public java.util.List getDetailpermisView1() {
+      return getList(START_PROPERTY_INDEX + 12);
+   }
+
+   public void setDetailpermisView1(java.util.List value) {
+      set(START_PROPERTY_INDEX + 12 , value);
+   }
+
    public java.util.List getDetailpermisView2() {
-      return getList(START_PROPERTY_INDEX + 10);
+      return getList(START_PROPERTY_INDEX + 13);
    }
 
    public void setDetailpermisView2(java.util.List value) {
-      set(START_PROPERTY_INDEX + 10 , value);
+      set(START_PROPERTY_INDEX + 13 , value);
    }
 
 

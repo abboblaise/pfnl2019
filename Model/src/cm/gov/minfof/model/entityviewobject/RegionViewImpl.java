@@ -25,6 +25,7 @@ public class RegionViewImpl extends VueImplementation {
      */
     @Override
     protected void executeQueryForCollection(Object qc, Object[] params, int noUserParams) {
+        System.out.println("req region = " + this.getQuery());
         super.executeQueryForCollection(qc, params, noUserParams);
     }
 

@@ -1227,6 +1227,12 @@
   <ViewUsage
     Name="getCodeSigifPosteControle1"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.getCodeSigifPosteControle"/>
+  <ViewUsage
+    Name="DepartementEtRegionView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.DepartementEtRegionView"/>
+  <ViewUsage
+    Name="getLibelleFixe1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getLibelleFixe"/>
   <ViewLinkUsage
     Name="PermissionnaireToPermisLink"
     ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermissionnaireToPermisLink"

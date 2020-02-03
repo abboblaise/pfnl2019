@@ -30,6 +30,8 @@ public class DetailpermisImpl extends EntityImpl {
         Observation,
         Idpartieproduitpfnl,
         Idregions,
+        Iddepartements,
+        nomdudepartement,
         Detailpermis,
         IdpermisDetailpermis,
         Detailpermis1,
@@ -79,6 +81,8 @@ public class DetailpermisImpl extends EntityImpl {
     public static final int OBSERVATION = AttributesEnum.Observation.index();
     public static final int IDPARTIEPRODUITPFNL = AttributesEnum.Idpartieproduitpfnl.index();
     public static final int IDREGIONS = AttributesEnum.Idregions.index();
+    public static final int IDDEPARTEMENTS = AttributesEnum.Iddepartements.index();
+    public static final int NOMDUDEPARTEMENT = AttributesEnum.nomdudepartement.index();
     public static final int DETAILPERMIS = AttributesEnum.Detailpermis.index();
     public static final int IDPERMISDETAILPERMIS = AttributesEnum.IdpermisDetailpermis.index();
     public static final int DETAILPERMIS1 = AttributesEnum.Detailpermis1.index();
@@ -222,6 +226,39 @@ public class DetailpermisImpl extends EntityImpl {
      */
     public void setIdregions(BigDecimal value) {
         setAttributeInternal(IDREGIONS, value);
+    }
+
+    /**
+     * Gets the attribute value for Iddepartements, using the alias name Iddepartements.
+     * @return the value of Iddepartements
+     */
+    public BigDecimal getIddepartements() {
+        return (BigDecimal) getAttributeInternal(IDDEPARTEMENTS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Iddepartements.
+     * @param value value to set the Iddepartements
+     */
+    public void setIddepartements(BigDecimal value) {
+        setAttributeInternal(IDDEPARTEMENTS, value);
+    }
+
+
+    /**
+     * Gets the attribute value for nomdudepartement, using the alias name nomdudepartement.
+     * @return the value of nomdudepartement
+     */
+    public String getnomdudepartement() {
+        return (String) getAttributeInternal(NOMDUDEPARTEMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for nomdudepartement.
+     * @param value value to set the nomdudepartement
+     */
+    public void setnomdudepartement(String value) {
+        setAttributeInternal(NOMDUDEPARTEMENT, value);
     }
 
     /**

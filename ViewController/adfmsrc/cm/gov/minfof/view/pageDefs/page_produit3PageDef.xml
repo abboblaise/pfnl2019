@@ -52,10 +52,9 @@
           <Item Value="Nomscientifique"/>
           <Item Value="Nomcommercial"/>
           <Item Value="Codeproduit"/>
-          <Item Value="Idfamillepfnl"/>
-          <Item Value="Descriptionsommaire"/>
           <Item Value="Modeattribution"/>
           <Item Value="Idcategorie"/>
+          <Item Value="Idfamillepfnl"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

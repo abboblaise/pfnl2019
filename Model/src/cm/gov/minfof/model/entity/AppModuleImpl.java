@@ -4,6 +4,7 @@ import cm.gov.minfof.model.entity.common.*;
 import cm.gov.minfof.model.entityviewobject.CategorieunitemesureViewImpl;
 import cm.gov.minfof.model.entityviewobject.CollMultiCritereImpl;
 import cm.gov.minfof.model.entityviewobject.CollecteMultiImpl;
+import cm.gov.minfof.model.entityviewobject.DepartementEtRegionViewImpl;
 import cm.gov.minfof.model.entityviewobject.LocaliteLettreVoitureImpl;
 import cm.gov.minfof.model.entityviewobject.NiveauValidationViewImpl;
 import cm.gov.minfof.model.entityviewobject.AgrementsViewImpl;
@@ -46,6 +47,7 @@ import cm.gov.minfof.model.entityviewobject.getLastIdPermissionnairePfnlImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIdProduitsImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIdRegionsImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIdartiesProduitsPfnlImpl;
+import cm.gov.minfof.model.entityviewobject.getLibelleFixeImpl;
 import cm.gov.minfof.model.entityviewobject.getLibelleProduitPfnlImpl;
 import cm.gov.minfof.model.entityviewobject.listeExploitantImpl;
 import cm.gov.minfof.model.entityviewobject.listeOrigineImpl;
@@ -5002,6 +5004,22 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public getCodeSigifPosteControleImpl getgetCodeSigifPosteControle1() {
         return (getCodeSigifPosteControleImpl) findViewObject("getCodeSigifPosteControle1");
+    }
+
+    /**
+     * Container's getter for DepartementEtRegionView1.
+     * @return DepartementEtRegionView1
+     */
+    public DepartementEtRegionViewImpl getDepartementEtRegionView1() {
+        return (DepartementEtRegionViewImpl) findViewObject("DepartementEtRegionView1");
+    }
+
+    /**
+     * Container's getter for getLibelleFixe1.
+     * @return getLibelleFixe1
+     */
+    public getLibelleFixeImpl getgetLibelleFixe1() {
+        return (getLibelleFixeImpl) findViewObject("getLibelleFixe1");
     }
 }
 
