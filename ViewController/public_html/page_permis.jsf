@@ -912,6 +912,7 @@
                                                                                       partialTriggers="soc8 b5"
                                                                                       valueChangeListener="#{PermisBean.changedNomDepartement}">
                                                             <f:validator binding="#{bindings.nomdudepartement.validator}"/>
+                                                            <af:autoSuggestBehavior suggestedItems="#{bindings.nomdudepartement.suggestedItems}"/>
                                                         </af:inputComboboxListOfValues>
                                                         <!--    <af:selectOneChoice partialTriggers="soc6" value="#{bindings.Iddepartements.inputValue}"
                                                                             required="#{bindings.Iddepartements.hints.mandatory}"

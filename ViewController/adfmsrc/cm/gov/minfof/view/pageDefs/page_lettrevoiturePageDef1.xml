@@ -166,5 +166,10 @@
         <Item Value="Idcommune"/>
       </ListDisplayAttrNames>
     </list>
+    <attributeValues IterBinding="LettrevoitureView1Iterator" id="Idlettrevoiture">
+      <AttrNames>
+        <Item Value="Idlettrevoiture"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

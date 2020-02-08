@@ -310,7 +310,7 @@ public class LocaliteImpl extends EntityImpl {
             Row r = vo.next();
             lastId = (BigDecimal) r.getAttribute(0);
         }
-        BigDecimal un = new BigDecimal(1);
+        BigDecimal un = new BigDecimal(LettrevoitureImpl.generateRandomIntIntRange(1, 10));
         lastId = lastId.add(un);
         return lastId; 
     }

@@ -1,8 +1,12 @@
 package cm.gov.minfof.model.entity;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+
 import java.math.BigDecimal;
 
 import java.sql.Date;
+
+import java.util.Random;
 
 import javax.faces.context.FacesContext;
 
@@ -146,6 +150,7 @@ public class LettrevoitureImpl extends EntityImpl {
      * @param value value to set the Idlettrevoiture
      */
     public void setIdlettrevoiture(BigDecimal value) {
+        System.out.println("Last id Lettre voiture = " + value.longValue());
         setAttributeInternal(IDLETTREVOITURE, value);
     }
 
@@ -386,11 +391,12 @@ public class LettrevoitureImpl extends EntityImpl {
 
     @Override
     protected void doDML(int operation, TransactionEvent transactionEvent) {
+        System.out.println("operation = " + operation);
         if (operation == DML_INSERT) {
             BigDecimal id = getLastId("getLastidLettrevoiture1");
             setIdlettrevoiture(id);
         }
-        super.doDML(operation, transactionEvent);        
+            super.doDML(operation, transactionEvent);        
     }
     
     public BigDecimal getLastId(String viewName)
@@ -400,14 +406,21 @@ public class LettrevoitureImpl extends EntityImpl {
                             .getRootApplicationModule()
                             .findViewObject(viewName);
         vo.executeQuery();
+        vo.clearCache();
         if (vo.hasNext())
         {
             Row r = vo.next();
             lastId = (BigDecimal) r.getAttribute(0);
         }
-        BigDecimal un = new BigDecimal(1);
+        BigDecimal un = new BigDecimal(generateRandomIntIntRange(1, 20));
         lastId = lastId.add(un);
         return lastId; 
+    }
+    
+
+    public static int generateRandomIntIntRange(int min, int max) {
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
     }
 
     /**

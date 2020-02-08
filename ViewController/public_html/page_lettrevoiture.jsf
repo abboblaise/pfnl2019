@@ -34,7 +34,7 @@
                                 </f:facet>
                                 <af:spacer width="10" height="10" id="s12"/>
                                 <af:panelTabbed position="above" id="pt3">
-                                    <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.CONSULTATION}"
+                                    <af:showDetailItem disclosureListener="#{lettreVoitureBean.onConsultationParentTabDisclose}" id="tab3" text="#{viewcontrollerBundle.CONSULTATION}"
                                                        disclosed="true">
                                         <af:panelCollection id="pc1">
                                             <f:facet name="menus"/>
@@ -169,15 +169,18 @@
                                             <f:facet name="toolbar"/>
                                             <af:panelGridLayout id="pgl4">
                                             
+                                            
                                                 <af:gridRow marginTop="5px" height="auto" id="grtype">
                                                     <af:gridCell marginStart="5px" width="auto" id="gctype1">
                                                         <af:outputText value="#{bindings.Idtypedocument1.hints.label}" id="ottype1"/>
                                                     </af:gridCell>
+                                                    
                                                     <af:gridCell marginStart="5px" width="auto" id="gctype">
                                                         <af:selectOneChoice autoSubmit="true"
                                                                             valueChangeListener="#{lettreVoitureBean.typeDocChange}" value="#{bindings.Idtypedocument1.inputValue}"
                                                                             required="#{bindings.Idtypedocument1.hints.mandatory}"
                                                                             shortDesc="#{bindings.Idtypedocument1.hints.tooltip}"
+                                                                            partialTriggers="tab3"
                                                                             id="soc4">
                                                             <f:selectItems value="#{bindings.Idtypedocument1.items}"
                                                                            id="si2"/>
@@ -260,6 +263,7 @@
                                                                                       partialTriggers="soc10"
                                                                                       visible="true">
                                                             <f:validator binding="#{bindings.nomacteur.validator}"/>
+                                                            <af:autoSuggestBehavior suggestedItems="#{bindings.nomacteur.suggestedItems}"/>
                                                         </af:inputComboboxListOfValues>
                                                         
                                                     </af:gridCell>
@@ -338,6 +342,7 @@
                                                                                       columns="#{bindings.nomdepart.hints.displayWidth}"
                                                                                       shortDesc="#{bindings.nomdepart.hints.tooltip}">
                                                             <f:validator binding="#{bindings.nomdepart.validator}"/>
+                                                            <af:autoSuggestBehavior suggestedItems="#{bindings.nomdepart.suggestedItems}"/>
                                                         </af:inputComboboxListOfValues>
                                                     </af:gridCell>
                                                 </af:gridRow>
@@ -391,6 +396,7 @@
                                                                  id="gc20">
                                                         <af:panelGroupLayout id="pgl1">
                                                             <af:button text="#{viewcontrollerBundle.NOUVEAU}" id="b1"
+                                                                       partialSubmit="true"
                                                                        disabled="#{!bindings.CreateInsert.enabled}"
                                                                        action="#{lettreVoitureBean.creerLettreVoiture}"/>
                                                             <af:spacer width="10" height="10" id="s1"/>
