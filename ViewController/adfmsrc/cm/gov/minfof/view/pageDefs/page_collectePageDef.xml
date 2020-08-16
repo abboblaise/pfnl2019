@@ -123,11 +123,6 @@
     <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomuser" id="nomuser"/>
     <listOfValues IterBinding="DetailscollectepfnlView17Iterator" StaticList="false" Uses="LOV_nomprovenance"
                   id="nomprovenance"/>
-    <attributeValues IterBinding="CollectepfnlView1Iterator" id="Identificateur">
-      <AttrNames>
-        <Item Value="Identificateur"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="CollectepfnlView1Iterator" id="Numerocollecte">
       <AttrNames>
         <Item Value="Numerocollecte"/>
@@ -138,5 +133,11 @@
         <Item Value="Idregion"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="CollectepfnlView1Iterator" id="Identificateur">
+      <AttrNames>
+        <Item Value="Identificateur"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues Uses="LOV_nomregion" StaticList="false" IterBinding="CollectepfnlView1Iterator" id="nomregion"/>
   </bindings>
 </pageDefinition>

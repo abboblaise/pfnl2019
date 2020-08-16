@@ -70,10 +70,6 @@ public interface CollectepfnlViewSDO extends java.io.Serializable {
 
    public void setNomuser(java.lang.String value);
 
-   public java.lang.String getIdentificateur();
-
-   public void setIdentificateur(java.lang.String value);
-
    public java.math.BigDecimal getIdregion();
 
    public void setIdregion(java.math.BigDecimal value);
@@ -81,6 +77,14 @@ public interface CollectepfnlViewSDO extends java.io.Serializable {
    public java.lang.String getNumerocollecte();
 
    public void setNumerocollecte(java.lang.String value);
+
+   public java.lang.String getIdentificateur();
+
+   public void setIdentificateur(java.lang.String value);
+
+   public java.lang.String getNomregion();
+
+   public void setNomregion(java.lang.String value);
 
    public java.util.List getCollectepfnlView();
 

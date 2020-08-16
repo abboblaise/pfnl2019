@@ -53,13 +53,14 @@
     ViewObjectName="cm.gov.minfof.model.entityviewobject.getLocaliteUser"
     RowLevelBinds="true">
     <ViewCriteriaUsage
-      Name="depCriteria"
-      FullName="cm.gov.minfof.model.entityviewobject.getLocaliteUser.depCriteria"/>
+      Name="getPosteControleCriteria"
+      FullName="cm.gov.minfof.model.entityviewobject.getLocaliteUser.getPosteControleCriteria"/>
     <ParameterMap>
-      <PIMap Variable="iddepartementalbind">
+      <PIMap Variable="idPostecontrolebind">
         <TransientExpression
+          Name="ExpressionScript"
           trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[Iddepartement]]></TransientExpression>
+          CodeSourceName="CollectepfnlView"/>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -83,21 +84,13 @@
     ViewObjectName="cm.gov.minfof.model.entityviewobject.getDepartementUser"
     RowLevelBinds="true">
     <ViewCriteriaUsage
-      Name="DepartementCriteria"
-      FullName="cm.gov.minfof.model.entityviewobject.getDepartementUser.DepartementCriteria"/>
-    <ViewCriteriaUsage
       Name="RegionCriteria"
       FullName="cm.gov.minfof.model.entityviewobject.getDepartementUser.RegionCriteria"/>
     <ParameterMap>
-      <PIMap Variable="iddepartementbind">
-        <TransientExpression
-          trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[iddepartmental]]></TransientExpression>
-      </PIMap>
       <PIMap Variable="idregionbind">
         <TransientExpression
           trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[idregional]]></TransientExpression>
+          Name="ExpressionScript"><![CDATA[Idregion]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -116,6 +109,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="getRegionUser1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getRegionUser"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Iddepartement"
     ListVOName="getDepartementUser1"
@@ -350,6 +347,29 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_nomregion"
+    ListVOName="getRegionUser1"
+    NullValueFlag="start"
+    MRUCount="0"
+    ComboRowCountHint="10"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="nomregion"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idregion"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Nomregion"/>
+      <Item Value="Idregions"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Collectepfnl"
     Entity="cm.gov.minfof.model.entity.Collectepfnl"/>
@@ -580,25 +600,18 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="Identificateur"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Identificateur"
-    EntityUsage="Collectepfnl"
-    AliasName="identificateur">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="25"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
     Name="Idregion"
     PrecisionRule="true"
     EntityAttrName="Idregion"
     EntityUsage="Collectepfnl"
-    AliasName="idregion"/>
+    AliasName="idregion">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.CollectepfnlView.Idregion_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Numerocollecte"
     PrecisionRule="true"
@@ -609,6 +622,36 @@
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="25"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Identificateur"
+    PrecisionRule="true"
+    EntityAttrName="Identificateur"
+    EntityUsage="Collectepfnl"
+    AliasName="identificateur">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="nomregion"
+    IsQueriable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="nomregion"
+    EntityUsage="Collectepfnl"
+    AliasName="nomregion"
+    LOVName="LOV_nomregion">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

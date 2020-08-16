@@ -493,6 +493,10 @@
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
          <hash>
+            <url n="id" path="../../../../.jdeveloper/system12.2.1.3.42.170820.0914/o.jdeveloper/MYSQLRECENT.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="BC4J Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -510,10 +514,6 @@
          </hash>
          <hash>
             <value n="id" v="BC4J Security"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="MySQL JDBC"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -551,6 +551,10 @@
       </list>
       <list n="libraryReferences">
          <hash>
+            <url n="id" path="../../../../.jdeveloper/system12.2.1.3.42.170820.0914/o.jdeveloper/MYSQLRECENT.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="BC4J Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -568,10 +572,6 @@
          </hash>
          <hash>
             <value n="id" v="BC4J Security"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="MySQL JDBC"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

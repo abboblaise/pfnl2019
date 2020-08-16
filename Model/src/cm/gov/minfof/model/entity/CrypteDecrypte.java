@@ -17,6 +17,7 @@ public final class CrypteDecrypte {
         }else {
             byte[] dec = new BASE64Decoder().decodeBuffer(_mot);
             _rst = new String(dec);
+         //   _rst = "tiotsop";
         }
         
         return _rst;

@@ -49,6 +49,7 @@ import cm.gov.minfof.model.entityviewobject.getLastIdRegionsImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIdartiesProduitsPfnlImpl;
 import cm.gov.minfof.model.entityviewobject.getLibelleFixeImpl;
 import cm.gov.minfof.model.entityviewobject.getLibelleProduitPfnlImpl;
+import cm.gov.minfof.model.entityviewobject.getRegionUserImpl;
 import cm.gov.minfof.model.entityviewobject.listeExploitantImpl;
 import cm.gov.minfof.model.entityviewobject.listeOrigineImpl;
 import cm.gov.minfof.model.entityviewobject.listeQualitePermissionnaireImpl;
@@ -5020,6 +5021,14 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public getLibelleFixeImpl getgetLibelleFixe1() {
         return (getLibelleFixeImpl) findViewObject("getLibelleFixe1");
+    }
+
+    /**
+     * Container's getter for getRegionUser1.
+     * @return getRegionUser1
+     */
+    public getRegionUserImpl getgetRegionUser1() {
+        return (getRegionUserImpl) findViewObject("getRegionUser1");
     }
 }
 

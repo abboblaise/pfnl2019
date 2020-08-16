@@ -7,7 +7,7 @@ public class CollectepfnlViewSDOImpl extends SDODataObject implements Collectepf
 
    public static final int START_PROPERTY_INDEX = 0;
 
-   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 21;
+   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 22;
 
    public CollectepfnlViewSDOImpl() {}
 
@@ -147,44 +147,52 @@ public class CollectepfnlViewSDOImpl extends SDODataObject implements Collectepf
       set(START_PROPERTY_INDEX + 16 , value);
    }
 
-   public java.lang.String getIdentificateur() {
-      return getString(START_PROPERTY_INDEX + 17);
-   }
-
-   public void setIdentificateur(java.lang.String value) {
-      set(START_PROPERTY_INDEX + 17 , value);
-   }
-
    public java.math.BigDecimal getIdregion() {
-      return getBigDecimal(START_PROPERTY_INDEX + 18);
+      return getBigDecimal(START_PROPERTY_INDEX + 17);
    }
 
    public void setIdregion(java.math.BigDecimal value) {
-      set(START_PROPERTY_INDEX + 18 , value);
+      set(START_PROPERTY_INDEX + 17 , value);
    }
 
    public java.lang.String getNumerocollecte() {
-      return getString(START_PROPERTY_INDEX + 19);
+      return getString(START_PROPERTY_INDEX + 18);
    }
 
    public void setNumerocollecte(java.lang.String value) {
+      set(START_PROPERTY_INDEX + 18 , value);
+   }
+
+   public java.lang.String getIdentificateur() {
+      return getString(START_PROPERTY_INDEX + 19);
+   }
+
+   public void setIdentificateur(java.lang.String value) {
       set(START_PROPERTY_INDEX + 19 , value);
    }
 
-   public java.util.List getCollectepfnlView() {
-      return getList(START_PROPERTY_INDEX + 20);
+   public java.lang.String getNomregion() {
+      return getString(START_PROPERTY_INDEX + 20);
    }
 
-   public void setCollectepfnlView(java.util.List value) {
+   public void setNomregion(java.lang.String value) {
       set(START_PROPERTY_INDEX + 20 , value);
    }
 
-   public java.util.List getDetailscollectepfnlView() {
+   public java.util.List getCollectepfnlView() {
       return getList(START_PROPERTY_INDEX + 21);
    }
 
-   public void setDetailscollectepfnlView(java.util.List value) {
+   public void setCollectepfnlView(java.util.List value) {
       set(START_PROPERTY_INDEX + 21 , value);
+   }
+
+   public java.util.List getDetailscollectepfnlView() {
+      return getList(START_PROPERTY_INDEX + 22);
+   }
+
+   public void setDetailscollectepfnlView(java.util.List value) {
+      set(START_PROPERTY_INDEX + 22 , value);
    }
 
 

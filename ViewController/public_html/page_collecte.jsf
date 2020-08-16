@@ -149,7 +149,8 @@
                                                     
                                                      <af:gridCell marginStart="5px" width="320pt" marginEnd="5px"
                                                                  id="gc2id">
-                                                        <af:inputText simple="true"
+                                                                 <af:inputText value="#{bindings.Identificateur.inputValue}"
+                                                                      simple="true"
                                                                       required="#{bindings.Identificateur.hints.mandatory}"
                                                                       columns="#{bindings.Identificateur.hints.displayWidth}"
                                                                       maximumLength="#{bindings.Identificateur.hints.precision}"
@@ -157,6 +158,14 @@
                                                                       id="it1">
                                                             <f:validator binding="#{bindings.Identificateur.validator}"/>
                                                         </af:inputText>
+                                                     <!--   <af:inputText simple="true"
+                                                                      required="#{bindings.Identificateur.hints.mandatory}"
+                                                                      columns="#{bindings.Identificateur.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Identificateur.hints.precision}"
+                                                                      shortDesc="#{bindings.Identificateur.hints.tooltip}"
+                                                                      id="it1"> 
+                                                            <f:validator binding="#{bindings.Identificateur.validator}"/>
+                                                        </af:inputText> -->
                                                     </af:gridCell>
                                                 </af:gridRow>
                                                 
@@ -197,9 +206,27 @@
                                                     </af:gridCell>
                                                 </af:gridRow> -->
                                                 
-                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc3">
+                                                        <af:outputText value="#{bindings.Idregion.label}"
+                                                                       id="ot81"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="208px" marginEnd="5px"
+                                                                 id="gc41">
+                                                        <af:inputComboboxListOfValues id="nomregionId"
+                                                                                      popupTitle="Search and Select: #{bindings.nomregion.hints.label}"
+                                                                                      value="#{bindings.nomregion.inputValue}"
+                                                                                      model="#{bindings.nomregion.listOfValuesModel}"
+                                                                                      required="#{bindings.nomregion.hints.mandatory}"
+                                                                                      columns="#{bindings.nomregion.hints.displayWidth}"
+                                                                                      shortDesc="#{bindings.nomregion.hints.tooltip}">
+                                                            <f:validator binding="#{bindings.nomregion.validator}"/>
+                                                        </af:inputComboboxListOfValues>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                
+                                                <af:gridRow marginTop="5px" height="auto" id="gr261">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc368">
                                                         <af:outputText value="#{bindings.Iddepartement.label}"
                                                                        id="ot8"/>
                                                     </af:gridCell>

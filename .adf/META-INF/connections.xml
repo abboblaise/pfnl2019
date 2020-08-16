@@ -35,7 +35,10 @@
         <Contents>false</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="user">
-        <Contents>root</Contents>
+        <Contents>admin</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="parameters">
+        <Contents>serverTimezone=UTC</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="dataSourceName">
         <Contents>pfnl</Contents>

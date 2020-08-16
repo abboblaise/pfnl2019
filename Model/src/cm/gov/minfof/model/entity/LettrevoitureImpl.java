@@ -1,6 +1,6 @@
 package cm.gov.minfof.model.entity;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+//import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 import java.math.BigDecimal;
 

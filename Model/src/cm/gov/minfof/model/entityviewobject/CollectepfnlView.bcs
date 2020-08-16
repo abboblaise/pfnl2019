@@ -1,0 +1,19 @@
+//Groovy Scripts for cm.gov.minfof.model.entityviewobject.CollectepfnlView
+
+package cm.gov.minfof.model.entityviewobject
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="getPosteUserView1", name="idregionbind")
+def idregionbind_getPosteUserView1_BindVariable_BoundParameter()
+{
+Idregion
+}
+
+
+@AccessorParameterExpression(accessorName="getLocaliteUser1", name="idPostecontrolebind")
+def idPostecontrolebind_getLocaliteUser1_BindVariable_BoundParameter()
+{
+Idposte
+}
+

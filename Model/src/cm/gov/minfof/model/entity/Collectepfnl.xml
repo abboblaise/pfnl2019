@@ -10,7 +10,8 @@
   DBObjectName="collectepfnl"
   AliasName="Collectepfnl"
   BindingStyle="JDBC"
-  RowClass="cm.gov.minfof.model.entity.CollectepfnlImpl">
+  RowClass="cm.gov.minfof.model.entity.CollectepfnlImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -206,19 +207,6 @@
     </Properties>
   </Attribute>
   <Attribute
-    Name="Identificateur"
-    Precision="50"
-    ColumnName="identificateur"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR"
-    TableName="collectepfnl"
-    IsNotNull="true">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="50"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
     Name="Idregion"
     ColumnName="idregion"
     SQLType="NUMERIC"
@@ -240,6 +228,39 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="45"/>
     </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Identificateur"
+    Precision="50"
+    ColumnName="identificateur"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="collectepfnl"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="nomregion"
+    Precision="80"
+    ColumnName="nomregion"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="collectepfnl"
+    IsNotNull="true"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Collectepfnl.nomregion_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="Collectepfnl"
@@ -364,6 +385,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Collectepfnl.nomposte"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CollectepfnlNomregionCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"nomregion" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Collectepfnl_Nomregion_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Collectepfnl.nomregion"/>
     </AttrArray>
   </Key>
   <Key

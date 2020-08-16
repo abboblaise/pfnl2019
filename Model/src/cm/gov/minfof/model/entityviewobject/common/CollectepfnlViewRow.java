@@ -17,9 +17,6 @@ public interface CollectepfnlViewRow extends Row {
 
     void setDatecollecte(Timestamp value);
 
-    String getIdentificateur();
-
-    void setIdentificateur(String value);
 
     BigDecimal getIddepartement();
 

@@ -41,9 +41,10 @@ public class CollectepfnlImpl extends EntityImpl {
         nomlocalite,
         idusr,
         nomuser,
-        Identificateur,
         Idregion,
         Numerocollecte,
+        Identificateur,
+        nomregion,
         Collectepfnl,
         IdlocaliteCollectepfnl,
         Detailscollectepfnl,
@@ -92,9 +93,10 @@ public class CollectepfnlImpl extends EntityImpl {
     public static final int NOMLOCALITE = AttributesEnum.nomlocalite.index();
     public static final int IDUSR = AttributesEnum.idusr.index();
     public static final int NOMUSER = AttributesEnum.nomuser.index();
-    public static final int IDENTIFICATEUR = AttributesEnum.Identificateur.index();
     public static final int IDREGION = AttributesEnum.Idregion.index();
     public static final int NUMEROCOLLECTE = AttributesEnum.Numerocollecte.index();
+    public static final int IDENTIFICATEUR = AttributesEnum.Identificateur.index();
+    public static final int NOMREGION = AttributesEnum.nomregion.index();
     public static final int COLLECTEPFNL = AttributesEnum.Collectepfnl.index();
     public static final int IDLOCALITECOLLECTEPFNL = AttributesEnum.IdlocaliteCollectepfnl.index();
     public static final int DETAILSCOLLECTEPFNL = AttributesEnum.Detailscollectepfnl.index();
@@ -346,21 +348,6 @@ public class CollectepfnlImpl extends EntityImpl {
         setAttributeInternal(NOMUSER, value);
     }
 
-    /**
-     * Gets the attribute value for Identificateur, using the alias name Identificateur.
-     * @return the value of Identificateur
-     */
-    public String getIdentificateur() {
-        return (String) getAttributeInternal(IDENTIFICATEUR);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for Identificateur.
-     * @param value value to set the Identificateur
-     */
-    public void setIdentificateur(String value) {
-        setAttributeInternal(IDENTIFICATEUR, value);
-    }
 
     /**
      * Gets the attribute value for Idregion, using the alias name Idregion.
@@ -392,6 +379,38 @@ public class CollectepfnlImpl extends EntityImpl {
      */
     public void setNumerocollecte(String value) {
         setAttributeInternal(NUMEROCOLLECTE, value);
+    }
+
+    /**
+     * Gets the attribute value for Identificateur, using the alias name Identificateur.
+     * @return the value of Identificateur
+     */
+    public String getIdentificateur() {
+        return (String) getAttributeInternal(IDENTIFICATEUR);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Identificateur.
+     * @param value value to set the Identificateur
+     */
+    public void setIdentificateur(String value) {
+        setAttributeInternal(IDENTIFICATEUR, value);
+    }
+
+    /**
+     * Gets the attribute value for nomregion, using the alias name nomregion.
+     * @return the value of nomregion
+     */
+    public String getnomregion() {
+        return (String) getAttributeInternal(NOMREGION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for nomregion.
+     * @param value value to set the nomregion
+     */
+    public void setnomregion(String value) {
+        setAttributeInternal(NOMREGION, value);
     }
 
     /**
