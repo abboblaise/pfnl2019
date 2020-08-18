@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="listeOrigine"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="true"
@@ -28,7 +28,8 @@
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.lang.Integer"
-    ColumnType="$none$"/>
+    ColumnType="$none$"
+    SQLType="INTEGER"/>
   <ViewAttribute
     Name="libelleOrigine"
     IsUpdateable="false"
@@ -42,7 +43,7 @@
     <Item Value="idOrigine"/>
   </AttrArray>
   <StaticList
-    Rows="4"
+    Rows="8"
     Columns="2"/>
   <ResourceBundle>
     <PropertiesBundle
