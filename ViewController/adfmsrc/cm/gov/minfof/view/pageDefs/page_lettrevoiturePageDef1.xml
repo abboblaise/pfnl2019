@@ -18,6 +18,10 @@
               id="LocaliteLettreVoiture1Iterator"/>
     <iterator id="UniteMesureWithPartieProduitPfnl1Iterator" Binds="UniteMesureWithPartieProduitPfnl1"
               DataControl="AppModuleDataControl" RangeSize="-1"/>
+    <iterator id="getLastidLettrevoiture1Iterator" Binds="getLastidLettrevoiture1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
+    <iterator id="getLastidDetailslettrevoiture1Iterator" Binds="getLastidDetailslettrevoiture1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="LettrevoitureView1Iterator" id="Numerolettrevoiture">
@@ -166,9 +170,14 @@
         <Item Value="Idcommune"/>
       </ListDisplayAttrNames>
     </list>
-    <attributeValues IterBinding="LettrevoitureView1Iterator" id="Idlettrevoiture">
+    <attributeValues IterBinding="LettrevoitureView1Iterator" id="Idlettrevoiture1">
       <AttrNames>
-        <Item Value="Idlettrevoiture"/>
+        <Item Value="Idlettrevoiture1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailslettrevoitureView5Iterator" id="Iddetailslettrevoiture">
+      <AttrNames>
+        <Item Value="Iddetailslettrevoiture"/>
       </AttrNames>
     </attributeValues>
   </bindings>

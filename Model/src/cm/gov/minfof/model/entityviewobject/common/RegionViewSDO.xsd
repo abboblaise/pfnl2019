@@ -5,6 +5,7 @@
     <xsd:include schemaLocation="DepartementViewSDO.xsd"/>
     <xsd:include schemaLocation="CommuneViewSDO.xsd"/>
     <xsd:include schemaLocation="VehiculeViewSDO.xsd"/>
+    <xsd:include schemaLocation="CollectepfnlViewSDO.xsd"/>
     <xsd:complexType name="RegionViewSDO">
         <xsd:annotation>
             <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
@@ -20,10 +21,12 @@
             <xsd:element name="Descriptionregions" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Cheflieuregion" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Abreviationregion" type="xsd:string" minOccurs="0"/>
-            <xsd:element name="DepartementView1" type="DepartementViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="DepartementView" type="DepartementViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="CommuneView" type="CommuneViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="VehiculeView" type="VehiculeViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="CollectepfnlView" type="CollectepfnlViewSDO" minOccurs="0"/>
+            <xsd:element name="DepartementView1" type="DepartementViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="CollectepfnlView1" type="CollectepfnlViewSDO" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:element name="regionViewSDO" type="RegionViewSDO"/>

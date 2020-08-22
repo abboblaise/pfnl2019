@@ -143,8 +143,12 @@ public class ShowJqNotification {
         if(iteratorCollecte != null && collecteKey != null && collecteKey.isNull() != true)
             iteratorCollecte.setCurrentRowWithKey(collecteKey.toStringFormat(true));
         
-        if(iterator != null && detailsKey != null && detailsKey.isNull() != true)
+        if(iterator != null && detailsKey != null && detailsKey.isNull() != true && detailsKey.toString().equalsIgnoreCase("oracle.jbo.Key[-1 ]") != true)
+        {
+            
+            System.out.println("iterator = " + iterator.toString() + " detailsKey = " + detailsKey.toString() + " string " + detailsKey.toStringFormat(true));
             iterator.setCurrentRowWithKey(detailsKey.toStringFormat(true));
+            }
         
         return null;
     }
@@ -164,7 +168,7 @@ public class ShowJqNotification {
             return null;
         }
         
-        if(iteratorCollecte != null && collecteKey != null && collecteKey.isNull() != true)
+        if(iteratorCollecte != null && collecteKey != null && collecteKey.isNull() != true && collecteKey.toString().equalsIgnoreCase("oracle.jbo.Key[-1 ]") != true)
             iteratorCollecte.setCurrentRowWithKey(collecteKey.toStringFormat(true));
         
         

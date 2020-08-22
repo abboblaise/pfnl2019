@@ -28,7 +28,6 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
     protected enum AttributesEnum {
-        Idlettrevoiture,
         Idpermissionnaire,
         Iddepartementdestination,
         Nomconducteur,
@@ -44,6 +43,7 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         numpermis,
         Idtypedocument,
         Datelettrevoiture,
+        Idlettrevoiture1,
         LettrevoitureView2,
         LettrevoitureView4,
         DetailslettrevoitureView,
@@ -89,7 +89,6 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     }
 
 
-    public static final int IDLETTREVOITURE = AttributesEnum.Idlettrevoiture.index();
     public static final int IDPERMISSIONNAIRE = AttributesEnum.Idpermissionnaire.index();
     public static final int IDDEPARTEMENTDESTINATION = AttributesEnum.Iddepartementdestination.index();
     public static final int NOMCONDUCTEUR = AttributesEnum.Nomconducteur.index();
@@ -105,6 +104,7 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     public static final int NUMPERMIS = AttributesEnum.numpermis.index();
     public static final int IDTYPEDOCUMENT = AttributesEnum.Idtypedocument.index();
     public static final int DATELETTREVOITURE = AttributesEnum.Datelettrevoiture.index();
+    public static final int IDLETTREVOITURE1 = AttributesEnum.Idlettrevoiture1.index();
     public static final int LETTREVOITUREVIEW2 = AttributesEnum.LettrevoitureView2.index();
     public static final int LETTREVOITUREVIEW4 = AttributesEnum.LettrevoitureView4.index();
     public static final int DETAILSLETTREVOITUREVIEW = AttributesEnum.DetailslettrevoitureView.index();
@@ -141,20 +141,21 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         return (LettrevoitureImpl) getEntity(ENTITY_LETTREVOITURE);
     }
 
+
     /**
-     * Gets the attribute value for idlettrevoiture using the alias name Idlettrevoiture.
+     * Gets the attribute value for idlettrevoiture using the alias name Idlettrevoiture1.
      * @return the idlettrevoiture
      */
-    public BigDecimal getIdlettrevoiture() {
-        return (BigDecimal) getAttributeInternal(IDLETTREVOITURE);
+    public BigDecimal getIdlettrevoiture1() {
+        return (BigDecimal) getAttributeInternal(IDLETTREVOITURE1);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for idlettrevoiture using the alias name Idlettrevoiture.
+     * Sets <code>value</code> as attribute value for idlettrevoiture using the alias name Idlettrevoiture1.
      * @param value value to set the idlettrevoiture
      */
-    public void setIdlettrevoiture(BigDecimal value) {
-        setAttributeInternal(IDLETTREVOITURE, value);
+    public void setIdlettrevoiture1(BigDecimal value) {
+        setAttributeInternal(IDLETTREVOITURE1, value);
     }
 
     /**

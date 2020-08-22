@@ -35,6 +35,8 @@
             <xsd:element name="Numerocollecte" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="Identificateur" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="nomregion" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="nomRegionAutre" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="nomRegionEncore" type="xsd:string" minOccurs="0" nillable="true"/>
             <xsd:element name="CollectepfnlView" type="CollectepfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="DetailscollectepfnlView" type="DetailscollectepfnlViewSDO" minOccurs="0"
                  maxOccurs="unbounded"/>

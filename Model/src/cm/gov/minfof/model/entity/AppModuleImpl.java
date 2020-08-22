@@ -49,7 +49,6 @@ import cm.gov.minfof.model.entityviewobject.getLastIdRegionsImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIdartiesProduitsPfnlImpl;
 import cm.gov.minfof.model.entityviewobject.getLibelleFixeImpl;
 import cm.gov.minfof.model.entityviewobject.getLibelleProduitPfnlImpl;
-import cm.gov.minfof.model.entityviewobject.getRegionUserImpl;
 import cm.gov.minfof.model.entityviewobject.listeExploitantImpl;
 import cm.gov.minfof.model.entityviewobject.listeOrigineImpl;
 import cm.gov.minfof.model.entityviewobject.listeQualitePermissionnaireImpl;
@@ -5027,8 +5026,88 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      * Container's getter for getRegionUser1.
      * @return getRegionUser1
      */
-    public getRegionUserImpl getgetRegionUser1() {
-        return (getRegionUserImpl) findViewObject("getRegionUser1");
+    public ViewObjectImpl getgetRegionUser1() {
+        return (ViewObjectImpl) findViewObject("getRegionUser1");
+    }
+
+    /**
+     * Container's getter for getRegion1.
+     * @return getRegion1
+     */
+    public ViewObjectImpl getgetRegion1() {
+        return (ViewObjectImpl) findViewObject("getRegion1");
+    }
+
+    /**
+     * Container's getter for RegionView7.
+     * @return RegionView7
+     */
+    public RegionViewImpl getRegionView7() {
+        return (RegionViewImpl) findViewObject("RegionView7");
+    }
+
+    /**
+     * Container's getter for CollectepfnlView6.
+     * @return CollectepfnlView6
+     */
+    public CollectepfnlViewImpl getCollectepfnlView6() {
+        return (CollectepfnlViewImpl) findViewObject("CollectepfnlView6");
+    }
+
+    /**
+     * Container's getter for RegionToCollecteLink.
+     * @return RegionToCollecteLink
+     */
+    public ViewLinkImpl getRegionToCollecteLink() {
+        return (ViewLinkImpl) findViewLink("RegionToCollecteLink");
+    }
+
+    /**
+     * Container's getter for RegionView8.
+     * @return RegionView8
+     */
+    public RegionViewImpl getRegionView8() {
+        return (RegionViewImpl) findViewObject("RegionView8");
+    }
+
+    /**
+     * Container's getter for CollectepfnlView7.
+     * @return CollectepfnlView7
+     */
+    public CollectepfnlViewImpl getCollectepfnlView7() {
+        return (CollectepfnlViewImpl) findViewObject("CollectepfnlView7");
+    }
+
+    /**
+     * Container's getter for RegToCollLink.
+     * @return RegToCollLink
+     */
+    public ViewLinkImpl getRegToCollLink() {
+        return (ViewLinkImpl) findViewLink("RegToCollLink");
+    }
+
+    /**
+     * Container's getter for RegionView9.
+     * @return RegionView9
+     */
+    public RegionViewImpl getRegionView9() {
+        return (RegionViewImpl) findViewObject("RegionView9");
+    }
+
+    /**
+     * Container's getter for CollectepfnlView8.
+     * @return CollectepfnlView8
+     */
+    public CollectepfnlViewImpl getCollectepfnlView8() {
+        return (CollectepfnlViewImpl) findViewObject("CollectepfnlView8");
+    }
+
+    /**
+     * Container's getter for RegionToCollecteLink1.
+     * @return RegionToCollecteLink1
+     */
+    public ViewLinkImpl getRegionToCollecteLink1() {
+        return (ViewLinkImpl) findViewLink("RegionToCollecteLink1");
     }
 }
 

@@ -2,10 +2,6 @@ package cm.gov.minfof.model.entityviewobject.common;
 
 public interface LettrevoitureViewSDO extends java.io.Serializable {
 
-   public java.math.BigDecimal getIdlettrevoiture();
-
-   public void setIdlettrevoiture(java.math.BigDecimal value);
-
    public java.math.BigDecimal getIdpermissionnaire();
 
    public void setIdpermissionnaire(java.math.BigDecimal value);
@@ -65,6 +61,10 @@ public interface LettrevoitureViewSDO extends java.io.Serializable {
    public java.sql.Date getDatelettrevoiture();
 
    public void setDatelettrevoiture(java.sql.Date value);
+
+   public java.math.BigDecimal getIdlettrevoiture1();
+
+   public void setIdlettrevoiture1(java.math.BigDecimal value);
 
    public java.util.List getLettrevoitureView2();
 

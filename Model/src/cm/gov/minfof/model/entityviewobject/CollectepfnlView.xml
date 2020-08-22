@@ -14,7 +14,6 @@
   SelectAllAttributes="false"
   PageIterMode="Full"
   ComponentClass="cm.gov.minfof.model.entityviewobject.CollectepfnlViewImpl"
-  ComponentInterface="cm.gov.minfof.model.entityviewobject.common.CollectepfnlView"
   RowClass="cm.gov.minfof.model.entityviewobject.CollectepfnlViewRowImpl"
   RowInterface="cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewRow"
   SdoGen="true"
@@ -112,6 +111,18 @@
   <ViewAccessor
     Name="getRegionUser1"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.getRegionUser"
+    RowLevelBinds="true"
+    RangeSize="10"/>
+  <ViewAccessor
+    Name="RegionView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.RegionView"
+    RowLevelBinds="true"
+    RangeSize="10"/>
+  <ViewAccessor
+    Name="AppModule_getRegion1_1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getRegion"
+    AMUsageName="AppModule"
+    ViewInstanceName="getRegion1"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Iddepartement"
@@ -349,13 +360,77 @@
   </ListBinding>
   <ListBinding
     Name="LOV_nomregion"
-    ListVOName="getRegionUser1"
-    NullValueFlag="start"
-    MRUCount="0"
-    ComboRowCountHint="10"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    ListVOName="RegionView1"
+    NullValueFlag="none"
+    MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="nomregion"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idregion"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Nomregion"/>
+      <Item Value="Idregions"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idregion"
+    ListVOName="RegionView1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idregion"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="nomregion"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idregions"/>
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_nomRegionAutre"
+    ListVOName="AppModule_getRegion1_1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="nomRegionAutre"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Idregion"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Nomregion"/>
+      <Item Value="Idregions"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_nomRegionEncore"
+    ListVOName="RegionView1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="nomRegionEncore"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
@@ -604,11 +679,14 @@
     PrecisionRule="true"
     EntityAttrName="Idregion"
     EntityUsage="Collectepfnl"
-    AliasName="idregion">
+    AliasName="idregion"
+    LOVName="LOV_Idregion">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="cm.gov.minfof.model.entityviewobject.CollectepfnlView.Idregion_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -650,6 +728,43 @@
     LOVName="LOV_nomregion">
     <Properties>
       <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="nomRegionAutre"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="nomRegionAutre"
+    EntityUsage="Collectepfnl"
+    AliasName="nom_Region_Autre"
+    LOVName="LOV_nomRegionAutre">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="nomRegionEncore"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_nomRegionEncore">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="15"/>
         <CONTROLTYPE
           Value="combo_lov"/>
       </SchemaBasedProperties>
@@ -727,31 +842,45 @@
     ViewLink="cm.gov.minfof.model.entityviewobject.CollecteToDetailLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
-  <ClientInterface
-    Name="__clientInterface">
-    <Method
-      Name="setdateDebut"
-      MethodName="setdateDebut">
-      <Return
-        Name="_return_type_"
-        Type="void"/>
-      <Parameter
-        Name="value"
-        Type="java.sql.Timestamp"/>
-    </Method>
-    <Method
-      Name="setdateFin"
-      MethodName="setdateFin">
-      <Return
-        Name="_return_type_"
-        Type="void"/>
-      <Parameter
-        Name="value"
-        Type="java.sql.Timestamp"/>
-    </Method>
-  </ClientInterface>
+  <ViewLinkAccessor
+    Name="RegionView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.RegToCollLink"
+    Type="oracle.jbo.RowIterator"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RegionView2"
+    ViewLink="cm.gov.minfof.model.entityviewobject.RegionToCollecteLink"
+    Type="oracle.jbo.RowIterator"
+    Reversed="true"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="Idcollectepfnl"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="Idcollectepfnl"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="Idcollectepfnl"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="Idcollectepfnl"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="Idcollectepfnl"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

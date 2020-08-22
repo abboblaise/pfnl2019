@@ -1,8 +1,6 @@
 package cm.gov.minfof.model.entityviewobject;
 
 
-import cm.gov.minfof.model.entityviewobject.common.CollectepfnlView;
-
 import java.sql.ResultSet;
 
 import oracle.jbo.Row;
@@ -16,7 +14,7 @@ import oracle.jbo.server.ViewRowSetImpl;
 // ---    Custom code may be added to this class.
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
-public class CollectepfnlViewImpl extends VueImplementation implements CollectepfnlView {
+public class CollectepfnlViewImpl extends VueImplementation {
     /**
      * This is the default constructor (do not remove).
      */

@@ -13,6 +13,8 @@ import java.math.BigDecimal;
 
 import java.sql.Connection;
 
+import java.sql.SQLIntegrityConstraintViolationException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,6 +22,9 @@ import javax.el.ELContext;
 import javax.el.ExpressionFactory;
 import javax.el.MethodExpression;
 
+import javax.el.ValueExpression;
+
+import javax.faces.application.Application;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
@@ -41,7 +46,9 @@ import net.sf.jasperreports.engine.util.JRLoader;
 
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCDataControl;
 import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.event.DialogEvent;
 import oracle.adf.view.rich.event.QueryEvent;
 
@@ -51,6 +58,7 @@ import oracle.binding.OperationBinding;
 
 import oracle.jbo.ApplicationModule;
 import oracle.jbo.Key;
+import oracle.jbo.Row;
 import oracle.jbo.VariableValueManager;
 import oracle.jbo.ViewCriteria;
 import oracle.jbo.ViewObject;
@@ -191,11 +199,88 @@ public class CollecteBean {
         return null;
     }
 
+    @SuppressWarnings("oracle.jdeveloper.java.insufficient-catch-block")
     public String enregistrerCollecte() {
-        System.out.println("entree dans enregistreCollecte");
         BindingContainer bindings = getBindings();
         OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+        DCBindingContainer bindings1 = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
+        ApplicationModule am = bindings1.getDataControl().getApplicationModule();
+        ADFContext adfCtx = ADFContext.getCurrent();
+        Map appScope = adfCtx.getApplicationScope();
+        BigDecimal lastId = new BigDecimal(0);
+
+        Object idEnCours = getExpressionValue("#{bindings.Idcollectepfnl.inputValue}");
+        
+        BigDecimal v = new BigDecimal(5);
+        if (idEnCours instanceof BigDecimal)
+            v = (BigDecimal) idEnCours;
+        
+        
+        /********** ENREGISTREMENT DU DETAIL **********/
+        Object idEnCoursDetails = getExpressionValue("#{bindings.Iddetailscollectepfnl.inputValue}");
+        BigDecimal v1 = new BigDecimal(5);
+        if (idEnCoursDetails instanceof BigDecimal)
+            v1 = (BigDecimal) idEnCoursDetails;
+        
+        if (idEnCoursDetails == null || v1.toString().equals("-1")) {
+            Object dernierId = appScope.get("iddetailcollecte");
+            if (dernierId == null) {
+                //Je vais mettre à jour la liste qui compte les id
+                DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("getLastIdDetailsCollecte1Iterator");
+                ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
+                vo.executeQuery();
+                
+                lastId = new BigDecimal(0);
+                if (vo.hasNext()) {
+                    Row r = vo.next();
+                    lastId = (BigDecimal) r.getAttribute(0);
+                    BigDecimal un = new BigDecimal(1);
+                    lastId = lastId.add(un);
+                    appScope.put("iddetailcollecte", lastId);
+                }
+            } else {
+                BigDecimal un = new BigDecimal(1);
+                lastId = (BigDecimal) dernierId;
+                lastId = lastId.add(un);
+                appScope.put("iddetailcollecte", lastId);
+            }
+            
+            setExpressionValue("#{bindings.Iddetailscollectepfnl.inputValue}", lastId);
+            bindings = getBindings();
+        }
+        /********** FIN ENREGISTREMENT DU DETAIL **********/
+        
+
+        if (idEnCours == null || v.toString().equals("-1")) {
+            Object dernierId = appScope.get("idcollectebean");
+            if (dernierId == null) {
+                //Je vais mettre à jour la liste qui compte les id
+                DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("getLastIdCollectePfnl1Iterator");
+                ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
+                vo.executeQuery();
+
+                lastId = new BigDecimal(0);
+                if (vo.hasNext()) {
+                    Row r = vo.next();
+                    lastId = (BigDecimal) r.getAttribute(0);
+
+                    BigDecimal un = new BigDecimal(1);
+                    lastId = lastId.add(un);
+                    appScope.put("idcollectebean", lastId);
+                }
+            } else {
+                BigDecimal un = new BigDecimal(1);
+                lastId = (BigDecimal) dernierId;
+                lastId = lastId.add(un);
+                appScope.put("idcollectebean", lastId);
+            }
+
+            setExpressionValue("#{bindings.Idcollectepfnl.inputValue}", lastId);
+        }
+
+        operationBinding = bindings.getOperationBinding("Commit");
         Object result = operationBinding.execute();
+
         if (!operationBinding.getErrors().isEmpty()) {
             return null;
         }
@@ -363,18 +448,18 @@ public class CollecteBean {
         DCIteratorBinding multiCritereIter = (DCIteratorBinding) getBindings().get("CollMultiCritere1Iterator");
         DCIteratorBinding collecteCompileeIter = (DCIteratorBinding) getBindings().get("CompilCollecte1Iterator");
         ViewCriteria multiCritereVC;
-        
+
         ApplicationModule appModule = multiCritereIter.getViewObject().getApplicationModule();
         ViewObject vo = appModule.findViewObject("CollMultiCritere1");
         ViewCriteria critere = vo.getViewCriteriaManager().getViewCriteria("CollMultiCritereCriteria");
-        
-        
+
+
         multiCritereVC = multiCritereIter.getViewCriteria();
         System.out.println("criteria = " + multiCritereVC.getName());
         collecteCompileeIter.getViewObject().applyViewCriteria(critere);
         collecteCompileeIter.executeQuery();
         System.out.println("je suis sorti");
-       
+
 
         return null;
     }
@@ -388,4 +473,32 @@ public class CollecteBean {
         notifObj.annulerParent("CollectepfnlView1Iterator");
         return null;
     }
+
+    public static void setExpressionValue(String expression, Object newValue) {
+        FacesContext facesContext = getFacesContext();
+        Application app = facesContext.getApplication();
+        ExpressionFactory elFactory = app.getExpressionFactory();
+        ELContext elContext = facesContext.getELContext();
+        ValueExpression valueExp = elFactory.createValueExpression(elContext, expression, Object.class);
+
+        //Check that the input newValue can be cast to the property type
+        //expected by the managed bean.
+        //If the managed Bean expects a primitive we rely on Auto-Unboxing
+        Class bindClass = valueExp.getType(elContext);
+        if (bindClass.isPrimitive() || bindClass.isInstance(newValue)) {
+            valueExp.setValue(elContext, newValue);
+        }
+    }
+
+    public static Object getExpressionValue(String expression) {
+        FacesContext facesContext = getFacesContext();
+        Application app = facesContext.getApplication();
+        ExpressionFactory elFactory = app.getExpressionFactory();
+        ELContext elContext = facesContext.getELContext();
+        ValueExpression valueExp = elFactory.createValueExpression(elContext, expression, Object.class);
+        Class bindClass = valueExp.getType(elContext);
+        return valueExp.getValue(elContext);
+    }
+
+
 }

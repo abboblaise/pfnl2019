@@ -32,7 +32,9 @@ public class RegionViewRowImpl extends ViewRowImpl implements RegionViewRow {
         DepartementView,
         CommuneView,
         VehiculeView,
-        DepartementView1;
+        DepartementView1,
+        CollectepfnlView,
+        CollectepfnlView1;
         private static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -68,6 +70,8 @@ public class RegionViewRowImpl extends ViewRowImpl implements RegionViewRow {
     public static final int COMMUNEVIEW = AttributesEnum.CommuneView.index();
     public static final int VEHICULEVIEW = AttributesEnum.VehiculeView.index();
     public static final int DEPARTEMENTVIEW1 = AttributesEnum.DepartementView1.index();
+    public static final int COLLECTEPFNLVIEW = AttributesEnum.CollectepfnlView.index();
+    public static final int COLLECTEPFNLVIEW1 = AttributesEnum.CollectepfnlView1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -209,6 +213,34 @@ public class RegionViewRowImpl extends ViewRowImpl implements RegionViewRow {
      */
     public RowIterator getDepartementView1() {
         return (RowIterator) getAttributeInternal(DEPARTEMENTVIEW1);
+    }
+
+    /**
+     * Gets the associated <code>CollectepfnlViewRowImpl</code> using master-detail link CollectepfnlView.
+     */
+    public CollectepfnlViewRowImpl getCollectepfnlView() {
+        return (CollectepfnlViewRowImpl) getAttributeInternal(COLLECTEPFNLVIEW);
+    }
+
+    /**
+     * Sets the master-detail link CollectepfnlView between this object and <code>value</code>.
+     */
+    public void setCollectepfnlView(CollectepfnlViewRowImpl value) {
+        setAttributeInternal(COLLECTEPFNLVIEW, value);
+    }
+
+    /**
+     * Gets the associated <code>CollectepfnlViewRowImpl</code> using master-detail link CollectepfnlView1.
+     */
+    public CollectepfnlViewRowImpl getCollectepfnlView1() {
+        return (CollectepfnlViewRowImpl) getAttributeInternal(COLLECTEPFNLVIEW1);
+    }
+
+    /**
+     * Sets the master-detail link CollectepfnlView1 between this object and <code>value</code>.
+     */
+    public void setCollectepfnlView1(CollectepfnlViewRowImpl value) {
+        setAttributeInternal(COLLECTEPFNLVIEW1, value);
     }
 
 

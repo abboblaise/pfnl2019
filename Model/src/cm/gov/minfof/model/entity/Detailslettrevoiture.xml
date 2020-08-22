@@ -21,6 +21,7 @@
   <Attribute
     Name="Iddetailslettrevoiture"
     ColumnName="iddetailslettrevoiture"
+    IsUpdateable="true"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"

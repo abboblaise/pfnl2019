@@ -23,6 +23,7 @@
     <Attr Name="_NamedConnection" Value="Connection1"/>
     <Attr Name="_appModuleNames2" Value="cm.gov.minfof.model.queryviewobject.AppModule"/>
     <Attr Name="_domainNames5" Value="cm.gov.minfof.model.entityviewobject.Longtext1"/>
+    <Attr Name="_domainNames6" Value="cm.gov.minfof.model.entityviewobject.Longtext2"/>
   </DesignTime>
   <Containee
     Name="entity"

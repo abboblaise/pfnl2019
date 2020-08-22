@@ -457,10 +457,10 @@ public class DetailslettrevoitureImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        if (operation == DML_INSERT) { 
+      /*  if (operation == DML_INSERT) { 
             BigDecimal id = getLastId("getLastidDetailslettrevoiture1");
             setIddetailslettrevoiture(id);
-        }
+        } */
         super.doDML(operation, e);
     }
     

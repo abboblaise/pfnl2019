@@ -4,7 +4,7 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Region"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="regions"
@@ -190,6 +190,13 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc12.Region2"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Collectepfnl"
+    Association="cm.gov.minfof.model.entity.RegToCollAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.RegToCollAssoc.Collectepfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.RegToCollAssoc.Region"
+    Type="cm.gov.minfof.model.entity.CollectepfnlImpl"
+    IsUpdateable="true"/>
   <Key
     Name="AltKey"
     AltKey="true">

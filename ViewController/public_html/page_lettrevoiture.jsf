@@ -186,6 +186,14 @@
                                                                            id="si2"/>
                                                             <f:validator binding="#{bindings.Idtypedocument1.validator}"/>
                                                         </af:selectOneChoice>
+                                                        <af:inputText value="#{bindings.Idlettrevoiture1.inputValue}" visible="false"
+                                                                      required="#{bindings.Idlettrevoiture1.hints.mandatory}"
+                                                                      columns="#{bindings.Idlettrevoiture1.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Idlettrevoiture1.hints.precision}"
+                                                                      shortDesc="#{bindings.Idlettrevoiture1.hints.tooltip}"
+                                                                      id="it1p">
+                                                            <f:validator binding="#{bindings.Idlettrevoiture1.validator}"/>
+                                                        </af:inputText>
                                                     </af:gridCell>
                                                 </af:gridRow>
                                             
@@ -510,6 +518,14 @@
                                             <af:gridRow marginTop="5px" height="auto" id="gr12">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc21">
                                                     <af:outputText value="#{bindings.Idpartieproduitpfnl.label}" id="ot15"/>
+                                                    <af:inputText value="#{bindings.Iddetailslettrevoiture.inputValue}"
+                                                                  required="#{bindings.Iddetailslettrevoiture.hints.mandatory}"
+                                                                  columns="5"
+                                                                  visible="false"
+                                                                  maximumLength="#{bindings.Iddetailslettrevoiture.hints.precision}"
+                                                                  shortDesc="#{bindings.Iddetailslettrevoiture.hints.tooltip}"
+                                                                  id="it3o">
+                                                    </af:inputText>
                                                 </af:gridCell>
                                                 <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc22">
                                                     <af:selectOneChoice value="#{bindings.Idpartieproduitpfnl.inputValue}"

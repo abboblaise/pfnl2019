@@ -96,6 +96,39 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
         setAttributeInternal(NOMREGION, value);
     }
 
+
+    /**
+     * Gets the attribute value for nom_Region_Autre using the alias name nomRegionAutre.
+     * @return the nom_Region_Autre
+     */
+    public String getnomRegionAutre() {
+        return (String) getAttributeInternal(NOMREGIONAUTRE);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for nom_Region_Autre using the alias name nomRegionAutre.
+     * @param value value to set the nom_Region_Autre
+     */
+    public void setnomRegionAutre(String value) {
+        setAttributeInternal(NOMREGIONAUTRE, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute nomRegionEncore.
+     * @return the nomRegionEncore
+     */
+    public String getnomRegionEncore() {
+        return (String) getAttributeInternal(NOMREGIONENCORE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute nomRegionEncore.
+     * @param value value to set the  nomRegionEncore
+     */
+    public void setnomRegionEncore(String value) {
+        setAttributeInternal(NOMREGIONENCORE, value);
+    }
+
     /**
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
@@ -121,8 +154,12 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
         Numerocollecte,
         Identificateur,
         nomregion,
+        nomRegionAutre,
+        nomRegionEncore,
         CollectepfnlView,
         DetailscollectepfnlView,
+        RegionView,
+        RegionView2,
         DepartementView1,
         LocaliteView1,
         PostecontroleView1,
@@ -131,7 +168,9 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
         getPosteUserView1,
         getDepartementUser1,
         getUtilisateur1,
-        getRegionUser1;
+        getRegionUser1,
+        RegionView1,
+        AppModule_getRegion1_1;
         private static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -178,8 +217,12 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
     public static final int NUMEROCOLLECTE = AttributesEnum.Numerocollecte.index();
     public static final int IDENTIFICATEUR = AttributesEnum.Identificateur.index();
     public static final int NOMREGION = AttributesEnum.nomregion.index();
+    public static final int NOMREGIONAUTRE = AttributesEnum.nomRegionAutre.index();
+    public static final int NOMREGIONENCORE = AttributesEnum.nomRegionEncore.index();
     public static final int COLLECTEPFNLVIEW = AttributesEnum.CollectepfnlView.index();
     public static final int DETAILSCOLLECTEPFNLVIEW = AttributesEnum.DetailscollectepfnlView.index();
+    public static final int REGIONVIEW = AttributesEnum.RegionView.index();
+    public static final int REGIONVIEW2 = AttributesEnum.RegionView2.index();
     public static final int DEPARTEMENTVIEW1 = AttributesEnum.DepartementView1.index();
     public static final int LOCALITEVIEW1 = AttributesEnum.LocaliteView1.index();
     public static final int POSTECONTROLEVIEW1 = AttributesEnum.PostecontroleView1.index();
@@ -189,6 +232,8 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
     public static final int GETDEPARTEMENTUSER1 = AttributesEnum.getDepartementUser1.index();
     public static final int GETUTILISATEUR1 = AttributesEnum.getUtilisateur1.index();
     public static final int GETREGIONUSER1 = AttributesEnum.getRegionUser1.index();
+    public static final int REGIONVIEW1 = AttributesEnum.RegionView1.index();
+    public static final int APPMODULE_GETREGION1_1 = AttributesEnum.AppModule_getRegion1_1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -217,6 +262,7 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
      * @param value value to set the idcollectepfnl
      */
     public void setIdcollectepfnl(BigDecimal value) {
+        System.out.println("Je suis dans CollectepfnlViewRowImp " + value.toString());
         setAttributeInternal(IDCOLLECTEPFNL, value);
     }
 
@@ -541,6 +587,21 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
         return (RowIterator) getAttributeInternal(DETAILSCOLLECTEPFNLVIEW);
     }
 
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link RegionView.
+     */
+    public RowIterator getRegionView() {
+        return (RowIterator) getAttributeInternal(REGIONVIEW);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link RegionView2.
+     */
+    public RowIterator getRegionView2() {
+        return (RowIterator) getAttributeInternal(REGIONVIEW2);
+    }
+
     /**
      * Gets the view accessor <code>RowSet</code> DepartementView1.
      */
@@ -602,6 +663,20 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
      */
     public RowSet getgetRegionUser1() {
         return (RowSet) getAttributeInternal(GETREGIONUSER1);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> RegionView1.
+     */
+    public RowSet getRegionView1() {
+        return (RowSet) getAttributeInternal(REGIONVIEW1);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AppModule_getRegion1_1.
+     */
+    public RowSet getAppModule_getRegion1_1() {
+        return (RowSet) getAttributeInternal(APPMODULE_GETREGION1_1);
     }
 }
 

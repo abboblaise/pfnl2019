@@ -273,7 +273,8 @@
     EntityAttrName="Iddetailscollectepfnl"
     EntityUsage="Detailscollectepfnl"
     AliasName="iddetailscollectepfnl"
-    IsUpdateable="while_insert"/>
+    IsUpdateable="true"
+    DefaultValue="-1"/>
   <ViewAttribute
     Name="Idpermissionnaire"
     IsNotNull="true"

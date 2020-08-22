@@ -84,7 +84,8 @@ public class RegionImpl extends EntityImpl {
         Vehicule,
         LettreVoiturePc,
         LettreVoiturePc1,
-        LettreVoiturePc2;
+        LettreVoiturePc2,
+        Collectepfnl;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -121,6 +122,7 @@ public class RegionImpl extends EntityImpl {
     public static final int LETTREVOITUREPC = AttributesEnum.LettreVoiturePc.index();
     public static final int LETTREVOITUREPC1 = AttributesEnum.LettreVoiturePc1.index();
     public static final int LETTREVOITUREPC2 = AttributesEnum.LettreVoiturePc2.index();
+    public static final int COLLECTEPFNL = AttributesEnum.Collectepfnl.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -275,6 +277,22 @@ public class RegionImpl extends EntityImpl {
     public RowIterator getLettreVoiturePc2() {
         return (RowIterator) getAttributeInternal(LETTREVOITUREPC2);
     }
+
+
+    /**
+     * @return the associated entity CollectepfnlImpl.
+     */
+    public CollectepfnlImpl getCollectepfnl() {
+        return (CollectepfnlImpl) getAttributeInternal(COLLECTEPFNL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity CollectepfnlImpl.
+     */
+    public void setCollectepfnl(CollectepfnlImpl value) {
+        setAttributeInternal(COLLECTEPFNL, value);
+    }
+
 
     /**
      * @param idregions key constituent

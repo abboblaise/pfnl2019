@@ -9,10 +9,15 @@ import cm.gov.minfof.model.entityviewobject.typeDocViewFinalRowImpl;
 
 import java.math.BigDecimal;
 
+import java.util.Map;
+
 import javax.el.ELContext;
 import javax.el.ExpressionFactory;
 import javax.el.MethodExpression;
 
+import javax.el.ValueExpression;
+
+import javax.faces.application.Application;
 import javax.faces.context.FacesContext;
 
 import javax.faces.event.ActionEvent;
@@ -23,6 +28,7 @@ import javax.servlet.http.HttpSession;
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.event.DialogEvent;
 import oracle.adf.view.rich.event.QueryEvent;
 
@@ -53,8 +59,8 @@ public class LettreVoitureBean {
     public BindingContainer getBindings() {
         return BindingContext.getCurrent().getCurrentBindingsEntry();
     }
-    
-/*   public void creerLettreVoitureListener(ActionEvent actionEvent) {
+
+    /*   public void creerLettreVoitureListener(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.CreateInsert.execute}", Object.class, ActionEvent.class, actionEvent);
         executemethode("Commit");
     } */
@@ -157,8 +163,90 @@ public class LettreVoitureBean {
     }
 
     public String enregistrerLettre() {
+        System.out.println("entree dans la methode enregsitre des lettres de voiture");
         BindingContainer bindings = getBindings();
         OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+        DCBindingContainer bindings1 = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
+        ApplicationModule am = bindings1.getDataControl().getApplicationModule();
+        ADFContext adfCtx = ADFContext.getCurrent();
+        Map appScope = adfCtx.getApplicationScope();
+        BigDecimal lastId = new BigDecimal(0);
+        
+        System.out.println("Avant le getExpressionValue");
+        Object idEnCours = getExpressionValue("#{bindings.Idlettrevoiture1.inputValue}");
+
+        System.out.println("Après le getExpressionValue");
+        System.out.println("id en cours " + idEnCours);
+        BigDecimal v = new BigDecimal(5);
+        if (idEnCours instanceof BigDecimal)
+            v = (BigDecimal) idEnCours;
+        
+        /********** ENREGISTREMENT DU DETAIL **********/
+        Object idEnCoursDetails = getExpressionValue("#{bindings.Iddetailslettrevoiture.inputValue}");
+        BigDecimal v1 = new BigDecimal(5);
+        if (idEnCoursDetails instanceof BigDecimal)
+            v1 = (BigDecimal) idEnCoursDetails;
+        
+        if (idEnCoursDetails == null || v1.toString().equals("-1")) {
+            Object dernierId = appScope.get("iddetaillettrevoiture");
+            if (dernierId == null) {
+                //Je vais mettre à jour la liste qui compte les id
+                DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("getLastidDetailslettrevoiture1Iterator");
+                ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
+                vo.executeQuery();
+                
+                lastId = new BigDecimal(0);
+                if (vo.hasNext()) {
+                    Row r = vo.next();
+                    lastId = (BigDecimal) r.getAttribute(0);
+                    BigDecimal un = new BigDecimal(1);
+                    lastId = lastId.add(un);
+                    appScope.put("iddetaillettrevoiture", lastId);
+                }
+            } else {
+                BigDecimal un = new BigDecimal(1);
+                lastId = (BigDecimal) dernierId;
+                lastId = lastId.add(un);
+                appScope.put("iddetaillettrevoiture", lastId);
+            }
+            
+            setExpressionValue("#{bindings.Iddetailslettrevoiture.inputValue}", lastId);
+            bindings = getBindings();
+        }
+        /********** FIN ENREGISTREMENT DU DETAIL **********/
+        
+        if (idEnCours == null || v.toString().equals("-1")) {
+            System.out.println("idEnCours est nul ou vaut -1");
+            Object dernierId = appScope.get("idlettrevoiture");
+            if (dernierId == null) {
+                System.out.println("dernierId vaut null");
+                //Je vais mettre à jour la liste qui compte les id
+                System.out.println("Avant getLastidLettrevoiture1Iterator");
+                DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("getLastidLettrevoiture1Iterator");
+                System.out.println("Après getLastidLettrevoiture1Iterator");
+                ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
+                vo.executeQuery();
+                System.out.println("Après l'exécution de la requete");
+                
+                lastId = new BigDecimal(0);
+                if (vo.hasNext()) {
+                    Row r = vo.next();
+                    lastId = (BigDecimal) r.getAttribute(0);
+                    BigDecimal un = new BigDecimal(1);
+                    lastId = lastId.add(un);
+                    appScope.put("idlettrevoiture", lastId);
+                }
+            } else {
+                BigDecimal un = new BigDecimal(1);
+                lastId = (BigDecimal) dernierId;
+                lastId = lastId.add(un);
+                appScope.put("idlettrevoiture", lastId);
+            }
+
+            setExpressionValue("#{bindings.Idlettrevoiture1.inputValue}", lastId);
+            bindings = getBindings();
+        }
+        operationBinding = bindings.getOperationBinding("Commit");
         Object result = operationBinding.execute();
         if (!operationBinding.getErrors().isEmpty()) {
             return null;
@@ -231,37 +319,37 @@ public class LettreVoitureBean {
         Object v = valueChangeEvent.getNewValue();
         System.out.println("v= " + v);
         BigDecimal bd = new BigDecimal(v.toString());
-        
+
         BigDecimal idTypeDocument = getIdTypeDocumentCourant();
         System.out.println("id_permis = " + bd.longValue() + " id_type_doc = " + idTypeDocument.longValue());
         DCBindingContainer bindings = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
         ApplicationModule am = bindings.getDataControl().getApplicationModule();
         String requeteLocalite;
-        
-        if(idTypeDocument.longValue() == 1) {
-        requeteLocalite = "select communes.idcommunes as Idcommune, localite.idlocalite as Idlocalite, localite.nomlocalite as Nomlocalite, departements.iddepartements as Iddepartements, regions.idregions as Idregions\n" + 
-        "from regions, departements, communes, localite, postecontrole\n" + 
-        "where (regions.idregions in (select detailpermis.idregions \n" + 
-        "                                                       from permis, detailpermis \n" + 
-        "                                                       where detailpermis.idpermis=permis.idpermis and permis.idpermis="+bd.toString()+") and \n" + 
-        "               departements.idregions=regions.idregions and \n" + 
-        "               communes.iddepartements=departements.iddepartements and\n" + 
-        "        localite.idpostecontrole=postecontrole.idpostecontrole and communes.idcommunes=postecontrole.idcommune)";
-        
+
+        if (idTypeDocument.longValue() == 1) {
+            requeteLocalite =
+                "select communes.idcommunes as Idcommune, localite.idlocalite as Idlocalite, localite.nomlocalite as Nomlocalite, departements.iddepartements as Iddepartements, regions.idregions as Idregions\n" +
+                "from regions, departements, communes, localite, postecontrole\n" +
+                "where (regions.idregions in (select detailpermis.idregions \n" +
+                "                                                       from permis, detailpermis \n" +
+                "                                                       where detailpermis.idpermis=permis.idpermis and permis.idpermis=" +
+                bd.toString() + ") and \n" + "               departements.idregions=regions.idregions and \n" +
+                "               communes.iddepartements=departements.iddepartements and\n" +
+                "        localite.idpostecontrole=postecontrole.idpostecontrole and communes.idcommunes=postecontrole.idcommune)";
+
+        } else {
+            requeteLocalite =
+                "select communes.idcommunes as Idcommune, localite.idlocalite as Idlocalite, localite.nomlocalite as Nomlocalite, departements.iddepartements as Iddepartements, regions.idregions as Idregions\n" +
+                "from regions, departements, communes, localite, postecontrole\n" +
+                "where (regions.idregions in (select detailpermis.idregions \n" +
+                "                                                       from permis, detailpermis \n" +
+                "                                                       where detailpermis.idpermis=permis.idpermis and permis.idpermis=" +
+                bd.toString() + ") and \n" + "               departements.idregions=regions.idregions and \n" +
+                "               communes.iddepartements=departements.iddepartements and\n" +
+                "        localite.idpostecontrole=postecontrole.idpostecontrole and communes.idcommunes=postecontrole.idcommune)";
+
         }
-        else
-        {
-            requeteLocalite = "select communes.idcommunes as Idcommune, localite.idlocalite as Idlocalite, localite.nomlocalite as Nomlocalite, departements.iddepartements as Iddepartements, regions.idregions as Idregions\n" + 
-            "from regions, departements, communes, localite, postecontrole\n" + 
-            "where (regions.idregions in (select detailpermis.idregions \n" + 
-            "                                                       from permis, detailpermis \n" + 
-            "                                                       where detailpermis.idpermis=permis.idpermis and permis.idpermis="+bd.toString()+") and \n" + 
-            "               departements.idregions=regions.idregions and \n" + 
-            "               communes.iddepartements=departements.iddepartements and\n" + 
-            "        localite.idpostecontrole=postecontrole.idpostecontrole and communes.idcommunes=postecontrole.idcommune)";
-            
-        }
-        
+
         DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("LocaliteLettreVoiture1Iterator");
         ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
         vo.remove();
@@ -290,108 +378,117 @@ public class LettreVoitureBean {
 
         DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("permisActifView1Iterator");
         ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
-        System.out.println("vo name = " + vo.getName() + " vo = "+ vo);
-        
+        System.out.println("vo name = " + vo.getName() + " vo = " + vo);
+
         DCIteratorBinding iterIBLocalite = (DCIteratorBinding) getBindings().get("LocaliteLettreVoiture1Iterator");
         ViewObjectImpl voLocalite = (ViewObjectImpl) iterIB.getViewObject();
-        
+
         DCBindingContainer bindings = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
         ApplicationModule am = bindings.getDataControl().getApplicationModule();
-    /*    
-        
+        /*
+
         ViewObjectImpl vue = (ViewObjectImpl) am.findViewObject("permisActifView1");*/
         String requete = "";
         String requeteLocalite = "";
-        if(bd.longValue() == 1 || bd.longValue() == 2){
-        
-        requete = "SELECT   \n" + 
-        "    permis.idpermis as Idpermis,   \n" + 
-        "    permis.numeropermis as Numeropermis,   \n" + 
-        "    permis.datedelivrance as Datedelivrance,   \n" + 
-        "    permis.datefin as Datefin,   \n" + 
-        "    permis.idpermissionnaire as Idpermissionnaire,   \n" + 
-        "    permissionnairespnfl.Nomouraisonsociale as Nomouraisonsociale,\n" + 
-        "    permis.idtypedocument Idtypedocument\n" + 
-        "FROM  \n" + 
-        "    permis,  \n" + 
-        "    permissionnairespnfl  \n" + 
-        "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire  \n" + 
-        "and permis.idtypedocument="+bd.toString()+")";
-        
+        if (bd.longValue() == 1 || bd.longValue() == 2) {
+
+            requete =
+                "SELECT   \n" + "    permis.idpermis as Idpermis,   \n" +
+                "    permis.numeropermis as Numeropermis,   \n" + "    permis.datedelivrance as Datedelivrance,   \n" +
+                "    permis.datefin as Datefin,   \n" + "    permis.idpermissionnaire as Idpermissionnaire,   \n" +
+                "    permissionnairespnfl.Nomouraisonsociale as Nomouraisonsociale,\n" +
+                "    permis.idtypedocument Idtypedocument\n" + "FROM  \n" + "    permis,  \n" +
+                "    permissionnairespnfl  \n" +
+                "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire  \n" +
+                "and permis.idtypedocument=" + bd.toString() + ")";
+
+        } else {
+            requete =
+                "SELECT   \n" + "    permis.idpermis as Idpermis,   \n" +
+                "    permis.numeropermis as Numeropermis,   \n" + "    permis.datedelivrance as Datedelivrance,   \n" +
+                "    permis.datefin as Datefin,   \n" + "    permis.idpermissionnaire as Idpermissionnaire,   \n" +
+                "    permissionnairespnfl.Nomouraisonsociale as Nomouraisonsociale,\n" +
+                "    permis.idtypedocument as Idtypedocument\n" + "FROM  \n" + "    permis,  \n" +
+                "    permissionnairespnfl  \n" +
+                "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire  \n" +
+                " and permis.idtypedocument=" + bd.toString() + ")";
         }
-        else
-        {
-            requete = "SELECT   \n" + 
-            "    permis.idpermis as Idpermis,   \n" + 
-            "    permis.numeropermis as Numeropermis,   \n" + 
-            "    permis.datedelivrance as Datedelivrance,   \n" + 
-            "    permis.datefin as Datefin,   \n" + 
-            "    permis.idpermissionnaire as Idpermissionnaire,   \n" + 
-            "    permissionnairespnfl.Nomouraisonsociale as Nomouraisonsociale,\n" + 
-            "    permis.idtypedocument as Idtypedocument\n" + 
-            "FROM  \n" + 
-            "    permis,  \n" + 
-            "    permissionnairespnfl  \n" + 
-            "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire  \n" + 
-            " and permis.idtypedocument="+bd.toString()+")";
-        }
-        
+
         vo.remove();
         vo = (ViewObjectImpl) am.createViewObjectFromQueryStmt("permisActifView1", requete);
         vo.executeQuery();
         System.out.println("requete = " + requete);
     }
-    
+
     public void lettrePremier(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.First.execute}", Object.class, ActionEvent.class, actionEvent);
-        try 
-        {
+        try {
             BigDecimal bd1 = getIdTypeDocumentCourant();
             filtrerLesDocumentsParIdType(bd1);
-            
+
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
-        } catch (NullPointerException ex) {}
+        } catch (NullPointerException ex) {
+        }
     }
-    
+
     public void lettreDernier(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.Last.execute}", Object.class, ActionEvent.class, actionEvent);
-        try 
-        {
+        try {
             BigDecimal bd1 = getIdTypeDocumentCourant();
             filtrerLesDocumentsParIdType(bd1);
-            
+
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
-        } catch (NullPointerException ex) {}
+        } catch (NullPointerException ex) {
+        }
     }
-    
+
     public void lettreSuivant(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.Next.execute}", Object.class, ActionEvent.class, actionEvent);
-        try 
-        {
+        try {
             BigDecimal bd1 = getIdTypeDocumentCourant();
             filtrerLesDocumentsParIdType(bd1);
-            
+
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
-        } catch (NullPointerException ex) {}
+        } catch (NullPointerException ex) {
+        }
     }
-    
+
+    public static FacesContext getFacesContext() {
+        return FacesContext.getCurrentInstance();
+    }
+
+    public static void setExpressionValue(String expression, Object newValue) {
+        FacesContext facesContext = getFacesContext();
+        Application app = facesContext.getApplication();
+        ExpressionFactory elFactory = app.getExpressionFactory();
+        ELContext elContext = facesContext.getELContext();
+        ValueExpression valueExp = elFactory.createValueExpression(elContext, expression, Object.class);
+
+        //Check that the input newValue can be cast to the property type
+        //expected by the managed bean.
+        //If the managed Bean expects a primitive we rely on Auto-Unboxing
+        Class bindClass = valueExp.getType(elContext);
+        if (bindClass.isPrimitive() || bindClass.isInstance(newValue)) {
+            valueExp.setValue(elContext, newValue);
+        }
+    }
+
     public void lettrePrecedent(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.Previous.execute}", Object.class, ActionEvent.class, actionEvent);
-        try 
-        {
+        try {
             BigDecimal bd1 = getIdTypeDocumentCourant();
             filtrerLesDocumentsParIdType(bd1);
-            
+
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
-        } catch (NullPointerException ex) {}
+        } catch (NullPointerException ex) {
+        }
     }
-    
-    public BigDecimal getIdTypeDocumentCourant()
-    {
+
+    public BigDecimal getIdTypeDocumentCourant() {
         // Get the binding
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
 
@@ -413,7 +510,7 @@ public class LettreVoitureBean {
         Object v = valueChangeEvent.getNewValue();
         System.out.println("v= " + v);
         BigDecimal bd = new BigDecimal(v.toString());
-    //    BigDecimal idType = getIdTypeDocumentCourant();
+        //    BigDecimal idType = getIdTypeDocumentCourant();
     }
 
     public void partieProduitChange(ValueChangeEvent valueChangeEvent) {
@@ -422,112 +519,95 @@ public class LettreVoitureBean {
         BigDecimal bd = new BigDecimal(v.toString());
         filtrerLesPartiesProduitsParId(bd);
     }
-    
-    public void filtrerLesDocumentsParIdType(BigDecimal bd)
-    {
+
+    public void filtrerLesDocumentsParIdType(BigDecimal bd) {
         DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("permisActifView1Iterator");
         ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
-        System.out.println("vo name = " + vo.getName() + " vo = "+ vo);
-        
+        System.out.println("vo name = " + vo.getName() + " vo = " + vo);
+
         DCIteratorBinding iterIBLocalite = (DCIteratorBinding) getBindings().get("LocaliteLettreVoiture1Iterator");
         ViewObjectImpl voLocalite = (ViewObjectImpl) iterIB.getViewObject();
-        
+
         DCBindingContainer bindings = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
         ApplicationModule am = bindings.getDataControl().getApplicationModule();
         /*
-        
+
         ViewObjectImpl vue = (ViewObjectImpl) am.findViewObject("permisActifView1");*/
         String requete = "";
         String requeteLocalite = "";
-        
-        if(bd == null)
-        requete = "SELECT   \n" + 
-        "    permis.idpermis as Idpermis,   \n" + 
-        "    permis.numeropermis as Numeropermis,   \n" + 
-        "    permis.datedelivrance as Datedelivrance,   \n" + 
-        "    permis.datefin as Datefin,   \n" + 
-        "    permis.idpermissionnaire as Idpermissionnaire,   \n" + 
-        "    permissionnairespnfl.Nomouraisonsociale as Nomouraisonsociale,\n" + 
-        "    permis.idtypedocument Idtypedocument\n" + 
-        "FROM  \n" + 
-        "    permis,  \n" + 
-        "    permissionnairespnfl  \n" + 
-        "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire)";
-        
-        else if(bd.longValue() == 1 || bd.longValue() == 2){
-        
-        requete = "SELECT   \n" + 
-        "    permis.idpermis as Idpermis,   \n" + 
-        "    permis.numeropermis as Numeropermis,   \n" + 
-        "    permis.datedelivrance as Datedelivrance,   \n" + 
-        "    permis.datefin as Datefin,   \n" + 
-        "    permis.idpermissionnaire as Idpermissionnaire,   \n" + 
-        "    permissionnairespnfl.Nomouraisonsociale as Nomouraisonsociale,\n" + 
-        "    permis.idtypedocument Idtypedocument\n" + 
-        "FROM  \n" + 
-        "    permis,  \n" + 
-        "    permissionnairespnfl  \n" + 
-        "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire  \n" + 
-        "and permis.idtypedocument="+bd.toString()+")";
-        
+
+        if (bd == null)
+            requete =
+                "SELECT   \n" + "    permis.idpermis as Idpermis,   \n" +
+                "    permis.numeropermis as Numeropermis,   \n" + "    permis.datedelivrance as Datedelivrance,   \n" +
+                "    permis.datefin as Datefin,   \n" + "    permis.idpermissionnaire as Idpermissionnaire,   \n" +
+                "    permissionnairespnfl.Nomouraisonsociale as Nomouraisonsociale,\n" +
+                "    permis.idtypedocument Idtypedocument\n" + "FROM  \n" + "    permis,  \n" +
+                "    permissionnairespnfl  \n" +
+                "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire)";
+
+        else if (bd.longValue() == 1 || bd.longValue() == 2) {
+
+            requete =
+                "SELECT   \n" + "    permis.idpermis as Idpermis,   \n" +
+                "    permis.numeropermis as Numeropermis,   \n" + "    permis.datedelivrance as Datedelivrance,   \n" +
+                "    permis.datefin as Datefin,   \n" + "    permis.idpermissionnaire as Idpermissionnaire,   \n" +
+                "    permissionnairespnfl.Nomouraisonsociale as Nomouraisonsociale,\n" +
+                "    permis.idtypedocument Idtypedocument\n" + "FROM  \n" + "    permis,  \n" +
+                "    permissionnairespnfl  \n" +
+                "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire  \n" +
+                "and permis.idtypedocument=" + bd.toString() + ")";
+
+        } else if (bd.longValue() == 3) {
+            requete =
+                "SELECT   \n" + "    permis.idpermis as Idpermis,   \n" +
+                "    permis.numeropermis as Numeropermis,   \n" + "    permis.datedelivrance as Datedelivrance,   \n" +
+                "    permis.datefin as Datefin,   \n" + "    permis.idpermissionnaire as Idpermissionnaire,   \n" +
+                "    permissionnairespnfl.Nomouraisonsociale as Nomouraisonsociale,\n" +
+                "    permis.idtypedocument as Idtypedocument\n" + "FROM  \n" + "    permis,  \n" +
+                "    permissionnairespnfl  \n" +
+                "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire  \n" +
+                " and permis.idtypedocument=" + bd.toString() + ")";
         }
-        else if(bd.longValue() == 3)
-        {
-            requete = "SELECT   \n" + 
-            "    permis.idpermis as Idpermis,   \n" + 
-            "    permis.numeropermis as Numeropermis,   \n" + 
-            "    permis.datedelivrance as Datedelivrance,   \n" + 
-            "    permis.datefin as Datefin,   \n" + 
-            "    permis.idpermissionnaire as Idpermissionnaire,   \n" + 
-            "    permissionnairespnfl.Nomouraisonsociale as Nomouraisonsociale,\n" + 
-            "    permis.idtypedocument as Idtypedocument\n" + 
-            "FROM  \n" + 
-            "    permis,  \n" + 
-            "    permissionnairespnfl  \n" + 
-            "where (permissionnairespnfl.IDPermissionnairesPNFL = permis.idpermissionnaire  \n" + 
-            " and permis.idtypedocument="+bd.toString()+")";
-        }
-        
+
         vo.remove();
         vo = (ViewObjectImpl) am.createViewObjectFromQueryStmt("permisActifView1", requete);
         vo.executeQuery();
         System.out.println("requete = " + requete);
     }
-    
-    public void filtrerLesPartiesProduitsParId(BigDecimal bd)
-    {
+
+    public void filtrerLesPartiesProduitsParId(BigDecimal bd) {
         System.out.println("Entree dans la methode filtrerLesPartiesProduitsParId");
         DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("UniteMesureWithPartieProduitPfnl1Iterator");
         ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
         System.out.println("vo name = " + vo.getName() + "vo = " + vo);
-        
-        DCBindingContainer bindings = (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
+
+        DCBindingContainer bindings = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
         ApplicationModule am = bindings.getDataControl().getApplicationModule();
-        
+
         String requete;
-        
-        if (bd == null)
-        {
-            requete = "select distinct idunitemesure as Idunitemesure, libelleunitemesure as Libelleunitemesure, idcategorie as Idcategorie, \n" + 
-        "  arrondi as Arrondi, ordregrandeur as Ordregrandeur, ratio as Ratio, actif as Actif\n" + 
-        "from unitemesure";
-        }
-        else
-        {
-            requete = "select idunitemesure as Idunitemesure, libelleunitemesure as Libelleunitemesure, idcategorie as Idcategorie, \n" + 
-        "  arrondi as Arrondi, ordregrandeur as Ordregrandeur, ratio as Ratio, actif as Actif\n" + 
-        "from unitemesure where unitemesure.idcategorie in (\n" + 
-        "select unitemesure.idcategorie from unitemesure, partiesproduitspfnl\n" + 
-        "where partiesproduitspfnl.idunitemesure=unitemesure.idunitemesure and partiesproduitspfnl.idpartiesproduitspfnl="+ bd.toString() +")";
+
+        if (bd == null) {
+            requete =
+                "select distinct idunitemesure as Idunitemesure, libelleunitemesure as Libelleunitemesure, idcategorie as Idcategorie, \n" +
+                "  arrondi as Arrondi, ordregrandeur as Ordregrandeur, ratio as Ratio, actif as Actif\n" +
+                "from unitemesure";
+        } else {
+            requete =
+                "select idunitemesure as Idunitemesure, libelleunitemesure as Libelleunitemesure, idcategorie as Idcategorie, \n" +
+                "  arrondi as Arrondi, ordregrandeur as Ordregrandeur, ratio as Ratio, actif as Actif\n" +
+                "from unitemesure where unitemesure.idcategorie in (\n" +
+                "select unitemesure.idcategorie from unitemesure, partiesproduitspfnl\n" +
+                "where partiesproduitspfnl.idunitemesure=unitemesure.idunitemesure and partiesproduitspfnl.idpartiesproduitspfnl=" +
+                bd.toString() + ")";
         }
         vo.remove();
         vo = (ViewObjectImpl) am.createViewObjectFromQueryStmt("UniteMesureWithPartieProduitPfnl1", requete);
         vo.executeQuery();
         System.out.println("Fin de l'execution");
     }
-    
-    public BigDecimal getIdPartieProduitPfnlCourant()
-    {
+
+    public BigDecimal getIdPartieProduitPfnlCourant() {
         // Get the binding
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
 
@@ -541,89 +621,93 @@ public class LettreVoitureBean {
         BigDecimal bd = new BigDecimal(idResultat.toString());
         return bd;
     }
-    
-    public void onConsultationParentTabDisclose(DisclosureEvent disclosureEvent)
-    {
+
+    public void onConsultationParentTabDisclose(DisclosureEvent disclosureEvent) {
         boolean bool = disclosureEvent.isExpanded();
         System.out.println("bool = " + bool);
-        if (!bool) 
-        {
-            try 
-            {
+        if (!bool) {
+            try {
                 BigDecimal bd = getIdTypeDocumentCourant();
                 System.out.println("Je vais filtrer par type de document = " + bd.longValue());
                 filtrerLesDocumentsParIdType(bd);
-            } catch (NullPointerException ex) {}
-        }
-        else
-        {
-            System.out.println("Je vais filtrer par type de document = " +"null");
+            } catch (NullPointerException ex) {
+            }
+        } else {
+            System.out.println("Je vais filtrer par type de document = " + "null");
             filtrerLesDocumentsParIdType(null);
-        } 
+        }
     }
 
     public void onConsultationTabDisclose(DisclosureEvent disclosureEvent) {
         System.out.println("Je suis dans la methode qui va faire les derniers filtres");
         boolean bool = disclosureEvent.isExpanded();
-        
+
         System.out.println("bool = " + bool);
 
-        if (!bool) 
-        {
-            try 
-            {
+        if (!bool) {
+            try {
                 BigDecimal bd = getIdPartieProduitPfnlCourant();
                 filtrerLesPartiesProduitsParId(bd);
-            } catch (NullPointerException ex) {}
-        }
-        else
-        {
+            } catch (NullPointerException ex) {
+            }
+        } else {
             filtrerLesPartiesProduitsParId(null);
-        } 
+        }
     }
-    
+
     public void detailLettrePremier(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.First1.execute}", Object.class, ActionEvent.class, actionEvent);
-        try 
-        {
+        try {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
-        } catch (NullPointerException ex) {}
+        } catch (NullPointerException ex) {
+        }
     }
-    
+
     public void detailLettreDernier(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.Last1.execute}", Object.class, ActionEvent.class, actionEvent);
-        try 
-        {
+        try {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
-        } catch (NullPointerException ex) {}
+        } catch (NullPointerException ex) {
+        }
     }
-    
+
     public void detailLettreSuivant(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.Next1.execute}", Object.class, ActionEvent.class, actionEvent);
-        try 
-        {
+        try {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
-        } catch (NullPointerException ex) {}
+        } catch (NullPointerException ex) {
+        }
     }
-    
+
     public void detailLettrePrecedent(ActionEvent actionEvent) {
         invokeMethodExpression("#{bindings.Previous1.execute}", Object.class, ActionEvent.class, actionEvent);
-        try 
-        {
+        try {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
-        } catch (NullPointerException ex) {}
+        } catch (NullPointerException ex) {
+        }
     }
 
     public void makeCurrentLettre(SelectionEvent selectionEvent) {
-        invokeMethodExpression("#{bindings.LettrevoitureView1.collectionModel.makeCurrent}", Object.class, ActionEvent.class, selectionEvent);
-        try 
-        {
+        invokeMethodExpression("#{bindings.LettrevoitureView1.collectionModel.makeCurrent}", Object.class,
+                               ActionEvent.class, selectionEvent);
+        try {
             BigDecimal bd = getIdPartieProduitPfnlCourant();
             filtrerLesPartiesProduitsParId(bd);
-        } catch (NullPointerException ex) {}
+        } catch (NullPointerException ex) {
+        }
+    }
+
+    public static Object getExpressionValue(String expression) {
+        FacesContext facesContext = getFacesContext();
+        Application app = facesContext.getApplication();
+        ExpressionFactory elFactory = app.getExpressionFactory();
+        ELContext elContext = facesContext.getELContext();
+        ValueExpression valueExp = elFactory.createValueExpression(elContext, expression, Object.class);
+        Class bindClass = valueExp.getType(elContext);
+        return valueExp.getValue(elContext);
     }
 }

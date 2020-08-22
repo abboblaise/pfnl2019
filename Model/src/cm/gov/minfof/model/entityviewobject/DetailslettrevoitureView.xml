@@ -116,7 +116,9 @@
     PrecisionRule="true"
     EntityAttrName="Iddetailslettrevoiture"
     EntityUsage="Detailslettrevoiture"
-    AliasName="iddetailslettrevoiture"/>
+    AliasName="iddetailslettrevoiture"
+    IsUpdateable="true"
+    DefaultValue="-1"/>
   <ViewAttribute
     Name="Idlettrevoiture"
     PrecisionRule="true"

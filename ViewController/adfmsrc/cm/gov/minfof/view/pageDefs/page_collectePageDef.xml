@@ -11,6 +11,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DetailscollectepfnlView17Query"/>
     <searchRegion Binds="CollectepfnlView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CollectepfnlView1Query"/>
+    <iterator id="getLastIdCollectePfnl1Iterator" DataControl="AppModuleDataControl" RangeSize="25"
+              Binds="getLastIdCollectePfnl1"/>
+    <iterator id="getLastIdDetailsCollecte1Iterator" Binds="getLastIdDetailsCollecte1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CollectepfnlView1Iterator" id="Datecollecte">
@@ -91,6 +95,8 @@
           <Item Value="Iddepartement"/>
           <Item Value="Idlocalite"/>
           <Item Value="Idposte"/>
+          <Item Value="Idregion"/>
+          <Item Value="nomregion"/>
           <Item Value="Idutilisateur"/>
           <Item Value="Iddepartement1"/>
           <Item Value="Idlocalite1"/>
@@ -114,6 +120,7 @@
     <action IterBinding="DetailscollectepfnlView17Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
     <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_Idutilisateur"
                   id="Idutilisateur1"/>
+    <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomregion" id="nomregion" />
     <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomdepartement"
                   id="nomdepartement"/>
     <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomposte" id="nomposte"/>
@@ -138,6 +145,34 @@
         <Item Value="Identificateur"/>
       </AttrNames>
     </attributeValues>
-    <listOfValues Uses="LOV_nomregion" StaticList="false" IterBinding="CollectepfnlView1Iterator" id="nomregion"/>
+    <attributeValues IterBinding="CollectepfnlView1Iterator" id="Idcollectepfnl">
+      <AttrNames>
+        <Item Value="Idcollectepfnl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailscollectepfnlView17Iterator" id="Iddetailscollectepfnl">
+      <AttrNames>
+        <Item Value="Iddetailscollectepfnl"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomRegionAutre"
+                  id="nomRegionAutre"/>
+    <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomRegionEncore"
+                  id="nomRegionEncore"/>
+    <attributeValues IterBinding="CollectepfnlView1Iterator" id="nomregion1">
+      <AttrNames>
+        <Item Value="nomregion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CollectepfnlView1Iterator" id="nomdepartement1">
+      <AttrNames>
+        <Item Value="nomdepartement"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_nomregion" id="nomregion2"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_Idregion" id="Idregion1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="CollectepfnlView1Iterator" StaticList="false" Uses="LOV_Idregion" id="Idregion2"/>
   </bindings>
 </pageDefinition>

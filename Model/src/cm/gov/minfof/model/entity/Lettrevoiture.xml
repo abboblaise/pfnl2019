@@ -19,19 +19,6 @@
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <Attribute
-    Name="Idlettrevoiture"
-    ColumnName="idlettrevoiture"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="BIGINT"
-    TableName="lettrevoiture"
-    PrimaryKey="true"
-    IsUpdateable="while_insert">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="19"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
     Name="Idpermissionnaire"
     ColumnName="idpermissionnaire"
     SQLType="NUMERIC"
@@ -264,6 +251,20 @@
       <Attr Name="_DisplaySize" Value="19"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="Idlettrevoiture"
+    ColumnName="idlettrevoiture"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="lettrevoiture"
+    PrimaryKey="true"
+    IsUpdateable="true"
+    DefaultValue="-1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="Lettrevoiture2"
     Association="cm.gov.minfof.model.entity.FkLettrevoiture3Assoc"
@@ -406,9 +407,7 @@
     <DesignTime>
       <Attr Name="_DBObjectName" Value="PRIMARY"/>
     </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="cm.gov.minfof.model.entity.Lettrevoiture.Idlettrevoiture"/>
-    </AttrArray>
+    <AttrArray Name="Attributes"/>
   </Key>
   <Key
     Name="FkLettrevoiture1">

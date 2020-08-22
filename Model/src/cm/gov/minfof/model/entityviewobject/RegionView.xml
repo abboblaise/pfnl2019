@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="RegionView"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -88,6 +88,16 @@
     Name="DepartementView1"
     ViewLink="cm.gov.minfof.model.entityviewobject.regiontodeplink"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CollectepfnlView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.RegToCollLink"
+    Type="cm.gov.minfof.model.entityviewobject.CollectepfnlViewRowImpl"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CollectepfnlView1"
+    ViewLink="cm.gov.minfof.model.entityviewobject.RegionToCollecteLink"
+    Type="cm.gov.minfof.model.entityviewobject.CollectepfnlViewRowImpl"
     IsUpdateable="false"/>
   <SortCriteria>
     <Sort

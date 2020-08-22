@@ -249,7 +249,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="collectepfnl"
     IsNotNull="true"
     IsPersistent="false"
     IsQueriable="false">
@@ -259,6 +258,22 @@
           ResId="cm.gov.minfof.model.entity.Collectepfnl.nomregion_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="nomRegionAutre"
+    Precision="80"
+    ColumnName="nom_Region_Autre"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Collectepfnl.nomRegionAutre_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -339,6 +354,13 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.FkCollectepfnl1Assoc2.Collectepfnl1"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Region"
+    Association="cm.gov.minfof.model.entity.RegToCollAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.RegToCollAssoc.Region"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.RegToCollAssoc.Collectepfnl"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="CollectepfnlIdentificateurCheck">
     <DesignTime>
@@ -429,6 +451,50 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Collectepfnl.Idlocalite"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Collectepfnl1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Collectepfnl1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Collectepfnl.Idregion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Collectepfnl2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Collectepfnl2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Collectepfnl.Idregion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Collectepfnl3">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Collectepfnl3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Collectepfnl.Idposte"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Collectepfnl4">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Collectepfnl4"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Collectepfnl.Idregion"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

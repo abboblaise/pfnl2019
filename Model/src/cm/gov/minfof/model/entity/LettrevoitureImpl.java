@@ -31,7 +31,6 @@ public class LettrevoitureImpl extends EntityImpl {
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
     protected enum AttributesEnum {
-        Idlettrevoiture,
         Idpermissionnaire,
         Iddepartementdestination,
         Nomconducteur,
@@ -46,6 +45,7 @@ public class LettrevoitureImpl extends EntityImpl {
         numpermis,
         nomacteur,
         Idtypedocument,
+        Idlettrevoiture,
         Lettrevoiture2,
         IddepartementdestinationLettrevoiture,
         Lettrevoiture4,
@@ -88,7 +88,6 @@ public class LettrevoitureImpl extends EntityImpl {
     }
 
 
-    public static final int IDLETTREVOITURE = AttributesEnum.Idlettrevoiture.index();
     public static final int IDPERMISSIONNAIRE = AttributesEnum.Idpermissionnaire.index();
     public static final int IDDEPARTEMENTDESTINATION = AttributesEnum.Iddepartementdestination.index();
     public static final int NOMCONDUCTEUR = AttributesEnum.Nomconducteur.index();
@@ -103,6 +102,7 @@ public class LettrevoitureImpl extends EntityImpl {
     public static final int NUMPERMIS = AttributesEnum.numpermis.index();
     public static final int NOMACTEUR = AttributesEnum.nomacteur.index();
     public static final int IDTYPEDOCUMENT = AttributesEnum.Idtypedocument.index();
+    public static final int IDLETTREVOITURE = AttributesEnum.Idlettrevoiture.index();
     public static final int LETTREVOITURE2 = AttributesEnum.Lettrevoiture2.index();
     public static final int IDDEPARTEMENTDESTINATIONLETTREVOITURE =
         AttributesEnum.IddepartementdestinationLettrevoiture.index();
@@ -136,23 +136,6 @@ public class LettrevoitureImpl extends EntityImpl {
         return EntityDefImpl.findDefObject("cm.gov.minfof.model.entity.Lettrevoiture");
     }
 
-
-    /**
-     * Gets the attribute value for Idlettrevoiture, using the alias name Idlettrevoiture.
-     * @return the value of Idlettrevoiture
-     */
-    public BigDecimal getIdlettrevoiture() {
-        return (BigDecimal) getAttributeInternal(IDLETTREVOITURE);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for Idlettrevoiture.
-     * @param value value to set the Idlettrevoiture
-     */
-    public void setIdlettrevoiture(BigDecimal value) {
-        System.out.println("Last id Lettre voiture = " + value.longValue());
-        setAttributeInternal(IDLETTREVOITURE, value);
-    }
 
     /**
      * Gets the attribute value for Idpermissionnaire, using the alias name Idpermissionnaire.
@@ -389,13 +372,30 @@ public class LettrevoitureImpl extends EntityImpl {
         setAttributeInternal(IDTYPEDOCUMENT, value);
     }
 
+
+    /**
+     * Gets the attribute value for Idlettrevoiture, using the alias name Idlettrevoiture.
+     * @return the value of Idlettrevoiture
+     */
+    public BigDecimal getIdlettrevoiture() {
+        return (BigDecimal) getAttributeInternal(IDLETTREVOITURE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Idlettrevoiture.
+     * @param value value to set the Idlettrevoiture
+     */
+    public void setIdlettrevoiture(BigDecimal value) {
+        setAttributeInternal(IDLETTREVOITURE, value);
+    }
+
     @Override
     protected void doDML(int operation, TransactionEvent transactionEvent) {
-        System.out.println("operation = " + operation);
+    /*    System.out.println("operation = " + operation);
         if (operation == DML_INSERT) {
             BigDecimal id = getLastId("getLastidLettrevoiture1");
             setIdlettrevoiture(id);
-        }
+        } */
             super.doDML(operation, transactionEvent);        
     }
     

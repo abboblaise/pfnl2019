@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="getRegionUser"
+  Name="getRegion"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
@@ -15,7 +15,7 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="cm.gov.minfof.model.entityviewobject.getRegionUser_LABEL"/>
+        ResId="cm.gov.minfof.model.entityviewobject.getRegion_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery><![CDATA[SELECT 
@@ -76,12 +76,12 @@ FROM
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Domain="cm.gov.minfof.model.entityviewobject.Longtext1"
-    Type="cm.gov.minfof.model.entityviewobject.common.Longtext1"
+    Domain="cm.gov.minfof.model.entityviewobject.Longtext2"
+    Type="cm.gov.minfof.model.entityviewobject.common.Longtext2"
     ColumnType="LONGTEXT"
     AliasName="descriptionregions"
     Expression="descriptionregions"
-    SQLType="$none$"/>
+    SQLType="STRUCT"/>
   <ViewAttribute
     Name="Cheflieuregion"
     IsUpdateable="false"

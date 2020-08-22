@@ -7,7 +7,7 @@ public class RegionViewSDOImpl extends SDODataObject implements RegionViewSDO {
 
    public static final int START_PROPERTY_INDEX = 0;
 
-   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 9;
+   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 11;
 
    public RegionViewSDOImpl() {}
 
@@ -59,36 +59,52 @@ public class RegionViewSDOImpl extends SDODataObject implements RegionViewSDO {
       set(START_PROPERTY_INDEX + 5 , value);
    }
 
-   public java.util.List getDepartementView1() {
+   public java.util.List getDepartementView() {
       return getList(START_PROPERTY_INDEX + 6);
    }
 
-   public void setDepartementView1(java.util.List value) {
+   public void setDepartementView(java.util.List value) {
       set(START_PROPERTY_INDEX + 6 , value);
    }
 
-   public java.util.List getDepartementView() {
+   public java.util.List getCommuneView() {
       return getList(START_PROPERTY_INDEX + 7);
    }
 
-   public void setDepartementView(java.util.List value) {
+   public void setCommuneView(java.util.List value) {
       set(START_PROPERTY_INDEX + 7 , value);
    }
 
-   public java.util.List getCommuneView() {
+   public java.util.List getVehiculeView() {
       return getList(START_PROPERTY_INDEX + 8);
    }
 
-   public void setCommuneView(java.util.List value) {
+   public void setVehiculeView(java.util.List value) {
       set(START_PROPERTY_INDEX + 8 , value);
    }
 
-   public java.util.List getVehiculeView() {
-      return getList(START_PROPERTY_INDEX + 9);
+   public cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewSDO getCollectepfnlView() {
+      return (cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewSDO)get(START_PROPERTY_INDEX + 9);
    }
 
-   public void setVehiculeView(java.util.List value) {
+   public void setCollectepfnlView(cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewSDO value) {
       set(START_PROPERTY_INDEX + 9 , value);
+   }
+
+   public java.util.List getDepartementView1() {
+      return getList(START_PROPERTY_INDEX + 10);
+   }
+
+   public void setDepartementView1(java.util.List value) {
+      set(START_PROPERTY_INDEX + 10 , value);
+   }
+
+   public cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewSDO getCollectepfnlView1() {
+      return (cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewSDO)get(START_PROPERTY_INDEX + 11);
+   }
+
+   public void setCollectepfnlView1(cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewSDO value) {
+      set(START_PROPERTY_INDEX + 11 , value);
    }
 
 

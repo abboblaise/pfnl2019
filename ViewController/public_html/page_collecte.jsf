@@ -85,6 +85,7 @@
                                                         <af:convertDateTime pattern="#{bindings.CollectepfnlView1.hints.Datecollecte.format}"/>
                                                     </af:outputText>
                                                 </af:column>
+                                                
                                                 <af:column headerText="#{bindings.CollectepfnlView1.hints.Iddepartement1.label}"
                                                            id="c17">
                                                     <af:selectOneChoice value="#{row.bindings.Iddepartement1.inputValue}"
@@ -140,6 +141,25 @@
                                         <af:panelBox id="pb1" showDisclosure="false">
                                             <f:facet name="toolbar"/>
                                             <af:panelGridLayout id="pgl3">
+                                            
+                                            <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                        <af:outputLabel value=""
+                                                                        id="ol11"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="320pt" marginEnd="5px"
+                                                                 id="gc2ido">
+                                                                 <af:inputText visible="false" value="#{bindings.Idcollectepfnl.inputValue}"
+                                                                      simple="true"
+                                                                      required="#{bindings.Idcollectepfnl.hints.mandatory}"
+                                                                      columns="#{bindings.Idcollectepfnl.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Idcollectepfnl.hints.precision}"
+                                                                      shortDesc="#{bindings.Idcollectepfnl.hints.tooltip}"
+                                                                      id="it1o">
+                                                            <f:validator binding="#{bindings.Idcollectepfnl.validator}"/>
+                                                        </af:inputText>
+                                                </af:gridCell>
+                                                </af:gridRow>
                                             
                                                 <af:gridRow marginTop="5px" height="auto" id="gr1id">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc1id">
@@ -213,15 +233,26 @@
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="208px" marginEnd="5px"
                                                                  id="gc41">
-                                                        <af:inputComboboxListOfValues id="nomregionId"
-                                                                                      popupTitle="Search and Select: #{bindings.nomregion.hints.label}"
-                                                                                      value="#{bindings.nomregion.inputValue}"
-                                                                                      model="#{bindings.nomregion.listOfValuesModel}"
-                                                                                      required="#{bindings.nomregion.hints.mandatory}"
-                                                                                      columns="#{bindings.nomregion.hints.displayWidth}"
-                                                                                      shortDesc="#{bindings.nomregion.hints.tooltip}">
-                                                            <f:validator binding="#{bindings.nomregion.validator}"/>
+                                                        <af:inputComboboxListOfValues id="idregion2Id"
+                                                                              popupTitle="Search and Select: #{bindings.Idregion2.hints.label}"
+                                                                              value="#{bindings.Idregion2.inputValue}"
+                                                                              model="#{bindings.Idregion2.listOfValuesModel}"
+                                                                              required="true"
+                                                                              columns="#{bindings.Idregion2.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.Idregion2.hints.tooltip}">
+                                                            <f:validator binding="#{bindings.Idregion2.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Idregion2.format}"/>
                                                         </af:inputComboboxListOfValues>
+                                                        <af:selectOneChoice value="#{bindings.Idregion1.inputValue}" readOnly="true"
+                                                                            label="              "
+                                                                            required="false"
+                                                                            shortDesc="#{bindings.Idregion1.hints.tooltip}"
+                                                                            id="soc1">
+                                                            <f:selectItems value="#{bindings.Idregion1.items}"
+                                                                           id="si1"/>
+                                                            <f:validator binding="#{bindings.Idregion1.validator}"/>
+                                                        </af:selectOneChoice>
                                                     </af:gridCell>
                                                 </af:gridRow>
                                                 
@@ -232,7 +263,7 @@
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="208px" marginEnd="5px"
                                                                  id="gc4">
-                                                        <af:inputComboboxListOfValues id="nomdepartementId" autoSubmit="true"
+                                                        <af:inputComboboxListOfValues id="nomdepartementId" 
                                                                                       popupTitle="Search and Select: #{bindings.nomdepartement.hints.label}"
                                                                                       value="#{bindings.nomdepartement.inputValue}"
                                                                                       model="#{bindings.nomdepartement.listOfValuesModel}"

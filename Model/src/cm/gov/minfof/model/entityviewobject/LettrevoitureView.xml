@@ -323,14 +323,6 @@
     Name="Lettrevoiture"
     Entity="cm.gov.minfof.model.entity.Lettrevoiture"/>
   <ViewAttribute
-    Name="Idlettrevoiture"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Idlettrevoiture"
-    EntityUsage="Lettrevoiture"
-    AliasName="idlettrevoiture"
-    IsUpdateable="while_insert"/>
-  <ViewAttribute
     Name="Idpermissionnaire"
     IsNotNull="true"
     PrecisionRule="true"
@@ -525,6 +517,13 @@
     EntityAttrName="Datelettrevoiture"
     EntityUsage="Lettrevoiture"
     AliasName="datelettrevoiture"/>
+  <ViewAttribute
+    Name="Idlettrevoiture1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idlettrevoiture"
+    EntityUsage="Lettrevoiture"
+    AliasName="Idlettrevoiture1"/>
   <ViewCriteria
     Name="LettrevoitureViewCriteria"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.LettrevoitureView"
@@ -681,4 +680,9 @@
     <PropertiesBundle
       PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="Idlettrevoiture1"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

@@ -1,5 +1,7 @@
 package cm.gov.minfof.model.entity;
 
+import cm.gov.minfof.model.entityviewobject.RegionViewRowImpl;
+
 import java.math.BigDecimal;
 
 import java.sql.Date;
@@ -45,6 +47,7 @@ public class CollectepfnlImpl extends EntityImpl {
         Numerocollecte,
         Identificateur,
         nomregion,
+        nomRegionAutre,
         Collectepfnl,
         IdlocaliteCollectepfnl,
         Detailscollectepfnl,
@@ -55,7 +58,8 @@ public class CollectepfnlImpl extends EntityImpl {
         LettreVoiturePc3,
         LettreVoiturePc4,
         TypeDocument,
-        TypeDocument1;
+        TypeDocument1,
+        Region;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -97,6 +101,7 @@ public class CollectepfnlImpl extends EntityImpl {
     public static final int NUMEROCOLLECTE = AttributesEnum.Numerocollecte.index();
     public static final int IDENTIFICATEUR = AttributesEnum.Identificateur.index();
     public static final int NOMREGION = AttributesEnum.nomregion.index();
+    public static final int NOMREGIONAUTRE = AttributesEnum.nomRegionAutre.index();
     public static final int COLLECTEPFNL = AttributesEnum.Collectepfnl.index();
     public static final int IDLOCALITECOLLECTEPFNL = AttributesEnum.IdlocaliteCollectepfnl.index();
     public static final int DETAILSCOLLECTEPFNL = AttributesEnum.Detailscollectepfnl.index();
@@ -108,6 +113,7 @@ public class CollectepfnlImpl extends EntityImpl {
     public static final int LETTREVOITUREPC4 = AttributesEnum.LettreVoiturePc4.index();
     public static final int TYPEDOCUMENT = AttributesEnum.TypeDocument.index();
     public static final int TYPEDOCUMENT1 = AttributesEnum.TypeDocument1.index();
+    public static final int REGION = AttributesEnum.Region.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -414,6 +420,22 @@ public class CollectepfnlImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for nomRegionAutre, using the alias name nomRegionAutre.
+     * @return the value of nomRegionAutre
+     */
+    public String getnomRegionAutre() {
+        return (String) getAttributeInternal(NOMREGIONAUTRE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for nomRegionAutre.
+     * @param value value to set the nomRegionAutre
+     */
+    public void setnomRegionAutre(String value) {
+        setAttributeInternal(NOMREGIONAUTRE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getCollectepfnl() {
@@ -528,6 +550,14 @@ public class CollectepfnlImpl extends EntityImpl {
 
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getRegion() {
+        return (RowIterator) getAttributeInternal(REGION);
+    }
+
+
+    /**
      * @param idcollectepfnl key constituent
 
      * @return a Key object based on given key constituents.
@@ -564,11 +594,11 @@ public class CollectepfnlImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        if (operation == DML_INSERT) {
+        super.doDML(operation, e);
+  /*      if (operation == DML_INSERT) {
             BigDecimal id = getLastId("getLastIdCollectePfnl1");
             setIdcollectepfnl(id);
-        }
-        super.doDML(operation, e);
+        } */
     }
     
     public BigDecimal getLastId(String viewName) {
@@ -576,6 +606,7 @@ public class CollectepfnlImpl extends EntityImpl {
         ViewObject vo = this.getDBTransaction()
                             .getRootApplicationModule()
                             .findViewObject(viewName);
+        
         vo.executeQuery();
         if (vo.hasNext()) {
             Row r = vo.next();

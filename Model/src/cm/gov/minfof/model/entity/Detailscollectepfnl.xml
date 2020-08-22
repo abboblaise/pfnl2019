@@ -18,12 +18,12 @@
   <Attribute
     Name="Iddetailscollectepfnl"
     ColumnName="iddetailscollectepfnl"
+    IsUpdateable="true"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
     TableName="detailscollectepfnl"
-    PrimaryKey="true"
-    IsUpdateable="while_insert">
+    PrimaryKey="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="19"/>
     </DesignTime>

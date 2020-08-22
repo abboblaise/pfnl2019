@@ -86,6 +86,14 @@ public interface CollectepfnlViewSDO extends java.io.Serializable {
 
    public void setNomregion(java.lang.String value);
 
+   public java.lang.String getNomRegionAutre();
+
+   public void setNomRegionAutre(java.lang.String value);
+
+   public java.lang.String getNomRegionEncore();
+
+   public void setNomRegionEncore(java.lang.String value);
+
    public java.util.List getCollectepfnlView();
 
    public void setCollectepfnlView(java.util.List value);

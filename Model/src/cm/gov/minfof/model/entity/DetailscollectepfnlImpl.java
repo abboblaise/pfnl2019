@@ -797,6 +797,7 @@ public class DetailscollectepfnlImpl extends EntityImpl {
         setAttributeInternal(TYPEDOCUMENT5, value);
     }
 
+
     /**
      * @param iddetailscollectepfnl key constituent
 
@@ -834,10 +835,10 @@ public class DetailscollectepfnlImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        if (operation == DML_INSERT) { 
+   /*     if (operation == DML_INSERT) { 
             BigDecimal id = getLastId("getLastIdDetailsCollecte1");
             setIddetailscollectepfnl(id);
-        }
+        } */
         super.doDML(operation, e);
     }
     

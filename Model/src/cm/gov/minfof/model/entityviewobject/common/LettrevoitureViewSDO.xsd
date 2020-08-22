@@ -8,12 +8,11 @@
         <xsd:annotation>
             <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
                 <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
-                    <attribute>Idlettrevoiture</attribute>
+                    <attribute>Idlettrevoiture1</attribute>
                 </key>
             </xsd:appinfo>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="Idlettrevoiture" type="xsd:decimal" minOccurs="0"/>
             <xsd:element name="Idpermissionnaire" type="xsd:decimal" minOccurs="0"/>
             <xsd:element name="Iddepartementdestination" type="xsd:decimal" minOccurs="0"/>
             <xsd:element name="Nomconducteur" type="xsd:string" minOccurs="0" nillable="true"/>
@@ -29,6 +28,7 @@
             <xsd:element name="numpermis" type="xsd:string" minOccurs="0"/>
             <xsd:element name="Idtypedocument" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="Datelettrevoiture" type="ns0:date-Date" minOccurs="0"/>
+            <xsd:element name="Idlettrevoiture1" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="LettrevoitureView2" type="LettrevoitureViewSDO" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="LettrevoitureView4" type="LettrevoitureViewSDO" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>

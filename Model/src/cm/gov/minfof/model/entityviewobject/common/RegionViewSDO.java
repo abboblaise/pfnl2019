@@ -26,10 +26,6 @@ public interface RegionViewSDO extends java.io.Serializable {
 
    public void setAbreviationregion(java.lang.String value);
 
-   public java.util.List getDepartementView1();
-
-   public void setDepartementView1(java.util.List value);
-
    public java.util.List getDepartementView();
 
    public void setDepartementView(java.util.List value);
@@ -41,6 +37,18 @@ public interface RegionViewSDO extends java.io.Serializable {
    public java.util.List getVehiculeView();
 
    public void setVehiculeView(java.util.List value);
+
+   public cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewSDO getCollectepfnlView();
+
+   public void setCollectepfnlView(cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewSDO value);
+
+   public java.util.List getDepartementView1();
+
+   public void setDepartementView1(java.util.List value);
+
+   public cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewSDO getCollectepfnlView1();
+
+   public void setCollectepfnlView1(cm.gov.minfof.model.entityviewobject.common.CollectepfnlViewSDO value);
 
 
 }
