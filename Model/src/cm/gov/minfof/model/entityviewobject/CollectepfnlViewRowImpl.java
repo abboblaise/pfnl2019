@@ -47,21 +47,6 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
         setAttributeInternal(IDREGION, value);
     }
 
-    /**
-     * Gets the attribute value for numerocollecte using the alias name Numerocollecte.
-     * @return the numerocollecte
-     */
-    public String getNumerocollecte() {
-        return (String) getAttributeInternal(NUMEROCOLLECTE);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for numerocollecte using the alias name Numerocollecte.
-     * @param value value to set the numerocollecte
-     */
-    public void setNumerocollecte(String value) {
-        setAttributeInternal(NUMEROCOLLECTE, value);
-    }
 
     /**
      * Gets the attribute value for identificateur using the alias name Identificateur.
@@ -130,6 +115,22 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
     }
 
     /**
+     * Gets the attribute value for numerocollecte using the alias name Numerocollecte.
+     * @return the numerocollecte
+     */
+    public String getNumerocollecte() {
+        return (String) getAttributeInternal(NUMEROCOLLECTE);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for numerocollecte using the alias name Numerocollecte.
+     * @param value value to set the numerocollecte
+     */
+    public void setNumerocollecte(String value) {
+        setAttributeInternal(NUMEROCOLLECTE, value);
+    }
+
+    /**
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
     protected enum AttributesEnum {
@@ -151,11 +152,11 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
         Idutilisateur1,
         nomuser,
         Idregion,
-        Numerocollecte,
         Identificateur,
         nomregion,
         nomRegionAutre,
         nomRegionEncore,
+        Numerocollecte,
         CollectepfnlView,
         DetailscollectepfnlView,
         RegionView,
@@ -214,11 +215,11 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
     public static final int IDUTILISATEUR1 = AttributesEnum.Idutilisateur1.index();
     public static final int NOMUSER = AttributesEnum.nomuser.index();
     public static final int IDREGION = AttributesEnum.Idregion.index();
-    public static final int NUMEROCOLLECTE = AttributesEnum.Numerocollecte.index();
     public static final int IDENTIFICATEUR = AttributesEnum.Identificateur.index();
     public static final int NOMREGION = AttributesEnum.nomregion.index();
     public static final int NOMREGIONAUTRE = AttributesEnum.nomRegionAutre.index();
     public static final int NOMREGIONENCORE = AttributesEnum.nomRegionEncore.index();
+    public static final int NUMEROCOLLECTE = AttributesEnum.Numerocollecte.index();
     public static final int COLLECTEPFNLVIEW = AttributesEnum.CollectepfnlView.index();
     public static final int DETAILSCOLLECTEPFNLVIEW = AttributesEnum.DetailscollectepfnlView.index();
     public static final int REGIONVIEW = AttributesEnum.RegionView.index();

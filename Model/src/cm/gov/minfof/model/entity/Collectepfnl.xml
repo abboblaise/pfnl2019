@@ -224,7 +224,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    TableName="collectepfnl">
+    TableName="collectepfnl"
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="45"/>
     </DesignTime>
@@ -419,6 +420,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Collectepfnl.nomregion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CollectepfnlNumerocollecteCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"numerocollecte" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Collectepfnl_Numerocollecte_Ch"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Collectepfnl.Numerocollecte"/>
     </AttrArray>
   </Key>
   <Key

@@ -344,7 +344,7 @@
                                                                                       columns="#{bindings.nomcommune.hints.displayWidth}"
                                                                                       shortDesc="#{bindings.nomcommune.hints.tooltip}">
                                                             <f:validator binding="#{bindings.nomcommune.validator}"/>
-                                                            <af:autoSuggestBehavior suggestItems="#{bindings.nomcommune.suggestItems}" minChars="1"/>
+                                                            <af:autoSuggestBehavior suggestItems="#{bindings.Idcommune.suggestItems}" minChars="1"/>
                                                         </af:inputComboboxListOfValues>
                                                     </af:gridCell>
                                                 </af:gridRow>

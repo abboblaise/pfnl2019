@@ -155,43 +155,43 @@ public class CollectepfnlViewSDOImpl extends SDODataObject implements Collectepf
       set(START_PROPERTY_INDEX + 17 , value);
    }
 
-   public java.lang.String getNumerocollecte() {
+   public java.lang.String getIdentificateur() {
       return getString(START_PROPERTY_INDEX + 18);
    }
 
-   public void setNumerocollecte(java.lang.String value) {
+   public void setIdentificateur(java.lang.String value) {
       set(START_PROPERTY_INDEX + 18 , value);
    }
 
-   public java.lang.String getIdentificateur() {
+   public java.lang.String getNomregion() {
       return getString(START_PROPERTY_INDEX + 19);
    }
 
-   public void setIdentificateur(java.lang.String value) {
+   public void setNomregion(java.lang.String value) {
       set(START_PROPERTY_INDEX + 19 , value);
    }
 
-   public java.lang.String getNomregion() {
+   public java.lang.String getNomRegionAutre() {
       return getString(START_PROPERTY_INDEX + 20);
    }
 
-   public void setNomregion(java.lang.String value) {
+   public void setNomRegionAutre(java.lang.String value) {
       set(START_PROPERTY_INDEX + 20 , value);
    }
 
-   public java.lang.String getNomRegionAutre() {
+   public java.lang.String getNomRegionEncore() {
       return getString(START_PROPERTY_INDEX + 21);
    }
 
-   public void setNomRegionAutre(java.lang.String value) {
+   public void setNomRegionEncore(java.lang.String value) {
       set(START_PROPERTY_INDEX + 21 , value);
    }
 
-   public java.lang.String getNomRegionEncore() {
+   public java.lang.String getNumerocollecte() {
       return getString(START_PROPERTY_INDEX + 22);
    }
 
-   public void setNomRegionEncore(java.lang.String value) {
+   public void setNumerocollecte(java.lang.String value) {
       set(START_PROPERTY_INDEX + 22 , value);
    }
 

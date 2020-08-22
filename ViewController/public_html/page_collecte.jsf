@@ -195,7 +195,7 @@
                                                                         id="ol2"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" id="gc2">
-                                                        <af:inputText simple="true"
+                                                        <af:inputText simple="true" value="#{bindings.Numerocollecte.inputValue}"
                                                                       required="#{bindings.Numerocollecte.hints.mandatory}"
                                                                       columns="#{bindings.Numerocollecte.hints.displayWidth}"
                                                                       maximumLength="#{bindings.Numerocollecte.hints.precision}"

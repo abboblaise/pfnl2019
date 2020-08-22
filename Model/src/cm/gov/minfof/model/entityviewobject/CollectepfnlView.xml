@@ -691,19 +691,6 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="Numerocollecte"
-    PrecisionRule="true"
-    EntityAttrName="Numerocollecte"
-    EntityUsage="Collectepfnl"
-    AliasName="numerocollecte">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="25"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
     Name="Identificateur"
     PrecisionRule="true"
     EntityAttrName="Identificateur"
@@ -767,6 +754,20 @@
           Value="15"/>
         <CONTROLTYPE
           Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Numerocollecte"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Numerocollecte"
+    EntityUsage="Collectepfnl"
+    AliasName="numerocollecte">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entityviewobject.CollectepfnlView.Numerocollecte_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
