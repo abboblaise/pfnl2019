@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="DetailscollectepfnlView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -260,6 +260,8 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Nomlocalite"/>
+      <Item Value="Nomdepartement"/>
+      <Item Value="Nomregion"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -273,7 +275,6 @@
     EntityAttrName="Iddetailscollectepfnl"
     EntityUsage="Detailscollectepfnl"
     AliasName="iddetailscollectepfnl"
-    IsUpdateable="true"
     DefaultValue="-1"/>
   <ViewAttribute
     Name="Idpermissionnaire"

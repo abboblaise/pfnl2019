@@ -699,6 +699,7 @@
                                                                                       columns="#{bindings.nomprovenance.hints.displayWidth}"
                                                                                       shortDesc="#{bindings.nomprovenance.hints.tooltip}">
                                                             <f:validator binding="#{bindings.nomprovenance.validator}"/>
+                                                            <af:autoSuggestBehavior suggestItems="#{bindings.nomprovenance.suggestItems}" minChars="1"/>
                                                         </af:inputComboboxListOfValues>
                                                     </af:gridCell>
                                                 </af:gridRow>

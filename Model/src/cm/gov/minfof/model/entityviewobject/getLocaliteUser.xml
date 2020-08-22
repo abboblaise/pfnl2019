@@ -35,7 +35,9 @@ localite.idlocalite,
 localite.nomlocalite,
 departements.iddepartements,
 regions.idregions,
-localite.idpostecontrole
+localite.idpostecontrole,
+departements.nomdepartement,
+regions.nomregion
 from localite,communes, departements, regions,postecontrole
 where localite.idpostecontrole=postecontrole.idpostecontrole and postecontrole.idcommune=communes.idcommunes and departements.iddepartements = communes.iddepartements
 and regions.idregions = departements.idregions
@@ -109,6 +111,36 @@ order by localite.nomlocalite]]></SQLQuery>
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomdepartement"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomdepartement"
+    Expression="nomdepartement"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomregion"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomregion"
+    Expression="nomregion"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </ViewAttribute>
   <ViewCriteria

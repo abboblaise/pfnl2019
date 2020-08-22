@@ -1,6 +1,7 @@
 package cm.gov.minfof.model.entityviewobject;
 
 import cm.gov.minfof.model.entity.AppModuleImpl;
+import cm.gov.minfof.model.entity.CommuneImpl;
 import cm.gov.minfof.model.entity.PermissionnairespnflImpl;
 
 import java.math.BigDecimal;
@@ -17,6 +18,8 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class PermissionnairespnflViewRowImpl extends ViewRowImpl {
+
+
     public static final int ENTITY_PERMISSIONNAIRESPNFL = 0;
 
     /**
@@ -52,6 +55,7 @@ public class PermissionnairespnflViewRowImpl extends ViewRowImpl {
         CommuneView1,
         getComunneUser1;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -73,6 +77,8 @@ public class PermissionnairespnflViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
+
     public static final int NOMOURAISONSOCIALE = AttributesEnum.Nomouraisonsociale.index();
     public static final int STATUT = AttributesEnum.Statut.index();
     public static final int SIEGESOCIAL = AttributesEnum.Siegesocial.index();
@@ -115,6 +121,7 @@ public class PermissionnairespnflViewRowImpl extends ViewRowImpl {
     public PermissionnairespnflImpl getPermissionnairespnfl() {
         return (PermissionnairespnflImpl) getEntity(ENTITY_PERMISSIONNAIRESPNFL);
     }
+
 
     /**
      * Gets the attribute value for Nomouraisonsociale using the alias name Nomouraisonsociale.
