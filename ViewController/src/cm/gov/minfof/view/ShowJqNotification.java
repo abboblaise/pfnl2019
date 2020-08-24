@@ -148,7 +148,7 @@ public class ShowJqNotification {
             
             System.out.println("iterator = " + iterator.toString() + " detailsKey = " + detailsKey.toString() + " string " + detailsKey.toStringFormat(true));
             iterator.setCurrentRowWithKey(detailsKey.toStringFormat(true));
-            }
+        }
         
         return null;
     }

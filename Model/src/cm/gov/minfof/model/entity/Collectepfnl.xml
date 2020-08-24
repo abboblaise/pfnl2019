@@ -196,7 +196,8 @@
     Type="java.lang.String"
     ColumnType="CHAR"
     IsPersistent="false"
-    IsQueriable="false">
+    IsQueriable="false"
+    IsNotNull="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -420,6 +421,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Collectepfnl.nomregion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CollectepfnlNomuserCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"nomuser" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Collectepfnl_Nomuser_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Collectepfnl.nomuser"/>
     </AttrArray>
   </Key>
   <Key

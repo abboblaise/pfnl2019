@@ -206,14 +206,14 @@
                                                     </af:gridCell>
                                                 </af:gridRow>
                                                
-                                            <!--
-                                                <af:gridRow marginTop="5px" height="auto" id="gr1">
-                                                    <af:gridCell marginStart="5px" width="auto" id="gc1">
+                                            
+                                                <af:gridRow marginTop="5px" height="auto" id="gr21">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc37">
                                                         <af:outputText value="#{bindings.Idutilisateur.label}"
                                                                        id="ot4"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="320pt" marginEnd="5px"
-                                                                 id="gc2">
+                                                                 id="gc38">
                                                         <af:inputComboboxListOfValues id="nomuserId"
                                                                                       popupTitle="Search and Select: #{bindings.nomuser.hints.label}"
                                                                                       value="#{bindings.nomuser.inputValue}"
@@ -224,7 +224,7 @@
                                                             <f:validator binding="#{bindings.nomuser.validator}"/>
                                                         </af:inputComboboxListOfValues>
                                                     </af:gridCell>
-                                                </af:gridRow> -->
+                                                </af:gridRow>
                                                 
                                                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc3">

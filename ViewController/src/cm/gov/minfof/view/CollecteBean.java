@@ -250,7 +250,6 @@ public class CollecteBean {
         }
         /********** FIN ENREGISTREMENT DU DETAIL **********/
         
-
         if (idEnCours == null || v.toString().equals("-1")) {
             Object dernierId = appScope.get("idcollectebean");
             if (dernierId == null) {
