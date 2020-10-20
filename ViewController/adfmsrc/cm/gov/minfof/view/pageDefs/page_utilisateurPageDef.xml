@@ -7,6 +7,8 @@
     <iterator Binds="UtilisateurView1" RangeSize="25" DataControl="AppModuleDataControl" id="UtilisateurView1Iterator"/>
     <searchRegion Binds="UtilisateurView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="UtilisateurView1Query"/>
+    <iterator id="getLastIdUtilisateur1Iterator" Binds="getLastIdUtilisateur1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="UtilisateurView1Iterator" id="Loginuser">
@@ -96,5 +98,10 @@
         <Item Value="false"/>
       </ValueList>
     </button>
+    <attributeValues IterBinding="UtilisateurView1Iterator" id="Idutilisateur">
+      <AttrNames>
+        <Item Value="Idutilisateur"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

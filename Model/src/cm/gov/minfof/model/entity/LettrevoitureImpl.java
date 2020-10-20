@@ -391,12 +391,11 @@ public class LettrevoitureImpl extends EntityImpl {
 
     @Override
     protected void doDML(int operation, TransactionEvent transactionEvent) {
-    /*    System.out.println("operation = " + operation);
-        if (operation == DML_INSERT) {
-            BigDecimal id = getLastId("getLastidLettrevoiture1");
-            setIdlettrevoiture(id);
-        } */
-            super.doDML(operation, transactionEvent);        
+    super.doDML(operation, transactionEvent);
+    /*      if (operation == DML_INSERT) {
+        BigDecimal id = getLastId("getLastIdCollectePfnl1");
+        setIdcollectepfnl(id);
+    } */        
     }
     
     public BigDecimal getLastId(String viewName)

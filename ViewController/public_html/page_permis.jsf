@@ -14,7 +14,7 @@
                 <f:facet name="content">
                     <af:panelSplitter id="ps1" splitterPosition="600" collapsed="false">
                         <f:facet name="first">
-                            <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_PERMIS}" id="pb5" 
+                            <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_DOCUMENTS_OFFICIELS}" id="pb5"
                                          showDisclosure="false">
                                 <f:facet name="toolbar">
                                     <af:panelGroupLayout id="pgl6">
@@ -32,20 +32,13 @@
                                 </f:facet>
                                 <af:spacer width="10" height="10" id="s3"/>
                                 <af:panelTabbed position="above" id="pt2">
-                                
                                     <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}"
                                                        disclosed="true">
                                         <af:spacer width="10" height="10" id="s15"/>
-                                        <af:button id="bExport" text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}">
-                                            <af:exportCollectionActionListener type="excelHTML"
-                                                                               filename="Permis.xls"
-                                                                               exportedId="pc1:t2"/>
-                                        </af:button>
                                         <af:panelCollection id="pc1" inlineStyle="width:579px;">
                                             <f:facet name="menus"/>
                                             <f:facet name="toolbar"/>
                                             <f:facet name="statusbar"/>
-                                            
                                             <!-- ##################### -->
                                             <af:table value="#{bindings.PermisView11.collectionModel}" var="row"
                                                       rows="#{bindings.PermisView11.rangeSize}"
@@ -60,7 +53,8 @@
                                                       queryListener="#{bindings.PermisView1Query.processQuery}"
                                                       varStatus="vs" id="t2"
                                                       partialTriggers=":::b15 :::b16 :::b17 :::b18">
-                                                <af:column width="25px" sortProperty="#{bindings.PermisView11.hints.Idpermis.name}"
+                                                <af:column width="25px"
+                                                           sortProperty="#{bindings.PermisView11.hints.Idpermis.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.PermisView11.hints.Idpermis.label}"
                                                            id="c1">
@@ -75,14 +69,14 @@
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.PermisView11.hints.Idtypedocument.label}"
                                                            id="c9">
-                                                <!--    <af:outputText value="#{row.Idtypedocument}"
+                                                    <!--    <af:outputText value="#{row.Idtypedocument}"
                                                                    shortDesc="#{bindings.PermisView11.hints.Idtypedocument.tooltip}"
                                                                    id="ot7">
                                                         <af:convertNumber groupingUsed="false"
                                                                           pattern="#{bindings.PermisView11.hints.Idtypedocument.format}"/>
                                                     </af:outputText> -->
-                                                    
-                                                    <af:selectOneChoice readOnly="true" value="#{row.bindings.Idtypedocument.inputValue}"
+                                                    <af:selectOneChoice readOnly="true"
+                                                                        value="#{row.bindings.Idtypedocument.inputValue}"
                                                                         label="#{row.bindings.Idtypedocument.label}"
                                                                         required="#{bindings.PermisView11.hints.Idtypedocument.mandatory}"
                                                                         shortDesc="#{bindings.PermisView11.hints.Idtypedocument.tooltip}"
@@ -91,7 +85,6 @@
                                                                        id="si12"/>
                                                         <f:validator binding="#{row.bindings.Idtypedocument.validator}"/>
                                                     </af:selectOneChoice>
-                                                    
                                                 </af:column>
                                                 <af:column sortProperty="#{bindings.PermisView11.hints.Numpermiscomplet.name}"
                                                            filterable="true" sortable="true"
@@ -105,14 +98,14 @@
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.PermisView11.hints.Idpermissionnaire.label}"
                                                            id="c11">
-                                            <!--        <af:outputText value="#{row.Idpermissionnaire}"
+                                                    <!--        <af:outputText value="#{row.Idpermissionnaire}"
                                                                    shortDesc="#{bindings.PermisView11.hints.Idpermissionnaire.tooltip}"
                                                                    id="ot9">
                                                         <af:convertNumber groupingUsed="false"
                                                                           pattern="#{bindings.PermisView11.hints.Idpermissionnaire.format}"/>
                                                     </af:outputText>  -->
-                                                    
-                                                    <af:selectOneChoice readOnly="true" value="#{row.bindings.Idpermissionnaire.inputValue}"
+                                                    <af:selectOneChoice readOnly="true"
+                                                                        value="#{row.bindings.Idpermissionnaire.inputValue}"
                                                                         label="#{row.bindings.Idpermissionnaire.label}"
                                                                         required="#{bindings.PermisView11.hints.Idpermissionnaire.mandatory}"
                                                                         shortDesc="#{bindings.PermisView11.hints.Idpermissionnaire.tooltip}"
@@ -121,7 +114,6 @@
                                                                        id="si11"/>
                                                         <f:validator binding="#{row.bindings.Idpermissionnaire.validator}"/>
                                                     </af:selectOneChoice>
-                                                    
                                                 </af:column>
                                                 <af:column sortProperty="#{bindings.PermisView11.hints.Datedelivrance.name}"
                                                            filterable="true" sortable="true"
@@ -180,11 +172,9 @@
                                                                                        method="#{PermisBean.downloadFileListener}"/>
                                                     </af:link>
                                                 </af:column>
-                                                
                                             </af:table>
                                             <!-- ##################### -->
-                                            
-                              <!--             <af:table value="#{bindings.PermisView1.collectionModel}" var="row"
+                                            <!--             <af:table value="#{bindings.PermisView1.collectionModel}" var="row"
                                                       rows="#{bindings.PermisView1.rangeSize}"
                                                       emptyText="#{bindings.PermisView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                                       rowBandingInterval="0"
@@ -331,11 +321,28 @@
                                             </af:table> -->
                                         </af:panelCollection>
                                     </af:showDetailItem>
-                                    
-                    
                                     <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}"
                                                        disclosed="false">
                                         <af:panelGridLayout id="pgl4">
+                                        
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2ido">
+                                                    <af:inputText visible="false" value="#{bindings.Idpermis1.inputValue}"
+                                                                  required="#{bindings.Idpermis1.hints.mandatory}"
+                                                                  columns="#{bindings.Idpermis1.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Idpermis1.hints.precision}"
+                                                                  shortDesc="#{bindings.Idpermis1.hints.tooltip}"
+                                                                  id="it2">
+                                                        <f:validator binding="#{bindings.Idpermis1.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Idpermis1.format}"/>
+                                                    </af:inputText>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        
                                             <af:gridRow id="gr7" marginTop="5px">
                                                 <af:gridCell id="gc19" width="auto">
                                                     <af:outputLabel value="#{bindings.Idtypedocument.label}" id="ol2"/>
@@ -353,7 +360,6 @@
                                                     </af:selectOneChoice>
                                                 </af:gridCell>
                                             </af:gridRow>
-                                        
                                             <af:gridRow marginTop="5px" height="auto" id="gr1">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc1">
                                                     <af:outputLabel value="#{bindings.Numeropermis.hints.label}"
@@ -370,7 +376,6 @@
                                                     </af:inputText>
                                                 </af:gridCell>
                                             </af:gridRow>
-                                            
                                             <af:gridRow id="gr8" marginTop="5px">
                                                 <af:gridCell id="gc23" width="auto">
                                                     <af:outputLabel value="Acteur" id="ol3"/>
@@ -396,20 +401,19 @@
                                                     </af:link>
                                                 </af:gridCell>
                                                 <af:gridCell id="gc28" width="auto">
-                                                    <af:inputFile id="if1" autoSubmit="false"
-                                                                  label=" "
+                                                    <af:inputFile id="if1" autoSubmit="false" label=" "
                                                                   valueChangeListener="#{PermisBean.uploadFileVCE}"/>
                                                 </af:gridCell>
                                             </af:gridRow>
                                             <af:gridRow marginTop="5px" height="auto" id="gr2">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc7">
                                                     <af:outputLabel value="#{bindings.Datedelivrance.hints.label}"
-                                                    visible="#{PermisBean.dateDebutVisible}" partialTriggers="soc3"
-                                                                    id="ol4"/>
+                                                                    visible="#{PermisBean.dateDebutVisible}"
+                                                                    partialTriggers="soc3" id="ol4"/>
                                                 </af:gridCell>
                                                 <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc8">
                                                     <af:inputDate value="#{bindings.Datedelivrance.inputValue}"
-                                                                partialTriggers="soc3"
+                                                                  partialTriggers="soc3"
                                                                   visible="#{PermisBean.dateDebutVisible}"
                                                                   required="#{PermisBean.dateDebutObligatoire}"
                                                                   columns="#{bindings.Datedelivrance.hints.displayWidth}"
@@ -422,9 +426,9 @@
                                             </af:gridRow>
                                             <af:gridRow id="gr18">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc33">
-                                                    <af:outputLabel value="#{bindings.Datefin.hints.label}" visible="#{PermisBean.dateFinVisible}"
-                                                    partialTriggers="soc3"
-                                                                    id="ol12"/>
+                                                    <af:outputLabel value="#{bindings.Datefin.hints.label}"
+                                                                    visible="#{PermisBean.dateFinVisible}"
+                                                                    partialTriggers="soc3" id="ol12"/>
                                                 </af:gridCell>
                                                 <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc30">
                                                     <af:inputDate value="#{bindings.Datefin.inputValue}"
@@ -438,9 +442,8 @@
                                                         <af:convertDateTime pattern="#{bindings.Datefin.format}"/>
                                                     </af:inputDate>
                                                 </af:gridCell>
-                                                
                                             </af:gridRow>
-                                   <!--         <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                            <!--         <af:gridRow marginTop="5px" height="auto" id="gr3">
                                                 <af:gridCell marginStart="5px" width="auto" id="gc11">
                                                     <af:outputLabel value="#{bindings.Zonecoupe.hints.label}" id="ol5"/>
                                                 </af:gridCell>
@@ -480,8 +483,8 @@
                                                     <af:inputDate value="#{bindings.Datefin.inputValue}"
                                                                   required="#{bindings.Datefin.hints.mandatory}"
                                                                   columns="#{bindings.Datefin.hints.displayWidth}"
-                                                                  shortDesc="#{bindings.Datefin.hints.tooltip}" id="id20"
-                                                                  visible="false">
+                                                                  shortDesc="#{bindings.Datefin.hints.tooltip}"
+                                                                  id="id20" visible="false">
                                                         <f:validator binding="#{bindings.Datefin.validator}"/>
                                                         <af:convertDateTime pattern="#{bindings.Datefin.format}"/>
                                                     </af:inputDate>
@@ -565,6 +568,240 @@
                                             </af:gridRow>
                                         </af:panelGridLayout>
                                     </af:showDetailItem>
+                                    <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.EXPORTATION}">
+                                        <af:spacer width="10" height="10" id="sExport"/>
+                                        <af:button id="bExport1"
+                                                   text="#{viewcontrollerBundle.EXPORTER_LES_DOCUMENTS_ET_LES_QUOTAS}">
+                                            <af:exportCollectionActionListener type="excelHTML"
+                                                                               filename="PermisEtQuotas.xls"
+                                                                               exportedId="pc1Exp:t3"/>
+                                        </af:button>
+                                        <af:panelCollection id="pc1Exp" inlineStyle="width:1186px;">
+                                            <f:facet name="menus"/>
+                                            <f:facet name="toolbar"/>
+                                            <f:facet name="statusbar"/>
+                                            <af:table value="#{bindings.getExportDocumentsOfficiels1.collectionModel}"
+                                                      var="row"
+                                                      rows="#{bindings.getExportDocumentsOfficiels1.rangeSize}"
+                                                      emptyText="#{bindings.getExportDocumentsOfficiels1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      rowBandingInterval="0"
+                                                      selectedRowKeys="#{bindings.getExportDocumentsOfficiels1.collectionModel.selectedRow}"
+                                                      selectionListener="#{bindings.getExportDocumentsOfficiels1.collectionModel.makeCurrent}"
+                                                      rowSelection="single"
+                                                      fetchSize="#{bindings.getExportDocumentsOfficiels1.rangeSize}"
+                                                      filterModel="#{bindings.getExportDocumentsOfficiels1Query.queryDescriptor}"
+                                                      filterVisible="true"
+                                                      queryListener="#{bindings.getExportDocumentsOfficiels1Query.processQuery}"
+                                                      varStatus="vs" id="t3">
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Idpermis.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Idpermis.label}"
+                                                           id="c15">
+                                                    <af:outputText value="#{row.Idpermis}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Idpermis.tooltip}"
+                                                                   id="ot5">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.getExportDocumentsOfficiels1.hints.Idpermis.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Numeropermis.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Numeropermis.label}"
+                                                           id="c19">
+                                                    <af:outputText value="#{row.Numeropermis}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Numeropermis.tooltip}"
+                                                                   id="ot7"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Zonecoupe.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Zonecoupe.label}"
+                                                           id="c20">
+                                                    <af:outputText value="#{row.Zonecoupe}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Zonecoupe.tooltip}"
+                                                                   id="ot9"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Datedelivrance.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Datedelivrance.label}"
+                                                           id="c21">
+                                                    <f:facet name="filter">
+                                                        <af:inputDate value="#{bindings.getExportDocumentsOfficiels1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datedelivrance.value}"
+                                                                      id="id3">
+                                                            <af:convertDateTime pattern="#{bindings.getExportDocumentsOfficiels1.hints.Datedelivrance.format}"/>
+                                                        </af:inputDate>
+                                                    </f:facet>
+                                                    <af:outputText value="#{row.Datedelivrance}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Datedelivrance.tooltip}"
+                                                                   id="ot14">
+                                                        <af:convertDateTime pattern="#{bindings.getExportDocumentsOfficiels1.hints.Datedelivrance.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Datefin.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Datefin.label}"
+                                                           id="c22">
+                                                    <f:facet name="filter">
+                                                        <af:inputDate value="#{bindings.getExportDocumentsOfficiels1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datefin.value}"
+                                                                      id="id4">
+                                                            <af:convertDateTime pattern="#{bindings.getExportDocumentsOfficiels1.hints.Datefin.format}"/>
+                                                        </af:inputDate>
+                                                    </f:facet>
+                                                    <af:outputText value="#{row.Datefin}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Datefin.tooltip}"
+                                                                   id="ot15">
+                                                        <af:convertDateTime pattern="#{bindings.getExportDocumentsOfficiels1.hints.Datefin.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Observation.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Observation.label}"
+                                                           id="c23">
+                                                    <af:outputText value="#{row.Observation}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Observation.tooltip}"
+                                                                   id="ot16"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Idagrement.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Idagrement.label}"
+                                                           id="c24">
+                                                    <af:outputText value="#{row.Idagrement}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Idagrement.tooltip}"
+                                                                   id="ot17">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.getExportDocumentsOfficiels1.hints.Idagrement.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Idpermissionnaire.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Idpermissionnaire.label}"
+                                                           id="c25">
+                                                    <af:outputText value="#{row.Idpermissionnaire}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Idpermissionnaire.tooltip}"
+                                                                   id="ot18">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.getExportDocumentsOfficiels1.hints.Idpermissionnaire.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Nomfichier.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Nomfichier.label}"
+                                                           id="c26">
+                                                    <af:outputText value="#{row.Nomfichier}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Nomfichier.tooltip}"
+                                                                   id="ot19"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Cheminfichier.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Cheminfichier.label}"
+                                                           id="c27">
+                                                    <af:outputText value="#{row.Cheminfichier}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Cheminfichier.tooltip}"
+                                                                   id="ot20"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Typefichier.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Typefichier.label}"
+                                                           id="c28">
+                                                    <af:outputText value="#{row.Typefichier}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Typefichier.tooltip}"
+                                                                   id="ot21"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Idtypedocument.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Idtypedocument.label}"
+                                                           id="c29">
+                                                    <af:outputText value="#{row.Idtypedocument}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Idtypedocument.tooltip}"
+                                                                   id="ot22">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.getExportDocumentsOfficiels1.hints.Idtypedocument.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Iddetailpermis.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Iddetailpermis.label}"
+                                                           id="c30">
+                                                    <af:outputText value="#{row.Iddetailpermis}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Iddetailpermis.tooltip}"
+                                                                   id="ot23">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.getExportDocumentsOfficiels1.hints.Iddetailpermis.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Idunitemesure.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Idunitemesure.label}"
+                                                           id="c31">
+                                                    <af:outputText value="#{row.Idunitemesure}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Idunitemesure.tooltip}"
+                                                                   id="ot24">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.getExportDocumentsOfficiels1.hints.Idunitemesure.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Idpartieproduitpfnl.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Idpartieproduitpfnl.label}"
+                                                           id="c32">
+                                                    <af:outputText value="#{row.Idpartieproduitpfnl}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Idpartieproduitpfnl.tooltip}"
+                                                                   id="ot25">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.getExportDocumentsOfficiels1.hints.Idpartieproduitpfnl.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Quantite.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Quantite.label}"
+                                                           id="c33">
+                                                    <af:outputText value="#{row.Quantite}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Quantite.tooltip}"
+                                                                   id="ot26">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.getExportDocumentsOfficiels1.hints.Quantite.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Idregions.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Idregions.label}"
+                                                           id="c34">
+                                                    <af:outputText value="#{row.Idregions}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Idregions.tooltip}"
+                                                                   id="ot27">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.getExportDocumentsOfficiels1.hints.Idregions.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Iddepartements.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Iddepartements.label}"
+                                                           id="c35">
+                                                    <af:outputText value="#{row.Iddepartements}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Iddepartements.tooltip}"
+                                                                   id="ot28">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.getExportDocumentsOfficiels1.hints.Iddepartements.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Nomouraisonsociale.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Nomouraisonsociale.label}"
+                                                           id="c36">
+                                                    <af:outputText value="#{row.Nomouraisonsociale}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Nomouraisonsociale.tooltip}"
+                                                                   id="ot29"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.getExportDocumentsOfficiels1.hints.Libelleunitemesure.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.getExportDocumentsOfficiels1.hints.Libelleunitemesure.label}"
+                                                           id="c37">
+                                                    <af:outputText value="#{row.Libelleunitemesure}"
+                                                                   shortDesc="#{bindings.getExportDocumentsOfficiels1.hints.Libelleunitemesure.tooltip}"
+                                                                   id="ot30"/>
+                                                </af:column>
+                                            </af:table>
+                                        </af:panelCollection>
+                                    </af:showDetailItem>
                                 </af:panelTabbed>
                             </af:panelBox>
                         </f:facet>
@@ -578,9 +815,9 @@
                                         <f:facet name="DialogContent"/>
                                     </mycomps:ConfirmButton>
                                 </f:facet>
-                                
                                 <af:panelTabbed position="above" id="pt3">
-                                    <af:showDetailItem disclosureListener="#{PermisBean.onConsultationTabDisclose}" id="tab3" text="#{viewcontrollerBundle.CONSULTATION}"
+                                    <af:showDetailItem disclosureListener="#{PermisBean.onConsultationTabDisclose}"
+                                                       id="sdi1" text="#{viewcontrollerBundle.CONSULTATION}"
                                                        disclosed="true">
                                         <af:panelCollection id="pc2" partialTriggers="::b3 ::b7">
                                             <f:facet name="menus"/>
@@ -599,7 +836,8 @@
                                                       queryListener="#{bindings.DetailpermisView6Query.processQuery}"
                                                       varStatus="vs" id="t1"
                                                       partialTriggers=":::b6 :::b9 :::b10 :::b11 :::b12">
-                                                <af:column sortProperty="#{bindings.DetailpermisView62.hints.Iddetailpermis.name}"
+                                                <af:column width="12"
+                                                           sortProperty="#{bindings.DetailpermisView62.hints.Iddetailpermis.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.DetailpermisView62.hints.Iddetailpermis.label}"
                                                            id="c2">
@@ -614,13 +852,14 @@
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.DetailpermisView62.hints.Idpartieproduitpfnl.label}"
                                                            id="c7">
-                                            <!--        <af:outputText value="#{row.Idpartieproduitpfnl}"
+                                                    <!--        <af:outputText value="#{row.Idpartieproduitpfnl}"
                                                                    shortDesc="#{bindings.DetailpermisView62.hints.Idpartieproduitpfnl.tooltip}"
                                                                    id="ot14">
                                                         <af:convertNumber groupingUsed="false"
                                                                           pattern="#{bindings.DetailpermisView62.hints.Idpartieproduitpfnl.format}"/>
                                                     </af:outputText> -->
-                                                    <af:selectOneChoice readOnly="true" value="#{row.bindings.Idpartieproduitpfnl.inputValue}"
+                                                    <af:selectOneChoice readOnly="true"
+                                                                        value="#{row.bindings.Idpartieproduitpfnl.inputValue}"
                                                                         label="#{row.bindings.Idpartieproduitpfnl.label}"
                                                                         required="#{bindings.DetailpermisView62.hints.Idpartieproduitpfnl.mandatory}"
                                                                         shortDesc="#{bindings.DetailpermisView62.hints.Idpartieproduitpfnl.tooltip}"
@@ -645,14 +884,15 @@
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.DetailpermisView62.hints.Idunitemesure.label}"
                                                            id="c4">
-                                                  <!--  <af:outputText value="#{row.Idunitemesure}"
+                                                    <!--  <af:outputText value="#{row.Idunitemesure}"
                                                                    shortDesc="#{bindings.DetailpermisView62.hints.Idunitemesure.tooltip}"
                                                                    id="ot4">
                                                         <af:convertNumber groupingUsed="false"
                                                                           pattern="#{bindings.DetailpermisView62.hints.Idunitemesure.format}"/>
                                                     </af:outputText>
                                                     -->
-                                                    <af:selectOneChoice readOnly="true" value="#{row.bindings.Idunitemesure.inputValue}"
+                                                    <af:selectOneChoice readOnly="true"
+                                                                        value="#{row.bindings.Idunitemesure.inputValue}"
                                                                         label="#{row.bindings.Idunitemesure.label}"
                                                                         required="#{bindings.DetailpermisView62.hints.Idunitemesure.mandatory}"
                                                                         shortDesc="#{bindings.DetailpermisView62.hints.Idunitemesure.tooltip}"
@@ -666,7 +906,8 @@
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.DetailpermisView62.hints.Idregions.label}"
                                                            id="c8">
-                                                    <af:selectOneChoice readOnly="true" value="#{row.bindings.Idregions.inputValue}"
+                                                    <af:selectOneChoice readOnly="true"
+                                                                        value="#{row.bindings.Idregions.inputValue}"
                                                                         label="#{row.bindings.Idregions.label}"
                                                                         required="#{bindings.DetailpermisView62.hints.Idregions.mandatory}"
                                                                         shortDesc="#{bindings.DetailpermisView62.hints.Idregions.tooltip}"
@@ -681,7 +922,27 @@
                                                         <af:convertNumber groupingUsed="false"
                                                                           pattern="#{bindings.DetailpermisView62.hints.Idregions.format}"/>
                                                     </af:outputText> -->
-                                                    
+                                                </af:column>
+                                                <af:column visible="false"
+                                                           sortProperty="#{bindings.DetailpermisView62.hints.Iddepartements.name}"
+                                                           headerText="#{bindings.DetailpermisView62.hints.Iddepartements.label}"
+                                                           id="c5" filterable="true" sortable="true">
+                                                    <af:selectOneChoice readOnly="true"
+                                                                        value="#{row.bindings.Iddepartements.inputValue}"
+                                                                        label="#{row.bindings.Iddepartements.label}"
+                                                                        required="#{bindings.DetailpermisView62.hints.Iddepartements.mandatory}"
+                                                                        shortDesc="#{bindings.DetailpermisView62.hints.Iddepartements.tooltip}"
+                                                                        id="soc13">
+                                                        <f:selectItems value="#{row.bindings.Iddepartements.items}"
+                                                                       id="si13"/>
+                                                        <f:validator binding="#{row.bindings.Iddepartements.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column headerText="#{bindings.DetailpermisView62.hints.nomdudepartement.label}"
+                                                           id="c14">
+                                                    <af:outputText value="#{row.nomdudepartement}"
+                                                                   shortDesc="#{bindings.DetailpermisView62.hints.nomdudepartement.tooltip}"
+                                                                   id="ot4"/>
                                                 </af:column>
                                                 <af:column sortProperty="#{bindings.DetailpermisView62.hints.Observation.name}"
                                                            filterable="true" sortable="true"
@@ -777,7 +1038,7 @@
                                         </af:panelCollection>
                                     </af:showDetailItem>
                                     <af:showDetailItem id="tab4" text="#{viewcontrollerBundle.EDITION}">
-                                        <af:panelBox  text="#{viewcontrollerBundle.AJOUTER_D_U00E9TAILS}" id="pb4"
+                                        <af:panelBox text="#{viewcontrollerBundle.AJOUTER_D_U00E9TAILS}" id="pb4"
                                                      showDisclosure="false">
                                             <f:facet name="toolbar">
                                                 <af:panelGroupLayout id="pgl3" halign="center">
@@ -792,6 +1053,25 @@
                                                 </af:panelGroupLayout>
                                             </f:facet>
                                             <af:panelGridLayout id="pgl5">
+                                            
+                                            <af:gridRow marginTop="5px" height="auto" id="gr20">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc29">
+                                                <af:outputLabel value="" id="ol14"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc12">
+                                                        <af:inputText visible="false" value="#{bindings.Iddetailpermis.inputValue}"
+                                                                      required="#{bindings.Iddetailpermis.hints.mandatory}"
+                                                                      columns="#{bindings.Iddetailpermis.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Iddetailpermis.hints.precision}"
+                                                                      shortDesc="#{bindings.Iddetailpermis.hints.tooltip}"
+                                                                      id="it5">
+                                                            <f:validator binding="#{bindings.Iddetailpermis.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Iddetailpermis.format}"/>
+                                                        </af:inputText>
+                                                    </af:gridCell>
+                                        </af:gridRow>
+                                            
                                                 <af:gridRow marginTop="5px" height="auto" id="gr11">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc3">
                                                         <af:outputLabel value="#{viewcontrollerBundle.PRODUIT}"
@@ -800,8 +1080,7 @@
                                                     <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
                                                                  id="gc4">
                                                         <af:selectOneChoice value="#{bindings.Idpartieproduitpfnl.inputValue}"
-                                                                            partialTriggers="tab3 b5"
-                                                                            autoSubmit="true"
+                                                                            partialTriggers="tab3 b5" autoSubmit="true"
                                                                             required="#{bindings.Idpartieproduitpfnl.hints.mandatory}"
                                                                             shortDesc="#{bindings.Idpartieproduitpfnl.hints.tooltip}"
                                                                             id="soc8"
@@ -812,17 +1091,17 @@
                                                         </af:selectOneChoice>
                                                     </af:gridCell>
                                                 </af:gridRow>
-                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="gr12">
                                                     <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
                                                                  id="gc10">
-                                                        <af:outputLabel value="#{bindings.Idunitemesure.hints.label}" visible="#{PermisBean.uniteMesure}"
-                                                        partialTriggers="soc8 b5"
-                                                                        id="ol9"/>
+                                                        <af:outputLabel value="#{bindings.Idunitemesure.hints.label}"
+                                                                        visible="#{PermisBean.uniteMesure}"
+                                                                        partialTriggers="soc8 b5" id="ol9"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
                                                                  id="gc11">
-                                                        <af:selectOneChoice partialTriggers="soc8" value="#{bindings.Idunitemesure.inputValue}"
+                                                        <af:selectOneChoice partialTriggers="soc8"
+                                                                            value="#{bindings.Idunitemesure.inputValue}"
                                                                             shortDesc="#{bindings.Idunitemesure.hints.tooltip}"
                                                                             required="#{PermisBean.uniteMesure}"
                                                                             visible="#{PermisBean.uniteMesure}"
@@ -833,9 +1112,7 @@
                                                         </af:selectOneChoice>
                                                     </af:gridCell>
                                                 </af:gridRow>
-                                                
-                                                
-                                        <!--        
+                                                <!--        
                                                 <af:gridRow marginTop="5px" height="auto" id="gr12">
                                                     <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
                                                                  id="gc6">
@@ -851,11 +1128,10 @@
                                                 </af:gridRow>
                                           -->
                                                 <af:gridRow marginTop="5px" height="auto" id="gr13">
-                                                    <af:gridCell marginStart="5px" width="auto" id="gc29">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc34">
                                                         <af:outputLabel value="#{bindings.Quantite.hints.label}"
-                                                        partialTriggers="soc8 b5"
-                                                                            visible="#{PermisBean.quotas}"
-                                                                        id="ol10"/>
+                                                                        partialTriggers="soc8 b5"
+                                                                        visible="#{PermisBean.quotas}" id="ol10"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
                                                                  id="gc25">
@@ -865,20 +1141,18 @@
                                                                       partialTriggers="soc8 b5"
                                                                       shortDesc="#{bindings.Quantite.hints.tooltip}"
                                                                       required="#{PermisBean.quotas}"
-                                                                      visible="#{PermisBean.quotas}"
-                                                                      id="it3">
+                                                                      visible="#{PermisBean.quotas}" id="it3">
                                                             <f:validator binding="#{bindings.Quantite.validator}"/>
                                                             <af:convertNumber groupingUsed="false"
                                                                               pattern="#{bindings.Quantite.format}"/>
                                                         </af:inputText>
                                                     </af:gridCell>
                                                 </af:gridRow>
-                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="grreg">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc9">
-                                                        <af:outputLabel value="#{bindings.Idregions.label}" visible="#{PermisBean.region}"
-                                                        partialTriggers="soc8 b5"
-                                                                        id="ol7"/>
+                                                        <af:outputLabel value="#{bindings.Idregions.label}"
+                                                                        visible="#{PermisBean.region}"
+                                                                        partialTriggers="soc8 b5" id="ol7"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" id="gclblreg">
                                                         <af:selectOneChoice value="#{bindings.Idregions.inputValue}"
@@ -893,12 +1167,11 @@
                                                         </af:selectOneChoice>
                                                     </af:gridCell>
                                                 </af:gridRow>
-                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc5">
-                                                        <af:outputLabel value="#{bindings.Iddepartements.label}" visible="#{PermisBean.departement}"
-                                                        partialTriggers="soc8 b5"
-                                                                        id="ol5"/>
+                                                        <af:outputLabel value="#{bindings.Iddepartements.label}"
+                                                                        visible="#{PermisBean.departement}"
+                                                                        partialTriggers="soc8 b5" id="ol5"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" id="gc6">
                                                         <af:inputComboboxListOfValues id="nomdudepartementId"
@@ -923,15 +1196,11 @@
                                                             <f:validator binding="#{bindings.Iddepartements.validator}"/>
                                                         </af:selectOneChoice> -->
                                                     </af:gridCell>
-                                                    
-                                                    
-                                                    
                                                 </af:gridRow>
-                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="gr14">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc13">
                                                         <af:outputLabel value="#{bindings.Observation1.hints.label}"
-                                                                        id="ol11"/>
+                                                                        id="ol13"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="300px" marginEnd="5px"
                                                                  id="gc14">
@@ -976,7 +1245,7 @@
                                                                    action="#{PermisBean.creerDetailsPermis1}"/>
                                                         <af:spacer width="10" height="10" id="s11"/>
                                                         <af:button text="#{viewcontrollerBundle.ENREGISTRER}" id="b13"
-                                                        partialSubmit="true"
+                                                                   partialSubmit="true"
                                                                    action="#{PermisBean.enregistrePermis}"/>
                                                         <af:spacer width="10" height="10" id="s12"/>
                                                         <af:button text="#{viewcontrollerBundle.ANNULER}"

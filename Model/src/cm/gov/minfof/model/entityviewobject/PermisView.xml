@@ -12,7 +12,7 @@
   BindingStyle="JDBC"
   CustomQuery="false"
   SelectAllAttributes="false"
-  FetchMode="FETCH_AS_NEEDED"
+  FetchMode="FETCH_ALL"
   PageIterMode="Full"
   ComponentClass="cm.gov.minfof.model.entityviewobject.PermisViewImpl"
   ComponentInterface="cm.gov.minfof.model.entityviewobject.common.PermisView"
@@ -136,7 +136,8 @@
     PrecisionRule="true"
     EntityAttrName="Idpermis"
     EntityUsage="Permis"
-    AliasName="idpermis">
+    AliasName="idpermis"
+    DefaultValue="-1">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -431,4 +432,9 @@
     <PropertiesBundle
       PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="Idpermis"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

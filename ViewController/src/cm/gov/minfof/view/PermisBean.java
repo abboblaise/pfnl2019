@@ -43,6 +43,10 @@ import java.math.BigDecimal;
 
 import java.util.Iterator;
 
+import java.util.Map;
+
+import javax.el.ValueExpression;
+
 import javax.faces.application.Application;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIViewRoot;
@@ -51,6 +55,7 @@ import javax.faces.el.ValueBinding;
 import javax.faces.event.ValueChangeEvent;
 
 import oracle.adf.model.BindingContext;
+import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.util.ResetUtils;
 
@@ -236,11 +241,118 @@ public class PermisBean {
         }
     }
 
+    public static FacesContext getFacesContext() {
+        return FacesContext.getCurrentInstance();
+    }
+
+    public static Object getExpressionValue(String expression) {
+        FacesContext facesContext = getFacesContext();
+        Application app = facesContext.getApplication();
+        ExpressionFactory elFactory = app.getExpressionFactory();
+        ELContext elContext = facesContext.getELContext();
+        ValueExpression valueExp = elFactory.createValueExpression(elContext, expression, Object.class);
+        Class bindClass = valueExp.getType(elContext);
+        return valueExp.getValue(elContext);
+    }
+
+    public static void setExpressionValue(String expression, Object newValue) {
+        FacesContext facesContext = getFacesContext();
+        Application app = facesContext.getApplication();
+        ExpressionFactory elFactory = app.getExpressionFactory();
+        ELContext elContext = facesContext.getELContext();
+        ValueExpression valueExp = elFactory.createValueExpression(elContext, expression, Object.class);
+
+        //Check that the input newValue can be cast to the property type
+        //expected by the managed bean.
+        //If the managed Bean expects a primitive we rely on Auto-Unboxing
+        Class bindClass = valueExp.getType(elContext);
+        if (bindClass.isPrimitive() || bindClass.isInstance(newValue)) {
+            valueExp.setValue(elContext, newValue);
+        }
+    }
+
+    @SuppressWarnings("oracle.jdeveloper.java.insufficient-catch-block")
     public String enregistrePermis() {
         System.out.println("Vous avez appuyez sur enregistrer");
 
         BindingContainer bindings = getBindings();
         OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+        
+        ADFContext adfCtx = ADFContext.getCurrent();
+        Map appScope = adfCtx.getApplicationScope();
+        BigDecimal lastId = new BigDecimal(0);
+
+        Object idEnCours = getExpressionValue("#{bindings.Idpermis1.inputValue}");
+        
+        BigDecimal v = new BigDecimal(5);
+        if (idEnCours instanceof BigDecimal)
+            v = (BigDecimal) idEnCours;
+        
+        
+        /********** ENREGISTREMENT DU DETAIL **********/
+        System.out.println("Debut de l'enregistrement des details");
+        Object idEnCoursDetails = getExpressionValue("#{bindings.Iddetailpermis.inputValue}");
+        BigDecimal v1 = new BigDecimal(5);
+        if (idEnCoursDetails instanceof BigDecimal)
+            v1 = (BigDecimal) idEnCoursDetails;
+        
+        if (idEnCoursDetails == null || v1.toString().equals("-1")) {
+            Object dernierId = appScope.get("iddetailspermisbean");
+            if (dernierId == null) {
+                //Je vais mettre à jour la liste qui compte les id
+                DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("getLatsidDetailpermis1Iterator");
+                ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
+                vo.executeQuery();
+                
+                lastId = new BigDecimal(0);
+                if (vo.hasNext()) {
+                    Row r = vo.next();
+                    lastId = (BigDecimal) r.getAttribute(0);
+                    BigDecimal un = new BigDecimal(1);
+                    lastId = lastId.add(un);
+                    appScope.put("iddetailspermisbean", lastId);
+                }
+            } else {
+                BigDecimal un = new BigDecimal(1);
+                lastId = (BigDecimal) dernierId;
+                lastId = lastId.add(un);
+                appScope.put("iddetailspermisbean", lastId);
+            }
+            
+            setExpressionValue("#{bindings.Iddetailpermis.inputValue}", lastId);
+            bindings = getBindings();
+            System.out.println("Fin de l'enregistrement des details");
+        }
+        /********** FIN ENREGISTREMENT DU DETAIL **********/
+        
+        if (idEnCours == null || v.toString().equals("-1")) {
+            Object dernierId = appScope.get("idpermisbean");
+            if (dernierId == null) {
+                //Je vais mettre à jour la liste qui compte les id
+                DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("getLastidPermis1Iterator");
+                ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
+                vo.executeQuery();
+
+                lastId = new BigDecimal(0);
+                if (vo.hasNext()) {
+                    Row r = vo.next();
+                    lastId = (BigDecimal) r.getAttribute(0);
+
+                    BigDecimal un = new BigDecimal(1);
+                    lastId = lastId.add(un);
+                    appScope.put("idpermisbean", lastId);
+                }
+            } else {
+                BigDecimal un = new BigDecimal(1);
+                lastId = (BigDecimal) dernierId;
+                lastId = lastId.add(un);
+                appScope.put("idpermisbean", lastId);
+            }
+
+            setExpressionValue("#{bindings.Idpermis1.inputValue}", lastId);
+        }
+        
+        operationBinding = bindings.getOperationBinding("Commit");
         Object result = operationBinding.execute();
         if (!operationBinding.getErrors().isEmpty()) {
             System.out.println("Il y a des erreurs");

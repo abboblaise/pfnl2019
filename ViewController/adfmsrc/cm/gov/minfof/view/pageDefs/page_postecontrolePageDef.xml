@@ -13,6 +13,12 @@
               id="PostecontroleView2Iterator"/>
     <searchRegion Binds="PostecontroleView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PostecontroleView11Query"/>
+    <iterator Binds="PosteControleComplet1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PosteControleComplet1Iterator"/>
+    <searchRegion Binds="PosteControleComplet1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PosteControleComplet1Query"/>
+    <iterator id="getLatsidPostecontrole1Iterator" Binds="getLatsidPostecontrole1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
   </executables>
   <bindings>
     <action IterBinding="PostecontroleView2Iterator" id="Create" InstanceName="AppModuleDataControl.PostecontroleView1"
@@ -103,6 +109,27 @@
     <attributeValues IterBinding="PostecontroleView1Iterator" id="CodeSigif">
       <AttrNames>
         <Item Value="CodeSigif"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="PosteControleComplet1Iterator" id="PosteControleComplet1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PosteControleComplet" Name="PosteControleComplet10">
+        <AttrNames>
+          <Item Value="Codeposte"/>
+          <Item Value="Intituleposte"/>
+          <Item Value="Codecommune"/>
+          <Item Value="Nomcommune"/>
+          <Item Value="Codedepartement"/>
+          <Item Value="Nomdepartement"/>
+          <Item Value="Nomcheflieu"/>
+          <Item Value="Coderegion"/>
+          <Item Value="Nomregion"/>
+          <Item Value="Cheflieuregion"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PostecontroleView2Iterator" id="Idpostecontrole1">
+      <AttrNames>
+        <Item Value="Idpostecontrole"/>
       </AttrNames>
     </attributeValues>
   </bindings>

@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="CategorieunitemesureView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -16,7 +16,8 @@
   ComponentClass="cm.gov.minfof.model.entityviewobject.CategorieunitemesureViewImpl"
   SdoGen="true"
   SdoName="cm.gov.minfof.model.entityviewobject.common.CategorieunitemesureViewSDO"
-  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/">
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/"
+  FetchMode="FETCH_ALL">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
   </DesignTime>
@@ -42,4 +43,9 @@
     ViewLink="cm.gov.minfof.model.entityviewobject.CategToUnitLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="Idcategorieunitemesure"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

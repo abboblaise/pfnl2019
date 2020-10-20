@@ -4,14 +4,15 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="RegionsView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="true"
   PageIterMode="Full"
   SdoGen="true"
   SdoName="cm.gov.minfof.model.queryviewobject.common.RegionsViewSDO"
-  SdoNameSpace="/cm/gov/minfof/model/queryviewobject/common/">
+  SdoNameSpace="/cm/gov/minfof/model/queryviewobject/common/"
+  FetchMode="FETCH_ALL">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>

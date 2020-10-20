@@ -39,7 +39,7 @@
                                                        disclosed="true">
                                         <af:spacer width="10" height="10" id="s15"/>
                                         <af:button id="bExport" text="#{viewcontrollerBundle.EXPORTER_LES_ACTEURS}">
-                                            <af:exportCollectionActionListener type="excelHTML"
+                                            <af:exportCollectionActionListener exportedRows="all" type="excelHTML"
                                                                                filename="Permissionnaire.xls"
                                                                                exportedId="pc1:t1"/>
                                         </af:button>
@@ -114,14 +114,14 @@
                                                                    shortDesc="#{bindings.PermissionnairespnflView1.hints.Mail.tooltip}"
                                                                    id="ot5"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Codepnfl.name}"
+                                             <!--   <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Codepnfl.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.PermissionnairespnflView1.hints.Codepnfl.label}"
                                                            id="c7">
                                                     <af:outputText value="#{row.Codepnfl}"
                                                                    shortDesc="#{bindings.PermissionnairespnflView1.hints.Codepnfl.tooltip}"
                                                                    id="ot6"/>
-                                                </af:column>
+                                                </af:column> 
                                                 <af:column headerText="#{bindings.PermissionnairespnflView1.hints.Idcommune.label}"
                                                            id="c8">
                                                     <af:selectOneChoice value="#{row.bindings.Idcommune.inputValue}"
@@ -133,7 +133,7 @@
                                                                        id="si8"/>
                                                         <f:validator binding="#{row.bindings.Idcommune.validator}"/>
                                                     </af:selectOneChoice>
-                                                </af:column>
+                                                </af:column> -->
                                                 <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Natureactivite.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.PermissionnairespnflView1.hints.Natureactivite.label}"
@@ -142,14 +142,14 @@
                                                                    shortDesc="#{bindings.PermissionnairespnflView1.hints.Natureactivite.tooltip}"
                                                                    id="ot7"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Numceqe.name}"
+                                            <!--    <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Numceqe.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.PermissionnairespnflView1.hints.Numceqe.label}"
                                                            id="c10">
                                                     <af:outputText value="#{row.Numceqe}"
                                                                    shortDesc="#{bindings.PermissionnairespnflView1.hints.Numceqe.tooltip}"
                                                                    id="ot8"/>
-                                                </af:column>
+                                                </af:column> -->
                                                 <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Idpermissionnairespnfl.name}"
                                                            filterable="true" sortable="true"
                                                            headerText="#{bindings.PermissionnairespnflView1.hints.Idpermissionnairespnfl.label}"
@@ -220,6 +220,25 @@
                                         <af:panelBox id="pb3" showDisclosure="false">
                                             <f:facet name="toolbar"/>
                                             <af:panelGridLayout id="pgl2">
+                                            
+                                            <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2ido">
+                                                        <af:inputText visible="false" value="#{bindings.Idpermissionnairespnfl.inputValue}"
+                                                                      required="#{bindings.Idpermissionnairespnfl.hints.mandatory}"
+                                                                      columns="#{bindings.Idpermissionnairespnfl.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Idpermissionnairespnfl.hints.precision}"
+                                                                      shortDesc="#{bindings.Idpermissionnairespnfl.hints.tooltip}"
+                                                                      id="it8">
+                                                            <f:validator binding="#{bindings.Idpermissionnairespnfl.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Idpermissionnairespnfl.format}"/>
+                                                        </af:inputText>
+                                                    </af:gridCell>
+                                        </af:gridRow>
+                                            
                                                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc1">
                                                         <af:outputText value="#{bindings.Codepnfl.hints.label}"
@@ -500,7 +519,8 @@
                                     </af:showDetailItem>
                                     <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.EXPORTATION}">
                                         <af:spacer width="10" height="10" id="sExport"/>
-                                        <af:button id="bExport1" text="#{viewcontrollerBundle.EXPORTER_LES_ACTEURS}">
+                                        <af:button id="bExport1"
+                                                   text="#{viewcontrollerBundle.EXPORTER_LES_ACTEURS_ET_LEURS_PERMIS}">
                                             <af:exportCollectionActionListener type="excelHTML"
                                                                                filename="PermissionnaireEtPermis.xls"
                                                                                exportedId="pc1Export:t3"/>
@@ -509,252 +529,309 @@
                                             <f:facet name="menus"/>
                                             <f:facet name="toolbar"/>
                                             <f:facet name="statusbar"/>
-                                            <af:table value="#{bindings.PermissionnaireEtPermisFinal1.collectionModel}"
+                                            <af:table value="#{bindings.PermissionnaireEtPermisFinal11.collectionModel}"
                                                       var="row"
-                                                      rows="#{bindings.PermissionnaireEtPermisFinal1.rangeSize}"
-                                                      emptyText="#{bindings.PermissionnaireEtPermisFinal1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      rows="#{bindings.PermissionnaireEtPermisFinal11.rangeSize}"
+                                                      emptyText="#{bindings.PermissionnaireEtPermisFinal11.viewable ? 'No data to display.' : 'Access Denied.'}"
                                                       rowBandingInterval="0"
-                                                      fetchSize="#{bindings.PermissionnaireEtPermisFinal1.rangeSize}"
+                                                      selectedRowKeys="#{bindings.PermissionnaireEtPermisFinal11.collectionModel.selectedRow}"
+                                                      selectionListener="#{bindings.PermissionnaireEtPermisFinal11.collectionModel.makeCurrent}"
+                                                      rowSelection="single"
+                                                      fetchSize="#{bindings.PermissionnaireEtPermisFinal11.rangeSize}"
                                                       filterModel="#{bindings.PermissionnaireEtPermisFinal1Query.queryDescriptor}"
                                                       filterVisible="true"
                                                       queryListener="#{bindings.PermissionnaireEtPermisFinal1Query.processQuery}"
                                                       varStatus="vs" id="t3">
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Idpermis.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermis.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Idpermis.label}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermis.label}"
                                                            id="c14">
                                                     <af:outputText value="#{row.Idpermis}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Idpermis.tooltip}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermis.tooltip}"
                                                                    id="ot23">
                                                         <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Idpermis.format}"/>
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermis.format}"/>
                                                     </af:outputText>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Numeropermis.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Numeropermis.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Numeropermis.label}"
-                                                           id="c22">
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Numeropermis.label}"
+                                                           id="c21">
                                                     <af:outputText value="#{row.Numeropermis}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Numeropermis.tooltip}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Numeropermis.tooltip}"
                                                                    id="ot31"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Zonecoupe.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Zonecoupe.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Zonecoupe.label}"
-                                                           id="c23">
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Zonecoupe.label}"
+                                                           id="c22">
                                                     <af:outputText value="#{row.Zonecoupe}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Zonecoupe.tooltip}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Zonecoupe.tooltip}"
                                                                    id="ot32"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Datedelivrance.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Datedelivrance.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Datedelivrance.label}"
-                                                           id="c24">
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Datedelivrance.label}"
+                                                           id="c23">
                                                     <f:facet name="filter">
                                                         <af:inputDate value="#{bindings.PermissionnaireEtPermisFinal1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datedelivrance.value}"
                                                                       id="id3">
-                                                            <af:convertDateTime pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Datedelivrance.format}"/>
+                                                            <af:convertDateTime pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Datedelivrance.format}"/>
                                                         </af:inputDate>
                                                     </f:facet>
                                                     <af:outputText value="#{row.Datedelivrance}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Datedelivrance.tooltip}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Datedelivrance.tooltip}"
                                                                    id="ot33">
-                                                        <af:convertDateTime pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Datedelivrance.format}"/>
+                                                        <af:convertDateTime pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Datedelivrance.format}"/>
                                                     </af:outputText>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Datefin.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Datefin.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Datefin.label}"
-                                                           id="c25">
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Datefin.label}"
+                                                           id="c24">
                                                     <f:facet name="filter">
                                                         <af:inputDate value="#{bindings.PermissionnaireEtPermisFinal1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datefin.value}"
                                                                       id="id4">
-                                                            <af:convertDateTime pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Datefin.format}"/>
+                                                            <af:convertDateTime pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Datefin.format}"/>
                                                         </af:inputDate>
                                                     </f:facet>
                                                     <af:outputText value="#{row.Datefin}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Datefin.tooltip}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Datefin.tooltip}"
                                                                    id="ot34">
-                                                        <af:convertDateTime pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Datefin.format}"/>
+                                                        <af:convertDateTime pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Datefin.format}"/>
                                                     </af:outputText>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Observation.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Observation.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Observation.label}"
-                                                           id="c26">
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Observation.label}"
+                                                           id="c25">
                                                     <af:outputText value="#{row.Observation}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Observation.tooltip}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Observation.tooltip}"
                                                                    id="ot35"/>
                                                 </af:column>
-                                    
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Nomfichier.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Idagrement.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Nomfichier.label}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Idagrement.label}"
+                                                           id="c26">
+                                                    <af:outputText value="#{row.Idagrement}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Idagrement.tooltip}"
+                                                                   id="ot36">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Idagrement.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermissionnaire.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermissionnaire.label}"
+                                                           id="c27">
+                                                    <af:outputText value="#{row.Idpermissionnaire}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermissionnaire.tooltip}"
+                                                                   id="ot37">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermissionnaire.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Nomfichier.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Nomfichier.label}"
                                                            id="c28">
                                                     <af:outputText value="#{row.Nomfichier}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Nomfichier.tooltip}"
-                                                                   id="ot37"/>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Cheminfichier.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Cheminfichier.label}"
-                                                           id="c29">
-                                                    <af:outputText value="#{row.Cheminfichier}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Cheminfichier.tooltip}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Nomfichier.tooltip}"
                                                                    id="ot38"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Typefichier.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Cheminfichier.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Typefichier.label}"
-                                                           id="c30">
-                                                    <af:outputText value="#{row.Typefichier}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Typefichier.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Cheminfichier.label}"
+                                                           id="c29">
+                                                    <af:outputText value="#{row.Cheminfichier}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Cheminfichier.tooltip}"
                                                                    id="ot39"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Nomouraisonsociale.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Typefichier.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Nomouraisonsociale.label}"
-                                                           id="c31">
-                                                    <af:outputText value="#{row.Nomouraisonsociale}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Nomouraisonsociale.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Typefichier.label}"
+                                                           id="c30">
+                                                    <af:outputText value="#{row.Typefichier}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Typefichier.tooltip}"
                                                                    id="ot40"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Statut.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Idtypedocument.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Statut.label}"
-                                                           id="c32">
-                                                    <af:outputText value="#{row.Statut}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Statut.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Idtypedocument.label}"
+                                                           id="c31">
+                                                    <af:outputText value="#{row.Idtypedocument}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Idtypedocument.tooltip}"
                                                                    id="ot41">
                                                         <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Statut.format}"/>
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Idtypedocument.format}"/>
                                                     </af:outputText>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Siegesocial.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Nomouraisonsociale.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Siegesocial.label}"
-                                                           id="c33">
-                                                    <af:outputText value="#{row.Siegesocial}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Siegesocial.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Nomouraisonsociale.label}"
+                                                           id="c32">
+                                                    <af:outputText value="#{row.Nomouraisonsociale}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Nomouraisonsociale.tooltip}"
                                                                    id="ot42"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Nbreemploye.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Statut.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Nbreemploye.label}"
-                                                           id="c34">
-                                                    <af:outputText value="#{row.Nbreemploye}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Nbreemploye.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Statut.label}"
+                                                           id="c33">
+                                                    <af:outputText value="#{row.Statut}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Statut.tooltip}"
                                                                    id="ot43">
                                                         <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Nbreemploye.format}"/>
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Statut.format}"/>
                                                     </af:outputText>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Contact.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Siegesocial.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Contact.label}"
-                                                           id="c35">
-                                                    <af:outputText value="#{row.Contact}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Contact.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Siegesocial.label}"
+                                                           id="c34">
+                                                    <af:outputText value="#{row.Siegesocial}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Siegesocial.tooltip}"
                                                                    id="ot44"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Mail.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Nbreemploye.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Mail.label}"
-                                                           id="c36">
-                                                    <af:outputText value="#{row.Mail}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Mail.tooltip}"
-                                                                   id="ot45"/>
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Nbreemploye.label}"
+                                                           id="c35">
+                                                    <af:outputText value="#{row.Nbreemploye}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Nbreemploye.tooltip}"
+                                                                   id="ot45">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Nbreemploye.format}"/>
+                                                    </af:outputText>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Codepnfl.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Contact.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Codepnfl.label}"
-                                                           id="c37">
-                                                    <af:outputText value="#{row.Codepnfl}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Codepnfl.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Contact.label}"
+                                                           id="c36">
+                                                    <af:outputText value="#{row.Contact}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Contact.tooltip}"
                                                                    id="ot46"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Natureactivite.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Mail.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Natureactivite.label}"
-                                                           id="c38">
-                                                    <af:outputText value="#{row.Natureactivite}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Natureactivite.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Mail.label}"
+                                                           id="c37">
+                                                    <af:outputText value="#{row.Mail}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Mail.tooltip}"
                                                                    id="ot47"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Numceqe.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Codepnfl.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Numceqe.label}"
-                                                           id="c39">
-                                                    <af:outputText value="#{row.Numceqe}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Numceqe.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Codepnfl.label}"
+                                                           id="c38">
+                                                    <af:outputText value="#{row.Codepnfl}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Codepnfl.tooltip}"
                                                                    id="ot48"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Qualite.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Natureactivite.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Qualite.label}"
-                                                           id="c40">
-                                                    <af:outputText value="#{row.Qualite}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Qualite.tooltip}"
-                                                                   id="ot49">
-                                                        <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Qualite.format}"/>
-                                                    </af:outputText>
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Natureactivite.label}"
+                                                           id="c39">
+                                                    <af:outputText value="#{row.Natureactivite}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Natureactivite.tooltip}"
+                                                                   id="ot49"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Nui.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Numceqe.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Nui.label}"
-                                                           id="c41">
-                                                    <af:outputText value="#{row.Nui}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Nui.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Numceqe.label}"
+                                                           id="c40">
+                                                    <af:outputText value="#{row.Numceqe}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Numceqe.tooltip}"
                                                                    id="ot50"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Profession.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermissionnairespnfl.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Profession.label}"
-                                                           id="c42">
-                                                    <af:outputText value="#{row.Profession}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Profession.tooltip}"
-                                                                   id="ot51"/>
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermissionnairespnfl.label}"
+                                                           id="c41">
+                                                    <af:outputText value="#{row.Idpermissionnairespnfl}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermissionnairespnfl.tooltip}"
+                                                                   id="ot51">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Idpermissionnairespnfl.format}"/>
+                                                    </af:outputText>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Typepersonne.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Qualite.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Typepersonne.label}"
-                                                           id="c43">
-                                                    <af:outputText value="#{row.Typepersonne}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Typepersonne.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Qualite.label}"
+                                                           id="c42">
+                                                    <af:outputText value="#{row.Qualite}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Qualite.tooltip}"
                                                                    id="ot52">
                                                         <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Typepersonne.format}"/>
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Qualite.format}"/>
                                                     </af:outputText>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Adressep.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Nui.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Adressep.label}"
-                                                           id="c44">
-                                                    <af:outputText value="#{row.Adressep}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Adressep.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Nui.label}"
+                                                           id="c43">
+                                                    <af:outputText value="#{row.Nui}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Nui.tooltip}"
                                                                    id="ot53"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Sexe.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Profession.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Sexe.label}"
-                                                           id="c45">
-                                                    <af:outputText value="#{row.Sexe}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Sexe.tooltip}"
-                                                                   id="ot54">
-                                                        <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Sexe.format}"/>
-                                                    </af:outputText>
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Profession.label}"
+                                                           id="c44">
+                                                    <af:outputText value="#{row.Profession}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Profession.tooltip}"
+                                                                   id="ot54"/>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal1.hints.Qualiteexploitant.name}"
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Typepersonne.name}"
                                                            filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermissionnaireEtPermisFinal1.hints.Qualiteexploitant.label}"
-                                                           id="c46">
-                                                    <af:outputText value="#{row.Qualiteexploitant}"
-                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal1.hints.Qualiteexploitant.tooltip}"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Typepersonne.label}"
+                                                           id="c45">
+                                                    <af:outputText value="#{row.Typepersonne}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Typepersonne.tooltip}"
                                                                    id="ot55">
                                                         <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal1.hints.Qualiteexploitant.format}"/>
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Typepersonne.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Adressep.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Adressep.label}"
+                                                           id="c46">
+                                                    <af:outputText value="#{row.Adressep}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Adressep.tooltip}"
+                                                                   id="ot56"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Sexe.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Sexe.label}"
+                                                           id="c47">
+                                                    <af:outputText value="#{row.Sexe}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Sexe.tooltip}"
+                                                                   id="ot57">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Sexe.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Qualiteexploitant.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Qualiteexploitant.label}"
+                                                           id="c48">
+                                                    <af:outputText value="#{row.Qualiteexploitant}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Qualiteexploitant.tooltip}"
+                                                                   id="ot58">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Qualiteexploitant.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.PermissionnaireEtPermisFinal11.hints.Idcommune.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.PermissionnaireEtPermisFinal11.hints.Idcommune.label}"
+                                                           id="c49">
+                                                    <af:outputText value="#{row.Idcommune}"
+                                                                   shortDesc="#{bindings.PermissionnaireEtPermisFinal11.hints.Idcommune.tooltip}"
+                                                                   id="ot59">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.PermissionnaireEtPermisFinal11.hints.Idcommune.format}"/>
                                                     </af:outputText>
                                                 </af:column>
                                             </af:table>

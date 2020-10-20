@@ -7,6 +7,8 @@
     <iterator Binds="UnitemesureView1" RangeSize="25" DataControl="AppModuleDataControl" id="UnitemesureView1Iterator"/>
     <searchRegion Binds="UnitemesureView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="UnitemesureView1Query"/>
+    <iterator id="getLastIdUnitMesure1Iterator" Binds="getLastIdUnitMesure1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
   </executables>
   <bindings>
     <list IterBinding="UnitemesureView1Iterator" StaticList="false" Uses="LOV_Idcategorie" id="Idcategorie"
@@ -59,5 +61,10 @@
     <action IterBinding="UnitemesureView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="UnitemesureView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="UnitemesureView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="UnitemesureView1Iterator" id="Idunitemesure">
+      <AttrNames>
+        <Item Value="Idunitemesure"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

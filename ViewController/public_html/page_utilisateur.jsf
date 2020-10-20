@@ -133,6 +133,24 @@
                             </af:showDetailItem>
                             <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
                                 <af:panelGridLayout id="pgl2">
+                                
+                                <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2ido">
+                                            <af:inputText visible="false" value="#{bindings.Idutilisateur.inputValue}"
+                                                          required="#{bindings.Idutilisateur.hints.mandatory}"
+                                                          columns="#{bindings.Idutilisateur.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Idutilisateur.hints.precision}"
+                                                          shortDesc="#{bindings.Idutilisateur.hints.tooltip}" id="it2">
+                                                <f:validator binding="#{bindings.Idutilisateur.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Idutilisateur.format}"/>
+                                            </af:inputText>
+                                        </af:gridCell>
+                                        </af:gridRow>
+                                
                                     <af:gridRow marginTop="5px" height="auto" id="gr1">
                                         <af:gridCell marginStart="5px" width="auto" id="gc1">
                                             <af:outputText value="#{bindings.Loginuser.hints.label}" id="ot5"/>

@@ -7,6 +7,7 @@
     <iterator Binds="PaysView1" RangeSize="25" DataControl="AppModuleDataControl" id="PaysView1Iterator"/>
     <searchRegion Binds="PaysView1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="PaysView1Query"/>
+    <iterator id="getLastIdPays1Iterator" Binds="getLastIdPays1" DataControl="AppModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PaysView1Iterator" id="Nompays">
@@ -37,5 +38,10 @@
     <action IterBinding="PaysView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="PaysView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="PaysView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="PaysView1Iterator" id="Idpays">
+      <AttrNames>
+        <Item Value="Idpays"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

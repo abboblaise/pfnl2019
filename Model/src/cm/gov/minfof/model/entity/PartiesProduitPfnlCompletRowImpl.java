@@ -15,11 +15,9 @@ public class PartiesProduitPfnlCompletRowImpl extends ViewRowImpl {
      */
     protected enum AttributesEnum {
         Idpartiesproduitspfnl,
-        Idpartiesrecoltees,
-        Idproduitspfnl,
         Idunitemesure,
         Idunitemesureexport,
-        Idproduitspfnl1,
+        Idproduitspfnl,
         Nomscientifique,
         Nomcommercial,
         Codeproduit,
@@ -27,9 +25,10 @@ public class PartiesProduitPfnlCompletRowImpl extends ViewRowImpl {
         Descriptionsommaire,
         Modeattribution,
         Idcategorie,
-        Idpartiesrecoltees1,
+        Idpartiesrecoltees,
         Nompartierecoltee;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -51,12 +50,12 @@ public class PartiesProduitPfnlCompletRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
+
     public static final int IDPARTIESPRODUITSPFNL = AttributesEnum.Idpartiesproduitspfnl.index();
-    public static final int IDPARTIESRECOLTEES = AttributesEnum.Idpartiesrecoltees.index();
-    public static final int IDPRODUITSPFNL = AttributesEnum.Idproduitspfnl.index();
     public static final int IDUNITEMESURE = AttributesEnum.Idunitemesure.index();
     public static final int IDUNITEMESUREEXPORT = AttributesEnum.Idunitemesureexport.index();
-    public static final int IDPRODUITSPFNL1 = AttributesEnum.Idproduitspfnl1.index();
+    public static final int IDPRODUITSPFNL = AttributesEnum.Idproduitspfnl.index();
     public static final int NOMSCIENTIFIQUE = AttributesEnum.Nomscientifique.index();
     public static final int NOMCOMMERCIAL = AttributesEnum.Nomcommercial.index();
     public static final int CODEPRODUIT = AttributesEnum.Codeproduit.index();
@@ -64,7 +63,7 @@ public class PartiesProduitPfnlCompletRowImpl extends ViewRowImpl {
     public static final int DESCRIPTIONSOMMAIRE = AttributesEnum.Descriptionsommaire.index();
     public static final int MODEATTRIBUTION = AttributesEnum.Modeattribution.index();
     public static final int IDCATEGORIE = AttributesEnum.Idcategorie.index();
-    public static final int IDPARTIESRECOLTEES1 = AttributesEnum.Idpartiesrecoltees1.index();
+    public static final int IDPARTIESRECOLTEES = AttributesEnum.Idpartiesrecoltees.index();
     public static final int NOMPARTIERECOLTEE = AttributesEnum.Nompartierecoltee.index();
 
     /**

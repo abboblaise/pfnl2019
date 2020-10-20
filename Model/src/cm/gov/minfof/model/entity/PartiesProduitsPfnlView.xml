@@ -98,7 +98,7 @@
     EntityAttrName="Idpartiesproduitspfnl"
     EntityUsage="PartiesProduitsPfnl"
     AliasName="idpartiesproduitspfnl"
-    IsUpdateable="while_insert"/>
+    DefaultValue="-1"/>
   <ViewAttribute
     Name="Idpartiesrecoltees"
     PrecisionRule="true"

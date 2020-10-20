@@ -9,8 +9,8 @@
         <af:resource source="style/jquery.growl.css" type="css"/>
         <af:messages id="m1"/>
         <af:form id="f1">
-        <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
-        <f:facet name="content">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
                     <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_R_U00E9GIONS}" id="pb3"
                                  showDisclosure="false">
                         <f:facet name="toolbar">
@@ -64,10 +64,10 @@
                                                                   pattern="#{bindings.RegionView1.hints.Idregions.format}"/>
                                             </af:outputText>
                                         </af:column>
-                                        <af:column sortProperty="#{bindings.RegionView1.hints.Abreviationregion.name}" 
-                                            headerText="#{bindings.RegionView1.hints.Abreviationregion.label}"
-                                            filterable="true" sortable="true" filterFeatures="caseInsensitive" width="40"
-                                                   id="c6">
+                                        <af:column sortProperty="#{bindings.RegionView1.hints.Abreviationregion.name}"
+                                                   headerText="#{bindings.RegionView1.hints.Abreviationregion.label}"
+                                                   filterable="true" sortable="true" filterFeatures="caseInsensitive"
+                                                   width="40" id="c6">
                                             <af:outputText value="#{row.Abreviationregion}"
                                                            shortDesc="#{bindings.RegionView1.hints.Abreviationregion.tooltip}"
                                                            id="ot6"/>
@@ -111,6 +111,22 @@
                                 <af:panelBox id="pb1" showDisclosure="false">
                                     <f:facet name="toolbar"/>
                                     <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2ido">
+                                                <af:inputText visible="false" value="#{bindings.Idregions.inputValue}"
+                                                              required="#{bindings.Idregions.hints.mandatory}"
+                                                              columns="#{bindings.Idregions.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Idregions.hints.precision}"
+                                                              shortDesc="#{bindings.Idregions.hints.tooltip}" id="it5">
+                                                    <f:validator binding="#{bindings.Idregions.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Idregions.format}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr1">
                                             <af:gridCell marginStart="5px" width="auto" id="gc1" marginEnd="5px">
                                                 <af:outputLabel value="#{bindings.Coderegion.hints.label}" id="ol1"/>
@@ -125,27 +141,23 @@
                                                     <f:validator binding="#{bindings.Coderegion.validator}"/>
                                                 </af:inputText>
                                             </af:gridCell>
-                                            
-                                            
                                             <af:gridCell marginStart="10px" width="auto" id="gc10">
-                                                <af:outputLabel value="#{bindings.Abreviationregion.hints.label}" id="ol10"/>
+                                                <af:outputLabel value="#{bindings.Abreviationregion.hints.label}"
+                                                                id="ol10"/>
                                             </af:gridCell>
                                             <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc12">
                                                 <af:inputText value="#{bindings.Abreviationregion.inputValue}"
                                                               required="#{bindings.Abreviationregion.hints.mandatory}"
                                                               columns="#{bindings.Abreviationregion.hints.displayWidth}"
                                                               maximumLength="#{bindings.Abreviationregion.hints.precision}"
-                                                              shortDesc="#{bindings.Abreviationregion.hints.tooltip}" id="it10"
-                                                              partialTriggers="b2 b4 b1 b3" immediate="false">
+                                                              shortDesc="#{bindings.Abreviationregion.hints.tooltip}"
+                                                              id="it10" partialTriggers="b2 b4 b1 b3" immediate="false">
                                                     <f:validator binding="#{bindings.Abreviationregion.validator}"/>
                                                 </af:inputText>
                                             </af:gridCell>
-                                            
-                                            
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr2">
-                                        
-                                        <af:gridCell marginStart="10px" width="auto" id="gc3">
+                                            <af:gridCell marginStart="10px" width="auto" id="gc3">
                                                 <af:outputLabel value="#{bindings.Nomregion.hints.label}" id="ol2"/>
                                             </af:gridCell>
                                             <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4">
@@ -158,14 +170,13 @@
                                                     <f:validator binding="#{bindings.Nomregion.validator}"/>
                                                 </af:inputText>
                                             </af:gridCell>
-                                        
                                             <af:gridCell marginStart="5px" width="auto" id="gc5" marginEnd="5px">
                                                 <af:outputLabel value="#{bindings.Cheflieuregion.hints.label}"
                                                                 id="ol3"/>
                                             </af:gridCell>
                                             <af:gridCell marginStart="10px" width="auto" id="gc6">
                                                 <af:inputText value="#{bindings.Cheflieuregion.inputValue}"
-                                                              label="&nbsp;&nbsp;&nbsp;"
+                                                              label=""
                                                               required="#{bindings.Cheflieuregion.hints.mandatory}"
                                                               columns="#{bindings.Cheflieuregion.hints.displayWidth}"
                                                               maximumLength="#{bindings.Cheflieuregion.hints.precision}"
@@ -174,7 +185,6 @@
                                                     <f:validator binding="#{bindings.Cheflieuregion.validator}"/>
                                                 </af:inputText>
                                             </af:gridCell>
-                                            
                                         </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr8">
                                             <af:gridCell marginStart="10px" width="auto" id="gc7">
@@ -183,7 +193,7 @@
                                             </af:gridCell>
                                             <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc8">
                                                 <af:inputText value="#{bindings.Descriptionregions.inputValue}"
-                                                              label="&nbsp;&nbsp;&nbsp;"
+                                                              label=""
                                                               required="#{bindings.Descriptionregions.hints.mandatory}"
                                                               columns="#{bindings.Descriptionregions.hints.displayWidth}"
                                                               maximumLength="#{bindings.Descriptionregions.hints.precision}"
@@ -208,7 +218,8 @@
                                                                partialSubmit="true" id="b7"/>
                                                     <af:spacer width="10" height="10" id="s5"/>
                                                     <af:button actionListener="#{bindings.Previous.execute}"
-                                                               text="#{viewcontrollerBundle.PREVIOUS}" disabled="#{!bindings.Previous.enabled}"
+                                                               text="#{viewcontrollerBundle.PREVIOUS}"
+                                                               disabled="#{!bindings.Previous.enabled}"
                                                                partialSubmit="true" id="b8"/>
                                                     <af:spacer width="10" height="10" id="s6"/>
                                                     <af:button actionListener="#{bindings.Next.execute}"
@@ -242,8 +253,7 @@
                                                     <af:button text="#{viewcontrollerBundle.SUPPRIMER}"
                                                                disabled="#{!bindings.Delete.enabled}" id="b3"
                                                                action="#{regionBean.supprimeRegion}" rendered="false"/>
-                                                    <af:button
-                                                               text="#{viewcontrollerBundle.ANNULER}" immediate="true"
+                                                    <af:button text="#{viewcontrollerBundle.ANNULER}" immediate="true"
                                                                id="b6" action="#{regionBean.annulerRegion}">
                                                         <af:resetActionListener/>
                                                     </af:button>
@@ -251,7 +261,6 @@
                                             </af:gridCell>
                                         </af:gridRow>
                                     </af:panelGridLayout>
-                                    
                                 </af:panelBox>
                             </af:showDetailItem>
                         </af:panelTabbed>

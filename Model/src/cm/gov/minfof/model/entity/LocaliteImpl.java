@@ -321,12 +321,11 @@ public class LocaliteImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        if (operation == DML_INSERT)
-        {
-            BigDecimal id = getLastId("getLastidLocalite1");
-            setIdlocalite(id);
-        }
         super.doDML(operation, e);
+        /*      if (operation == DML_INSERT) {
+            BigDecimal id = getLastId("getLastIdCollectePfnl1");
+            setIdcollectepfnl(id);
+        } */
     }
 }
 

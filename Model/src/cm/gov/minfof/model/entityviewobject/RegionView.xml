@@ -19,7 +19,8 @@
   RowInterface="cm.gov.minfof.model.entityviewobject.common.RegionViewRow"
   SdoGen="true"
   SdoName="cm.gov.minfof.model.entityviewobject.common.RegionViewSDO"
-  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/">
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/"
+  FetchMode="FETCH_ALL">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|Def|Coll|Prog|VarAccess"/>
     <Attr Name="_isCodegen" Value="true"/>

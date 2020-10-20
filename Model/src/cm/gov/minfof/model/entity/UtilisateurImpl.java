@@ -615,8 +615,8 @@ public class UtilisateurImpl extends EntityImpl {
     protected void doDML(int operation, TransactionEvent e) {
         if (operation == DML_INSERT) {
             //System.out.println("actif = " + getActif());
-            BigDecimal id = getLastId("getLastIdUtilisateur1");
-            setIdutilisateur(id);
+      //      BigDecimal id = getLastId("getLastIdUtilisateur1");
+      //      setIdutilisateur(id);
             setPremiereconnexion(true);
             String pswd=generateRandomChars();
             try {

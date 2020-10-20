@@ -510,14 +510,11 @@ public class DetailpermisImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        if (operation == DML_INSERT) {
-            //BigDecimal id = getLastId("getLastidPermis1");
-            //this.setIdpermis(id);
-            
-            BigDecimal id1 = getLastId("getLatsidDetailpermis1");
-            this.setIddetailpermis(id1);
-        }
         super.doDML(operation, e);
+        /*      if (operation == DML_INSERT) {
+            BigDecimal id = getLastId("getLastIdCollectePfnl1");
+            setIdcollectepfnl(id);
+        } */
     }
     
     public BigDecimal getLastId(String viewName) {

@@ -1257,6 +1257,15 @@
   <ViewUsage
     Name="CollectepfnlView8"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.CollectepfnlView"/>
+  <ViewUsage
+    Name="PosteControleComplet1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PosteControleComplet"/>
+  <ViewUsage
+    Name="localiteComplet1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.localiteComplet"/>
+  <ViewUsage
+    Name="getExportDocumentsOfficiels1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getExportDocumentsOfficiels"/>
   <ViewLinkUsage
     Name="PermissionnaireToPermisLink"
     ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermissionnaireToPermisLink"

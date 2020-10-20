@@ -174,4 +174,9 @@
     <PropertiesBundle
       PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="Idpostecontrole"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

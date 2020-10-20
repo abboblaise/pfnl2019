@@ -16,6 +16,8 @@
     <searchRegion Binds="PermissionnaireEtPermisFinal1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="PermissionnaireEtPermisFinal1Query"/>
+    <iterator id="getLastIdPermissionnairePfnl1Iterator" Binds="getLastIdPermissionnairePfnl1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Codepnfl">
@@ -155,5 +157,47 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="PermissionnaireEtPermisFinal1Iterator" id="PermissionnaireEtPermisFinal11">
+      <nodeDefinition DefName="cm.gov.minfof.model.entity.PermissionnaireEtPermisFinal"
+                      Name="PermissionnaireEtPermisFinal110">
+        <AttrNames>
+          <Item Value="Idpermis"/>
+          <Item Value="Numeropermis"/>
+          <Item Value="Zonecoupe"/>
+          <Item Value="Datedelivrance"/>
+          <Item Value="Datefin"/>
+          <Item Value="Observation"/>
+          <Item Value="Idagrement"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Nomfichier"/>
+          <Item Value="Cheminfichier"/>
+          <Item Value="Typefichier"/>
+          <Item Value="Idtypedocument"/>
+          <Item Value="Nomouraisonsociale"/>
+          <Item Value="Statut"/>
+          <Item Value="Siegesocial"/>
+          <Item Value="Nbreemploye"/>
+          <Item Value="Contact"/>
+          <Item Value="Mail"/>
+          <Item Value="Codepnfl"/>
+          <Item Value="Natureactivite"/>
+          <Item Value="Numceqe"/>
+          <Item Value="Idpermissionnairespnfl"/>
+          <Item Value="Qualite"/>
+          <Item Value="Nui"/>
+          <Item Value="Profession"/>
+          <Item Value="Typepersonne"/>
+          <Item Value="Adressep"/>
+          <Item Value="Sexe"/>
+          <Item Value="Qualiteexploitant"/>
+          <Item Value="Idcommune"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Idpermissionnairespnfl">
+      <AttrNames>
+        <Item Value="Idpermissionnairespnfl"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

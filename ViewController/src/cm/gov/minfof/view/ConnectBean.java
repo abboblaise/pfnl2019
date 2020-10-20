@@ -8,8 +8,14 @@ import java.math.BigDecimal;
 import java.security.GeneralSecurityException;
 
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Properties;
 
+import javax.el.ELContext;
+import javax.el.ExpressionFactory;
+import javax.el.ValueExpression;
+
+import javax.faces.application.Application;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -34,7 +40,11 @@ import javax.mail.internet.MimeMessage;
 
 import oracle.adf.model.binding.DCIteratorBinding;
 
+import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
+
+import oracle.jbo.Row;
+import oracle.jbo.server.ViewObjectImpl;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
@@ -110,24 +120,82 @@ public class ConnectBean {
         }
     }
 
+    public static FacesContext getFacesContext() {
+        return FacesContext.getCurrentInstance();
+    }
+
+    public static Object getExpressionValue(String expression) {
+        FacesContext facesContext = getFacesContext();
+        Application app = facesContext.getApplication();
+        ExpressionFactory elFactory = app.getExpressionFactory();
+        ELContext elContext = facesContext.getELContext();
+        ValueExpression valueExp = elFactory.createValueExpression(elContext, expression, Object.class);
+        Class bindClass = valueExp.getType(elContext);
+        return valueExp.getValue(elContext);
+    }
+
+    public static void setExpressionValue(String expression, Object newValue) {
+        FacesContext facesContext = getFacesContext();
+        Application app = facesContext.getApplication();
+        ExpressionFactory elFactory = app.getExpressionFactory();
+        ELContext elContext = facesContext.getELContext();
+        ValueExpression valueExp = elFactory.createValueExpression(elContext, expression, Object.class);
+
+        //Check that the input newValue can be cast to the property type
+        //expected by the managed bean.
+        //If the managed Bean expects a primitive we rely on Auto-Unboxing
+        Class bindClass = valueExp.getType(elContext);
+        if (bindClass.isPrimitive() || bindClass.isInstance(newValue)) {
+            valueExp.setValue(elContext, newValue);
+        }
+    }
+
+    @SuppressWarnings("oracle.jdeveloper.java.insufficient-catch-block")
     public String EnregistrerUtilisateur() {
-        /*RichSelectOneChoice soc = (RichSelectOneChoice)findComponent(FacesContext.getCurrentInstance().getViewRoot(), "soc3");
-        BigDecimal bd= (BigDecimal)soc.getValue();
-        BigDecimal bd1 = new BigDecimal(2);
-        
-        if(bd.equals(bd1)){
-            RichSelectBooleanCheckbox cb = (RichSelectBooleanCheckbox)findComponent(FacesContext.getCurrentInstance().getViewRoot(), "sbc2");
-            cb.setValue(true);
-            
-            cb = (RichSelectBooleanCheckbox)findComponent(FacesContext.getCurrentInstance().getViewRoot(), "sbc3");
-            cb.setValue(true);
-            
-            cb = (RichSelectBooleanCheckbox)findComponent(FacesContext.getCurrentInstance().getViewRoot(), "sbc4");
-            cb.setValue(true);
-        }*/
-        
         BindingContainer bindings = getBindings();
         OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+        
+        ADFContext adfCtx = ADFContext.getCurrent();
+        Map appScope = adfCtx.getApplicationScope();
+        BigDecimal lastId = new BigDecimal(0);
+
+        Object idEnCours = getExpressionValue("#{bindings.Idutilisateur.inputValue}");
+
+        BigDecimal v = new BigDecimal(5);
+        if (idEnCours instanceof BigDecimal)
+            v = (BigDecimal) idEnCours;
+
+
+        /********** FIN ENREGISTREMENT DU DETAIL **********/
+
+        if (idEnCours == null || v.toString().equals("-1")) {
+            Object dernierId = appScope.get("idutilisateurbean");
+            if (dernierId == null) {
+                //Je vais mettre à jour la liste qui compte les id
+                DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("getLastIdUtilisateur1Iterator");
+                ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
+                vo.executeQuery();
+
+                lastId = new BigDecimal(0);
+                if (vo.hasNext()) {
+                    Row r = vo.next();
+                    lastId = (BigDecimal) r.getAttribute(0);
+
+                    BigDecimal un = new BigDecimal(1);
+                    lastId = lastId.add(un);
+                    appScope.put("idutilisateurbean", lastId);
+                }
+            } else {
+                BigDecimal un = new BigDecimal(1);
+                lastId = (BigDecimal) dernierId;
+                lastId = lastId.add(un);
+                appScope.put("idutilisateurbean", lastId);
+            }
+
+            setExpressionValue("#{bindings.Idutilisateur.inputValue}", lastId);
+        }
+        
+        operationBinding = bindings.getOperationBinding("Commit");
         Object result = operationBinding.execute();
         if (!operationBinding.getErrors().isEmpty()) {
             return null;

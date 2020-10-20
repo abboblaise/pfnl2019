@@ -92,6 +92,25 @@
                             </af:showDetailItem>
                             <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
                                 <af:panelGridLayout id="pgl2">
+                                
+                                <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2ido">
+                                            <af:inputText visible="false" value="#{bindings.Idcategorieproduit.inputValue}"
+                                                          required="#{bindings.Idcategorieproduit.hints.mandatory}"
+                                                          columns="#{bindings.Idcategorieproduit.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Idcategorieproduit.hints.precision}"
+                                                          shortDesc="#{bindings.Idcategorieproduit.hints.tooltip}"
+                                                          id="it1">
+                                                <f:validator binding="#{bindings.Idcategorieproduit.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Idcategorieproduit.format}"/>
+                                            </af:inputText>
+                                        </af:gridCell>
+                                        </af:gridRow>
+                                
                                     <af:gridRow marginTop="5px" height="auto" id="gr1">
                                         <af:gridCell marginStart="5px" id="gc1">
                                             <af:outputText value="#{bindings.Libellecategorie.hints.label}" id="ot6"/>

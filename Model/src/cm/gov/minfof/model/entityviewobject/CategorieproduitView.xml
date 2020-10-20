@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="CategorieproduitView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="false"
@@ -18,7 +18,9 @@
        Categorieproduit.codecategorie, 
        Categorieproduit.observation, 
        Categorieproduit.quotas"
-  FromList="categorieproduit Categorieproduit">
+  FromList="categorieproduit Categorieproduit"
+  FetchMode="FETCH_ALL"
+  OrderBy="Categorieproduit.idcategorieproduit">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
   </DesignTime>

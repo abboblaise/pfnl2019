@@ -4,11 +4,12 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="DepartementsView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="true"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  FetchMode="FETCH_ALL">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>

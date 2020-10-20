@@ -36,6 +36,14 @@
               id="DetailpermisView6Iterator1"/>
     <iterator Binds="getLibelleProduitComplet1" RangeSize="-1" DataControl="AppModuleDataControl"
               id="getLibelleProduitComplet1Iterator"/>
+    <iterator Binds="getExportDocumentsOfficiels1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="getExportDocumentsOfficiels1Iterator"/>
+    <searchRegion Binds="getExportDocumentsOfficiels1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="getExportDocumentsOfficiels1Query"/>
+    <iterator id="getLastidPermis1Iterator" Binds="getLastidPermis1" DataControl="AppModuleDataControl" RangeSize="25"/>
+    <iterator id="getLatsidDetailpermis1Iterator" Binds="getLatsidDetailpermis1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PermisView1Iterator" id="Numeropermis">
@@ -251,6 +259,8 @@
           <Item Value="Idpartieproduitpfnl"/>
           <Item Value="Idregions"/>
           <Item Value="idunitemesureconsultation"/>
+          <Item Value="Iddepartements" Binds="Iddepartements"/>
+          <Item Value="nomdudepartement"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -279,5 +289,32 @@
         <Item Value="Idpartieproduitpfnlconsultation"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="getExportDocumentsOfficiels1Iterator" id="getExportDocumentsOfficiels1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.getExportDocumentsOfficiels"
+                      Name="getExportDocumentsOfficiels10">
+        <AttrNames>
+          <Item Value="Idpermis"/>
+          <Item Value="Numeropermis"/>
+          <Item Value="Zonecoupe"/>
+          <Item Value="Datedelivrance"/>
+          <Item Value="Datefin"/>
+          <Item Value="Observation"/>
+          <Item Value="Idagrement"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Nomfichier"/>
+          <Item Value="Cheminfichier"/>
+          <Item Value="Typefichier"/>
+          <Item Value="Idtypedocument"/>
+          <Item Value="Iddetailpermis"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Idpartieproduitpfnl"/>
+          <Item Value="Quantite"/>
+          <Item Value="Idregions"/>
+          <Item Value="Iddepartements"/>
+          <Item Value="Nomouraisonsociale"/>
+          <Item Value="Libelleunitemesure"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

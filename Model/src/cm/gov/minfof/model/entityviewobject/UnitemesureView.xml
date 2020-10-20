@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="UnitemesureView"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -16,7 +16,8 @@
   ComponentClass="cm.gov.minfof.model.entityviewobject.UnitemesureViewImpl"
   SdoGen="true"
   SdoName="cm.gov.minfof.model.entityviewobject.common.UnitemesureViewSDO"
-  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/">
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/"
+  FetchMode="FETCH_ALL">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
   </DesignTime>
@@ -211,4 +212,9 @@
     Type="oracle.jbo.RowIterator"
     Reversed="true"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="Idunitemesure"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

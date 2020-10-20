@@ -4,13 +4,14 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="PartiesProduitPfnlComplet"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="true"
   RowClass="cm.gov.minfof.model.entity.PartiesProduitPfnlCompletRowImpl"
   ComponentClass="cm.gov.minfof.model.entity.PartiesProduitPfnlCompletImpl"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  FetchMode="FETCH_ALL">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Coll"/>
     <Attr Name="_isExpertMode" Value="true"/>
@@ -22,7 +23,7 @@
         ResId="cm.gov.minfof.model.entity.PartiesProduitPfnlComplet_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[select pa.*, pr.*, pre.* from partiesproduitspfnl pa, produitspfnl pr, partiesrecoltees pre where pr.idproduitspfnl=pa.idproduitspfnl and pa.idpartiesrecoltees=pre.idpartiesrecoltees]]></SQLQuery>
+  <SQLQuery><![CDATA[select pa.idpartiesproduitspfnl, pa.idunitemesure, pa.idunitemesureexport, pr.*, pre.* from partiesproduitspfnl pa, produitspfnl pr, partiesrecoltees pre where pr.idproduitspfnl=pa.idproduitspfnl and pa.idpartiesrecoltees=pre.idpartiesrecoltees]]></SQLQuery>
   <ViewAttribute
     Name="Idpartiesproduitspfnl"
     IsUpdateable="false"
@@ -32,34 +33,6 @@
     ColumnType="BIGINT"
     AliasName="idpartiesproduitspfnl"
     Expression="idpartiesproduitspfnl"
-    SQLType="NUMERIC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="20"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="Idpartiesrecoltees"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.math.BigDecimal"
-    ColumnType="BIGINT"
-    AliasName="idpartiesrecoltees"
-    Expression="idpartiesrecoltees"
-    SQLType="NUMERIC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="20"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="Idproduitspfnl"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.math.BigDecimal"
-    ColumnType="BIGINT"
-    AliasName="idproduitspfnl"
-    Expression="idproduitspfnl"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
@@ -94,7 +67,7 @@
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="Idproduitspfnl1"
+    Name="Idproduitspfnl"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
@@ -211,7 +184,7 @@
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="Idpartiesrecoltees1"
+    Name="Idpartiesrecoltees"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"

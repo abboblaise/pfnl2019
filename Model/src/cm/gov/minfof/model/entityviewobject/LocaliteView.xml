@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="LocaliteView"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -132,4 +132,9 @@
     Type="cm.gov.minfof.model.entityviewobject.PostecontroleViewRowImpl"
     Reversed="true"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="Idlocalite"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

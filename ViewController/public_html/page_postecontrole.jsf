@@ -146,6 +146,24 @@
                                             </af:gridCell>
                                         </af:gridRow> -->
                                         
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2ido">
+                                                <af:inputText visible="false" value="#{bindings.Idpostecontrole1.inputValue}"
+                                                              required="#{bindings.Idpostecontrole1.hints.mandatory}"
+                                                              columns="#{bindings.Idpostecontrole1.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Idpostecontrole1.hints.precision}"
+                                                              shortDesc="#{bindings.Idpostecontrole1.hints.tooltip}"
+                                                              id="it3">
+                                                    <f:validator binding="#{bindings.Idpostecontrole1.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Idpostecontrole1.format}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        
                                         <af:gridRow marginTop="5px" height="auto" id="gr2">
                                             <af:gridCell marginStart="5px" width="auto" id="gc3">
                                                 <af:selectOneChoice value="#{bindings.RegionView1.inputValue}"
@@ -279,51 +297,103 @@
                             <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.EXPORTATION}">
                             <af:spacer width="10" height="10" id="s15"/>
                                 <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b13">
-                                    <af:exportCollectionActionListener type="excelHTML" filename="localites.xls"
+                                    <af:exportCollectionActionListener type="excelHTML" filename="postecontrole.xls"
                                                                      exportedId="pc3:t2"/>
                                 </af:button>
                                 <af:panelCollection id="pc3" inlineStyle="width:637px;">
                                     <f:facet name="menus"/>
                                     <f:facet name="toolbar"/>
-                                    <af:table value="#{bindings.LocaliteView12.collectionModel}" var="row"
-                                              rows="#{bindings.LocaliteView12.rangeSize}"
-                                              emptyText="#{bindings.LocaliteView12.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                              rowBandingInterval="0" fetchSize="#{bindings.LocaliteView12.rangeSize}"
-                                              filterModel="#{bindings.LocaliteView11Query.queryDescriptor}"
+                                    <af:table value="#{bindings.PosteControleComplet1.collectionModel}" var="row"
+                                              rows="#{bindings.PosteControleComplet1.rangeSize}"
+                                              emptyText="#{bindings.PosteControleComplet1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.PosteControleComplet1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.PosteControleComplet1.collectionModel.makeCurrent}"
+                                              rowSelection="single"
+                                              fetchSize="#{bindings.PosteControleComplet1.rangeSize}"
+                                              filterModel="#{bindings.PosteControleComplet1Query.queryDescriptor}"
                                               filterVisible="true"
-                                              queryListener="#{bindings.LocaliteView11Query.processQuery}"
-                                              varStatus="vs" id="t2" partialTriggers=":::b8 :::b1 :::b2 :::b3 :::b4">
-                                        <af:column sortProperty="#{bindings.LocaliteView12.hints.Idlocalite.name}"
+                                              queryListener="#{bindings.PosteControleComplet1Query.processQuery}"
+                                              varStatus="vs" id="t2">
+                                        <af:column sortProperty="#{bindings.PosteControleComplet1.hints.Codeposte.name}"
                                                    filterable="true" sortable="true"
-                                                   headerText="#{bindings.LocaliteView12.hints.Idlocalite.label}"
+                                                   headerText="#{bindings.PosteControleComplet1.hints.Codeposte.label}"
                                                    id="c4">
-                                            <af:outputText value="#{row.Idlocalite}"
-                                                           shortDesc="#{bindings.LocaliteView12.hints.Idlocalite.tooltip}"
-                                                           id="ot5">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.LocaliteView12.hints.Idlocalite.format}"/>
-                                            </af:outputText>
+                                            <af:outputText value="#{row.Codeposte}"
+                                                           shortDesc="#{bindings.PosteControleComplet1.hints.Codeposte.tooltip}"
+                                                           id="ot5"/>
                                         </af:column>
-                                        <af:column sortProperty="#{bindings.LocaliteView12.hints.Idcommune.name}"
+                                        <af:column sortProperty="#{bindings.PosteControleComplet1.hints.Intituleposte.name}"
                                                    filterable="true" sortable="true"
-                                                   headerText="#{bindings.LocaliteView12.hints.Idcommune.label}"
+                                                   headerText="#{bindings.PosteControleComplet1.hints.Intituleposte.label}"
                                                    id="c5">
-                                            <af:selectOneChoice value="#{row.bindings.Idcommune.inputValue}"
-                                                                label="#{row.bindings.Idcommune.label}"
-                                                                required="#{bindings.LocaliteView12.hints.Idcommune.mandatory}"
-                                                                shortDesc="#{bindings.LocaliteView12.hints.Idcommune.tooltip}"
-                                                                readOnly="true" id="soc3">
-                                                <f:selectItems value="#{row.bindings.Idcommune.items}" id="si3"/>
-                                                <f:validator binding="#{row.bindings.Idcommune.validator}"/>
-                                            </af:selectOneChoice>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.LocaliteView12.hints.Nomlocalite.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.LocaliteView12.hints.Nomlocalite.label}"
-                                                   id="c6">
-                                            <af:outputText value="#{row.Nomlocalite}"
-                                                           shortDesc="#{bindings.LocaliteView12.hints.Nomlocalite.tooltip}"
+                                            <af:outputText value="#{row.Intituleposte}"
+                                                           shortDesc="#{bindings.PosteControleComplet1.hints.Intituleposte.tooltip}"
                                                            id="ot6"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PosteControleComplet1.hints.Codecommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PosteControleComplet1.hints.Codecommune.label}"
+                                                   id="c6">
+                                            <af:outputText value="#{row.Codecommune}"
+                                                           shortDesc="#{bindings.PosteControleComplet1.hints.Codecommune.tooltip}"
+                                                           id="ot7"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PosteControleComplet1.hints.Nomcommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PosteControleComplet1.hints.Nomcommune.label}"
+                                                   id="c9">
+                                            <af:outputText value="#{row.Nomcommune}"
+                                                           shortDesc="#{bindings.PosteControleComplet1.hints.Nomcommune.tooltip}"
+                                                           id="ot8"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PosteControleComplet1.hints.Codedepartement.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PosteControleComplet1.hints.Codedepartement.label}"
+                                                   id="c10">
+                                            <af:outputText value="#{row.Codedepartement}"
+                                                           shortDesc="#{bindings.PosteControleComplet1.hints.Codedepartement.tooltip}"
+                                                           id="ot9"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PosteControleComplet1.hints.Nomdepartement.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PosteControleComplet1.hints.Nomdepartement.label}"
+                                                   id="c11">
+                                            <af:outputText value="#{row.Nomdepartement}"
+                                                           shortDesc="#{bindings.PosteControleComplet1.hints.Nomdepartement.tooltip}"
+                                                           id="ot10"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PosteControleComplet1.hints.Nomcheflieu.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PosteControleComplet1.hints.Nomcheflieu.label}"
+                                                   id="c12">
+                                            <af:outputText value="#{row.Nomcheflieu}"
+                                                           shortDesc="#{bindings.PosteControleComplet1.hints.Nomcheflieu.tooltip}"
+                                                           id="ot11"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PosteControleComplet1.hints.Coderegion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PosteControleComplet1.hints.Coderegion.label}"
+                                                   id="c13">
+                                            <af:outputText value="#{row.Coderegion}"
+                                                           shortDesc="#{bindings.PosteControleComplet1.hints.Coderegion.tooltip}"
+                                                           id="ot12"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PosteControleComplet1.hints.Nomregion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PosteControleComplet1.hints.Nomregion.label}"
+                                                   id="c14">
+                                            <af:outputText value="#{row.Nomregion}"
+                                                           shortDesc="#{bindings.PosteControleComplet1.hints.Nomregion.tooltip}"
+                                                           id="ot13"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.PosteControleComplet1.hints.Cheflieuregion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.PosteControleComplet1.hints.Cheflieuregion.label}"
+                                                   id="c15">
+                                            <af:outputText value="#{row.Cheflieuregion}"
+                                                           shortDesc="#{bindings.PosteControleComplet1.hints.Cheflieuregion.tooltip}"
+                                                           id="ot14"/>
                                         </af:column>
                                     </af:table>
                                 </af:panelCollection>

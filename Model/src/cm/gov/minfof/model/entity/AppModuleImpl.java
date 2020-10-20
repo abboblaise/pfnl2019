@@ -22,6 +22,7 @@ import cm.gov.minfof.model.entityviewobject.OriginespnflsViewImpl;
 import cm.gov.minfof.model.entityviewobject.PaysViewImpl;
 import cm.gov.minfof.model.entityviewobject.PermisViewImpl;
 import cm.gov.minfof.model.entityviewobject.PermissionnairespnflViewImpl;
+import cm.gov.minfof.model.entityviewobject.PosteControleCompletImpl;
 import cm.gov.minfof.model.entityviewobject.PostecontroleViewImpl;
 
 import cm.gov.minfof.model.entityviewobject.RegionViewImpl;
@@ -33,6 +34,7 @@ import cm.gov.minfof.model.entityviewobject.UtilisateurViewImpl;
 import cm.gov.minfof.model.entityviewobject.VehiculeViewImpl;
 import cm.gov.minfof.model.entityviewobject.gestLastIdUnitMesureImpl;
 import cm.gov.minfof.model.entityviewobject.getCodeSigifPosteControleImpl;
+import cm.gov.minfof.model.entityviewobject.getExportDocumentsOfficielsImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIcCollecteImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIdCategorieUniteMesureImpl;
 import cm.gov.minfof.model.entityviewobject.getLastIdCommunesImpl;
@@ -55,6 +57,7 @@ import cm.gov.minfof.model.entityviewobject.listeQualitePermissionnaireImpl;
 import cm.gov.minfof.model.entityviewobject.listeSexeImpl;
 import cm.gov.minfof.model.entityviewobject.listeStatutPermissionnaireImpl;
 import cm.gov.minfof.model.entityviewobject.listeTypePersonneImpl;
+import cm.gov.minfof.model.entityviewobject.localiteCompletImpl;
 import cm.gov.minfof.model.entityviewobject.permisActifViewImpl;
 import cm.gov.minfof.model.entityviewobject.typeDocViewFinalImpl;
 import cm.gov.minfof.model.entityviewobject.typeDocumentViewImpl;
@@ -5108,6 +5111,30 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public ViewLinkImpl getRegionToCollecteLink1() {
         return (ViewLinkImpl) findViewLink("RegionToCollecteLink1");
+    }
+
+    /**
+     * Container's getter for PosteControleComplet1.
+     * @return PosteControleComplet1
+     */
+    public PosteControleCompletImpl getPosteControleComplet1() {
+        return (PosteControleCompletImpl) findViewObject("PosteControleComplet1");
+    }
+
+    /**
+     * Container's getter for localiteComplet1.
+     * @return localiteComplet1
+     */
+    public localiteCompletImpl getlocaliteComplet1() {
+        return (localiteCompletImpl) findViewObject("localiteComplet1");
+    }
+
+    /**
+     * Container's getter for getExportDocumentsOfficiels1.
+     * @return getExportDocumentsOfficiels1
+     */
+    public getExportDocumentsOfficielsImpl getgetExportDocumentsOfficiels1() {
+        return (getExportDocumentsOfficielsImpl) findViewObject("getExportDocumentsOfficiels1");
     }
 }
 

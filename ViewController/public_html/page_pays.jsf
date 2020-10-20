@@ -10,8 +10,8 @@
         <af:resource source="style/jquery.growl.css" type="css"/>
         <af:messages id="m1"/>
         <af:form id="f1">
-        <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
-        <f:facet name="content">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
                     <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_PAYS}" id="pb3" showDisclosure="false">
                         <f:facet name="toolbar">
                             <af:panelGroupLayout id="pgl4">
@@ -48,8 +48,8 @@
                                               filterVisible="true"
                                               queryListener="#{bindings.PaysView1Query.processQuery}" varStatus="vs"
                                               id="t1"
-                                              partialTriggers=":::b2 :::b3 :::b1 :::b5 :::b6 :::b7 :::b8 :::b9 :::b4" editingMode="readOnly"
-                                              autoHeightRows="14" contentDelivery="immediate">
+                                              partialTriggers=":::b2 :::b3 :::b1 :::b5 :::b6 :::b7 :::b8 :::b9 :::b4"
+                                              editingMode="readOnly" autoHeightRows="14" contentDelivery="immediate">
                                         <af:column sortProperty="#{bindings.PaysView1.hints.Idpays.name}"
                                                    filterable="true" sortable="true"
                                                    headerText="#{bindings.PaysView1.hints.Idpays.label}" id="c1"
@@ -83,8 +83,23 @@
                             <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
                                 <af:panelBox id="pb1" showDisclosure="false">
                                     <f:facet name="toolbar"/>
-                                    
                                     <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2ido">
+                                                <af:inputText visible="false" value="#{bindings.Idpays.inputValue}"
+                                                              required="#{bindings.Idpays.hints.mandatory}"
+                                                              columns="#{bindings.Idpays.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Idpays.hints.precision}"
+                                                              shortDesc="#{bindings.Idpays.hints.tooltip}" id="it1">
+                                                    <f:validator binding="#{bindings.Idpays.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Idpays.format}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
                                         <af:gridRow marginTop="5px" height="auto" id="gr1">
                                             <af:gridCell marginStart="5px" width="auto" id="gc1">
                                                 <h:outputLabel value="#{bindings.Nompays.hints.label}" id="ol1"/>
@@ -126,7 +141,8 @@
                                                                partialSubmit="true" id="b6"/>
                                                     <af:spacer width="10" height="10" id="s4"/>
                                                     <af:button actionListener="#{bindings.Previous.execute}"
-                                                               text="#{viewcontrollerBundle.PREVIOUS}" disabled="#{!bindings.Previous.enabled}"
+                                                               text="#{viewcontrollerBundle.PREVIOUS}"
+                                                               disabled="#{!bindings.Previous.enabled}"
                                                                partialSubmit="true" id="b7"/>
                                                     <af:spacer width="10" height="10" id="s6"/>
                                                     <af:button actionListener="#{bindings.Next.execute}"
@@ -157,8 +173,7 @@
                                                     <af:button text="#{viewcontrollerBundle.SUPPRIMER}"
                                                                disabled="#{!bindings.Delete.enabled}" id="b3"
                                                                action="#{paysBean.supprimePays}" rendered="false"/>
-                                                    <af:button
-                                                               text="#{viewcontrollerBundle.ANNULER}" immediate="true"
+                                                    <af:button text="#{viewcontrollerBundle.ANNULER}" immediate="true"
                                                                id="b4" action="#{paysBean.annulerPays}">
                                                         <af:resetActionListener/>
                                                     </af:button>
@@ -166,7 +181,6 @@
                                             </af:gridCell>
                                         </af:gridRow>
                                     </af:panelGridLayout>
-                                    
                                 </af:panelBox>
                             </af:showDetailItem>
                         </af:panelTabbed>

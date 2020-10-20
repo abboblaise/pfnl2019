@@ -77,7 +77,7 @@
     EntityAttrName="Idproduitspfnl"
     EntityUsage="ProduitsPfnl"
     AliasName="idproduitspfnl"
-    IsUpdateable="while_insert"/>
+    DefaultValue="-1"/>
   <ViewAttribute
     Name="Nomscientifique"
     PrecisionRule="true"
@@ -167,4 +167,9 @@
     ViewLink="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc19Link"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="Idproduitspfnl"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

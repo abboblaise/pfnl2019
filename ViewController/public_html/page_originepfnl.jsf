@@ -90,6 +90,25 @@
                                 <af:panelBox id="pb1" showDisclosure="false">
                                     <f:facet name="toolbar"/>
                                     <af:panelGridLayout id="pgl2">
+                                    
+                                     <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2ido">
+                                                <af:inputText visible="false" value="#{bindings.Idoriginespnfls.inputValue}"
+                                                              required="#{bindings.Idoriginespnfls.hints.mandatory}"
+                                                              columns="#{bindings.Idoriginespnfls.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Idoriginespnfls.hints.precision}"
+                                                              shortDesc="#{bindings.Idoriginespnfls.hints.tooltip}"
+                                                              id="it1">
+                                                    <f:validator binding="#{bindings.Idoriginespnfls.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Idoriginespnfls.format}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    
                                         <af:gridRow marginTop="5px" height="auto" id="gr2">
                                             <af:gridCell marginStart="5px" width="auto" id="gc3">
                                                 <af:outputLabel value="#{bindings.Originepnfl.label}" id="ol2"/>

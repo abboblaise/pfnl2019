@@ -25,8 +25,7 @@
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
     TableName="partiesproduitspfnl"
-    PrimaryKey="true"
-    IsUpdateable="while_insert">
+    PrimaryKey="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="19"/>
     </DesignTime>

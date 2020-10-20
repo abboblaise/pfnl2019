@@ -7,6 +7,8 @@
     <iterator Binds="RegionView1" DataControl="AppModuleDataControl" id="RegionView1Iterator" RangeSize="25"/>
     <searchRegion Binds="RegionView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="RegionView1Query"/>
+    <iterator id="getLastIdRegions1Iterator" Binds="getLastIdRegions1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="RegionView1Iterator" id="Coderegion">
@@ -53,6 +55,11 @@
     <attributeValues IterBinding="RegionView1Iterator" id="Abreviationregion">
       <AttrNames>
         <Item Value="Abreviationregion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RegionView1Iterator" id="Idregions">
+      <AttrNames>
+        <Item Value="Idregions"/>
       </AttrNames>
     </attributeValues>
   </bindings>

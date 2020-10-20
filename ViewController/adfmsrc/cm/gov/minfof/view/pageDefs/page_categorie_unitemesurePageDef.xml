@@ -8,6 +8,8 @@
               id="CategorieunitemesureView1Iterator"/>
     <searchRegion Binds="CategorieunitemesureView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CategorieunitemesureView1Query"/>
+    <iterator id="getLastIdCategorieUniteMesure1Iterator" Binds="getLastIdCategorieUniteMesure1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CategorieunitemesureView1Iterator" id="Libellecategorie">
@@ -34,5 +36,10 @@
     <action IterBinding="CategorieunitemesureView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="CategorieunitemesureView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <attributeValues IterBinding="CategorieunitemesureView1Iterator" id="Idcategorieunitemesure">
+      <AttrNames>
+        <Item Value="Idcategorieunitemesure"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

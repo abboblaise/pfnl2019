@@ -26,7 +26,7 @@
     ColumnType="BIGINT"
     TableName="produitspfnl"
     PrimaryKey="true"
-    IsUpdateable="while_insert">
+    DefaultValue="-1">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="19"/>
     </DesignTime>

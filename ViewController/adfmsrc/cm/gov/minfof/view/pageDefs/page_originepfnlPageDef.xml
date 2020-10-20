@@ -8,6 +8,8 @@
               id="OriginespnflsView1Iterator"/>
     <searchRegion Binds="OriginespnflsView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="OriginespnflsView1Query"/>
+    <iterator id="getLastIdOriginePfnl1Iterator" Binds="getLastIdOriginePfnl1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="OriginespnflsView1Iterator" id="Nomsource">
@@ -35,5 +37,10 @@
     <action IterBinding="OriginespnflsView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="OriginespnflsView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="OriginespnflsView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="OriginespnflsView1Iterator" id="Idoriginespnfls">
+      <AttrNames>
+        <Item Value="Idoriginespnfls"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

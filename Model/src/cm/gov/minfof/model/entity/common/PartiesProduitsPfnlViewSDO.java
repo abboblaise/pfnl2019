@@ -34,13 +34,13 @@ public interface PartiesProduitsPfnlViewSDO extends java.io.Serializable {
 
    public void setProduitsPfnlView(java.util.List value);
 
-   public java.util.List getUnitemesureView();
-
-   public void setUnitemesureView(java.util.List value);
-
    public cm.gov.minfof.model.entityviewobject.common.UnitemesureViewSDO getUnitemesureView1();
 
    public void setUnitemesureView1(cm.gov.minfof.model.entityviewobject.common.UnitemesureViewSDO value);
+
+   public java.util.List getUnitemesureView();
+
+   public void setUnitemesureView(java.util.List value);
 
 
 }

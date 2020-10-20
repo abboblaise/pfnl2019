@@ -27,7 +27,7 @@
                             <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.DONN_U00E9ES_BRUTES}"
                                                disclosed="true">
                                 <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b2">
-                                    <af:exportCollectionActionListener type="excelHTML" exportedId="resId1"/>
+                                    <af:exportCollectionActionListener type="excelHTML" exportedId="resId1" filename="lettrevoiture.xls"/>
                                 </af:button>
                                 <af:spacer width="10" height="10" id="s4"/>
                                 <af:table value="#{bindings.LettreVoitureMultiCritere1.collectionModel}" var="row"

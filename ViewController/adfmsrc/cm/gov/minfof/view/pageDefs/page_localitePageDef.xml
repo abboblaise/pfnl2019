@@ -13,6 +13,11 @@
     <iterator Binds="PostecontroleView2" RangeSize="25" DataControl="AppModuleDataControl"
               id="PostecontroleView2Iterator"/>
     <iterator Binds="LocaliteView9" RangeSize="25" DataControl="AppModuleDataControl" id="LocaliteView9Iterator"/>
+    <iterator Binds="localiteComplet1" RangeSize="25" DataControl="AppModuleDataControl" id="localiteComplet1Iterator"/>
+    <searchRegion Binds="localiteComplet1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="localiteComplet1Query"/>
+    <iterator id="getLastidLocalite1Iterator" Binds="getLastidLocalite1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
   </executables>
   <bindings>
     <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
@@ -88,5 +93,27 @@
     <action IterBinding="LocaliteView9Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="LocaliteView9Iterator" id="CreateInsert" InstanceName="AppModuleDataControl.LocaliteView9"
             DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="localiteComplet1Iterator" id="localiteComplet1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.localiteComplet" Name="localiteComplet10">
+        <AttrNames>
+          <Item Value="Nomlocalite"/>
+          <Item Value="Codeposte"/>
+          <Item Value="Intituleposte"/>
+          <Item Value="Codecommune"/>
+          <Item Value="Nomcommune"/>
+          <Item Value="Codedepartement"/>
+          <Item Value="Nomdepartement"/>
+          <Item Value="Nomcheflieu"/>
+          <Item Value="Coderegion"/>
+          <Item Value="Nomregion"/>
+          <Item Value="Cheflieuregion"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="LocaliteView9Iterator" id="Idlocalite">
+      <AttrNames>
+        <Item Value="Idlocalite"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

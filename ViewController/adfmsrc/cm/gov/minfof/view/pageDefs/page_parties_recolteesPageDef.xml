@@ -8,6 +8,8 @@
               id="PartiesRecolteesView1Iterator"/>
     <searchRegion Binds="PartiesRecolteesView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PartiesRecolteesView1Query"/>
+    <iterator id="getLastIdPartiesRecoltees1Iterator" Binds="getLastIdPartiesRecoltees1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PartiesRecolteesView1Iterator" id="Nompartierecoltee">
@@ -33,5 +35,10 @@
     <action IterBinding="PartiesRecolteesView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="PartiesRecolteesView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="PartiesRecolteesView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="PartiesRecolteesView1Iterator" id="Idpartiesrecoltees">
+      <AttrNames>
+        <Item Value="Idpartiesrecoltees"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

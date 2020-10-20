@@ -80,6 +80,25 @@
                                 <af:panelBox id="pb4" showDisclosure="false" inlineStyle="height:160px; width:651px;">
                                     <f:facet name="toolbar"/>
                                     <af:panelGridLayout id="pgl2">
+                                    
+                                    <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2ido">
+                                                <af:inputText visible="false" value="#{bindings.Idpartiesrecoltees.inputValue}"
+                                                              required="#{bindings.Idpartiesrecoltees.hints.mandatory}"
+                                                              columns="#{bindings.Idpartiesrecoltees.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Idpartiesrecoltees.hints.precision}"
+                                                              shortDesc="#{bindings.Idpartiesrecoltees.hints.tooltip}"
+                                                              id="it1">
+                                                    <f:validator binding="#{bindings.Idpartiesrecoltees.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Idpartiesrecoltees.format}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    
                                         <af:gridRow marginTop="5px" height="auto" id="gr1">
                                             <af:gridCell marginStart="5px" width="150px" id="gc1">
                                                 <af:outputLabel value="#{bindings.Nompartierecoltee.hints.label}" id="ol1"/>

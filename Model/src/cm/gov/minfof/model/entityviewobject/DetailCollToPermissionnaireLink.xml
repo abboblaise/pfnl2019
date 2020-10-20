@@ -4,7 +4,7 @@
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="DetailCollToPermissionnaireLink"
-  Version="12.2.1.20.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   EntityAssociation="cm.gov.minfof.model.entity.DetailCollToPermissionnaireAssoc">
   <Properties>

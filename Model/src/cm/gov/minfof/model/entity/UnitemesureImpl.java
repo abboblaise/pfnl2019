@@ -434,12 +434,11 @@ public class UnitemesureImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        if (operation == DML_INSERT) {
-            System.out.println("actif = " + getActif());
-            BigDecimal id = getLastId("getLastIdUnitMesure1");
-            setIdunitemesure(id);
-        }
         super.doDML(operation, e);
+        /*      if (operation == DML_INSERT) {
+            BigDecimal id = getLastId("getLastIdCollectePfnl1");
+            setIdcollectepfnl(id);
+        } */
     }
     
     public BigDecimal getLastId(String viewName) {

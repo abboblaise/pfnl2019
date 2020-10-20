@@ -8,6 +8,8 @@
               id="CategorieproduitView1Iterator"/>
     <searchRegion Binds="CategorieproduitView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CategorieproduitView1Query"/>
+    <iterator id="getLastIdCategorieProduit1Iterator" Binds="getLastIdCategorieProduit1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CategorieproduitView1Iterator" id="Libellecategorie">
@@ -60,5 +62,10 @@
     <action IterBinding="CategorieproduitView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="CategorieproduitView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
+    <attributeValues IterBinding="CategorieproduitView1Iterator" id="Idcategorieproduit">
+      <AttrNames>
+        <Item Value="Idcategorieproduit"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

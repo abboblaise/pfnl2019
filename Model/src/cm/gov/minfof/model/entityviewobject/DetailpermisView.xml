@@ -227,7 +227,8 @@
     PrecisionRule="true"
     EntityAttrName="Iddetailpermis"
     EntityUsage="Detailpermis"
-    AliasName="iddetailpermis"/>
+    AliasName="iddetailpermis"
+    DefaultValue="-1"/>
   <ViewAttribute
     Name="Quantite"
     IsNotNull="true"

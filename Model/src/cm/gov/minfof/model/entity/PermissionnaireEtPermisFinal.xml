@@ -4,13 +4,14 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="PermissionnaireEtPermisFinal"
-  Version="12.2.1.12.24"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
   CustomQuery="true"
   RowClass="cm.gov.minfof.model.entity.PermissionnaireEtPermisFinalRowImpl"
   ComponentClass="cm.gov.minfof.model.entity.PermissionnaireEtPermisFinalImpl"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  FetchMode="FETCH_ALL">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Coll"/>
     <Attr Name="_isExpertMode" Value="true"/>
@@ -22,7 +23,7 @@
         ResId="cm.gov.minfof.model.entity.PermissionnaireEtPermisFinal_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[select pm.*, pmi.* from permis pm, permissionnairespnfl pmi where pm.idpermissionnaire=pmi.IDPermissionnairesPNFL]]></SQLQuery>
+  <SQLQuery><![CDATA[select pm.*,pmi.* from permis pm, permissionnairespnfl pmi where pm.idpermissionnaire=pmi.IDPermissionnairesPNFL]]></SQLQuery>
   <ViewAttribute
     Name="Idpermis"
     IsUpdateable="false"
@@ -176,6 +177,20 @@
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
+    Name="Idtypedocument"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idtypedocument"
+    Expression="idtypedocument"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
     Name="Nomouraisonsociale"
     IsUpdateable="false"
     IsPersistent="false"
@@ -199,7 +214,7 @@
     ColumnType="TINYINT"
     AliasName="statut"
     Expression="statut"
-    SQLType="TINYINT">
+    SQLType="INTEGER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4"/>
     </DesignTime>
@@ -331,7 +346,7 @@
     ColumnType="TINYINT"
     AliasName="Qualite"
     Expression="Qualite"
-    SQLType="TINYINT">
+    SQLType="INTEGER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4"/>
     </DesignTime>
@@ -375,7 +390,7 @@
     ColumnType="TINYINT"
     AliasName="typepersonne"
     Expression="typepersonne"
-    SQLType="TINYINT">
+    SQLType="INTEGER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4"/>
     </DesignTime>
@@ -404,7 +419,7 @@
     ColumnType="TINYINT"
     AliasName="Sexe"
     Expression="Sexe"
-    SQLType="TINYINT">
+    SQLType="INTEGER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4"/>
     </DesignTime>
@@ -418,7 +433,7 @@
     ColumnType="TINYINT"
     AliasName="Qualiteexploitant"
     Expression="Qualiteexploitant"
-    SQLType="TINYINT">
+    SQLType="INTEGER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4"/>
     </DesignTime>

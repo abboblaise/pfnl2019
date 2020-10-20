@@ -126,6 +126,27 @@
                                     <f:facet name="toolbar"/>
                                     
                                     <af:panelGridLayout id="pgl2">
+                                    
+                                    <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                                    <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                        <af:outputLabel value=""
+                                                                        id="ol11"/>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
+                                                                 id="gc2ido">
+                                                <af:inputText visible="false" value="#{bindings.Iddepartements.inputValue}"
+                                                              required="#{bindings.Iddepartements.hints.mandatory}"
+                                                              columns="#{bindings.Iddepartements.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Iddepartements.hints.precision}"
+                                                              shortDesc="#{bindings.Iddepartements.hints.tooltip}"
+                                                              id="it4">
+                                                    <f:validator binding="#{bindings.Iddepartements.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Iddepartements.format}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                                </af:gridRow>
+                                    
                                         <af:gridRow marginTop="10px" height="auto" id="gr1">
                                             <af:gridCell marginStart="5px" width="auto" id="gc1">
                                                 <af:outputLabel value="#{bindings.RegionView1.label}" id="ol1"/>

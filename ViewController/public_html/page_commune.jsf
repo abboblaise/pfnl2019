@@ -9,9 +9,10 @@
         <af:resource source="style/jquery.growl.css" type="css"/>
         <af:messages id="m1"/>
         <af:form id="f1">
-        <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
-        <f:facet name="content">
-                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_ARRONDISSEMENTS}" id="pb3" showDisclosure="false">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelBox text="#{viewcontrollerBundle.EDITION_DES_ARRONDISSEMENTS}" id="pb3"
+                                 showDisclosure="false">
                         <f:facet name="toolbar">
                             <af:panelGroupLayout id="pgl3">
                                 <af:button text="#{viewcontrollerBundle.ACTUALISER}" immediate="true" id="b6"
@@ -19,7 +20,9 @@
                                     <af:resetActionListener/>
                                 </af:button>
                                 <af:spacer width="10" height="10" id="s4"/>
-                                <mycomps:ConfirmButton ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}" ButtonText="#{viewcontrollerBundle.SUPPRIMER}" id="cb1" onDialogReturn="#{communeBean.onDeleteCommune}">
+                                <mycomps:ConfirmButton ConfirmationMessage="#{viewcontrollerBundle.VOULEZ_VOUS_VRAIMENT_SUPPRIMER_}"
+                                                       ButtonText="#{viewcontrollerBundle.SUPPRIMER}" id="cb1"
+                                                       onDialogReturn="#{communeBean.onDeleteCommune}">
                                     <f:facet name="DialogContent"/>
                                 </mycomps:ConfirmButton>
                                 <af:button text="#{viewcontrollerBundle.SUPPRIMER}"
@@ -66,7 +69,8 @@
                                               filterModel="#{bindings.CommuneView5Query.queryDescriptor}"
                                               filterVisible="true"
                                               queryListener="#{bindings.CommuneView5Query.processQuery}" varStatus="vs"
-                                              id="t1" partialTriggers=":::b2 :::b4 :::b7 :::b8 :::b9 :::b10" autoHeightRows="8">
+                                              id="t1" partialTriggers=":::b2 :::b4 :::b7 :::b8 :::b9 :::b10"
+                                              autoHeightRows="8">
                                         <af:column sortProperty="#{bindings.CommuneView5.hints.Idcommunes.name}"
                                                    filterable="true" sortable="true"
                                                    headerText="#{bindings.CommuneView5.hints.Idcommunes.label}" id="c1"
@@ -124,6 +128,22 @@
                                 <af:panelBox id="pb2" showDisclosure="false">
                                     <f:facet name="toolbar"/>
                                     <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="320pt" marginEnd="5px" id="gc2ido">
+                                                <af:inputText visible="false" value="#{bindings.Idcommunes.inputValue}"
+                                                              required="#{bindings.Idcommunes.hints.mandatory}"
+                                                              columns="#{bindings.Idcommunes.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Idcommunes.hints.precision}"
+                                                              shortDesc="#{bindings.Idcommunes.hints.tooltip}" id="it4">
+                                                    <f:validator binding="#{bindings.Idcommunes.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Idcommunes.format}"/>
+                                                </af:inputText>
+                                            </af:gridCell>
+                                        </af:gridRow>
                                         <af:gridRow id="gr6" marginTop="5px">
                                             <af:gridCell id="gc9">
                                                 <af:outputText value="#{bindings.RegionView1.label}" id="ot5"/>
@@ -196,7 +216,8 @@
                                                                partialSubmit="true" id="b7"/>
                                                     <af:spacer width="10" height="10" id="s3"/>
                                                     <af:button actionListener="#{bindings.Previous.execute}"
-                                                               text="#{viewcontrollerBundle.PREVIOUS}" disabled="#{!bindings.Previous.enabled}"
+                                                               text="#{viewcontrollerBundle.PREVIOUS}"
+                                                               disabled="#{!bindings.Previous.enabled}"
                                                                partialSubmit="true" id="b8"/>
                                                     <af:spacer width="10" height="10" id="s12"/>
                                                     <af:button actionListener="#{bindings.Next.execute}"

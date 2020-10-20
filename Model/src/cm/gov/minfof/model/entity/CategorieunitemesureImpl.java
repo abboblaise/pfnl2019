@@ -171,11 +171,11 @@ public class CategorieunitemesureImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        if (operation == DML_INSERT) {
-            BigDecimal id = getLastId("getLastIdCategorieUniteMesure1");
-            setIdcategorieunitemesure(id);
-        }
         super.doDML(operation, e);
+        /*      if (operation == DML_INSERT) {
+            BigDecimal id = getLastId("getLastIdCollectePfnl1");
+            setIdcollectepfnl(id);
+        } */
     }
     
     public BigDecimal getLastId(String viewName) {

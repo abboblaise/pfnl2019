@@ -125,6 +125,25 @@
                                         <af:panelBox id="pb2" showDisclosure="false">
                                             <f:facet name="toolbar"/>
                                             <af:panelGridLayout id="pgl3">
+                                            
+                                            <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc1ido">
+                                                <af:outputLabel value="" id="ol11"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc2ido">
+                                                        <af:inputText visible="false" value="#{bindings.Idproduitspfnl.inputValue}"
+                                                                      required="#{bindings.Idproduitspfnl.hints.mandatory}"
+                                                                      columns="#{bindings.Idproduitspfnl.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Idproduitspfnl.hints.precision}"
+                                                                      shortDesc="#{bindings.Idproduitspfnl.hints.tooltip}"
+                                                                      id="it1">
+                                                            <f:validator binding="#{bindings.Idproduitspfnl.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Idproduitspfnl.format}"/>
+                                                        </af:inputText>
+                                                    </af:gridCell>
+                                            </af:gridRow>
+                                            
                                                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc1">
                                                         <af:outputText value="#{bindings.Idcategorie.label}" id="ot10"/>
@@ -291,7 +310,7 @@
                                                                        id="b1"
                                                                        actionListener="#{bindings.Commit.execute}"
                                                                        action="#{produitPfnl3.enregProduitPfnl}"
-                                                                       visible="false"/>
+                                                                       visible="true"/>
                                                             <af:spacer width="10" height="10" id="s2"/>
                                                             <af:button
                                                                        text="#{viewcontrollerBundle.ANNULER}"
@@ -497,6 +516,24 @@
                                         <af:panelBox id="pb4" showDisclosure="false">
                                             <f:facet name="toolbar"/>
                                             <af:panelGridLayout id="pgl6">
+                                            <af:gridRow marginTop="5px" height="auto" id="gr17">
+                                            <af:gridCell marginStart="5px" width="auto" id="gc29">
+                                                <af:outputLabel value="" id="ol1"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc30">
+                                                        <af:inputText visible="false" value="#{bindings.Idpartiesproduitspfnl.inputValue}"
+                                                                      required="#{bindings.Idpartiesproduitspfnl.hints.mandatory}"
+                                                                      columns="#{bindings.Idpartiesproduitspfnl.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Idpartiesproduitspfnl.hints.precision}"
+                                                                      shortDesc="#{bindings.Idpartiesproduitspfnl.hints.tooltip}"
+                                                                      id="it7">
+                                                            <f:validator binding="#{bindings.Idpartiesproduitspfnl.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Idpartiesproduitspfnl.format}"/>
+                                                        </af:inputText>
+                                                    </af:gridCell>
+                                        </af:gridRow>
+                                            
                                                 <af:gridRow marginTop="5px" height="auto" id="gr9">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc17">
                                                         <af:outputText value="#{bindings.Idpartiesrecoltees.label}" id="ot17"/>

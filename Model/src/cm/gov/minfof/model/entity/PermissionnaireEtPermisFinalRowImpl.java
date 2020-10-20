@@ -29,6 +29,7 @@ public class PermissionnaireEtPermisFinalRowImpl extends ViewRowImpl {
         Nomfichier,
         Cheminfichier,
         Typefichier,
+        Idtypedocument,
         Nomouraisonsociale,
         Statut,
         Siegesocial,
@@ -69,6 +70,8 @@ public class PermissionnaireEtPermisFinalRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
+
     public static final int IDPERMIS = AttributesEnum.Idpermis.index();
     public static final int NUMEROPERMIS = AttributesEnum.Numeropermis.index();
     public static final int ZONECOUPE = AttributesEnum.Zonecoupe.index();
@@ -80,6 +83,7 @@ public class PermissionnaireEtPermisFinalRowImpl extends ViewRowImpl {
     public static final int NOMFICHIER = AttributesEnum.Nomfichier.index();
     public static final int CHEMINFICHIER = AttributesEnum.Cheminfichier.index();
     public static final int TYPEFICHIER = AttributesEnum.Typefichier.index();
+    public static final int IDTYPEDOCUMENT = AttributesEnum.Idtypedocument.index();
     public static final int NOMOURAISONSOCIALE = AttributesEnum.Nomouraisonsociale.index();
     public static final int STATUT = AttributesEnum.Statut.index();
     public static final int SIEGESOCIAL = AttributesEnum.Siegesocial.index();
@@ -104,13 +108,6 @@ public class PermissionnaireEtPermisFinalRowImpl extends ViewRowImpl {
      */
     public PermissionnaireEtPermisFinalRowImpl() {
     }
-    
-    /**
-     * Gets the attribute value for numeropermis using the alias name Numeropermis.
-     * @return the numeropermis
-     */
-    public String getNumeropermis() {
-        return (String) getAttributeInternal(NUMEROPERMIS);
-    }
+
 }
 
