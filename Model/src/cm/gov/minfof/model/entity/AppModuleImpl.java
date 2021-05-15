@@ -5136,6 +5136,46 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
     public getExportDocumentsOfficielsImpl getgetExportDocumentsOfficiels1() {
         return (getExportDocumentsOfficielsImpl) findViewObject("getExportDocumentsOfficiels1");
     }
+
+    /**
+     * Container's getter for PermisView12.
+     * @return PermisView12
+     */
+    public PermisViewImpl getPermisView12() {
+        return (PermisViewImpl) findViewObject("PermisView12");
+    }
+
+    /**
+     * Container's getter for DetailpermisView7.
+     * @return DetailpermisView7
+     */
+    public DetailpermisViewImpl getDetailpermisView7() {
+        return (DetailpermisViewImpl) findViewObject("DetailpermisView7");
+    }
+
+    /**
+     * Container's getter for PermisToDetailsPermisLink.
+     * @return PermisToDetailsPermisLink
+     */
+    public ViewLinkImpl getPermisToDetailsPermisLink() {
+        return (ViewLinkImpl) findViewLink("PermisToDetailsPermisLink");
+    }
+
+    /**
+     * Container's getter for DetailpermisView8.
+     * @return DetailpermisView8
+     */
+    public DetailpermisViewImpl getDetailpermisView8() {
+        return (DetailpermisViewImpl) findViewObject("DetailpermisView8");
+    }
+
+    /**
+     * Container's getter for PermisToDetailsPermisLink1.
+     * @return PermisToDetailsPermisLink1
+     */
+    public ViewLinkImpl getPermisToDetailsPermisLink1() {
+        return (ViewLinkImpl) findViewLink("PermisToDetailsPermisLink1");
+    }
 }
 
 

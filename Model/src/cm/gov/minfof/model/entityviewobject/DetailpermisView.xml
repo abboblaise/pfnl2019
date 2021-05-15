@@ -78,6 +78,10 @@
     AMUsageName="AppModule"
     ViewInstanceName="getLibelleFixe1"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RegionView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.RegionView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Idpermis"
     ListVOName="PermisView1"
@@ -218,6 +222,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_Idregions"
+    ListVOName="RegionView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idregions"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idregions"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Detailpermis"
     Entity="cm.gov.minfof.model.entity.Detailpermis"/>
@@ -292,11 +314,14 @@
     PrecisionRule="true"
     EntityAttrName="Idregions"
     EntityUsage="Detailpermis"
-    AliasName="idregions">
+    AliasName="idregions"
+    LOVName="LOV_Idregions">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="cm.gov.minfof.model.entityviewobject.DetailpermisView.Idregions_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -389,6 +414,12 @@
     Name="PermisView"
     ViewLink="cm.gov.minfof.model.entityviewobject.PermisTopDetailLink"
     Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PermisView2"
+    ViewLink="cm.gov.minfof.model.entityviewobject.PermisToDetailsPermisLink"
+    Type="cm.gov.minfof.model.entityviewobject.PermisViewRowImpl"
     Reversed="true"
     IsUpdateable="false"/>
   <ResourceBundle>

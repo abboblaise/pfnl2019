@@ -60,6 +60,7 @@
     <page path="/page_lettrevoiturepc.jsf" usageId="cm_gov_minfof_view_page_lettrevoiturepcPageDef"/>
     <page path="/a_supprimer.jsf" usageId="cm_gov_minfof_view_a_supprimerPageDef"/>
     <page path="/untitled3.jsf" usageId="cm_gov_minfof_view_untitled3PageDef"/>
+    <page path="/consultationPermissionnaire.jsf" usageId="cm_gov_minfof_view_consultationPermissionnairePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="cm_gov_minfof_view_page_regionPageDef" path="cm.gov.minfof.view.pageDefs.page_regionPageDef"/>
@@ -127,6 +128,8 @@
           path="cm.gov.minfof.view.pageDefs.page_lettrevoiturepcPageDef"/>
     <page id="cm_gov_minfof_view_a_supprimerPageDef" path="cm.gov.minfof.view.pageDefs.a_supprimerPageDef"/>
     <page id="cm_gov_minfof_view_untitled3PageDef" path="cm.gov.minfof.view.pageDefs.untitled3PageDef"/>
+    <page id="cm_gov_minfof_view_consultationPermissionnairePageDef"
+          path="cm.gov.minfof.view.pageDefs.consultationPermissionnairePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="cm.gov.minfof.model.entity"

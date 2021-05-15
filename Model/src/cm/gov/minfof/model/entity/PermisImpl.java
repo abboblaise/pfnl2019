@@ -55,7 +55,8 @@ public class PermisImpl extends EntityImpl {
         LettreVoiturePc5,
         TypeDocument,
         TypeDocument1,
-        TypeDocument2;
+        TypeDocument2,
+        Detailpermis1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -108,6 +109,7 @@ public class PermisImpl extends EntityImpl {
     public static final int TYPEDOCUMENT = AttributesEnum.TypeDocument.index();
     public static final int TYPEDOCUMENT1 = AttributesEnum.TypeDocument1.index();
     public static final int TYPEDOCUMENT2 = AttributesEnum.TypeDocument2.index();
+    public static final int DETAILPERMIS1 = AttributesEnum.Detailpermis1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -485,6 +487,14 @@ public class PermisImpl extends EntityImpl {
      */
     public void setTypeDocument2(EntityImpl value) {
         setAttributeInternal(TYPEDOCUMENT2, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getDetailpermis1() {
+        return (RowIterator) getAttributeInternal(DETAILPERMIS1);
     }
 
 

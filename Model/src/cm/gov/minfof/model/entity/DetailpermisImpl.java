@@ -49,7 +49,8 @@ public class DetailpermisImpl extends EntityImpl {
         TypeDocument,
         TypeDocument1,
         TypeDocument2,
-        TypeDocument3;
+        TypeDocument3,
+        Permis1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -101,6 +102,7 @@ public class DetailpermisImpl extends EntityImpl {
     public static final int TYPEDOCUMENT1 = AttributesEnum.TypeDocument1.index();
     public static final int TYPEDOCUMENT2 = AttributesEnum.TypeDocument2.index();
     public static final int TYPEDOCUMENT3 = AttributesEnum.TypeDocument3.index();
+    public static final int PERMIS1 = AttributesEnum.Permis1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -470,6 +472,21 @@ public class DetailpermisImpl extends EntityImpl {
      */
     public void setTypeDocument3(EntityImpl value) {
         setAttributeInternal(TYPEDOCUMENT3, value);
+    }
+
+
+    /**
+     * @return the associated entity PermisImpl.
+     */
+    public PermisImpl getPermis1() {
+        return (PermisImpl) getAttributeInternal(PERMIS1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity PermisImpl.
+     */
+    public void setPermis1(PermisImpl value) {
+        setAttributeInternal(PERMIS1, value);
     }
 
 

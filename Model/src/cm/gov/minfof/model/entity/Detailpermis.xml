@@ -257,6 +257,13 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.FkDetailpermis1Assoc2.Detailpermis3"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Permis1"
+    Association="cm.gov.minfof.model.entityviewobject.PermisToDetailsPermisAssoc"
+    AssociationEnd="cm.gov.minfof.model.entityviewobject.PermisToDetailsPermisAssoc.Permis1"
+    AssociationOtherEnd="cm.gov.minfof.model.entityviewobject.PermisToDetailsPermisAssoc.Detailpermis1"
+    Type="cm.gov.minfof.model.entity.PermisImpl"
+    IsUpdateable="true"/>
   <Key
     Name="Primary1"
     PrimaryKey="true">
@@ -306,6 +313,17 @@
       <Attr Name="_referencedKey" Value="PRIMARY"/>
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="fk_Detailpermis"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Detailpermis.Idpermis"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Detailpermis1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Detailpermis1"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="cm.gov.minfof.model.entity.Detailpermis.Idpermis"/>

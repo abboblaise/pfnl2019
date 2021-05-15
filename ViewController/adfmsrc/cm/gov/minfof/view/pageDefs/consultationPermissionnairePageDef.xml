@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="consultationPermissionnairePageDef" Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PermissionnairespnflView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PermissionnairespnflView1Iterator"/>
+    <searchRegion Binds="PermissionnairespnflView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PermissionnairespnflView1Query"/>
+    <iterator Binds="PermisView8" RangeSize="25" DataControl="AppModuleDataControl" id="PermisView8Iterator"/>
+    <searchRegion Binds="PermisView8Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PermisView8Query"/>
+    <iterator id="getLibelleProduitComplet1Iterator" Binds="getLibelleProduitComplet1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
+    <iterator Binds="DetailpermisView8" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DetailpermisView8Iterator"/>
+    <searchRegion Binds="DetailpermisView8Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DetailpermisView8Query"/>
+    <iterator id="RegionView1Iterator" Binds="RegionView1" DataControl="AppModuleDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PermissionnairespnflView1Iterator" id="PermissionnairespnflView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PermissionnairespnflView"
+                      Name="PermissionnairespnflView10">
+        <AttrNames>
+          <Item Value="Nomouraisonsociale"/>
+          <Item Value="Statut"/>
+          <Item Value="Siegesocial"/>
+          <Item Value="Codepnfl"/>
+          <Item Value="Nbreemploye"/>
+          <Item Value="Contact"/>
+          <Item Value="Mail"/>
+          <Item Value="Natureactivite"/>
+          <Item Value="Idpermissionnairespnfl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PermisView8Iterator" id="PermisView8">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PermisView" Name="PermisView80">
+        <AttrNames>
+          <Item Value="Numeropermis"/>
+          <Item Value="Zonecoupe"/>
+          <Item Value="Datedelivrance"/>
+          <Item Value="Datefin"/>
+          <Item Value="Observation"/>
+          <Item Value="Idagrement"/>
+          <Item Value="Numpermiscomplet"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="DetailpermisView8Iterator" id="DetailpermisView8">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.DetailpermisView" Name="DetailpermisView80">
+        <AttrNames>
+          <Item Value="Iddetailpermis"/>
+          <Item Value="Quantite"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Idpermis"/>
+          <Item Value="Observation"/>
+          <Item Value="Idpartieproduitpfnl"/>
+          <Item Value="Idregions"/>
+          <Item Value="idunitemesureconsultation"/>
+          <Item Value="Iddepartements"/>
+          <Item Value="nomdudepartement"/>
+          <Item Value="Idpartieproduitpfnlconsultation"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

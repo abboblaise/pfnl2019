@@ -299,6 +299,13 @@
     AssociationOtherEnd="cm.gov.minfof.model.entity.FkPermis1Assoc3.Permis2"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Detailpermis1"
+    Association="cm.gov.minfof.model.entityviewobject.PermisToDetailsPermisAssoc"
+    AssociationEnd="cm.gov.minfof.model.entityviewobject.PermisToDetailsPermisAssoc.Detailpermis1"
+    AssociationOtherEnd="cm.gov.minfof.model.entityviewobject.PermisToDetailsPermisAssoc.Permis1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PermisIdpermissionnaireCheck">
     <DesignTime>

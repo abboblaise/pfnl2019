@@ -7,7 +7,7 @@ public class PermisViewSDOImpl extends SDODataObject implements PermisViewSDO {
 
    public static final int START_PROPERTY_INDEX = 0;
 
-   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 15;
+   public static final int END_PROPERTY_INDEX = START_PROPERTY_INDEX + 16;
 
    public PermisViewSDOImpl() {}
 
@@ -35,11 +35,11 @@ public class PermisViewSDOImpl extends SDODataObject implements PermisViewSDO {
       set(START_PROPERTY_INDEX + 2 , value);
    }
 
-   public java.sql.Timestamp getDatedelivrance() {
-      return (java.sql.Timestamp)get(START_PROPERTY_INDEX + 3);
+   public java.sql.Date getDatedelivrance() {
+      return (java.sql.Date)get(START_PROPERTY_INDEX + 3);
    }
 
-   public void setDatedelivrance(java.sql.Timestamp value) {
+   public void setDatedelivrance(java.sql.Date value) {
       set(START_PROPERTY_INDEX + 3 , value);
    }
 
@@ -137,6 +137,14 @@ public class PermisViewSDOImpl extends SDODataObject implements PermisViewSDO {
 
    public void setCertificatorigineView(java.util.List value) {
       set(START_PROPERTY_INDEX + 15 , value);
+   }
+
+   public java.util.List getDetailpermisView1() {
+      return getList(START_PROPERTY_INDEX + 16);
+   }
+
+   public void setDetailpermisView1(java.util.List value) {
+      set(START_PROPERTY_INDEX + 16 , value);
    }
 
 

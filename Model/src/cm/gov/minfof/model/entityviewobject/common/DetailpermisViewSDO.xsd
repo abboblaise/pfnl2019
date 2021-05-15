@@ -12,7 +12,7 @@
             </xsd:appinfo>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="Iddetailpermis" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Iddetailpermis" type="xsd:decimal" minOccurs="0" default="-1"/>
             <xsd:element name="Quantite" type="xsd:float" minOccurs="0" sdoXML:dataType="sdoJava:FloatObject"/>
             <xsd:element name="Idunitemesure" type="xsd:decimal" minOccurs="0" nillable="true"/>
             <xsd:element name="Idpermis" type="xsd:decimal" minOccurs="0"/>

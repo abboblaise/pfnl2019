@@ -49,6 +49,7 @@
       <Attr Name="_VL" Value="true"/>
       <Attr Name="_AM" Value="true"/>
       <Attr Name="_DO" Value="true"/>
+      <Attr Name="_AS" Value="true"/>
     </DesignTime>
   </Containee>
   <Containee

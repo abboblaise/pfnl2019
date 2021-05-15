@@ -40,6 +40,7 @@ public class DetailpermisViewRowImpl extends ViewRowImpl {
         DetailpermisView1,
         DetailpermisView2,
         PermisView,
+        PermisView2,
         UnitemesureView1,
         PermisView1,
         PartiesproduitspfnlView1,
@@ -50,7 +51,8 @@ public class DetailpermisViewRowImpl extends ViewRowImpl {
         AppModule_DepartementView3_1,
         AppModule_DepartementView1_1,
         DepartementEtRegionView1,
-        AppModule_getLibelleFixe1_1;
+        AppModule_getLibelleFixe1_1,
+        RegionView1;
         private static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -91,6 +93,7 @@ public class DetailpermisViewRowImpl extends ViewRowImpl {
     public static final int DETAILPERMISVIEW1 = AttributesEnum.DetailpermisView1.index();
     public static final int DETAILPERMISVIEW2 = AttributesEnum.DetailpermisView2.index();
     public static final int PERMISVIEW = AttributesEnum.PermisView.index();
+    public static final int PERMISVIEW2 = AttributesEnum.PermisView2.index();
     public static final int UNITEMESUREVIEW1 = AttributesEnum.UnitemesureView1.index();
     public static final int PERMISVIEW1 = AttributesEnum.PermisView1.index();
     public static final int PARTIESPRODUITSPFNLVIEW1 = AttributesEnum.PartiesproduitspfnlView1.index();
@@ -104,6 +107,7 @@ public class DetailpermisViewRowImpl extends ViewRowImpl {
     public static final int APPMODULE_DEPARTEMENTVIEW1_1 = AttributesEnum.AppModule_DepartementView1_1.index();
     public static final int DEPARTEMENTETREGIONVIEW1 = AttributesEnum.DepartementEtRegionView1.index();
     public static final int APPMODULE_GETLIBELLEFIXE1_1 = AttributesEnum.AppModule_getLibelleFixe1_1.index();
+    public static final int REGIONVIEW1 = AttributesEnum.RegionView1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -344,6 +348,20 @@ public class DetailpermisViewRowImpl extends ViewRowImpl {
     }
 
     /**
+     * Gets the associated <code>PermisViewRowImpl</code> using master-detail link PermisView2.
+     */
+    public PermisViewRowImpl getPermisView2() {
+        return (PermisViewRowImpl) getAttributeInternal(PERMISVIEW2);
+    }
+
+    /**
+     * Sets the master-detail link PermisView2 between this object and <code>value</code>.
+     */
+    public void setPermisView2(PermisViewRowImpl value) {
+        setAttributeInternal(PERMISVIEW2, value);
+    }
+
+    /**
      * Gets the view accessor <code>RowSet</code> UnitemesureView1.
      */
     public RowSet getUnitemesureView1() {
@@ -418,6 +436,13 @@ public class DetailpermisViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAppModule_getLibelleFixe1_1() {
         return (RowSet) getAttributeInternal(APPMODULE_GETLIBELLEFIXE1_1);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> RegionView1.
+     */
+    public RowSet getRegionView1() {
+        return (RowSet) getAttributeInternal(REGIONVIEW1);
     }
 }
 

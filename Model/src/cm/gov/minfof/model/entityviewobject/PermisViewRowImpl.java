@@ -48,6 +48,7 @@ public class PermisViewRowImpl extends ViewRowImpl {
         PermissionnairespnflView,
         ExportpfnlView,
         CertificatorigineView,
+        DetailpermisView1,
         PermissionnairespnflView1,
         AgrementsView1,
         typeDocumentView1,
@@ -98,6 +99,7 @@ public class PermisViewRowImpl extends ViewRowImpl {
     public static final int PERMISSIONNAIRESPNFLVIEW = AttributesEnum.PermissionnairespnflView.index();
     public static final int EXPORTPFNLVIEW = AttributesEnum.ExportpfnlView.index();
     public static final int CERTIFICATORIGINEVIEW = AttributesEnum.CertificatorigineView.index();
+    public static final int DETAILPERMISVIEW1 = AttributesEnum.DetailpermisView1.index();
     public static final int PERMISSIONNAIRESPNFLVIEW1 = AttributesEnum.PermissionnairespnflView1.index();
     public static final int AGREMENTSVIEW1 = AttributesEnum.AgrementsView1.index();
     public static final int TYPEDOCUMENTVIEW1 = AttributesEnum.typeDocumentView1.index();
@@ -387,6 +389,13 @@ public class PermisViewRowImpl extends ViewRowImpl {
         return (RowIterator) getAttributeInternal(CERTIFICATORIGINEVIEW);
     }
 
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link DetailpermisView1.
+     */
+    public RowIterator getDetailpermisView1() {
+        return (RowIterator) getAttributeInternal(DETAILPERMISVIEW1);
+    }
 
     /**
      * Gets the view accessor <code>RowSet</code> PermissionnairespnflView1.

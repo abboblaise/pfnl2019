@@ -1266,6 +1266,15 @@
   <ViewUsage
     Name="getExportDocumentsOfficiels1"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.getExportDocumentsOfficiels"/>
+  <ViewUsage
+    Name="PermisView12"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PermisView"/>
+  <ViewUsage
+    Name="DetailpermisView7"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.DetailpermisView"/>
+  <ViewUsage
+    Name="DetailpermisView8"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.DetailpermisView"/>
   <ViewLinkUsage
     Name="PermissionnaireToPermisLink"
     ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermissionnaireToPermisLink"
@@ -2287,6 +2296,18 @@
     SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.RegionView9"
     DstViewUsageName="cm.gov.minfof.model.entity.AppModule.CollectepfnlView8"
     Reversed="false"/>
+  <ViewLinkUsage
+    Name="PermisToDetailsPermisLink"
+    ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermisToDetailsPermisLink"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.PermisView12"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.DetailpermisView7"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="PermisToDetailsPermisLink1"
+    ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermisToDetailsPermisLink"
+    SrcViewUsageName="cm.gov.minfof.model.entity.AppModule.PermisView8"
+    DstViewUsageName="cm.gov.minfof.model.entity.AppModule.DetailpermisView8"
+    Reversed="false"/>
   <Remote
     Name="ServiceInterface"
     ServerClassName="cm.gov.minfof.model.entity.server.serviceinterface.pfnl_wbsImpl"
@@ -2553,6 +2574,18 @@
       <Parameter
         Name="muser"
         Type="java.lang.String"/>
+    </Method>
+    <Method Name="changepwd" MethodName="changepwd">
+      <Return Name="_return_type_" Type="void"/>
+      <Parameter Name="bd" Type="java.math.BigDecimal"/>
+      <Parameter Name="pwd" Type="java.lang.String"/>
+    </Method>
+    <Method Name="modifuser" MethodName="modifuser">
+      <Return Name="_return_type_" Type="void"/>
+      <Parameter Name="bd" Type="java.math.BigDecimal"/>
+      <Parameter Name="nuser" Type="java.lang.String"/>
+      <Parameter Name="puser" Type="java.lang.String"/>
+      <Parameter Name="muser" Type="java.lang.String"/>
     </Method>
   </ClientInterface>
   <ServiceViewUsage
@@ -8150,6 +8183,4806 @@
   </ServiceViewUsage>
   <ServiceViewUsage
     ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieproduitView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieproduitView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieproduitView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CategorieunitemesureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCategorieunitemesureView1"/>
+      <Attr Name="_FindOpName" Value="findCategorieunitemesureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CertificatorigineView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCertificatorigineView1"/>
+      <Attr Name="_FindOpName" Value="findCertificatorigineView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findCollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="CommuneView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCommuneView1"/>
+      <Attr Name="_FindOpName" Value="findCommuneView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DepartementView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDepartementView1"/>
+      <Attr Name="_FindOpName" Value="findDepartementView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailpermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailpermisView1"/>
+      <Attr Name="_FindOpName" Value="findDetailpermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailscollectepfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailscollectepfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailscollectepfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="DetailsexportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getDetailsexportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findDetailsexportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ExportpfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getExportpfnlView1"/>
+      <Attr Name="_FindOpName" Value="findExportpfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="FamillePfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getFamillePfnlView1"/>
+      <Attr Name="_FindOpName" Value="findFamillePfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LettrevoitureView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLettrevoitureView1"/>
+      <Attr Name="_FindOpName" Value="findLettrevoitureView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="LocaliteView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getLocaliteView1"/>
+      <Attr Name="_FindOpName" Value="findLocaliteView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="OriginespnflsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getOriginespnflsView1"/>
+      <Attr Name="_FindOpName" Value="findOriginespnflsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PartiesRecolteesView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiesRecolteesView1"/>
+      <Attr Name="_FindOpName" Value="findPartiesRecolteesView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="Partiproduit1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPartiproduit1"/>
+      <Attr Name="_FindOpName" Value="findPartiproduit1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PaysView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPaysView1"/>
+      <Attr Name="_FindOpName" Value="findPaysView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermisView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermisView1"/>
+      <Attr Name="_FindOpName" Value="findPermisView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PermissionnairespnflView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPermissionnairespnflView1"/>
+      <Attr Name="_FindOpName" Value="findPermissionnairespnflView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="PostecontroleView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getPostecontroleView1"/>
+      <Attr Name="_FindOpName" Value="findPostecontroleView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="ProduitsPfnlView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getProduitsPfnlView1"/>
+      <Attr Name="_FindOpName" Value="findProduitsPfnlView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionView1"/>
+      <Attr Name="_FindOpName" Value="findRegionView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="RegionsView1">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getRegionsView1"/>
+      <Attr Name="_FindOpName" Value="findRegionsView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage ViewUsageName="UnitemesureView1">
     <DesignTime>
       <Attr Name="_GetOpName" Value="getUnitemesureView1"/>
       <Attr Name="_FindOpName" Value="findUnitemesureView1"/>
