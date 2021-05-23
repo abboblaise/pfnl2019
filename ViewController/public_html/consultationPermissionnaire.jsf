@@ -10,388 +10,1454 @@
                 <f:facet name="content">
                     <af:panelSplitter id="ps1" splitterPosition="500">
                         <f:facet name="first">
-                            <af:panelTabbed position="above" id="pt2">
-                                <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}"
-                                                   disclosed="true">
-                                    <af:table value="#{bindings.PermissionnairespnflView1.collectionModel}" var="row"
-                                              rows="#{bindings.PermissionnairespnflView1.rangeSize}"
-                                              emptyText="#{bindings.PermissionnairespnflView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                              rowBandingInterval="0"
-                                              selectedRowKeys="#{bindings.PermissionnairespnflView1.collectionModel.selectedRow}"
-                                              selectionListener="#{bindings.PermissionnairespnflView1.collectionModel.makeCurrent}"
-                                              rowSelection="single"
-                                              fetchSize="#{bindings.PermissionnairespnflView1.rangeSize}"
-                                              filterModel="#{bindings.PermissionnairespnflView1Query.queryDescriptor}"
-                                              filterVisible="true"
-                                              queryListener="#{bindings.PermissionnairespnflView1Query.processQuery}"
-                                              varStatus="vs" id="t1">
-                                        <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Nomouraisonsociale.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.PermissionnairespnflView1.hints.Nomouraisonsociale.label}"
-                                                   id="c1">
-                                            <af:outputText value="#{row.Nomouraisonsociale}"
-                                                           shortDesc="#{bindings.PermissionnairespnflView1.hints.Nomouraisonsociale.tooltip}"
-                                                           id="ot1"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Statut.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.PermissionnairespnflView1.hints.Statut.label}"
-                                                   id="c2">
-                                            <af:outputText value="#{row.Statut}"
-                                                           shortDesc="#{bindings.PermissionnairespnflView1.hints.Statut.tooltip}"
-                                                           id="ot2">
+                            <af:panelBox text="#{viewcontrollerBundle.TOUS_LES_ACTEURS}" id="pb1" showDisclosure="false">
+                                <f:facet name="toolbar"/>
+                                <af:panelTabbed position="above" id="pt2">
+                                    <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}"
+                                                       disclosed="true">
+                                        <af:table value="#{bindings.PermissionnairespnflView1.collectionModel}"
+                                                  var="row" rows="#{bindings.PermissionnairespnflView1.rangeSize}"
+                                                  emptyText="#{bindings.PermissionnairespnflView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.PermissionnairespnflView1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.PermissionnairespnflView1.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.PermissionnairespnflView1.rangeSize}"
+                                                  filterModel="#{bindings.PermissionnairespnflView1Query.queryDescriptor}"
+                                                  filterVisible="true"
+                                                  queryListener="#{bindings.PermissionnairespnflView1Query.processQuery}"
+                                                  varStatus="vs" id="t1" partialTriggers="::b1 ::b2 ::b3 ::b4">
+                                            <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Nomouraisonsociale.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.PermissionnairespnflView1.hints.Nomouraisonsociale.label}"
+                                                       id="c1">
+                                                <af:outputText value="#{row.Nomouraisonsociale}"
+                                                               shortDesc="#{bindings.PermissionnairespnflView1.hints.Nomouraisonsociale.tooltip}"
+                                                               id="ot1"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Statut.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.PermissionnairespnflView1.hints.Statut.label}"
+                                                       id="c2">
+                                            <!--    <af:outputText value="#{row.Statut}"
+                                                               shortDesc="#{bindings.PermissionnairespnflView1.hints.Statut.tooltip}"
+                                                               id="ot2">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PermissionnairespnflView1.hints.Statut.format}"/>
+                                                </af:outputText> -->
+                                                <af:selectOneChoice value="#{row.bindings.Statut.inputValue}" readOnly="true"
+                                                                    label="#{row.bindings.Statut.label}"
+                                                                    required="#{bindings.PermissionnairespnflView1.hints.Statut.mandatory}"
+                                                                    shortDesc="#{bindings.PermissionnairespnflView1.hints.Statut.tooltip}"
+                                                                    id="soc7">
+                                                    <f:selectItems value="#{row.bindings.Statut.items}" id="si7"/>
+                                                    <f:validator binding="#{row.bindings.Statut.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Siegesocial.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.PermissionnairespnflView1.hints.Siegesocial.label}"
+                                                       id="c3">
+                                                <af:outputText value="#{row.Siegesocial}"
+                                                               shortDesc="#{bindings.PermissionnairespnflView1.hints.Siegesocial.tooltip}"
+                                                               id="ot3"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Contact.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.PermissionnairespnflView1.hints.Contact.label}"
+                                                       id="c6">
+                                                <af:outputText value="#{row.Contact}"
+                                                               shortDesc="#{bindings.PermissionnairespnflView1.hints.Contact.tooltip}"
+                                                               id="ot6"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Mail.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.PermissionnairespnflView1.hints.Mail.label}"
+                                                       id="c7">
+                                                <af:outputText value="#{row.Mail}"
+                                                               shortDesc="#{bindings.PermissionnairespnflView1.hints.Mail.tooltip}"
+                                                               id="ot7"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Codepnfl.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.PermissionnairespnflView1.hints.Codepnfl.label}"
+                                                       id="c4">
+                                                <af:outputText value="#{row.Codepnfl}"
+                                                               shortDesc="#{bindings.PermissionnairespnflView1.hints.Codepnfl.tooltip}"
+                                                               id="ot4"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Nbreemploye.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.PermissionnairespnflView1.hints.Nbreemploye.label}"
+                                                       id="c5">
+                                                <af:outputText value="#{row.Nbreemploye}"
+                                                               shortDesc="#{bindings.PermissionnairespnflView1.hints.Nbreemploye.tooltip}"
+                                                               id="ot5">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PermissionnairespnflView1.hints.Nbreemploye.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column visible="false" sortProperty="#{bindings.PermissionnairespnflView1.hints.Natureactivite.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.PermissionnairespnflView1.hints.Natureactivite.label}"
+                                                       id="c8">
+                                                <af:outputText value="#{row.Natureactivite}"
+                                                               shortDesc="#{bindings.PermissionnairespnflView1.hints.Natureactivite.tooltip}"
+                                                               id="ot8"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Idpermissionnairespnfl.name}" visible="false"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.PermissionnairespnflView1.hints.Idpermissionnairespnfl.label}"
+                                                       id="c9">
+                                                <af:outputText value="#{row.Idpermissionnairespnfl}"
+                                                               shortDesc="#{bindings.PermissionnairespnflView1.hints.Idpermissionnairespnfl.tooltip}"
+                                                               id="ot9">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.PermissionnairespnflView1.hints.Idpermissionnairespnfl.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:showDetailItem>
+                                    <af:showDetailItem text="#{viewcontrollerBundle.FORMULAIRE}" id="sdi1">
+                                        <af:panelFormLayout id="pfl1">
+                                            <af:inputText value="#{bindings.Nomouraisonsociale.inputValue}"
+                                                          label="#{bindings.Nomouraisonsociale.hints.label}"
+                                                          required="#{bindings.Nomouraisonsociale.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="#{bindings.Nomouraisonsociale.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Nomouraisonsociale.hints.precision}"
+                                                          shortDesc="#{bindings.Nomouraisonsociale.hints.tooltip}"
+                                                          id="it4">
+                                                <f:validator binding="#{bindings.Nomouraisonsociale.validator}"/>
+                                            </af:inputText>
+                                            <af:selectOneChoice value="#{bindings.Statut.inputValue}"
+                                                                label="#{bindings.Statut.label}"
+                                                                required="#{bindings.Statut.hints.mandatory}"
+                                                                shortDesc="#{bindings.Statut.hints.tooltip}"
+                                                                readOnly="true" id="soc8">
+                                                <f:selectItems value="#{bindings.Statut.items}" id="si8"/>
+                                                <f:validator binding="#{bindings.Statut.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:inputText value="#{bindings.Siegesocial.inputValue}"
+                                                          label="#{bindings.Siegesocial.hints.label}"
+                                                          required="#{bindings.Siegesocial.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="#{bindings.Siegesocial.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Siegesocial.hints.precision}"
+                                                          shortDesc="#{bindings.Siegesocial.hints.tooltip}" id="it5">
+                                                <f:validator binding="#{bindings.Siegesocial.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Nbreemploye.inputValue}"
+                                                          label="#{bindings.Nbreemploye.hints.label}"
+                                                          required="#{bindings.Nbreemploye.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="#{bindings.Nbreemploye.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Nbreemploye.hints.precision}"
+                                                          shortDesc="#{bindings.Nbreemploye.hints.tooltip}" id="it6">
+                                                <f:validator binding="#{bindings.Nbreemploye.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.PermissionnairespnflView1.hints.Statut.format}"/>
-                                            </af:outputText>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Siegesocial.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.PermissionnairespnflView1.hints.Siegesocial.label}"
-                                                   id="c3">
-                                            <af:outputText value="#{row.Siegesocial}"
-                                                           shortDesc="#{bindings.PermissionnairespnflView1.hints.Siegesocial.tooltip}"
-                                                           id="ot3"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Codepnfl.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.PermissionnairespnflView1.hints.Codepnfl.label}"
-                                                   id="c4">
-                                            <af:outputText value="#{row.Codepnfl}"
-                                                           shortDesc="#{bindings.PermissionnairespnflView1.hints.Codepnfl.tooltip}"
-                                                           id="ot4"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Nbreemploye.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.PermissionnairespnflView1.hints.Nbreemploye.label}"
-                                                   id="c5">
-                                            <af:outputText value="#{row.Nbreemploye}"
-                                                           shortDesc="#{bindings.PermissionnairespnflView1.hints.Nbreemploye.tooltip}"
-                                                           id="ot5">
+                                                                  pattern="#{bindings.Nbreemploye.format}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Contact.inputValue}"
+                                                          label="#{bindings.Contact.hints.label}"
+                                                          required="#{bindings.Contact.hints.mandatory}" readOnly="true"
+                                                          columns="#{bindings.Contact.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Contact.hints.precision}"
+                                                          shortDesc="#{bindings.Contact.hints.tooltip}" id="it7">
+                                                <f:validator binding="#{bindings.Contact.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Mail.inputValue}"
+                                                          label="#{bindings.Mail.hints.label}"
+                                                          required="#{bindings.Mail.hints.mandatory}" readOnly="true"
+                                                          columns="#{bindings.Mail.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Mail.hints.precision}"
+                                                          shortDesc="#{bindings.Mail.hints.tooltip}" id="it8">
+                                                <f:validator binding="#{bindings.Mail.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Codepnfl.inputValue}"
+                                                          label="#{bindings.Codepnfl.hints.label}"
+                                                          required="#{bindings.Codepnfl.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="#{bindings.Codepnfl.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Codepnfl.hints.precision}"
+                                                          shortDesc="#{bindings.Codepnfl.hints.tooltip}" id="it9">
+                                                <f:validator binding="#{bindings.Codepnfl.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Natureactivite.inputValue}"
+                                                          label="#{bindings.Natureactivite.hints.label}"
+                                                          required="#{bindings.Natureactivite.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="#{bindings.Natureactivite.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Natureactivite.hints.precision}"
+                                                          shortDesc="#{bindings.Natureactivite.hints.tooltip}"
+                                                          id="it10">
+                                                <f:validator binding="#{bindings.Natureactivite.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Numceqe.inputValue}"
+                                                          label="#{bindings.Numceqe.hints.label}"
+                                                          required="#{bindings.Numceqe.hints.mandatory}" readOnly="true"
+                                                          columns="#{bindings.Numceqe.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Numceqe.hints.precision}"
+                                                          shortDesc="#{bindings.Numceqe.hints.tooltip}" id="it11">
+                                                <f:validator binding="#{bindings.Numceqe.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Idpermissionnairespnfl.inputValue}"
+                                                          label="#{bindings.Idpermissionnairespnfl.hints.label}"
+                                                          required="#{bindings.Idpermissionnairespnfl.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="#{bindings.Idpermissionnairespnfl.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Idpermissionnairespnfl.hints.precision}"
+                                                          shortDesc="#{bindings.Idpermissionnairespnfl.hints.tooltip}"
+                                                          id="it12">
+                                                <f:validator binding="#{bindings.Idpermissionnairespnfl.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.PermissionnairespnflView1.hints.Nbreemploye.format}"/>
-                                            </af:outputText>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Contact.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.PermissionnairespnflView1.hints.Contact.label}"
-                                                   id="c6">
-                                            <af:outputText value="#{row.Contact}"
-                                                           shortDesc="#{bindings.PermissionnairespnflView1.hints.Contact.tooltip}"
-                                                           id="ot6"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Mail.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.PermissionnairespnflView1.hints.Mail.label}"
-                                                   id="c7">
-                                            <af:outputText value="#{row.Mail}"
-                                                           shortDesc="#{bindings.PermissionnairespnflView1.hints.Mail.tooltip}"
-                                                           id="ot7"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Natureactivite.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.PermissionnairespnflView1.hints.Natureactivite.label}"
-                                                   id="c8">
-                                            <af:outputText value="#{row.Natureactivite}"
-                                                           shortDesc="#{bindings.PermissionnairespnflView1.hints.Natureactivite.tooltip}"
-                                                           id="ot8"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.PermissionnairespnflView1.hints.Idpermissionnairespnfl.name}"
-                                                   filterable="true" sortable="true"
-                                                   headerText="#{bindings.PermissionnairespnflView1.hints.Idpermissionnairespnfl.label}"
-                                                   id="c9">
-                                            <af:outputText value="#{row.Idpermissionnairespnfl}"
-                                                           shortDesc="#{bindings.PermissionnairespnflView1.hints.Idpermissionnairespnfl.tooltip}"
-                                                           id="ot9">
+                                                                  pattern="#{bindings.Idpermissionnairespnfl.format}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Nui.inputValue}"
+                                                          label="#{bindings.Nui.hints.label}"
+                                                          required="#{bindings.Nui.hints.mandatory}" readOnly="true"
+                                                          columns="#{bindings.Nui.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Nui.hints.precision}"
+                                                          shortDesc="#{bindings.Nui.hints.tooltip}" id="it13">
+                                                <f:validator binding="#{bindings.Nui.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Profession.inputValue}"
+                                                          label="#{bindings.Profession.hints.label}"
+                                                          required="#{bindings.Profession.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="#{bindings.Profession.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Profession.hints.precision}"
+                                                          shortDesc="#{bindings.Profession.hints.tooltip}" id="it14">
+                                                <f:validator binding="#{bindings.Profession.validator}"/>
+                                            </af:inputText>
+                                            <af:selectOneChoice value="#{bindings.Typepersonne.inputValue}"
+                                                                label="#{bindings.Typepersonne.label}"
+                                                                required="#{bindings.Typepersonne.hints.mandatory}"
+                                                                shortDesc="#{bindings.Typepersonne.hints.tooltip}"
+                                                                readOnly="true" id="soc9">
+                                                <f:selectItems value="#{bindings.Typepersonne.items}" id="si9"/>
+                                                <f:validator binding="#{bindings.Typepersonne.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:inputText value="#{bindings.Adressep.inputValue}"
+                                                          label="#{bindings.Adressep.hints.label}"
+                                                          required="#{bindings.Adressep.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="#{bindings.Adressep.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Adressep.hints.precision}"
+                                                          shortDesc="#{bindings.Adressep.hints.tooltip}" id="it15">
+                                                <f:validator binding="#{bindings.Adressep.validator}"/>
+                                            </af:inputText>
+                                            <af:selectOneChoice value="#{bindings.Sexe.inputValue}"
+                                                                label="#{bindings.Sexe.label}"
+                                                                required="#{bindings.Sexe.hints.mandatory}"
+                                                                shortDesc="#{bindings.Sexe.hints.tooltip}"
+                                                                readOnly="true" id="soc10">
+                                                <f:selectItems value="#{bindings.Sexe.items}" id="si10"/>
+                                                <f:validator binding="#{bindings.Sexe.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:selectOneChoice value="#{bindings.Idcommune.inputValue}"
+                                                                label="#{bindings.Idcommune.label}"
+                                                                required="#{bindings.Idcommune.hints.mandatory}"
+                                                                shortDesc="#{bindings.Idcommune.hints.tooltip}"
+                                                                readOnly="true" id="soc11">
+                                                <f:selectItems value="#{bindings.Idcommune.items}" id="si11"/>
+                                                <f:validator binding="#{bindings.Idcommune.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:selectOneChoice value="#{bindings.nomcommune.inputValue}"
+                                                                label="#{bindings.nomcommune.label}"
+                                                                required="#{bindings.nomcommune.hints.mandatory}"
+                                                                shortDesc="#{bindings.nomcommune.hints.tooltip}"
+                                                                readOnly="true" id="soc12">
+                                                <f:selectItems value="#{bindings.nomcommune.items}" id="si12"/>
+                                                <f:validator binding="#{bindings.nomcommune.validator}"/>
+                                            </af:selectOneChoice>
+                                     <!--       <af:inputText value="#{bindings.idregional.inputValue}"
+                                                          label="#{bindings.idregional.hints.label}"
+                                                          required="#{bindings.idregional.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="#{bindings.idregional.hints.displayWidth}"
+                                                          maximumLength="#{bindings.idregional.hints.precision}"
+                                                          shortDesc="#{bindings.idregional.hints.tooltip}" id="it16">
+                                                <f:validator binding="#{bindings.idregional.validator}"/>
                                                 <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.PermissionnairespnflView1.hints.Idpermissionnairespnfl.format}"/>
-                                            </af:outputText>
-                                        </af:column>
-                                    </af:table>
-                                </af:showDetailItem>
-                                <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EXPORTATION}"/>
-                            </af:panelTabbed>
+                                                                  pattern="#{bindings.idregional.format}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.iddepartemental.inputValue}"
+                                                          label="#{bindings.iddepartemental.hints.label}"
+                                                          required="#{bindings.iddepartemental.hints.mandatory}"
+                                                          readOnly="true"
+                                                          columns="#{bindings.iddepartemental.hints.displayWidth}"
+                                                          maximumLength="#{bindings.iddepartemental.hints.precision}"
+                                                          shortDesc="#{bindings.iddepartemental.hints.tooltip}"
+                                                          id="it17">
+                                                <f:validator binding="#{bindings.iddepartemental.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.iddepartemental.format}"/>
+                                            </af:inputText> -->
+                                            <f:facet name="footer">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl1">
+                                                    <af:button actionListener="#{bindings.First.execute}"
+                                                               disabled="#{!bindings.First.enabled}"
+                                                               partialSubmit="true" id="b1"
+                                                               text="#{viewcontrollerBundle.FIRST}"/>
+                                                    <af:button actionListener="#{bindings.Previous.execute}"
+                                                               text="#{viewcontrollerBundle.PREVIOUS}" disabled="#{!bindings.Previous.enabled}"
+                                                               partialSubmit="true" id="b2"/>
+                                                    <af:button actionListener="#{bindings.Next.execute}"
+                                                               text="#{viewcontrollerBundle.NEXT}"
+                                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                               id="b3"/>
+                                                    <af:button actionListener="#{bindings.Last.execute}"
+                                                               text="#{viewcontrollerBundle.LAST}"
+                                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                               id="b4"/>
+                                                </af:panelGroupLayout>
+                                            </f:facet>
+                                        </af:panelFormLayout>
+                                    </af:showDetailItem>
+                                    <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EXPORTATION}">
+                                        <af:spacer width="10" height="10" id="s1"/>
+                                        <af:button text="#{viewcontrollerBundle.EXPORTATION}" id="b13">
+                                            <af:exportCollectionActionListener type="excelHTML" exportedId="pc1:t4"
+                                                                               filename="acteurs.xls"/>
+                                        </af:button>
+                                        <af:panelCollection id="pc1">
+                                            <f:facet name="menus"/>
+                                            <f:facet name="toolbar"/>
+                                            <f:facet name="statusbar"/>
+                                            <af:table value="#{bindings.consultationActeur1.collectionModel}" var="row"
+                                                      rows="#{bindings.consultationActeur1.rangeSize}"
+                                                      emptyText="#{bindings.consultationActeur1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      rowBandingInterval="0"
+                                                      selectedRowKeys="#{bindings.consultationActeur1.collectionModel.selectedRow}"
+                                                      selectionListener="#{bindings.consultationActeur1.collectionModel.makeCurrent}"
+                                                      rowSelection="single"
+                                                      fetchSize="#{bindings.consultationActeur1.rangeSize}"
+                                                      filterModel="#{bindings.consultationActeur1Query.queryDescriptor}"
+                                                      filterVisible="true"
+                                                      queryListener="#{bindings.consultationActeur1Query.processQuery}"
+                                                      varStatus="vs" id="t4">
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Nomouraisonsociale.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Nomouraisonsociale.label}"
+                                                           id="c29">
+                                                    <af:inputText value="#{row.bindings.Nomouraisonsociale.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Nomouraisonsociale.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Nomouraisonsociale.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Nomouraisonsociale.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Nomouraisonsociale.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Nomouraisonsociale.tooltip}"
+                                                                  id="it26">
+                                                        <f:validator binding="#{row.bindings.Nomouraisonsociale.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Statut.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Statut.label}"
+                                                           id="c30">
+                                                    <af:selectOneChoice value="#{row.bindings.Statut.inputValue}"
+                                                                        label="#{row.bindings.Statut.label}"
+                                                                        required="#{bindings.consultationActeur1.hints.Statut.mandatory}"
+                                                                        shortDesc="#{bindings.consultationActeur1.hints.Statut.tooltip}"
+                                                                        id="soc23">
+                                                        <f:selectItems value="#{row.bindings.Statut.items}" id="si23"/>
+                                                        <f:validator binding="#{row.bindings.Statut.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Siegesocial.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Siegesocial.label}"
+                                                           id="c31">
+                                                    <af:inputText value="#{row.bindings.Siegesocial.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Siegesocial.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Siegesocial.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Siegesocial.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Siegesocial.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Siegesocial.tooltip}"
+                                                                  id="it27">
+                                                        <f:validator binding="#{row.bindings.Siegesocial.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Nbreemploye.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Nbreemploye.label}"
+                                                           id="c32">
+                                                    <af:inputText value="#{row.bindings.Nbreemploye.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Nbreemploye.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Nbreemploye.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Nbreemploye.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Nbreemploye.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Nbreemploye.tooltip}"
+                                                                  id="it28">
+                                                        <f:validator binding="#{row.bindings.Nbreemploye.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.consultationActeur1.hints.Nbreemploye.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Contact.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Contact.label}"
+                                                           id="c33">
+                                                    <af:inputText value="#{row.bindings.Contact.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Contact.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Contact.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Contact.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Contact.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Contact.tooltip}"
+                                                                  id="it29">
+                                                        <f:validator binding="#{row.bindings.Contact.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Mail.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Mail.label}"
+                                                           id="c34">
+                                                    <af:inputText value="#{row.bindings.Mail.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Mail.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Mail.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Mail.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Mail.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Mail.tooltip}"
+                                                                  id="it30">
+                                                        <f:validator binding="#{row.bindings.Mail.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Codepnfl.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Codepnfl.label}"
+                                                           id="c35">
+                                                    <af:inputText value="#{row.bindings.Codepnfl.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Codepnfl.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Codepnfl.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Codepnfl.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Codepnfl.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Codepnfl.tooltip}"
+                                                                  id="it31">
+                                                        <f:validator binding="#{row.bindings.Codepnfl.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Natureactivite.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Natureactivite.label}"
+                                                           id="c36">
+                                                    <af:inputText value="#{row.bindings.Natureactivite.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Natureactivite.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Natureactivite.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Natureactivite.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Natureactivite.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Natureactivite.tooltip}"
+                                                                  id="it32">
+                                                        <f:validator binding="#{row.bindings.Natureactivite.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Qualite.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Qualite.label}"
+                                                           id="c37">
+                                                    <af:inputText value="#{row.bindings.Qualite.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Qualite.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Qualite.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Qualite.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Qualite.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Qualite.tooltip}"
+                                                                  id="it33">
+                                                        <f:validator binding="#{row.bindings.Qualite.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.consultationActeur1.hints.Qualite.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Nui.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Nui.label}"
+                                                           id="c38">
+                                                    <af:inputText value="#{row.bindings.Nui.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Nui.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Nui.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Nui.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Nui.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Nui.tooltip}"
+                                                                  id="it34">
+                                                        <f:validator binding="#{row.bindings.Nui.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Profession.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Profession.label}"
+                                                           id="c39">
+                                                    <af:inputText value="#{row.bindings.Profession.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Profession.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Profession.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Profession.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Profession.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Profession.tooltip}"
+                                                                  id="it35">
+                                                        <f:validator binding="#{row.bindings.Profession.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Typepersonne.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Typepersonne.label}"
+                                                           id="c40">
+                                                    <af:selectOneChoice value="#{row.bindings.Typepersonne.inputValue}"
+                                                                        label="#{row.bindings.Typepersonne.label}"
+                                                                        required="#{bindings.consultationActeur1.hints.Typepersonne.mandatory}"
+                                                                        shortDesc="#{bindings.consultationActeur1.hints.Typepersonne.tooltip}"
+                                                                        id="soc24">
+                                                        <f:selectItems value="#{row.bindings.Typepersonne.items}"
+                                                                       id="si24"/>
+                                                        <f:validator binding="#{row.bindings.Typepersonne.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Adressep.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Adressep.label}"
+                                                           id="c41">
+                                                    <af:inputText value="#{row.bindings.Adressep.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Adressep.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Adressep.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Adressep.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Adressep.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Adressep.tooltip}"
+                                                                  id="it36">
+                                                        <f:validator binding="#{row.bindings.Adressep.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Sexe.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Sexe.label}"
+                                                           id="c42">
+                                                    <af:selectOneChoice value="#{row.bindings.Sexe.inputValue}"
+                                                                        label="#{row.bindings.Sexe.label}"
+                                                                        required="#{bindings.consultationActeur1.hints.Sexe.mandatory}"
+                                                                        shortDesc="#{bindings.consultationActeur1.hints.Sexe.tooltip}"
+                                                                        id="soc25">
+                                                        <f:selectItems value="#{row.bindings.Sexe.items}" id="si25"/>
+                                                        <f:validator binding="#{row.bindings.Sexe.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Numceqe.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Numceqe.label}"
+                                                           id="c43">
+                                                    <af:inputText value="#{row.bindings.Numceqe.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Numceqe.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Numceqe.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Numceqe.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Numceqe.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Numceqe.tooltip}"
+                                                                  id="it37">
+                                                        <f:validator binding="#{row.bindings.Numceqe.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Qualiteexploitant.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Qualiteexploitant.label}"
+                                                           id="c44">
+                                                    <af:inputText value="#{row.bindings.Qualiteexploitant.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Qualiteexploitant.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Qualiteexploitant.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Qualiteexploitant.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Qualiteexploitant.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Qualiteexploitant.tooltip}"
+                                                                  id="it38">
+                                                        <f:validator binding="#{row.bindings.Qualiteexploitant.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.consultationActeur1.hints.Qualiteexploitant.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Idcommune.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Idcommune.label}"
+                                                           id="c45">
+                                                    <af:inputText value="#{row.bindings.Idcommune.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Idcommune.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Idcommune.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Idcommune.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Idcommune.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Idcommune.tooltip}"
+                                                                  id="it39">
+                                                        <f:validator binding="#{row.bindings.Idcommune.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.consultationActeur1.hints.Idcommune.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Idpermis.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Idpermis.label}"
+                                                           id="c46">
+                                                    <af:inputText value="#{row.bindings.Idpermis.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Idpermis.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Idpermis.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Idpermis.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Idpermis.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Idpermis.tooltip}"
+                                                                  id="it40">
+                                                        <f:validator binding="#{row.bindings.Idpermis.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.consultationActeur1.hints.Idpermis.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Numeropermis.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Numeropermis.label}"
+                                                           id="c47">
+                                                    <af:inputText value="#{row.bindings.Numeropermis.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Numeropermis.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Numeropermis.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Numeropermis.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Numeropermis.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Numeropermis.tooltip}"
+                                                                  id="it41">
+                                                        <f:validator binding="#{row.bindings.Numeropermis.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Zonecoupe.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Zonecoupe.label}"
+                                                           id="c48">
+                                                    <af:inputText value="#{row.bindings.Zonecoupe.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Zonecoupe.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Zonecoupe.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Zonecoupe.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Zonecoupe.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Zonecoupe.tooltip}"
+                                                                  id="it42">
+                                                        <f:validator binding="#{row.bindings.Zonecoupe.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Datedelivrance.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Datedelivrance.label}"
+                                                           id="c49">
+                                                    <f:facet name="filter">
+                                                        <af:inputDate value="#{bindings.consultationActeur1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datedelivrance.value}"
+                                                                      id="id5">
+                                                            <af:convertDateTime pattern="#{bindings.consultationActeur1.hints.Datedelivrance.format}"/>
+                                                        </af:inputDate>
+                                                    </f:facet>
+                                                    <af:inputDate value="#{row.bindings.Datedelivrance.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Datedelivrance.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Datedelivrance.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Datedelivrance.displayWidth}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Datedelivrance.tooltip}"
+                                                                  id="id6">
+                                                        <f:validator binding="#{row.bindings.Datedelivrance.validator}"/>
+                                                        <af:convertDateTime pattern="#{bindings.consultationActeur1.hints.Datedelivrance.format}"/>
+                                                    </af:inputDate>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Datefin.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Datefin.label}"
+                                                           id="c50">
+                                                    <f:facet name="filter">
+                                                        <af:inputDate value="#{bindings.consultationActeur1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datefin.value}"
+                                                                      id="id7">
+                                                            <af:convertDateTime pattern="#{bindings.consultationActeur1.hints.Datefin.format}"/>
+                                                        </af:inputDate>
+                                                    </f:facet>
+                                                    <af:inputDate value="#{row.bindings.Datefin.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Datefin.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Datefin.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Datefin.displayWidth}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Datefin.tooltip}"
+                                                                  id="id8">
+                                                        <f:validator binding="#{row.bindings.Datefin.validator}"/>
+                                                        <af:convertDateTime pattern="#{bindings.consultationActeur1.hints.Datefin.format}"/>
+                                                    </af:inputDate>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Observation.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Observation.label}"
+                                                           id="c51">
+                                                    <af:inputText value="#{row.bindings.Observation.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Observation.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Observation.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Observation.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Observation.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Observation.tooltip}"
+                                                                  id="it43">
+                                                        <f:validator binding="#{row.bindings.Observation.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Idpermissionnaire.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Idpermissionnaire.label}"
+                                                           id="c52">
+                                                    <af:inputText value="#{row.bindings.Idpermissionnaire.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Idpermissionnaire.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Idpermissionnaire.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Idpermissionnaire.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Idpermissionnaire.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Idpermissionnaire.tooltip}"
+                                                                  id="it44">
+                                                        <f:validator binding="#{row.bindings.Idpermissionnaire.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.consultationActeur1.hints.Idpermissionnaire.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Nomfichier.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Nomfichier.label}"
+                                                           id="c53">
+                                                    <af:inputText value="#{row.bindings.Nomfichier.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Nomfichier.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Nomfichier.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Nomfichier.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Nomfichier.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Nomfichier.tooltip}"
+                                                                  id="it45">
+                                                        <f:validator binding="#{row.bindings.Nomfichier.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Cheminfichier.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Cheminfichier.label}"
+                                                           id="c54">
+                                                    <af:inputText value="#{row.bindings.Cheminfichier.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Cheminfichier.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Cheminfichier.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Cheminfichier.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Cheminfichier.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Cheminfichier.tooltip}"
+                                                                  id="it46">
+                                                        <f:validator binding="#{row.bindings.Cheminfichier.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Idregions.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Idregions.label}"
+                                                           id="c55">
+                                                    <af:selectOneChoice value="#{row.bindings.Idregions.inputValue}"
+                                                                        label="#{row.bindings.Idregions.label}"
+                                                                        required="#{bindings.consultationActeur1.hints.Idregions.mandatory}"
+                                                                        shortDesc="#{bindings.consultationActeur1.hints.Idregions.tooltip}"
+                                                                        id="soc26">
+                                                        <f:selectItems value="#{row.bindings.Idregions.items}"
+                                                                       id="si26"/>
+                                                        <f:validator binding="#{row.bindings.Idregions.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Iddepartements.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Iddepartements.label}"
+                                                           id="c56">
+                                                    <af:selectOneChoice value="#{row.bindings.Iddepartements.inputValue}"
+                                                                        label="#{row.bindings.Iddepartements.label}"
+                                                                        required="#{bindings.consultationActeur1.hints.Iddepartements.mandatory}"
+                                                                        shortDesc="#{bindings.consultationActeur1.hints.Iddepartements.tooltip}"
+                                                                        id="soc27">
+                                                        <f:selectItems value="#{row.bindings.Iddepartements.items}"
+                                                                       id="si27"/>
+                                                        <f:validator binding="#{row.bindings.Iddepartements.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Idpartieproduitpfnl.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Idpartieproduitpfnl.label}"
+                                                           id="c57">
+                                                    <af:selectOneChoice value="#{row.bindings.Idpartieproduitpfnl.inputValue}"
+                                                                        label="#{row.bindings.Idpartieproduitpfnl.label}"
+                                                                        required="#{bindings.consultationActeur1.hints.Idpartieproduitpfnl.mandatory}"
+                                                                        shortDesc="#{bindings.consultationActeur1.hints.Idpartieproduitpfnl.tooltip}"
+                                                                        id="soc28">
+                                                        <f:selectItems value="#{row.bindings.Idpartieproduitpfnl.items}"
+                                                                       id="si28"/>
+                                                        <f:validator binding="#{row.bindings.Idpartieproduitpfnl.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Idunitemesure.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Idunitemesure.label}"
+                                                           id="c58">
+                                                    <af:selectOneChoice value="#{row.bindings.Idunitemesure.inputValue}"
+                                                                        label="#{row.bindings.Idunitemesure.label}"
+                                                                        required="#{bindings.consultationActeur1.hints.Idunitemesure.mandatory}"
+                                                                        shortDesc="#{bindings.consultationActeur1.hints.Idunitemesure.tooltip}"
+                                                                        id="soc29">
+                                                        <f:selectItems value="#{row.bindings.Idunitemesure.items}"
+                                                                       id="si29"/>
+                                                        <f:validator binding="#{row.bindings.Idunitemesure.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Iddetailpermis.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Iddetailpermis.label}"
+                                                           id="c59">
+                                                    <af:inputText value="#{row.bindings.Iddetailpermis.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Iddetailpermis.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Iddetailpermis.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Iddetailpermis.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Iddetailpermis.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Iddetailpermis.tooltip}"
+                                                                  id="it47">
+                                                        <f:validator binding="#{row.bindings.Iddetailpermis.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.consultationActeur1.hints.Iddetailpermis.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Idtypedocument.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Idtypedocument.label}"
+                                                           id="c60">
+                                                    <af:selectOneChoice value="#{row.bindings.Idtypedocument.inputValue}"
+                                                                        label="#{row.bindings.Idtypedocument.label}"
+                                                                        required="#{bindings.consultationActeur1.hints.Idtypedocument.mandatory}"
+                                                                        shortDesc="#{bindings.consultationActeur1.hints.Idtypedocument.tooltip}"
+                                                                        id="soc30">
+                                                        <f:selectItems value="#{row.bindings.Idtypedocument.items}"
+                                                                       id="si30"/>
+                                                        <f:validator binding="#{row.bindings.Idtypedocument.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Typefichier.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Typefichier.label}"
+                                                           id="c61">
+                                                    <af:inputText value="#{row.bindings.Typefichier.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Typefichier.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Typefichier.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Typefichier.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Typefichier.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Typefichier.tooltip}"
+                                                                  id="it48">
+                                                        <f:validator binding="#{row.bindings.Typefichier.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Quantite.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Quantite.label}"
+                                                           id="c62">
+                                                    <af:inputText value="#{row.bindings.Quantite.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Quantite.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Quantite.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Quantite.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Quantite.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Quantite.tooltip}"
+                                                                  id="it49">
+                                                        <f:validator binding="#{row.bindings.Quantite.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.consultationActeur1.hints.Quantite.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Idpermissionnairespnfl.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Idpermissionnairespnfl.label}"
+                                                           id="c63">
+                                                    <af:inputText value="#{row.bindings.Idpermissionnairespnfl.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Idpermissionnairespnfl.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Idpermissionnairespnfl.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Idpermissionnairespnfl.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Idpermissionnairespnfl.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Idpermissionnairespnfl.tooltip}"
+                                                                  id="it50">
+                                                        <f:validator binding="#{row.bindings.Idpermissionnairespnfl.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.consultationActeur1.hints.Idpermissionnairespnfl.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.consultationActeur1.hints.Idagrement.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.consultationActeur1.hints.Idagrement.label}"
+                                                           id="c64">
+                                                    <af:inputText value="#{row.bindings.Idagrement.inputValue}"
+                                                                  label="#{bindings.consultationActeur1.hints.Idagrement.label}"
+                                                                  required="#{bindings.consultationActeur1.hints.Idagrement.mandatory}"
+                                                                  columns="#{bindings.consultationActeur1.hints.Idagrement.displayWidth}"
+                                                                  maximumLength="#{bindings.consultationActeur1.hints.Idagrement.precision}"
+                                                                  shortDesc="#{bindings.consultationActeur1.hints.Idagrement.tooltip}"
+                                                                  id="it51">
+                                                        <f:validator binding="#{row.bindings.Idagrement.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.consultationActeur1.hints.Idagrement.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                            </af:table>
+                                        </af:panelCollection>
+                                    </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:panelBox>
                         </f:facet>
                         <f:facet name="second">
                             <af:panelSplitter id="ps2" splitterPosition="200" orientation="vertical">
                                 <f:facet name="first">
-                                    <af:panelTabbed position="above" id="pt3">
-                                        <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.CONSULTATION}"
-                                                           disclosed="true">
-                                            <af:table value="#{bindings.PermisView8.collectionModel}" var="row"
-                                                      rows="#{bindings.PermisView8.rangeSize}"
-                                                      emptyText="#{bindings.PermisView8.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                                      rowBandingInterval="0"
-                                                      selectedRowKeys="#{bindings.PermisView8.collectionModel.selectedRow}"
-                                                      selectionListener="#{bindings.PermisView8.collectionModel.makeCurrent}"
-                                                      rowSelection="single"
-                                                      fetchSize="#{bindings.PermisView8.rangeSize}"
-                                                      filterModel="#{bindings.PermisView8Query.queryDescriptor}"
-                                                      filterVisible="true"
-                                                      queryListener="#{bindings.PermisView8Query.processQuery}"
-                                                      varStatus="vs" id="t2">
-                                                <af:column sortProperty="#{bindings.PermisView8.hints.Numeropermis.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermisView8.hints.Numeropermis.label}"
-                                                           id="c10">
-                                                    <af:outputText value="#{row.Numeropermis}"
-                                                                   shortDesc="#{bindings.PermisView8.hints.Numeropermis.tooltip}"
-                                                                   id="ot10"/>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.PermisView8.hints.Zonecoupe.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermisView8.hints.Zonecoupe.label}"
-                                                           id="c11">
-                                                    <af:outputText value="#{row.Zonecoupe}"
-                                                                   shortDesc="#{bindings.PermisView8.hints.Zonecoupe.tooltip}"
-                                                                   id="ot11"/>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.PermisView8.hints.Datedelivrance.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermisView8.hints.Datedelivrance.label}"
-                                                           id="c12">
-                                                    <f:facet name="filter">
-                                                        <af:inputDate value="#{bindings.PermisView8Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datedelivrance.value}"
-                                                                      id="id1">
+                                    <af:panelBox text="#{viewcontrollerBundle.DOCUMENTS_OFFICIELS}" id="pb2" showDisclosure="false">
+                                        <f:facet name="toolbar"/>
+                                        <af:panelTabbed position="above" id="pt3">
+                                            <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.CONSULTATION}"
+                                                               disclosed="true">
+                                                <af:table value="#{bindings.PermisView8.collectionModel}" var="row"
+                                                          rows="#{bindings.PermisView8.rangeSize}"
+                                                          emptyText="#{bindings.PermisView8.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                          rowBandingInterval="0"
+                                                          selectedRowKeys="#{bindings.PermisView8.collectionModel.selectedRow}"
+                                                          selectionListener="#{bindings.PermisView8.collectionModel.makeCurrent}"
+                                                          rowSelection="single"
+                                                          fetchSize="#{bindings.PermisView8.rangeSize}"
+                                                          filterModel="#{bindings.PermisView8Query.queryDescriptor}"
+                                                          filterVisible="true"
+                                                          queryListener="#{bindings.PermisView8Query.processQuery}"
+                                                          varStatus="vs" id="t2" partialTriggers="::b5 ::b6 ::b7 ::b8">
+                                                    <af:column headerText="#{bindings.PermisView8.hints.Idtypedocument.label}"
+                                                               id="c28">
+                                                        <af:selectOneChoice readOnly="true" value="#{row.bindings.Idtypedocument.inputValue}"
+                                                                            label="#{row.bindings.Idtypedocument.label}"
+                                                                            required="#{bindings.PermisView8.hints.Idtypedocument.mandatory}"
+                                                                            shortDesc="#{bindings.PermisView8.hints.Idtypedocument.tooltip}"
+                                                                            id="soc22">
+                                                            <f:selectItems value="#{row.bindings.Idtypedocument.items}"
+                                                                           id="si22"/>
+                                                            <f:validator binding="#{row.bindings.Idtypedocument.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.PermisView8.hints.Numeropermis.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.PermisView8.hints.Numeropermis.label}"
+                                                               id="c10">
+                                                        <af:outputText value="#{row.Numeropermis}"
+                                                                       shortDesc="#{bindings.PermisView8.hints.Numeropermis.tooltip}"
+                                                                       id="ot10"/>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.PermisView8.hints.Datedelivrance.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.PermisView8.hints.Datedelivrance.label}"
+                                                               id="c12">
+                                                        <f:facet name="filter">
+                                                            <af:inputDate value="#{bindings.PermisView8Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datedelivrance.value}"
+                                                                          id="id1">
+                                                                <af:convertDateTime pattern="#{bindings.PermisView8.hints.Datedelivrance.format}"/>
+                                                            </af:inputDate>
+                                                        </f:facet>
+                                                        <af:outputText value="#{row.Datedelivrance}"
+                                                                       shortDesc="#{bindings.PermisView8.hints.Datedelivrance.tooltip}"
+                                                                       id="ot12">
                                                             <af:convertDateTime pattern="#{bindings.PermisView8.hints.Datedelivrance.format}"/>
-                                                        </af:inputDate>
-                                                    </f:facet>
-                                                    <af:outputText value="#{row.Datedelivrance}"
-                                                                   shortDesc="#{bindings.PermisView8.hints.Datedelivrance.tooltip}"
-                                                                   id="ot12">
-                                                        <af:convertDateTime pattern="#{bindings.PermisView8.hints.Datedelivrance.format}"/>
-                                                    </af:outputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.PermisView8.hints.Datefin.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermisView8.hints.Datefin.label}"
-                                                           id="c13">
-                                                    <f:facet name="filter">
-                                                        <af:inputDate value="#{bindings.PermisView8Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datefin.value}"
-                                                                      id="id2">
+                                                        </af:outputText>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.PermisView8.hints.Datefin.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.PermisView8.hints.Datefin.label}"
+                                                               id="c13">
+                                                        <f:facet name="filter">
+                                                            <af:inputDate value="#{bindings.PermisView8Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Datefin.value}"
+                                                                          id="id2">
+                                                                <af:convertDateTime pattern="#{bindings.PermisView8.hints.Datefin.format}"/>
+                                                            </af:inputDate>
+                                                        </f:facet>
+                                                        <af:outputText value="#{row.Datefin}"
+                                                                       shortDesc="#{bindings.PermisView8.hints.Datefin.tooltip}"
+                                                                       id="ot13">
                                                             <af:convertDateTime pattern="#{bindings.PermisView8.hints.Datefin.format}"/>
-                                                        </af:inputDate>
-                                                    </f:facet>
-                                                    <af:outputText value="#{row.Datefin}"
-                                                                   shortDesc="#{bindings.PermisView8.hints.Datefin.tooltip}"
-                                                                   id="ot13">
-                                                        <af:convertDateTime pattern="#{bindings.PermisView8.hints.Datefin.format}"/>
-                                                    </af:outputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.PermisView8.hints.Observation.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermisView8.hints.Observation.label}"
-                                                           id="c14">
-                                                    <af:outputText value="#{row.Observation}"
-                                                                   shortDesc="#{bindings.PermisView8.hints.Observation.tooltip}"
-                                                                   id="ot14"/>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.PermisView8.hints.Idagrement.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermisView8.hints.Idagrement.label}"
-                                                           id="c15">
-                                                    <af:outputText value="#{row.Idagrement}"
-                                                                   shortDesc="#{bindings.PermisView8.hints.Idagrement.tooltip}"
-                                                                   id="ot15">
+                                                        </af:outputText>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.PermisView8.hints.Zonecoupe.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.PermisView8.hints.Zonecoupe.label}"
+                                                               id="c11">
+                                                        <af:outputText value="#{row.Zonecoupe}"
+                                                                       shortDesc="#{bindings.PermisView8.hints.Zonecoupe.tooltip}"
+                                                                       id="ot11"/>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.PermisView8.hints.Idagrement.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.PermisView8.hints.Idagrement.label}"
+                                                               id="c15">
+                                                        <af:outputText value="#{row.Idagrement}"
+                                                                       shortDesc="#{bindings.PermisView8.hints.Idagrement.tooltip}"
+                                                                       id="ot15">
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.PermisView8.hints.Idagrement.format}"/>
+                                                        </af:outputText>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.PermisView8.hints.Observation.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.PermisView8.hints.Observation.label}"
+                                                               id="c14">
+                                                        <af:outputText value="#{row.Observation}"
+                                                                       shortDesc="#{bindings.PermisView8.hints.Observation.tooltip}"
+                                                                       id="ot14"/>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.PermisView8.hints.Numpermiscomplet.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.PermisView8.hints.Numpermiscomplet.label}"
+                                                               id="c16">
+                                                        <af:outputText value="#{row.Numpermiscomplet}"
+                                                                       shortDesc="#{bindings.PermisView8.hints.Numpermiscomplet.tooltip}"
+                                                                       id="ot16"/>
+                                                    </af:column>
+                                                </af:table>
+                                            </af:showDetailItem>
+                                            <af:showDetailItem id="tab4" text="#{viewcontrollerBundle.FORMULAIRE}">
+                                                <af:panelFormLayout id="pfl2">
+                                                    <af:inputText value="#{bindings.Idpermis.inputValue}"
+                                                                  label="#{bindings.Idpermis.hints.label}"
+                                                                  required="#{bindings.Idpermis.hints.mandatory}"
+                                                                  readOnly="true"
+                                                                  columns="#{bindings.Idpermis.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Idpermis.hints.precision}"
+                                                                  shortDesc="#{bindings.Idpermis.hints.tooltip}"
+                                                                  id="it16">
+                                                        <f:validator binding="#{bindings.Idpermis.validator}"/>
                                                         <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.PermisView8.hints.Idagrement.format}"/>
-                                                    </af:outputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.PermisView8.hints.Numpermiscomplet.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.PermisView8.hints.Numpermiscomplet.label}"
-                                                           id="c16">
-                                                    <af:outputText value="#{row.Numpermiscomplet}"
-                                                                   shortDesc="#{bindings.PermisView8.hints.Numpermiscomplet.tooltip}"
-                                                                   id="ot16"/>
-                                                </af:column>
-                                            </af:table>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem id="tab4" text="#{viewcontrollerBundle.FORMULAIRE}"/>
-                                    </af:panelTabbed>
+                                                                          pattern="#{bindings.Idpermis.format}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.Numeropermis.inputValue}"
+                                                                  label="#{bindings.Numeropermis.hints.label}"
+                                                                  required="#{bindings.Numeropermis.hints.mandatory}"
+                                                                  readOnly="true"
+                                                                  columns="#{bindings.Numeropermis.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Numeropermis.hints.precision}"
+                                                                  shortDesc="#{bindings.Numeropermis.hints.tooltip}"
+                                                                  id="it17">
+                                                        <f:validator binding="#{bindings.Numeropermis.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.Zonecoupe.inputValue}"
+                                                                  label="#{bindings.Zonecoupe.hints.label}"
+                                                                  required="#{bindings.Zonecoupe.hints.mandatory}"
+                                                                  readOnly="true"
+                                                                  columns="#{bindings.Zonecoupe.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Zonecoupe.hints.precision}"
+                                                                  shortDesc="#{bindings.Zonecoupe.hints.tooltip}"
+                                                                  id="it18">
+                                                        <f:validator binding="#{bindings.Zonecoupe.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputDate value="#{bindings.Datedelivrance.inputValue}"
+                                                                  readOnly="true"
+                                                                  label="#{bindings.Datedelivrance.hints.label}"
+                                                                  required="#{bindings.Datedelivrance.hints.mandatory}"
+                                                                  columns="#{bindings.Datedelivrance.hints.displayWidth}"
+                                                                  shortDesc="#{bindings.Datedelivrance.hints.tooltip}"
+                                                                  id="id3">
+                                                        <f:validator binding="#{bindings.Datedelivrance.validator}"/>
+                                                        <af:convertDateTime pattern="#{bindings.Datedelivrance.format}"/>
+                                                    </af:inputDate>
+                                                    <af:inputDate value="#{bindings.Datefin.inputValue}" readOnly="true"
+                                                                  label="#{bindings.Datefin.hints.label}"
+                                                                  required="#{bindings.Datefin.hints.mandatory}"
+                                                                  columns="#{bindings.Datefin.hints.displayWidth}"
+                                                                  shortDesc="#{bindings.Datefin.hints.tooltip}"
+                                                                  id="id4">
+                                                        <f:validator binding="#{bindings.Datefin.validator}"/>
+                                                        <af:convertDateTime pattern="#{bindings.Datefin.format}"/>
+                                                    </af:inputDate>
+                                                    <af:inputText value="#{bindings.Observation.inputValue}"
+                                                                  label="#{bindings.Observation.hints.label}"
+                                                                  required="#{bindings.Observation.hints.mandatory}"
+                                                                  readOnly="true"
+                                                                  columns="#{bindings.Observation.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Observation.hints.precision}"
+                                                                  shortDesc="#{bindings.Observation.hints.tooltip}"
+                                                                  id="it19">
+                                                        <f:validator binding="#{bindings.Observation.validator}"/>
+                                                    </af:inputText>
+                                                    <af:selectOneChoice value="#{bindings.Idagrement.inputValue}"
+                                                                        label="#{bindings.Idagrement.label}"
+                                                                        required="#{bindings.Idagrement.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Idagrement.hints.tooltip}"
+                                                                        readOnly="true" id="soc13">
+                                                        <f:selectItems value="#{bindings.Idagrement.items}" id="si13"/>
+                                                        <f:validator binding="#{bindings.Idagrement.validator}"/>
+                                                    </af:selectOneChoice>
+                                                    <af:selectOneChoice value="#{bindings.Idpermissionnaire.inputValue}"
+                                                                        label="#{bindings.Idpermissionnaire.label}"
+                                                                        required="#{bindings.Idpermissionnaire.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Idpermissionnaire.hints.tooltip}"
+                                                                        readOnly="true" id="soc14">
+                                                        <f:selectItems value="#{bindings.Idpermissionnaire.items}"
+                                                                       id="si14"/>
+                                                        <f:validator binding="#{bindings.Idpermissionnaire.validator}"/>
+                                                    </af:selectOneChoice>
+                                                    <af:inputText value="#{bindings.Cheminfichier.inputValue}"
+                                                                  label="#{bindings.Cheminfichier.hints.label}"
+                                                                  required="#{bindings.Cheminfichier.hints.mandatory}"
+                                                                  readOnly="true"
+                                                                  columns="#{bindings.Cheminfichier.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Cheminfichier.hints.precision}"
+                                                                  shortDesc="#{bindings.Cheminfichier.hints.tooltip}"
+                                                                  id="it20">
+                                                        <f:validator binding="#{bindings.Cheminfichier.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.Nomfichier.inputValue}"
+                                                                  label="#{bindings.Nomfichier.hints.label}"
+                                                                  required="#{bindings.Nomfichier.hints.mandatory}"
+                                                                  readOnly="true"
+                                                                  columns="#{bindings.Nomfichier.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Nomfichier.hints.precision}"
+                                                                  shortDesc="#{bindings.Nomfichier.hints.tooltip}"
+                                                                  id="it21">
+                                                        <f:validator binding="#{bindings.Nomfichier.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.Numpermiscomplet.inputValue}"
+                                                                  label="#{bindings.Numpermiscomplet.hints.label}"
+                                                                  required="#{bindings.Numpermiscomplet.hints.mandatory}"
+                                                                  readOnly="true"
+                                                                  columns="#{bindings.Numpermiscomplet.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Numpermiscomplet.hints.precision}"
+                                                                  shortDesc="#{bindings.Numpermiscomplet.hints.tooltip}"
+                                                                  id="it22">
+                                                        <f:validator binding="#{bindings.Numpermiscomplet.validator}"/>
+                                                    </af:inputText>
+                                                    <af:selectOneChoice value="#{bindings.Idtypedocument.inputValue}"
+                                                                        label="#{bindings.Idtypedocument.label}"
+                                                                        required="#{bindings.Idtypedocument.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Idtypedocument.hints.tooltip}"
+                                                                        readOnly="true" id="soc15">
+                                                        <f:selectItems value="#{bindings.Idtypedocument.items}"
+                                                                       id="si15"/>
+                                                        <f:validator binding="#{bindings.Idtypedocument.validator}"/>
+                                                    </af:selectOneChoice>
+                                                    <f:facet name="footer">
+                                                        <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                                            <af:button actionListener="#{bindings.First1.execute}"
+                                                                       text="#{viewcontrollerBundle.FIRST}"
+                                                                       disabled="#{!bindings.First1.enabled}"
+                                                                       partialSubmit="true" id="b5"/>
+                                                            <af:button actionListener="#{bindings.Previous1.execute}"
+                                                                       text="#{viewcontrollerBundle.PREVIOUS}"
+                                                                       disabled="#{!bindings.Previous1.enabled}"
+                                                                       partialSubmit="true" id="b6"/>
+                                                            <af:button actionListener="#{bindings.Next1.execute}"
+                                                                       text="#{viewcontrollerBundle.NEXT}"
+                                                                       disabled="#{!bindings.Next1.enabled}"
+                                                                       partialSubmit="true" id="b7"/>
+                                                            <af:button actionListener="#{bindings.Last1.execute}"
+                                                                       text="#{viewcontrollerBundle.LAST}"
+                                                                       disabled="#{!bindings.Last1.enabled}"
+                                                                       partialSubmit="true" id="b8"/>
+                                                        </af:panelGroupLayout>
+                                                    </f:facet>
+                                                </af:panelFormLayout>
+                                            </af:showDetailItem>
+                                        </af:panelTabbed>
+                                    </af:panelBox>
                                 </f:facet>
                                 <f:facet name="second">
-                                    <af:panelTabbed position="above" id="pt4">
-                                        <af:showDetailItem id="tab5" text="#{viewcontrollerBundle.CONSULTATION}"
-                                                           disclosed="true">
-                                            <af:table value="#{bindings.DetailpermisView8.collectionModel}" var="row"
-                                                      rows="#{bindings.DetailpermisView8.rangeSize}"
-                                                      emptyText="#{bindings.DetailpermisView8.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                                      rowBandingInterval="0"
-                                                      selectedRowKeys="#{bindings.DetailpermisView8.collectionModel.selectedRow}"
-                                                      selectionListener="#{bindings.DetailpermisView8.collectionModel.makeCurrent}"
-                                                      rowSelection="single"
-                                                      fetchSize="#{bindings.DetailpermisView8.rangeSize}"
-                                                      filterModel="#{bindings.DetailpermisView8Query.queryDescriptor}"
-                                                      filterVisible="true"
-                                                      queryListener="#{bindings.DetailpermisView8Query.processQuery}"
-                                                      varStatus="vs" id="t3">
-                                                <af:column sortProperty="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnl.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnl.label}"
-                                                           id="c22">
-                                                    <af:selectOneChoice readOnly="true"
-                                                                        value="#{row.bindings.Idpartieproduitpfnl.inputValue}"
-                                                                        label="#{row.bindings.Idpartieproduitpfnl.label}"
-                                                                        required="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnl.mandatory}"
-                                                                        shortDesc="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnl.tooltip}"
-                                                                        id="soc3">
-                                                        <f:selectItems value="#{row.bindings.Idpartieproduitpfnl.items}"
-                                                                       id="si3"/>
-                                                        <f:validator binding="#{row.bindings.Idpartieproduitpfnl.validator}"/>
-                                                    </af:selectOneChoice>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.DetailpermisView8.hints.Quantite.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.DetailpermisView8.hints.Quantite.label}"
-                                                           id="c18">
-                                                    <af:inputText readOnly="true"
-                                                                  value="#{row.bindings.Quantite.inputValue}"
-                                                                  label="#{bindings.DetailpermisView8.hints.Quantite.label}"
-                                                                  required="#{bindings.DetailpermisView8.hints.Quantite.mandatory}"
-                                                                  columns="#{bindings.DetailpermisView8.hints.Quantite.displayWidth}"
-                                                                  maximumLength="#{bindings.DetailpermisView8.hints.Quantite.precision}"
-                                                                  shortDesc="#{bindings.DetailpermisView8.hints.Quantite.tooltip}"
-                                                                  id="it2">
-                                                        <f:validator binding="#{row.bindings.Quantite.validator}"/>
+                                    <af:panelBox text="#{viewcontrollerBundle.D_U00E9TAILS_DES_DOCUMENTS_OFFICIELS}" id="pb3">
+                                        <f:facet name="toolbar"/>
+                                        <af:panelTabbed position="above" id="pt4">
+                                            <af:showDetailItem id="tab5" text="#{viewcontrollerBundle.CONSULTATION}"
+                                                               disclosed="true">
+                                                <af:table value="#{bindings.DetailpermisView8.collectionModel}"
+                                                          var="row" rows="#{bindings.DetailpermisView8.rangeSize}"
+                                                          emptyText="#{bindings.DetailpermisView8.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                          rowBandingInterval="0"
+                                                          selectedRowKeys="#{bindings.DetailpermisView8.collectionModel.selectedRow}"
+                                                          selectionListener="#{bindings.DetailpermisView8.collectionModel.makeCurrent}"
+                                                          rowSelection="single"
+                                                          fetchSize="#{bindings.DetailpermisView8.rangeSize}"
+                                                          filterModel="#{bindings.DetailpermisView8Query.queryDescriptor}"
+                                                          filterVisible="true"
+                                                          queryListener="#{bindings.DetailpermisView8Query.processQuery}"
+                                                          varStatus="vs" id="t3"
+                                                          partialTriggers="::b9 ::b10 ::b11 ::b12">
+                                                    <af:column sortProperty="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnl.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnl.label}"
+                                                               id="c22">
+                                                        <af:selectOneChoice readOnly="true"
+                                                                            value="#{row.bindings.Idpartieproduitpfnl.inputValue}"
+                                                                            label="#{row.bindings.Idpartieproduitpfnl.label}"
+                                                                            required="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnl.mandatory}"
+                                                                            shortDesc="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnl.tooltip}"
+                                                                            id="soc3">
+                                                            <f:selectItems value="#{row.bindings.Idpartieproduitpfnl.items}"
+                                                                           id="si3"/>
+                                                            <f:validator binding="#{row.bindings.Idpartieproduitpfnl.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.DetailpermisView8.hints.Quantite.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.DetailpermisView8.hints.Quantite.label}"
+                                                               id="c18">
+                                                        <af:inputText readOnly="true"
+                                                                      value="#{row.bindings.Quantite.inputValue}"
+                                                                      label="#{bindings.DetailpermisView8.hints.Quantite.label}"
+                                                                      required="#{bindings.DetailpermisView8.hints.Quantite.mandatory}"
+                                                                      columns="#{bindings.DetailpermisView8.hints.Quantite.displayWidth}"
+                                                                      maximumLength="#{bindings.DetailpermisView8.hints.Quantite.precision}"
+                                                                      shortDesc="#{bindings.DetailpermisView8.hints.Quantite.tooltip}"
+                                                                      id="it2">
+                                                            <f:validator binding="#{row.bindings.Quantite.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.DetailpermisView8.hints.Quantite.format}"/>
+                                                        </af:inputText>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.DetailpermisView8.hints.Idunitemesure.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.DetailpermisView8.hints.Idunitemesure.label}"
+                                                               id="c19">
+                                                        <af:selectOneChoice readOnly="true"
+                                                                            value="#{row.bindings.Idunitemesure.inputValue}"
+                                                                            label="#{row.bindings.Idunitemesure.label}"
+                                                                            required="#{bindings.DetailpermisView8.hints.Idunitemesure.mandatory}"
+                                                                            shortDesc="#{bindings.DetailpermisView8.hints.Idunitemesure.tooltip}"
+                                                                            id="soc1">
+                                                            <f:selectItems value="#{row.bindings.Idunitemesure.items}"
+                                                                           id="si1"/>
+                                                            <f:validator binding="#{row.bindings.Idunitemesure.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:column>
+                                                    <af:column headerText="#{bindings.DetailpermisView8.hints.Idregions.label}"
+                                                               id="c23">
+                                                        <af:selectOneChoice readOnly="true"
+                                                                            value="#{row.bindings.Idregions.inputValue}"
+                                                                            label="#{row.bindings.Idregions.label}"
+                                                                            required="#{bindings.DetailpermisView8.hints.Idregions.mandatory}"
+                                                                            shortDesc="#{bindings.DetailpermisView8.hints.Idregions.tooltip}"
+                                                                            id="soc6">
+                                                            <f:selectItems value="#{row.bindings.Idregions.items}"
+                                                                           id="si6"/>
+                                                            <f:validator binding="#{row.bindings.Idregions.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.DetailpermisView8.hints.nomdudepartement.name}"
+                                                               sortable="true"
+                                                               headerText="#{bindings.DetailpermisView8.hints.nomdudepartement.label}"
+                                                               filterable="true" id="c26">
+                                                        <af:inputComboboxListOfValues readOnly="true"
+                                                                                      id="nomdudepartementId"
+                                                                                      popupTitle="Search and Select: #{bindings.DetailpermisView8.hints.nomdudepartement.label}"
+                                                                                      value="#{row.bindings.nomdudepartement.inputValue}"
+                                                                                      model="#{row.bindings.nomdudepartement.listOfValuesModel}"
+                                                                                      required="#{bindings.DetailpermisView8.hints.nomdudepartement.mandatory}"
+                                                                                      columns="#{bindings.DetailpermisView8.hints.nomdudepartement.displayWidth}"
+                                                                                      shortDesc="#{bindings.DetailpermisView8.hints.nomdudepartement.tooltip}">
+                                                            <f:validator binding="#{row.bindings.nomdudepartement.validator}"/>
+                                                        </af:inputComboboxListOfValues>
+                                                    </af:column>
+                                                    <af:column sortProperty="#{bindings.DetailpermisView8.hints.Observation.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.DetailpermisView8.hints.Observation.label}"
+                                                               id="c21">
+                                                        <af:inputText readOnly="true"
+                                                                      value="#{row.bindings.Observation.inputValue}"
+                                                                      label="#{bindings.DetailpermisView8.hints.Observation.label}"
+                                                                      required="#{bindings.DetailpermisView8.hints.Observation.mandatory}"
+                                                                      columns="#{bindings.DetailpermisView8.hints.Observation.displayWidth}"
+                                                                      maximumLength="#{bindings.DetailpermisView8.hints.Observation.precision}"
+                                                                      shortDesc="#{bindings.DetailpermisView8.hints.Observation.tooltip}"
+                                                                      id="it3">
+                                                            <f:validator binding="#{row.bindings.Observation.validator}"/>
+                                                        </af:inputText>
+                                                    </af:column>
+                                                    <af:column visible="false"
+                                                               sortProperty="#{bindings.DetailpermisView8.hints.Iddepartements.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.DetailpermisView8.hints.Iddepartements.label}"
+                                                               id="c25">
+                                                        <af:inputComboboxListOfValues id="iddepartementsId"
+                                                                                      popupTitle="Search and Select: #{bindings.DetailpermisView8.hints.Iddepartements.label}"
+                                                                                      value="#{row.bindings.Iddepartements.inputValue}"
+                                                                                      model="#{row.bindings.Iddepartements.listOfValuesModel}"
+                                                                                      required="#{bindings.DetailpermisView8.hints.Iddepartements.mandatory}"
+                                                                                      columns="#{bindings.DetailpermisView8.hints.Iddepartements.displayWidth}"
+                                                                                      shortDesc="#{bindings.DetailpermisView8.hints.Iddepartements.tooltip}">
+                                                            <f:validator binding="#{row.bindings.Iddepartements.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.DetailpermisView8.hints.Iddepartements.format}"/>
+                                                        </af:inputComboboxListOfValues>
+                                                    </af:column>
+                                                    <af:column visible="false"
+                                                               sortProperty="#{bindings.DetailpermisView8.hints.Iddetailpermis.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.DetailpermisView8.hints.Iddetailpermis.label}"
+                                                               id="c17">
+                                                        <af:inputText readOnly="true"
+                                                                      value="#{row.bindings.Iddetailpermis.inputValue}"
+                                                                      label="#{bindings.DetailpermisView8.hints.Iddetailpermis.label}"
+                                                                      required="#{bindings.DetailpermisView8.hints.Iddetailpermis.mandatory}"
+                                                                      columns="#{bindings.DetailpermisView8.hints.Iddetailpermis.displayWidth}"
+                                                                      maximumLength="#{bindings.DetailpermisView8.hints.Iddetailpermis.precision}"
+                                                                      shortDesc="#{bindings.DetailpermisView8.hints.Iddetailpermis.tooltip}"
+                                                                      id="it1">
+                                                            <f:validator binding="#{row.bindings.Iddetailpermis.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.DetailpermisView8.hints.Iddetailpermis.format}"/>
+                                                        </af:inputText>
+                                                    </af:column>
+                                                    <af:column visible="false"
+                                                               sortProperty="#{bindings.DetailpermisView8.hints.Idpermis.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.DetailpermisView8.hints.Idpermis.label}"
+                                                               id="c20">
+                                                        <af:selectOneChoice readOnly="true"
+                                                                            value="#{row.bindings.Idpermis.inputValue}"
+                                                                            label="#{row.bindings.Idpermis.label}"
+                                                                            required="#{bindings.DetailpermisView8.hints.Idpermis.mandatory}"
+                                                                            shortDesc="#{bindings.DetailpermisView8.hints.Idpermis.tooltip}"
+                                                                            id="soc2">
+                                                            <f:selectItems value="#{row.bindings.Idpermis.items}"
+                                                                           id="si2"/>
+                                                            <f:validator binding="#{row.bindings.Idpermis.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:column>
+                                                    <af:column visible="false"
+                                                               sortProperty="#{bindings.DetailpermisView8.hints.idunitemesureconsultation.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.DetailpermisView8.hints.idunitemesureconsultation.label}"
+                                                               id="c24">
+                                                        <af:selectOneChoice readOnly="true"
+                                                                            value="#{row.bindings.idunitemesureconsultation.inputValue}"
+                                                                            label="#{row.bindings.idunitemesureconsultation.label}"
+                                                                            required="#{bindings.DetailpermisView8.hints.idunitemesureconsultation.mandatory}"
+                                                                            shortDesc="#{bindings.DetailpermisView8.hints.idunitemesureconsultation.tooltip}"
+                                                                            id="soc4">
+                                                            <f:selectItems value="#{row.bindings.idunitemesureconsultation.items}"
+                                                                           id="si4"/>
+                                                            <f:validator binding="#{row.bindings.idunitemesureconsultation.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:column>
+                                                    <af:column visible="false"
+                                                               sortProperty="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnlconsultation.name}"
+                                                               filterable="true" sortable="true"
+                                                               headerText="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnlconsultation.label}"
+                                                               id="c27">
+                                                        <af:selectOneChoice readOnly="true"
+                                                                            value="#{row.bindings.Idpartieproduitpfnlconsultation.inputValue}"
+                                                                            label="#{row.bindings.Idpartieproduitpfnlconsultation.label}"
+                                                                            required="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnlconsultation.mandatory}"
+                                                                            shortDesc="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnlconsultation.tooltip}"
+                                                                            id="soc5">
+                                                            <f:selectItems value="#{row.bindings.Idpartieproduitpfnlconsultation.items}"
+                                                                           id="si5"/>
+                                                            <f:validator binding="#{row.bindings.Idpartieproduitpfnlconsultation.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:column>
+                                                </af:table>
+                                            </af:showDetailItem>
+                                            <af:showDetailItem id="tab6" text="#{viewcontrollerBundle.FORMULAIRE}">
+                                                <af:panelFormLayout id="pfl3">
+                                                    <af:inputText value="#{bindings.Iddetailpermis.inputValue}"
+                                                                  label="#{bindings.Iddetailpermis.hints.label}"
+                                                                  required="#{bindings.Iddetailpermis.hints.mandatory}"
+                                                                  readOnly="true"
+                                                                  columns="#{bindings.Iddetailpermis.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Iddetailpermis.hints.precision}"
+                                                                  shortDesc="#{bindings.Iddetailpermis.hints.tooltip}"
+                                                                  id="it23">
+                                                        <f:validator binding="#{bindings.Iddetailpermis.validator}"/>
                                                         <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.DetailpermisView8.hints.Quantite.format}"/>
+                                                                          pattern="#{bindings.Iddetailpermis.format}"/>
                                                     </af:inputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.DetailpermisView8.hints.Idunitemesure.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.DetailpermisView8.hints.Idunitemesure.label}"
-                                                           id="c19">
-                                                    <af:selectOneChoice readOnly="true"
-                                                                        value="#{row.bindings.Idunitemesure.inputValue}"
-                                                                        label="#{row.bindings.Idunitemesure.label}"
-                                                                        required="#{bindings.DetailpermisView8.hints.Idunitemesure.mandatory}"
-                                                                        shortDesc="#{bindings.DetailpermisView8.hints.Idunitemesure.tooltip}"
-                                                                        id="soc1">
-                                                        <f:selectItems value="#{row.bindings.Idunitemesure.items}"
-                                                                       id="si1"/>
-                                                        <f:validator binding="#{row.bindings.Idunitemesure.validator}"/>
+                                                    <af:inputText value="#{bindings.Quantite.inputValue}"
+                                                                  label="#{bindings.Quantite.hints.label}"
+                                                                  required="#{bindings.Quantite.hints.mandatory}"
+                                                                  readOnly="true"
+                                                                  columns="#{bindings.Quantite.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Quantite.hints.precision}"
+                                                                  shortDesc="#{bindings.Quantite.hints.tooltip}"
+                                                                  id="it24">
+                                                        <f:validator binding="#{bindings.Quantite.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Quantite.format}"/>
+                                                    </af:inputText>
+                                                    <af:selectOneChoice value="#{bindings.Idunitemesure.inputValue}"
+                                                                        label="#{bindings.Idunitemesure.label}"
+                                                                        required="#{bindings.Idunitemesure.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Idunitemesure.hints.tooltip}"
+                                                                        readOnly="true" id="soc16">
+                                                        <f:selectItems value="#{bindings.Idunitemesure.items}"
+                                                                       id="si16"/>
+                                                        <f:validator binding="#{bindings.Idunitemesure.validator}"/>
                                                     </af:selectOneChoice>
-                                                </af:column>
-                                                <af:column headerText="#{bindings.DetailpermisView8.hints.Idregions.label}"
-                                                           id="c23">
-                                                    <af:selectOneChoice readOnly="true" value="#{row.bindings.Idregions.inputValue}"
-                                                                        label="#{row.bindings.Idregions.label}"
-                                                                        required="#{bindings.DetailpermisView8.hints.Idregions.mandatory}"
-                                                                        shortDesc="#{bindings.DetailpermisView8.hints.Idregions.tooltip}"
-                                                                        id="soc6">
-                                                        <f:selectItems value="#{row.bindings.Idregions.items}"
-                                                                       id="si6"/>
-                                                        <f:validator binding="#{row.bindings.Idregions.validator}"/>
+                                                    <af:selectOneChoice value="#{bindings.Idpermis1.inputValue}"
+                                                                        label="#{bindings.Idpermis1.label}"
+                                                                        required="#{bindings.Idpermis1.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Idpermis1.hints.tooltip}"
+                                                                        readOnly="true" id="soc17">
+                                                        <f:selectItems value="#{bindings.Idpermis1.items}" id="si17"/>
+                                                        <f:validator binding="#{bindings.Idpermis1.validator}"/>
                                                     </af:selectOneChoice>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.DetailpermisView8.hints.nomdudepartement.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.DetailpermisView8.hints.nomdudepartement.label}"
-                                                           filterable="true" id="c26">
-                                                    <af:inputComboboxListOfValues readOnly="true"
-                                                                                  id="nomdudepartementId"
-                                                                                  popupTitle="Search and Select: #{bindings.DetailpermisView8.hints.nomdudepartement.label}"
-                                                                                  value="#{row.bindings.nomdudepartement.inputValue}"
-                                                                                  model="#{row.bindings.nomdudepartement.listOfValuesModel}"
-                                                                                  required="#{bindings.DetailpermisView8.hints.nomdudepartement.mandatory}"
-                                                                                  columns="#{bindings.DetailpermisView8.hints.nomdudepartement.displayWidth}"
-                                                                                  shortDesc="#{bindings.DetailpermisView8.hints.nomdudepartement.tooltip}">
-                                                        <f:validator binding="#{row.bindings.nomdudepartement.validator}"/>
+                                                    <af:inputText value="#{bindings.Observation1.inputValue}"
+                                                                  label="#{bindings.Observation1.hints.label}"
+                                                                  required="#{bindings.Observation1.hints.mandatory}"
+                                                                  readOnly="true"
+                                                                  columns="#{bindings.Observation1.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Observation1.hints.precision}"
+                                                                  shortDesc="#{bindings.Observation1.hints.tooltip}"
+                                                                  id="it25">
+                                                        <f:validator binding="#{bindings.Observation1.validator}"/>
+                                                    </af:inputText>
+                                                    <af:selectOneChoice value="#{bindings.Idpartieproduitpfnl.inputValue}"
+                                                                        label="#{bindings.Idpartieproduitpfnl.label}"
+                                                                        required="#{bindings.Idpartieproduitpfnl.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Idpartieproduitpfnl.hints.tooltip}"
+                                                                        readOnly="true" id="soc18">
+                                                        <f:selectItems value="#{bindings.Idpartieproduitpfnl.items}"
+                                                                       id="si18"/>
+                                                        <f:validator binding="#{bindings.Idpartieproduitpfnl.validator}"/>
+                                                    </af:selectOneChoice>
+                                                    <af:selectOneChoice value="#{bindings.Idregions.inputValue}"
+                                                                        label="#{bindings.Idregions.label}"
+                                                                        required="#{bindings.Idregions.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Idregions.hints.tooltip}"
+                                                                        readOnly="true" id="soc19">
+                                                        <f:selectItems value="#{bindings.Idregions.items}" id="si19"/>
+                                                        <f:validator binding="#{bindings.Idregions.validator}"/>
+                                                    </af:selectOneChoice>
+                                                    <af:selectOneChoice value="#{bindings.idunitemesureconsultation.inputValue}"
+                                                                        label="#{bindings.idunitemesureconsultation.label}"
+                                                                        required="#{bindings.idunitemesureconsultation.hints.mandatory}"
+                                                                        shortDesc="#{bindings.idunitemesureconsultation.hints.tooltip}"
+                                                                        readOnly="true" id="soc20">
+                                                        <f:selectItems value="#{bindings.idunitemesureconsultation.items}"
+                                                                       id="si20"/>
+                                                        <f:validator binding="#{bindings.idunitemesureconsultation.validator}"/>
+                                                    </af:selectOneChoice>
+                                                    <af:inputComboboxListOfValues id="iclov1" readOnly="true"
+                                                                                  popupTitle="Search and Select: #{bindings.Iddepartements.hints.label}"
+                                                                                  value="#{bindings.Iddepartements.inputValue}"
+                                                                                  label="#{bindings.Iddepartements.hints.label}"
+                                                                                  model="#{bindings.Iddepartements.listOfValuesModel}"
+                                                                                  required="#{bindings.Iddepartements.hints.mandatory}"
+                                                                                  columns="#{bindings.Iddepartements.hints.displayWidth}"
+                                                                                  shortDesc="#{bindings.Iddepartements.hints.tooltip}">
+                                                        <f:validator binding="#{bindings.Iddepartements.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Iddepartements.format}"/>
                                                     </af:inputComboboxListOfValues>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.DetailpermisView8.hints.Observation.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.DetailpermisView8.hints.Observation.label}"
-                                                           id="c21">
-                                                    <af:inputText readOnly="true"
-                                                                  value="#{row.bindings.Observation.inputValue}"
-                                                                  label="#{bindings.DetailpermisView8.hints.Observation.label}"
-                                                                  required="#{bindings.DetailpermisView8.hints.Observation.mandatory}"
-                                                                  columns="#{bindings.DetailpermisView8.hints.Observation.displayWidth}"
-                                                                  maximumLength="#{bindings.DetailpermisView8.hints.Observation.precision}"
-                                                                  shortDesc="#{bindings.DetailpermisView8.hints.Observation.tooltip}"
-                                                                  id="it3">
-                                                        <f:validator binding="#{row.bindings.Observation.validator}"/>
-                                                    </af:inputText>
-                                                </af:column>
-                                                <af:column visible="false" sortProperty="#{bindings.DetailpermisView8.hints.Iddepartements.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.DetailpermisView8.hints.Iddepartements.label}"
-                                                           id="c25">
-                                                    <af:inputComboboxListOfValues id="iddepartementsId"
-                                                                                  popupTitle="Search and Select: #{bindings.DetailpermisView8.hints.Iddepartements.label}"
-                                                                                  value="#{row.bindings.Iddepartements.inputValue}"
-                                                                                  model="#{row.bindings.Iddepartements.listOfValuesModel}"
-                                                                                  required="#{bindings.DetailpermisView8.hints.Iddepartements.mandatory}"
-                                                                                  columns="#{bindings.DetailpermisView8.hints.Iddepartements.displayWidth}"
-                                                                                  shortDesc="#{bindings.DetailpermisView8.hints.Iddepartements.tooltip}">
-                                                        <f:validator binding="#{row.bindings.Iddepartements.validator}"/>
-                                                        <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.DetailpermisView8.hints.Iddepartements.format}"/>
+                                                    <af:inputComboboxListOfValues id="iclov2" readOnly="true"
+                                                                                  popupTitle="Search and Select: #{bindings.nomdudepartement.hints.label}"
+                                                                                  value="#{bindings.nomdudepartement.inputValue}"
+                                                                                  label="#{bindings.nomdudepartement.hints.label}"
+                                                                                  model="#{bindings.nomdudepartement.listOfValuesModel}"
+                                                                                  required="#{bindings.nomdudepartement.hints.mandatory}"
+                                                                                  columns="#{bindings.nomdudepartement.hints.displayWidth}"
+                                                                                  shortDesc="#{bindings.nomdudepartement.hints.tooltip}">
+                                                        <f:validator binding="#{bindings.nomdudepartement.validator}"/>
                                                     </af:inputComboboxListOfValues>
-                                                </af:column>
-                                                <af:column visible="false" sortProperty="#{bindings.DetailpermisView8.hints.Iddetailpermis.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.DetailpermisView8.hints.Iddetailpermis.label}"
-                                                           id="c17">
-                                                    <af:inputText readOnly="true" value="#{row.bindings.Iddetailpermis.inputValue}"
-                                                                  label="#{bindings.DetailpermisView8.hints.Iddetailpermis.label}"
-                                                                  required="#{bindings.DetailpermisView8.hints.Iddetailpermis.mandatory}"
-                                                                  columns="#{bindings.DetailpermisView8.hints.Iddetailpermis.displayWidth}"
-                                                                  maximumLength="#{bindings.DetailpermisView8.hints.Iddetailpermis.precision}"
-                                                                  shortDesc="#{bindings.DetailpermisView8.hints.Iddetailpermis.tooltip}"
-                                                                  id="it1">
-                                                        <f:validator binding="#{row.bindings.Iddetailpermis.validator}"/>
-                                                        <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.DetailpermisView8.hints.Iddetailpermis.format}"/>
-                                                    </af:inputText>
-                                                </af:column>
-                                                <af:column visible="false" sortProperty="#{bindings.DetailpermisView8.hints.Idpermis.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.DetailpermisView8.hints.Idpermis.label}"
-                                                           id="c20">
-                                                    <af:selectOneChoice readOnly="true" value="#{row.bindings.Idpermis.inputValue}"
-                                                                        label="#{row.bindings.Idpermis.label}"
-                                                                        required="#{bindings.DetailpermisView8.hints.Idpermis.mandatory}"
-                                                                        shortDesc="#{bindings.DetailpermisView8.hints.Idpermis.tooltip}"
-                                                                        id="soc2">
-                                                        <f:selectItems value="#{row.bindings.Idpermis.items}" id="si2"/>
-                                                        <f:validator binding="#{row.bindings.Idpermis.validator}"/>
+                                                    <af:selectOneChoice value="#{bindings.Idpartieproduitpfnlconsultation.inputValue}"
+                                                                        label="#{bindings.Idpartieproduitpfnlconsultation.label}"
+                                                                        required="#{bindings.Idpartieproduitpfnlconsultation.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Idpartieproduitpfnlconsultation.hints.tooltip}"
+                                                                        readOnly="true" id="soc21">
+                                                        <f:selectItems value="#{bindings.Idpartieproduitpfnlconsultation.items}"
+                                                                       id="si21"/>
+                                                        <f:validator binding="#{bindings.Idpartieproduitpfnlconsultation.validator}"/>
                                                     </af:selectOneChoice>
-                                                </af:column>
-                                            
-                                                <af:column visible="false" sortProperty="#{bindings.DetailpermisView8.hints.idunitemesureconsultation.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.DetailpermisView8.hints.idunitemesureconsultation.label}"
-                                                           id="c24">
-                                                    <af:selectOneChoice readOnly="true" value="#{row.bindings.idunitemesureconsultation.inputValue}"
-                                                                        label="#{row.bindings.idunitemesureconsultation.label}"
-                                                                        required="#{bindings.DetailpermisView8.hints.idunitemesureconsultation.mandatory}"
-                                                                        shortDesc="#{bindings.DetailpermisView8.hints.idunitemesureconsultation.tooltip}"
-                                                                        id="soc4">
-                                                        <f:selectItems value="#{row.bindings.idunitemesureconsultation.items}"
-                                                                       id="si4"/>
-                                                        <f:validator binding="#{row.bindings.idunitemesureconsultation.validator}"/>
-                                                    </af:selectOneChoice>
-                                                </af:column>
-                                                <af:column visible="false" sortProperty="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnlconsultation.name}"
-                                                           filterable="true" sortable="true"
-                                                           headerText="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnlconsultation.label}"
-                                                           id="c27">
-                                                    <af:selectOneChoice readOnly="true" value="#{row.bindings.Idpartieproduitpfnlconsultation.inputValue}"
-                                                                        label="#{row.bindings.Idpartieproduitpfnlconsultation.label}"
-                                                                        required="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnlconsultation.mandatory}"
-                                                                        shortDesc="#{bindings.DetailpermisView8.hints.Idpartieproduitpfnlconsultation.tooltip}"
-                                                                        id="soc5">
-                                                        <f:selectItems value="#{row.bindings.Idpartieproduitpfnlconsultation.items}"
-                                                                       id="si5"/>
-                                                        <f:validator binding="#{row.bindings.Idpartieproduitpfnlconsultation.validator}"/>
-                                                    </af:selectOneChoice>
-                                                </af:column>
-                                            </af:table>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem id="tab6" text="#{viewcontrollerBundle.FORMULAIRE}"/>
-                                    </af:panelTabbed>
+                                                    <f:facet name="footer">
+                                                        <af:panelGroupLayout layout="horizontal" id="pgl3">
+                                                            <af:button actionListener="#{bindings.First2.execute}"
+                                                                       text="#{viewcontrollerBundle.FIRST}"
+                                                                       disabled="#{!bindings.First2.enabled}"
+                                                                       partialSubmit="true" id="b9"/>
+                                                            <af:button actionListener="#{bindings.Previous2.execute}"
+                                                                       text="#{viewcontrollerBundle.PREVIOUS}"
+                                                                       disabled="#{!bindings.Previous2.enabled}"
+                                                                       partialSubmit="true" id="b10"/>
+                                                            <af:button actionListener="#{bindings.Next2.execute}"
+                                                                       text="#{viewcontrollerBundle.NEXT}"
+                                                                       disabled="#{!bindings.Next2.enabled}"
+                                                                       partialSubmit="true" id="b11"/>
+                                                            <af:button actionListener="#{bindings.Last2.execute}"
+                                                                       text="#{viewcontrollerBundle.LAST}"
+                                                                       disabled="#{!bindings.Last2.enabled}"
+                                                                       partialSubmit="true" id="b12"/>
+                                                        </af:panelGroupLayout>
+                                                    </f:facet>
+                                                </af:panelFormLayout>
+                                            </af:showDetailItem>
+                                        </af:panelTabbed>
+                                    </af:panelBox>
                                 </f:facet>
                             </af:panelSplitter>
                         </f:facet>

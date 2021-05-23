@@ -19,13 +19,8 @@
     <Attr Name="_appModuleNames1" Value="cm.gov.minfof.model.entityviewobject.AppModule"/>
     <Attr Name="_domainNames2" Value="cm.gov.minfof.model.entity.Longtext3"/>
     <Attr Name="_domainNames3" Value="cm.gov.minfof.model.entity.Longtext4"/>
-    <Attr Name="_domainNames4" Value="cm.gov.minfof.model.entity.Longtext5"/>
     <Attr Name="_NamedConnection" Value="Connection1"/>
     <Attr Name="_appModuleNames2" Value="cm.gov.minfof.model.queryviewobject.AppModule"/>
-    <Attr Name="_domainNames5" Value="cm.gov.minfof.model.entityviewobject.Longtext1"/>
-    <Attr Name="_domainNames6" Value="cm.gov.minfof.model.entityviewobject.Longtext2"/>
-    <Attr Name="_domainNames7" Value="cm.gov.minfof.model.entity.Longtext8"/>
-    <Attr Name="_domainNames8" Value="cm.gov.minfof.model.entityviewobject.Longtext3"/>
   </DesignTime>
   <Containee
     Name="entity"

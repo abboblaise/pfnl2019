@@ -383,6 +383,7 @@ public class PermissionnairespnflImpl extends EntityImpl {
         FacesContext fc = FacesContext.getCurrentInstance();
         HttpSession session = (HttpSession) fc.getExternalContext().getSession(true);
         UserData ud = (UserData) session.getAttribute("user");
+        if(ud == null) return new BigDecimal(1);
         System.out.println("Id département"+ud.getIddepartement());
         return ud.getIddepartement();
         //return (BigDecimal) getAttributeInternal(IDDEPARTEMENTAL);
@@ -420,6 +421,7 @@ public class PermissionnairespnflImpl extends EntityImpl {
         FacesContext fc = FacesContext.getCurrentInstance();
         HttpSession session = (HttpSession) fc.getExternalContext().getSession(true);
         UserData ud = (UserData) session.getAttribute("user");
+        if(ud == null) return new BigDecimal(1);
         System.out.println("Id region ="+ud.getIdregion());
         return ud.getIdregion();
         //return (BigDecimal) getAttributeInternal(IDREGIONAL);

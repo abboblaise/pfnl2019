@@ -32,6 +32,7 @@ import cm.gov.minfof.model.entityviewobject.UniteMesureWithPartieProduitPfnlImpl
 import cm.gov.minfof.model.entityviewobject.UnitemesureViewImpl;
 import cm.gov.minfof.model.entityviewobject.UtilisateurViewImpl;
 import cm.gov.minfof.model.entityviewobject.VehiculeViewImpl;
+import cm.gov.minfof.model.entityviewobject.acteurDocumentEtDetailImpl;
 import cm.gov.minfof.model.entityviewobject.gestLastIdUnitMesureImpl;
 import cm.gov.minfof.model.entityviewobject.getCodeSigifPosteControleImpl;
 import cm.gov.minfof.model.entityviewobject.getExportDocumentsOfficielsImpl;
@@ -5175,6 +5176,22 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public ViewLinkImpl getPermisToDetailsPermisLink1() {
         return (ViewLinkImpl) findViewLink("PermisToDetailsPermisLink1");
+    }
+
+    /**
+     * Container's getter for acteurDocumentEtDetail1.
+     * @return acteurDocumentEtDetail1
+     */
+    public acteurDocumentEtDetailImpl getacteurDocumentEtDetail1() {
+        return (acteurDocumentEtDetailImpl) findViewObject("acteurDocumentEtDetail1");
+    }
+
+    /**
+     * Container's getter for consultationActeur1.
+     * @return consultationActeur1
+     */
+    public consultationActeurImpl getconsultationActeur1() {
+        return (consultationActeurImpl) findViewObject("consultationActeur1");
     }
 }
 

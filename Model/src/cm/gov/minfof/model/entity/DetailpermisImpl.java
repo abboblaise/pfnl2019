@@ -1,7 +1,5 @@
 package cm.gov.minfof.model.entity;
 
-import cm.gov.minfof.model.entity.common.Longtext5;
-
 import java.math.BigDecimal;
 
 import oracle.jbo.AttributeList;

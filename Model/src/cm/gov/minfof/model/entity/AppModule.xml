@@ -1275,6 +1275,12 @@
   <ViewUsage
     Name="DetailpermisView8"
     ViewObjectName="cm.gov.minfof.model.entityviewobject.DetailpermisView"/>
+  <ViewUsage
+    Name="acteurDocumentEtDetail1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.acteurDocumentEtDetail"/>
+  <ViewUsage
+    Name="consultationActeur1"
+    ViewObjectName="cm.gov.minfof.model.entity.consultationActeur"/>
   <ViewLinkUsage
     Name="PermissionnaireToPermisLink"
     ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermissionnaireToPermisLink"
