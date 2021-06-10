@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>templateConsultation</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>content</afc:facet-name>
+            </afc:facet>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelSplitter splitterPosition="156" orientation="vertical" id="pt_ps1">
+        <f:facet name="first">
+            <af:panelGridLayout id="pt_pgl2"
+                                inlineStyle='background-clip:border-box; background-image:url("arriere.jpg");'
+                                landmark="banner">
+                <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc1" halign="center"
+                                 inlineStyle="background-image:none;">
+                        <af:panelGroupLayout id="pt_pgl3" halign="center" layout="horizontal" valign="middle">
+                            <af:image source="#{resource['images:MINFOF.png']}" id="pt_i1"/>
+                            <af:image id="pt_i2" source="#{resource['images:texte.png']}"/>
+                            <af:image id="pt_i3" source="#{resource['images:logo_pfnl.png']}"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </f:facet>
+        <f:facet name="second">
+            <af:facetRef facetName="content"/>
+        </f:facet>
+    </af:panelSplitter>
+</af:pageTemplateDef>

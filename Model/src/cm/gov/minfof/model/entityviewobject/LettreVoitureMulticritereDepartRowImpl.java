@@ -45,7 +45,15 @@ public class LettreVoitureMulticritereDepartRowImpl extends ViewRowImpl {
         Nomdepartementdestination,
         Nomregiondestination,
         Adressep,
-        Nomlocalite;
+        Nomlocalite,
+        RegionView1,
+        DepartementView1,
+        getLibelleProduitComplet1,
+        UnitemesureView1,
+        LocaliteView1,
+        CommuneView1,
+        PermissionnairespnflView1,
+        PermisView1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -68,6 +76,8 @@ public class LettreVoitureMulticritereDepartRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
+
     public static final int REGIONDESTINATION = AttributesEnum.Regiondestination.index();
     public static final int DEPARTEMENTDESTINATION = AttributesEnum.Departementdestination.index();
     public static final int LOCALITEDEPART = AttributesEnum.Localitedepart.index();
@@ -98,6 +108,14 @@ public class LettreVoitureMulticritereDepartRowImpl extends ViewRowImpl {
     public static final int NOMREGIONDESTINATION = AttributesEnum.Nomregiondestination.index();
     public static final int ADRESSEP = AttributesEnum.Adressep.index();
     public static final int NOMLOCALITE = AttributesEnum.Nomlocalite.index();
+    public static final int REGIONVIEW1 = AttributesEnum.RegionView1.index();
+    public static final int DEPARTEMENTVIEW1 = AttributesEnum.DepartementView1.index();
+    public static final int GETLIBELLEPRODUITCOMPLET1 = AttributesEnum.getLibelleProduitComplet1.index();
+    public static final int UNITEMESUREVIEW1 = AttributesEnum.UnitemesureView1.index();
+    public static final int LOCALITEVIEW1 = AttributesEnum.LocaliteView1.index();
+    public static final int COMMUNEVIEW1 = AttributesEnum.CommuneView1.index();
+    public static final int PERMISSIONNAIRESPNFLVIEW1 = AttributesEnum.PermissionnairespnflView1.index();
+    public static final int PERMISVIEW1 = AttributesEnum.PermisView1.index();
 
     /**
      * This is the default constructor (do not remove).

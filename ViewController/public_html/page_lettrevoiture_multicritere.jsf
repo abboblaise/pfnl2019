@@ -9,7 +9,7 @@
             <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
                 <f:facet name="content">
                     <af:panelGroupLayout layout="vertical" id="pgl1">
-                        <af:panelHeader text="Etat sur les Lettres de Voiture" id="ph1">
+                        <af:panelHeader text="Etat sur les Lettres de Voiture en Arrivée" id="ph1">
                             <af:query id="qryId1" headerText="Search" disclosed="true"
                                       value="#{bindings.LettreVoitureMultiCritereCriteriaQuery.queryDescriptor}"
                                       model="#{bindings.LettreVoitureMultiCritereCriteriaQuery.queryModel}"

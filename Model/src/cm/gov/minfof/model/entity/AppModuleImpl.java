@@ -5,6 +5,7 @@ import cm.gov.minfof.model.entityviewobject.CategorieunitemesureViewImpl;
 import cm.gov.minfof.model.entityviewobject.CollMultiCritereImpl;
 import cm.gov.minfof.model.entityviewobject.CollecteMultiImpl;
 import cm.gov.minfof.model.entityviewobject.DepartementEtRegionViewImpl;
+import cm.gov.minfof.model.entityviewobject.LettreVoitureMulticritereDepartImpl;
 import cm.gov.minfof.model.entityviewobject.LocaliteLettreVoitureImpl;
 import cm.gov.minfof.model.entityviewobject.NiveauValidationViewImpl;
 import cm.gov.minfof.model.entityviewobject.AgrementsViewImpl;
@@ -5192,6 +5193,14 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public consultationActeurImpl getconsultationActeur1() {
         return (consultationActeurImpl) findViewObject("consultationActeur1");
+    }
+
+    /**
+     * Container's getter for LettreVoitureMulticritereDepart1.
+     * @return LettreVoitureMulticritereDepart1
+     */
+    public LettreVoitureMulticritereDepartImpl getLettreVoitureMulticritereDepart1() {
+        return (LettreVoitureMulticritereDepartImpl) findViewObject("LettreVoitureMulticritereDepart1");
     }
 }
 

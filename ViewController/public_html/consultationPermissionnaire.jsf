@@ -6,7 +6,7 @@
     <af:document title="consultationPermissionnaire.jsf" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
-            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+            <af:pageTemplate viewId="/templateConsultation.jsf" id="pt1">
                 <f:facet name="content">
                     <af:panelSplitter id="ps1" splitterPosition="500">
                         <f:facet name="first">

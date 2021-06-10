@@ -1,0 +1,555 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['cm.gov.minfof.view.ViewControllerBundle']}"/>
+    <af:document title="page_lettre_voiture_multicritere_depart.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/TemplateGlobal.jsf" id="pt1">
+                <f:facet name="content">
+                    <af:panelGroupLayout layout="vertical" id="pgl1">
+                        <af:panelHeader text="Etat sur les Lettres de Voiture en Départ" id="ph1">
+                            <af:query id="qryId1" headerText="Search" disclosed="true"
+                                      value="#{bindings.LettreVoitureMulticritereDepartCriteriaDepartQuery.queryDescriptor}"
+                                      model="#{bindings.LettreVoitureMulticritereDepartCriteriaDepartQuery.queryModel}"
+                                      queryListener="#{bindings.LettreVoitureMulticritereDepartCriteriaDepartQuery.processQuery}"
+                                      queryOperationListener="#{bindings.LettreVoitureMulticritereDepartCriteriaDepartQuery.processQueryOperation}"
+                                      resultComponentId="::resId1"/>
+                        </af:panelHeader>
+                        <af:panelTabbed position="above" id="pt2" inlineStyle="width:1040px; height:496px;">
+                            <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.DONN_U00E9ES_BRUTES}"
+                                               disclosed="true">
+                                <af:table value="#{bindings.LettreVoitureMulticritereDepart1.collectionModel}" var="row"
+                                          rows="#{bindings.LettreVoitureMulticritereDepart1.rangeSize}"
+                                          emptyText="#{bindings.LettreVoitureMulticritereDepart1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.LettreVoitureMulticritereDepart1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.LettreVoitureMulticritereDepart1.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.LettreVoitureMulticritereDepart1.rangeSize}"
+                                          filterModel="#{bindings.LettreVoitureMulticritereDepartCriteriaDepartQuery.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.LettreVoitureMulticritereDepartCriteriaDepartQuery.processQuery}"
+                                          varStatus="vs" id="resId1">
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Regiondestination.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Regiondestination.label}"
+                                               id="c1">
+                                        <af:selectOneChoice value="#{row.bindings.Regiondestination.inputValue}"
+                                                            label="#{row.bindings.Regiondestination.label}"
+                                                            required="#{bindings.LettreVoitureMulticritereDepart1.hints.Regiondestination.mandatory}"
+                                                            shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Regiondestination.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.Regiondestination.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.Regiondestination.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Departementdestination.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Departementdestination.label}"
+                                               id="c2">
+                                        <af:selectOneChoice value="#{row.bindings.Departementdestination.inputValue}"
+                                                            label="#{row.bindings.Departementdestination.label}"
+                                                            required="#{bindings.LettreVoitureMulticritereDepart1.hints.Departementdestination.mandatory}"
+                                                            shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Departementdestination.tooltip}"
+                                                            id="soc2">
+                                            <f:selectItems value="#{row.bindings.Departementdestination.items}"
+                                                           id="si2"/>
+                                            <f:validator binding="#{row.bindings.Departementdestination.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Localitedepart.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Localitedepart.label}"
+                                               id="c3">
+                                        <af:selectOneChoice value="#{row.bindings.Localitedepart.inputValue}"
+                                                            label="#{row.bindings.Localitedepart.label}"
+                                                            required="#{bindings.LettreVoitureMulticritereDepart1.hints.Localitedepart.mandatory}"
+                                                            shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Localitedepart.tooltip}"
+                                                            id="soc3">
+                                            <f:selectItems value="#{row.bindings.Localitedepart.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.Localitedepart.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Idcommunedepart.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Idcommunedepart.label}"
+                                               id="c4">
+                                        <af:selectOneChoice value="#{row.bindings.Idcommunedepart.inputValue}"
+                                                            label="#{row.bindings.Idcommunedepart.label}"
+                                                            required="#{bindings.LettreVoitureMulticritereDepart1.hints.Idcommunedepart.mandatory}"
+                                                            shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Idcommunedepart.tooltip}"
+                                                            id="soc4">
+                                            <f:selectItems value="#{row.bindings.Idcommunedepart.items}" id="si4"/>
+                                            <f:validator binding="#{row.bindings.Idcommunedepart.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddepartementdepart.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddepartementdepart.label}"
+                                               id="c5">
+                                        <af:selectOneChoice value="#{row.bindings.Iddepartementdepart.inputValue}"
+                                                            label="#{row.bindings.Iddepartementdepart.label}"
+                                                            required="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddepartementdepart.mandatory}"
+                                                            shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddepartementdepart.tooltip}"
+                                                            id="soc5">
+                                            <f:selectItems value="#{row.bindings.Iddepartementdepart.items}" id="si5"/>
+                                            <f:validator binding="#{row.bindings.Iddepartementdepart.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdepart.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdepart.label}"
+                                               id="c6">
+                                        <af:inputText value="#{row.bindings.Nomdepartementdepart.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdepart.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdepart.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdepart.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdepart.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdepart.tooltip}"
+                                                      id="it1">
+                                            <f:validator binding="#{row.bindings.Nomdepartementdepart.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Idregionsdepart.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Idregionsdepart.label}"
+                                               id="c7">
+                                        <af:selectOneChoice value="#{row.bindings.Idregionsdepart.inputValue}"
+                                                            label="#{row.bindings.Idregionsdepart.label}"
+                                                            required="#{bindings.LettreVoitureMulticritereDepart1.hints.Idregionsdepart.mandatory}"
+                                                            shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Idregionsdepart.tooltip}"
+                                                            id="soc6">
+                                            <f:selectItems value="#{row.bindings.Idregionsdepart.items}" id="si6"/>
+                                            <f:validator binding="#{row.bindings.Idregionsdepart.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondepart.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondepart.label}"
+                                               id="c8">
+                                        <af:inputText value="#{row.bindings.Nomregiondepart.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondepart.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondepart.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondepart.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondepart.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondepart.tooltip}"
+                                                      id="it2">
+                                            <f:validator binding="#{row.bindings.Nomregiondepart.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomcommunedepart.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomcommunedepart.label}"
+                                               id="c9">
+                                        <af:inputText value="#{row.bindings.Nomcommunedepart.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomcommunedepart.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomcommunedepart.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomcommunedepart.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomcommunedepart.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomcommunedepart.tooltip}"
+                                                      id="it3">
+                                            <f:validator binding="#{row.bindings.Nomcommunedepart.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Permissionnaire.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Permissionnaire.label}"
+                                               id="c10">
+                                        <af:selectOneChoice value="#{row.bindings.Permissionnaire.inputValue}"
+                                                            label="#{row.bindings.Permissionnaire.label}"
+                                                            required="#{bindings.LettreVoitureMulticritereDepart1.hints.Permissionnaire.mandatory}"
+                                                            shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Permissionnaire.tooltip}"
+                                                            id="soc7">
+                                            <f:selectItems value="#{row.bindings.Permissionnaire.items}" id="si7"/>
+                                            <f:validator binding="#{row.bindings.Permissionnaire.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Permis.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Permis.label}"
+                                               id="c11">
+                                        <af:selectOneChoice value="#{row.bindings.Permis.inputValue}"
+                                                            label="#{row.bindings.Permis.label}"
+                                                            required="#{bindings.LettreVoitureMulticritereDepart1.hints.Permis.mandatory}"
+                                                            shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Permis.tooltip}"
+                                                            id="soc8">
+                                            <f:selectItems value="#{row.bindings.Permis.items}" id="si8"/>
+                                            <f:validator binding="#{row.bindings.Permis.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomconducteur.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomconducteur.label}"
+                                               id="c12">
+                                        <af:inputText value="#{row.bindings.Nomconducteur.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomconducteur.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomconducteur.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomconducteur.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomconducteur.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomconducteur.tooltip}"
+                                                      id="it4">
+                                            <f:validator binding="#{row.bindings.Nomconducteur.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Numerolettrevoiture.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Numerolettrevoiture.label}"
+                                               id="c13">
+                                        <af:inputText value="#{row.bindings.Numerolettrevoiture.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Numerolettrevoiture.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Numerolettrevoiture.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Numerolettrevoiture.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Numerolettrevoiture.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Numerolettrevoiture.tooltip}"
+                                                      id="it5">
+                                            <f:validator binding="#{row.bindings.Numerolettrevoiture.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Datelettrevoiture.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Datelettrevoiture.label}"
+                                               id="c14">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.LettreVoitureMulticritereDepartCriteriaDepartQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.Datelettrevoiture.value}"
+                                                          id="id1">
+                                                <af:convertDateTime pattern="#{bindings.LettreVoitureMulticritereDepart1.hints.Datelettrevoiture.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.Datelettrevoiture.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Datelettrevoiture.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Datelettrevoiture.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Datelettrevoiture.displayWidth}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Datelettrevoiture.tooltip}"
+                                                      id="id2">
+                                            <f:validator binding="#{row.bindings.Datelettrevoiture.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.LettreVoitureMulticritereDepart1.hints.Datelettrevoiture.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Immatriculation.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Immatriculation.label}"
+                                               id="c15">
+                                        <af:inputText value="#{row.bindings.Immatriculation.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Immatriculation.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Immatriculation.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Immatriculation.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Immatriculation.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Immatriculation.tooltip}"
+                                                      id="it6">
+                                            <f:validator binding="#{row.bindings.Immatriculation.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantite.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantite.label}"
+                                               id="c16">
+                                        <af:inputText value="#{row.bindings.Quantite.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantite.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantite.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantite.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantite.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantite.tooltip}"
+                                                      id="it7">
+                                            <f:validator binding="#{row.bindings.Quantite.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantite.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantiteconvertie.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantiteconvertie.label}"
+                                               id="c17">
+                                        <af:inputText value="#{row.bindings.Quantiteconvertie.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantiteconvertie.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantiteconvertie.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantiteconvertie.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantiteconvertie.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantiteconvertie.tooltip}"
+                                                      id="it8">
+                                            <f:validator binding="#{row.bindings.Quantiteconvertie.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.LettreVoitureMulticritereDepart1.hints.Quantiteconvertie.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.QteTotalDepRegion.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.QteTotalDepRegion.label}"
+                                               id="c18">
+                                        <af:inputText value="#{row.bindings.QteTotalDepRegion.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.QteTotalDepRegion.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.QteTotalDepRegion.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.QteTotalDepRegion.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.QteTotalDepRegion.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.QteTotalDepRegion.tooltip}"
+                                                      id="it9">
+                                            <f:validator binding="#{row.bindings.QteTotalDepRegion.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.LettreVoitureMulticritereDepart1.hints.QteTotalDepRegion.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Observations.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Observations.label}"
+                                               id="c19">
+                                        <af:inputText value="#{row.bindings.Observations.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Observations.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Observations.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Observations.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Observations.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Observations.tooltip}"
+                                                      id="it10">
+                                            <f:validator binding="#{row.bindings.Observations.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddetailslettrevoiture.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddetailslettrevoiture.label}"
+                                               id="c20">
+                                        <af:inputText value="#{row.bindings.Iddetailslettrevoiture.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddetailslettrevoiture.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddetailslettrevoiture.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddetailslettrevoiture.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddetailslettrevoiture.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddetailslettrevoiture.tooltip}"
+                                                      id="it11">
+                                            <f:validator binding="#{row.bindings.Iddetailslettrevoiture.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.LettreVoitureMulticritereDepart1.hints.Iddetailslettrevoiture.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Partieproduitpfnl.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Partieproduitpfnl.label}"
+                                               id="c21">
+                                        <af:selectOneChoice value="#{row.bindings.Partieproduitpfnl.inputValue}"
+                                                            label="#{row.bindings.Partieproduitpfnl.label}"
+                                                            required="#{bindings.LettreVoitureMulticritereDepart1.hints.Partieproduitpfnl.mandatory}"
+                                                            shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Partieproduitpfnl.tooltip}"
+                                                            id="soc9">
+                                            <f:selectItems value="#{row.bindings.Partieproduitpfnl.items}" id="si9"/>
+                                            <f:validator binding="#{row.bindings.Partieproduitpfnl.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Idunitemesure.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Idunitemesure.label}"
+                                               id="c22">
+                                        <af:selectOneChoice value="#{row.bindings.Idunitemesure.inputValue}"
+                                                            label="#{row.bindings.Idunitemesure.label}"
+                                                            required="#{bindings.LettreVoitureMulticritereDepart1.hints.Idunitemesure.mandatory}"
+                                                            shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Idunitemesure.tooltip}"
+                                                            id="soc10">
+                                            <f:selectItems value="#{row.bindings.Idunitemesure.items}" id="si10"/>
+                                            <f:validator binding="#{row.bindings.Idunitemesure.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleunitemesure.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleunitemesure.label}"
+                                               id="c23">
+                                        <af:inputText value="#{row.bindings.Libelleunitemesure.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleunitemesure.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleunitemesure.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleunitemesure.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleunitemesure.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleunitemesure.tooltip}"
+                                                      id="it12">
+                                            <f:validator binding="#{row.bindings.Libelleunitemesure.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleconverti.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleconverti.label}"
+                                               id="c24">
+                                        <af:inputText value="#{row.bindings.Libelleconverti.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleconverti.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleconverti.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleconverti.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleconverti.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Libelleconverti.tooltip}"
+                                                      id="it13">
+                                            <f:validator binding="#{row.bindings.Libelleconverti.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Produit.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Produit.label}"
+                                               id="c25">
+                                        <af:inputText value="#{row.bindings.Produit.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Produit.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Produit.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Produit.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Produit.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Produit.tooltip}"
+                                                      id="it14">
+                                            <f:validator binding="#{row.bindings.Produit.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomouraisonsociale.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomouraisonsociale.label}"
+                                               id="c26">
+                                        <af:inputText value="#{row.bindings.Nomouraisonsociale.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomouraisonsociale.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomouraisonsociale.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomouraisonsociale.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomouraisonsociale.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomouraisonsociale.tooltip}"
+                                                      id="it15">
+                                            <f:validator binding="#{row.bindings.Nomouraisonsociale.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdestination.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdestination.label}"
+                                               id="c27">
+                                        <af:inputText value="#{row.bindings.Nomdepartementdestination.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdestination.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdestination.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdestination.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdestination.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomdepartementdestination.tooltip}"
+                                                      id="it16">
+                                            <f:validator binding="#{row.bindings.Nomdepartementdestination.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondestination.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondestination.label}"
+                                               id="c28">
+                                        <af:inputText value="#{row.bindings.Nomregiondestination.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondestination.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondestination.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondestination.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondestination.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomregiondestination.tooltip}"
+                                                      id="it17">
+                                            <f:validator binding="#{row.bindings.Nomregiondestination.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Adressep.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Adressep.label}"
+                                               id="c29">
+                                        <af:inputText value="#{row.bindings.Adressep.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Adressep.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Adressep.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Adressep.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Adressep.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Adressep.tooltip}"
+                                                      id="it18">
+                                            <f:validator binding="#{row.bindings.Adressep.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomlocalite.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomlocalite.label}"
+                                               id="c30">
+                                        <af:inputText value="#{row.bindings.Nomlocalite.inputValue}"
+                                                      label="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomlocalite.label}"
+                                                      required="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomlocalite.mandatory}"
+                                                      columns="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomlocalite.displayWidth}"
+                                                      maximumLength="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomlocalite.precision}"
+                                                      shortDesc="#{bindings.LettreVoitureMulticritereDepart1.hints.Nomlocalite.tooltip}"
+                                                      id="it19">
+                                            <f:validator binding="#{row.bindings.Nomlocalite.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.DONN_U00E9ES_COMPIL_U00E9ES}">
+                                 <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b1">
+                                    <dvt:exportPivotTableData exportedId="pt3" type="excelHTML"/>
+                                </af:button>
+                                <af:spacer width="10" height="10" id="s3"/>
+                                <dvt:pivotTable id="pt3"
+                                                value="#{bindings.LettreVoitureMulticritereDepart11.pivotTableModel}"
+                                                var="cellData" varStatus="cellStatus" splitMode="enabled"
+                                                inlineStyle="width:1016px; height:450px;">
+                                    <dvt:headerCell>
+                                        <af:switcher facetName="#{cellData.layerName}" defaultFacet="Default" id="s1">
+                                            <f:facet name="DataLayer">
+                                                <af:outputText value="#{cellData.label}" id="ot1"/>
+                                            </f:facet>
+                                            <f:facet name="Produit">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot2"/>
+                                            </f:facet>
+                                            <f:facet name="Libelleconverti">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot3"/>
+                                            </f:facet>
+                                            <f:facet name="Nomouraisonsociale">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot4"/>
+                                            </f:facet>
+                                            <f:facet name="Nomregiondepart">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot5"/>
+                                            </f:facet>
+                                            <f:facet name="Nomdepartementdepart">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot6"/>
+                                            </f:facet>
+                                            <f:facet name="Nomregiondestination">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot7"/>
+                                            </f:facet>
+                                            <f:facet name="Nomdepartementdestination">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot8"/>
+                                            </f:facet>
+                                            <f:facet name="Default">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot9"/>
+                                            </f:facet>
+                                        </af:switcher>
+                                    </dvt:headerCell>
+                                    <dvt:dataCell id="dc1">
+                                        <af:switcher facetName="#{cellStatus.members.DataLayer.value}"
+                                                     defaultFacet="Default" id="s2">
+                                            <f:facet name="Quantiteconvertie">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot10">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.LettreVoitureMulticritereDepart11.hints.Quantiteconvertie.format}"/>
+                                                </af:outputText>
+                                            </f:facet>
+                                            <f:facet name="Default">
+                                                <af:outputText value="#{cellData.dataValue}" id="ot11"/>
+                                            </f:facet>
+                                        </af:switcher>
+                                    </dvt:dataCell>
+                                </dvt:pivotTable>
+                            </af:showDetailItem>
+                            <af:showDetailItem id="tab3" text="#{viewcontrollerBundle.GRAPHIQUE}">
+                                <af:panelSplitter id="ps1" splitterPosition="474" inlineStyle="width:972px;">
+                                    <f:facet name="first">
+                                        <dvt:barChart id="barChart1" var="row"
+                                                      value="#{bindings.LettreVoitureMulticritereDepart12.collectionModel}"
+                                                      title="Région et Département de Départ">
+                                            <dvt:chartLegend id="cl1"/>
+                                            <f:facet name="dataStamp">
+                                                <dvt:chartDataItem id="di1"
+                                                                   series="#{row.Nomregiondepart}/#{row.Nomdepartementdepart}/#{row.Nomouraisonsociale}"
+                                                                   value="#{row.Quantiteconvertie}"
+                                                                   group="#{row.Produit}"/>
+                                            </f:facet>
+                                        </dvt:barChart>
+                                    </f:facet>
+                                    <f:facet name="second">
+                                        <dvt:barChart id="barChart2" var="row"
+                                                      value="#{bindings.LettreVoitureMulticritereDepart13.collectionModel}"
+                                                      title="Région et Département de Destination">
+                                            <dvt:chartLegend id="cl2"/>
+                                            <f:facet name="dataStamp">
+                                                <dvt:chartDataItem id="di2"
+                                                                   series="#{row.Nomregiondestination}/#{row.Nomdepartementdestination}/#{row.Nomouraisonsociale}"
+                                                                   value="#{row.Quantiteconvertie}"
+                                                                   group="#{row.Produit}"/>
+                                            </f:facet>
+                                        </dvt:barChart>
+                                    </f:facet>
+                                </af:panelSplitter>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

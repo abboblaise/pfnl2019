@@ -1281,6 +1281,9 @@
   <ViewUsage
     Name="consultationActeur1"
     ViewObjectName="cm.gov.minfof.model.entity.consultationActeur"/>
+  <ViewUsage
+    Name="LettreVoitureMulticritereDepart1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LettreVoitureMulticritereDepart"/>
   <ViewLinkUsage
     Name="PermissionnaireToPermisLink"
     ViewLinkObjectName="cm.gov.minfof.model.entityviewobject.PermissionnaireToPermisLink"

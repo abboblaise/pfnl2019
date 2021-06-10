@@ -137,10 +137,16 @@
                                         <af:button text="#{viewcontrollerBundle.COMPILATION_COLLECTES}"
                                                    id="pt_b17" destination="page_collecte_multicritere.jsf"
                                                    rendered="#{RecupUser.ud.estadmin}"/>
+                                        <af:spacer width="10" height="10" id="pt_s27"/>
+                                        <af:button text="#{viewcontrollerBundle.COMPILATION_LETTRES_VOITURES__D_U00E9PART__}" id="pt_b23"
+                                                   destination="page_lettre_voiture_multicritere_depart.jsf"
+                                                   rendered="#{RecupUser.ud.estadmin}"/>
                                         <af:spacer width="10" height="10" id="pt_s21"/>
-                                        <af:button text="#{viewcontrollerBundle.COMPILATION_LETTRES_VOITURES}" id="pt_b23"
+                                        <af:button text="#{viewcontrollerBundle.COMPILATION_LETTRES_VOITURES__DESTINATION_}"
+                                                   id="pt_b26"
                                                    destination="page_lettrevoiture_multicritere.jsf"
                                                    rendered="#{RecupUser.ud.estadmin}"/>
+                                        
                                         <af:spacer width="10" height="10" id="pt_s23"/>
                                         <af:button text="#{viewcontrollerBundle.COMPILATION_EXPORTATION}"
                                                    id="pt_b25" destination="page_export_multicritere.jsf"
