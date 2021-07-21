@@ -131,6 +131,38 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
     }
 
     /**
+     * Gets the attribute value for the calculated attribute idRegionSession.
+     * @return the idRegionSession
+     */
+    public BigDecimal getidRegionSession() {
+        return (BigDecimal) getAttributeInternal(IDREGIONSESSION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute idRegionSession.
+     * @param value value to set the  idRegionSession
+     */
+    public void setidRegionSession(BigDecimal value) {
+        setAttributeInternal(IDREGIONSESSION, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute idDepartementSession.
+     * @return the idDepartementSession
+     */
+    public BigDecimal getidDepartementSession() {
+        return (BigDecimal) getAttributeInternal(IDDEPARTEMENTSESSION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute idDepartementSession.
+     * @param value value to set the  idDepartementSession
+     */
+    public void setidDepartementSession(BigDecimal value) {
+        setAttributeInternal(IDDEPARTEMENTSESSION, value);
+    }
+
+    /**
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
     protected enum AttributesEnum {
@@ -157,6 +189,8 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
         nomRegionAutre,
         nomRegionEncore,
         Numerocollecte,
+        idRegionSession,
+        idDepartementSession,
         CollectepfnlView,
         DetailscollectepfnlView,
         RegionView,
@@ -220,6 +254,8 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
     public static final int NOMREGIONAUTRE = AttributesEnum.nomRegionAutre.index();
     public static final int NOMREGIONENCORE = AttributesEnum.nomRegionEncore.index();
     public static final int NUMEROCOLLECTE = AttributesEnum.Numerocollecte.index();
+    public static final int IDREGIONSESSION = AttributesEnum.idRegionSession.index();
+    public static final int IDDEPARTEMENTSESSION = AttributesEnum.idDepartementSession.index();
     public static final int COLLECTEPFNLVIEW = AttributesEnum.CollectepfnlView.index();
     public static final int DETAILSCOLLECTEPFNLVIEW = AttributesEnum.DetailscollectepfnlView.index();
     public static final int REGIONVIEW = AttributesEnum.RegionView.index();
@@ -670,7 +706,9 @@ public class CollectepfnlViewRowImpl extends ViewRowImpl implements Collectepfnl
      * Gets the view accessor <code>RowSet</code> RegionView1.
      */
     public RowSet getRegionView1() {
-        return (RowSet) getAttributeInternal(REGIONVIEW1);
+        System.out.println("Je suis region1");
+        RowSet result = (RowSet) getAttributeInternal(REGIONVIEW1);
+        return result;
     }
 
     /**

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PermisToCoAssoc"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Permis"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.Permis"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Permis"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Permis.Primary1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Idpermis"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Certificatorigine"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entity.Certificatorigine">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Certificatorigine"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Certificatorigine.fk_Certificatorigine"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Certificatorigine.Idpermis"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

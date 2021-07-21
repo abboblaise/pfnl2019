@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PermisToDetailsPermisAssoc"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Permis1"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.Permis"
+    ViewObject="cm.gov.minfof.model.entityviewobject.PermisView"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Permis1"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Permis.Primary1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permis.Idpermis"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Detailpermis1"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entity.Detailpermis"
+    ViewObject="cm.gov.minfof.model.entityviewobject.DetailpermisView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Detailpermis1"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Detailpermis.fk_Detailpermis1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Detailpermis.Idpermis"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

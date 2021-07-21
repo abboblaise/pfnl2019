@@ -1,5 +1,9 @@
 package cm.gov.minfof.view;
 
+import cm.gov.minfof.model.entity.UserData;
+
+import cm.gov.minfof.model.entityviewobject.RegionViewImpl;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,6 +22,8 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
+
 import javax.el.ELContext;
 import javax.el.ExpressionFactory;
 import javax.el.MethodExpression;
@@ -34,6 +40,8 @@ import javax.naming.InitialContext;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
+
+import javax.servlet.http.HttpSession;
 
 import javax.sql.DataSource;
 
@@ -52,6 +60,8 @@ import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.event.DialogEvent;
 import oracle.adf.view.rich.event.QueryEvent;
 
+import oracle.adfinternal.view.faces.model.binding.FacesCtrlLOVBinding;
+
 import oracle.binding.AttributeBinding;
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
@@ -59,20 +69,24 @@ import oracle.binding.OperationBinding;
 import oracle.jbo.ApplicationModule;
 import oracle.jbo.Key;
 import oracle.jbo.Row;
+import oracle.jbo.RowSet;
 import oracle.jbo.VariableValueManager;
 import oracle.jbo.ViewCriteria;
+import oracle.jbo.ViewCriteriaRow;
 import oracle.jbo.ViewObject;
 import oracle.jbo.domain.Timestamp;
+import oracle.jbo.server.RowQualifier;
 import oracle.jbo.server.ViewObjectImpl;
 
 import org.apache.myfaces.trinidad.event.AttributeChangeEvent;
+import org.apache.myfaces.trinidad.event.DisclosureEvent;
 
 public class CollecteBean {
     ShowJqNotification notifObj = new ShowJqNotification();
     private File fichier = null;
 
-
     public CollecteBean() {
+        System.out.println("Je suis dans le constructeur de CollecteBean");
     }
 
     public BindingContainer getBindings() {
@@ -127,6 +141,24 @@ public class CollecteBean {
         OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
         Object result = operationBinding.execute();
         executemethode("Commit");
+        
+        //Je vais essayer de filtrer les régions et autres
+        DCBindingContainer bindings1 = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
+        ApplicationModule appModule = bindings1.getDataControl().getApplicationModule();
+        RegionViewImpl voRegion = (RegionViewImpl) appModule.findViewObject("RegionView1");
+        System.out.println("Nombre region1 = " + voRegion.getRowCount());
+        voRegion.setIdRegionVC(new BigDecimal(5));
+        System.out.println("Nombre region2 = " + voRegion.getRowCount());
+        ViewObject voCollecte = appModule.findViewObject("CollectepfnlView1");
+        RowSet lov =(RowSet) voCollecte.getCurrentRow().getAttribute("RegionView1"); 
+        lov.executeQuery();
+        FacesCtrlLOVBinding lov1 = (FacesCtrlLOVBinding) bindings.get("Idregion2");
+        ViewObject RegionVoEncore = lov1.getListIterBinding().getViewObject();
+        RegionVoEncore.executeQuery();
+        
+        //ViewObject voCollecte = appModule.findViewObject("CollectepfnlView1");
+        
+        
         if (!operationBinding.getErrors().isEmpty()) {
             return null;
         }
@@ -210,18 +242,18 @@ public class CollecteBean {
         BigDecimal lastId = new BigDecimal(0);
 
         Object idEnCours = getExpressionValue("#{bindings.Idcollectepfnl.inputValue}");
-        
+
         BigDecimal v = new BigDecimal(5);
         if (idEnCours instanceof BigDecimal)
             v = (BigDecimal) idEnCours;
-        
-        
+
+
         /********** ENREGISTREMENT DU DETAIL **********/
         Object idEnCoursDetails = getExpressionValue("#{bindings.Iddetailscollectepfnl.inputValue}");
         BigDecimal v1 = new BigDecimal(5);
         if (idEnCoursDetails instanceof BigDecimal)
             v1 = (BigDecimal) idEnCoursDetails;
-        
+
         if (idEnCoursDetails == null || v1.toString().equals("-1")) {
             Object dernierId = appScope.get("iddetailcollecte");
             if (dernierId == null) {
@@ -229,7 +261,7 @@ public class CollecteBean {
                 DCIteratorBinding iterIB = (DCIteratorBinding) getBindings().get("getLastIdDetailsCollecte1Iterator");
                 ViewObjectImpl vo = (ViewObjectImpl) iterIB.getViewObject();
                 vo.executeQuery();
-                
+
                 lastId = new BigDecimal(0);
                 if (vo.hasNext()) {
                     Row r = vo.next();
@@ -244,12 +276,12 @@ public class CollecteBean {
                 lastId = lastId.add(un);
                 appScope.put("iddetailcollecte", lastId);
             }
-            
+
             setExpressionValue("#{bindings.Iddetailscollectepfnl.inputValue}", lastId);
             bindings = getBindings();
         }
         /********** FIN ENREGISTREMENT DU DETAIL **********/
-        
+
         if (idEnCours == null || v.toString().equals("-1")) {
             Object dernierId = appScope.get("idcollectebean");
             if (dernierId == null) {
@@ -499,5 +531,79 @@ public class CollecteBean {
         return valueExp.getValue(elContext);
     }
 
+    @PostConstruct
+    public void methodInvokeBeforPageLoad() {
+        System.out.println("J'ai fini d'être construit!!");
+    //    filtreur();
+    }
 
+    public String filtreur() {
+        try {
+            FacesContext fc = FacesContext.getCurrentInstance();
+            HttpSession session = (HttpSession) fc.getExternalContext().getSession(true);
+            UserData ud = (UserData) session.getAttribute("user");
+            
+            ADFContext adfCtx = ADFContext.getCurrent();
+            Map sessionScope = adfCtx.getSessionScope();
+
+            DCBindingContainer bindings1 = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
+            ApplicationModule appModule = bindings1.getDataControl().getApplicationModule();
+            RegionViewImpl voRegion = (RegionViewImpl) appModule.findViewObject("RegionView1");
+            ViewObject voCollecte = appModule.findViewObject("CollectepfnlView1");
+            
+
+            if (ud.getNiveauintervention() != 1) { //Il n'est pas central, il faut donc filtrer
+                boolean onFiltre = false;
+                
+                Object dejaFiltre = sessionScope.get("dejaFiltreCollecte");
+
+                ViewCriteria vc = voCollecte.createViewCriteria();
+                ViewCriteriaRow vcr1 = vc.createViewCriteriaRow();
+                
+         //       ViewCriteria vcRegion = voRegion.createViewCriteria();
+         //       ViewCriteriaRow vcrowRegion = vcRegion.createViewCriteriaRow();
+                
+                
+                if (ud.getNiveauintervention() == 2 && dejaFiltre == null) //C'est regional
+                {
+                    
+                    vcr1.setAttribute("Idregion", "=" + ud.getIdregion().toString());
+         //           vcrowRegion.setAttribute("Idregions", "=" + ud.getIdregion().toString());
+                    voRegion.setIdRegionVC(ud.getIdregion());
+                    sessionScope.put("dejaFiltreCollecte", true);
+                    onFiltre = true;
+                }
+                if (ud.getNiveauintervention() == 3 && dejaFiltre == null) //C'est departemental
+                {
+                    vcr1.setAttribute("Iddepartement", "=" + ud.getIddepartement().toString());
+                    System.out.println("vcrCollecte = " + vcr1);
+             //       System.out.println("vcrowRegion = " + vcrowRegion);
+                    System.out.println("Idregions = " + ud.getIdregion().toString());
+                    voRegion.setIdRegionVC(ud.getIdregion());
+            //        vcrowRegion.setAttribute("Idregions", "=" + ud.getIdregion().toString());
+                    sessionScope.put("dejaFiltreCollecte", true);
+                    onFiltre = true;
+                }
+                if (onFiltre) {    
+                    voCollecte.applyViewCriteria(vc);
+                    voCollecte.executeQuery();
+                    vc.add(vcr1);
+                    voCollecte.executeQuery();
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String filtrageDesVues() {
+        return "page_collecte.jsf";
+    }
+
+    public void fermetureListener(DisclosureEvent disclosureEvent) {
+        // Add event code here...
+        System.out.println("Fermeture ou ouverture...");
+    }
 }

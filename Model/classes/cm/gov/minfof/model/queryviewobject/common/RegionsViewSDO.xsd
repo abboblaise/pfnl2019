@@ -1,0 +1,23 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/queryviewobject/common/"
+     xmlns="/cm/gov/minfof/model/queryviewobject/common/" elementFormDefault="qualified" sdoJava:package="cm.gov.minfof.model.queryviewobject.common">
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:include schemaLocation="CommunesViewSDO.xsd"/>
+    <xsd:complexType name="RegionsViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idregions</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idregions" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Nomregion" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Coderegion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Descriptionregions" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Cheflieuregion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="CommunesView" type="CommunesViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="regionsViewSDO" type="RegionsViewSDO"/>
+</xsd:schema>

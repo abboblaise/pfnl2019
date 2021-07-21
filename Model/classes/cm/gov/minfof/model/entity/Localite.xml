@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Localite"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="localite"
+  AliasName="Localite"
+  BindingStyle="JDBC"
+  RowClass="cm.gov.minfof.model.entity.LocaliteImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idlocalite"
+    ColumnName="idlocalite"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="localite"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nomlocalite"
+    IsNotNull="true"
+    Precision="45"
+    ColumnName="nomlocalite"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="localite">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="NOM_DE_LA_LOCALIT_U00E9"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idcommune"
+    ColumnName="idcommune"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="localite">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="COMMUNE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idpostecontrole"
+    ColumnName="idpostecontrole"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="localite">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Localite"
+    Association="cm.gov.minfof.model.entity.FkLocalite1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc.Localite"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc.IdcommuneLocalite"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdcommuneLocalite"
+    Association="cm.gov.minfof.model.entity.FkLocalite1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc.IdcommuneLocalite"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc.Localite"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Commune"
+    Association="cm.gov.minfof.model.entity.CommuneToLocaliteassoc"
+    AssociationEnd="cm.gov.minfof.model.entity.CommuneToLocaliteassoc.Commune"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommuneToLocaliteassoc.Localite"
+    Type="cm.gov.minfof.model.entity.CommuneImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Postecontrole"
+    Association="cm.gov.minfof.model.entity.PosteControleToLocaliteAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.PosteControleToLocaliteAssoc.Postecontrole"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.PosteControleToLocaliteAssoc.Localite"
+    Type="cm.gov.minfof.model.entity.PostecontroleImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.fk_LocaliteAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_LocaliteAssoc.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_LocaliteAssoc.Localite"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLocalite1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc1.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc1.Localite1"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc17"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc17.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc17.Localite2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc17"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc17.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc17.Localite3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc4"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc17"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc17.LettreVoiturePc4"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc17.Localite4"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.fk_LocaliteAssoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.fk_LocaliteAssoc1.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.fk_LocaliteAssoc1.Localite"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeDocument1"
+    Association="cm.gov.minfof.model.entity.FkLocalite1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc2.TypeDocument1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLocalite1Assoc2.Localite1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Localite.Idlocalite"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkLocalite1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_localite_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Localite.Idcommune"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Localite">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Localite"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Localite.Idpostecontrole"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

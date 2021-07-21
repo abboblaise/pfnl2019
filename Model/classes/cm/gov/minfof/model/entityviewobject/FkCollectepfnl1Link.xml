@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkCollectepfnl1Link"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="cm.gov.minfof.model.entity.FkCollectepfnl1Assoc">
+  <ViewLinkDefEnd
+    Name="IdlocaliteCollectepfnlView"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entityviewobject.CollectepfnlView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="IdlocaliteCollectepfnlView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entityviewobject.CollectepfnlView.Idcollectepfnl"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CollectepfnlView"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entityviewobject.CollectepfnlView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="CollectepfnlView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entityviewobject.CollectepfnlView.Idlocalite"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

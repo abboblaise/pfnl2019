@@ -3425,7 +3425,7 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
             }
             if (nn == 3) {
                 util.setEstdep(true);
-                util.setIdregion(null);
+         //       util.setIdregion(null);
             }
             
             bb= (Boolean)rr.getAttribute("Saisieexport");
@@ -5120,7 +5120,7 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      * @return PosteControleComplet1
      */
     public PosteControleCompletImpl getPosteControleComplet1() {
-        return (PosteControleCompletImpl) findViewObject("PosteControleComplet1");
+       return (PosteControleCompletImpl) findViewObject("PosteControleComplet1");
     }
 
     /**
@@ -5201,6 +5201,30 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public LettreVoitureMulticritereDepartImpl getLettreVoitureMulticritereDepart1() {
         return (LettreVoitureMulticritereDepartImpl) findViewObject("LettreVoitureMulticritereDepart1");
+    }
+
+    /**
+     * Container's getter for LesPostesControlesView1.
+     * @return LesPostesControlesView1
+     */
+    public ViewObjectImpl getLesPostesControlesView1() {
+        return (ViewObjectImpl) findViewObject("LesPostesControlesView1");
+    }
+
+    /**
+     * Container's getter for LesLocalitesView1.
+     * @return LesLocalitesView1
+     */
+    public ViewObjectImpl getLesLocalitesView1() {
+        return (ViewObjectImpl) findViewObject("LesLocalitesView1");
+    }
+
+    /**
+     * Container's getter for departementNonFiltre1.
+     * @return departementNonFiltre1
+     */
+    public departementNonFiltreImpl getdepartementNonFiltre1() {
+        return (departementNonFiltreImpl) findViewObject("departementNonFiltre1");
     }
 }
 

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="Page_agrementPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AgrementsView1" RangeSize="25" DataControl="AppModuleDataControl" id="AgrementsView1Iterator"/>
+    <searchRegion Binds="AgrementsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="AgrementsView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="AgrementsView1Iterator" id="Numagreement">
+      <AttrNames>
+        <Item Value="Numagreement"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AgrementsView1Iterator" id="Nomdetenteur">
+      <AttrNames>
+        <Item Value="Nomdetenteur"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AgrementsView1Iterator" id="Datedebut">
+      <AttrNames>
+        <Item Value="Datedebut"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AgrementsView1Iterator" id="Datefin">
+      <AttrNames>
+        <Item Value="Datefin"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AgrementsView1Iterator" id="Descriptioncontenuagreements">
+      <AttrNames>
+        <Item Value="Descriptioncontenuagreements"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="AgrementsView1Iterator" id="AgrementsView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.AgrementsView" Name="AgrementsView10">
+        <AttrNames>
+          <Item Value="Idagrements"/>
+          <Item Value="Datedebut"/>
+          <Item Value="Datefin"/>
+          <Item Value="Numagreement"/>
+          <Item Value="Descriptioncontenuagreements"/>
+          <Item Value="Nomdetenteur"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AgrementsView1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl.AgrementsView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="AgrementsView1Iterator" id="Delete" InstanceName="AppModuleDataControl.AgrementsView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

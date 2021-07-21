@@ -65,6 +65,7 @@ public class LettrevoitureImpl extends EntityImpl {
         TypeDocument1,
         TypeDocument2;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -388,6 +389,7 @@ public class LettrevoitureImpl extends EntityImpl {
     public void setIdlettrevoiture(BigDecimal value) {
         setAttributeInternal(IDLETTREVOITURE, value);
     }
+
 
     @Override
     protected void doDML(int operation, TransactionEvent transactionEvent) {

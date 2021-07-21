@@ -163,6 +163,7 @@ public class PostecontroleViewRowImpl extends ViewRowImpl {
         setAttributeInternal(IDCOMMUNE, value);
     }
 
+
     /**
      * Gets the attribute value for the calculated attribute Nomcommune.
      * @return the Nomcommune
@@ -211,6 +212,7 @@ public class PostecontroleViewRowImpl extends ViewRowImpl {
     public void setCodeSigif(String value) {
         setAttributeInternal(CODESIGIF, value);
     }
+
 
     /**
      * Gets the associated <code>ViewRowImpl</code> using master-detail link CommuneView.

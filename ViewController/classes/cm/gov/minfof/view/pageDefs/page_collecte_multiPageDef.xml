@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_collecte_multiPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CollecteMulti1" RangeSize="-1" DataControl="AppModuleDataControl" id="CollecteMulti1Iterator"/>
+    <searchRegion Criteria="CollecteMultiCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CollecteMulti1Iterator" id="CollecteMultiCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CollecteMulti1Iterator" id="CollecteMulti1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CollecteMulti" Name="CollecteMulti10">
+        <AttrNames>
+          <Item Value="Iddetailscollectepfnl"/>
+          <Item Value="Quantite"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Idorigine"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Iddestination"/>
+          <Item Value="Idprovenance"/>
+          <Item Value="Produit"/>
+          <Item Value="Acteur"/>
+          <Item Value="Nomdepartement"/>
+          <Item Value="Nomlocalite"/>
+          <Item Value="Nomsource"/>
+          <Item Value="Intituleposte"/>
+          <Item Value="Datecollecte"/>
+          <Item Value="Nomuser"/>
+          <Item Value="Libelleunitemesure"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CollecteMulti1Iterator" id="CollecteMulti11" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CollecteMulti" Name="CollecteMulti11">
+        <AttrNames>
+          <Item Value="Quantite"/>
+          <Item Value="Produit"/>
+          <Item Value="Datecollecte"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <pivotTable IterBinding="CollecteMulti1Iterator" id="CollecteMulti12" xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <pivotTableDataMap convert="false">
+        <columns>
+          <data aggregateDuplicates="true" defaultAggregateType="SUM">
+            <item value="Quantite" aggregateType="SUM"/>
+          </data>
+        </columns>
+        <rows>
+          <item value="Datecollecte"/>
+          <item value="Produit"/>
+        </rows>
+        <pages/>
+      </pivotTableDataMap>
+    </pivotTable>
+  </bindings>
+</pageDefinition>

@@ -162,4 +162,9 @@
     <managed-bean-class>cm.gov.minfof.view.lettreVoiturePcBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__33">
+    <managed-bean-name>CollecteBeanSession</managed-bean-name>
+    <managed-bean-class>cm.gov.minfof.view.CollecteBeanSession</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

@@ -1,0 +1,53 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="/cm/gov/minfof/model/entity/common/"
+     xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns="/cm/gov/minfof/model/entityviewobject/common/" elementFormDefault="qualified"
+     sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:import schemaLocation="../../entity/common/PartiesProduitsPfnlViewSDO.xsd" namespace="/cm/gov/minfof/model/entity/common/"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:include schemaLocation="PermissionnairespnflViewSDO.xsd"/>
+    <xsd:include schemaLocation="UnitemesureViewSDO.xsd"/>
+    <xsd:include schemaLocation="OriginespnflsViewSDO.xsd"/>
+    <xsd:include schemaLocation="DepartementViewSDO.xsd"/>
+    <xsd:complexType name="DetailscollectepfnlViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Iddetailscollectepfnl</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Iddetailscollectepfnl" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idpermissionnaire" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Idorigine" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Quantite" type="xsd:float" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idunitemesure" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Iddestination" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idpartieproduitpfnl" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idcollectepfnl" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idprovenance" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Nomacteur" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Typeacteur" type="xsd:int" minOccurs="0" nillable="true"/>
+            <xsd:element name="iddepartemental" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="idregonal" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Idprovenance1" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="nomprovenance" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="DetailscollectepfnlView1" type="DetailscollectepfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="DetailscollectepfnlView3" type="DetailscollectepfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="DetailscollectepfnlView4" type="DetailscollectepfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="DetailscollectepfnlView5" type="DetailscollectepfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="DetailscollectepfnlView6" type="DetailscollectepfnlViewSDO" minOccurs="0"
+                 maxOccurs="unbounded"/>
+            <xsd:element name="PermissionnairespnflView" type="PermissionnairespnflViewSDO" minOccurs="0"/>
+            <xsd:element name="PartiesProduitsPfnlView" type="ns0:PartiesProduitsPfnlViewSDO" minOccurs="0"/>
+            <xsd:element name="UnitemesureView" type="UnitemesureViewSDO" minOccurs="0"/>
+            <xsd:element name="OriginespnflsView" type="OriginespnflsViewSDO" minOccurs="0"/>
+            <xsd:element name="DepartementView" type="DepartementViewSDO" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="detailscollectepfnlViewSDO" type="DetailscollectepfnlViewSDO"/>
+</xsd:schema>

@@ -124,6 +124,7 @@
                                             <f:validator binding="#{row.bindings.Nomcommune.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
+                                    
                                 </af:table>
                             </af:showDetailItem>
                             <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
@@ -224,8 +225,11 @@
                                                                       id="it2">
                                                             <f:validator binding="#{bindings.Intituleposte1.validator}"/>
                                                         </af:inputText>
+                                               
                                             </af:gridCell>
+                                            
                                         </af:gridRow>
+                                        
                                         <af:gridRow marginTop="5px" height="auto" id="gr1">
                                             <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc81"/>
                                         </af:gridRow>
@@ -298,12 +302,138 @@
                             <af:spacer width="10" height="10" id="s15"/>
                                 <af:button text="#{viewcontrollerBundle.EXPORT_VERS_EXCEL}" id="b13">
                                     <af:exportCollectionActionListener type="excelHTML" filename="postecontrole.xls"
-                                                                     exportedId="pc3:t2"/>
+                                                                     exportedId="pc3:t3"/>
                                 </af:button>
-                                <af:panelCollection id="pc3" inlineStyle="width:637px;">
+                                <af:panelCollection id="pc3" inlineStyle="width:1100px;">
                                     <f:facet name="menus"/>
                                     <f:facet name="toolbar"/>
-                                    <af:table value="#{bindings.PosteControleComplet1.collectionModel}" var="row"
+                                    <af:table value="#{bindings.LesPostesControlesView1.collectionModel}" var="row"
+                                              rows="#{bindings.LesPostesControlesView1.rangeSize}"
+                                              emptyText="#{bindings.LesPostesControlesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.LesPostesControlesView1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.LesPostesControlesView1.collectionModel.makeCurrent}"
+                                              rowSelection="single"
+                                              fetchSize="#{bindings.LesPostesControlesView1.rangeSize}"
+                                              filterModel="#{bindings.LesPostesControlesView1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.LesPostesControlesView1Query.processQuery}"
+                                              varStatus="vs" id="t3">
+                                        <af:column visible="false" sortProperty="#{bindings.LesPostesControlesView1.hints.Idpostecontrole.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Idpostecontrole.label}"
+                                                   id="c16">
+                                            <af:outputText value="#{row.Idpostecontrole}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Idpostecontrole.tooltip}"
+                                                           id="ot15">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.LesPostesControlesView1.hints.Idpostecontrole.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesPostesControlesView1.hints.Codeposte.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Codeposte.label}"
+                                                   id="c17">
+                                            <af:outputText value="#{row.Codeposte}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Codeposte.tooltip}"
+                                                           id="ot16"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesPostesControlesView1.hints.Intituleposte.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Intituleposte.label}"
+                                                   id="c18">
+                                            <af:outputText value="#{row.Intituleposte}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Intituleposte.tooltip}"
+                                                           id="ot17"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesPostesControlesView1.hints.Codecommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Codecommune.label}"
+                                                   id="c19">
+                                            <af:outputText value="#{row.Codecommune}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Codecommune.tooltip}"
+                                                           id="ot18"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesPostesControlesView1.hints.Nomcommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Nomcommune.label}"
+                                                   id="c20">
+                                            <af:outputText value="#{row.Nomcommune}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Nomcommune.tooltip}"
+                                                           id="ot19"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesPostesControlesView1.hints.Codedepartement.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Codedepartement.label}"
+                                                   id="c21">
+                                            <af:outputText value="#{row.Codedepartement}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Codedepartement.tooltip}"
+                                                           id="ot20"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesPostesControlesView1.hints.Nomdepartement.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Nomdepartement.label}"
+                                                   id="c22">
+                                            <af:outputText value="#{row.Nomdepartement}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Nomdepartement.tooltip}"
+                                                           id="ot21"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesPostesControlesView1.hints.Nomcheflieu.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Nomcheflieu.label}"
+                                                   id="c23">
+                                            <af:outputText value="#{row.Nomcheflieu}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Nomcheflieu.tooltip}"
+                                                           id="ot22"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesPostesControlesView1.hints.Coderegion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Coderegion.label}"
+                                                   id="c24">
+                                            <af:outputText value="#{row.Coderegion}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Coderegion.tooltip}"
+                                                           id="ot23"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesPostesControlesView1.hints.Nomregion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Nomregion.label}"
+                                                   id="c25">
+                                            <af:outputText value="#{row.Nomregion}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Nomregion.tooltip}"
+                                                           id="ot24"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesPostesControlesView1.hints.Cheflieuregion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Cheflieuregion.label}"
+                                                   id="c26">
+                                            <af:outputText value="#{row.Cheflieuregion}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Cheflieuregion.tooltip}"
+                                                           id="ot25"/>
+                                        </af:column>
+                                        <af:column visible="false" sortProperty="#{bindings.LesPostesControlesView1.hints.Idregions.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Idregions.label}"
+                                                   id="c27">
+                                            <af:outputText value="#{row.Idregions}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Idregions.tooltip}"
+                                                           id="ot26">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.LesPostesControlesView1.hints.Idregions.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column visible="false" sortProperty="#{bindings.LesPostesControlesView1.hints.Iddepartements.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesPostesControlesView1.hints.Iddepartements.label}"
+                                                   id="c28">
+                                            <af:outputText value="#{row.Iddepartements}"
+                                                           shortDesc="#{bindings.LesPostesControlesView1.hints.Iddepartements.tooltip}"
+                                                           id="ot27">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.LesPostesControlesView1.hints.Iddepartements.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                    </af:table>
+                             <!--       <af:table value="#{bindings.PosteControleComplet1.collectionModel}" var="row"
                                               rows="#{bindings.PosteControleComplet1.rangeSize}"
                                               emptyText="#{bindings.PosteControleComplet1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                               rowBandingInterval="0"
@@ -395,7 +525,7 @@
                                                            shortDesc="#{bindings.PosteControleComplet1.hints.Cheflieuregion.tooltip}"
                                                            id="ot14"/>
                                         </af:column>
-                                    </af:table>
+                                    </af:table> -->
                                 </af:panelCollection>
                             </af:showDetailItem>
                         </af:panelTabbed>

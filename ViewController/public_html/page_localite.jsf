@@ -291,10 +291,154 @@
                                     <af:exportCollectionActionListener type="excelHTML" filename="localites.xls"
                                                                      exportedId="pc3:t2"/>
                                 </af:button>
-                                <af:panelCollection id="pc3" inlineStyle="width:637px;">
+                                <af:panelCollection id="pc3" inlineStyle="width:1100px;">
                                     <f:facet name="menus"/>
                                     <f:facet name="toolbar"/>
-                                    <af:table value="#{bindings.localiteComplet1.collectionModel}" var="row"
+                                    <af:table value="#{bindings.LesLocalitesView1.collectionModel}" var="row"
+                                              rows="#{bindings.LesLocalitesView1.rangeSize}"
+                                              emptyText="#{bindings.LesLocalitesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.LesLocalitesView1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.LesLocalitesView1.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.LesLocalitesView1.rangeSize}"
+                                              filterModel="#{bindings.LesLocalitesView1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.LesLocalitesView1Query.processQuery}"
+                                              varStatus="vs" id="t2">
+                                        <af:column visible="false" sortProperty="#{bindings.LesLocalitesView1.hints.Idlocalite.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Idlocalite.label}"
+                                                   id="c14">
+                                            <af:outputText value="#{row.Idlocalite}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Idlocalite.tooltip}"
+                                                           id="ot14">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.LesLocalitesView1.hints.Idlocalite.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column visible="false" sortProperty="#{bindings.LesLocalitesView1.hints.Idregions.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Idregions.label}"
+                                                   id="c15">
+                                            <af:outputText value="#{row.Idregions}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Idregions.tooltip}"
+                                                           id="ot15">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.LesLocalitesView1.hints.Idregions.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column visible="false" sortProperty="#{bindings.LesLocalitesView1.hints.Iddepartements.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Iddepartements.label}"
+                                                   id="c16">
+                                            <af:outputText value="#{row.Iddepartements}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Iddepartements.tooltip}"
+                                                           id="ot16">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.LesLocalitesView1.hints.Iddepartements.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column visible="false" sortProperty="#{bindings.LesLocalitesView1.hints.Idcommunes.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Idcommunes.label}"
+                                                   id="c17">
+                                            <af:outputText value="#{row.Idcommunes}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Idcommunes.tooltip}"
+                                                           id="ot17">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.LesLocalitesView1.hints.Idcommunes.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Nomlocalite.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Nomlocalite.label}"
+                                                   id="c18">
+                                            <af:outputText value="#{row.Nomlocalite}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Nomlocalite.tooltip}"
+                                                           id="ot18"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Codeposte.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Codeposte.label}"
+                                                   id="c19">
+                                            <af:outputText value="#{row.Codeposte}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Codeposte.tooltip}"
+                                                           id="ot19"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Intituleposte.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Intituleposte.label}"
+                                                   id="c20">
+                                            <af:outputText value="#{row.Intituleposte}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Intituleposte.tooltip}"
+                                                           id="ot20"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Codecommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Codecommune.label}"
+                                                   id="c21">
+                                            <af:outputText value="#{row.Codecommune}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Codecommune.tooltip}"
+                                                           id="ot21"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Nomcommune.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Nomcommune.label}"
+                                                   id="c22">
+                                            <af:outputText value="#{row.Nomcommune}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Nomcommune.tooltip}"
+                                                           id="ot22"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Codedepartement.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Codedepartement.label}"
+                                                   id="c23">
+                                            <af:outputText value="#{row.Codedepartement}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Codedepartement.tooltip}"
+                                                           id="ot23"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Nomdepartement.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Nomdepartement.label}"
+                                                   id="c24">
+                                            <af:outputText value="#{row.Nomdepartement}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Nomdepartement.tooltip}"
+                                                           id="ot24"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Nomcheflieu.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Nomcheflieu.label}"
+                                                   id="c25">
+                                            <af:outputText value="#{row.Nomcheflieu}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Nomcheflieu.tooltip}"
+                                                           id="ot25"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Coderegion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Coderegion.label}"
+                                                   id="c26">
+                                            <af:outputText value="#{row.Coderegion}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Coderegion.tooltip}"
+                                                           id="ot26"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Nomregion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Nomregion.label}"
+                                                   id="c27">
+                                            <af:outputText value="#{row.Nomregion}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Nomregion.tooltip}"
+                                                           id="ot27"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.LesLocalitesView1.hints.Cheflieuregion.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.LesLocalitesView1.hints.Cheflieuregion.label}"
+                                                   id="c28">
+                                            <af:outputText value="#{row.Cheflieuregion}"
+                                                           shortDesc="#{bindings.LesLocalitesView1.hints.Cheflieuregion.tooltip}"
+                                                           id="ot28"/>
+                                        </af:column>
+                                    </af:table>
+                             <!--       <af:table value="#{bindings.localiteComplet1.collectionModel}" var="row"
                                               rows="#{bindings.localiteComplet1.rangeSize}"
                                               emptyText="#{bindings.localiteComplet1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                               rowBandingInterval="0"
@@ -393,7 +537,7 @@
                                                            shortDesc="#{bindings.localiteComplet1.hints.Cheflieuregion.tooltip}"
                                                            id="ot13"/>
                                         </af:column>
-                                    </af:table>
+                                    </af:table> -->
                                 </af:panelCollection>
                             </af:showDetailItem>
                         </af:panelTabbed>

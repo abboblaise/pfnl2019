@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkLocalite1Link"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="cm.gov.minfof.model.entity.FkLocalite1Assoc">
+  <ViewLinkDefEnd
+    Name="IdcommuneLocaliteView"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entityviewobject.LocaliteView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="IdcommuneLocaliteView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entityviewobject.LocaliteView.Idlocalite"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="LocaliteView"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entityviewobject.LocaliteView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="LocaliteView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entityviewobject.LocaliteView.Idcommune"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

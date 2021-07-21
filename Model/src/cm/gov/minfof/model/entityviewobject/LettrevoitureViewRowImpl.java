@@ -44,6 +44,8 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         Idtypedocument,
         Datelettrevoiture,
         Idlettrevoiture1,
+        idRegionSession,
+        idDepartementSession,
         LettrevoitureView2,
         LettrevoitureView4,
         DetailslettrevoitureView,
@@ -63,7 +65,8 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         AppModule_typeDocViewFinal1_1,
         AppModule_LocaliteLettreVoiture1_1,
         LocaliteLettreVoiture1,
-        LocaliteLettreVoiture2;
+        LocaliteLettreVoiture2,
+        departementNonFiltre1;
         private static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -105,6 +108,8 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     public static final int IDTYPEDOCUMENT = AttributesEnum.Idtypedocument.index();
     public static final int DATELETTREVOITURE = AttributesEnum.Datelettrevoiture.index();
     public static final int IDLETTREVOITURE1 = AttributesEnum.Idlettrevoiture1.index();
+    public static final int IDREGIONSESSION = AttributesEnum.idRegionSession.index();
+    public static final int IDDEPARTEMENTSESSION = AttributesEnum.idDepartementSession.index();
     public static final int LETTREVOITUREVIEW2 = AttributesEnum.LettrevoitureView2.index();
     public static final int LETTREVOITUREVIEW4 = AttributesEnum.LettrevoitureView4.index();
     public static final int DETAILSLETTREVOITUREVIEW = AttributesEnum.DetailslettrevoitureView.index();
@@ -126,6 +131,7 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
         AttributesEnum.AppModule_LocaliteLettreVoiture1_1.index();
     public static final int LOCALITELETTREVOITURE1 = AttributesEnum.LocaliteLettreVoiture1.index();
     public static final int LOCALITELETTREVOITURE2 = AttributesEnum.LocaliteLettreVoiture2.index();
+    public static final int DEPARTEMENTNONFILTRE1 = AttributesEnum.departementNonFiltre1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -157,6 +163,31 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
     public void setIdlettrevoiture1(BigDecimal value) {
         setAttributeInternal(IDLETTREVOITURE1, value);
     }
+
+    /**
+     * Gets the attribute value for the calculated attribute idRegionSession.
+     * @return the idRegionSession
+     */
+    public BigDecimal getidRegionSession() {
+        return (BigDecimal) getAttributeInternal(IDREGIONSESSION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute idRegionSession.
+     * @param value value to set the  idRegionSession
+     */
+    public void setidRegionSession(BigDecimal value) {
+        setAttributeInternal(IDREGIONSESSION, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute idDepartementSession.
+     * @return the idDepartementSession
+     */
+    public BigDecimal getidDepartementSession() {
+        return (BigDecimal) getAttributeInternal(IDDEPARTEMENTSESSION);
+    }
+
 
     /**
      * Gets the attribute value for idpermissionnaire using the alias name Idpermissionnaire.
@@ -573,6 +604,13 @@ public class LettrevoitureViewRowImpl extends ViewRowImpl {
      */
     public RowSet getLocaliteLettreVoiture2() {
         return (RowSet) getAttributeInternal(LOCALITELETTREVOITURE2);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> departementNonFiltre1.
+     */
+    public RowSet getdepartementNonFiltre1() {
+        return (RowSet) getAttributeInternal(DEPARTEMENTNONFILTRE1);
     }
 }
 

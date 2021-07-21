@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="page_export_multicriterePageDef" Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ExportMultiCritere1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="ExportMultiCritere1Iterator"/>
+    <searchRegion Criteria="ExportMultiCritereCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ExportMultiCritere1Iterator" id="ExportMultiCritereCriteriaQuery"/>
+    <iterator Binds="CompilExportDestination1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="CompilExportDestination1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ExportMultiCritere1Iterator" id="ExportMultiCritere1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.ExportMultiCritere" Name="ExportMultiCritere10">
+        <AttrNames>
+          <Item Value="Iddetailsexportpfnl"/>
+          <Item Value="Idpermis"/>
+          <Item Value="Idpermissionnairespnfl"/>
+          <Item Value="Idcertificatorigine"/>
+          <Item Value="Idpostecontrole"/>
+          <Item Value="Idpays"/>
+          <Item Value="Idpartiesproduitspfnl"/>
+          <Item Value="Numeroexport"/>
+          <Item Value="Numeropermis"/>
+          <Item Value="Nomouraisonsociale"/>
+          <Item Value="Contact"/>
+          <Item Value="Adressep"/>
+          <Item Value="Quantite"/>
+          <Item Value="Quantiteconvertie"/>
+          <Item Value="Quantiteconvertiefinal"/>
+          <Item Value="Observations"/>
+          <Item Value="Libelleunitemesure"/>
+          <Item Value="Libelleconverti"/>
+          <Item Value="Produit"/>
+          <Item Value="Numeroco"/>
+          <Item Value="Dateexport"/>
+          <Item Value="Intituleposte"/>
+          <Item Value="Nompays"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <pivotTable IterBinding="ExportMultiCritere1Iterator" id="ExportMultiCritere11"
+                xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <pivotTableDataMap convert="false">
+        <columns>
+          <data aggregateDuplicates="true" defaultAggregateType="SUM">
+            <item value="Quantiteconvertiefinal"/>
+          </data>
+        </columns>
+        <rows>
+          <item value="Produit" sortAttribute="Quantiteconvertiefinal"/>
+          <item value="Libelleconverti"/>
+        </rows>
+        <pages/>
+        <aggregatedItems>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="Libelleconverti" aggregateLabel="TTL Produit"/>
+          <item aggregateLocation="AFTER" aggregateType="AVERAGE" value="Libelleconverti" aggregateLabel="Moy Produit"/>
+          <item aggregateLocation="AFTER" aggregateType="STDDEV" value="Libelleconverti"
+                aggregateLabel="Ecrt Type Produit"/>
+          <item aggregateLocation="AFTER" aggregateType="SUM" value="Nomouraisonsociale"
+                aggregateLabel="TTL Permissionnaire"/>
+          <item aggregateLocation="AFTER" aggregateType="AVERAGE" value="Nomouraisonsociale"
+                aggregateLabel="Moy Permissionnaire"/>
+          <item aggregateLocation="AFTER" aggregateType="STDDEV" value="Nomouraisonsociale"
+                aggregateLabel="Ecrt Type Permissionnaire"/>
+        </aggregatedItems>
+        <drills type="INSERT"/>
+        <hierarchies>
+          <item value="Libelleconverti" location="BEFORE">
+            <child value="Nompays"/>
+          </item>
+          <item value="Nompays" location="BEFORE">
+            <child value="Nomouraisonsociale"/>
+          </item>
+        </hierarchies>
+        <sorts>
+          <categorySort item="Produit" direction="ASCENDING"/>
+        </sorts>
+      </pivotTableDataMap>
+    </pivotTable>
+    <tree IterBinding="CompilExportDestination1Iterator" id="CompilExportDestination1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CompilExportDestination"
+                      Name="CompilExportDestination1">
+        <AttrNames>
+          <Item Value="Quantiteconvertiefinal"/>
+          <Item Value="Produit"/>
+          <Item Value="Nompays"/>
+          <Item Value="Nomouraisonsociale"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

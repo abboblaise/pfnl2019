@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_ceqePageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CeqeView1" RangeSize="25" DataControl="AppModuleDataControl" id="CeqeView1Iterator"/>
+    <searchRegion Binds="CeqeView1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="CeqeView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CeqeView1Iterator" id="Idceqe">
+      <AttrNames>
+        <Item Value="Idceqe"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CeqeView1Iterator" id="Numeroceqe">
+      <AttrNames>
+        <Item Value="Numeroceqe"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CeqeView1Iterator" id="Datedelivrance">
+      <AttrNames>
+        <Item Value="Datedelivrance"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CeqeView1Iterator" id="Observation">
+      <AttrNames>
+        <Item Value="Observation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CeqeView1Iterator" id="Nomfichier">
+      <AttrNames>
+        <Item Value="Nomfichier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CeqeView1Iterator" id="Cheminfichier">
+      <AttrNames>
+        <Item Value="Cheminfichier"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CeqeView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="CeqeView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="CeqeView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="CeqeView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="CeqeView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="CeqeView1Iterator" StaticList="false" Uses="LOV_Idpermissionnaire" id="Idpermissionnaire"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="CeqeView1Iterator" id="CeqeView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CeqeView" Name="CeqeView10">
+        <AttrNames>
+          <Item Value="Idceqe"/>
+          <Item Value="Numeroceqe"/>
+          <Item Value="Datedelivrance"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Observation"/>
+          <Item Value="Nomfichier"/>
+          <Item Value="Cheminfichier"/>
+          <Item Value="Idpermis"/>
+          <Item Value="numComplet"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <listOfValues IterBinding="CeqeView1Iterator" StaticList="false" Uses="LOV_nomouraisonsociale"
+                  id="nomouraisonsociale"/>
+    <action IterBinding="CeqeView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <listOfValues IterBinding="CeqeView1Iterator" StaticList="false" Uses="LOV_numeropermis" id="numeropermis"/>
+    <attributeValues IterBinding="CeqeView1Iterator" id="numComplet">
+      <AttrNames>
+        <Item Value="numComplet"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

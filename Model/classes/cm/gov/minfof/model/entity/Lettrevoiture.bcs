@@ -1,0 +1,12 @@
+//Groovy Scripts for cm.gov.minfof.model.entity.Lettrevoiture
+
+package cm.gov.minfof.model.entity
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Datelettrevoiture")
+def Datelettrevoiture_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+

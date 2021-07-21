@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_certificatPageDef1"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PermisView1" RangeSize="25" DataControl="AppModuleDataControl" id="PermisView1Iterator"/>
+    <iterator Binds="CertificatorigineView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="CertificatorigineView2Iterator"/>
+    <searchRegion Binds="CertificatorigineView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CertificatorigineView2Query"/>
+  </executables>
+  <bindings>
+    <list IterBinding="PermisView1Iterator" ListOperMode="navigation" ListIter="PermisView1Iterator" id="PermisView1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Numeropermis"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="CertificatorigineView2Iterator" id="Numeroco">
+      <AttrNames>
+        <Item Value="Numeroco"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CertificatorigineView2Iterator" StaticList="false" Uses="LOV_Idpartieproduitpfnl"
+          id="Idpartieproduitpfnl" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CertificatorigineView2Iterator" id="Quantite">
+      <AttrNames>
+        <Item Value="Quantite"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CertificatorigineView2Iterator" StaticList="false" Uses="LOV_Idunitemesure" id="Idunitemesure"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="CertificatorigineView2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="CertificatorigineView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="CertificatorigineView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="CertificatorigineView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="CertificatorigineView2Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="CertificatorigineView2Iterator" id="CertificatorigineView2">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CertificatorigineView"
+                      Name="CertificatorigineView20">
+        <AttrNames>
+          <Item Value="Numeroco"/>
+          <Item Value="Idpartieproduitpfnl"/>
+          <Item Value="Quantite"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Destinataire"/>
+          <Item Value="Idpays"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="CertificatorigineView2Iterator" StaticList="false" Uses="LOV_Idpermis" id="Idpermis"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <action IterBinding="CertificatorigineView2Iterator" id="CreateInsert"
+            InstanceName="AppModuleDataControl.CertificatorigineView2" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <list IterBinding="CertificatorigineView2Iterator" StaticList="false" Uses="LOV_Idpays" id="Idpays1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

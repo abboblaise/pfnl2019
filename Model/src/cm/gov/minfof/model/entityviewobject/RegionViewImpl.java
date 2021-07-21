@@ -1,8 +1,17 @@
 package cm.gov.minfof.model.entityviewobject;
 
+import cm.gov.minfof.model.entity.UserData;
+
+import java.math.BigDecimal;
+
 import java.sql.ResultSet;
 
+import javax.faces.context.FacesContext;
+
+import javax.servlet.http.HttpSession;
+
 import oracle.jbo.Row;
+import oracle.jbo.ViewCriteria;
 import oracle.jbo.server.ViewObjectImpl;
 import oracle.jbo.server.ViewRowImpl;
 import oracle.jbo.server.ViewRowSetImpl;
@@ -94,5 +103,37 @@ public class RegionViewImpl extends VueImplementation {
         System.out.println("apr??s query2 = " + query);
         return query;
       } */
+
+    /**
+     * Returns the variable value for idRegionBind.
+     * @return variable value for idRegionBind
+     */
+    public BigDecimal getidRegionBind() {
+        return (BigDecimal) ensureVariableManager().getVariableValue("idRegionBind");
     }
+
+    /**
+     * Sets <code>value</code> for variable idRegionBind.
+     * @param value value to bind as idRegionBind
+     */
+    public void setidRegionBind(BigDecimal value) {
+        ensureVariableManager().setVariableValue("idRegionBind", value);
+    }
+    
+    public void setIdRegionVC(BigDecimal x) {
+        System.out.println("J'entre bien ici!!");
+        ViewCriteria vc = getViewCriteria("RegionViewCriteria");
+        vc.resetCriteria();
+        setidRegionBind(x);
+        applyViewCriteria(vc);
+        executeQuery();
+        System.out.println("Je sors bien d'ici!!");
+
+        }
+    
+    public void clearIdRegionVC() {
+        removeApplyViewCriteriaName("RegionViewCriteria");
+        executeQuery();
+        }
+}
 

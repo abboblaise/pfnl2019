@@ -1,0 +1,19 @@
+//Groovy Scripts for cm.gov.minfof.model.entityviewobject.CollectepfnlView
+
+package cm.gov.minfof.model.entityviewobject
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="idRegionSession")
+def idRegionSession_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('idregional')
+}
+
+
+@TransientValueExpression(attributeName="idDepartementSession")
+def idDepartementSession_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('iddepartemental')
+}
+

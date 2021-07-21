@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkVehicule3Assoc"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="IdtypevehiculeVehicule"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.Vehicule">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="IdtypevehiculeVehicule"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Vehicule.Primary1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Vehicule.Idvehicule"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Vehicule"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entity.Vehicule">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Vehicule"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Vehicule.FkVehicule3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Vehicule.Idtypevehicule"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

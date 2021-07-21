@@ -1,0 +1,33 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns="/cm/gov/minfof/model/entityviewobject/common/" elementFormDefault="qualified"
+     sdoJava:package="cm.gov.minfof.model.entityviewobject.common">
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:include schemaLocation="DepartementViewSDO.xsd"/>
+    <xsd:include schemaLocation="CommuneViewSDO.xsd"/>
+    <xsd:include schemaLocation="VehiculeViewSDO.xsd"/>
+    <xsd:include schemaLocation="CollectepfnlViewSDO.xsd"/>
+    <xsd:complexType name="RegionViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idregions</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idregions" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Nomregion" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Coderegion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Descriptionregions" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Cheflieuregion" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Abreviationregion" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="DepartementView" type="DepartementViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="CommuneView" type="CommuneViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="VehiculeView" type="VehiculeViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="CollectepfnlView" type="CollectepfnlViewSDO" minOccurs="0"/>
+            <xsd:element name="DepartementView1" type="DepartementViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="CollectepfnlView1" type="CollectepfnlViewSDO" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="regionViewSDO" type="RegionViewSDO"/>
+</xsd:schema>

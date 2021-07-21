@@ -94,6 +94,14 @@ public interface CollectepfnlViewSDO extends java.io.Serializable {
 
    public void setNumerocollecte(java.lang.String value);
 
+   public java.math.BigDecimal getIdRegionSession();
+
+   public void setIdRegionSession(java.math.BigDecimal value);
+
+   public java.math.BigDecimal getIdDepartementSession();
+
+   public void setIdDepartementSession(java.math.BigDecimal value);
+
    public java.util.List getCollectepfnlView();
 
    public void setCollectepfnlView(java.util.List value);

@@ -1,0 +1,756 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="/cm/gov/minfof/model/entity/common/types/"
+     xmlns:tns="/cm/gov/minfof/model/entity/common/types/" xmlns:ns0="/cm/gov/minfof/model/entityviewobject/common/"
+     xmlns:ns1="/cm/gov/minfof/model/entity/common/" xmlns:ns2="http://xmlns.oracle.com/adf/svc/types/"
+     xmlns:ns3="/cm/gov/minfof/model/queryviewobject/common/">
+    <import namespace="/cm/gov/minfof/model/queryviewobject/common/" schemaLocation="../../../queryviewobject/common/RegionsViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/ExportpfnlViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/DepartementViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/LettrevoitureViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/DetailscollectepfnlViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/CollectepfnlViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/LocaliteViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/CategorieproduitViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entity/common/" schemaLocation="../ProduitsPfnlViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/PermissionnairespnflViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/UnitemesureViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entity/common/" schemaLocation="../PartiesProduitsPfnlViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/DetailpermisViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/PostecontroleViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/DetailsexportpfnlViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/PermisViewSDO.xsd"/>
+    <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entity/common/" schemaLocation="../FamillePfnlViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/PartiproduitSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entity/common/" schemaLocation="../PartiesRecolteesViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/PaysViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/CertificatorigineViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/RegionViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/OriginespnflsViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/CategorieunitemesureViewSDO.xsd"/>
+    <import namespace="/cm/gov/minfof/model/entityviewobject/common/" schemaLocation="../../../entityviewobject/common/CommuneViewSDO.xsd"/>
+    <element name="getCategorieproduitView1">
+        <complexType>
+            <sequence>
+                <element name="idcategorieproduit" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getCategorieproduitView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CategorieproduitViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCategorieproduitView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCategorieproduitView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CategorieproduitViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getCategorieunitemesureView1">
+        <complexType>
+            <sequence>
+                <element name="idcategorieunitemesure" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getCategorieunitemesureView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CategorieunitemesureViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCategorieunitemesureView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCategorieunitemesureView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CategorieunitemesureViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getCertificatorigineView1">
+        <complexType>
+            <sequence>
+                <element name="idcertificatorigine" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getCertificatorigineView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CertificatorigineViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCertificatorigineView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCertificatorigineView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CertificatorigineViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getCollectepfnlView1">
+        <complexType>
+            <sequence>
+                <element name="idcollectepfnl" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getCollectepfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CollectepfnlViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCollectepfnlView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCollectepfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CollectepfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getCommuneView1">
+        <complexType>
+            <sequence>
+                <element name="idcommunes" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getCommuneView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CommuneViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCommuneView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCommuneView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CommuneViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDepartementView1">
+        <complexType>
+            <sequence>
+                <element name="iddepartements" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDepartementView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DepartementViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findDepartementView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findDepartementView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DepartementViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDetailpermisView1">
+        <complexType>
+            <sequence>
+                <element name="iddetailpermis" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDetailpermisView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DetailpermisViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findDetailpermisView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findDetailpermisView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DetailpermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDetailscollectepfnlView1">
+        <complexType>
+            <sequence>
+                <element name="iddetailscollectepfnl" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDetailscollectepfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DetailscollectepfnlViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findDetailscollectepfnlView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findDetailscollectepfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DetailscollectepfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDetailsexportpfnlView1">
+        <complexType>
+            <sequence>
+                <element name="iddetailsexportpfnl" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDetailsexportpfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DetailsexportpfnlViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findDetailsexportpfnlView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findDetailsexportpfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DetailsexportpfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getExportpfnlView1">
+        <complexType>
+            <sequence>
+                <element name="idexportpfnl" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getExportpfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ExportpfnlViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findExportpfnlView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findExportpfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:ExportpfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getFamillePfnlView1">
+        <complexType>
+            <sequence>
+                <element name="idfamillepfnl" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getFamillePfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:FamillePfnlViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findFamillePfnlView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findFamillePfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:FamillePfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getLettrevoitureView1">
+        <complexType>
+            <sequence>
+                <element name="idlettrevoiture" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getLettrevoitureView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:LettrevoitureViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findLettrevoitureView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findLettrevoitureView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:LettrevoitureViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getLocaliteView1">
+        <complexType>
+            <sequence>
+                <element name="idlocalite" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getLocaliteView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:LocaliteViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findLocaliteView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findLocaliteView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:LocaliteViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOriginespnflsView1">
+        <complexType>
+            <sequence>
+                <element name="idoriginespnfls" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getOriginespnflsView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:OriginespnflsViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOriginespnflsView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOriginespnflsView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:OriginespnflsViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPartiesProduitsPfnlView1">
+        <complexType>
+            <sequence>
+                <element name="idpartiesproduitspfnl" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPartiesProduitsPfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:PartiesProduitsPfnlViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPartiesProduitsPfnlView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPartiesProduitsPfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:PartiesProduitsPfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPartiesRecolteesView1">
+        <complexType>
+            <sequence>
+                <element name="idpartiesrecoltees" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPartiesRecolteesView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:PartiesRecolteesViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPartiesRecolteesView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPartiesRecolteesView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:PartiesRecolteesViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPartiproduit1">
+        <complexType>
+            <sequence>
+                <element name="idpartiesproduitspfnl" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPartiproduit1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:PartiproduitSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPartiproduit1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPartiproduit1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:PartiproduitSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPaysView1">
+        <complexType>
+            <sequence>
+                <element name="idpays" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPaysView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:PaysViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPaysView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPaysView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:PaysViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPermisView1">
+        <complexType>
+            <sequence>
+                <element name="idpermis" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPermisView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:PermisViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPermisView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPermisView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:PermisViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPermissionnairespnflView1">
+        <complexType>
+            <sequence>
+                <element name="idpermissionnairespnfl" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPermissionnairespnflView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:PermissionnairespnflViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPermissionnairespnflView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPermissionnairespnflView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:PermissionnairespnflViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPostecontroleView1">
+        <complexType>
+            <sequence>
+                <element name="idpostecontrole" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getPostecontroleView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:PostecontroleViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPostecontroleView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findPostecontroleView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:PostecontroleViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getProduitsPfnlView1">
+        <complexType>
+            <sequence>
+                <element name="idproduitspfnl" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getProduitsPfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:ProduitsPfnlViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findProduitsPfnlView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findProduitsPfnlView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:ProduitsPfnlViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getRegionView1">
+        <complexType>
+            <sequence>
+                <element name="idregions" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getRegionView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:RegionViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findRegionView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findRegionView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:RegionViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getRegionsView1">
+        <complexType>
+            <sequence>
+                <element name="idregions" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getRegionsView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns3:RegionsViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findRegionsView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findRegionsView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns3:RegionsViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getUnitemesureView1">
+        <complexType>
+            <sequence>
+                <element name="idunitemesure" type="decimal"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getUnitemesureView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UnitemesureViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findUnitemesureView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns2:FindCriteria"/>
+                <element name="findControl" type="ns2:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findUnitemesureView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:UnitemesureViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

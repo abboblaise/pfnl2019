@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_communePageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RegionView1" RangeSize="25" DataControl="AppModuleDataControl" id="RegionView1Iterator"/>
+    <iterator Binds="DepartementView3" RangeSize="25" DataControl="AppModuleDataControl" id="DepartementView3Iterator"/>
+    <iterator Binds="CommuneView5" RangeSize="25" DataControl="AppModuleDataControl" id="CommuneView5Iterator"/>
+    <searchRegion Binds="CommuneView5Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CommuneView5Query"/>
+    <iterator Binds="CommuneView1" RangeSize="25" DataControl="AppModuleDataControl" id="CommuneView1Iterator"/>
+    <searchRegion Binds="CommuneView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CommuneView1Query"/>
+    <iterator id="getLastIdCommunes1Iterator" Binds="getLastIdCommunes1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
+  </executables>
+  <bindings>
+    <list IterBinding="RegionView1Iterator" ListOperMode="navigation" ListIter="RegionView1Iterator" id="RegionView1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Nomregion"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="DepartementView3Iterator" ListOperMode="navigation" ListIter="DepartementView3Iterator"
+          id="DepartementView3" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Nomdepartement"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="CommuneView5Iterator" id="Nomcommune">
+      <AttrNames>
+        <Item Value="Nomcommune"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="CommuneView5Iterator" id="CommuneView5">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CommuneView" Name="CommuneView50">
+        <AttrNames>
+          <Item Value="Idcommunes"/>
+          <Item Value="Iddepartements"/>
+          <Item Value="Codecommune"/>
+          <Item Value="Nomcommune"/>
+          <Item Value="codesigif"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="CommuneView5Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CommuneView5Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="CommuneView5Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="CommuneView5Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="CommuneView5Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="CommuneView5Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <attributeValues IterBinding="CommuneView5Iterator" id="Codecommune">
+      <AttrNames>
+        <Item Value="Codecommune"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="CommuneView1Iterator" id="CommuneView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.CommuneView" Name="CommuneView10">
+        <AttrNames>
+          <Item Value="Idcommunes"/>
+          <Item Value="Iddepartements"/>
+          <Item Value="Codecommune"/>
+          <Item Value="codesigif"/>
+          <Item Value="Nomcommune"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CommuneView5Iterator" id="Idcommunes">
+      <AttrNames>
+        <Item Value="Idcommunes"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

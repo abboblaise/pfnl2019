@@ -36,11 +36,12 @@
                                                                            contentType="application/pdf"
                                                                            filename="resultta.pdf"/>
                                         </af:button>
+                                       
                                     </af:panelGroupLayout>
                                 </f:facet>
                                 <af:spacer width="10" height="10" id="s13"/>
                                 <af:panelTabbed position="above" id="pt2">
-                                    <af:showDetailItem id="tab1" text="#{viewcontrollerBundle.CONSULTATION}"
+                                    <af:showDetailItem  id="tab1" text="#{viewcontrollerBundle.CONSULTATION}"
                                                        disclosed="true">
                                         <af:panelCollection id="pc2" inlineStyle="width:620px;">
                                             <f:facet name="menus"/>
@@ -85,7 +86,6 @@
                                                         <af:convertDateTime pattern="#{bindings.CollectepfnlView1.hints.Datecollecte.format}"/>
                                                     </af:outputText>
                                                 </af:column>
-                                                
                                                 <af:column headerText="#{bindings.CollectepfnlView1.hints.Iddepartement1.label}"
                                                            id="c17">
                                                     <af:selectOneChoice value="#{row.bindings.Iddepartement1.inputValue}"
@@ -137,19 +137,38 @@
                                             <f:facet name="statusbar"/>
                                         </af:panelCollection>
                                     </af:showDetailItem>
-                                    <af:showDetailItem id="tab2" text="#{viewcontrollerBundle.EDITION}">
+                                    <af:showDetailItem disclosureListener="#{collecteBean.fermetureListener}" id="tab2" text="#{viewcontrollerBundle.EDITION}">
                                         <af:panelBox id="pb1" showDisclosure="false">
                                             <f:facet name="toolbar"/>
                                             <af:panelGridLayout id="pgl3">
-                                            
-                                            <af:gridRow marginTop="5px" height="auto" id="gr1ido">
+                                                <af:gridRow marginTop="5px" height="auto" id="gr1ido">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc1ido">
-                                                        <af:outputLabel value=""
-                                                                        id="ol11"/>
+                                                        <af:outputLabel value="" id="ol11"/>
+                                                        <af:inputText visible="false" value="#{bindings.idRegionSession.inputValue}"
+                                                                      required="#{bindings.idRegionSession.hints.mandatory}"
+                                                                      columns="#{bindings.idRegionSession.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.idRegionSession.hints.precision}"
+                                                                      shortDesc="#{bindings.idRegionSession.hints.tooltip}"
+                                                                      id="it3">
+                                                            <f:validator binding="#{bindings.idRegionSession.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.idRegionSession.format}"/>
+                                                        </af:inputText>
+                                                        <af:inputText visible="false" value="#{bindings.idDepartementSession.inputValue}"
+                                                                      required="#{bindings.idDepartementSession.hints.mandatory}"
+                                                                      columns="#{bindings.idDepartementSession.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.idDepartementSession.hints.precision}"
+                                                                      shortDesc="#{bindings.idDepartementSession.hints.tooltip}"
+                                                                      id="it6">
+                                                            <f:validator binding="#{bindings.idDepartementSession.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.idDepartementSession.format}"/>
+                                                        </af:inputText>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="320pt" marginEnd="5px"
                                                                  id="gc2ido">
-                                                                 <af:inputText visible="false" value="#{bindings.Idcollectepfnl.inputValue}"
+                                                        <af:inputText visible="false"
+                                                                      value="#{bindings.Idcollectepfnl.inputValue}"
                                                                       simple="true"
                                                                       required="#{bindings.Idcollectepfnl.hints.mandatory}"
                                                                       columns="#{bindings.Idcollectepfnl.hints.displayWidth}"
@@ -158,18 +177,16 @@
                                                                       id="it1o">
                                                             <f:validator binding="#{bindings.Idcollectepfnl.validator}"/>
                                                         </af:inputText>
-                                                </af:gridCell>
+                                                    </af:gridCell>
                                                 </af:gridRow>
-                                            
                                                 <af:gridRow marginTop="5px" height="auto" id="gr1id">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc1id">
                                                         <af:outputLabel value="#{bindings.Identificateur.hints.label}"
                                                                         id="ol1"/>
                                                     </af:gridCell>
-                                                    
-                                                     <af:gridCell marginStart="5px" width="320pt" marginEnd="5px"
+                                                    <af:gridCell marginStart="5px" width="320pt" marginEnd="5px"
                                                                  id="gc2id">
-                                                                 <af:inputText value="#{bindings.Identificateur.inputValue}"
+                                                        <af:inputText value="#{bindings.Identificateur.inputValue}"
                                                                       simple="true"
                                                                       required="#{bindings.Identificateur.hints.mandatory}"
                                                                       columns="#{bindings.Identificateur.hints.displayWidth}"
@@ -178,7 +195,7 @@
                                                                       id="it1">
                                                             <f:validator binding="#{bindings.Identificateur.validator}"/>
                                                         </af:inputText>
-                                                     <!--   <af:inputText simple="true"
+                                                        <!--   <af:inputText simple="true"
                                                                       required="#{bindings.Identificateur.hints.mandatory}"
                                                                       columns="#{bindings.Identificateur.hints.displayWidth}"
                                                                       maximumLength="#{bindings.Identificateur.hints.precision}"
@@ -188,14 +205,14 @@
                                                         </af:inputText> -->
                                                     </af:gridCell>
                                                 </af:gridRow>
-                                                
-                                                 <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                                <af:gridRow marginTop="5px" height="auto" id="gr1">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc1">
                                                         <af:outputLabel value="#{bindings.Numerocollecte.hints.label}"
                                                                         id="ol2"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" id="gc2">
-                                                        <af:inputText simple="true" value="#{bindings.Numerocollecte.inputValue}"
+                                                        <af:inputText simple="true"
+                                                                      value="#{bindings.Numerocollecte.inputValue}"
                                                                       required="#{bindings.Numerocollecte.hints.mandatory}"
                                                                       columns="#{bindings.Numerocollecte.hints.displayWidth}"
                                                                       maximumLength="#{bindings.Numerocollecte.hints.precision}"
@@ -205,8 +222,6 @@
                                                         </af:inputText>
                                                     </af:gridCell>
                                                 </af:gridRow>
-                                               
-                                            
                                                 <af:gridRow marginTop="5px" height="auto" id="gr21">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc37">
                                                         <af:outputText value="#{bindings.Idutilisateur.label}"
@@ -225,27 +240,25 @@
                                                         </af:inputComboboxListOfValues>
                                                     </af:gridCell>
                                                 </af:gridRow>
-                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc3">
-                                                        <af:outputText value="#{bindings.Idregion.label}"
-                                                                       id="ot81"/>
+                                                        <af:outputText value="#{bindings.Idregion.label}" id="ot81"/>
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="208px" marginEnd="5px"
                                                                  id="gc41">
                                                         <af:inputComboboxListOfValues id="idregion2Id"
-                                                                              popupTitle="Search and Select: #{bindings.Idregion2.hints.label}"
-                                                                              value="#{bindings.Idregion2.inputValue}"
-                                                                              model="#{bindings.Idregion2.listOfValuesModel}"
-                                                                              required="true"
-                                                                              columns="#{bindings.Idregion2.hints.displayWidth}"
-                                                                              shortDesc="#{bindings.Idregion2.hints.tooltip}">
+                                                                                      popupTitle="Search and Select: #{bindings.Idregion2.hints.label}"
+                                                                                      value="#{bindings.Idregion2.inputValue}"
+                                                                                      model="#{bindings.Idregion2.listOfValuesModel}"
+                                                                                      required="true"
+                                                                                      columns="#{bindings.Idregion2.hints.displayWidth}"
+                                                                                      shortDesc="#{bindings.Idregion2.hints.tooltip}">
                                                             <f:validator binding="#{bindings.Idregion2.validator}"/>
                                                             <af:convertNumber groupingUsed="false"
                                                                               pattern="#{bindings.Idregion2.format}"/>
                                                         </af:inputComboboxListOfValues>
-                                                        <af:selectOneChoice value="#{bindings.Idregion1.inputValue}" readOnly="true"
-                                                                            label="              "
+                                                        <af:selectOneChoice value="#{bindings.Idregion1.inputValue}"
+                                                                            readOnly="true" label="              "
                                                                             required="false"
                                                                             shortDesc="#{bindings.Idregion1.hints.tooltip}"
                                                                             id="soc1">
@@ -255,7 +268,6 @@
                                                         </af:selectOneChoice>
                                                     </af:gridCell>
                                                 </af:gridRow>
-                                                
                                                 <af:gridRow marginTop="5px" height="auto" id="gr261">
                                                     <af:gridCell marginStart="5px" width="auto" id="gc368">
                                                         <af:outputText value="#{bindings.Iddepartement.label}"
@@ -263,7 +275,7 @@
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="208px" marginEnd="5px"
                                                                  id="gc4">
-                                                        <af:inputComboboxListOfValues id="nomdepartementId" 
+                                                        <af:inputComboboxListOfValues id="nomdepartementId"
                                                                                       popupTitle="Search and Select: #{bindings.nomdepartement.hints.label}"
                                                                                       value="#{bindings.nomdepartement.inputValue}"
                                                                                       model="#{bindings.nomdepartement.listOfValuesModel}"
@@ -280,7 +292,8 @@
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc6">
-                                                        <af:inputComboboxListOfValues id="nomposteId" partialTriggers="nomdepartementId"
+                                                        <af:inputComboboxListOfValues id="nomposteId"
+                                                                                      partialTriggers="nomdepartementId"
                                                                                       popupTitle="Search and Select: #{bindings.nomposte.hints.label}"
                                                                                       value="#{bindings.nomposte.inputValue}"
                                                                                       model="#{bindings.nomposte.listOfValuesModel}"
@@ -297,7 +310,8 @@
                                                     </af:gridCell>
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc8">
-                                                        <af:inputComboboxListOfValues id="nomlocaliteId" partialTriggers="nomdepartementId"
+                                                        <af:inputComboboxListOfValues id="nomlocaliteId"
+                                                                                      partialTriggers="nomdepartementId"
                                                                                       popupTitle="Search and Select: #{bindings.nomlocalite.hints.label}"
                                                                                       value="#{bindings.nomlocalite.inputValue}"
                                                                                       model="#{bindings.nomlocalite.listOfValuesModel}"
@@ -344,12 +358,14 @@
                                                                        disabled="#{!bindings.Previous.enabled}"
                                                                        partialSubmit="true" id="b13"/>
                                                             <af:spacer width="10" height="10" id="s8"/>
-                                                            <af:button actionListener="#{bindings.Next.execute}" disabled="#{!bindings.Next.enabled}"
+                                                            <af:button actionListener="#{bindings.Next.execute}"
+                                                                       disabled="#{!bindings.Next.enabled}"
                                                                        partialSubmit="true" id="b14"
                                                                        text="#{viewcontrollerBundle.NEXT}"/>
                                                             <af:spacer width="10" height="10" id="s9"/>
                                                             <af:button actionListener="#{bindings.Last.execute}"
-                                                                       text="#{viewcontrollerBundle.LAST}" disabled="#{!bindings.Last.enabled}"
+                                                                       text="#{viewcontrollerBundle.LAST}"
+                                                                       disabled="#{!bindings.Last.enabled}"
                                                                        partialSubmit="true" id="b15"/>
                                                         </af:panelGroupLayout>
                                                     </af:gridCell>
@@ -367,8 +383,7 @@
                                                                        id="b10" disabled="false"
                                                                        action="#{collecteBean.enregistrerCollecte}"/>
                                                             <af:spacer width="10" height="10" id="s6"/>
-                                                            <af:button
-                                                                       text="#{viewcontrollerBundle.ANNULER}"
+                                                            <af:button text="#{viewcontrollerBundle.ANNULER}"
                                                                        immediate="true" id="b11"
                                                                        action="#{collecteBean.annulerCollecte}">
                                                                 <af:resetActionListener/>
@@ -564,7 +579,7 @@
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc16">
                                                         <af:selectOneChoice value="#{bindings.Typeacteur.inputValue}"
-                                                                            label="&nbsp;&nbsp;&nbsp;"
+                                                                            label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
                                                                             required="#{bindings.Typeacteur.hints.mandatory}"
                                                                             shortDesc="#{bindings.Typeacteur.hints.tooltip}"
                                                                             id="soc19" autoSubmit="true">
@@ -583,7 +598,7 @@
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc18">
                                                         <af:inputText value="#{bindings.Nomacteur.inputValue}"
-                                                                      label="&nbsp;&nbsp;&nbsp;"
+                                                                      label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
                                                                       required="#{bindings.Nomacteur.hints.mandatory}"
                                                                       columns="#{bindings.Nomacteur.hints.displayWidth}"
                                                                       maximumLength="#{bindings.Nomacteur.hints.precision}"
@@ -673,7 +688,7 @@
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc26">
                                                         <af:selectOneChoice value="#{bindings.Idorigine.inputValue}"
-                                                                            label="&nbsp;&nbsp;&nbsp;"
+                                                                            label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
                                                                             required="#{bindings.Idorigine.hints.mandatory}"
                                                                             shortDesc="#{bindings.Idorigine.hints.tooltip}"
                                                                             id="soc11">
@@ -691,7 +706,7 @@
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc28">
                                                         <af:inputComboboxListOfValues id="nomprovenanceId"
-                                                                                      label="&nbsp;&nbsp;&nbsp;"
+                                                                                      label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
                                                                                       popupTitle="Search and Select: #{bindings.nomprovenance.hints.label}"
                                                                                       value="#{bindings.nomprovenance.inputValue}"
                                                                                       model="#{bindings.nomprovenance.listOfValuesModel}"
@@ -699,7 +714,8 @@
                                                                                       columns="#{bindings.nomprovenance.hints.displayWidth}"
                                                                                       shortDesc="#{bindings.nomprovenance.hints.tooltip}">
                                                             <f:validator binding="#{bindings.nomprovenance.validator}"/>
-                                                            <af:autoSuggestBehavior suggestItems="#{bindings.nomprovenance.suggestItems}" minChars="1"/>
+                                                            <af:autoSuggestBehavior suggestItems="#{bindings.nomprovenance.suggestItems}"
+                                                                                    minChars="1"/>
                                                         </af:inputComboboxListOfValues>
                                                     </af:gridCell>
                                                 </af:gridRow>
@@ -711,7 +727,7 @@
                                                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px"
                                                                  id="gc30">
                                                         <af:selectOneChoice value="#{bindings.Iddestination.inputValue}"
-                                                                            label="&nbsp;&nbsp;&nbsp;"
+                                                                            label="&amp;nbsp;&amp;nbsp;&amp;nbsp;"
                                                                             required="#{bindings.Iddestination.hints.mandatory}"
                                                                             shortDesc="#{bindings.Iddestination.hints.tooltip}"
                                                                             id="soc14">
@@ -730,26 +746,22 @@
                                                     <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px"
                                                                  id="gc35">
                                                         <af:panelGroupLayout id="pgl8">
-                                                            <af:button
-                                                                       text="#{viewcontrollerBundle.FIRST}"
+                                                            <af:button text="#{viewcontrollerBundle.FIRST}"
                                                                        disabled="#{!bindings.First1.enabled}"
                                                                        partialSubmit="true" id="b16"
                                                                        actionListener="#{bindings.First1.execute}"/>
-                                                            <af:spacer width="10" height="10" id="s10"/>
-                                                            <af:button
-                                                                       text="#{viewcontrollerBundle.PREVIOUS}"
+                                                            <af:spacer width="10" height="10" id="s14"/>
+                                                            <af:button text="#{viewcontrollerBundle.PREVIOUS}"
                                                                        disabled="#{!bindings.Previous1.enabled}"
                                                                        partialSubmit="true" id="b17"
                                                                        actionListener="#{bindings.Previous1.execute}"/>
                                                             <af:spacer width="10" height="10" id="s11"/>
-                                                            <af:button
-                                                                       disabled="#{!bindings.Next1.enabled}"
+                                                            <af:button disabled="#{!bindings.Next1.enabled}"
                                                                        partialSubmit="true" id="b18"
                                                                        text="#{viewcontrollerBundle.NEXT}"
                                                                        actionListener="#{bindings.Next1.execute}"/>
                                                             <af:spacer width="10" height="10" id="s12"/>
-                                                            <af:button
-                                                                       text="#{viewcontrollerBundle.LAST}"
+                                                            <af:button text="#{viewcontrollerBundle.LAST}"
                                                                        disabled="#{!bindings.Last1.enabled}"
                                                                        partialSubmit="true" id="b19"
                                                                        actionListener="#{bindings.Last1.execute}"/>
@@ -769,8 +781,7 @@
                                                                        id="b3" disabled="false"
                                                                        action="#{collecteBean.enregistrerCollecte}"/>
                                                             <af:spacer width="10" height="10" id="s5"/>
-                                                            <af:button
-                                                                       text="#{viewcontrollerBundle.ANNULER}"
+                                                            <af:button text="#{viewcontrollerBundle.ANNULER}"
                                                                        immediate="true" id="b6"
                                                                        action="#{collecteBean.annulerDetailsCollecte}">
                                                                 <af:resetActionListener/>

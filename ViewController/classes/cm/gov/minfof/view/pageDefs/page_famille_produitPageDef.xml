@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_famille_produitPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FamillePfnlView1" RangeSize="25" DataControl="AppModuleDataControl" id="FamillePfnlView1Iterator"/>
+    <searchRegion Binds="FamillePfnlView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="FamillePfnlView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="FamillePfnlView1Iterator" id="Nomfamille">
+      <AttrNames>
+        <Item Value="Nomfamille"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="FamillePfnlView1Iterator" id="FamillePfnlView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entity.FamillePfnlView" Name="FamillePfnlView10">
+        <AttrNames>
+          <Item Value="Idfamillepfnl"/>
+          <Item Value="Nomfamille"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="FamillePfnlView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="FamillePfnlView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="FamillePfnlView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="FamillePfnlView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="FamillePfnlView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="FamillePfnlView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

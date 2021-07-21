@@ -1,6 +1,8 @@
 package cm.gov.minfof.model.entityviewobject;
 
 
+import java.math.BigDecimal;
+
 import java.sql.ResultSet;
 
 import oracle.jbo.Row;
@@ -97,6 +99,70 @@ public class CollectepfnlViewImpl extends VueImplementation {
      */
     public void setdateDebut(java.sql.Timestamp value) {
         ensureVariableManager().setVariableValue("dateDebut", value);
+    }
+
+    /**
+     * Returns the variable value for idRegionFiltre.
+     * @return variable value for idRegionFiltre
+     */
+    public BigDecimal getidRegionFiltre() {
+        return (BigDecimal) ensureVariableManager().getVariableValue("idRegionFiltre");
+    }
+
+    /**
+     * Sets <code>value</code> for variable idRegionFiltre.
+     * @param value value to bind as idRegionFiltre
+     */
+    public void setidRegionFiltre(BigDecimal value) {
+        ensureVariableManager().setVariableValue("idRegionFiltre", value);
+    }
+
+    /**
+     * Returns the variable value for idDepartementFiltre.
+     * @return variable value for idDepartementFiltre
+     */
+    public BigDecimal getidDepartementFiltre() {
+        return (BigDecimal) ensureVariableManager().getVariableValue("idDepartementFiltre");
+    }
+
+    /**
+     * Sets <code>value</code> for variable idDepartementFiltre.
+     * @param value value to bind as idDepartementFiltre
+     */
+    public void setidDepartementFiltre(BigDecimal value) {
+        ensureVariableManager().setVariableValue("idDepartementFiltre", value);
+    }
+
+    /**
+     * Returns the variable value for idRegionBind.
+     * @return variable value for idRegionBind
+     */
+    public BigDecimal getidRegionBind() {
+        return (BigDecimal) ensureVariableManager().getVariableValue("idRegionBind");
+    }
+
+    /**
+     * Sets <code>value</code> for variable idRegionBind.
+     * @param value value to bind as idRegionBind
+     */
+    public void setidRegionBind(BigDecimal value) {
+        ensureVariableManager().setVariableValue("idRegionBind", value);
+    }
+
+    /**
+     * Returns the variable value for idDepartementBind.
+     * @return variable value for idDepartementBind
+     */
+    public BigDecimal getidDepartementBind() {
+        return (BigDecimal) ensureVariableManager().getVariableValue("idDepartementBind");
+    }
+
+    /**
+     * Sets <code>value</code> for variable idDepartementBind.
+     * @param value value to bind as idDepartementBind
+     */
+    public void setidDepartementBind(BigDecimal value) {
+        ensureVariableManager().setVariableValue("idDepartementBind", value);
     }
 }
 

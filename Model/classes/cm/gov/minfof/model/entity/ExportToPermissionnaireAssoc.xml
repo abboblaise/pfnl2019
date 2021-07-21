@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ExportToPermissionnaireAssoc"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Exportpfnl"
+    Cardinality="-1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.Exportpfnl"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Exportpfnl"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Exportpfnl.Idpermissionnaire"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Permissionnairespnfl"
+    Cardinality="1"
+    Owner="cm.gov.minfof.model.entity.Permissionnairespnfl">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Permissionnairespnfl"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Permissionnairespnfl.Idpermissionnairespnfl"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

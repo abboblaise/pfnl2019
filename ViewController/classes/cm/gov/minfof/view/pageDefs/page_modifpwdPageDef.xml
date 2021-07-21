@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_modifpwdPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UtilisateurView8" RangeSize="25" DataControl="AppModuleDataControl" id="UtilisateurView8Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="UtilisateurView8Iterator" id="Loginuser">
+      <AttrNames>
+        <Item Value="Loginuser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateurView8Iterator" id="Passworduser">
+      <AttrNames>
+        <Item Value="Passworduser"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="UtilisateurView8Iterator" id="Premiereconnexion" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="Premiereconnexion"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <methodAction id="changepwd" RequiresUpdateModel="true" Action="invokeMethod" MethodName="changepwd"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.changepwd.dataControl.dataProvider">
+      <NamedData NDName="bd" NDValue="#{RecupUser.ud.idutilisateur}" NDType="java.math.BigDecimal"/>
+      <NamedData NDName="pwd" NDValue="#{ModifuserBean.confirmepwd}" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="UtilisateurView8Iterator" id="Nomuser">
+      <AttrNames>
+        <Item Value="Nomuser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateurView8Iterator" id="Telephone">
+      <AttrNames>
+        <Item Value="Telephone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateurView8Iterator" id="Emailuser">
+      <AttrNames>
+        <Item Value="Emailuser"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="modifuser" RequiresUpdateModel="true" Action="invokeMethod" MethodName="modifuser"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.modifuser.dataControl.dataProvider">
+      <NamedData NDName="bd" NDValue="#{RecupUser.ud.idutilisateur}" NDType="java.math.BigDecimal"/>
+      <NamedData NDName="nuser" NDValue="#{RecupUser.ud.nonuser}" NDType="java.lang.String"/>
+      <NamedData NDName="puser" NDValue="#{RecupUser.ud.telephone}" NDType="java.lang.String"/>
+      <NamedData NDName="muser" NDValue="#{RecupUser.ud.email}" NDType="java.lang.String"/>
+    </methodAction>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

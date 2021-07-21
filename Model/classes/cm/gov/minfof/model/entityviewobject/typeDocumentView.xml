@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="typeDocumentView"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  RowClass="cm.gov.minfof.model.entityviewobject.typeDocumentViewRowImpl"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.typeDocumentViewImpl"
+  PageIterMode="Full"
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entityviewobject.common.typeDocumentViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="cm.gov.minfof.model.entityviewobject.typeDocumentView_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="PermisView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PermisView"
+    RowLevelBinds="true"/>
+  <ViewAttribute
+    Name="idtypedoc"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Integer"
+    ColumnType="$none$"
+    SQLType="INTEGER"
+    IsNotNull="true"/>
+  <ViewAttribute
+    Name="libelleTypeDocument"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    SQLType="VARCHAR"
+    IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LIBELL_U00E9_DU_TYPE_DE_DOCUMENT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="idtypedoc"/>
+  </AttrArray>
+  <LOVUIHints
+    ListType="105"
+    MRUCount="0"
+    NullValueFlag="none">
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="libelleTypeDocument"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </LOVUIHints>
+  <StaticList
+    Rows="2"
+    Columns="2"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

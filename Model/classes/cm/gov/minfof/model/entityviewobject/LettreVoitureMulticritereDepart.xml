@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LettreVoitureMulticritereDepart"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  RowClass="cm.gov.minfof.model.entityviewobject.LettreVoitureMulticritereDepartRowImpl"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.LettreVoitureMulticritereDepartImpl"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="cm.gov.minfof.model.entityviewobject.LettreVoitureMulticritereDepart_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="RegionView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.RegionView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DepartementView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.DepartementView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="getLibelleProduitComplet1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.getLibelleProduitComplet"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="UnitemesureView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.UnitemesureView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="LocaliteView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LocaliteView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CommuneView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.CommuneView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PermissionnairespnflView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PermissionnairespnflView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PermisView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PermisView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Regiondestination"
+    ListVOName="RegionView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Regiondestination"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idregions"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Departementdestination"
+    ListVOName="DepartementView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Departementdestination"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Iddepartements"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomdepartement"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Iddepartementdepart"
+    ListVOName="DepartementView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Iddepartementdepart"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Iddepartements"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomdepartement"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idregionsdepart"
+    ListVOName="RegionView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idregionsdepart"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idregions"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Partieproduitpfnl"
+    ListVOName="getLibelleProduitComplet1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Partieproduitpfnl"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpartiesproduitspfnl"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libelle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idunitemesure"
+    ListVOName="UnitemesureView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idunitemesure"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idunitemesure"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libelleunitemesure"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Localitedepart"
+    ListVOName="LocaliteView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Localitedepart"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idlocalite"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomlocalite"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idcommunedepart"
+    ListVOName="CommuneView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idcommunedepart"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idcommunes"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomcommune"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Permissionnaire"
+    ListVOName="PermissionnairespnflView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Permissionnaire"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpermissionnairespnfl"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomouraisonsociale"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Permis"
+    ListVOName="PermisView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Permis"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpermis"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Numpermiscomplet"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT
+	regions.idregions AS regiondestination,
+	lettrevoiture.iddepartementdestination AS departementdestination,
+    lettrevoiture.idpostechargement AS localitedepart,
+    communes.idcommunes AS idcommunedepart,
+    lesdepartements.iddepartements AS iddepartementdepart,
+    lesdepartements.nomdepartement AS nomdepartementdepart,
+    lesregions.idregions AS idregionsdepart,
+    lesregions.nomregion AS nomregiondepart,
+    communes.nomcommune AS nomcommunedepart,
+    permis.idpermissionnaire AS permissionnaire,
+    lettrevoiture.idpermis AS permis,
+	lettrevoiture.nomconducteur AS nomconducteur,	
+	lettrevoiture.numerolettrevoiture AS numerolettrevoiture,	
+	lettrevoiture.datelettrevoiture AS datelettrevoiture,	
+    lettrevoiture.immatriculation AS immatriculation,
+	detailslettrevoiture.quantite AS quantite,
+	CASE WHEN (lesunites1.ordregrandeur = 'RE') 
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite  
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio )  
+    END  
+    END
+ELSE CASE WHEN(lesunites1.ordregrandeur =  'PP')
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite * lesunites1.ratio 
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite * lesunites1.ratio )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio * lesunites1.ratio)  
+    END  
+    END
+ELSE CASE WHEN(lesunites1.ordregrandeur =  'PG')
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite / lesunites1.ratio 
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite / lesunites1.ratio )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio / lesunites1.ratio)  
+    END  
+    END
+END
+END
+END AS quantiteconvertie,    
+	CASE WHEN (lesunites1.ordregrandeur = 'RE') 
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite  
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio )  
+    END  
+    END
+ELSE CASE WHEN(lesunites1.ordregrandeur =  'PP')
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite * lesunites1.ratio 
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite * lesunites1.ratio )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio * lesunites1.ratio)  
+    END  
+    END
+ELSE CASE WHEN(lesunites1.ordregrandeur =  'PG')
+    THEN CASE WHEN ( detailslettrevoiture.idunitemesure = partiesproduitspfnl.idunitemesure )  
+        THEN detailslettrevoiture.quantite / lesunites1.ratio 
+    ELSE CASE WHEN ( lesunites.ordregrandeur =  'PG')  
+        THEN ( lesunites.ratio * detailslettrevoiture.quantite / lesunites1.ratio )  
+    ELSE ( detailslettrevoiture.quantite / lesunites.ratio / lesunites1.ratio)  
+    END  
+    END
+END
+END
+END AS qte_total_dep_region,
+
+	detailslettrevoiture.observations AS observations,	
+	detailslettrevoiture.iddetailslettrevoiture AS iddetailslettrevoiture,
+    detailslettrevoiture.idpartieproduitpfnl AS partieproduitpfnl,
+    detailslettrevoiture.idunitemesure AS idunitemesure,
+	unitemesure.libelleunitemesure AS libelleunitemesure,	
+    lesunites1.libelleunitemesure AS libelleconverti,
+	CONCAT(produitspfnl.nomcommercial , '(',partiesrecoltees.nompartierecoltee , ')')  AS Produit,	
+	permissionnairespnfl.Nomouraisonsociale AS Nomouraisonsociale,	
+	departements.nomdepartement AS nomdepartementdestination,	
+        regions.nomregion AS nomregiondestination,
+	permissionnairespnfl.Adressep AS Adressep,	
+	localite.nomlocalite AS nomlocalite
+FROM 
+	partiesrecoltees,	
+	partiesproduitspfnl,	
+	produitspfnl,	
+	detailslettrevoiture,	
+	unitemesure,	
+	lettrevoiture,	
+	permissionnairespnfl,
+	regions,
+	departements,	
+    communes,
+	localite,
+    lesunites,
+    lesunites1,
+    lesdepartements,
+    lesregions,
+    permis,
+    postecontrole
+WHERE 
+	localite.idlocalite = lettrevoiture.idpostechargement
+    AND		localite.idpostecontrole = postecontrole.idpostecontrole
+    AND     postecontrole.idcommune = communes.idcommunes
+    AND		communes.iddepartements = lesdepartements.iddepartements
+    AND		lesdepartements.idregions = lesregions.idregions
+	AND		departements.IDDepartements = communes.iddepartements
+    AND		departements.idregions = regions.idregions
+    AND		permis.idpermissionnaire = permissionnairespnfl.IDPermissionnairesPNFL
+	AND		permis.idpermis = lettrevoiture.idpermis
+	AND		lettrevoiture.idlettrevoiture = detailslettrevoiture.idlettrevoiture
+	AND		unitemesure.idunitemesure = detailslettrevoiture.idunitemesure
+	AND		partiesproduitspfnl.idpartiesproduitspfnl = detailslettrevoiture.idpartieproduitpfnl
+	AND		produitspfnl.IDProduitspfnl = partiesproduitspfnl.IDProduitspfnl
+	AND		partiesrecoltees.idpartiesrecoltees = partiesproduitspfnl.idpartiesrecoltees
+    AND		lesunites.idunitemesure = detailslettrevoiture.idunitemesure
+    AND		lesunites1.idunitemesure = partiesproduitspfnl.idunitemesure
+order by detailslettrevoiture.iddetailslettrevoiture]]></SQLQuery>
+  <ViewAttribute
+    Name="Regiondestination"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="regiondestination"
+    Expression="regiondestination"
+    SQLType="NUMERIC"
+    LOVName="LOV_Regiondestination">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Departementdestination"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="departementdestination"
+    Expression="departementdestination"
+    SQLType="NUMERIC"
+    LOVName="LOV_Departementdestination">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Localitedepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="localitedepart"
+    Expression="localitedepart"
+    SQLType="NUMERIC"
+    LOVName="LOV_Localitedepart">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idcommunedepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idcommunedepart"
+    Expression="idcommunedepart"
+    SQLType="NUMERIC"
+    LOVName="LOV_Idcommunedepart">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Iddepartementdepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="iddepartementdepart"
+    Expression="iddepartementdepart"
+    SQLType="NUMERIC"
+    LOVName="LOV_Iddepartementdepart">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomdepartementdepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomdepartementdepart"
+    Expression="nomdepartementdepart"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idregionsdepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idregionsdepart"
+    Expression="idregionsdepart"
+    SQLType="NUMERIC"
+    LOVName="LOV_Idregionsdepart">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomregiondepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomregiondepart"
+    Expression="nomregiondepart"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomcommunedepart"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomcommunedepart"
+    Expression="nomcommunedepart"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Permissionnaire"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="permissionnaire"
+    Expression="permissionnaire"
+    SQLType="NUMERIC"
+    LOVName="LOV_Permissionnaire">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Permis"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="permis"
+    Expression="permis"
+    SQLType="NUMERIC"
+    LOVName="LOV_Permis">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomconducteur"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="45"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomconducteur"
+    Expression="nomconducteur"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Numerolettrevoiture"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="numerolettrevoiture"
+    Expression="numerolettrevoiture"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Datelettrevoiture"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    AliasName="datelettrevoiture"
+    Expression="datelettrevoiture"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="Immatriculation"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="immatriculation"
+    Expression="immatriculation"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Quantite"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    AliasName="quantite"
+    Expression="quantite"
+    SQLType="FLOAT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Quantiteconvertie"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="DOUBLE"
+    AliasName="quantiteconvertie"
+    Expression="quantiteconvertie"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="QteTotalDepRegion"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="DOUBLE"
+    AliasName="qte_total_dep_region"
+    Expression="qte_total_dep_region"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="23"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Observations"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="observations"
+    Expression="observations"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Iddetailslettrevoiture"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="iddetailslettrevoiture"
+    Expression="iddetailslettrevoiture"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Partieproduitpfnl"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="partieproduitpfnl"
+    Expression="partieproduitpfnl"
+    SQLType="NUMERIC"
+    LOVName="LOV_Partieproduitpfnl">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idunitemesure"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="idunitemesure"
+    Expression="idunitemesure"
+    SQLType="NUMERIC"
+    LOVName="LOV_Idunitemesure">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Libelleunitemesure"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="45"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="libelleunitemesure"
+    Expression="libelleunitemesure"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Libelleconverti"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="45"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="libelleconverti"
+    Expression="libelleconverti"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Produit"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="202"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="Produit"
+    Expression="Produit"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="202"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomouraisonsociale"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="Nomouraisonsociale"
+    Expression="Nomouraisonsociale"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomdepartementdestination"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomdepartementdestination"
+    Expression="nomdepartementdestination"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomregiondestination"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomregiondestination"
+    Expression="nomregiondestination"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Adressep"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="Adressep"
+    Expression="Adressep"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Nomlocalite"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="45"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="nomlocalite"
+    Expression="nomlocalite"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="LettreVoitureMulticritereDepartCriteriaDepart"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.LettreVoitureMulticritereDepart"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="LettreVoitureMulticritereDepartCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Regiondestination"
+        ViewAttribute="Regiondestination"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Departementdestination"
+        ViewAttribute="Departementdestination"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Idregionsdepart"
+        ViewAttribute="Idregionsdepart"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Permissionnaire"
+        ViewAttribute="Permissionnaire"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Permis"
+        ViewAttribute="Permis"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Datelettrevoiture"
+        ViewAttribute="Datelettrevoiture"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Partieproduitpfnl"
+        ViewAttribute="Partieproduitpfnl"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

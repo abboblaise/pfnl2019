@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Region"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="regions"
+  AliasName="Region"
+  BindingStyle="JDBC"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  RowClass="cm.gov.minfof.model.entity.RegionImpl"
+  DefClass="cm.gov.minfof.model.entity.RegionDefImpl"
+  CollClass="cm.gov.minfof.model.entity.RegionCollImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML|Def|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idregions"
+    ColumnName="idregions"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="regions"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nomregion"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="80"
+    ColumnName="nomregion"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="regions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Region.Nomregion_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Coderegion"
+    IsUnique="true"
+    Precision="2"
+    ColumnName="coderegion"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="regions"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Region.Coderegion_LABEL"/>
+        <DISPLAYWIDTH
+          Value="2"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:LengthValidationBean
+      Name="CoderegionRule0"
+      ResId="cm.gov.minfof.model.entity.Region.Coderegion_Rule_0"
+      OnAttribute="Coderegion"
+      CompareType="EQUALTO"
+      DataType="CHARACTER"
+      CompareLength="2"
+      Inverse="false"/>
+    <validation:RegExpValidationBean
+      Name="CoderegionRule1"
+      ResId="LE_CODE_DE_LA_R_U00E9GION_EST_ERRON_U00E9"
+      OnAttribute="Coderegion"
+      Pattern="\d{2}"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Descriptionregions"
+    ColumnName="descriptionregions"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="LONGTEXT"
+    TableName="regions">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Region.Descriptionregions_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <DISPLAYHEIGHT
+          Value="3"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Cheflieuregion"
+    Precision="50"
+    ColumnName="cheflieuregion"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="regions">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="cm.gov.minfof.model.entity.Region.Cheflieuregion_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Abreviationregion"
+    Precision="5"
+    ColumnName="abreviationregion"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="regions"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+    <validation:LengthValidationBean
+      Name="AbreviationregionRule0"
+      OnAttribute="Abreviationregion"
+      CompareType="EQUALTO"
+      DataType="CHARACTER"
+      CompareLength="2"
+      Inverse="false"
+      ResId="LE_CODE_DE_LA_R_U00E9GION_DOIT_AVOIR_2_CARACT_U00E8RES"/>
+  </Attribute>
+  <AccessorAttribute
+    Name="Departement"
+    Association="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc1.Departement"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.DepartementsIbfk1Assoc1.Region"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Commune"
+    Association="cm.gov.minfof.model.entity.CommunesIbfk1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc1.Commune"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CommunesIbfk1Assoc1.Region"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Vehicule"
+    Association="cm.gov.minfof.model.entity.RegionToVehiculeAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.RegionToVehiculeAssoc.Vehicule"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.RegionToVehiculeAssoc.Region"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc12"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc12.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc12.Region"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc12"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc12.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc12.Region1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc12"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc12.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc12.Region2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Collectepfnl"
+    Association="cm.gov.minfof.model.entity.RegToCollAssoc"
+    AssociationEnd="cm.gov.minfof.model.entity.RegToCollAssoc.Collectepfnl"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.RegToCollAssoc.Region"
+    Type="cm.gov.minfof.model.entity.CollectepfnlImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="AltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="regions"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Region.Coderegion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AltKey1"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="regions"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Region.Nomregion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AltKey2"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="regions"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Region.Abreviationregion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Coderegion1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Coderegion"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Region.Coderegion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Nomregion1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Nomregion"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Region.Nomregion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Region.Idregions"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="RegionsAbreviationregionCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"abreviationregion" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Regions_Abreviationregion_Chec"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Region.Abreviationregion"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="RegionsCoderegionCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"coderegion" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Regions_Coderegion_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Region.Coderegion"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="RegionRule0"
+    ResId="cm.gov.minfof.model.entity.Region_Rule_0"
+    KeyName="AltKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Coderegion"/>
+    </validation:OnAttributes>
+    <validation:ResExpressions
+      Name="RegionRule0_ResExprList">
+      <validation:Expression
+        Name="0"
+        trustMode="untrusted"
+        CodeSourceName="RegionRow"/>
+    </validation:ResExpressions>
+  </validation:UniqueKeyValidationBean>
+  <validation:UniqueKeyValidationBean
+    Name="RegionRule1"
+    ResId="LE_NOM_DE_LA_R_U00E9GION_DOIT__U00EATRE_UNIQUE"
+    KeyName="AltKey1">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Nomregion"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <validation:UniqueKeyValidationBean
+    Name="RegionRule2"
+    ResId="cm.gov.minfof.model.entity.Region_Rule_2"
+    KeyName="AltKey2">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Abreviationregion"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

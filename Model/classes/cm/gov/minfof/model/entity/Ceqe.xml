@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Ceqe"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ceqe"
+  AliasName="Ceqe"
+  BindingStyle="JDBC"
+  RowClass="cm.gov.minfof.model.entity.CeqeImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Idceqe"
+    ColumnName="idceqe"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="ceqe"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Numeroceqe"
+    IsNotNull="true"
+    Precision="100"
+    ColumnName="numeroceqe"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="ceqe">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Datedelivrance"
+    IsNotNull="true"
+    ColumnName="datedelivrance"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="ceqe"/>
+  <Attribute
+    Name="Observation"
+    ColumnName="observation"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="LONGTEXT"
+    TableName="ceqe">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <DISPLAYHEIGHT
+          Value="5"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idpermissionnaire"
+    IsNotNull="true"
+    ColumnName="idpermissionnaire"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="ceqe">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nomfichier"
+    Precision="500"
+    ColumnName="nomfichier"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="ceqe">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Cheminfichier"
+    Precision="500"
+    ColumnName="cheminfichier"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="ceqe">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="nomouraisonsociale"
+    Precision="80"
+    ColumnName="nomouraisonsociale"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false"
+    IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="PERMISSIONNAIRE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Idpermis"
+    ColumnName="idpermis"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    TableName="ceqe">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="numeropermis"
+    Precision="80"
+    ColumnName="numeropermis"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="NUM_U00E9RO_PERMIS"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Ceqe"
+    Association="cm.gov.minfof.model.entity.FkCeqe1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc.Ceqe"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc.IdpermissionnaireCeqe"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdpermissionnaireCeqe"
+    Association="cm.gov.minfof.model.entity.FkCeqe1Assoc"
+    AssociationEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc.IdpermissionnaireCeqe"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc.Ceqe"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc"
+    Association="cm.gov.minfof.model.entity.FkCeqe1Assoc1"
+    AssociationEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc1.LettreVoiturePc"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc1.Ceqe"
+    Type="cm.gov.minfof.model.entity.LettreVoiturePcImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc1"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc20"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc20.LettreVoiturePc1"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc3Assoc20.Ceqe1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc2"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc20"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc20.LettreVoiturePc2"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc1Assoc20.Ceqe2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc3"
+    Association="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc20"
+    AssociationEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc20.LettreVoiturePc3"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkLettrevoiturepc4Assoc20.Ceqe3"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LettreVoiturePc4"
+    Association="cm.gov.minfof.model.entity.CeqpcToLettreVoiturePc"
+    AssociationEnd="cm.gov.minfof.model.entity.CeqpcToLettreVoiturePc.LettreVoiturePc4"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.CeqpcToLettreVoiturePc.Ceqe4"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TypeDocument"
+    Association="cm.gov.minfof.model.entity.FkCeqe1Assoc2"
+    AssociationEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc2.TypeDocument"
+    AssociationOtherEnd="cm.gov.minfof.model.entity.FkCeqe1Assoc2.Ceqe"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="CeqeNomouraisonsocialeCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"nomouraisonsociale" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="Ceqe_Nomouraisonsociale_Check"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Ceqe.nomouraisonsociale"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Ceqe.Idceqe"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkCeqe1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_ceqe_1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Ceqe.Idpermissionnaire"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="cm.gov.minfof.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

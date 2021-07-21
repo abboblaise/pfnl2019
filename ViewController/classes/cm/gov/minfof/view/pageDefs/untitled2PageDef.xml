@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="untitled2PageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RegionView1" RangeSize="25" DataControl="AppModuleDataControl" id="RegionView1Iterator"/>
+    <iterator Binds="DepartementView3" RangeSize="25" DataControl="AppModuleDataControl" id="DepartementView3Iterator"/>
+    <iterator Binds="CommuneView5" RangeSize="25" DataControl="AppModuleDataControl" id="CommuneView5Iterator"/>
+    <iterator Binds="LocaliteView7" RangeSize="25" DataControl="AppModuleDataControl" id="LocaliteView7Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="RegionView1Iterator" ListOperMode="navigation" ListIter="RegionView1Iterator" id="RegionView1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Nomregion"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="DepartementView3Iterator" ListOperMode="navigation" ListIter="DepartementView3Iterator"
+          id="DepartementView3" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Nomdepartement"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="CommuneView5Iterator" ListOperMode="navigation" ListIter="CommuneView5Iterator"
+          id="CommuneView5" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Nomcommune"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="LocaliteView7Iterator" id="Nomlocalite">
+      <AttrNames>
+        <Item Value="Nomlocalite"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="consultationPermissionnairePageDef" Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PermissionnairespnflView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PermissionnairespnflView1Iterator"/>
+    <searchRegion Binds="PermissionnairespnflView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PermissionnairespnflView1Query"/>
+    <iterator Binds="PermisView8" RangeSize="25" DataControl="AppModuleDataControl" id="PermisView8Iterator"/>
+    <searchRegion Binds="PermisView8Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PermisView8Query"/>
+    <iterator id="getLibelleProduitComplet1Iterator" Binds="getLibelleProduitComplet1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
+    <iterator Binds="DetailpermisView8" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DetailpermisView8Iterator"/>
+    <searchRegion Binds="DetailpermisView8Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DetailpermisView8Query"/>
+    <iterator id="RegionView1Iterator" Binds="RegionView1" DataControl="AppModuleDataControl" RangeSize="25"/>
+    <iterator Binds="consultationActeur1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="consultationActeur1Iterator"/>
+    <searchRegion Binds="consultationActeur1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="consultationActeur1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PermissionnairespnflView1Iterator" id="PermissionnairespnflView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PermissionnairespnflView"
+                      Name="PermissionnairespnflView10">
+        <AttrNames>
+          <Item Value="Nomouraisonsociale"/>
+          <Item Value="Statut"/>
+          <Item Value="Siegesocial"/>
+          <Item Value="Codepnfl"/>
+          <Item Value="Nbreemploye"/>
+          <Item Value="Contact"/>
+          <Item Value="Mail"/>
+          <Item Value="Natureactivite"/>
+          <Item Value="Idpermissionnairespnfl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PermisView8Iterator" id="PermisView8">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PermisView" Name="PermisView80">
+        <AttrNames>
+          <Item Value="Numeropermis"/>
+          <Item Value="Zonecoupe"/>
+          <Item Value="Datedelivrance"/>
+          <Item Value="Datefin"/>
+          <Item Value="Observation"/>
+          <Item Value="Idagrement"/>
+          <Item Value="Numpermiscomplet"/>
+          <Item Value="Idtypedocument"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="DetailpermisView8Iterator" id="DetailpermisView8">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.DetailpermisView" Name="DetailpermisView80">
+        <AttrNames>
+          <Item Value="Iddetailpermis"/>
+          <Item Value="Quantite"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Idpermis"/>
+          <Item Value="Observation"/>
+          <Item Value="Idpartieproduitpfnl"/>
+          <Item Value="Idregions"/>
+          <Item Value="idunitemesureconsultation"/>
+          <Item Value="Iddepartements"/>
+          <Item Value="nomdudepartement"/>
+          <Item Value="Idpartieproduitpfnlconsultation"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Nomouraisonsociale">
+      <AttrNames>
+        <Item Value="Nomouraisonsociale"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PermissionnairespnflView1Iterator" StaticList="false" Uses="LOV_Statut" id="Statut"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Siegesocial">
+      <AttrNames>
+        <Item Value="Siegesocial"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Nbreemploye">
+      <AttrNames>
+        <Item Value="Nbreemploye"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Contact">
+      <AttrNames>
+        <Item Value="Contact"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Mail">
+      <AttrNames>
+        <Item Value="Mail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Codepnfl">
+      <AttrNames>
+        <Item Value="Codepnfl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Natureactivite">
+      <AttrNames>
+        <Item Value="Natureactivite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Numceqe">
+      <AttrNames>
+        <Item Value="Numceqe"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Idpermissionnairespnfl">
+      <AttrNames>
+        <Item Value="Idpermissionnairespnfl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Nui">
+      <AttrNames>
+        <Item Value="Nui"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Profession">
+      <AttrNames>
+        <Item Value="Profession"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PermissionnairespnflView1Iterator" StaticList="false" Uses="LOV_Typepersonne" id="Typepersonne"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="Adressep">
+      <AttrNames>
+        <Item Value="Adressep"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PermissionnairespnflView1Iterator" StaticList="false" Uses="LOV_Sexe" id="Sexe"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PermissionnairespnflView1Iterator" StaticList="false" Uses="LOV_Idcommune" id="Idcommune"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PermissionnairespnflView1Iterator" StaticList="false" Uses="LOV_nomcommune" id="nomcommune"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="idregional">
+      <AttrNames>
+        <Item Value="idregional"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermissionnairespnflView1Iterator" id="iddepartemental">
+      <AttrNames>
+        <Item Value="iddepartemental"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PermissionnairespnflView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="PermissionnairespnflView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="PermissionnairespnflView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PermissionnairespnflView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="PermisView8Iterator" id="Idpermis">
+      <AttrNames>
+        <Item Value="Idpermis"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView8Iterator" id="Numeropermis">
+      <AttrNames>
+        <Item Value="Numeropermis"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView8Iterator" id="Zonecoupe">
+      <AttrNames>
+        <Item Value="Zonecoupe"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView8Iterator" id="Datedelivrance">
+      <AttrNames>
+        <Item Value="Datedelivrance"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView8Iterator" id="Datefin">
+      <AttrNames>
+        <Item Value="Datefin"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView8Iterator" id="Observation">
+      <AttrNames>
+        <Item Value="Observation"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PermisView8Iterator" StaticList="false" Uses="LOV_Idagrement" id="Idagrement"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PermisView8Iterator" StaticList="false" Uses="LOV_Idpermissionnaire" id="Idpermissionnaire"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PermisView8Iterator" id="Cheminfichier">
+      <AttrNames>
+        <Item Value="Cheminfichier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView8Iterator" id="Nomfichier">
+      <AttrNames>
+        <Item Value="Nomfichier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView8Iterator" id="Numpermiscomplet">
+      <AttrNames>
+        <Item Value="Numpermiscomplet"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PermisView8Iterator" StaticList="false" Uses="LOV_Idtypedocument" id="Idtypedocument"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="PermisView8Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="PermisView8Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="PermisView8Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PermisView8Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <listOfValues IterBinding="DetailpermisView8Iterator" StaticList="false" Uses="LOV_Iddepartements"
+                  id="Iddepartements"/>
+    <listOfValues IterBinding="DetailpermisView8Iterator" StaticList="false" Uses="LOV_nomdudepartement"
+                  id="nomdudepartement"/>
+    <attributeValues IterBinding="DetailpermisView8Iterator" id="Iddetailpermis">
+      <AttrNames>
+        <Item Value="Iddetailpermis"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailpermisView8Iterator" id="Quantite">
+      <AttrNames>
+        <Item Value="Quantite"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DetailpermisView8Iterator" StaticList="false" Uses="LOV_Idunitemesure" id="Idunitemesure"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailpermisView8Iterator" StaticList="false" Uses="LOV_Idpermis" id="Idpermis1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="DetailpermisView8Iterator" id="Observation1">
+      <AttrNames>
+        <Item Value="Observation"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DetailpermisView8Iterator" StaticList="false" Uses="LOV_Idpart" id="Idpartieproduitpfnl"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailpermisView8Iterator" StaticList="false" Uses="LOV_Idregions" id="Idregions"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailpermisView8Iterator" StaticList="false" Uses="LOV_idunitemesureconsultation"
+          id="idunitemesureconsultation" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DetailpermisView8Iterator" StaticList="false" Uses="LOV_Idpartieproduitpfnlconsultation"
+          id="Idpartieproduitpfnlconsultation" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="DetailpermisView8Iterator" id="First2" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DetailpermisView8Iterator" id="Previous2" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DetailpermisView8Iterator" id="Next2" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DetailpermisView8Iterator" id="Last2" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="consultationActeur1Iterator" id="consultationActeur1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entity.consultationActeur" Name="consultationActeur10">
+        <AttrNames>
+          <Item Value="Nomouraisonsociale"/>
+          <Item Value="Statut"/>
+          <Item Value="Siegesocial"/>
+          <Item Value="Nbreemploye"/>
+          <Item Value="Contact"/>
+          <Item Value="Mail"/>
+          <Item Value="Codepnfl"/>
+          <Item Value="Natureactivite"/>
+          <Item Value="Qualite"/>
+          <Item Value="Nui"/>
+          <Item Value="Profession"/>
+          <Item Value="Typepersonne"/>
+          <Item Value="Adressep"/>
+          <Item Value="Sexe"/>
+          <Item Value="Numceqe"/>
+          <Item Value="Qualiteexploitant"/>
+          <Item Value="Idcommune"/>
+          <Item Value="Idpermis"/>
+          <Item Value="Numeropermis"/>
+          <Item Value="Zonecoupe"/>
+          <Item Value="Datedelivrance"/>
+          <Item Value="Datefin"/>
+          <Item Value="Observation"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Nomfichier"/>
+          <Item Value="Cheminfichier"/>
+          <Item Value="Idregions"/>
+          <Item Value="Iddepartements"/>
+          <Item Value="Idpartieproduitpfnl"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Iddetailpermis"/>
+          <Item Value="Idtypedocument"/>
+          <Item Value="Typefichier"/>
+          <Item Value="Quantite"/>
+          <Item Value="Idpermissionnairespnfl"/>
+          <Item Value="Idagrement"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PagepargroupView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="PageprojetView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.PageprojetView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupeutilisateurView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.GroupeutilisateurView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Idpage"
+    ListVOName="PageprojetView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idpage"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idpageprojet"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Libellepage"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idgroupe"
+    ListVOName="GroupeutilisateurView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idgroupe"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idgroupeutilisateur"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomgroupe"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Pagepargroup"
+    Entity="cm.gov.minfof.model.entity.Pagepargroup"/>
+  <ViewAttribute
+    Name="Idpagepargroup"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idpagepargroup"
+    EntityUsage="Pagepargroup"
+    AliasName="idpagepargroup"/>
+  <ViewAttribute
+    Name="Idpage"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Idpage"
+    EntityUsage="Pagepargroup"
+    AliasName="idpage"
+    LOVName="LOV_Idpage">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idgroupe"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Idgroupe"
+    EntityUsage="Pagepargroup"
+    AliasName="idgroupe"
+    LOVName="LOV_Idgroupe">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="PagepargroupView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkPagepargroup2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PagepargroupView1"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkPagepargroup1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="GroupeutilisateurView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.PageToGroupeLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,5 +1,7 @@
 package cm.gov.minfof.model.entityviewobject;
 
+import java.math.BigDecimal;
+
 import java.sql.ResultSet;
 
 import oracle.jbo.Row;
@@ -62,6 +64,38 @@ public class LocaliteLettreVoitureImpl extends ViewObjectImpl {
     public long getCappedQueryHitCount(ViewRowSetImpl viewRowSet, Row[] masterRows, long oldCap, long cap) {
         long value = super.getCappedQueryHitCount(viewRowSet, masterRows, oldCap, cap);
         return value;
+    }
+
+    /**
+     * Returns the variable value for idRegionBind.
+     * @return variable value for idRegionBind
+     */
+    public BigDecimal getidRegionBind() {
+        return (BigDecimal) ensureVariableManager().getVariableValue("idRegionBind");
+    }
+
+    /**
+     * Sets <code>value</code> for variable idRegionBind.
+     * @param value value to bind as idRegionBind
+     */
+    public void setidRegionBind(BigDecimal value) {
+        ensureVariableManager().setVariableValue("idRegionBind", value);
+    }
+
+    /**
+     * Returns the variable value for idDepartementBind.
+     * @return variable value for idDepartementBind
+     */
+    public BigDecimal getidDepartementBind() {
+        return (BigDecimal) ensureVariableManager().getVariableValue("idDepartementBind");
+    }
+
+    /**
+     * Sets <code>value</code> for variable idDepartementBind.
+     * @param value value to bind as idDepartementBind
+     */
+    public void setidDepartementBind(BigDecimal value) {
+        ensureVariableManager().setVariableValue("idDepartementBind", value);
     }
 }
 

@@ -114,8 +114,9 @@
                                                    visible="#{not RecupUser.ud.estinfo}">
                                     <af:panelGroupLayout id="pt_pgl8" valign="middle" halign="center" layout="vertical">
                                        <af:button text="#{viewcontrollerBundle.FICHE_DE_COLLECTE}" id="pt_b19"
-                                                   destination="page_collecte.jsf"
-                                                   rendered="#{RecupUser.ud.saisiecollecte}"/>
+                                
+                                                   rendered="#{RecupUser.ud.saisiecollecte}"
+                                                  action="#{collecteBean.filtrageDesVues}"/>
                                         <!-- <af:button text="#{viewcontrollerBundle.FICHE_DE_COLLECTE}" id="pt_b19"
                                                    destination="page_collecte.jsf"
                                                    rendered="true"/>-->

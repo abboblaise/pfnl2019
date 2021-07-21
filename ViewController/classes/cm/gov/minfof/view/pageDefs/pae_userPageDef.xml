@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="pae_userPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UtilisateurView1" RangeSize="25" DataControl="AppModuleDataControl" id="UtilisateurView1Iterator"/>
+    <searchRegion Binds="UtilisateurView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="UtilisateurView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="UtilisateurView1Iterator" id="Loginuser">
+      <AttrNames>
+        <Item Value="Loginuser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateurView1Iterator" id="Passworduser">
+      <AttrNames>
+        <Item Value="Passworduser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateurView1Iterator" id="Nomuser">
+      <AttrNames>
+        <Item Value="Nomuser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateurView1Iterator" id="Telephone">
+      <AttrNames>
+        <Item Value="Telephone"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="UtilisateurView1Iterator" StaticList="false" Uses="LOV_Niveauintervention"
+          id="Niveauintervention" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="UtilisateurView1Iterator" StaticList="false" Uses="LOV_Idregions" id="Idregions"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="UtilisateurView1Iterator" StaticList="false" Uses="LOV_Iddepartements" id="Iddepartements"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="UtilisateurView1Iterator" StaticList="false" Uses="LOV_Idgroupe" id="Idgroupe"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <button IterBinding="UtilisateurView1Iterator" id="Saisiecollecte" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Saisiecollecte"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <button IterBinding="UtilisateurView1Iterator" id="Saisieexport" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Saisieexport"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <button IterBinding="UtilisateurView1Iterator" id="Saisietransit" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Saisietransit"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="UtilisateurView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="UtilisateurView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="UtilisateurView1Iterator" id="UtilisateurView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.UtilisateurView" Name="UtilisateurView10">
+        <AttrNames>
+          <Item Value="Loginuser"/>
+          <Item Value="Nomuser"/>
+          <Item Value="Telephone"/>
+          <Item Value="Niveauintervention"/>
+          <Item Value="Idregions"/>
+          <Item Value="Iddepartements"/>
+          <Item Value="Idgroupe"/>
+          <Item Value="Saisiecollecte"/>
+          <Item Value="Saisieexport"/>
+          <Item Value="Saisietransit"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="UtilisateurView1Iterator" id="Execute" InstanceName="AppModuleDataControl.UtilisateurView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

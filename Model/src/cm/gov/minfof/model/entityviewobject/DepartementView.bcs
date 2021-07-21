@@ -1,0 +1,19 @@
+//Groovy Scripts for cm.gov.minfof.model.entityviewobject.DepartementView
+
+package cm.gov.minfof.model.entityviewobject
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="idRegionBind")
+def idRegionBind_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('idregional')
+}
+
+
+@VariableExpression(path="idDepartementBind")
+def idDepartementBind_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('iddepartemental')
+}
+

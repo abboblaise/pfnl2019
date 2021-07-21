@@ -1,5 +1,7 @@
 package cm.gov.minfof.model.entityviewobject;
 
+import java.math.BigDecimal;
+
 import java.sql.ResultSet;
 
 import oracle.jbo.Row;
@@ -24,6 +26,7 @@ public class PostecontroleViewImpl extends VueImplementation {
      */
     @Override
     protected void executeQueryForCollection(Object qc, Object[] params, int noUserParams) {
+        System.out.println("req postecontrole = " + this.getQuery());
         super.executeQueryForCollection(qc, params, noUserParams);
     }
 
@@ -62,5 +65,7 @@ public class PostecontroleViewImpl extends VueImplementation {
         long value = super.getCappedQueryHitCount(viewRowSet, masterRows, oldCap, cap);
         return value;
     }
+
+
 }
 

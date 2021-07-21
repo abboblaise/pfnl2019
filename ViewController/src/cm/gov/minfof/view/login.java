@@ -155,7 +155,10 @@ public class login {
                 }else{
                     msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Utilisateur trouv? "+util.getNonuser(), "");    
                     ctx.getExternalContext().getSessionMap().put("user", util);
-                    
+                    ctx.getExternalContext().getSessionMap().put("idregional", util.getIdregion());
+                    ctx.getExternalContext().getSessionMap().put("iddepartemental", util.getIddepartement());
+                    System.out.println("util.getIdregion() = " + util.getIdregion());
+                    System.out.println("util.getIddepartement() = " + util.getIddepartement());
                     ctx.getExternalContext().redirect("index.jsf");
                 }
                 

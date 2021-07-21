@@ -1,0 +1,15 @@
+//Groovy Scripts for cm.gov.minfof.model.entity.ProduitsPfnl
+
+package cm.gov.minfof.model.entity
+
+import oracle.jbo.script.annotation.MessageParameterExpression;
+
+
+
+
+@MessageParameterExpression(validatorName="ProduitsPfnlRule0", name="ResExpressions_0")
+def ProduitsPfnlRule0_ResExpressions_0_MessageParameterValues()
+{
+Codeproduit
+}
+

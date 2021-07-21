@@ -1,0 +1,8 @@
+//Groovy Scripts for cm.gov.minfof.model.entity.Commune
+
+package cm.gov.minfof.model.entity
+
+import oracle.jbo.script.annotation.MessageParameterExpression;
+
+
+

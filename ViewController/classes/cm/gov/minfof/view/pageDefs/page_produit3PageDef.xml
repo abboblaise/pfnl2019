@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_produit3PageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProduitsPfnlView12" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ProduitsPfnlView12Iterator"/>
+    <searchRegion Binds="ProduitsPfnlView12Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ProduitsPfnlView12Query"/>
+    <iterator Binds="PartiesProduitsPfnlView24" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PartiesProduitsPfnlView24Iterator"/>
+    <searchRegion Binds="PartiesProduitsPfnlView24Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PartiesProduitsPfnlView24Query"/>
+    <iterator Binds="PartiesProduitPfnlComplet1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PartiesProduitPfnlComplet1Iterator"/>
+    <searchRegion Binds="PartiesProduitPfnlComplet1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PartiesProduitPfnlComplet1Query"/>
+    <iterator id="getLibelleProduitPfnl1Iterator" Binds="getLibelleProduitPfnl1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
+    <iterator id="getLastIdProduits1Iterator" Binds="getLastIdProduits1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
+    <iterator id="getLastIdartiesProduitsPfnl1Iterator" Binds="getLastIdartiesProduitsPfnl1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ProduitsPfnlView12Iterator" id="Nomscientifique">
+      <AttrNames>
+        <Item Value="Nomscientifique"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView12Iterator" id="Nomcommercial">
+      <AttrNames>
+        <Item Value="Nomcommercial"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView12Iterator" id="Codeproduit">
+      <AttrNames>
+        <Item Value="Codeproduit"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ProduitsPfnlView12Iterator" StaticList="false" Uses="LOV_Idfamillepfnl" id="Idfamillepfnl"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ProduitsPfnlView12Iterator" id="Descriptionsommaire">
+      <AttrNames>
+        <Item Value="Descriptionsommaire"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView12Iterator" id="Modeattribution">
+      <AttrNames>
+        <Item Value="Modeattribution"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ProduitsPfnlView12Iterator" id="ProduitsPfnlView12">
+      <nodeDefinition DefName="cm.gov.minfof.model.entity.ProduitsPfnlView" Name="ProduitsPfnlView120">
+        <AttrNames>
+          <Item Value="Idproduitspfnl"/>
+          <Item Value="Nomscientifique"/>
+          <Item Value="Nomcommercial"/>
+          <Item Value="Codeproduit"/>
+          <Item Value="Modeattribution"/>
+          <Item Value="Idcategorie"/>
+          <Item Value="Idfamillepfnl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PartiesProduitsPfnlView24Iterator" id="PartiesProduitsPfnlView24">
+      <nodeDefinition DefName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView" Name="PartiesProduitsPfnlView240">
+        <AttrNames>
+          <Item Value="Idpartiesproduitspfnl"/>
+          <Item Value="Idpartiesrecoltees"/>
+          <Item Value="Idproduitspfnl"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Idunitemesureexport"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="PartiesProduitsPfnlView24Iterator" StaticList="false" Uses="LOV_Idpartiesrecoltees"
+          id="Idpartiesrecoltees" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PartiesProduitsPfnlView24Iterator" StaticList="false" Uses="LOV_Idunitemesure"
+          id="Idunitemesure" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PartiesProduitsPfnlView24Iterator" StaticList="false" Uses="LOV_Idunitemesureexport"
+          id="Idunitemesureexport" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="ProduitsPfnlView12Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="PartiesProduitsPfnlView24Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <list IterBinding="ProduitsPfnlView12Iterator" StaticList="false" Uses="LOV_Idcategorie" id="Idcategorie"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="ProduitsPfnlView12Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="ProduitsPfnlView12Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ProduitsPfnlView12Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ProduitsPfnlView12Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ProduitsPfnlView12Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="PartiesProduitsPfnlView24Iterator" id="Create1" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="PartiesProduitsPfnlView24Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="PartiesProduitsPfnlView24Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="PartiesProduitsPfnlView24Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PartiesProduitsPfnlView24Iterator" id="Previous1" RequiresUpdateModel="true"
+            Action="previous"/>
+    <action IterBinding="ProduitsPfnlView12Iterator" id="CreateInsert"
+            InstanceName="AppModuleDataControl.ProduitsPfnlView12" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PartiesProduitsPfnlView24Iterator" id="CreateInsert1"
+            InstanceName="AppModuleDataControl.PartiesProduitsPfnlView24" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="PartiesProduitPfnlComplet1Iterator" id="PartiesProduitPfnlComplet1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entity.PartiesProduitPfnlComplet" Name="PartiesProduitPfnlComplet10">
+        <AttrNames>
+          <Item Value="Idfamillepfnl"/>
+          <Item Value="Idcategorie"/>
+          <Item Value="Idpartiesproduitspfnl"/>
+          <Item Value="Idpartiesrecoltees"/>
+          <Item Value="Idproduitspfnl"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Idunitemesureexport"/>
+          <Item Value="Nomscientifique"/>
+          <Item Value="Nomcommercial"/>
+          <Item Value="Codeproduit"/>
+          <Item Value="Descriptionsommaire"/>
+          <Item Value="Modeattribution"/>
+          <Item Value="Nompartierecoltee"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ProduitsPfnlView12Iterator" id="Idproduitspfnl">
+      <AttrNames>
+        <Item Value="Idproduitspfnl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PartiesProduitsPfnlView24Iterator" id="Idpartiesproduitspfnl">
+      <AttrNames>
+        <Item Value="Idpartiesproduitspfnl"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

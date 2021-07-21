@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_produitPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProduitsPfnlView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ProduitsPfnlView4Iterator" Refresh="default" CacheResults="true"/>
+    <iterator Binds="PartiesProduitsPfnlView9" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PartiesProduitsPfnlView19Iterator" Refresh="default"/>
+    <iterator Binds="PartiesRecolteesView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="PartiesRecolteesView1Iterator" Refresh="default"/>
+    <searchRegion Binds="ProduitsPfnlView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ProduitsPfnlView4Query"/>
+    <page path="cm.gov.minfof.view.pageDefs.Template_GeneralPageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="CategorieproduitView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="CategorieproduitView1Iterator"/>
+    <searchRegion Binds="PartiesProduitsPfnlView19Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PartiesProduitsPfnlView9Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ProduitsPfnlView4Iterator" id="Idproduitspfnl">
+      <AttrNames>
+        <Item Value="Idproduitspfnl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView4Iterator" id="Nomscientifique">
+      <AttrNames>
+        <Item Value="Nomscientifique"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView4Iterator" id="Nomcommercial">
+      <AttrNames>
+        <Item Value="Nomcommercial"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView4Iterator" id="Codeproduit">
+      <AttrNames>
+        <Item Value="Codeproduit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView4Iterator" id="Idfamillepfnl">
+      <AttrNames>
+        <Item Value="Idfamillepfnl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView4Iterator" id="Descriptionsommaire">
+      <AttrNames>
+        <Item Value="Descriptionsommaire"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProduitsPfnlView4Iterator" id="Modeattribution">
+      <AttrNames>
+        <Item Value="Modeattribution"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ProduitsPfnlView4Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="ProduitsPfnlView4Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="PartiesProduitsPfnlView19Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <list IterBinding="PartiesProduitsPfnlView19Iterator" id="Idpartiesrecoltees" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject" StaticList="false" ListIter="PartiesRecolteesView1Iterator">
+      <AttrNames>
+        <Item Value="Idpartiesrecoltees"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idpartiesrecoltees"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Nompartierecoltee"/>
+      </ListDisplayAttrNames>
+    </list>
+    <tree IterBinding="ProduitsPfnlView4Iterator" id="ProduitsPfnlView4">
+      <nodeDefinition DefName="cm.gov.minfof.model.entity.ProduitsPfnlView" Name="ProduitsPfnlView40">
+        <AttrNames>
+          <Item Value="Idfamillepfnl"/>
+          <Item Value="Idproduitspfnl"/>
+          <Item Value="Codeproduit"/>
+          <Item Value="Nomscientifique"/>
+          <Item Value="Nomcommercial"/>
+          <Item Value="Modeattribution"/>
+          <Item Value="Descriptionsommaire"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PartiesProduitsPfnlView19Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <list IterBinding="ProduitsPfnlView4Iterator" id="Idcategorie" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject" StaticList="false" ListIter="CategorieproduitView1Iterator">
+      <AttrNames>
+        <Item Value="Idcategorie"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idcategorieproduit"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Libellecategorie"/>
+      </ListDisplayAttrNames>
+    </list>
+    <listOfValues IterBinding="ProduitsPfnlView4Iterator" StaticList="false" Uses="LOV_Idfamillepfnl"
+                  id="Idfamillepfnl1"/>
+    <list IterBinding="PartiesProduitsPfnlView19Iterator" StaticList="false" Uses="LOV_Idpartiesrecoltees"
+          id="Idpartiesrecoltees1" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PartiesProduitsPfnlView19Iterator" StaticList="false" Uses="LOV_Idunitemesure"
+          id="Idunitemesure1" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PartiesProduitsPfnlView19Iterator" StaticList="false" Uses="LOV_Idunitemesureexport"
+          id="Idunitemesureexport1" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="PartiesProduitsPfnlView19Iterator" id="PartiesProduitsPfnlView9">
+      <nodeDefinition DefName="cm.gov.minfof.model.entity.PartiesProduitsPfnlView" Name="PartiesProduitsPfnlView90">
+        <AttrNames>
+          <Item Value="Idpartiesproduitspfnl"/>
+          <Item Value="Idproduitspfnl"/>
+          <Item Value="Idpartiesrecoltees"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Idunitemesureexport"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

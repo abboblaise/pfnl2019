@@ -1,0 +1,20 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoJava="commonj.sdo/java" targetNamespace="/cm/gov/minfof/model/queryviewobject/common/"
+     xmlns="/cm/gov/minfof/model/queryviewobject/common/" elementFormDefault="qualified" sdoJava:package="cm.gov.minfof.model.queryviewobject.common">
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:complexType name="CommunesViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Idcommunes</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Idcommunes" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="Nomcommune" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Iddepartements" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="IddepartementsCommunesView" type="CommunesViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="communesViewSDO" type="CommunesViewSDO"/>
+</xsd:schema>

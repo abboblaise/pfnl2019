@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartementsIbfk1Assoc2"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Commune"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.entity.Commune">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Commune"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Commune.Primary1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Commune.Idcommunes"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Departement"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.entity.Departement">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Departement"/>
+      <Attr Name="_foreignKey" Value="cm.gov.minfof.model.entity.Departement.DepartementsIbfk1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.entity.Departement.Idregions"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -170,6 +170,7 @@ public class LettreVoitureBean {
         ApplicationModule am = bindings1.getDataControl().getApplicationModule();
         ADFContext adfCtx = ADFContext.getCurrent();
         Map appScope = adfCtx.getApplicationScope();
+        
         BigDecimal lastId = new BigDecimal(0);
         
         System.out.println("Avant le getExpressionValue");

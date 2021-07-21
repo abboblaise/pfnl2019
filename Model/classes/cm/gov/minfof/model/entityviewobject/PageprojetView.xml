@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PageprojetView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="Pageprojet"
+    Entity="cm.gov.minfof.model.entity.Pageprojet"/>
+  <ViewAttribute
+    Name="Idpageprojet"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idpageprojet"
+    EntityUsage="Pageprojet"
+    AliasName="idpageprojet"/>
+  <ViewAttribute
+    Name="Libellepage"
+    PrecisionRule="true"
+    EntityAttrName="Libellepage"
+    EntityUsage="Pageprojet"
+    AliasName="libellepage"/>
+  <ViewLinkAccessor
+    Name="PagepargroupView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkPagepargroup1Assoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PagepargroupView1"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkPagepargroup2Assoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

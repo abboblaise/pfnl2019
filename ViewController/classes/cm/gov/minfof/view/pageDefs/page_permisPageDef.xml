@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="page_permisPageDef"
+                Package="cm.gov.minfof.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="debut" Type="oracle.jbo.domain.Timestamp"/>
+      <variable Name="fin" Type="oracle.jbo.domain.Timestamp"/>
+    </variableIterator>
+    <iterator Binds="PermisView1" RangeSize="25" DataControl="AppModuleDataControl" id="PermisView1Iterator"/>
+    <iterator Binds="DetailpermisView6" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DetailpermisView6Iterator"/>
+    <searchRegion Binds="PermisView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PermisView1Query"/>
+    <searchRegion Binds="DetailpermisView6Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DetailpermisView6Query"/>
+    <iterator Binds="TypevehiculeView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TypevehiculeView1Iterator"/>
+    <iterator Binds="TypevehiculeView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TypevehiculeView2Iterator"/>
+    <iterator Binds="typeDocViewFinal1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="typeDocViewFinal1Iterator"/>
+    <iterator Binds="UniteMesureWithPartieProduitPfnl1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="UniteMesureWithPartieProduitPfnl1Iterator"/>
+    <iterator Binds="PermisView11" RangeSize="25" DataControl="AppModuleDataControl" id="PermisView11Iterator"/>
+    <iterator Binds="RegionView1" RangeSize="-1" DataControl="AppModuleDataControl" id="RegionView1Iterator"/>
+    <iterator Binds="DepartementView3" RangeSize="-1" DataControl="AppModuleDataControl" id="DepartementView3Iterator"/>
+    <iterator Binds="DepartementView3" RangeSize="10" DataControl="AppModuleDataControl"
+              id="DepartementView3Iterator1"/>
+    <iterator Binds="DepartementView1" RangeSize="10" DataControl="AppModuleDataControl" id="DepartementView1Iterator"/>
+    <iterator Binds="DetailpermisView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DetailpermisView1Iterator"/>
+    <iterator Binds="DepartementEtRegionView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="DepartementEtRegionView1Iterator1"/>
+    <iterator Binds="DetailpermisView6" RangeSize="10" DataControl="AppModuleDataControl"
+              id="DetailpermisView6Iterator1"/>
+    <iterator Binds="getLibelleProduitComplet1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="getLibelleProduitComplet1Iterator"/>
+    <iterator Binds="getExportDocumentsOfficiels1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="getExportDocumentsOfficiels1Iterator"/>
+    <searchRegion Binds="getExportDocumentsOfficiels1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="getExportDocumentsOfficiels1Query"/>
+    <iterator id="getLastidPermis1Iterator" Binds="getLastidPermis1" DataControl="AppModuleDataControl" RangeSize="25"/>
+    <iterator id="getLatsidDetailpermis1Iterator" Binds="getLatsidDetailpermis1" DataControl="AppModuleDataControl"
+              RangeSize="25"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PermisView1Iterator" id="Numeropermis">
+      <AttrNames>
+        <Item Value="Numeropermis"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PermisView1Iterator" StaticList="false" Uses="LOV_Idpermissionnaire" id="Idpermissionnaire"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="PermisView1Iterator" StaticList="false" Uses="LOV_Idagrement" id="Idagrement"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PermisView1Iterator" id="Zonecoupe">
+      <AttrNames>
+        <Item Value="Zonecoupe"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Datedelivrance">
+      <AttrNames>
+        <Item Value="Datedelivrance"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Datefin">
+      <AttrNames>
+        <Item Value="Datefin"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Observation">
+      <AttrNames>
+        <Item Value="Observation"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="PermisView1Iterator" id="PermisView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PermisView" Name="PermisView10">
+        <AttrNames>
+          <Item Value="Numeropermis"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Nomfichier"/>
+          <Item Value="Idagrement"/>
+          <Item Value="Zonecoupe"/>
+          <Item Value="Datedelivrance"/>
+          <Item Value="Datefin"/>
+          <Item Value="Observation"/>
+          <Item Value="Idpermis"/>
+       <!--   <Item Value="Typedocument"/>  -->
+          <Item Value="Numpermiscomplet"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PermisView1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl.PermisView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PermisView1Iterator" id="Delete" InstanceName="AppModuleDataControl.PermisView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <tree IterBinding="DetailpermisView6Iterator" id="DetailpermisView6">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.DetailpermisView" Name="DetailpermisView60">
+        <AttrNames>
+          <Item Value="Idpartieproduitpfnl"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Quantite"/>
+          <Item Value="Observation"/>
+          <Item Value="Idregions"/>
+          <Item Value="idunitemesureconsultation"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="DetailpermisView6Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="DetailpermisView6Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  <!--  <list IterBinding="PermisView1Iterator" StaticList="false" Uses="LOV_Typedocument" id="Typedocument"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/> -->
+    <attributeValues IterBinding="DetailpermisView6Iterator" id="Quantite">
+      <AttrNames>
+        <Item Value="Quantite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailpermisView6Iterator" id="Observation1">
+      <AttrNames>
+        <Item Value="Observation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailpermisView6Iterator" id="Iddetailpermis">
+      <AttrNames>
+        <Item Value="Iddetailpermis"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DetailpermisView6Iterator" StaticList="false" Uses="LOV_Idpermis" id="Idpermis"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="variables" id="debut1">
+      <AttrNames>
+        <Item Value="debut"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="fin1">
+      <AttrNames>
+        <Item Value="fin"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Nomfichier">
+      <AttrNames>
+        <Item Value="Nomfichier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PermisView1Iterator" id="Cheminfichier">
+      <AttrNames>
+        <Item Value="Cheminfichier"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DetailpermisView6Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DetailpermisView6Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DetailpermisView6Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DetailpermisView6Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="PermisView1Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="PermisView1Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="PermisView1Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PermisView1Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="PermisView1Iterator" id="Numpermiscomplet">
+      <AttrNames>
+        <Item Value="Numpermiscomplet"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="TypevehiculeView1Iterator" id="TypevehiculeView1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.TypevehiculeView" Name="TypevehiculeView10">
+        <AttrNames>
+          <Item Value="Idtypevehicule"/>
+          <Item Value="Codevehicule"/>
+          <Item Value="Libelletype"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TypevehiculeView2Iterator" id="TypevehiculeView2">
+      <nodeDefinition DefName="cm.gov.minfof.model.queryviewobject.TypevehiculeView" Name="TypevehiculeView20">
+        <AttrNames>
+          <Item Value="Idtypevehicule"/>
+          <Item Value="Codevehicule"/>
+          <Item Value="Libelletype"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PermisView1Iterator" id="Idpermis1">
+      <AttrNames>
+        <Item Value="Idpermis"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="typeDocViewFinal1Iterator" ListOperMode="navigation" ListIter="typeDocViewFinal1Iterator"
+          id="typeDocViewFinal1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Libelletypedocument"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="PermisView1Iterator" StaticList="false" Uses="LOV_Idtypedocument" id="Idtypedocument"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="PermisView1Iterator" id="PermisView11">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.PermisView" Name="PermisView110">
+        <AttrNames>
+          <Item Value="Numeropermis"/>
+          <Item Value="Idtypedocument"/>
+          <Item Value="Numpermiscomplet"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Datedelivrance"/>
+          <Item Value="Datefin"/>
+          <Item Value="Cheminfichier"/>
+          <Item Value="Nomfichier"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="DetailpermisView6Iterator" StaticList="false" id="Idregions"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject" ListIter="RegionView1Iterator">
+      <AttrNames>
+        <Item Value="Idregions"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idregions"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Nomregion"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list StaticList="false" IterBinding="DetailpermisView6Iterator"
+          ListIter="UniteMesureWithPartieProduitPfnl1Iterator" id="Idunitemesure">
+      <AttrNames>
+        <Item Value="Idunitemesure"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idunitemesure"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Libelleunitemesure"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="DetailpermisView6Iterator" StaticList="false" Uses="LOV_Idunitemesure" id="Idunitemesure1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="DetailpermisView6Iterator" id="idunitemesureconsultation">
+      <AttrNames>
+        <Item Value="idunitemesureconsultation"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="DetailpermisView6Iterator" id="DetailpermisView61">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.DetailpermisView" Name="DetailpermisView610">
+        <AttrNames>
+          <Item Value="idunitemesureconsultation"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="DetailpermisView6Iterator" id="DetailpermisView62">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.DetailpermisView" Name="DetailpermisView620">
+        <AttrNames>
+          <Item Value="Iddetailpermis"/>
+          <Item Value="Quantite"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Idpermis"/>
+          <Item Value="Observation"/>
+          <Item Value="Idpartieproduitpfnl"/>
+          <Item Value="Idregions"/>
+          <Item Value="idunitemesureconsultation"/>
+          <Item Value="Iddepartements" Binds="Iddepartements"/>
+          <Item Value="nomdudepartement"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="PermisView11Iterator" StaticList="false" Uses="LOV_Idtypedocument" id="Idtypedocument1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list Uses="LOV_Iddepartements" StaticList="false" IterBinding="DetailpermisView6Iterator"
+                  id="Iddepartements" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="DetailpermisView6Iterator" StaticList="false" Uses="LOV_nomdudepartement"
+                  id="nomdudepartement"/>
+    <list Uses="LOV_Idpart" StaticList="false"  IterBinding="DetailpermisView6Iterator"
+                  id="Idpartieproduitpfnl1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list StaticList="false" IterBinding="DetailpermisView6Iterator" ListIter="getLibelleProduitComplet1Iterator"
+          id="Idpartieproduitpfnl" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Idpartieproduitpfnl"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idpartiesproduitspfnl"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Libelle"/>
+      </ListDisplayAttrNames>
+    </list>
+    <attributeValues IterBinding="DetailpermisView6Iterator" id="Idpartieproduitpfnlconsultation">
+      <AttrNames>
+        <Item Value="Idpartieproduitpfnlconsultation"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="getExportDocumentsOfficiels1Iterator" id="getExportDocumentsOfficiels1">
+      <nodeDefinition DefName="cm.gov.minfof.model.entityviewobject.getExportDocumentsOfficiels"
+                      Name="getExportDocumentsOfficiels10">
+        <AttrNames>
+          <Item Value="Idpermis"/>
+          <Item Value="Numeropermis"/>
+          <Item Value="Zonecoupe"/>
+          <Item Value="Datedelivrance"/>
+          <Item Value="Datefin"/>
+          <Item Value="Observation"/>
+          <Item Value="Idagrement"/>
+          <Item Value="Idpermissionnaire"/>
+          <Item Value="Nomfichier"/>
+          <Item Value="Cheminfichier"/>
+          <Item Value="Typefichier"/>
+          <Item Value="Idtypedocument"/>
+          <Item Value="Iddetailpermis"/>
+          <Item Value="Idunitemesure"/>
+          <Item Value="Idpartieproduitpfnl"/>
+          <Item Value="Quantite"/>
+          <Item Value="Idregions"/>
+          <Item Value="Iddepartements"/>
+          <Item Value="Nomouraisonsociale"/>
+          <Item Value="Libelleunitemesure"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

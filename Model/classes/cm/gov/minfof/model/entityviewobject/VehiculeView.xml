@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VehiculeView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  ComponentClass="cm.gov.minfof.model.entityviewobject.VehiculeViewImpl"
+  SdoGen="true"
+  SdoName="cm.gov.minfof.model.entityviewobject.common.VehiculeViewSDO"
+  SdoNameSpace="/cm/gov/minfof/model/entityviewobject/common/">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="TransporteurView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.TransporteurView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RegionView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.RegionView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="TypevehiculeView1"
+    ViewObjectName="cm.gov.minfof.model.entityviewobject.TypevehiculeView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Idtransporteur"
+    ListVOName="TransporteurView1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idtransporteur"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idtransporteur"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nom"/>
+      <Item Value="Nui"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idregion"
+    ListVOName="RegionView1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idregion"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idregions"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Nomregion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Idtypevehicule"
+    ListVOName="TypevehiculeView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Idtypevehicule"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Idtypevehicule"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Codevehicule"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Vehicule"
+    Entity="cm.gov.minfof.model.entity.Vehicule"/>
+  <ViewAttribute
+    Name="Idvehicule"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idvehicule"
+    EntityUsage="Vehicule"
+    AliasName="idvehicule"/>
+  <ViewAttribute
+    Name="Idtransporteur"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idtransporteur"
+    EntityUsage="Vehicule"
+    AliasName="idtransporteur"
+    LOVName="LOV_Idtransporteur">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idregion"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idregion"
+    EntityUsage="Vehicule"
+    AliasName="idregion"
+    LOVName="LOV_Idregion">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idtypevehicule"
+    PrecisionRule="true"
+    EntityAttrName="Idtypevehicule"
+    EntityUsage="Vehicule"
+    AliasName="idtypevehicule"
+    LOVName="LOV_Idtypevehicule">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Codechiffre"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Codechiffre"
+    EntityUsage="Vehicule"
+    AliasName="codechiffre"/>
+  <ViewAttribute
+    Name="SuffixLettre"
+    PrecisionRule="true"
+    EntityAttrName="SuffixLettre"
+    EntityUsage="Vehicule"
+    AliasName="suffix_lettre"/>
+  <ViewAttribute
+    Name="Immatriculation"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="Immatriculation"
+    EntityUsage="Vehicule"
+    AliasName="Immatriculation">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="VehiculeView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkVehicule3Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="VehiculeView1"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkVehicule2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="VehiculeView2"
+    ViewLink="cm.gov.minfof.model.entityviewobject.FkVehicule1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TransporteurView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.TransporteurToVehiculeLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RegionView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.RegionToVehiculeLink"
+    Type="cm.gov.minfof.model.entityviewobject.RegionViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TypevehiculeView"
+    ViewLink="cm.gov.minfof.model.entityviewobject.TypeVehiculeToVehiculeLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+</ViewObject>

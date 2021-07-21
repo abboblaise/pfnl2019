@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkUnitemesure1Link"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <ViewLinkDefEnd
+    Name="UnitemesureView1"
+    Cardinality="1"
+    Source="true"
+    Owner="cm.gov.minfof.model.queryviewobject.UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="UnitemesureView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.queryviewobject.UnitemesureView1.Idunitemesure"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="IdcategorieUnitemesureView1"
+    Cardinality="-1"
+    Owner="cm.gov.minfof.model.queryviewobject.UnitemesureView1">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="IdcategorieUnitemesureView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="cm.gov.minfof.model.queryviewobject.UnitemesureView1.Idcategorie"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
